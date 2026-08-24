@@ -1,0 +1,26 @@
+# 编译产物
+*.o
+*.out
+perf.data
+perf.data.old
+cpu_demo
+tlb_thrashing
+reorder_demo
+reorder_demo_spins
+cache_miss
+branch_predict
+stall_analysis
+syscall_trace
+lock_contention
+false_sharing
+sched_latency
+perf_probe
+usdt_demo
+cpp_members
+perf_bench_diff
+indirect_branch
+mt_io_demo
+segv_*
+abrt_*
+ill_*
+fpe_*
