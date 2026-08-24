@@ -43,6 +43,15 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 
 > 💡 记不住地址？站点首页 **https://geek-doc.cn** → 顶部导航「演示程序」→ 每个 demo 都有对应页面，含复现命令、代码讲解与实测数据。
 
+## 文档内嵌实验归档（experiments/）
+
+站点理论文档中出现的**内嵌实验**（代码写在讲解页里、不在 demos/ 下），代码与实测数据统一归档于此，随新实验持续补充：
+
+| 实验 | 主题 | 来源文档（站点） | 运行 |
+|------|------|------------------|------|
+| [numa-access](experiments/numa-access/) | 跨 NUMA 节点内存访问开销（本地 vs 远程 ~3x） | `concepts/cpu/numa-optimization.md` | `make -C experiments/numa-access run` |
+| [busy-wait-vs-sleep](experiments/busy-wait-vs-sleep/) | 忙等待 vs 睡眠调度延迟/CPU 对比 | `concepts/latency/low-latency-patterns.md` | `make -C experiments/busy-wait-vs-sleep run` |
+
 ## 常用命令
 
 ```bash
