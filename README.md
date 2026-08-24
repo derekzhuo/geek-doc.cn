@@ -51,7 +51,7 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 |------|------|------------------|------|
 | [numa-access](experiments/numa-access/) | 跨 NUMA 节点内存访问开销（本地 vs 远程 ~3x） | `concepts/cpu/numa-optimization.md` | `make -C experiments/numa-access run` |
 | [busy-wait-vs-sleep](experiments/busy-wait-vs-sleep/) | 忙等待 vs 睡眠调度延迟/CPU 对比 | `concepts/latency/low-latency-patterns.md` | `make -C experiments/busy-wait-vs-sleep run` |
-| [spsc-mpsc-queue](experiments/spsc-mpsc-queue/) | SPSC 无锁环形 vs 有锁队列吞吐对比（~20x） | `concepts/latency/spsc-mpsc-queue.md` | `make -C experiments/spsc-mpsc-queue run` |
+| [spsc-mpsc-queue](experiments/spsc-mpsc-queue/) | 消息队列四象限（SPSC/SPMC/MPSC/MPMC）吞吐基准，SPSC 无锁 vs 有锁 ~20x | `concepts/latency/spsc-mpsc-queue.md` | `make -C experiments/spsc-mpsc-queue run` |
 
 ## 常用命令
 

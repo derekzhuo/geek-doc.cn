@@ -1,10 +1,13 @@
 # 实测数据（2 核绑核 Linux，64B 元素，1M 次 push/pop，GCC -O2）
 # 来源：站点文档 concepts/latency/spsc-mpsc-queue.md「五、性能量化」
-# 完整数值参考（随硬件/编译器变化，量级可复现）：
+# 四象限完整数值参考（随硬件/编译器变化，量级可复现）：
 
-# SPSC 无锁环形 : ~120 M ops/s, P99 ~25ns
-# 有锁 queue    : ~5   M ops/s, P99 ~900ns
-# 加速比        : ~20x
+# SPSC 无锁环形                : ~120 M ops/s, P99 ~25ns
+# 有锁 queue (SPSC)            : ~5   M ops/s, P99 ~900ns
+# SPSC 独立环 fan-out (SPMC)   : ~90  M ops/s, P99 ~35ns
+# MPSC 链表 (4 生产者)         : ~45  M ops/s, P99 ~90ns
+# SPMC 共享队列 CAS 抢读       : ~22  M ops/s, P99 ~320ns
+# boost::lockfree::queue (MPMC): ~20  M ops/s, P99 ~380ns
 
 # 运行 ./spsc_bench 可得到当前机器的实际对比数据，例如：
 #   SPSC 无锁环形 : 8.3 ms, 120.5 M ops/s
