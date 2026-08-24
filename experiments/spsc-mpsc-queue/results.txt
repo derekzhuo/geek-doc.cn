@@ -1,0 +1,12 @@
+# 实测数据（2 核绑核 Linux，64B 元素，1M 次 push/pop，GCC -O2）
+# 来源：站点文档 concepts/latency/spsc-mpsc-queue.md「五、性能量化」
+# 完整数值参考（随硬件/编译器变化，量级可复现）：
+
+# SPSC 无锁环形 : ~120 M ops/s, P99 ~25ns
+# 有锁 queue    : ~5   M ops/s, P99 ~900ns
+# 加速比        : ~20x
+
+# 运行 ./spsc_bench 可得到当前机器的实际对比数据，例如：
+#   SPSC 无锁环形 : 8.3 ms, 120.5 M ops/s
+#   有锁 queue    : 200.1 ms, 5.0 M ops/s
+#   加速比        : 24.1x
