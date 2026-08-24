@@ -1,0 +1,1230 @@
+=== 短跑测试 (echo-bench 100 1) ===
+时间: Wed Jul 29 21:55:20 CST 2026
+CPU: 4 核
+
+[0;32m[21:55:22][0m   lt 启动 (pid=12238)
+--- echo-epoll-lt-server (100×1) ---
+Run 1:
+Epoll echo server (single-process, LT/Level-Triggered) listening on port 9988 ...
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connectioBench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14856.6 req/s
+--- latency (μs) ---
+ min:             52
+ P50:             55
+ P90:             85
+ P99:             139
+ P999:            139
+ max:             139
+=============================
+Run 2:
+n fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+nBench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.006 s
+QPS:             15496.7 req/s
+--- latency (μs) ---
+ min:             52
+ P50:             54
+ P90:             79
+ P99:             156
+ P999:            156
+ max:             156
+=============================
+Run 3:
+ew connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fd=5 (LT mode)
+connection fd=5 closed
+new connection fBench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.008 s
+QPS:             12903.2 req/s
+--- latency (μs) ---
+ min:             48
+ P50:             60
+ P90:             94
+ P99:             977
+ P999:            977
+ max:             977
+=============================
+
+[0;32m[21:55:25][0m   lt stopped
+[0;32m[21:55:29][0m   et 启动 (pid=12308)
+--- echo-epoll-server (100×1) ---
+Run 1:
+Epoll echo server (single-process, EPOLLET) listening on port 9988 ...
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connecBench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14170.3 req/s
+--- latency (μs) ---
+ min:             49
+ P50:             61
+ P90:             95
+ P99:             154
+ P999:            154
+ max:             154
+=============================
+Run 2:
+tion fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 cBench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14954.4 req/s
+--- latency (μs) ---
+ min:             51
+ P50:             55
+ P90:             81
+ P99:             212
+ P999:            212
+ max:             212
+=============================
+Run 3:
+losed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new connection fd=5
+connection fd=5 closed
+new cBench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14923.1 req/s
+--- latency (μs) ---
+ min:             50
+ P50:             55
+ P90:             83
+ P99:             182
+ P999:            182
+ max:             182
+=============================
+
+[0;32m[21:55:32][0m   et stopped
+[0;32m[21:55:36][0m   mp 启动 (pid=12358)
+--- echo-mp-server(4w) (100×1) ---
+Run 1:
+Bench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14349.3 req/s
+--- latency (μs) ---
+ min:             52
+ P50:             58
+ P90:             83
+ P99:             177
+ P999:            177
+ max:             177
+=============================
+Run 2:
+Bench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14436.3 req/s
+--- latency (μs) ---
+ min:             52
+ P50:             57
+ P90:             88
+ P99:             167
+ P999:            167
+ max:             167
+=============================
+Run 3:
+Bench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             15060.2 req/s
+--- latency (μs) ---
+ min:             51
+ P50:             56
+ P90:             79
+ P99:             144
+ P999:            144
+ max:             144
+=============================
+
+[0;32m[21:55:40][0m   mp stopped
+[0;32m[21:55:44][0m   lt-pure 启动 (pid=12412)
+--- echo-epoll-lt-pure-server (100×1) ---
+Run 1:
+Bench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.075 s
+QPS:             1339.3 req/s
+--- latency (μs) ---
+ min:             51
+ P50:             54
+ P90:             85
+ P99:             68308
+ P999:            68308
+ max:             68308
+=============================
+Run 2:
+Bench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14316.4 req/s
+--- latency (μs) ---
+ min:             50
+ P50:             55
+ P90:             78
+ P99:             631
+ P999:            631
+ max:             631
+=============================
+Run 3:
+Bench: 127.0.0.1:9988, 100 connections x 1 rounds = 100 requests ...
+
+========== Results ==========
+Total requests:  100 / 100 (success: 100)
+Elapsed:         0.007 s
+QPS:             14259.2 req/s
+--- latency (μs) ---
+ min:             54
+ P50:             60
+ P90:             86
+ P99:             306
+ P999:            306
+ max:             306
+=============================
+
+[0;32m[21:55:48][0m   lt-pure stopped

@@ -1,0 +1,8 @@
+Linux 3.10.0-1160.108.1.el7.x86_64 (VM-0-17-centos) 	07/29/26 	_x86_64_	(4 CPU)
+
+22:09:17      UID       PID    %usr %system  %guest    %CPU   CPU  Command
+22:09:18        0     27803    0.00    0.00    0.00    0.00     3  echo-epoll-serv
+22:09:19        0     27803    3.00   52.00    0.00   55.00     1  echo-epoll-serv
+22:09:20        0     27803    0.00    7.00    0.00    7.00     1  echo-epoll-serv
+22:09:21        0     27803    0.00    0.00    0.00    0.00     1  echo-epoll-serv
+22:09:22        0     27803    0.00    0.00    0.00    0.00     1  echo-epoll-serv
