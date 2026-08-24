@@ -1,13 +1,13 @@
-# linux-labs — Linux 系统实验可复现代码集
+# geek-doc.cn — Linux 系统实验可复现代码集
 
-> 与《Linux 性能剖析》站点配套的**可运行实验代码**。
+> 与《Linux 性能剖析》站点（geek-doc.cn）配套的**可运行实验代码**。
 > 每个 demo 独立可编译、可运行，`make run` 即出结果。
 
 ## 快速开始
 
 ```bash
-git clone --depth 1 https://github.com/derekzhuo/linux-labs.git
-cd linux-labs
+git clone --depth 1 https://github.com/derekzhuo/geek-doc.cn.git
+cd geek-doc.cn
 make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 ```
 
