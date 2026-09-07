@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # sched-latency — 复现手册
 
 > 调度延迟诊断实验（perf sched）

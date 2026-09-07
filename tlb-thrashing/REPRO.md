@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # tlb-thrashing — 复现手册
 
 > TLB 页表缓存抖动实验

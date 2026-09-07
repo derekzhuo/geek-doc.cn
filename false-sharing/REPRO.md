@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # false-sharing — 复现手册
 
 > 伪共享检测实验（perf c2c）

@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # cpu-demo — 复现手册
 
 > CPU 使用率三场景（perf stat/record 基础）

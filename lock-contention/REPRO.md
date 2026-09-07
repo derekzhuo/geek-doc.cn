@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # lock-contention — 复现手册
 
 > 锁争用诊断实验（perf lock）

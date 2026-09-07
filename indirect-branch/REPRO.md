@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # indirect-branch — 复现手册
 
 > 间接分支预测（虚函数/函数指针/switch）

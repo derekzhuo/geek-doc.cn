@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # perf-bench-diff — 复现手册
 
 > 微基准 + 优化对比实验（perf bench/diff）

@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # perf-probe — 复现手册
 
 > 动态探针插桩实验（perf probe/USDT）

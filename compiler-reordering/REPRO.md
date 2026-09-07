@@ -1,3 +1,7 @@
+---
+updated: 2026-08-24
+---
+
 # compiler-reordering — 复现手册
 
 > 编译器重排与 data-race UB
