@@ -1,0 +1,65 @@
+=== MP worker 连接分布 ===
+目的: 验证 SO_REUSEPORT 哈希均匀性
+方法: bench.sh 高并发下观察 worker accept 计数
+时间: Wed Jul 29 22:32:45 CST 2026
+
+[0;32m[22:32:45][0m   TIME-WAIT 清理到 0 (目标 0)
+Master PID: 24528
+Worker PIDs: 24530 24531 24532 24533 
+
+--- echo-bench 200 连接串行 ---
+跑前 worker fd 数:
+  Worker 24530: 5 fd
+  Worker 24531: 5 fd
+  Worker 24532: 5 fd
+  Worker 24533: 5 fd
+
+跑后 worker fd 数:
+  Worker 24530: 5 fd
+  Worker 24531: 5 fd
+  Worker 24532: 5 fd
+  Worker 24533: 5 fd
+
+--- bench.sh 100 并发 ---
+跑前 worker fd 数:
+  Worker 24530: 5 fd
+  Worker 24531: 5 fd
+  Worker 24532: 5 fd
+  Worker 24533: 5 fd
+
+跑后 worker fd 数:
+  Worker 24530: 5 fd
+  Worker 24531: 5 fd
+  Worker 24532: 5 fd
+  Worker 24533: 5 fd
+
+--- strace -c accept 各 worker（bench.sh 100 并发） ---
+Worker 24530 accept 统计:
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.001130          12        94        46 accept
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.001130                    94        46 total
+
+Worker 24531 accept 统计:
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.001245          12        98        48 accept
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.001245                    98        48 total
+
+Worker 24532 accept 统计:
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000984          12        79        37 accept
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000984                    79        37 total
+
+Worker 24533 accept 统计:
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.001091          11        91        44 accept
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.001091                    91        44 total
+
+[0;32m[22:34:44][0m   mp-dist stopped

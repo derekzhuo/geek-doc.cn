@@ -24,3 +24,7 @@ segv_*
 abrt_*
 ill_*
 fpe_*
+
+# crash-signals 源文件取反（上面 segv_*/abrt_* 等同时匹配了同名 .c/.cpp 源文件）
+!crash-signals/*.c
+!crash-signals/*.cpp

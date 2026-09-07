@@ -1,0 +1,5 @@
+# 实测数据（Intel Xeon Platinum 8375C @ 2.90GHz，Linux 5.15.0，GCC 11.3.0，ITERATIONS=1000000）
+# 来源：站点文档 concepts/latency/low-latency-patterns.md「测试结果」
+模型      总时间(us)  单次延迟(us)  CPU使用率(%)
+忙等待    1245        1.245        ~100
+睡眠调度  8920        8.92         ~10

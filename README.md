@@ -4,7 +4,7 @@
 > 每个 demo 独立可编译、可运行，`make run` 即出结果。
 
 [![Site](https://img.shields.io/badge/站点-geek-doc.cn-blue?style=flat-square&logo=readthedocs&logoColor=white)](https://geek-doc.cn)
-[![Demos](https://img.shields.io/badge/demo-15%20个可跑-orange?style=flat-square)](https://geek-doc.cn/demos/)
+[![Demos](https://img.shields.io/badge/demo-15%20个可跑%2B1%20实战-orange?style=flat-square)](https://geek-doc.cn/demos/)
 
 ## 快速开始
 
@@ -39,8 +39,19 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 | D14 | [mt-io-demo](mt-io-demo/) | 多线程 + IO 分析方法演练 | `make -C mt-io-demo run` |
 | - | [compiler-reordering](compiler-reordering/) | 编译器重排与 data-race UB | `make -C compiler-reordering run` |
 | - | [crash-signals](crash-signals/) | 崩溃信号复现（10 个程序） | `make -C crash-signals run` |
+| E1 | [echo](echo/) | 百万 QPS TCP 高并发实战（8 阶段 × 30 天） | 见 [echo/REPRO.md](echo/REPRO.md) |
 
 > 💡 记不住地址？站点首页 **https://geek-doc.cn** → 顶部导航「演示程序」→ 每个 demo 都有对应页面，含复现命令、代码讲解与实测数据。
+
+## 文档内嵌实验归档（experiments/）
+
+站点理论文档中出现的**内嵌实验**（代码写在讲解页里、不在 demos/ 下），代码与实测数据统一归档于此，随新实验持续补充：
+
+| 实验 | 主题 | 来源文档（站点） | 运行 |
+|------|------|------------------|------|
+| [numa-access](experiments/numa-access/) | 跨 NUMA 节点内存访问开销（本地 vs 远程 ~3x） | `concepts/cpu/numa-optimization.md` | `make -C experiments/numa-access run` |
+| [busy-wait-vs-sleep](experiments/busy-wait-vs-sleep/) | 忙等待 vs 睡眠调度延迟/CPU 对比 | `concepts/latency/low-latency-patterns.md` | `make -C experiments/busy-wait-vs-sleep run` |
+| [spsc-mpsc-queue](experiments/spsc-mpsc-queue/) | 消息队列四象限（SPSC/SPMC/MPSC/MPMC）吞吐基准，SPSC 无锁 vs 有锁 ~20x | `concepts/latency/spsc-mpsc-queue.md` | `make -C experiments/spsc-mpsc-queue run` |
 
 ## 常用命令
 

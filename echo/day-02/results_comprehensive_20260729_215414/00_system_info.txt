@@ -1,0 +1,18 @@
+=== 系统信息 ===
+时间: Wed Jul 29 21:54:14 CST 2026
+主机: VM-0-17-centos
+内核: 3.10.0-1160.108.1.el7.x86_64
+CPU: 4 核
+CPU 型号: AMD EPYC 7K62 48-Core Processor
+内存: 3.6G
+
+=== 网络参数 ===
+tcp_tw_reuse: 1
+tcp_fin_timeout: 5
+本地端口范围: 32768	60999
+tcp_tw_recycle: 0
+
+=== 内核参数（TIME-WAIT 相关）===
+net.ipv4.tcp_fin_timeout = 5
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.ip_local_port_range = 32768	60999

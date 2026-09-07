@@ -1,0 +1,5 @@
+# 实测数据（2 节点 NUMA 服务器，Intel Xeon，64MB 缓冲）
+# 来源：站点文档 concepts/cpu/numa-optimization.md「测试结果（2节点服务器）」
+本地访问时间: 1245us
+远程访问时间: 3720us
+开销比: 2.99x
