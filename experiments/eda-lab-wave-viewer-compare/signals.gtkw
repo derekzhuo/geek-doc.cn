@@ -1,0 +1,20 @@
+[*]
+[*] GTKWave Analyzer savefile —— 预置 4 条信号；窗口缩放由 shot.sh 的 Tcl 校准
+[dumpfile] "counter.vcd"
+[timestart] 0
+[size] 1280 720
+[pos] -1 -1
+*-5.000000 105000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] counter_tb.
+[sst_width] 233
+[signals_width] 160
+[sst_expanded] 1
+[sst_vpaned_height] 340
+@28
+counter_tb.clk
+counter_tb.rst_n
+counter_tb.en
+@22
+counter_tb.count[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
