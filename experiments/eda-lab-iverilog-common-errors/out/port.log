@@ -1,0 +1,2 @@
+err_port.v:16: warning: Port 2 (b) of adder4 expects 4 bits, got 2.
+err_port.v:16:        : Padding 2 high bits of the port.

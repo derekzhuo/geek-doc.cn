@@ -1,0 +1,7 @@
+%Error: pitfall/metacomment.v:2:1: Unknown verilator comment: '/*verilator 会把「 verilator ...」当作 lint pragma 解析，后面跟的不是合法指令就报错。*/'
+    2 | /*verilator           verilator ...          lint pragma                                                    */ 
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Error: pitfall/metacomment.v:3:1: Unknown verilator comment: '/*verilator 要求：这句话会被当成 Unknown verilator comment*/'
+    3 | /*verilator                                Unknown verilator comment*/ 
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Error: Exiting due to 2 error(s)

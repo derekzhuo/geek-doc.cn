@@ -1,0 +1,2 @@
+err_syntax_semicolon.v:10: syntax error
+err_syntax_semicolon.v:11: Syntax in assignment statement l-value.

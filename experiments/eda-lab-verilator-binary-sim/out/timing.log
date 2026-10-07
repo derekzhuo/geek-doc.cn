@@ -1,0 +1,14 @@
+# verilator --binary vs iverilog 速度实测 (2026-10-07 15:07:16)
+# 环境: Icarus Verilog version 12.0 (stable) () / Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+# 仿真拍数: 10000000，每个仿真器跑 3 次取中位数
+
+iverilog run1: 13.707s (PASS)
+iverilog run2: 13.769s (PASS)
+iverilog run3: 13.296s (PASS)
+iverilog median: 13.707s
+verilator run1: 4.685s (PASS)
+verilator run2: 4.550s (PASS)
+verilator run3: 4.500s (PASS)
+verilator median: 4.550s
+
+speedup (iverilog_median / verilator_median): 3.0x

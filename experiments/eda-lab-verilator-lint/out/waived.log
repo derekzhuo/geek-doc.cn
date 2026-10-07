@@ -1,0 +1,31 @@
+%Warning-UNUSEDSIGNAL: lint_demo_waived.v:15:17: Signal is not used: 'nibble'
+                                               : ... note: In instance 'lint_demo_waived'
+   15 |     reg  [3:0]  nibble;
+      |                 ^~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.020
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: lint_demo_waived.v:41:9: Signal is not used: 'q_latch'
+                                              : ... note: In instance 'lint_demo_waived'
+   41 |     reg q_latch;
+      |         ^~~~~~~
+%Warning-UNUSEDSIGNAL: lint_demo_waived.v:48:16: Signal is not driven, nor used: 'never_used'
+                                               : ... note: In instance 'lint_demo_waived'
+   48 |     wire [3:0] never_used;
+      |                ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: lint_demo_waived.v:49:16: Signal is not driven, nor used: 'never_driven'
+                                               : ... note: In instance 'lint_demo_waived'
+   49 |     wire       never_driven;
+      |                ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: lint_demo_waived.v:51:15: Signal is not used: 'mux_out'
+                                               : ... note: In instance 'lint_demo_waived'
+   51 |     reg [7:0] mux_out;
+      |               ^~~~~~~
+%Warning-CASEINCOMPLETE: lint_demo_waived.v:53:9: Case values incompletely covered (example pattern 0x3)
+   53 |         case (sel)
+      |         ^~~~
+%Warning-LATCH: lint_demo_waived.v:42:5: Latch inferred for signal 'lint_demo_waived.q_latch' (not all control paths of combinational always assign a value)
+                                       : ... Suggest use of always_latch for intentional latches
+   42 |     always @(*) begin
+      |     ^~~~~~
+%Error: Exiting due to 7 warning(s)
+exit_code=1

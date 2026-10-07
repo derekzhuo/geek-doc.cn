@@ -1,0 +1,9 @@
+%Warning-TIMESCALEMOD: pitfall/counter_no_ts.v:3:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+    3 | module counter (
+      |        ^~~~~~~
+                       counter_tb.v:6:8: ... Location of module with timescale
+    6 | module counter_tb;
+      |        ^~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.020
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)

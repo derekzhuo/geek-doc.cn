@@ -1,0 +1,4 @@
+VCD info: dumpfile full.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+FULL DONE count=225
+tb_full.v:31: $finish called at 200040000 (1ps)

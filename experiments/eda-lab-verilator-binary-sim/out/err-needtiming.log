@@ -1,0 +1,18 @@
+%Error-NEEDTIMINGOPT: counter_tb.v:30:12: Use --timing or --no-timing to specify how delays should be handled
+                                        : ... note: In instance 'counter_tb'
+   30 |     always #5 clk = ~clk;
+      |            ^
+                      ... For error description see https://verilator.org/warn/NEEDTIMINGOPT?v=5.020
+%Error-NEEDTIMINGOPT: counter_tb.v:35:9: Use --timing or --no-timing to specify how delays should be handled
+                                       : ... note: In instance 'counter_tb'
+   35 |         #12;                        
+      |         ^
+%Error-NEEDTIMINGOPT: counter_tb.v:39:25: Use --timing or --no-timing to specify how event controls should be handled
+                                        : ... note: In instance 'counter_tb'
+   39 |         repeat (CYCLES) @(posedge clk);
+      |                         ^
+%Error-NEEDTIMINGOPT: counter_tb.v:40:9: Use --timing or --no-timing to specify how delays should be handled
+                                       : ... note: In instance 'counter_tb'
+   40 |         #1;
+      |         ^
+%Error: Exiting due to 4 error(s)

@@ -1,0 +1,3 @@
+VCD info: dumpfile slim.vcd opened for output.
+SLIM DONE count=225
+tb_slim.v:37: $finish called at 200040000 (1ps)

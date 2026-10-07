@@ -1,0 +1,36 @@
+VCD info: dumpfile out/counter.vcd opened for output.
+[5000 ns] clk posedge: rst_n=0 en=0 count=x
+[12000 ns] release reset, count=0
+[15000 ns] clk posedge: rst_n=1 en=1 count=0
+[25000 ns] clk posedge: rst_n=1 en=1 count=1
+[35000 ns] clk posedge: rst_n=1 en=1 count=2
+[45000 ns] clk posedge: rst_n=1 en=1 count=3
+[55000 ns] clk posedge: rst_n=1 en=1 count=4
+[65000 ns] clk posedge: rst_n=1 en=1 count=5
+[75000 ns] clk posedge: rst_n=1 en=1 count=6
+[85000 ns] clk posedge: rst_n=1 en=1 count=7
+[95000 ns] clk posedge: rst_n=1 en=1 count=8
+[105000 ns] clk posedge: rst_n=1 en=1 count=9
+[115000 ns] clk posedge: rst_n=1 en=1 count=10
+[125000 ns] clk posedge: rst_n=1 en=1 count=11
+[135000 ns] clk posedge: rst_n=1 en=1 count=12
+[145000 ns] clk posedge: rst_n=1 en=1 count=13
+[155000 ns] clk posedge: rst_n=1 en=1 count=14
+[165000 ns] clk posedge: rst_n=1 en=1 count=15
+[175000 ns] clk posedge: rst_n=1 en=1 count=0
+[185000 ns] clk posedge: rst_n=1 en=1 count=1
+[195000 ns] clk posedge: rst_n=1 en=1 count=2
+[205000 ns] clk posedge: rst_n=1 en=1 count=3
+[206000 ns] after 20 enabled clocks, count=4
+[215000 ns] clk posedge: rst_n=1 en=0 count=4
+[225000 ns] clk posedge: rst_n=1 en=0 count=4
+[235000 ns] clk posedge: rst_n=1 en=0 count=4
+[236000 ns] paused 3 clocks, count=4 (should hold)
+[245000 ns] clk posedge: rst_n=1 en=1 count=4
+[255000 ns] clk posedge: rst_n=1 en=1 count=5
+[265000 ns] clk posedge: rst_n=1 en=1 count=6
+[275000 ns] clk posedge: rst_n=1 en=1 count=7
+[285000 ns] clk posedge: rst_n=1 en=1 count=8
+[286000 ns] after 5 more clocks, count=9 (wrap check)
+[286000 ns] TEST PASS: counter works as expected
+counter_tb.v:51: $finish called at 286000 (1ps)

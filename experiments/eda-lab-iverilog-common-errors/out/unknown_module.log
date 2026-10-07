@@ -1,0 +1,5 @@
+err_unknown_module.v:14: error: Unknown module type: sub_raal
+2 error(s) during elaboration.
+*** These modules were missing:
+        sub_raal referenced 1 times.
+***
