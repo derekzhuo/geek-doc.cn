@@ -1,0 +1,2 @@
+NAIVE done, count=19 ovf=0
+- tb_naive.v:22: Verilog $finish

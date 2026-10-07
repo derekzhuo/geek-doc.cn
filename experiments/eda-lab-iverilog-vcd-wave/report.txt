@@ -1,0 +1,13 @@
+==== VCD 文件大小对比 ====
+-rw-r--r-- 1 501 dialout 1244000 Oct  7 14:58 full.vcd
+-rw-r--r-- 1 501 dialout  863136 Oct  7 14:58 slim.vcd
+
+full.vcd 行数 / 跳变块统计：
+150081 full.vcd
+slim.vcd 行数：
+98630 slim.vcd
+
+full.vcd 中声明的信号数（$var 行）：
+21
+slim.vcd 中声明的信号数：
+6

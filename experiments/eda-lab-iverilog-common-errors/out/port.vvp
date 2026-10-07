@@ -1,0 +1,40 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x562349f98a00 .scope module, "top" "top" 2 10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "x";
+    .port_info 1 /INPUT 4 "y";
+    .port_info 2 /OUTPUT 5 "s";
+v0x562349fa99c0_0 .net "s", 4 0, L_0x562349fa9d80;  1 drivers
+o0x7f9e3287d0a8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x562349fa9a80_0 .net "x", 3 0, o0x7f9e3287d0a8;  0 drivers
+o0x7f9e3287d1c8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x562349fa9b20_0 .net "y", 3 0, o0x7f9e3287d1c8;  0 drivers
+S_0x562349f5f490 .scope module, "u_add" "adder4" 2 16, 2 2 0, S_0x562349f98a00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 5 "sum";
+v0x562349f85e90_0 .net *"_ivl_0", 4 0, L_0x562349fa9c40;  1 drivers
+L_0x7f9e32834018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x562349f61400_0 .net *"_ivl_3", 0 0, L_0x7f9e32834018;  1 drivers
+L_0x7f9e328340a8 .functor BUFT 1, C4<000zz>, C4<0>, C4<0>, C4<0>;
+v0x562349fa9590_0 .net *"_ivl_4", 4 0, L_0x7f9e328340a8;  1 drivers
+v0x562349fa9650_0 .net "a", 3 0, o0x7f9e3287d0a8;  alias, 0 drivers
+L_0x7f9e32834060 .functor BUFT 1, C4<00zz>, C4<0>, C4<0>, C4<0>;
+v0x562349fa9730_0 .net "b", 3 0, L_0x7f9e32834060;  1 drivers
+v0x562349fa9860_0 .net "sum", 4 0, L_0x562349fa9d80;  alias, 1 drivers
+L_0x562349fa9c40 .concat [ 4 1 0 0], o0x7f9e3287d0a8, L_0x7f9e32834018;
+L_0x562349fa9d80 .arith/sum 5, L_0x562349fa9c40, L_0x7f9e328340a8;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "err_port.v";

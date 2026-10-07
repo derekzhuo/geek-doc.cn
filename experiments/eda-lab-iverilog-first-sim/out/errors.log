@@ -1,0 +1,16 @@
+=== E1: 只编译 TB，漏掉 DUT ===
+counter_tb.v:13: error: Unknown module type: counter
+2 error(s) during elaboration.
+*** These modules were missing:
+        counter referenced 1 times.
+***
+exit=2
+=== E2: 语法错误（少分号） ===
+/tmp/bad.v:3: syntax error
+/tmp/bad.v:1: error: Syntax error in variable list.
+exit=2
+=== E3: 位宽不匹配的 warning ===
+exit=0
+/tmp/w.v:5: warning: Port 3 (en) of counter expects 1 bits, got 32.
+/tmp/w.v:5:        : Pruning 31 high bits of the expression.
+exit=0

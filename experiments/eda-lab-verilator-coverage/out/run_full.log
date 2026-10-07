@@ -1,0 +1,2 @@
+FULL done, count=0 ovf=0
+- tb_full.v:39: Verilog $finish

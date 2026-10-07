@@ -1,0 +1,31 @@
+%Warning-WIDTHTRUNC: lint_demo.v:30:20: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's CONST '32'h7' generates 32 bits.
+                                      : ... note: In instance 'lint_demo'
+   30 |             nibble <= 32'd7;               
+      |                    ^~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: lint_demo.v:35:19: Operator ADD expects 16 bits on the LHS, but LHS's VARREF 'a8' generates 8 bits.
+                                       : ... note: In instance 'lint_demo'
+   35 |         dout = a8 + din;                   
+      |                   ^
+%Warning-WIDTHEXPAND: lint_demo.v:35:19: Operator ADD expects 16 bits on the RHS, but RHS's VARREF 'din' generates 8 bits.
+                                       : ... note: In instance 'lint_demo'
+   35 |         dout = a8 + din;                   
+      |                   ^
+%Warning-CASEINCOMPLETE: lint_demo.v:60:9: Case values incompletely covered (example pattern 0x3)
+   60 |         case (sel)
+      |         ^~~~
+%Warning-LATCH: lint_demo.v:47:5: Latch inferred for signal 'lint_demo.q_latch' (not all control paths of combinational always assign a value)
+                                : ... Suggest use of always_latch for intentional latches
+   47 |     always @(*) begin
+      |     ^~~~~~
+%Warning-UNOPTFLAT: lint_demo.v:39:10: Signal unoptimizable: Circular combinational logic: 'lint_demo.loop_x'
+   39 |     wire loop_x;
+      |          ^~~~~~
+                    lint_demo.v:39:10:      Example path: lint_demo.loop_x
+                    lint_demo.v:42:19:      Example path: ASSIGNW
+                    lint_demo.v:40:10:      Example path: lint_demo.loop_y
+                    lint_demo.v:41:19:      Example path: ASSIGNW
+                    lint_demo.v:39:10:      Example path: lint_demo.loop_x
+%Error: Exiting due to 6 warning(s)
+exit_code=1
