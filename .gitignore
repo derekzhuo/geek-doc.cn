@@ -28,3 +28,7 @@ fpe_*
 # crash-signals 源文件取反（上面 segv_*/abrt_* 等同时匹配了同名 .c/.cpp 源文件）
 !crash-signals/*.c
 !crash-signals/*.cpp
+
+# cocotb/仿真运行残留（make run 自动重建，不入库）
+__pycache__/
+experiments/**/sim_build/
