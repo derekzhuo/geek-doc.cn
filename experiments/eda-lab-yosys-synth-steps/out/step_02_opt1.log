@@ -1,0 +1,140 @@
+
+-- Running command `read_ilang out/s01.il; opt_expr; opt_clean; check; opt -nodffe -nosdff; stat; write_ilang out/s02.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s01.il
+
+2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~2 debug messages>
+
+3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 23 unused cells and 68 unused wires.
+<suppressed ~26 debug messages>
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module uart_rx...
+Found and reported 0 problems.
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~42 debug messages>
+Removed a total of 14 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$51.
+Removed 1 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 16 unused wires.
+<suppressed ~1 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+    New ctrl vector for $pmux cell $procmux$121: { $procmux$115_CMP $procmux$133_CMP $auto$opt_reduce.cc:134:opt_pmux$179 }
+  Optimizing cells in module \uart_rx.
+Performed a total of 1 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+5.23. Finished OPT passes. (There is nothing left to do.)
+
+6. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 47
+   Number of wire bits:            223
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 44
+     $add                            2
+     $adff                           8
+     $and                            1
+     $eq                             6
+     $logic_not                      1
+     $mux                           17
+     $neg                            1
+     $not                            1
+     $or                             1
+     $pmux                           3
+     $reduce_or                      1
+     $shift                          2
+
+7. Executing RTLIL backend.
+Output filename: out/s02.il

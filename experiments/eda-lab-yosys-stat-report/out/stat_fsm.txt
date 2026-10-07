@@ -1,0 +1,28 @@
+
+3. Printing statistics.
+
+=== baud_tx_fsm ===
+
+   Number of wires:                106
+   Number of wire bits:            129
+   Number of public wires:          13
+   Number of public wire bits:      33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                116
+     $_ANDNOT_                      36
+     $_AND_                          3
+     $_DFF_P_                        4
+     $_MUX_                          8
+     $_NAND_                         7
+     $_NOR_                          2
+     $_NOT_                          3
+     $_ORNOT_                        4
+     $_OR_                          30
+     $_SDFFE_PN0P_                  13
+     $_SDFF_PN0_                     2
+     $_SDFF_PN1_                     1
+     $_XNOR_                         1
+     $_XOR_                          2
+

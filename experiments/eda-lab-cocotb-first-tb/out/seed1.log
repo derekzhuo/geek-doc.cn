@@ -1,0 +1,38 @@
+make[1]: Entering directory '/work/eda-lab-cocotb-first-tb'
+rm -f out/results_seed1.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s counter -g2012 -f sim_build/cmds.f  /work/eda-lab-cocotb-first-tb/counter.v
+/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:68: Using MODULE is deprecated, please use COCOTB_TEST_MODULES instead.
+rm -f out/results_seed1.xml
+COCOTB_TEST_MODULES=test_counter COCOTB_TESTCASE=  COCOTB_TOPLEVEL=counter TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_counter.test_reset (1/3)
+                                                            定向测试 1：复位把 count 清 0、ovf 清 0。
+    30.00ns INFO     cocotb.counter                     test_reset PASS: count held 0 during 3-cycle reset
+    30.00ns INFO     cocotb.regression                  test_counter.test_reset passed
+    30.00ns INFO     cocotb.regression                  running test_counter.test_enable_hold (2/3)
+                                                            定向测试 2：en=0 时计数值必须原样保持。
+   170.00ns INFO     cocotb.counter                     test_enable_hold PASS: count held at 5 for 4 clocks
+   170.00ns INFO     cocotb.regression                  test_counter.test_enable_hold passed
+   170.00ns INFO     cocotb.regression                  running test_counter.test_random_count (3/3)
+                                                            随机回归主测试：随机 en 序列 300 拍，逐拍比对 count 与 ovf。
+  3210.00ns INFO     cocotb.counter                     test_random_count PASS: 600 assertions, 14 overflow pulses
+  3210.00ns INFO     cocotb.regression                  test_counter.test_random_count passed
+  3210.00ns INFO     cocotb.regression                  ****************************************************************************************
+                                                        ** TEST                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ****************************************************************************************
+                                                        ** test_counter.test_reset          PASS          30.00           0.00      29211.58  **
+                                                        ** test_counter.test_enable_hold    PASS         140.00           0.00     107339.24  **
+                                                        ** test_counter.test_random_count   PASS        3040.00           0.03     118872.20  **
+                                                        ****************************************************************************************
+                                                        ** TESTS=3 PASS=3 FAIL=0 SKIP=0                 3210.00           0.03     106321.66  **
+                                                        ****************************************************************************************
+make[1]: Leaving directory '/work/eda-lab-cocotb-first-tb'

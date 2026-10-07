@@ -1,0 +1,120 @@
+
+-- Running command `read_ilang out/s00.il; proc; stat; write_ilang out/s01.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s00.il
+
+2. Executing PROC pass (convert processes to netlists).
+
+2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 7 switch rules as full_case in process $proc$uart_rx.v:38$7 in module uart_rx.
+Marked 1 switch rules as full_case in process $proc$uart_rx.v:27$4 in module uart_rx.
+Removed a total of 0 dead cases.
+
+2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 5 assignments to connections.
+
+2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\uart_rx.$proc$uart_rx.v:38$7'.
+Found async reset \rst_n in `\uart_rx.$proc$uart_rx.v:27$4'.
+
+2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\uart_rx.$proc$uart_rx.v:38$7'.
+     1/17: $3$lookahead\shift$6[7:0]$29
+     2/17: $3$bitselwrite$data$uart_rx.v:73$2[7:0]$27
+     3/17: $3$bitselwrite$mask$uart_rx.v:73$1[7:0]$26
+     4/17: $3$bitselwrite$sel$uart_rx.v:73$3[2:0]$28
+     5/17: $2$lookahead\shift$6[7:0]$20
+     6/17: $2$bitselwrite$sel$uart_rx.v:73$3[2:0]$19
+     7/17: $2$bitselwrite$data$uart_rx.v:73$2[7:0]$18
+     8/17: $2$bitselwrite$mask$uart_rx.v:73$1[7:0]$17
+     9/17: $1$lookahead\shift$6[7:0]$16
+    10/17: $1$bitselwrite$sel$uart_rx.v:73$3[2:0]$15
+    11/17: $1$bitselwrite$data$uart_rx.v:73$2[7:0]$14
+    12/17: $1$bitselwrite$mask$uart_rx.v:73$1[7:0]$13
+    13/17: $0\data_valid[0:0]
+    14/17: $0\bit_idx[2:0]
+    15/17: $0\clk_cnt[7:0]
+    16/17: $0\state[2:0]
+    17/17: $0\data[7:0]
+Creating decoders for process `\uart_rx.$proc$uart_rx.v:27$4'.
+     1/2: $0\rxd_sync_d[0:0]
+     2/2: $0\rxd_sync[0:0]
+
+2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\uart_rx.\data' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$166' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\data_valid' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$167' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\state' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$168' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\clk_cnt' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$169' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\bit_idx' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$170' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\shift' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$171' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$mask$uart_rx.v:73$1' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$172' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$data$uart_rx.v:73$2' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$173' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$sel$uart_rx.v:73$3' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$174' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$lookahead\shift$6' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$175' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\rxd_sync' using process `\uart_rx.$proc$uart_rx.v:27$4'.
+  created $adff cell `$procdff$176' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\rxd_sync_d' using process `\uart_rx.$proc$uart_rx.v:27$4'.
+  created $adff cell `$procdff$177' with positive edge clock and negative level reset.
+
+2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\uart_rx.$proc$uart_rx.v:38$7'.
+Removing empty process `uart_rx.$proc$uart_rx.v:38$7'.
+Removing empty process `uart_rx.$proc$uart_rx.v:27$4'.
+Cleaned up 7 empty switches.
+
+2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~9 debug messages>
+
+3. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                130
+   Number of wire bits:            622
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 84
+     $add                            4
+     $adff                          12
+     $and                            1
+     $eq                            21
+     $logic_not                      5
+     $mux                           28
+     $neg                            2
+     $not                            3
+     $or                             1
+     $pmux                           3
+     $shift                          2
+     $sub                            2
+
+4. Executing RTLIL backend.
+Output filename: out/s01.il

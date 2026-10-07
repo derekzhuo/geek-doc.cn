@@ -1,0 +1,110 @@
+
+6. Printing statistics.
+
+=== $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011 ===
+
+   Number of wires:                 15
+   Number of wire bits:             27
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $_ANDNOT_                       2
+     $_AND_                          2
+     $_NAND_                         1
+     $_NOT_                          1
+     $_ORNOT_                        3
+     $_OR_                           1
+     $_SDFF_PN0_                     1
+     $_SDFF_PP0_                     5
+     $_XOR_                          4
+
+=== baud_bit_cnt ===
+
+   Number of wires:                 10
+   Number of wire bits:             16
+   Number of public wires:           6
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $_AND_                          2
+     $_NOT_                          1
+     $_ORNOT_                        1
+     $_SDFFE_PP0P_                   3
+     $_XOR_                          2
+
+=== baud_top ===
+
+   Number of wires:                 11
+   Number of wire bits:             20
+   Number of public wires:          11
+   Number of public wire bits:      20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011      1
+     baud_bit_cnt                    1
+     baud_tx_fsm                     1
+
+=== baud_tx_fsm ===
+
+   Number of wires:                106
+   Number of wire bits:            129
+   Number of public wires:          13
+   Number of public wire bits:      33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                116
+     $_ANDNOT_                      36
+     $_AND_                          3
+     $_DFF_P_                        4
+     $_MUX_                          9
+     $_NAND_                         8
+     $_NOR_                          3
+     $_NOT_                          5
+     $_ORNOT_                        2
+     $_OR_                          27
+     $_SDFFE_PN0P_                  13
+     $_SDFF_PN0_                     2
+     $_SDFF_PN1_                     1
+     $_XNOR_                         1
+     $_XOR_                          2
+
+=== design hierarchy ===
+
+   baud_top                          1
+     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011      1
+     baud_bit_cnt                    1
+     baud_tx_fsm                     1
+
+   Number of wires:                142
+   Number of wire bits:            192
+   Number of public wires:          34
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                145
+     $_ANDNOT_                      38
+     $_AND_                          7
+     $_DFF_P_                        4
+     $_MUX_                          9
+     $_NAND_                         9
+     $_NOR_                          3
+     $_NOT_                          7
+     $_ORNOT_                        6
+     $_OR_                          28
+     $_SDFFE_PN0P_                  13
+     $_SDFFE_PP0P_                   3
+     $_SDFF_PN0_                     3
+     $_SDFF_PN1_                     1
+     $_SDFF_PP0_                     5
+     $_XNOR_                         1
+     $_XOR_                          8
+

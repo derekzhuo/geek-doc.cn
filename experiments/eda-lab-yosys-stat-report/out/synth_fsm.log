@@ -1,0 +1,772 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog baud_tx_fsm.v; synth -top baud_tx_fsm; tee -o out/stat_fsm.txt stat' --
+
+1. Executing Verilog-2005 frontend: baud_tx_fsm.v
+Parsing Verilog input from `baud_tx_fsm.v' to AST representation.
+Generating RTLIL representation for module `\baud_tx_fsm'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \baud_tx_fsm
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \baud_tx_fsm
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$baud_tx_fsm.v:24$1 in module baud_tx_fsm.
+Marked 5 switch rules as full_case in process $proc$baud_tx_fsm.v:24$1 in module baud_tx_fsm.
+Removed a total of 1 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+     1/7: $0\clr[0:0]
+     2/7: $0\inc[0:0]
+     3/7: $0\tx[0:0]
+     4/7: $0\shreg[7:0]
+     5/7: $0\oversample[3:0]
+     6/7: $0\state[1:0]
+     7/7: $0\busy[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\baud_tx_fsm.\tx' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$113' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\inc' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$114' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\clr' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$115' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\busy' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$116' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\state' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$117' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\oversample' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$118' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\shreg' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+  created $dff cell `$procdff$119' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 10 empty switches in `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+Removing empty process `baud_tx_fsm.$proc$baud_tx_fsm.v:24$1'.
+Cleaned up 10 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+<suppressed ~13 debug messages>
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 1 unused cells and 36 unused wires.
+<suppressed ~2 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+Checking module baud_tx_fsm...
+Found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~51 debug messages>
+Removed a total of 17 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+    New ctrl vector for $pmux cell $procmux$31: { $procmux$34_CMP $procmux$27_CMP $auto$opt_reduce.cc:134:opt_pmux$121 }
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 1 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+2.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 20 unused wires.
+<suppressed ~1 debug messages>
+
+2.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+    New ctrl vector for $pmux cell $procmux$58: { $procmux$109_CMP $auto$opt_reduce.cc:134:opt_pmux$123 $procmux$32_CMP }
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 1 changes.
+
+2.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+2.6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.6.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.6.23. Finished OPT passes. (There is nothing left to do.)
+
+2.7. Executing FSM pass (extract and optimize FSM).
+
+2.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register baud_tx_fsm.state.
+
+2.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state' from module `\baud_tx_fsm'.
+  found $dff cell for state register: $procdff$117
+  root of input selection tree: $0\state[1:0]
+  found reset state: 2'00 (guessed from mux tree)
+  found ctrl input: \rst_n
+  found state code: 2'00
+  found ctrl input: $procmux$32_CMP
+  found ctrl input: $procmux$27_CMP
+  found ctrl input: $procmux$34_CMP
+  found ctrl input: $procmux$109_CMP
+  found ctrl input: $logic_and$baud_tx_fsm.v:73$8_Y
+  found ctrl input: \tick
+  found ctrl input: $eq$baud_tx_fsm.v:51$3_Y
+  found ctrl input: \last
+  found state code: 2'11
+  found state code: 2'10
+  found ctrl input: \tx_start
+  found state code: 2'01
+  found ctrl output: $procmux$27_CMP
+  found ctrl output: $procmux$32_CMP
+  found ctrl output: $procmux$34_CMP
+  found ctrl output: $procmux$109_CMP
+  ctrl inputs: { $logic_and$baud_tx_fsm.v:73$8_Y $eq$baud_tx_fsm.v:51$3_Y \last \tx_start \tick \rst_n }
+  ctrl outputs: { $procmux$109_CMP $procmux$34_CMP $procmux$32_CMP $procmux$27_CMP $0\state[1:0] }
+  transition:       2'00 6'-----0 ->       2'00 6'100000
+  transition:       2'00 6'---0-1 ->       2'00 6'100000
+  transition:       2'00 6'---1-1 ->       2'01 6'100001
+  transition:       2'10 6'-----0 ->       2'00 6'000100
+  transition:       2'10 6'----01 ->       2'10 6'000110
+  transition:       2'10 6'-0--11 ->       2'10 6'000110
+  transition:       2'10 6'-10-11 ->       2'10 6'000110
+  transition:       2'10 6'-11-11 ->       2'11 6'000111
+  transition:       2'01 6'-----0 ->       2'00 6'010000
+  transition:       2'01 6'----01 ->       2'01 6'010001
+  transition:       2'01 6'-0--11 ->       2'01 6'010001
+  transition:       2'01 6'-1--11 ->       2'10 6'010010
+  transition:       2'11 6'-----0 ->       2'00 6'001000
+  transition:       2'11 6'0----1 ->       2'11 6'001011
+  transition:       2'11 6'1----1 ->       2'00 6'001000
+
+2.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$124' from module `\baud_tx_fsm'.
+
+2.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 14 unused cells and 14 unused wires.
+<suppressed ~15 debug messages>
+
+2.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$124' from module `\baud_tx_fsm'.
+  Removing unused output signal $0\state[1:0] [0].
+  Removing unused output signal $0\state[1:0] [1].
+
+2.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state$124' from module `\baud_tx_fsm' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> ---1
+  10 -> --1-
+  01 -> -1--
+  11 -> 1---
+
+2.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state$124' from module `baud_tx_fsm':
+-------------------------------------
+
+  Information on FSM $fsm$\state$124 (\state):
+
+  Number of input signals:    6
+  Number of output signals:   4
+  Number of state bits:       4
+
+  Input signals:
+    0: \rst_n
+    1: \tick
+    2: \tx_start
+    3: \last
+    4: $eq$baud_tx_fsm.v:51$3_Y
+    5: $logic_and$baud_tx_fsm.v:73$8_Y
+
+  Output signals:
+    0: $procmux$27_CMP
+    1: $procmux$32_CMP
+    2: $procmux$34_CMP
+    3: $procmux$109_CMP
+
+  State encoding:
+    0:     4'---1  <RESET STATE>
+    1:     4'--1-
+    2:     4'-1--
+    3:     4'1---
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 6'-----0   ->     0 4'1000
+      1:     0 6'---0-1   ->     0 4'1000
+      2:     0 6'---1-1   ->     2 4'1000
+      3:     1 6'-----0   ->     0 4'0001
+      4:     1 6'----01   ->     1 4'0001
+      5:     1 6'-10-11   ->     1 4'0001
+      6:     1 6'-0--11   ->     1 4'0001
+      7:     1 6'-11-11   ->     3 4'0001
+      8:     2 6'-----0   ->     0 4'0100
+      9:     2 6'-1--11   ->     1 4'0100
+     10:     2 6'----01   ->     2 4'0100
+     11:     2 6'-0--11   ->     2 4'0100
+     12:     3 6'-----0   ->     0 4'0010
+     13:     3 6'1----1   ->     0 4'0010
+     14:     3 6'0----1   ->     3 4'0010
+
+-------------------------------------
+
+2.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state$124' from module `\baud_tx_fsm'.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+<suppressed ~1 debug messages>
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$119 ($dff) from module baud_tx_fsm (D = $procmux$45_Y, Q = \shreg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$184 ($sdff) from module baud_tx_fsm (D = $procmux$45_Y, Q = \shreg).
+Adding SRST signal on $procdff$118 ($dff) from module baud_tx_fsm (D = $procmux$58_Y, Q = \oversample, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$196 ($sdff) from module baud_tx_fsm (D = $procmux$58_Y, Q = \oversample).
+Adding SRST signal on $procdff$116 ($dff) from module baud_tx_fsm (D = $procmux$108_Y, Q = \busy, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$210 ($sdff) from module baud_tx_fsm (D = $procmux$106_Y, Q = \busy).
+Adding SRST signal on $procdff$115 ($dff) from module baud_tx_fsm (D = $procmux$106_Y, Q = \clr, rval = 1'0).
+Adding SRST signal on $procdff$114 ($dff) from module baud_tx_fsm (D = $procmux$22_Y, Q = \inc, rval = 1'0).
+Adding SRST signal on $procdff$113 ($dff) from module baud_tx_fsm (D = $procmux$31_Y, Q = \tx, rval = 1'1).
+
+2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 10 unused cells and 19 unused wires.
+<suppressed ~11 debug messages>
+
+2.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+<suppressed ~2 debug messages>
+
+2.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+2.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+2.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+2.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+2.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.8.23. Finished OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 3 bits (of 4) from port B of cell baud_tx_fsm.$add$baud_tx_fsm.v:55$4 ($add).
+Removed top 1 bits (of 2) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$180 ($eq).
+Removed top 1 bits (of 2) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$163 ($eq).
+Removed top 1 bits (of 2) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$137 ($eq).
+Removed top 1 bits (of 3) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$167 ($eq).
+
+2.10. Executing PEEPOPT pass (run peephole optimizers).
+
+2.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module baud_tx_fsm:
+  creating $macc model for $add$baud_tx_fsm.v:55$4 ($add).
+  creating $alu model for $macc $add$baud_tx_fsm.v:55$4.
+  creating $alu cell for $add$baud_tx_fsm.v:55$4: $auto$alumacc.cc:485:replace_alu$219
+  created 1 $alu and 0 $macc cells.
+
+2.13. Executing SHARE pass (SAT-based resource sharing).
+
+2.14. Executing OPT pass (performing simple optimizations).
+
+2.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+2.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+2.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.14.9. Finished OPT passes. (There is nothing left to do.)
+
+2.15. Executing MEMORY pass.
+
+2.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.17. Executing OPT pass (performing simple optimizations).
+
+2.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+<suppressed ~12 debug messages>
+
+2.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+2.17.5. Finished fast OPT passes.
+
+2.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_SHARE pass.
+
+2.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+
+2.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.19.10. Finished OPT passes. (There is nothing left to do.)
+
+2.20. Executing TECHMAP pass (map to technology primitives).
+
+2.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
+Using template $paramod$bf2533632d512eac76dd186c0da49367e29b8e98\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~312 debug messages>
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+<suppressed ~71 debug messages>
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~72 debug messages>
+Removed a total of 24 cells.
+
+2.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 2 unused cells and 130 unused wires.
+<suppressed ~3 debug messages>
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing ABC pass (technology mapping using ABC).
+
+2.22.1. Extracting gate netlist of module `\baud_tx_fsm' to `<abc-temp-dir>/input.blif'..
+Extracted 119 gates and 148 wires to a netlist network with 28 inputs and 22 outputs.
+
+2.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:               MUX cells:        8
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:              NAND cells:        7
+ABC RESULTS:               XOR cells:        2
+ABC RESULTS:                OR cells:       30
+ABC RESULTS:            ANDNOT cells:       36
+ABC RESULTS:        internal signals:       98
+ABC RESULTS:           input signals:       28
+ABC RESULTS:          output signals:       22
+Removing temp directory.
+
+2.23. Executing OPT pass (performing simple optimizations).
+
+2.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+
+2.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+2.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 116 unused wires.
+<suppressed ~1 debug messages>
+
+2.23.5. Finished fast OPT passes.
+
+2.24. Executing HIERARCHY pass (managing design hierarchy).
+
+2.24.1. Analyzing design hierarchy..
+Top module:  \baud_tx_fsm
+
+2.24.2. Analyzing design hierarchy..
+Top module:  \baud_tx_fsm
+Removed 0 unused modules.
+
+2.25. Printing statistics.
+
+=== baud_tx_fsm ===
+
+   Number of wires:                106
+   Number of wire bits:            129
+   Number of public wires:          13
+   Number of public wire bits:      33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                116
+     $_ANDNOT_                      36
+     $_AND_                          3
+     $_DFF_P_                        4
+     $_MUX_                          8
+     $_NAND_                         7
+     $_NOR_                          2
+     $_NOT_                          3
+     $_ORNOT_                        4
+     $_OR_                          30
+     $_SDFFE_PN0P_                  13
+     $_SDFF_PN0_                     2
+     $_SDFF_PN1_                     1
+     $_XNOR_                         1
+     $_XOR_                          2
+
+2.26. Executing CHECK pass (checking for obvious problems).
+Checking module baud_tx_fsm...
+Found and reported 0 problems.
+
+3. Printing statistics.
+
+=== baud_tx_fsm ===
+
+   Number of wires:                106
+   Number of wire bits:            129
+   Number of public wires:          13
+   Number of public wire bits:      33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                116
+     $_ANDNOT_                      36
+     $_AND_                          3
+     $_DFF_P_                        4
+     $_MUX_                          8
+     $_NAND_                         7
+     $_NOR_                          2
+     $_NOT_                          3
+     $_ORNOT_                        4
+     $_OR_                          30
+     $_SDFFE_PN0P_                  13
+     $_SDFF_PN0_                     2
+     $_SDFF_PN1_                     1
+     $_XNOR_                         1
+     $_XOR_                          2
+
+End of script. Logfile hash: 10836ab8d6, CPU: user 0.16s system 0.01s, MEM: 13.25 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 29% 1x abc (0 sec), 19% 19x opt_expr (0 sec), ...

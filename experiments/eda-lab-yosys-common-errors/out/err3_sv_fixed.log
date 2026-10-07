@@ -1,0 +1,33 @@
+
+-- Running command `read_verilog -sv err_sv_syntax.v; hierarchy -top sv_counter; stat' --
+
+1. Executing Verilog-2005 frontend: err_sv_syntax.v
+Parsing SystemVerilog input from `err_sv_syntax.v' to AST representation.
+Generating RTLIL representation for module `\sv_counter'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \sv_counter
+
+2.2. Analyzing design hierarchy..
+Top module:  \sv_counter
+Removed 0 unused modules.
+
+3. Printing statistics.
+
+=== sv_counter ===
+
+   Number of wires:                  6
+   Number of wire bits:             15
+   Number of public wires:           3
+   Number of public wire bits:       6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              1
+   Number of cells:                  2
+     $add                            1
+     $logic_not                      1
+
+exit=0

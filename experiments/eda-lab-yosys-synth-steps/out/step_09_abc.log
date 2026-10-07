@@ -1,0 +1,105 @@
+
+-- Running command `read_ilang out/s08.il; opt -fast; abc -fast; opt -fast; stat; write_ilang out/s09.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s08.il
+
+2. Executing OPT pass (performing simple optimizations).
+
+2.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~696 debug messages>
+
+2.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~402 debug messages>
+Removed a total of 134 cells.
+
+2.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 28 unused cells and 496 unused wires.
+<suppressed ~29 debug messages>
+
+2.5. Finished fast OPT passes.
+
+3. Executing ABC pass (technology mapping using ABC).
+
+3.1. Extracting gate netlist of module `\uart_rx' to `<abc-temp-dir>/input.blif'..
+Extracted 247 gates and 271 wires to a netlist network with 23 inputs and 27 outputs.
+
+3.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+3.1.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:               NOR cells:        6
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               XOR cells:        8
+ABC RESULTS:               NOT cells:        5
+ABC RESULTS:              NAND cells:        8
+ABC RESULTS:             ORNOT cells:       14
+ABC RESULTS:                OR cells:       73
+ABC RESULTS:            ANDNOT cells:       71
+ABC RESULTS:        internal signals:      221
+ABC RESULTS:           input signals:       23
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+4.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 143 unused wires.
+<suppressed ~1 debug messages>
+
+4.5. Finished fast OPT passes.
+
+5. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                190
+   Number of wire bits:            226
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                223
+     $_ANDNOT_                      71
+     $_AND_                          2
+     $_DFFE_PN0P_                   30
+     $_DFF_PN0_                      1
+     $_DFF_PN1_                      2
+     $_MUX_                          1
+     $_NAND_                         8
+     $_NOR_                          6
+     $_NOT_                          5
+     $_ORNOT_                       14
+     $_OR_                          73
+     $_XNOR_                         2
+     $_XOR_                          8
+
+6. Executing RTLIL backend.
+Output filename: out/s09.il

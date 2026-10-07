@@ -1,0 +1,712 @@
+
+-- Running command `read_verilog uart_rx.v; synth -top uart_rx' --
+
+1. Executing Verilog-2005 frontend: uart_rx.v
+Parsing Verilog input from `uart_rx.v' to AST representation.
+Generating RTLIL representation for module `\uart_rx'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \uart_rx
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \uart_rx
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 7 switch rules as full_case in process $proc$uart_rx.v:38$7 in module uart_rx.
+Marked 1 switch rules as full_case in process $proc$uart_rx.v:27$4 in module uart_rx.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 5 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\uart_rx.$proc$uart_rx.v:38$7'.
+Found async reset \rst_n in `\uart_rx.$proc$uart_rx.v:27$4'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\uart_rx.$proc$uart_rx.v:38$7'.
+     1/17: $3$lookahead\shift$6[7:0]$29
+     2/17: $3$bitselwrite$data$uart_rx.v:73$2[7:0]$27
+     3/17: $3$bitselwrite$mask$uart_rx.v:73$1[7:0]$26
+     4/17: $3$bitselwrite$sel$uart_rx.v:73$3[2:0]$28
+     5/17: $2$lookahead\shift$6[7:0]$20
+     6/17: $2$bitselwrite$sel$uart_rx.v:73$3[2:0]$19
+     7/17: $2$bitselwrite$data$uart_rx.v:73$2[7:0]$18
+     8/17: $2$bitselwrite$mask$uart_rx.v:73$1[7:0]$17
+     9/17: $1$lookahead\shift$6[7:0]$16
+    10/17: $1$bitselwrite$sel$uart_rx.v:73$3[2:0]$15
+    11/17: $1$bitselwrite$data$uart_rx.v:73$2[7:0]$14
+    12/17: $1$bitselwrite$mask$uart_rx.v:73$1[7:0]$13
+    13/17: $0\data_valid[0:0]
+    14/17: $0\bit_idx[2:0]
+    15/17: $0\clk_cnt[7:0]
+    16/17: $0\state[2:0]
+    17/17: $0\data[7:0]
+Creating decoders for process `\uart_rx.$proc$uart_rx.v:27$4'.
+     1/2: $0\rxd_sync_d[0:0]
+     2/2: $0\rxd_sync[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\uart_rx.\data' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$166' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\data_valid' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$167' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\state' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$168' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\clk_cnt' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$169' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\bit_idx' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$170' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\shift' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$171' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$mask$uart_rx.v:73$1' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$172' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$data$uart_rx.v:73$2' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$173' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$sel$uart_rx.v:73$3' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$174' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$lookahead\shift$6' using process `\uart_rx.$proc$uart_rx.v:38$7'.
+  created $adff cell `$procdff$175' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\rxd_sync' using process `\uart_rx.$proc$uart_rx.v:27$4'.
+  created $adff cell `$procdff$176' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\rxd_sync_d' using process `\uart_rx.$proc$uart_rx.v:27$4'.
+  created $adff cell `$procdff$177' with positive edge clock and negative level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\uart_rx.$proc$uart_rx.v:38$7'.
+Removing empty process `uart_rx.$proc$uart_rx.v:38$7'.
+Removing empty process `uart_rx.$proc$uart_rx.v:27$4'.
+Cleaned up 7 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~9 debug messages>
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~2 debug messages>
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 23 unused cells and 68 unused wires.
+<suppressed ~26 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+Checking module uart_rx...
+Found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~42 debug messages>
+Removed a total of 14 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$51.
+Removed 1 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 16 unused wires.
+<suppressed ~1 debug messages>
+
+2.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+    New ctrl vector for $pmux cell $procmux$121: { $procmux$115_CMP $procmux$133_CMP $auto$opt_reduce.cc:134:opt_pmux$179 }
+  Optimizing cells in module \uart_rx.
+Performed a total of 1 changes.
+
+2.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.6.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.6.23. Finished OPT passes. (There is nothing left to do.)
+
+2.7. Executing FSM pass (extract and optimize FSM).
+
+2.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking uart_rx.state as FSM state register:
+    Circuit seems to be self-resetting.
+
+2.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$171 ($adff) from module uart_rx (D = $or$uart_rx.v:0$39_Y, Q = \shift).
+Adding EN signal on $procdff$170 ($adff) from module uart_rx (D = $0\bit_idx[2:0], Q = \bit_idx).
+Adding EN signal on $procdff$169 ($adff) from module uart_rx (D = $0\clk_cnt[7:0], Q = \clk_cnt).
+Adding EN signal on $procdff$168 ($adff) from module uart_rx (D = $0\state[2:0], Q = \state).
+Adding EN signal on $procdff$166 ($adff) from module uart_rx (D = \shift, Q = \data).
+
+2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+2.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~2 debug messages>
+
+2.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.8.23. Finished OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 5 bits (of 8) from port B of cell uart_rx.$eq$uart_rx.v:58$22 ($eq).
+Removed top 7 bits (of 8) from port B of cell uart_rx.$add$uart_rx.v:66$24 ($add).
+Removed top 4 bits (of 8) from port B of cell uart_rx.$eq$uart_rx.v:71$25 ($eq).
+Removed top 28 bits (of 32) from port A of cell uart_rx.$neg$uart_rx.v:0$31 ($neg).
+Converting cell uart_rx.$neg$uart_rx.v:0$31 ($neg) from signed to unsigned.
+Removed top 1 bits (of 4) from port A of cell uart_rx.$neg$uart_rx.v:0$31 ($neg).
+Removed top 2 bits (of 3) from port B of cell uart_rx.$add$uart_rx.v:78$41 ($add).
+Removed top 1 bits (of 3) from port B of cell uart_rx.$procmux$103_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell uart_rx.$procmux$114_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell uart_rx.$procmux$133_CMP0 ($eq).
+Removed top 1 bits (of 3) from mux cell uart_rx.$procmux$151 ($mux).
+Removed top 1 bits (of 3) from wire uart_rx.$procmux$151_Y.
+
+2.10. Executing PEEPOPT pass (run peephole optimizers).
+
+2.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module uart_rx:
+  creating $macc model for $add$uart_rx.v:66$24 ($add).
+  creating $macc model for $add$uart_rx.v:78$41 ($add).
+  creating $macc model for $neg$uart_rx.v:0$31 ($neg).
+  creating $alu model for $macc $neg$uart_rx.v:0$31.
+  creating $alu model for $macc $add$uart_rx.v:78$41.
+  creating $alu model for $macc $add$uart_rx.v:66$24.
+  creating $alu cell for $add$uart_rx.v:66$24: $auto$alumacc.cc:485:replace_alu$214
+  creating $alu cell for $add$uart_rx.v:78$41: $auto$alumacc.cc:485:replace_alu$217
+  creating $alu cell for $neg$uart_rx.v:0$31: $auto$alumacc.cc:485:replace_alu$220
+  created 3 $alu and 0 $macc cells.
+
+2.13. Executing SHARE pass (SAT-based resource sharing).
+
+2.14. Executing OPT pass (performing simple optimizations).
+
+2.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.14.9. Finished OPT passes. (There is nothing left to do.)
+
+2.15. Executing MEMORY pass.
+
+2.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.17. Executing OPT pass (performing simple optimizations).
+
+2.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~11 debug messages>
+
+2.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+2.17.5. Finished fast OPT passes.
+
+2.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+    Consolidated identical input bits for $mux cell $procmux$151:
+      Old ports: A=2'10, B=2'00, Y=$auto$wreduce.cc:461:run$213 [1:0]
+      New ports: A=1'1, B=1'0, Y=$auto$wreduce.cc:461:run$213 [1]
+      New connections: $auto$wreduce.cc:461:run$213 [0] = 1'0
+  Optimizing cells in module \uart_rx.
+Performed a total of 1 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_SHARE pass.
+
+2.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~1 debug messages>
+
+2.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+2.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.19.14. Executing OPT_SHARE pass.
+
+2.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.19.18. Finished OPT passes. (There is nothing left to do.)
+
+2.20. Executing TECHMAP pass (map to technology primitives).
+
+2.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using template $paramod$117a422dd91271f31dcbd629d7b52dc0eb1e49ab\_90_alu for cells of type $alu.
+Using template $paramod$constmap:53f81d327ce76cbf6a8a98434119a90a4847620f$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $reduce_and.
+Analyzing pattern of constant bits for this cell:
+Creating constmapped module `$paramod$constmap:104da9d1db7a1a3d3040fc47e9181bb90c2db772$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx'.
+
+2.20.12. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$constmap:104da9d1db7a1a3d3040fc47e9181bb90c2db772$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$406.
+    dead port 2/2 on $mux $procmux$400.
+    dead port 2/2 on $mux $procmux$394.
+    dead port 2/2 on $mux $procmux$388.
+Removed 4 multiplexer ports.
+<suppressed ~347 debug messages>
+
+2.20.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$constmap:104da9d1db7a1a3d3040fc47e9181bb90c2db772$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx.
+<suppressed ~29 debug messages>
+Removed 0 unused cells and 9 unused wires.
+Using template $paramod$constmap:104da9d1db7a1a3d3040fc47e9181bb90c2db772$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$fc16b9f758000d363d24f130038bd99b46b4fa1b\_90_pmux for cells of type $pmux.
+Using template $paramod$d31bf4d7d72e59528d18fbd4f322e9d608532043\_90_pmux for cells of type $pmux.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~781 debug messages>
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~696 debug messages>
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~402 debug messages>
+Removed a total of 134 cells.
+
+2.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 28 unused cells and 495 unused wires.
+<suppressed ~29 debug messages>
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing ABC pass (technology mapping using ABC).
+
+2.22.1. Extracting gate netlist of module `\uart_rx' to `<abc-temp-dir>/input.blif'..
+Extracted 247 gates and 271 wires to a netlist network with 23 inputs and 27 outputs.
+
+2.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:        2
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:               NOR cells:        5
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               XOR cells:        8
+ABC RESULTS:               NOT cells:        6
+ABC RESULTS:              NAND cells:        8
+ABC RESULTS:             ORNOT cells:       18
+ABC RESULTS:            ANDNOT cells:       70
+ABC RESULTS:                OR cells:       66
+ABC RESULTS:        internal signals:      221
+ABC RESULTS:           input signals:       23
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+2.23. Executing OPT pass (performing simple optimizations).
+
+2.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 145 unused wires.
+<suppressed ~1 debug messages>
+
+2.23.5. Finished fast OPT passes.
+
+2.24. Executing HIERARCHY pass (managing design hierarchy).
+
+2.24.1. Analyzing design hierarchy..
+Top module:  \uart_rx
+
+2.24.2. Analyzing design hierarchy..
+Top module:  \uart_rx
+Removed 0 unused modules.
+
+2.25. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                187
+   Number of wire bits:            223
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                220
+     $_ANDNOT_                      70
+     $_AND_                          3
+     $_DFFE_PN0P_                   30
+     $_DFF_PN0_                      1
+     $_DFF_PN1_                      2
+     $_MUX_                          2
+     $_NAND_                         7
+     $_NOR_                          5
+     $_NOT_                          6
+     $_ORNOT_                       18
+     $_OR_                          66
+     $_XNOR_                         2
+     $_XOR_                          8
+
+2.26. Executing CHECK pass (checking for obvious problems).
+Checking module uart_rx...
+Found and reported 0 problems.
