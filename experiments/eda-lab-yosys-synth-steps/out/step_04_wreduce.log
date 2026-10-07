@@ -1,0 +1,156 @@
+
+-- Running command `read_ilang out/s03.il; opt; wreduce; peepopt; opt_clean; stat; write_ilang out/s04.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s03.il
+
+2. Executing OPT pass (performing simple optimizations).
+
+2.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$166 ($adff) from module uart_rx (D = \shift, Q = \data).
+Adding EN signal on $procdff$168 ($adff) from module uart_rx (D = $0\state[2:0], Q = \state).
+Adding EN signal on $procdff$169 ($adff) from module uart_rx (D = $0\clk_cnt[7:0], Q = \clk_cnt).
+Adding EN signal on $procdff$170 ($adff) from module uart_rx (D = $0\bit_idx[2:0], Q = \bit_idx).
+Adding EN signal on $procdff$171 ($adff) from module uart_rx (D = $or$uart_rx.v:0$39_Y, Q = \shift).
+
+2.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+2.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~2 debug messages>
+
+2.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+2.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+2.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+2.23. Finished OPT passes. (There is nothing left to do.)
+
+3. Executing WREDUCE pass (reducing word size of cells).
+Removed top 7 bits (of 8) from port B of cell uart_rx.$add$uart_rx.v:66$24 ($add).
+Removed top 2 bits (of 3) from port B of cell uart_rx.$add$uart_rx.v:78$41 ($add).
+Removed top 5 bits (of 8) from port B of cell uart_rx.$eq$uart_rx.v:58$22 ($eq).
+Removed top 4 bits (of 8) from port B of cell uart_rx.$eq$uart_rx.v:71$25 ($eq).
+Removed top 28 bits (of 32) from port A of cell uart_rx.$neg$uart_rx.v:0$31 ($neg).
+Converting cell uart_rx.$neg$uart_rx.v:0$31 ($neg) from signed to unsigned.
+Removed top 1 bits (of 4) from port A of cell uart_rx.$neg$uart_rx.v:0$31 ($neg).
+Removed top 1 bits (of 3) from port B of cell uart_rx.$procmux$103_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell uart_rx.$procmux$114_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell uart_rx.$procmux$133_CMP0 ($eq).
+Removed top 1 bits (of 3) from mux cell uart_rx.$procmux$151 ($mux).
+Removed top 1 bits (of 3) from wire uart_rx.$procmux$151_Y.
+
+4. Executing PEEPOPT pass (run peephole optimizers).
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+6. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 56
+   Number of wire bits:            204
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 53
+     $add                            2
+     $adff                           3
+     $adffe                          5
+     $and                            1
+     $eq                             6
+     $logic_not                      1
+     $mux                           13
+     $ne                             6
+     $neg                            1
+     $not                            1
+     $or                             1
+     $pmux                           3
+     $reduce_and                     5
+     $reduce_bool                    2
+     $reduce_or                      1
+     $shift                          2
+
+7. Executing RTLIL backend.
+Output filename: out/s04.il

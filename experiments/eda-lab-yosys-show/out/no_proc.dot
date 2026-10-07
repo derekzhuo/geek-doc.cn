@@ -1,0 +1,28 @@
+digraph "counter" {
+label="counter";
+rankdir="LR";
+remincross=true;
+n5 [ shape=octagon, label="overflow", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="count", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="en", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="rst_n", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+c12 [ shape=record, label="{{<p10> A}|$4\n$reduce_and|{<p11> Y}}",  ];
+v0 [ label="8'00000001" ];
+c14 [ shape=record, label="{{<p10> A|<p13> B}|$3\n$add|{<p11> Y}}",  ];
+c15 [ shape=record, label="{{<p10> A}|$2\n$logic_not|{<p11> Y}}",  ];
+p1 [shape=box, style=rounded, label="PROC $1\ncounter.v:9.5-14.8"];
+x2 [shape=box, style=rounded, label="BUF", ];
+c12:p11:e -> x2:w [color="black", fontcolor="black", label=""];
+c14:p11:e -> p1:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c15:p11:e -> p1:w [color="black", fontcolor="black", label=""];
+x2:e -> n5:w [color="black", fontcolor="black", label=""];
+p1:e -> n6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> c12:p10:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> c14:p10:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> p1:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n7:e -> p1:w [color="black", fontcolor="black", label=""];
+n8:e -> c15:p10:w [color="black", fontcolor="black", label=""];
+n9:e -> p1:w [color="black", fontcolor="black", label=""];
+v0:e -> c14:p13:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

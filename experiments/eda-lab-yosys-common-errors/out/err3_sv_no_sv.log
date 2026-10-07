@@ -1,0 +1,6 @@
+
+-- Running command `read_verilog err_sv_syntax.v' --
+
+1. Executing Verilog-2005 frontend: err_sv_syntax.v
+err_sv_syntax.v:4: ERROR: syntax error, unexpected TOK_ID, expecting ',' or '=' or ')'
+exit=1

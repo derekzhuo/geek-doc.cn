@@ -1,0 +1,44 @@
+
+-- Running command `read_ilang out/s09.il; hierarchy -check; stat; check' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s09.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \uart_rx
+
+2.2. Analyzing design hierarchy..
+Top module:  \uart_rx
+Removed 0 unused modules.
+
+3. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                190
+   Number of wire bits:            226
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                223
+     $_ANDNOT_                      71
+     $_AND_                          2
+     $_DFFE_PN0P_                   30
+     $_DFF_PN0_                      1
+     $_DFF_PN1_                      2
+     $_MUX_                          1
+     $_NAND_                         8
+     $_NOR_                          6
+     $_NOT_                          5
+     $_ORNOT_                       14
+     $_OR_                          73
+     $_XNOR_                         2
+     $_XOR_                          8
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module uart_rx...
+Found and reported 0 problems.

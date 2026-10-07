@@ -1,0 +1,106 @@
+
+-- Running command `read_ilang out/s07.il; techmap; stat; write_ilang out/s08.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s07.il
+
+2. Executing TECHMAP pass (map to technology primitives).
+
+2.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$117a422dd91271f31dcbd629d7b52dc0eb1e49ab\_90_alu for cells of type $alu.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$fc16b9f758000d363d24f130038bd99b46b4fa1b\_90_pmux for cells of type $pmux.
+Using template $paramod$d31bf4d7d72e59528d18fbd4f322e9d608532043\_90_pmux for cells of type $pmux.
+Using template $paramod$constmap:659862615309041be37d3c7edb0a108fadebc1a0$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx for cells of type $shift.
+Analyzing pattern of constant bits for this cell:
+Creating constmapped module `$paramod$constmap:063dc8fdea4c5950dd812efc4d79373ec406bb97$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx'.
+
+2.18. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$constmap:063dc8fdea4c5950dd812efc4d79373ec406bb97$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$641.
+    dead port 2/2 on $mux $procmux$635.
+    dead port 2/2 on $mux $procmux$629.
+    dead port 2/2 on $mux $procmux$623.
+Removed 4 multiplexer ports.
+<suppressed ~430 debug messages>
+
+2.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$constmap:063dc8fdea4c5950dd812efc4d79373ec406bb97$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx.
+<suppressed ~29 debug messages>
+Removed 0 unused cells and 9 unused wires.
+Using template $paramod$constmap:063dc8fdea4c5950dd812efc4d79373ec406bb97$paramod$21dee603dc19e4530a14795556c80eafcc4f26b8\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~698 debug messages>
+
+3. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                560
+   Number of wire bits:           9381
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1022
+     $_AND_                        191
+     $_DFFE_PN0P_                   30
+     $_DFF_PN0_                      1
+     $_DFF_PN1_                      2
+     $_MUX_                        364
+     $_NOT_                         59
+     $_OR_                         190
+     $_XOR_                        185
+
+4. Executing RTLIL backend.
+Output filename: out/s08.il

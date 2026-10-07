@@ -1,0 +1,12 @@
+digraph "counter" {
+label="counter";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+v0 [ label="count" ];
+c6 [ shape=record, label="{{<p3> CLK|<p4> D}|$10\n$dff|{<p5> Q}}",  ];
+n1 [ shape=diamond, label="$8_Y" ];
+n1:e -> c6:p4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n2:e -> c6:p3:w [color="black", fontcolor="black", label=""];
+c6:p5:e -> v0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

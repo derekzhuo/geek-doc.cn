@@ -1,0 +1,66 @@
+
+-- Running command `read_ilang out/s05.il; memory -nomap; opt_clean; stat; write_ilang out/s06.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s05.il
+
+2. Executing MEMORY pass.
+
+2.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+4. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 62
+   Number of wire bits:            290
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 53
+     $adff                           3
+     $adffe                          5
+     $alu                            3
+     $and                            1
+     $eq                             6
+     $logic_not                      1
+     $mux                           13
+     $ne                             6
+     $not                            1
+     $or                             1
+     $pmux                           3
+     $reduce_and                     5
+     $reduce_bool                    2
+     $reduce_or                      1
+     $shift                          2
+
+5. Executing RTLIL backend.
+Output filename: out/s06.il

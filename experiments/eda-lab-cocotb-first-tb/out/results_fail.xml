@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="cocotb tests"><testsuite name="test_counter" errors="0" failures="2" skipped="0" tests="3" time="0.003" timestamp="2026-10-07T15:27:07.230452+00:00" hostname="7b5906e72d23"><testcase classname="test_counter" name="test_reset" time="0.001"><failure message="assert (0 == 1 or not True)&#10; +  where 0 = to_unsigned()&#10; +    where to_unsigned = LogicArray('0000', Range(3, 'downto', 0)).to_unsigned&#10; +      where LogicArray('0000', Range(3, 'downto', 0)) = PackedObject(counter.count).value&#10; +        where PackedObject(counter.count) = HierarchyObject(counter with definition counter (at /work/eda-lab-cocotb-first-tb/counter.v)).count" type="AssertionError">Traceback (most recent call last):
+  File "/work/eda-lab-cocotb-first-tb/test_counter.py", line 43, in test_reset
+    assert dut.count.value.to_unsigned() == RESET_VALUE or not INJECT_BUG
+AssertionError: assert (0 == 1 or not True)
+ +  where 0 = to_unsigned()
+ +    where to_unsigned = LogicArray('0000', Range(3, 'downto', 0)).to_unsigned
+ +      where LogicArray('0000', Range(3, 'downto', 0)) = PackedObject(counter.count).value
+ +        where PackedObject(counter.count) = HierarchyObject(counter with definition counter (at /work/eda-lab-cocotb-first-tb/counter.v)).count
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1" /><property name="file" value="/work/eda-lab-cocotb-first-tb/test_counter.py" /><property name="line" value="36" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="0.0" /><property name="sim_time_stop" value="30.0" /><property name="sim_time_duration" value="30.0" /><property name="sim_time_ratio" value="33425.55071809187" /></properties><system-err>Test failed with COCOTB_RANDOM_SEED=1
+</system-err></testcase><testcase classname="test_counter" name="test_enable_hold" time="0.002"><properties><property name="cocotb" value="True" /><property name="random_seed" value="1" /><property name="file" value="/work/eda-lab-cocotb-first-tb/test_counter.py" /><property name="line" value="47" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="30.001" /><property name="sim_time_stop" value="170.001" /><property name="sim_time_duration" value="140.0" /><property name="sim_time_ratio" value="89685.29430862244" /></properties></testcase><testcase classname="test_counter" name="test_random_count" time="0.000"><failure message="cycle 0: count=1, expect 2 (en=1)&#10;assert 1 == 2" type="AssertionError">Traceback (most recent call last):
+  File "/work/eda-lab-cocotb-first-tb/test_counter.py", line 96, in test_random_count
+    assert actual_count == expected, (
+AssertionError: cycle 0: count=1, expect 2 (en=1)
+assert 1 == 2
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1" /><property name="file" value="/work/eda-lab-cocotb-first-tb/test_counter.py" /><property name="line" value="71" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="170.002" /><property name="sim_time_stop" value="220.002" /><property name="sim_time_duration" value="50.0" /><property name="sim_time_ratio" value="101609.08147321918" /></properties><system-err>Test failed with COCOTB_RANDOM_SEED=1
+</system-err></testcase></testsuite></testsuites>

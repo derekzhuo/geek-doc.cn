@@ -1,0 +1,68 @@
+
+-- Running command `read_verilog err_multidriver.v; hierarchy -top dual_drive; proc; check' --
+
+1. Executing Verilog-2005 frontend: err_multidriver.v
+Parsing Verilog input from `err_multidriver.v' to AST representation.
+Generating RTLIL representation for module `\dual_drive'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \dual_drive
+
+2.2. Analyzing design hierarchy..
+Top module:  \dual_drive
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$err_multidriver.v:10$1 in module dual_drive.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 1 assignment to connection.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\dual_drive.$proc$err_multidriver.v:10$1'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\dual_drive.$proc$err_multidriver.v:15$4'.
+Creating decoders for process `\dual_drive.$proc$err_multidriver.v:10$1'.
+     1/1: $0\cnt[0:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\dual_drive.\cnt' using process `\dual_drive.$proc$err_multidriver.v:15$4'.
+  created $dff cell `$procdff$5' with positive edge clock.
+Creating register for signal `\dual_drive.\cnt' using process `\dual_drive.$proc$err_multidriver.v:10$1'.
+  created $adff cell `$procdff$6' with positive edge clock and negative level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `dual_drive.$proc$err_multidriver.v:15$4'.
+Removing empty process `dual_drive.$proc$err_multidriver.v:10$1'.
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dual_drive.
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module dual_drive...
+Warning: multiple conflicting drivers for dual_drive.\cnt:
+    port Q[0] of cell $procdff$6 ($adff)
+    port Q[0] of cell $procdff$5 ($dff)
+Found and reported 1 problems.
+exit=0

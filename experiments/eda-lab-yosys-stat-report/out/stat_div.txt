@@ -1,0 +1,23 @@
+
+3. Printing statistics.
+
+=== baud_clk_div ===
+
+   Number of wires:                 15
+   Number of wire bits:             27
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $_ANDNOT_                       2
+     $_AND_                          2
+     $_NAND_                         1
+     $_NOT_                          1
+     $_ORNOT_                        3
+     $_OR_                           1
+     $_SDFF_PN0_                     1
+     $_SDFF_PP0_                     5
+     $_XOR_                          4
+

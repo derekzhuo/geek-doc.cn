@@ -1,0 +1,10 @@
+
+-- Running command `read_verilog err_undeclared.v' --
+
+1. Executing Verilog-2005 frontend: err_undeclared.v
+Parsing Verilog input from `err_undeclared.v' to AST representation.
+Generating RTLIL representation for module `\blink'.
+err_undeclared.v:10: Warning: Identifier `\tick' is implicitly declared.
+err_undeclared.v:10: Warning: Identifier `\en' is implicitly declared.
+Successfully finished Verilog frontend.
+exit=0

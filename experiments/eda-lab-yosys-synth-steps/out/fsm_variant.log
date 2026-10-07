@@ -1,0 +1,349 @@
+
+-- Running command `read_verilog uart_rx_noselfreset.v; hierarchy -check -top uart_rx; proc; opt_expr; opt_clean; check; opt -nodffe -nosdff; fsm; stat' --
+
+1. Executing Verilog-2005 frontend: uart_rx_noselfreset.v
+Parsing Verilog input from `uart_rx_noselfreset.v' to AST representation.
+Generating RTLIL representation for module `\uart_rx'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \uart_rx
+
+2.2. Analyzing design hierarchy..
+Top module:  \uart_rx
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 7 switch rules as full_case in process $proc$uart_rx_noselfreset.v:38$7 in module uart_rx.
+Marked 1 switch rules as full_case in process $proc$uart_rx_noselfreset.v:27$4 in module uart_rx.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 5 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+Found async reset \rst_n in `\uart_rx.$proc$uart_rx_noselfreset.v:27$4'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+     1/17: $3$lookahead\shift$6[7:0]$29
+     2/17: $3$bitselwrite$data$uart_rx_noselfreset.v:73$2[7:0]$27
+     3/17: $3$bitselwrite$mask$uart_rx_noselfreset.v:73$1[7:0]$26
+     4/17: $3$bitselwrite$sel$uart_rx_noselfreset.v:73$3[2:0]$28
+     5/17: $2$lookahead\shift$6[7:0]$20
+     6/17: $2$bitselwrite$sel$uart_rx_noselfreset.v:73$3[2:0]$19
+     7/17: $2$bitselwrite$data$uart_rx_noselfreset.v:73$2[7:0]$18
+     8/17: $2$bitselwrite$mask$uart_rx_noselfreset.v:73$1[7:0]$17
+     9/17: $1$lookahead\shift$6[7:0]$16
+    10/17: $1$bitselwrite$sel$uart_rx_noselfreset.v:73$3[2:0]$15
+    11/17: $1$bitselwrite$data$uart_rx_noselfreset.v:73$2[7:0]$14
+    12/17: $1$bitselwrite$mask$uart_rx_noselfreset.v:73$1[7:0]$13
+    13/17: $0\data_valid[0:0]
+    14/17: $0\bit_idx[2:0]
+    15/17: $0\clk_cnt[7:0]
+    16/17: $0\state[2:0]
+    17/17: $0\data[7:0]
+Creating decoders for process `\uart_rx.$proc$uart_rx_noselfreset.v:27$4'.
+     1/2: $0\rxd_sync_d[0:0]
+     2/2: $0\rxd_sync[0:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\uart_rx.\data' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$166' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\data_valid' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$167' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\state' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$168' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\clk_cnt' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$169' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\bit_idx' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$170' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\shift' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$171' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$mask$uart_rx_noselfreset.v:73$1' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$172' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$data$uart_rx_noselfreset.v:73$2' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$173' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$bitselwrite$sel$uart_rx_noselfreset.v:73$3' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$174' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.$lookahead\shift$6' using process `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+  created $adff cell `$procdff$175' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\rxd_sync' using process `\uart_rx.$proc$uart_rx_noselfreset.v:27$4'.
+  created $adff cell `$procdff$176' with positive edge clock and negative level reset.
+Creating register for signal `\uart_rx.\rxd_sync_d' using process `\uart_rx.$proc$uart_rx_noselfreset.v:27$4'.
+  created $adff cell `$procdff$177' with positive edge clock and negative level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+Removing empty process `uart_rx.$proc$uart_rx_noselfreset.v:38$7'.
+Removing empty process `uart_rx.$proc$uart_rx_noselfreset.v:27$4'.
+Cleaned up 7 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~9 debug messages>
+
+4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+<suppressed ~2 debug messages>
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 23 unused cells and 68 unused wires.
+<suppressed ~26 debug messages>
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module uart_rx...
+Found and reported 0 problems.
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~42 debug messages>
+Removed a total of 14 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$51.
+Removed 1 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 0 unused cells and 16 unused wires.
+<suppressed ~1 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+    New ctrl vector for $pmux cell $procmux$121: { $procmux$115_CMP $procmux$133_CMP $auto$opt_reduce.cc:134:opt_pmux$179 }
+  Optimizing cells in module \uart_rx.
+Performed a total of 1 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+7.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+7.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+7.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+7.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+7.23. Finished OPT passes. (There is nothing left to do.)
+
+8. Executing FSM pass (extract and optimize FSM).
+
+8.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register uart_rx.state.
+
+8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state' from module `\uart_rx'.
+  found $adff cell for state register: $procdff$168
+  root of input selection tree: $0\state[2:0]
+  found reset state: 3'000 (from async reset)
+  found ctrl input: $procmux$137_CMP
+  found ctrl input: $procmux$103_CMP
+  found ctrl input: $procmux$114_CMP
+  found ctrl input: $procmux$133_CMP
+  found ctrl input: $procmux$115_CMP
+  found ctrl input: $eq$uart_rx_noselfreset.v:71$25_Y
+  found state code: 3'100
+  found ctrl input: $eq$uart_rx_noselfreset.v:74$40_Y
+  found state code: 3'011
+  found ctrl input: $eq$uart_rx_noselfreset.v:58$22_Y
+  found ctrl input: \rxd_sync_d
+  found state code: 3'010
+  found state code: 3'001
+  found ctrl output: $procmux$103_CMP
+  found ctrl output: $procmux$114_CMP
+  found ctrl output: $procmux$115_CMP
+  found ctrl output: $procmux$133_CMP
+  found ctrl output: $procmux$137_CMP
+  ctrl inputs: { $eq$uart_rx_noselfreset.v:74$40_Y $eq$uart_rx_noselfreset.v:71$25_Y $eq$uart_rx_noselfreset.v:58$22_Y \rxd_sync_d }
+  ctrl outputs: { $procmux$137_CMP $procmux$133_CMP $procmux$115_CMP $procmux$114_CMP $procmux$103_CMP $0\state[2:0] }
+  transition:      3'000 4'---0 ->      3'001 8'00100001
+  transition:      3'000 4'---1 ->      3'000 8'00100000
+  transition:      3'100 4'---- ->      3'000 8'10000000
+  transition:      3'010 4'-0-- ->      3'010 8'00010010
+  transition:      3'010 4'01-- ->      3'010 8'00010010
+  transition:      3'010 4'11-- ->      3'011 8'00010011
+  transition:      3'001 4'--0- ->      3'001 8'01000001
+  transition:      3'001 4'--10 ->      3'010 8'01000010
+  transition:      3'001 4'--11 ->      3'000 8'01000000
+  transition:      3'011 4'-0-- ->      3'011 8'00001011
+  transition:      3'011 4'-1-- ->      3'100 8'00001100
+
+8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$180' from module `\uart_rx'.
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+Removed 13 unused cells and 13 unused wires.
+<suppressed ~14 debug messages>
+
+8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$180' from module `\uart_rx'.
+  Removing unused output signal $0\state[2:0] [0].
+  Removing unused output signal $0\state[2:0] [1].
+  Removing unused output signal $0\state[2:0] [2].
+  Removing unused output signal $procmux$137_CMP.
+
+8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state$180' from module `\uart_rx' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ----1
+  100 -> ---1-
+  010 -> --1--
+  001 -> -1---
+  011 -> 1----
+
+8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state$180' from module `uart_rx':
+-------------------------------------
+
+  Information on FSM $fsm$\state$180 (\state):
+
+  Number of input signals:    4
+  Number of output signals:   4
+  Number of state bits:       5
+
+  Input signals:
+    0: \rxd_sync_d
+    1: $eq$uart_rx_noselfreset.v:58$22_Y
+    2: $eq$uart_rx_noselfreset.v:71$25_Y
+    3: $eq$uart_rx_noselfreset.v:74$40_Y
+
+  Output signals:
+    0: $procmux$103_CMP
+    1: $procmux$114_CMP
+    2: $procmux$115_CMP
+    3: $procmux$133_CMP
+
+  State encoding:
+    0:    5'----1  <RESET STATE>
+    1:    5'---1-
+    2:    5'--1--
+    3:    5'-1---
+    4:    5'1----
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 4'---1   ->     0 4'0100
+      1:     0 4'---0   ->     3 4'0100
+      2:     1 4'----   ->     0 4'0000
+      3:     2 4'-0--   ->     2 4'0010
+      4:     2 4'01--   ->     2 4'0010
+      5:     2 4'11--   ->     4 4'0010
+      6:     3 4'--11   ->     0 4'1000
+      7:     3 4'--10   ->     2 4'1000
+      8:     3 4'--0-   ->     3 4'1000
+      9:     4 4'-1--   ->     1 4'0001
+     10:     4 4'-0--   ->     4 4'0001
+
+-------------------------------------
+
+8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state$180' from module `\uart_rx'.
+
+9. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 65
+   Number of wire bits:            243
+   Number of public wires:          11
+   Number of public wire bits:      38
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 57
+     $add                            2
+     $adff                           8
+     $and                           11
+     $eq                            13
+     $mux                           11
+     $neg                            1
+     $not                            1
+     $or                             1
+     $pmux                           2
+     $reduce_or                      5
+     $shift                          2
+

@@ -1,0 +1,54 @@
+
+-- Running command `read_ilang out/s02.il; fsm; stat; write_ilang out/s03.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s02.il
+
+2. Executing FSM pass (extract and optimize FSM).
+
+2.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking uart_rx.state as FSM state register:
+    Circuit seems to be self-resetting.
+
+2.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+2.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 47
+   Number of wire bits:            223
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 44
+     $add                            2
+     $adff                           8
+     $and                            1
+     $eq                             6
+     $logic_not                      1
+     $mux                           17
+     $neg                            1
+     $not                            1
+     $or                             1
+     $pmux                           3
+     $reduce_or                      1
+     $shift                          2
+
+4. Executing RTLIL backend.
+Output filename: out/s03.il

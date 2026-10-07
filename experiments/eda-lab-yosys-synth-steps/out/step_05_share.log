@@ -1,0 +1,86 @@
+
+-- Running command `read_ilang out/s04.il; alumacc; share; opt; stat; write_ilang out/s05.il' --
+
+1. Executing RTLIL frontend.
+Input filename: out/s04.il
+
+2. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module uart_rx:
+  creating $macc model for $neg$uart_rx.v:0$31 ($neg).
+  creating $macc model for $add$uart_rx.v:78$41 ($add).
+  creating $macc model for $add$uart_rx.v:66$24 ($add).
+  creating $alu model for $macc $add$uart_rx.v:66$24.
+  creating $alu model for $macc $add$uart_rx.v:78$41.
+  creating $alu model for $macc $neg$uart_rx.v:0$31.
+  creating $alu cell for $neg$uart_rx.v:0$31: $auto$alumacc.cc:485:replace_alu$214
+  creating $alu cell for $add$uart_rx.v:78$41: $auto$alumacc.cc:485:replace_alu$217
+  creating $alu cell for $add$uart_rx.v:66$24: $auto$alumacc.cc:485:replace_alu$220
+  created 3 $alu and 0 $macc cells.
+
+3. Executing SHARE pass (SAT-based resource sharing).
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_rx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_rx.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_rx'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_rx..
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_rx.
+
+4.9. Finished OPT passes. (There is nothing left to do.)
+
+5. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 62
+   Number of wire bits:            290
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 53
+     $adff                           3
+     $adffe                          5
+     $alu                            3
+     $and                            1
+     $eq                             6
+     $logic_not                      1
+     $mux                           13
+     $ne                             6
+     $not                            1
+     $or                             1
+     $pmux                           3
+     $reduce_and                     5
+     $reduce_bool                    2
+     $reduce_or                      1
+     $shift                          2
+
+6. Executing RTLIL backend.
+Output filename: out/s05.il

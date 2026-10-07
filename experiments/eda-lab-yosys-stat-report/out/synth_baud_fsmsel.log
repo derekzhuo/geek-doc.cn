@@ -1,0 +1,1258 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog baud_top.v baud_clk_div.v baud_bit_cnt.v baud_tx_fsm.v; synth -top baud_top; select baud_tx_fsm; tee -o out/stat_baud_fsm_sel.txt stat' --
+
+1. Executing Verilog-2005 frontend: baud_top.v
+Parsing Verilog input from `baud_top.v' to AST representation.
+Generating RTLIL representation for module `\baud_top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: baud_clk_div.v
+Parsing Verilog input from `baud_clk_div.v' to AST representation.
+Generating RTLIL representation for module `\baud_clk_div'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: baud_bit_cnt.v
+Parsing Verilog input from `baud_bit_cnt.v' to AST representation.
+Generating RTLIL representation for module `\baud_bit_cnt'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: baud_tx_fsm.v
+Parsing Verilog input from `baud_tx_fsm.v' to AST representation.
+Generating RTLIL representation for module `\baud_tx_fsm'.
+Successfully finished Verilog frontend.
+
+5. Executing SYNTH pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \baud_top
+Used module:     \baud_tx_fsm
+Used module:     \baud_bit_cnt
+Used module:     \baud_clk_div
+Parameter \DIV = 27
+
+5.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\baud_clk_div'.
+Parameter \DIV = 27
+Generating RTLIL representation for module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+
+5.1.3. Analyzing design hierarchy..
+Top module:  \baud_top
+Used module:     \baud_tx_fsm
+Used module:     \baud_bit_cnt
+Used module:     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011
+
+5.1.4. Analyzing design hierarchy..
+Top module:  \baud_top
+Used module:     \baud_tx_fsm
+Used module:     \baud_bit_cnt
+Used module:     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011
+Removing unused module `\baud_clk_div'.
+Removed 1 unused modules.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$baud_tx_fsm.v:24$9 in module baud_tx_fsm.
+Marked 5 switch rules as full_case in process $proc$baud_tx_fsm.v:24$9 in module baud_tx_fsm.
+Marked 2 switch rules as full_case in process $proc$baud_bit_cnt.v:10$5 in module baud_bit_cnt.
+Marked 2 switch rules as full_case in process $proc$baud_clk_div.v:12$18 in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Removed a total of 1 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+5.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+     1/7: $0\clr[0:0]
+     2/7: $0\inc[0:0]
+     3/7: $0\tx[0:0]
+     4/7: $0\shreg[7:0]
+     5/7: $0\oversample[3:0]
+     6/7: $0\state[1:0]
+     7/7: $0\busy[0:0]
+Creating decoders for process `\baud_bit_cnt.$proc$baud_bit_cnt.v:10$5'.
+     1/1: $0\bit_idx[2:0]
+Creating decoders for process `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.$proc$baud_clk_div.v:12$18'.
+     1/2: $0\tick[0:0]
+     2/2: $0\cnt[4:0]
+
+5.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\baud_tx_fsm.\tx' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$145' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\busy' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$146' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\inc' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$147' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\clr' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$148' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\state' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$149' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\oversample' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$150' with positive edge clock.
+Creating register for signal `\baud_tx_fsm.\shreg' using process `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+  created $dff cell `$procdff$151' with positive edge clock.
+Creating register for signal `\baud_bit_cnt.\bit_idx' using process `\baud_bit_cnt.$proc$baud_bit_cnt.v:10$5'.
+  created $dff cell `$procdff$152' with positive edge clock.
+Creating register for signal `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.\tick' using process `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.$proc$baud_clk_div.v:12$18'.
+  created $dff cell `$procdff$153' with positive edge clock.
+Creating register for signal `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.\cnt' using process `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.$proc$baud_clk_div.v:12$18'.
+  created $dff cell `$procdff$154' with positive edge clock.
+
+5.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 10 empty switches in `\baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+Removing empty process `baud_tx_fsm.$proc$baud_tx_fsm.v:24$9'.
+Found and cleaned up 3 empty switches in `\baud_bit_cnt.$proc$baud_bit_cnt.v:10$5'.
+Removing empty process `baud_bit_cnt.$proc$baud_bit_cnt.v:10$5'.
+Found and cleaned up 2 empty switches in `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.$proc$baud_clk_div.v:12$18'.
+Removing empty process `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.$proc$baud_clk_div.v:12$18'.
+Cleaned up 15 empty switches.
+
+5.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+<suppressed ~13 debug messages>
+Optimizing module baud_bit_cnt.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+<suppressed ~2 debug messages>
+Optimizing module baud_top.
+
+5.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module baud_tx_fsm.
+Optimizing module baud_bit_cnt.
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_top.
+
+5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \baud_tx_fsm..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_top..
+Removed 3 unused cells and 49 unused wires.
+<suppressed ~6 debug messages>
+
+5.5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011...
+Checking module baud_bit_cnt...
+Checking module baud_top...
+Checking module baud_tx_fsm...
+Found and reported 0 problems.
+
+5.6. Executing OPT pass (performing simple optimizations).
+
+5.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~51 debug messages>
+Removed a total of 17 cells.
+
+5.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+5.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+    New ctrl vector for $pmux cell $procmux$43: { $procmux$108_CMP $procmux$102_CMP $auto$opt_reduce.cc:134:opt_pmux$156 }
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 1 changes.
+
+5.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+5.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 20 unused wires.
+<suppressed ~1 debug messages>
+
+5.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~11 debug messages>
+
+5.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+    New ctrl vector for $pmux cell $procmux$70: { $procmux$111_CMP $auto$opt_reduce.cc:134:opt_pmux$158 $procmux$44_CMP }
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 1 changes.
+
+5.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~11 debug messages>
+
+5.6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+5.6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.6.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.6.23. Finished OPT passes. (There is nothing left to do.)
+
+5.7. Executing FSM pass (extract and optimize FSM).
+
+5.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register baud_tx_fsm.state.
+
+5.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state' from module `\baud_tx_fsm'.
+  found $dff cell for state register: $procdff$149
+  root of input selection tree: $0\state[1:0]
+  found reset state: 2'00 (guessed from mux tree)
+  found ctrl input: \rst_n
+  found state code: 2'00
+  found ctrl input: $procmux$44_CMP
+  found ctrl input: $procmux$102_CMP
+  found ctrl input: $procmux$108_CMP
+  found ctrl input: $procmux$111_CMP
+  found ctrl input: $logic_and$baud_tx_fsm.v:73$16_Y
+  found ctrl input: \tick
+  found ctrl input: $eq$baud_tx_fsm.v:51$11_Y
+  found ctrl input: \last
+  found state code: 2'11
+  found state code: 2'10
+  found ctrl input: \tx_start
+  found state code: 2'01
+  found ctrl output: $procmux$44_CMP
+  found ctrl output: $procmux$102_CMP
+  found ctrl output: $procmux$108_CMP
+  found ctrl output: $procmux$111_CMP
+  ctrl inputs: { $logic_and$baud_tx_fsm.v:73$16_Y $eq$baud_tx_fsm.v:51$11_Y \last \tick \tx_start \rst_n }
+  ctrl outputs: { $procmux$111_CMP $procmux$108_CMP $procmux$102_CMP $procmux$44_CMP $0\state[1:0] }
+  transition:       2'00 6'-----0 ->       2'00 6'100000
+  transition:       2'00 6'----01 ->       2'00 6'100000
+  transition:       2'00 6'----11 ->       2'01 6'100001
+  transition:       2'10 6'-----0 ->       2'00 6'001000
+  transition:       2'10 6'---0-1 ->       2'10 6'001010
+  transition:       2'10 6'-0-1-1 ->       2'10 6'001010
+  transition:       2'10 6'-101-1 ->       2'10 6'001010
+  transition:       2'10 6'-111-1 ->       2'11 6'001011
+  transition:       2'01 6'-----0 ->       2'00 6'010000
+  transition:       2'01 6'---0-1 ->       2'01 6'010001
+  transition:       2'01 6'-0-1-1 ->       2'01 6'010001
+  transition:       2'01 6'-1-1-1 ->       2'10 6'010010
+  transition:       2'11 6'-----0 ->       2'00 6'000100
+  transition:       2'11 6'0----1 ->       2'11 6'000111
+  transition:       2'11 6'1----1 ->       2'00 6'000100
+
+5.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$159' from module `\baud_tx_fsm'.
+
+5.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 14 unused cells and 14 unused wires.
+<suppressed ~15 debug messages>
+
+5.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$159' from module `\baud_tx_fsm'.
+  Removing unused output signal $0\state[1:0] [0].
+  Removing unused output signal $0\state[1:0] [1].
+
+5.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state$159' from module `\baud_tx_fsm' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> ---1
+  10 -> --1-
+  01 -> -1--
+  11 -> 1---
+
+5.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state$159' from module `baud_tx_fsm':
+-------------------------------------
+
+  Information on FSM $fsm$\state$159 (\state):
+
+  Number of input signals:    6
+  Number of output signals:   4
+  Number of state bits:       4
+
+  Input signals:
+    0: \rst_n
+    1: \tx_start
+    2: \tick
+    3: \last
+    4: $eq$baud_tx_fsm.v:51$11_Y
+    5: $logic_and$baud_tx_fsm.v:73$16_Y
+
+  Output signals:
+    0: $procmux$44_CMP
+    1: $procmux$102_CMP
+    2: $procmux$108_CMP
+    3: $procmux$111_CMP
+
+  State encoding:
+    0:     4'---1  <RESET STATE>
+    1:     4'--1-
+    2:     4'-1--
+    3:     4'1---
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 6'-----0   ->     0 4'1000
+      1:     0 6'----01   ->     0 4'1000
+      2:     0 6'----11   ->     2 4'1000
+      3:     1 6'-----0   ->     0 4'0010
+      4:     1 6'---0-1   ->     1 4'0010
+      5:     1 6'-101-1   ->     1 4'0010
+      6:     1 6'-0-1-1   ->     1 4'0010
+      7:     1 6'-111-1   ->     3 4'0010
+      8:     2 6'-----0   ->     0 4'0100
+      9:     2 6'-1-1-1   ->     1 4'0100
+     10:     2 6'---0-1   ->     2 4'0100
+     11:     2 6'-0-1-1   ->     2 4'0100
+     12:     3 6'-----0   ->     0 4'0001
+     13:     3 6'1----1   ->     0 4'0001
+     14:     3 6'0----1   ->     3 4'0001
+
+-------------------------------------
+
+5.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state$159' from module `\baud_tx_fsm'.
+
+5.8. Executing OPT pass (performing simple optimizations).
+
+5.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+<suppressed ~1 debug messages>
+
+5.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+5.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+5.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+5.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$154 ($dff) from module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011 (D = $add$baud_clk_div.v:20$21_Y, Q = \cnt, rval = 5'00000).
+Adding SRST signal on $procdff$153 ($dff) from module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011 (D = $procmux$134_Y, Q = \tick, rval = 1'0).
+Adding SRST signal on $procdff$152 ($dff) from module baud_bit_cnt (D = $procmux$125_Y, Q = \bit_idx, rval = 3'000).
+Adding EN signal on $auto$ff.cc:266:slice$225 ($sdff) from module baud_bit_cnt (D = $add$baud_bit_cnt.v:16$7_Y, Q = \bit_idx).
+Adding SRST signal on $procdff$151 ($dff) from module baud_tx_fsm (D = $procmux$57_Y, Q = \shreg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$231 ($sdff) from module baud_tx_fsm (D = $procmux$57_Y, Q = \shreg).
+Adding SRST signal on $procdff$150 ($dff) from module baud_tx_fsm (D = $procmux$70_Y, Q = \oversample, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$243 ($sdff) from module baud_tx_fsm (D = $procmux$70_Y, Q = \oversample).
+Adding SRST signal on $procdff$148 ($dff) from module baud_tx_fsm (D = $procmux$118_Y, Q = \clr, rval = 1'0).
+Adding SRST signal on $procdff$147 ($dff) from module baud_tx_fsm (D = $procmux$34_Y, Q = \inc, rval = 1'0).
+Adding SRST signal on $procdff$146 ($dff) from module baud_tx_fsm (D = $procmux$120_Y, Q = \busy, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$263 ($sdff) from module baud_tx_fsm (D = $procmux$118_Y, Q = \busy).
+Adding SRST signal on $procdff$145 ($dff) from module baud_tx_fsm (D = $procmux$43_Y, Q = \tx, rval = 1'1).
+
+5.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 16 unused cells and 25 unused wires.
+<suppressed ~19 debug messages>
+
+5.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+<suppressed ~2 debug messages>
+
+5.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+5.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+5.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.8.23. Finished OPT passes. (There is nothing left to do.)
+
+5.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 4 bits (of 5) from port B of cell $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.$add$baud_clk_div.v:20$21 ($add).
+Removed top 2 bits (of 3) from port B of cell baud_bit_cnt.$add$baud_bit_cnt.v:16$7 ($add).
+Removed top 1 bits (of 3) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$206 ($eq).
+Removed top 3 bits (of 4) from port B of cell baud_tx_fsm.$add$baud_tx_fsm.v:55$12 ($add).
+Removed top 1 bits (of 2) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$215 ($eq).
+Removed top 1 bits (of 2) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$202 ($eq).
+Removed top 1 bits (of 2) from port B of cell baud_tx_fsm.$auto$fsm_map.cc:77:implement_pattern_cache$172 ($eq).
+
+5.10. Executing PEEPOPT pass (run peephole optimizers).
+
+5.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011:
+  creating $macc model for $add$baud_clk_div.v:20$21 ($add).
+  creating $alu model for $macc $add$baud_clk_div.v:20$21.
+  creating $alu cell for $add$baud_clk_div.v:20$21: $auto$alumacc.cc:485:replace_alu$266
+  created 1 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module baud_bit_cnt:
+  creating $macc model for $add$baud_bit_cnt.v:16$7 ($add).
+  creating $alu model for $macc $add$baud_bit_cnt.v:16$7.
+  creating $alu cell for $add$baud_bit_cnt.v:16$7: $auto$alumacc.cc:485:replace_alu$269
+  created 1 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module baud_top:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module baud_tx_fsm:
+  creating $macc model for $add$baud_tx_fsm.v:55$12 ($add).
+  creating $alu model for $macc $add$baud_tx_fsm.v:55$12.
+  creating $alu cell for $add$baud_tx_fsm.v:55$12: $auto$alumacc.cc:485:replace_alu$272
+  created 1 $alu and 0 $macc cells.
+
+5.13. Executing SHARE pass (SAT-based resource sharing).
+
+5.14. Executing OPT pass (performing simple optimizations).
+
+5.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+5.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.14.9. Finished OPT passes. (There is nothing left to do.)
+
+5.15. Executing MEMORY pass.
+
+5.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.17. Executing OPT pass (performing simple optimizations).
+
+5.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+<suppressed ~1 debug messages>
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+<suppressed ~12 debug messages>
+
+5.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~2 debug messages>
+
+5.17.5. Finished fast OPT passes.
+
+5.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5.19. Executing OPT pass (performing simple optimizations).
+
+5.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_bit_cnt..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \baud_tx_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+5.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+  Optimizing cells in module \baud_bit_cnt.
+  Optimizing cells in module \baud_top.
+  Optimizing cells in module \baud_tx_fsm.
+Performed a total of 0 changes.
+
+5.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.19.6. Executing OPT_SHARE pass.
+
+5.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+
+5.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+
+5.19.10. Finished OPT passes. (There is nothing left to do.)
+
+5.20. Executing TECHMAP pass (map to technology primitives).
+
+5.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $dff.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$bf2533632d512eac76dd186c0da49367e29b8e98\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~614 debug messages>
+
+5.21. Executing OPT pass (performing simple optimizations).
+
+5.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+<suppressed ~30 debug messages>
+Optimizing module baud_bit_cnt.
+<suppressed ~18 debug messages>
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+<suppressed ~71 debug messages>
+
+5.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\baud_bit_cnt'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+<suppressed ~72 debug messages>
+Removed a total of 32 cells.
+
+5.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 5 unused cells and 199 unused wires.
+<suppressed ~8 debug messages>
+
+5.21.5. Finished fast OPT passes.
+
+5.22. Executing ABC pass (technology mapping using ABC).
+
+5.22.1. Extracting gate netlist of module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011' to `<abc-temp-dir>/input.blif'..
+Extracted 19 gates and 25 wires to a netlist network with 6 inputs and 7 outputs.
+
+5.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.1.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:             ORNOT cells:        3
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:       12
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+5.22.2. Extracting gate netlist of module `\baud_bit_cnt' to `<abc-temp-dir>/input.blif'..
+Extracted 11 gates and 16 wires to a netlist network with 5 inputs and 5 outputs.
+
+5.22.2.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.2.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:               XOR cells:        2
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        5
+Removing temp directory.
+
+5.22.3. Extracting gate netlist of module `\baud_top' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+5.22.4. Extracting gate netlist of module `\baud_tx_fsm' to `<abc-temp-dir>/input.blif'..
+Extracted 119 gates and 148 wires to a netlist network with 28 inputs and 22 outputs.
+
+5.22.4.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.4.2. Re-integrating ABC results.
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:               MUX cells:        9
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:               NOT cells:        5
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:              NAND cells:        8
+ABC RESULTS:               XOR cells:        2
+ABC RESULTS:                OR cells:       27
+ABC RESULTS:            ANDNOT cells:       36
+ABC RESULTS:        internal signals:       98
+ABC RESULTS:           input signals:       28
+ABC RESULTS:          output signals:       22
+Removing temp directory.
+
+5.23. Executing OPT pass (performing simple optimizations).
+
+5.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011.
+Optimizing module baud_bit_cnt.
+Optimizing module baud_top.
+Optimizing module baud_tx_fsm.
+<suppressed ~1 debug messages>
+
+5.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011'.
+Finding identical cells in module `\baud_bit_cnt'.
+Finding identical cells in module `\baud_top'.
+Finding identical cells in module `\baud_tx_fsm'.
+Removed a total of 0 cells.
+
+5.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011..
+Finding unused cells or wires in module \baud_bit_cnt..
+Finding unused cells or wires in module \baud_top..
+Finding unused cells or wires in module \baud_tx_fsm..
+Removed 0 unused cells and 154 unused wires.
+<suppressed ~3 debug messages>
+
+5.23.5. Finished fast OPT passes.
+
+5.24. Executing HIERARCHY pass (managing design hierarchy).
+
+5.24.1. Analyzing design hierarchy..
+Top module:  \baud_top
+Used module:     \baud_bit_cnt
+Used module:     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011
+Used module:     \baud_tx_fsm
+
+5.24.2. Analyzing design hierarchy..
+Top module:  \baud_top
+Used module:     \baud_bit_cnt
+Used module:     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011
+Used module:     \baud_tx_fsm
+Removed 0 unused modules.
+
+5.25. Printing statistics.
+
+=== $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011 ===
+
+   Number of wires:                 15
+   Number of wire bits:             27
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $_ANDNOT_                       2
+     $_AND_                          2
+     $_NAND_                         1
+     $_NOT_                          1
+     $_ORNOT_                        3
+     $_OR_                           1
+     $_SDFF_PN0_                     1
+     $_SDFF_PP0_                     5
+     $_XOR_                          4
+
+=== baud_bit_cnt ===
+
+   Number of wires:                 10
+   Number of wire bits:             16
+   Number of public wires:           6
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $_AND_                          2
+     $_NOT_                          1
+     $_ORNOT_                        1
+     $_SDFFE_PP0P_                   3
+     $_XOR_                          2
+
+=== baud_top ===
+
+   Number of wires:                 11
+   Number of wire bits:             20
+   Number of public wires:          11
+   Number of public wire bits:      20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011      1
+     baud_bit_cnt                    1
+     baud_tx_fsm                     1
+
+=== baud_tx_fsm ===
+
+   Number of wires:                106
+   Number of wire bits:            129
+   Number of public wires:          13
+   Number of public wire bits:      33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                116
+     $_ANDNOT_                      36
+     $_AND_                          3
+     $_DFF_P_                        4
+     $_MUX_                          9
+     $_NAND_                         8
+     $_NOR_                          3
+     $_NOT_                          5
+     $_ORNOT_                        2
+     $_OR_                          27
+     $_SDFFE_PN0P_                  13
+     $_SDFF_PN0_                     2
+     $_SDFF_PN1_                     1
+     $_XNOR_                         1
+     $_XOR_                          2
+
+=== design hierarchy ===
+
+   baud_top                          1
+     $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011      1
+     baud_bit_cnt                    1
+     baud_tx_fsm                     1
+
+   Number of wires:                142
+   Number of wire bits:            192
+   Number of public wires:          34
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                145
+     $_ANDNOT_                      38
+     $_AND_                          7
+     $_DFF_P_                        4
+     $_MUX_                          9
+     $_NAND_                         9
+     $_NOR_                          3
+     $_NOT_                          7
+     $_ORNOT_                        6
+     $_OR_                          28
+     $_SDFFE_PN0P_                  13
+     $_SDFFE_PP0P_                   3
+     $_SDFF_PN0_                     3
+     $_SDFF_PN1_                     1
+     $_SDFF_PP0_                     5
+     $_XNOR_                         1
+     $_XOR_                          8
+
+5.26. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\baud_clk_div\DIV=s32'00000000000000000000000000011011...
+Checking module baud_bit_cnt...
+Checking module baud_top...
+Checking module baud_tx_fsm...
+Found and reported 0 problems.
+
+6. Printing statistics.
+
+=== baud_tx_fsm ===
+
+   Number of wires:                106
+   Number of wire bits:            129
+   Number of public wires:          13
+   Number of public wire bits:      33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                116
+     $_ANDNOT_                      36
+     $_AND_                          3
+     $_DFF_P_                        4
+     $_MUX_                          9
+     $_NAND_                         8
+     $_NOR_                          3
+     $_NOT_                          5
+     $_ORNOT_                        2
+     $_OR_                          27
+     $_SDFFE_PN0P_                  13
+     $_SDFF_PN0_                     2
+     $_SDFF_PN1_                     1
+     $_XNOR_                         1
+     $_XOR_                          2
+
+End of script. Logfile hash: e2f9462a80, CPU: user 0.26s system 0.01s, MEM: 14.50 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 33% 1x abc (0 sec), 18% 23x opt_expr (0 sec), ...

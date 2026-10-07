@@ -1,0 +1,41 @@
+
+-- Running command `read_verilog uart_rx.v; hierarchy -check -top uart_rx; stat; write_ilang out/s00.il' --
+
+1. Executing Verilog-2005 frontend: uart_rx.v
+Parsing Verilog input from `uart_rx.v' to AST representation.
+Generating RTLIL representation for module `\uart_rx'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \uart_rx
+
+2.2. Analyzing design hierarchy..
+Top module:  \uart_rx
+Removed 0 unused modules.
+
+3. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                 61
+   Number of wire bits:            415
+   Number of public wires:          11
+   Number of public wire bits:      36
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              2
+   Number of cells:                 22
+     $add                            4
+     $and                            2
+     $eq                             6
+     $logic_not                      2
+     $neg                            2
+     $not                            1
+     $or                             1
+     $shift                          2
+     $sub                            2
+
+4. Executing RTLIL backend.
+Output filename: out/s00.il
