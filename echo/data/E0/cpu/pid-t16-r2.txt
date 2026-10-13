@@ -1,0 +1,48 @@
+Linux 6.6.117-45.14.1.tl4.x86_64 (echo-e0-server) 	10/14/2026 	_x86_64_	(32 CPU)
+
+01:32:18 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:32:19 AM     0     15401   23.00  509.00    0.00    0.00  532.00     1  echo-mt-server
+
+01:32:19 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:20 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:21 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:32:22 AM     0     15485    6.00  114.00    0.00    0.00  120.00    14  echo-mt-server
+
+01:32:22 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:23 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:24 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:25 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:32:26 AM     0     15570   27.00  719.00    0.00    0.00  746.00     6  echo-mt-server
+
+01:32:26 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:27 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:28 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:29 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:32:30 AM     0     15659   31.00  686.00    0.00    0.00  717.00     5  echo-mt-server
+
+01:32:30 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:31 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:32 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:32:33 AM     0     15763   13.00  305.00    0.00    0.00  318.00    12  echo-mt-server
+
+01:32:33 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:34 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:35 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:36 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:32:37 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command

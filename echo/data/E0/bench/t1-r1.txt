@@ -1,0 +1,15 @@
+echo-kp-bench | <server-vpc-ip>:9988 | 1000 conns × 1000 rounds = 1000000 reqs | mode=long(Keep-Alive) payload=12
+
+══════════ Results ══════════
+ requests:        1000000 / 1000000 (ok:1000000 fail:0)
+ elapsed:         3.701 s
+ QPS:             270172.7 req/s
+ latency (μs) ─────────────────
+  min:          65
+  P50:        3644
+  P90:        3722
+  P99:        3811
+  P999:       5553
+  max:        7824
+  count:   1000000
+═══════════════════════════════
