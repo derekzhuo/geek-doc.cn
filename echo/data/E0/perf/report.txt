@@ -1,0 +1,721 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles:P'
+# Event count (approx.): 65243373783
+#
+# Children      Self  Command          Shared Object             Symbol                                                       
+# ........  ........  ...............  ........................  .............................................................
+#
+    98.06%     0.00%  swapper          [kernel.kallsyms]         [k] secondary_startup_64_no_verify
+            |
+            ---secondary_startup_64_no_verify
+               |          
+               |--68.72%--start_secondary
+               |          cpu_startup_entry
+               |          do_idle
+               |          |          
+               |           --68.57%--cpuidle_idle_call
+               |                     |          
+               |                     |--55.80%--cpuidle_enter
+               |                     |          cpuidle_enter_state
+               |                     |          |          
+               |                     |          |--39.48%--acpi_idle_enter
+               |                     |          |          |          
+               |                     |          |           --39.46%--acpi_processor_ffh_cstate_enter
+               |                     |          |          
+               |                     |          |--8.13%--ct_kernel_exit_state
+               |                     |          |          
+               |                     |          |--4.97%--poll_idle
+               |                     |          |          
+               |                     |           --2.52%--ct_idle_exit
+               |                     |                     ct_kernel_enter.constprop.0
+               |                     |                     ct_kernel_exit_state
+               |                     |          
+               |                     |--7.80%--menu_select
+               |                     |          |          
+               |                     |          |--5.37%--tick_nohz_get_sleep_length
+               |                     |          |          |          
+               |                     |          |          |--4.10%--tick_nohz_next_event
+               |                     |          |          |          |          
+               |                     |          |          |           --3.07%--get_next_timer_interrupt
+               |                     |          |          |                     |          
+               |                     |          |          |                     |--1.91%--_raw_spin_lock
+               |                     |          |          |                     |          
+               |                     |          |          |                      --1.16%--hrtimer_get_next_event
+               |                     |          |          |                                _raw_spin_lock_irqsave
+               |                     |          |          |          
+               |                     |          |           --1.14%--hrtimer_next_event_without
+               |                     |          |                     |          
+               |                     |          |                      --1.14%--_raw_spin_lock_irqsave
+               |                     |          |          
+               |                     |           --1.73%--cpuidle_governor_latency_req
+               |                     |                     |          
+               |                     |                      --1.41%--pm_qos_read_value
+               |                     |          
+               |                      --1.06%--call_cpuidle
+               |          
+                --29.33%--x86_64_start_kernel
+                          x86_64_start_reservations
+                          start_kernel
+                          arch_call_rest_init
+                          rest_init
+                          cpu_startup_entry
+                          do_idle
+                          |          
+                           --29.33%--cpuidle_idle_call
+                                     |          
+                                     |--21.35%--cpuidle_enter
+                                     |          cpuidle_enter_state
+                                     |          |          
+                                     |          |--16.78%--acpi_idle_enter
+                                     |          |          acpi_processor_ffh_cstate_enter
+                                     |          |          
+                                     |          |--2.23%--poll_idle
+                                     |          |          
+                                     |           --1.37%--ct_kernel_exit_state
+                                     |          
+                                      --5.69%--menu_select
+                                                |          
+                                                 --3.00%--tick_nohz_get_sleep_length
+                                                           |          
+                                                            --2.60%--tick_nohz_next_event
+                                                                      get_next_timer_interrupt
+                                                                      |          
+                                                                       --2.53%--_raw_spin_lock
+
+    98.06%     0.00%  swapper          [kernel.kallsyms]         [k] cpu_startup_entry
+            |
+            ---cpu_startup_entry
+               do_idle
+               |          
+                --97.90%--cpuidle_idle_call
+                          |          
+                          |--77.16%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--56.26%--acpi_idle_enter
+                          |          |          |          
+                          |          |           --56.24%--acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--9.50%--ct_kernel_exit_state
+                          |          |          
+                          |          |--7.20%--poll_idle
+                          |          |          
+                          |           --3.02%--ct_idle_exit
+                          |                     ct_kernel_enter.constprop.0
+                          |                     ct_kernel_exit_state
+                          |          
+                          |--13.49%--menu_select
+                          |          |          
+                          |          |--8.37%--tick_nohz_get_sleep_length
+                          |          |          |          
+                          |          |          |--6.70%--tick_nohz_next_event
+                          |          |          |          |          
+                          |          |          |           --5.67%--get_next_timer_interrupt
+                          |          |          |                     |          
+                          |          |          |                     |--4.44%--_raw_spin_lock
+                          |          |          |                     |          
+                          |          |          |                      --1.23%--hrtimer_get_next_event
+                          |          |          |                                _raw_spin_lock_irqsave
+                          |          |          |          
+                          |          |           --1.20%--hrtimer_next_event_without
+                          |          |                     |          
+                          |          |                      --1.20%--_raw_spin_lock_irqsave
+                          |          |          
+                          |           --1.73%--cpuidle_governor_latency_req
+                          |                     |          
+                          |                      --1.41%--pm_qos_read_value
+                          |          
+                           --1.82%--call_cpuidle
+
+    98.06%     0.00%  swapper          [kernel.kallsyms]         [k] do_idle
+            |          
+             --98.06%--do_idle
+                       |          
+                        --97.90%--cpuidle_idle_call
+                                  |          
+                                  |--77.16%--cpuidle_enter
+                                  |          cpuidle_enter_state
+                                  |          |          
+                                  |          |--56.26%--acpi_idle_enter
+                                  |          |          |          
+                                  |          |           --56.24%--acpi_processor_ffh_cstate_enter
+                                  |          |          
+                                  |          |--9.50%--ct_kernel_exit_state
+                                  |          |          
+                                  |          |--7.20%--poll_idle
+                                  |          |          
+                                  |           --3.02%--ct_idle_exit
+                                  |                     ct_kernel_enter.constprop.0
+                                  |                     ct_kernel_exit_state
+                                  |          
+                                  |--13.49%--menu_select
+                                  |          |          
+                                  |          |--8.37%--tick_nohz_get_sleep_length
+                                  |          |          |          
+                                  |          |          |--6.70%--tick_nohz_next_event
+                                  |          |          |          |          
+                                  |          |          |           --5.67%--get_next_timer_interrupt
+                                  |          |          |                     |          
+                                  |          |          |                     |--4.44%--_raw_spin_lock
+                                  |          |          |                     |          
+                                  |          |          |                      --1.23%--hrtimer_get_next_event
+                                  |          |          |                                _raw_spin_lock_irqsave
+                                  |          |          |          
+                                  |          |           --1.20%--hrtimer_next_event_without
+                                  |          |                     |          
+                                  |          |                      --1.20%--_raw_spin_lock_irqsave
+                                  |          |          
+                                  |           --1.73%--cpuidle_governor_latency_req
+                                  |                     |          
+                                  |                      --1.41%--pm_qos_read_value
+                                  |          
+                                   --1.82%--call_cpuidle
+
+    97.90%     4.34%  swapper          [kernel.kallsyms]         [k] cpuidle_idle_call
+            |          
+            |--93.55%--cpuidle_idle_call
+            |          |          
+            |          |--77.16%--cpuidle_enter
+            |          |          cpuidle_enter_state
+            |          |          |          
+            |          |          |--56.26%--acpi_idle_enter
+            |          |          |          |          
+            |          |          |           --56.24%--acpi_processor_ffh_cstate_enter
+            |          |          |          
+            |          |          |--9.50%--ct_kernel_exit_state
+            |          |          |          
+            |          |          |--7.20%--poll_idle
+            |          |          |          
+            |          |           --3.02%--ct_idle_exit
+            |          |                     ct_kernel_enter.constprop.0
+            |          |                     ct_kernel_exit_state
+            |          |          
+            |          |--13.49%--menu_select
+            |          |          |          
+            |          |          |--8.37%--tick_nohz_get_sleep_length
+            |          |          |          |          
+            |          |          |          |--6.70%--tick_nohz_next_event
+            |          |          |          |          |          
+            |          |          |          |           --5.67%--get_next_timer_interrupt
+            |          |          |          |                     |          
+            |          |          |          |                     |--4.44%--_raw_spin_lock
+            |          |          |          |                     |          
+            |          |          |          |                      --1.23%--hrtimer_get_next_event
+            |          |          |          |                                _raw_spin_lock_irqsave
+            |          |          |          |          
+            |          |          |           --1.20%--hrtimer_next_event_without
+            |          |          |                     |          
+            |          |          |                      --1.20%--_raw_spin_lock_irqsave
+            |          |          |          
+            |          |           --1.73%--cpuidle_governor_latency_req
+            |          |                     |          
+            |          |                      --1.41%--pm_qos_read_value
+            |          |          
+            |           --1.82%--call_cpuidle
+            |          
+             --4.34%--secondary_startup_64_no_verify
+                       |          
+                       |--2.92%--start_secondary
+                       |          cpu_startup_entry
+                       |          do_idle
+                       |          cpuidle_idle_call
+                       |          
+                        --1.42%--x86_64_start_kernel
+                                  x86_64_start_reservations
+                                  start_kernel
+                                  arch_call_rest_init
+                                  rest_init
+                                  cpu_startup_entry
+                                  do_idle
+                                  cpuidle_idle_call
+
+    77.16%     0.00%  swapper          [kernel.kallsyms]         [k] cpuidle_enter
+            |
+            ---cpuidle_enter
+               cpuidle_enter_state
+               |          
+               |--56.26%--acpi_idle_enter
+               |          |          
+               |           --56.24%--acpi_processor_ffh_cstate_enter
+               |          
+               |--9.50%--ct_kernel_exit_state
+               |          
+               |--7.20%--poll_idle
+               |          
+                --3.02%--ct_idle_exit
+                          ct_kernel_enter.constprop.0
+                          ct_kernel_exit_state
+
+    77.16%     0.36%  swapper          [kernel.kallsyms]         [k] cpuidle_enter_state
+            |          
+             --76.80%--cpuidle_enter_state
+                       |          
+                       |--56.26%--acpi_idle_enter
+                       |          |          
+                       |           --56.24%--acpi_processor_ffh_cstate_enter
+                       |          
+                       |--9.50%--ct_kernel_exit_state
+                       |          
+                       |--7.20%--poll_idle
+                       |          
+                        --3.02%--ct_idle_exit
+                                  ct_kernel_enter.constprop.0
+                                  ct_kernel_exit_state
+
+    68.72%     0.00%  swapper          [kernel.kallsyms]         [k] start_secondary
+            |
+            ---start_secondary
+               cpu_startup_entry
+               do_idle
+               |          
+                --68.57%--cpuidle_idle_call
+                          |          
+                          |--55.80%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--39.48%--acpi_idle_enter
+                          |          |          |          
+                          |          |           --39.46%--acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--8.13%--ct_kernel_exit_state
+                          |          |          
+                          |          |--4.97%--poll_idle
+                          |          |          
+                          |           --2.52%--ct_idle_exit
+                          |                     ct_kernel_enter.constprop.0
+                          |                     ct_kernel_exit_state
+                          |          
+                          |--7.80%--menu_select
+                          |          |          
+                          |          |--5.37%--tick_nohz_get_sleep_length
+                          |          |          |          
+                          |          |          |--4.10%--tick_nohz_next_event
+                          |          |          |          |          
+                          |          |          |           --3.07%--get_next_timer_interrupt
+                          |          |          |                     |          
+                          |          |          |                     |--1.91%--_raw_spin_lock
+                          |          |          |                     |          
+                          |          |          |                      --1.16%--hrtimer_get_next_event
+                          |          |          |                                _raw_spin_lock_irqsave
+                          |          |          |          
+                          |          |           --1.14%--hrtimer_next_event_without
+                          |          |                     |          
+                          |          |                      --1.14%--_raw_spin_lock_irqsave
+                          |          |          
+                          |           --1.73%--cpuidle_governor_latency_req
+                          |                     |          
+                          |                      --1.41%--pm_qos_read_value
+                          |          
+                           --1.06%--call_cpuidle
+
+    56.26%     0.02%  swapper          [kernel.kallsyms]         [k] acpi_idle_enter
+            |          
+             --56.24%--acpi_idle_enter
+                       acpi_processor_ffh_cstate_enter
+
+    56.24%    56.24%  swapper          [kernel.kallsyms]         [k] acpi_processor_ffh_cstate_enter
+            |
+            ---secondary_startup_64_no_verify
+               |          
+               |--39.46%--start_secondary
+               |          cpu_startup_entry
+               |          do_idle
+               |          cpuidle_idle_call
+               |          cpuidle_enter
+               |          cpuidle_enter_state
+               |          acpi_idle_enter
+               |          acpi_processor_ffh_cstate_enter
+               |          
+                --16.78%--x86_64_start_kernel
+                          x86_64_start_reservations
+                          start_kernel
+                          arch_call_rest_init
+                          rest_init
+                          cpu_startup_entry
+                          do_idle
+                          cpuidle_idle_call
+                          cpuidle_enter
+                          cpuidle_enter_state
+                          acpi_idle_enter
+                          acpi_processor_ffh_cstate_enter
+
+    29.33%     0.00%  swapper          [kernel.kallsyms]         [k] x86_64_start_kernel
+            |
+            ---x86_64_start_kernel
+               x86_64_start_reservations
+               start_kernel
+               arch_call_rest_init
+               rest_init
+               cpu_startup_entry
+               do_idle
+               |          
+                --29.33%--cpuidle_idle_call
+                          |          
+                          |--21.35%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--16.78%--acpi_idle_enter
+                          |          |          acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--2.23%--poll_idle
+                          |          |          
+                          |           --1.37%--ct_kernel_exit_state
+                          |          
+                           --5.69%--menu_select
+                                     |          
+                                      --3.00%--tick_nohz_get_sleep_length
+                                                |          
+                                                 --2.60%--tick_nohz_next_event
+                                                           get_next_timer_interrupt
+                                                           |          
+                                                            --2.53%--_raw_spin_lock
+
+    29.33%     0.00%  swapper          [kernel.kallsyms]         [k] x86_64_start_reservations
+            |
+            ---x86_64_start_reservations
+               start_kernel
+               arch_call_rest_init
+               rest_init
+               cpu_startup_entry
+               do_idle
+               |          
+                --29.33%--cpuidle_idle_call
+                          |          
+                          |--21.35%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--16.78%--acpi_idle_enter
+                          |          |          acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--2.23%--poll_idle
+                          |          |          
+                          |           --1.37%--ct_kernel_exit_state
+                          |          
+                           --5.69%--menu_select
+                                     |          
+                                      --3.00%--tick_nohz_get_sleep_length
+                                                |          
+                                                 --2.60%--tick_nohz_next_event
+                                                           get_next_timer_interrupt
+                                                           |          
+                                                            --2.53%--_raw_spin_lock
+
+    29.33%     0.00%  swapper          [kernel.kallsyms]         [k] start_kernel
+            |
+            ---start_kernel
+               arch_call_rest_init
+               rest_init
+               cpu_startup_entry
+               do_idle
+               |          
+                --29.33%--cpuidle_idle_call
+                          |          
+                          |--21.35%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--16.78%--acpi_idle_enter
+                          |          |          acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--2.23%--poll_idle
+                          |          |          
+                          |           --1.37%--ct_kernel_exit_state
+                          |          
+                           --5.69%--menu_select
+                                     |          
+                                      --3.00%--tick_nohz_get_sleep_length
+                                                |          
+                                                 --2.60%--tick_nohz_next_event
+                                                           get_next_timer_interrupt
+                                                           |          
+                                                            --2.53%--_raw_spin_lock
+
+    29.33%     0.00%  swapper          [kernel.kallsyms]         [k] arch_call_rest_init
+            |
+            ---arch_call_rest_init
+               rest_init
+               cpu_startup_entry
+               do_idle
+               |          
+                --29.33%--cpuidle_idle_call
+                          |          
+                          |--21.35%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--16.78%--acpi_idle_enter
+                          |          |          acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--2.23%--poll_idle
+                          |          |          
+                          |           --1.37%--ct_kernel_exit_state
+                          |          
+                           --5.69%--menu_select
+                                     |          
+                                      --3.00%--tick_nohz_get_sleep_length
+                                                |          
+                                                 --2.60%--tick_nohz_next_event
+                                                           get_next_timer_interrupt
+                                                           |          
+                                                            --2.53%--_raw_spin_lock
+
+    29.33%     0.00%  swapper          [kernel.kallsyms]         [k] rest_init
+            |
+            ---rest_init
+               cpu_startup_entry
+               do_idle
+               |          
+                --29.33%--cpuidle_idle_call
+                          |          
+                          |--21.35%--cpuidle_enter
+                          |          cpuidle_enter_state
+                          |          |          
+                          |          |--16.78%--acpi_idle_enter
+                          |          |          acpi_processor_ffh_cstate_enter
+                          |          |          
+                          |          |--2.23%--poll_idle
+                          |          |          
+                          |           --1.37%--ct_kernel_exit_state
+                          |          
+                           --5.69%--menu_select
+                                     |          
+                                      --3.00%--tick_nohz_get_sleep_length
+                                                |          
+                                                 --2.60%--tick_nohz_next_event
+                                                           get_next_timer_interrupt
+                                                           |          
+                                                            --2.53%--_raw_spin_lock
+
+    13.49%     3.28%  swapper          [kernel.kallsyms]         [k] menu_select
+            |          
+            |--10.20%--menu_select
+            |          |          
+            |          |--8.37%--tick_nohz_get_sleep_length
+            |          |          |          
+            |          |          |--6.70%--tick_nohz_next_event
+            |          |          |          |          
+            |          |          |           --5.67%--get_next_timer_interrupt
+            |          |          |                     |          
+            |          |          |                     |--4.44%--_raw_spin_lock
+            |          |          |                     |          
+            |          |          |                      --1.23%--hrtimer_get_next_event
+            |          |          |                                _raw_spin_lock_irqsave
+            |          |          |          
+            |          |           --1.20%--hrtimer_next_event_without
+            |          |                     |          
+            |          |                      --1.20%--_raw_spin_lock_irqsave
+            |          |          
+            |           --1.73%--cpuidle_governor_latency_req
+            |                     |          
+            |                      --1.41%--pm_qos_read_value
+            |          
+             --3.28%--secondary_startup_64_no_verify
+                       |          
+                        --2.59%--x86_64_start_kernel
+                                  x86_64_start_reservations
+                                  start_kernel
+                                  arch_call_rest_init
+                                  rest_init
+                                  cpu_startup_entry
+                                  do_idle
+                                  cpuidle_idle_call
+                                  menu_select
+
+    12.52%    12.52%  swapper          [kernel.kallsyms]         [k] ct_kernel_exit_state
+            |
+            ---secondary_startup_64_no_verify
+               |          
+               |--10.65%--start_secondary
+               |          cpu_startup_entry
+               |          do_idle
+               |          cpuidle_idle_call
+               |          cpuidle_enter
+               |          cpuidle_enter_state
+               |          |          
+               |          |--8.13%--ct_kernel_exit_state
+               |          |          
+               |           --2.52%--ct_idle_exit
+               |                     ct_kernel_enter.constprop.0
+               |                     ct_kernel_exit_state
+               |          
+                --1.87%--x86_64_start_kernel
+                          x86_64_start_reservations
+                          start_kernel
+                          arch_call_rest_init
+                          rest_init
+                          cpu_startup_entry
+                          do_idle
+                          cpuidle_idle_call
+                          cpuidle_enter
+                          cpuidle_enter_state
+                          |          
+                           --1.37%--ct_kernel_exit_state
+
+     8.37%     0.41%  swapper          [kernel.kallsyms]         [k] tick_nohz_get_sleep_length
+            |          
+             --7.96%--tick_nohz_get_sleep_length
+                       |          
+                       |--6.70%--tick_nohz_next_event
+                       |          |          
+                       |           --5.67%--get_next_timer_interrupt
+                       |                     |          
+                       |                     |--4.44%--_raw_spin_lock
+                       |                     |          
+                       |                      --1.23%--hrtimer_get_next_event
+                       |                                _raw_spin_lock_irqsave
+                       |          
+                        --1.20%--hrtimer_next_event_without
+                                  |          
+                                   --1.20%--_raw_spin_lock_irqsave
+
+     7.20%     7.12%  swapper          [kernel.kallsyms]         [k] poll_idle
+            |          
+             --7.12%--secondary_startup_64_no_verify
+                       |          
+                       |--4.89%--start_secondary
+                       |          cpu_startup_entry
+                       |          do_idle
+                       |          cpuidle_idle_call
+                       |          cpuidle_enter
+                       |          cpuidle_enter_state
+                       |          poll_idle
+                       |          
+                        --2.23%--x86_64_start_kernel
+                                  x86_64_start_reservations
+                                  start_kernel
+                                  arch_call_rest_init
+                                  rest_init
+                                  cpu_startup_entry
+                                  do_idle
+                                  cpuidle_idle_call
+                                  cpuidle_enter
+                                  cpuidle_enter_state
+                                  poll_idle
+
+     6.70%     0.00%  swapper          [kernel.kallsyms]         [k] tick_nohz_next_event
+            |
+            ---tick_nohz_next_event
+               |          
+                --5.67%--get_next_timer_interrupt
+                          |          
+                          |--4.44%--_raw_spin_lock
+                          |          
+                           --1.23%--hrtimer_get_next_event
+                                     _raw_spin_lock_irqsave
+
+     5.67%     0.00%  swapper          [kernel.kallsyms]         [k] get_next_timer_interrupt
+            |
+            ---get_next_timer_interrupt
+               |          
+               |--4.44%--_raw_spin_lock
+               |          
+                --1.23%--hrtimer_get_next_event
+                          _raw_spin_lock_irqsave
+
+     4.45%     4.45%  swapper          [kernel.kallsyms]         [k] _raw_spin_lock
+            |
+            ---secondary_startup_64_no_verify
+               |          
+               |--2.53%--x86_64_start_kernel
+               |          x86_64_start_reservations
+               |          start_kernel
+               |          arch_call_rest_init
+               |          rest_init
+               |          cpu_startup_entry
+               |          do_idle
+               |          cpuidle_idle_call
+               |          menu_select
+               |          tick_nohz_get_sleep_length
+               |          tick_nohz_next_event
+               |          get_next_timer_interrupt
+               |          _raw_spin_lock
+               |          
+                --1.93%--start_secondary
+                          cpu_startup_entry
+                          do_idle
+                          |          
+                           --1.92%--cpuidle_idle_call
+                                     |          
+                                      --1.91%--menu_select
+                                                tick_nohz_get_sleep_length
+                                                tick_nohz_next_event
+                                                get_next_timer_interrupt
+                                                _raw_spin_lock
+
+     3.02%     0.00%  swapper          [kernel.kallsyms]         [k] ct_idle_exit
+            |
+            ---ct_idle_exit
+               ct_kernel_enter.constprop.0
+               ct_kernel_exit_state
+
+     3.02%     0.00%  swapper          [kernel.kallsyms]         [k] ct_kernel_enter.constprop.0
+            |
+            ---ct_kernel_enter.constprop.0
+               ct_kernel_exit_state
+
+     2.48%     2.48%  swapper          [kernel.kallsyms]         [k] _raw_spin_lock_irqsave
+            |
+            ---secondary_startup_64_no_verify
+               |          
+                --2.34%--start_secondary
+                          cpu_startup_entry
+                          do_idle
+                          |          
+                           --2.34%--cpuidle_idle_call
+                                     |          
+                                      --2.29%--menu_select
+                                                tick_nohz_get_sleep_length
+                                                |          
+                                                |--1.16%--tick_nohz_next_event
+                                                |          get_next_timer_interrupt
+                                                |          hrtimer_get_next_event
+                                                |          _raw_spin_lock_irqsave
+                                                |          
+                                                 --1.14%--hrtimer_next_event_without
+                                                           _raw_spin_lock_irqsave
+
+     1.82%     1.82%  swapper          [kernel.kallsyms]         [k] call_cpuidle
+            |
+            ---secondary_startup_64_no_verify
+               |          
+                --1.06%--start_secondary
+                          cpu_startup_entry
+                          do_idle
+                          cpuidle_idle_call
+                          call_cpuidle
+
+     1.73%     0.21%  swapper          [kernel.kallsyms]         [k] cpuidle_governor_latency_req
+            |          
+             --1.52%--cpuidle_governor_latency_req
+                       |          
+                        --1.41%--pm_qos_read_value
+
+     1.41%     1.41%  swapper          [kernel.kallsyms]         [k] pm_qos_read_value
+            |
+            ---secondary_startup_64_no_verify
+               start_secondary
+               cpu_startup_entry
+               do_idle
+               cpuidle_idle_call
+               menu_select
+               cpuidle_governor_latency_req
+               pm_qos_read_value
+
+     1.23%     0.00%  swapper          [kernel.kallsyms]         [k] hrtimer_get_next_event
+            |
+            ---hrtimer_get_next_event
+               _raw_spin_lock_irqsave
+
+     1.20%     0.00%  swapper          [kernel.kallsyms]         [k] hrtimer_next_event_without
+            |
+            ---hrtimer_next_event_without
+               |          
+                --1.20%--_raw_spin_lock_irqsave
+
+
+
+#
+# (Tip: Compare performance results with: perf diff [<old file> <new file>])
+#

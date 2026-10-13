@@ -1,0 +1,56 @@
+Linux 6.6.117-45.14.1.tl4.x86_64 (echo-e0-server) 	10/14/2026 	_x86_64_	(32 CPU)
+
+01:31:18 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:19 AM     0     14469    2.97   74.26    0.00    0.00   77.23     1  echo-mt-server
+
+01:31:19 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:20 AM     0     14469    5.00   94.00    0.00    0.00   99.00     1  echo-mt-server
+
+01:31:20 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:21 AM     0     14469    4.00   96.00    0.00    0.00  100.00     1  echo-mt-server
+
+01:31:21 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:22 AM     0     14469    6.00   81.00    0.00    0.00   87.00     1  echo-mt-server
+
+01:31:22 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:23 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:24 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:25 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:26 AM     0     14550    4.00   84.00    0.00    0.00   88.00     6  echo-mt-server
+
+01:31:26 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:27 AM     0     14550    6.00   94.00    0.00    0.00  100.00     6  echo-mt-server
+
+01:31:27 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:28 AM     0     14550    5.00   95.00    0.00    0.00  100.00     6  echo-mt-server
+
+01:31:28 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:29 AM     0     14550    3.00   70.00    0.00    0.00   73.00     6  echo-mt-server
+
+01:31:29 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:30 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:31 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:32 AM     0     14623    0.00    6.00    0.00    0.00    6.00    26  echo-mt-server
+
+01:31:32 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:33 AM     0     14623    9.00  190.00    0.00    0.00  199.00    26  echo-mt-server
+
+01:31:33 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:34 AM     0     14623   10.00  190.00    0.00    0.00  200.00    26  echo-mt-server
+
+01:31:34 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:35 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:36 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+
+01:31:37 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:31:38 AM     0     14696    3.00   71.00    0.00    0.00   74.00    30  echo-mt-server
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:        0     14696    0.15    3.55    0.00    0.00    3.70     -  echo-mt-server
