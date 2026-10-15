@@ -1,0 +1,15 @@
+echo-kp-bench | <REDACT:IP#1>:9988 | 1000 conns × 60000 rounds = 60000000 reqs | mode=long(Keep-Alive) payload=12
+
+══════════ Results ══════════
+ requests:        60000000 / 60000000 (ok:60000000 fail:0)
+ elapsed:         47.613 s
+ QPS:             1260147.1 req/s
+ latency (μs) ─────────────────
+  min:          49
+  P50:         389
+  P90:         584
+  P99:        3049
+  P999:       4899
+  max:    16201298
+  count:  60000000
+═══════════════════════════════

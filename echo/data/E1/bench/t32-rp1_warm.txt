@@ -1,0 +1,18 @@
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+echo-kp-bench | <REDACT:IP#1>:9988 | 1000 conns × 10000 rounds = 10000000 reqs | mode=long(Keep-Alive) payload=12
+
+══════════ Results ══════════
+ requests:        10000000 / 10000000 (ok:10000000 fail:0)
+ elapsed:         4.600 s
+ QPS:             2173990.2 req/s
+ latency (μs) ─────────────────
+  min:          43
+  P50:         266
+  P90:         599
+  P99:        1143
+  P999:       1632
+  max:     1959729
+  count:  10000000
+═══════════════════════════════

@@ -1,0 +1,24 @@
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+Channel parameters for eth0:
+Pre-set maximums:
+RX:		n/a
+TX:		n/a
+Other:		n/a
+Combined:	32
+Current hardware settings:
+RX:		n/a
+TX:		n/a
+Other:		n/a
+Combined:	32
+Ring parameters for eth0:
+Pre-set maximums:
+RX:			4096
+RX Mini:		n/a
+RX Jumbo:		n/a
+TX:			4096
+TX push buff len:	n/a
+Current hardware settings:
+ntuple-filters: off [fixed]
+receive-hashing: off [fixed]

@@ -1,0 +1,13 @@
+Linux 6.6.117-45.14.1.tl4.x86_64 (probe-try) 	10/16/2026 	_x86_64_	(32 CPU)
+
+01:34:30 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:34:35 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:34:35 AM      eth0 115250.80 115244.60   8778.27   8778.67      0.00      0.00      0.00      0.00
+
+01:34:35 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:34:40 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:34:40 AM      eth0      3.60      3.80      0.29      0.95      0.00      0.00      0.00      0.00
+
+Average:        IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+Average:           lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+Average:         eth0  57627.20  57624.20   4389.28   4389.81      0.00      0.00      0.00      0.00
