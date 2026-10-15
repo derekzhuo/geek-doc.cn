@@ -12,10 +12,11 @@
  *   4. 每线程绑定一个 CPU 核（sched_setaffinity），最大化 L1/L2 缓存亲和
  *
  * 用法：
- *   ./echo-mt-server [port] [threads] [mode]
- *     port    默认 9988
- *     threads 默认 4（建议 = 物理核数）
- *     mode    lt | et，默认 et（与 Day 2/3 服务端语义一致）
+ *   ./echo-mt-server [port] [threads] [mode] [reuseport]
+ *     port      默认 9988
+ *     threads   默认 4（建议 = 物理核数）
+ *     mode      lt | et，默认 et（与 Day 2/3 服务端语义一致）
+ *     reuseport on | off，默认 on；off 时所有线程共享同一监听 socket（惊群对照，E1 新增）
  *
  * 与 Day 2/3 单线程版对比：
  *   - 单线程：一个 epoll 管所有 fd，500 并发触顶
@@ -64,6 +65,8 @@ struct worker_ctx {
     int   port;
     int   mode_et;        /* 1 = EPOLLET，0 = LT */
     int   threads;        /* 总线程数（用于 CPU 绑定） */
+    int   reuseport;      /* 1 = 每线程独立 SO_REUSEPORT 监听；0 = 共享主线程监听 socket */
+    int   shared_lfd;     /* reuseport=0 时主线程建好的共享监听 fd，否则 -1 */
 };
 
 static volatile sig_atomic_t running = 1;
@@ -113,32 +116,37 @@ static void *worker_loop(void *arg)
     struct connection *conns = calloc(MAX_CONNS, sizeof(struct connection));
     if (!conns) { perror("calloc"); pthread_exit(NULL); }
 
-    /* 2. socket + SO_REUSEPORT */
-    listen_fd = socket(AF_INET, SOCK_STREAM, 0);
-    if (listen_fd < 0) { perror("socket"); exit(1); }
+    if (w->reuseport) {
+        /* 2. socket + SO_REUSEPORT：每线程独立监听，内核按四元组哈希分流 */
+        listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+        if (listen_fd < 0) { perror("socket"); exit(1); }
 
-    int optval = 1;
-    if (setsockopt(listen_fd, SOL_SOCKET, SO_REUSEPORT,
-                   &optval, sizeof(optval)) < 0) {
-        perror("setsockopt SO_REUSEPORT"); exit(1);
-    }
-    setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
+        int optval = 1;
+        if (setsockopt(listen_fd, SOL_SOCKET, SO_REUSEPORT,
+                       &optval, sizeof(optval)) < 0) {
+            perror("setsockopt SO_REUSEPORT"); exit(1);
+        }
+        setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
 
-    set_nonblocking(listen_fd);
+        set_nonblocking(listen_fd);
 
-    /* 3. bind */
-    memset(&addr, 0, sizeof(addr));
-    addr.sin_family      = AF_INET;
-    addr.sin_addr.s_addr = INADDR_ANY;
-    addr.sin_port        = htons((uint16_t)w->port);
+        /* 3. bind */
+        memset(&addr, 0, sizeof(addr));
+        addr.sin_family      = AF_INET;
+        addr.sin_addr.s_addr = INADDR_ANY;
+        addr.sin_port        = htons((uint16_t)w->port);
 
-    if (bind(listen_fd, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-        perror("bind"); exit(1);
-    }
+        if (bind(listen_fd, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+            perror("bind"); exit(1);
+        }
 
-    /* 4. listen */
-    if (listen(listen_fd, LISTEN_BACKLOG) < 0) {
-        perror("listen"); exit(1);
+        /* 4. listen */
+        if (listen(listen_fd, LISTEN_BACKLOG) < 0) {
+            perror("listen"); exit(1);
+        }
+    } else {
+        /* 共享监听：所有线程 accept 同一个 socket（惊群对照组） */
+        listen_fd = w->shared_lfd;
     }
 
     /* 5. epoll */
@@ -262,7 +270,7 @@ static void *worker_loop(void *arg)
     }
 
     close(epoll_fd);
-    close(listen_fd);
+    if (w->reuseport) close(listen_fd);   /* 共享监听 fd 由主线程关闭 */
     free(conns);
     return NULL;
 }
@@ -271,30 +279,58 @@ static void *worker_loop(void *arg)
 
 int main(int argc, char *argv[])
 {
-    int port    = 9988;
-    int threads = 4;
-    int mode_et = 1;
+    int port      = 9988;
+    int threads   = 4;
+    int mode_et   = 1;
+    int reuseport = 1;
 
     if (argc > 1) port    = atoi(argv[1]);
     if (argc > 2) threads = atoi(argv[2]);
     if (argc > 3) mode_et = (strcmp(argv[3], "lt") != 0);
+    /* 第 4 参数：reuseport on|off（默认 on）。
+     * off 时主线程先建好一个监听 socket，所有 worker 共享 accept（惊群对照）。 */
+    if (argc > 4) reuseport = (strcmp(argv[4], "off") != 0);
+    if (threads == 1) reuseport = 1;   /* 单线程无共享语义，等价 on */
     if (threads < 1) threads = 1;
     if (threads > 64) threads = 64;
 
     signal(SIGINT,  sig_handler);
     signal(SIGTERM, sig_handler);
 
-    printf("Master: starting %d threads (port=%d, mode=%s) ...\n",
-           threads, port, mode_et ? "EPOLLET" : "LT");
+    int shared_lfd = -1;
+    if (!reuseport) {
+        struct sockaddr_in addr;
+        shared_lfd = socket(AF_INET, SOCK_STREAM, 0);
+        if (shared_lfd < 0) { perror("socket"); exit(1); }
+        int optval = 1;
+        setsockopt(shared_lfd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
+        set_nonblocking(shared_lfd);
+        memset(&addr, 0, sizeof(addr));
+        addr.sin_family      = AF_INET;
+        addr.sin_addr.s_addr = INADDR_ANY;
+        addr.sin_port        = htons((uint16_t)port);
+        if (bind(shared_lfd, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+            perror("bind"); exit(1);
+        }
+        if (listen(shared_lfd, LISTEN_BACKLOG) < 0) {
+            perror("listen"); exit(1);
+        }
+    }
+
+    printf("Master: starting %d threads (port=%d, mode=%s, reuseport=%s) ...\n",
+           threads, port, mode_et ? "EPOLLET" : "LT",
+           reuseport ? "on" : "off(shared accept)");
 
     pthread_t *tids = calloc(threads, sizeof(pthread_t));
     struct worker_ctx *ctxs = calloc(threads, sizeof(struct worker_ctx));
 
     for (int i = 0; i < threads; i++) {
-        ctxs[i].id      = i;
-        ctxs[i].port    = port;
-        ctxs[i].mode_et = mode_et;
-        ctxs[i].threads = threads;
+        ctxs[i].id         = i;
+        ctxs[i].port       = port;
+        ctxs[i].mode_et    = mode_et;
+        ctxs[i].threads    = threads;
+        ctxs[i].reuseport  = reuseport;
+        ctxs[i].shared_lfd = shared_lfd;
         if (pthread_create(&tids[i], NULL, worker_loop, &ctxs[i]) != 0) {
             perror("pthread_create"); exit(1);
         }

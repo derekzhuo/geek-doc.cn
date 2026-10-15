@@ -1,0 +1,29 @@
+Linux 6.6.117-45.14.1.tl4.x86_64 (probe-try) 	10/16/2026 	_x86_64_	(32 CPU)
+
+01:43:57 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:43:59 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:43:59 AM      eth0 1270823.00 1270829.00  96801.01  96801.75      0.00      0.00      0.00      0.00
+
+01:43:59 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:44:01 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:44:01 AM      eth0 1269456.00 1269469.50  96696.84  96698.17      0.00      0.00      0.00      0.00
+
+01:44:01 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:44:03 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:44:03 AM      eth0 1272257.50 1272267.50  96910.20  96912.39      0.00      0.00      0.00      0.00
+
+01:44:03 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:44:05 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:44:05 AM      eth0 1272430.50 1272405.50  96923.46  96921.66      0.00      0.00      0.00      0.00
+
+01:44:05 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:44:07 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:44:07 AM      eth0 1271188.00 1271188.00  96828.83  96830.10      0.00      0.00      0.00      0.00
+
+01:44:07 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+01:44:09 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+01:44:09 AM      eth0 1268830.50 1268827.50  96649.26  96649.44      0.00      0.00      0.00      0.00
+
+Average:        IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+Average:           lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+Average:         eth0 1270830.92 1270831.17  96801.60  96802.25      0.00      0.00      0.00      0.00

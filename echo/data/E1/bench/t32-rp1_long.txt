@@ -1,0 +1,15 @@
+echo-kp-bench | <REDACT:IP#1>:9988 | 1000 conns × 30000 rounds = 30000000 reqs | mode=long(Keep-Alive) payload=12
+
+══════════ Results ══════════
+ requests:        30000000 / 30000000 (ok:30000000 fail:0)
+ elapsed:         13.123 s
+ QPS:             2286073.2 req/s
+ latency (μs) ─────────────────
+  min:          46
+  P50:         257
+  P90:         574
+  P99:        1092
+  P999:       1566
+  max:     5899701
+  count:  30000000
+═══════════════════════════════
