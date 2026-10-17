@@ -1,0 +1,65 @@
+1792261939 est=99000 opened=99000 budget=0 rate=19223/s fail=0 eaddr=0 einuse=2 dropped=0 rss_kb=1664
+1792261944 est=199352 opened=200888 budget=4020 rate=20026/s fail=0 eaddr=0 einuse=3 dropped=0 rss_kb=1948
+1792261949 est=299460 opened=299460 budget=0 rate=19974/s fail=0 eaddr=0 einuse=3 dropped=0 rss_kb=2048
+1792261954 est=401000 opened=401000 budget=0 rate=19996/s fail=0 eaddr=0 einuse=3 dropped=0 rss_kb=2144
+1792261959 est=503120 opened=503120 budget=0 rate=20000/s fail=0 eaddr=0 einuse=4 dropped=0 rss_kb=2244
+1792261964 est=604840 opened=604840 budget=0 rate=20004/s fail=0 eaddr=0 einuse=5 dropped=0 rss_kb=2344
+1792261969 est=707620 opened=707620 budget=0 rate=20000/s fail=0 eaddr=0 einuse=10 dropped=0 rss_kb=2444
+1792261974 est=811500 opened=811500 budget=0 rate=20000/s fail=0 eaddr=0 einuse=10 dropped=0 rss_kb=2548
+1792261979 est=915400 opened=915400 budget=0 rate=20000/s fail=0 eaddr=0 einuse=10 dropped=0 rss_kb=2648
+1792261985 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792261990 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792261995 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262000 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262005 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262010 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262015 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262020 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262025 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262030 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262035 HOLD est=999260 fail=0 dropped=1024 rss_kb=2732
+1792262040 HOLD est=919000 fail=0 dropped=81284 rss_kb=2732
+1792262045 HOLD est=838080 fail=0 dropped=162204 rss_kb=2732
+1792262050 HOLD est=711539 fail=0 dropped=288745 rss_kb=2732
+1792262055 HOLD est=592353 fail=0 dropped=407931 rss_kb=2732
+1792262060 HOLD est=510292 fail=0 dropped=489992 rss_kb=2732
+1792262065 HOLD est=428960 fail=0 dropped=571324 rss_kb=2732
+1792262070 HOLD est=302300 fail=0 dropped=697984 rss_kb=2732
+1792262076 HOLD est=182757 fail=0 dropped=817527 rss_kb=2732
+1792262081 HOLD est=177796 fail=0 dropped=822488 rss_kb=2732
+1792262086 HOLD est=177796 fail=0 dropped=822488 rss_kb=2732
+1792262092 HOLD est=83776 fail=0 dropped=916508 rss_kb=2732
+1792262097 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262102 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262107 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262112 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262117 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262122 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262127 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262132 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262137 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262142 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262147 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262152 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262157 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262162 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262167 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262172 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262177 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262182 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262187 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262192 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262197 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262202 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262207 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262212 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262217 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262222 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262227 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262232 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262237 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262242 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262247 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262252 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262257 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
+1792262262 HOLD est=-1024 fail=0 dropped=1001308 rss_kb=2732
