@@ -32,3 +32,24 @@ fpe_*
 # cocotb/仿真运行残留（make run 自动重建，不入库）
 __pycache__/
 experiments/**/sim_build/
+
+# vim-cpp 系列编译产物（make 一键重建，不入库）
+*.dSYM/
+vim-cpp/**/vc01-raw
+vim-cpp/**/vc02
+vim-cpp/**/vc04
+vim-cpp/**/vc05_asan
+vim-cpp/**/selftest
+vim-cpp/**/bench
+vim-cpp/**/bench_load
+vim-cpp/**/mode_test
+vim-cpp/**/undo_redo
+vim-cpp/**/gen_file
+vim-cpp/**/gen_patho
+vim-cpp/**/nfa_search
+vim-cpp/**/highlight
+vim-cpp/**/main
+vim-cpp/**/bench_0
+vim-cpp/**/bench_1
+vim-cpp/**/bench_2
+vim-cpp/**/bench_3
