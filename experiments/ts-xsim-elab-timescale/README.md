@@ -1,5 +1,7 @@
 # ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复
 
+**对应教程**：https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html（极客工场站点对应篇目，上线后此链接即生效）
+
 **现象**：`xelab` 编译时报错中止：
 
 ```

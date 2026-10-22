@@ -1,5 +1,7 @@
 # xsim-dump-vcd-offline — 批处理 dump VCD，离线看波形
 
+**对应教程**：https://geek-doc.cn/fpga/beginner/xsim-dump-vcd-offline.html（极客工场站点对应篇目，上线后此链接即生效）
+
 GUI 起不来 / 锁屏无人值守 / 截图黑图时，波形证据的替代路线：让 xsim 批处理把波形 dump 成 VCD，拿到能联网的机器上用任意 VCD 工具（GTKWave 等）离线打开。
 
 **文件**

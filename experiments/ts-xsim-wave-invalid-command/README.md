@@ -1,5 +1,7 @@
 # ts-xsim-wave-invalid-command — XSim 报 `invalid command name "wave"`
 
+**对应教程**：https://geek-doc.cn/fpga/beginner/ts-xsim-wave-invalid-command.html（极客工场站点对应篇目，上线后此链接即生效）
+
 **现象**：把 ModelSim 的 `wave add` 脚本直接拿给 XSim 跑，仿真器报：
 
 ```

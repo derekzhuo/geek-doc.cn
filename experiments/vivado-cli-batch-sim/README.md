@@ -1,5 +1,7 @@
 # vivado-cli-batch-sim — Vivado 命令行批处理仿真（无 GUI）
 
+**对应教程**：https://geek-doc.cn/fpga/intermediate/vivado-cli-batch-sim.html（极客工场站点对应篇目，上线后此链接即生效）
+
 不开 Vivado IDE，用 `xvlog → xelab → xsim -R` 三步批处理跑完一次行为仿真，适合 CI / 无人值守环境。
 
 **文件**
