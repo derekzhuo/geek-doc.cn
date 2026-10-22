@@ -1,0 +1,47 @@
+===== cmd: New-Item -ItemType Directory -Force C:\eda-lab\wave-invalid4 | Out-Null; Set-Location C:\eda-lab\wave-invalid4; Copy-Item C:\win-jobs\runs\ts-xsim-wave-invalid-mac4\counter4.v . -Force; Copy-Item C:\win-jobs\runs\ts-xsim-wave-invalid-mac4\tb_counter4.v . -Force; Copy-Item C:\win-jobs\runs\ts-xsim-wave-invalid-mac4\wave_bad.tcl . -Force; & D:\Xilinx\Vivado\2017.4\bin\xvlog.bat counter4.v tb_counter4.v 2>&1; "xvlog exit=$LASTEXITCODE"; & D:\Xilinx\Vivado\2017.4\bin\xelab.bat -debug typical tb_counter4 -s sim_w 2>&1; "xelab exit=$LASTEXITCODE"; '===== ModelSim syntax: wave add ====='; & D:\Xilinx\Vivado\2017.4\bin\xsim.bat sim_w -tclbatch wave_bad.tcl 2>&1; "xsim exit=$LASTEXITCODE"; exit 0 =====
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/wave-invalid4/counter4.v" into library work
+INFO: [VRFC 10-311] analyzing module counter4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/wave-invalid4/tb_counter4.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_counter4
+xvlog exit=0
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb_counter4 -s sim_w 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.counter4
+Compiling module work.tb_counter4
+Built simulation snapshot sim_w
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/wave-invalid4/xsim.dir/sim_w/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 22 14:01:22 2026...
+xelab exit=0
+===== ModelSim syntax: wave add =====
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_w/xsim_script.tcl
+# xsim {sim_w} -autoloadwcfg -tclbatch {wave_bad.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source wave_bad.tcl
+## wave add {{/tb_counter4/dut/clk} {/tb_counter4/dut/rst_n} {/tb_counter4/dut/count}}
+invalid command name "wave"
+    while executing
+"wave add {{/tb_counter4/dut/clk} {/tb_counter4/dut/rst_n} {/tb_counter4/dut/count}}"
+    (file "wave_bad.tcl" line 1)
+xsim% xsim exit=-1
+----- stderr -----
+#< CLIXML

@@ -1,0 +1,67 @@
+===== cmd: New-Item -ItemType Directory -Force C:\eda-lab\elab-ts\ok | Out-Null; Set-Location C:\eda-lab\elab-ts\ok; Copy-Item C:\win-jobs\runs\xsim-elab-timescale-mac\counter4_good.v .\counter4.v -Force; Copy-Item C:\win-jobs\runs\xsim-elab-timescale-mac\tb_counter4.v . -Force; '===== STEP B: counter4.v WITH timescale 1ns/1ps ====='; & D:\Xilinx\Vivado\2017.4\bin\xvlog.bat counter4.v tb_counter4.v 2>&1; "xvlog exit=$LASTEXITCODE"; & D:\Xilinx\Vivado\2017.4\bin\xelab.bat -debug typical tb_counter4 -s sim_ok 2>&1; "xelab exit=$LASTEXITCODE"; & D:\Xilinx\Vivado\2017.4\bin\xsim.bat sim_ok -R 2>&1; "xsim exit=$LASTEXITCODE"; exit 0 =====
+===== STEP B: counter4.v WITH timescale 1ns/1ps =====
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/elab-ts/ok/counter4.v" into library work
+INFO: [VRFC 10-311] analyzing module counter4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/elab-ts/ok/tb_counter4.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_counter4
+xvlog exit=0
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb_counter4 -s sim_ok 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.counter4
+Compiling module work.tb_counter4
+Built simulation snapshot sim_ok
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/elab-ts/ok/xsim.dir/sim_ok/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 22 13:55:02 2026...
+xelab exit=0
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_ok/xsim_script.tcl
+# xsim {sim_ok} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+0 ns: rst_n=0 count=0 (0x0)
+25000 ns: rst_n=1 count=1 (0x1)
+35000 ns: rst_n=1 count=2 (0x2)
+45000 ns: rst_n=1 count=3 (0x3)
+55000 ns: rst_n=1 count=4 (0x4)
+65000 ns: rst_n=1 count=5 (0x5)
+75000 ns: rst_n=1 count=6 (0x6)
+85000 ns: rst_n=1 count=7 (0x7)
+95000 ns: rst_n=1 count=8 (0x8)
+105000 ns: rst_n=1 count=9 (0x9)
+115000 ns: rst_n=1 count=10 (0xa)
+125000 ns: rst_n=1 count=11 (0xb)
+135000 ns: rst_n=1 count=12 (0xc)
+145000 ns: rst_n=1 count=13 (0xd)
+155000 ns: rst_n=1 count=14 (0xe)
+165000 ns: rst_n=1 count=15 (0xf)
+175000 ns: rst_n=1 count=0 (0x0)
+185000 ns: rst_n=1 count=1 (0x1)
+195000 ns: rst_n=1 count=2 (0x2)
+205000 ns: rst_n=1 count=3 (0x3)
+215000 ns: rst_n=1 count=4 (0x4)
+TEST PASS: counter wrapped, final count=0x4
+$finish called at time : 225 ns : File "C:/eda-lab/elab-ts/ok/tb_counter4.v" Line 17
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 22 13:55:13 2026...
+xsim exit=0
+----- stderr -----
+#< CLIXML
