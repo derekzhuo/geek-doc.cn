@@ -1,0 +1,38 @@
+# command: make
+# date: 2026-10-22T12:57:04+0800
+# host-toolchain: 2.1.0 / Icarus Verilog version 13.0 (stable) (v13_0)
+---
+rm -f results.xml
+/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:67: Using MODULE is deprecated, please use COCOTB_TEST_MODULES instead.
+rm -f results.xml
+COCOTB_TEST_MODULES=test_async_fifo COCOTB_TESTCASE=  COCOTB_TOPLEVEL=async_fifo TOPLEVEL_LANG=verilog       \
+		 /usr/local/bin/vvp -m /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp -fst  
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/local/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Python'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:234  in gpi_load_users                  Running entry func 'initialize' from loaded library '/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/simulator.cpython-313-darwin.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:115  in initialize                      Using Python 3.13.15 interpreter at /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/bin/python3.13
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1792645025
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 13.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_async_fifo.single_write_read (1/2)
+   253.50ns INFO     cocotb.async_fifo                  single token 0xa5 delivered across async clocks OK
+   253.50ns INFO     cocotb.regression                  test_async_fifo.single_write_read passed
+   253.50ns INFO     cocotb.regression                  running test_async_fifo.random_back_to_back (2/2)
+   353.50ns WARNING  py.warnings                        /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/lab/testbench/test_async_fifo.py:81: DeprecationWarning: Use ``cocotb.start_soon`` instead.
+                                                          await cocotb.start(writer())
+   353.50ns WARNING  py.warnings                        /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/lab/testbench/test_async_fifo.py:82: DeprecationWarning: Use ``cocotb.start_soon`` instead.
+                                                          await cocotb.start(reader())
+  4777.50ns INFO     cocotb.async_fifo                  200 tokens delivered in order across async clocks OK
+  4777.50ns INFO     cocotb.regression                  test_async_fifo.random_back_to_back passed
+  4777.50ns INFO     cocotb.regression                  *********************************************************************************************
+                                                        ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *********************************************************************************************
+                                                        ** test_async_fifo.single_write_read     PASS         253.50           0.00      81991.33  **
+                                                        ** test_async_fifo.random_back_to_back   PASS        4524.00           0.04     106721.08  **
+                                                        *********************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                      4777.50           0.05     103047.58  **
+                                                        *********************************************************************************************
+FST info: dumpfile sim_build/async_fifo.fst opened for output.
+---
+# exit_code: 0

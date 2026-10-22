@@ -1,0 +1,40 @@
+# command: make MODULE=nonexistent_tb
+# date: 2026-10-22T12:57:02+0800
+# host-toolchain: 2.1.0 / Icarus Verilog version 13.0 (stable) (v13_0)
+---
+rm -f results.xml
+mkdir -p sim_build
+/usr/local/bin/iverilog -o sim_build/sim.vvp -s async_fifo -g2012 -g2012 -f sim_build/cmds.f -s cocotb_iverilog_dump  rtl/async_fifo.v sim_build/cocotb_iverilog_dump.v
+/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:67: Using MODULE is deprecated, please use COCOTB_TEST_MODULES instead.
+rm -f results.xml
+COCOTB_TEST_MODULES=nonexistent_tb COCOTB_TESTCASE=  COCOTB_TOPLEVEL=async_fifo TOPLEVEL_LANG=verilog       \
+		 /usr/local/bin/vvp -m /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp -fst  
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/local/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Python'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:234  in gpi_load_users                  Running entry func 'initialize' from loaded library '/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/simulator.cpython-313-darwin.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:115  in initialize                      Using Python 3.13.15 interpreter at /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/bin/python3.13
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1792645024
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 13.0 (stable)
+Traceback (most recent call last):
+  File "/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/pygpi/entry.py", line 42, in load_entry
+    entry_func()
+    ~~~~~~~~~~^^
+  File "/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/regression.py", line 1190, in _run_regression
+    _setup_regression_manager()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/regression.py", line 1156, in _setup_regression_manager
+    _manager_inst.discover_tests(*modules)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/derekzhuo/Project/geek-doc.cn/experiments/eda-errlog-batch1/ts-cocotb-NO_TEST_ERROR/.venv/lib/python3.13/site-packages/cocotb/regression.py", line 255, in discover_tests
+    mod = import_module(module_name)
+  File "/usr/local/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'nonexistent_tb'
+make: *** [results.xml] Error 1
+---
+# exit_code: 2

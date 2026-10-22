@@ -53,3 +53,13 @@ vim-cpp/**/bench_0
 vim-cpp/**/bench_1
 vim-cpp/**/bench_2
 vim-cpp/**/bench_3
+
+# Python 虚拟环境（实验复现用，本机创建）
+.venv/
+venv/
+
+# cocotb/仿真产物（谁生成：cocotb make / vvp；保留 results.txt 类手工证据，不入库自动产物）
+results.xml
+dumpfile.fst
+dumpfile.vcd
+*.vvp
