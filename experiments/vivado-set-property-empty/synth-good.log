@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Oct 24 00:41:31 2026
+# Process ID: 12384
+# Current directory: C:/win-jobs/runs/ve4-set-property-fix-20261024-mac
+# Command line: vivado.exe -mode batch -nojournal -log synth-good.log -source synth.tcl -tclargs good.xdc
+# Log file: C:/win-jobs/runs/ve4-set-property-fix-20261024-mac/synth-good.log
+# Journal file: 
+#-----------------------------------------------------------
+source synth.tcl
+# read_verilog counter.v
+# read_xdc [lindex $argv 0]
+# synth_design -top counter -part xc7a35tcpg236-1
+Command: synth_design -top counter -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+couldn't read file "D:/Xilinx/Vivado/2017.4/scripts/rt/fpga_tcl/rtSynthParallelPrep.tcl": no such file or directory
+INFO: [Common 17-83] Releasing license: Synthesis
+2 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 24 00:41:53 2026...
