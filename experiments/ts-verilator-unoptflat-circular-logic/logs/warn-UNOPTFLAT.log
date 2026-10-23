@@ -1,0 +1,27 @@
+# command: verilator --lint-only -Wall loop_bad.v
+# date: 2026-10-24
+# verilator: Verilator 4.038 2020-07-11 rev v4.038
+# source: loop_bad.v
+     1	module loop_bad (
+     2	    input  wire sel,
+     3	    input  wire a,
+     4	    input  wire b,
+     5	    output wire y
+     6	);
+     7	    wire x, z;
+     8	    assign x = sel ? a : z;
+     9	    assign z = sel ? b : x;
+    10	    assign y = x & z;
+    11	endmodule
+--- lint output ---
+%Warning-UNOPTFLAT: loop_bad.v:7:13: Signal unoptimizable: Feedback to clock or circular logic: 'loop_bad.z'
+    7 |     wire x, z;
+      |             ^
+                    ... Use "/* verilator lint_off UNOPTFLAT */" and lint_on around source to disable this message.
+                    loop_bad.v:7:13:      Example path: loop_bad.z
+                    loop_bad.v:8:14:      Example path: ASSIGNW
+                    loop_bad.v:7:10:      Example path: loop_bad.x
+                    loop_bad.v:9:14:      Example path: ASSIGNW
+                    loop_bad.v:7:13:      Example path: loop_bad.z
+%Error: Exiting due to 1 warning(s)
+# exit_code: 1
