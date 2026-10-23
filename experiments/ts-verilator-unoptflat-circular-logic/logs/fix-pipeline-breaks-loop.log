@@ -1,0 +1,22 @@
+# command: verilator --lint-only -Wall loop_fix.v
+# date: 2026-10-24
+# verilator: Verilator 4.038 2020-07-11 rev v4.038
+# source: loop_fix.v
+     1	module loop_fix (
+     2	    input  wire clk,
+     3	    input  wire sel,
+     4	    input  wire a,
+     5	    input  wire b,
+     6	    output reg  y
+     7	);
+     8	    reg z_q;
+     9	    wire x;
+    10	    assign x = sel ? a : z_q;
+    11	    always @(posedge clk) begin
+    12	        z_q <= sel ? b : x;
+    13	        y   <= x & z_q;
+    14	    end
+    15	endmodule
+--- lint output ---
+(no output, lint clean)
+# exit_code: 0
