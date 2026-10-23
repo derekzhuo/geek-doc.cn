@@ -8,7 +8,11 @@
 node buck-sim.js        # 或 sh run.sh
 ```
 
-无需任何依赖，Node 18+ 直接跑。`buck.cir` 是同一电路的 ngspice 网表变体（有 ngspice 的机器上 `ngspice -b buck.cir` 可对照）。
+无需任何依赖，Node 18+ 直接跑。`buck.cir` 是同一电路的 ngspice 网表变体（有 ngspice 的机器上 `ngspice -b buck.cir` 可对照，`buck-spice.txt` 是 ngspice 44 在 macOS 上的真实运行输出）。
+
+## SPICE 对照（ngspice 44 实跑）
+
+ngspice 实测 Vpp = **46.7mV**（vmax 4.889 / vmin 4.843，均值 4.87V），比 Node 分段线性仿真的 20.3mV 高一倍。差异来源：SPICE 的 vmax/vmin 量到了开关沿的窄尖峰（硬开关 + 二极管模型在边沿的瞬态），而公式组与 Node 仿真只刻画纹波的「主体」分量。工程读数惯例是忽略边沿尖峰看主体纹波，两组结果因此都对、读法不同；真要抠尖峰，实测时用 20MHz 带宽限制 + 短地弹簧针。
 
 ## 说明
 
