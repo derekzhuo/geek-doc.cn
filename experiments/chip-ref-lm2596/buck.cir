@@ -1,0 +1,17 @@
+* LM2596-5.0 简化 buck 仿真（对应教程：https://geek-doc.cn/chip-design/chip-ref/lm2596.html 上线后生效）
+* Vin=12V -> 5V/3A，按 datasheet 典型应用：L=33uH，Cout=220uF（取 30mΩ ESR 电解），150kHz 固定频率
+Vin in 0 12
+Vg g 0 PULSE(0 5 0 10n 10n 2.867u 6.667u)
+S1 in sw g 0 SWMOD
+.model SWMOD SW(Ron=0.05 Roff=1Meg Von=2.5 Voff=2.5)
+D1 0 sw DSCH
+.model DSCH D(Is=1e-6 Rs=0.02 N=1.2)
+L1 sw out 33u
+C1 out coutn 220u
+Resr coutn 0 0.03
+R1 out 0 1.6667
+.tran 0.5u 10m 5m 0.5u
+.meas TRAN vavg AVG V(out) FROM=8m TO=10m
+.meas TRAN vmax MAX V(out) FROM=8m TO=10m
+.meas TRAN vmin MIN V(out) FROM=8m TO=10m
+.end
