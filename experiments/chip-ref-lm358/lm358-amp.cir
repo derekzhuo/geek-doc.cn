@@ -1,0 +1,35 @@
+* LM358 反相放大器行为模型（参数取自 datasheet 典型值）：
+* Aol=100dB、Vos=2mV、GBW=1MHz（主极点 10Hz）、单 5V 摆幅窗 [5mV, VCC-1.5V]
+.subckt LM358B inp inn vcc out
+Vos inp inp2 2m
+E1 n1 0 inp2 inn 100k
+Rp n1 n2 1k
+Cp n2 0 15.9u
+B1 out 0 V=limit(V(n2), 0.005, V(vcc)-1.5)
+.ends LM358B
+
+* 电路一：增益误差——Rin=1k，Rf 三档 1k/10k/100k（G=-1/-10/-100），信号 5mV/1kHz，同相端偏置 2V
+Vcc vcc 0 5
+Vbias inpa 0 2
+Vsig sig 0 SINE(2 5m 1k)
+Rin sig ina 1k
+Rf1 outa ina {RFV}
+X1 inpa ina vcc outa LM358B
+.param RFV=table(X,1,1k,2,10k,3,100k)
+.step param X list 1 2 3
+
+* 电路二：摆幅削顶——G=-10，信号 250mV/1kHz，输出理想摆幅 ±2.5V 叠加 2V 直流 -> 高侧撞 3.5V 削顶
+Vbias2 inpb 0 2
+Vsig2 sig2 0 SINE(2 250m 1k)
+Rin2 sig2 inb 1k
+Rf2 outb inb 10k
+X2 inpb inb vcc outb LM358B
+
+.tran 0 5m 2m 1u
+.meas TRAN vinpp PARAM (vomax-vomin)
+.meas TRAN vomax MAX V(outa) FROM 4m TO 5m
+.meas TRAN vomin MIN V(outa) FROM 4m TO 5m
+.meas TRAN voutpp PARAM vomax-vomin
+.meas TRAN vclipmax MAX V(outb) FROM 4m TO 5m
+.meas TRAN vclipmin MIN V(outb) FROM 4m TO 5m
+.end

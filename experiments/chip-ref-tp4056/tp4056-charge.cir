@@ -1,0 +1,12 @@
+* TP4056 CC/CV 充电行为模型：IBAT=1.2V/RPROG（datasheet 公式），电池 = 3600F 等效电容
+* （1000mAh × 3.6s = 3600C/V）+ 0.15Ω 等效内阻，OCV 起点 3.0V，CV 目标 4.2V，C/10 终止
+Bch 0 bat I = min(IPROG, max(0, (4.2 - V(ocv)) / 0.15))
+Rs bat ocv 0.15
+Cbat ocv 0 3600 IC=3.0
+.param IPROG=1
+.step param IPROG list 1 0.6 0.12
+.tran 0 40000 0 20 uic
+.meas TRAN tcc WHEN I(Bch)=0.995*IPROG FALL=1
+.meas TRAN tend WHEN I(Bch)=0.1*IPROG FALL=1
+.meas TRAN vocv_cv FIND V(ocv) WHEN I(Bch)=0.995*IPROG FALL=1
+.end

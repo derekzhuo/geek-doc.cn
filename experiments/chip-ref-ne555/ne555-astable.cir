@@ -1,0 +1,24 @@
+* NE555 非稳态行为模型：自引用 B 源 Schmitt 锁存复现 1/3、2/3 VCC 迟滞翻转
+* 放电管饱和压降 ~0.1V（Ron=20 对 R1 分压），迟滞锁存延迟 ~1us 双侧对称
+Vcc vcc 0 5
+R1 vcc x {R1V}
+R2 x c {R2V}
+C1 c 0 {CV} IC=0
+Bv qint 0 V=(V(c) > (V(q)>0.5 ? 1.6666 : 3.3334)) ? 1 : 0
+Rq qint q 1k
+Cq q 0 1n IC=0
+S1 x 0 q 0 SWDIS
+.model SWDIS SW(Ron=20 Roff=1Meg Vt=0.5 Vh=0.01)
+.param R1V=table(X,1,1k,2,1k,3,100)
+.param R2V=table(X,1,10k,2,10k,3,100k)
+.param CV=table(X,1,10n,2,100n,3,10n)
+.step param X list 1 2 3
+.tran 0 10m 0 0.2u uic
+.meas TRAN ta WHEN V(c)=1.6667 RISE=3
+.meas TRAN tb WHEN V(c)=3.3334 RISE=3
+.meas TRAN td WHEN V(c)=1.6667 RISE=4
+.meas TRAN period PARAM td-ta
+.meas TRAN freq PARAM 1/period
+.meas TRAN thigh PARAM tb-ta
+.meas TRAN duty PARAM thigh/period*100
+.end

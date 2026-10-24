@@ -1,17 +1,20 @@
-* LM2596-5.0 简化 buck 仿真（对应教程：https://geek-doc.cn/chip-design/chip-ref/lm2596.html 上线后生效）
-* Vin=12V -> 5V/3A，按 datasheet 典型应用：L=33uH，Cout=220uF（取 30mΩ ESR 电解），150kHz 固定频率
+* LM2596 buck 功率级行为模型：12V -> 5V/1A，150kHz，L=33uH，Cout=220uF(ESR 30mΩ)
+* 参数来源：TI LM2596 datasheet 典型应用（SNVS124）
 Vin in 0 12
-Vg g 0 PULSE(0 5 0 10n 10n 2.867u 6.667u)
-S1 in sw g 0 SWMOD
-.model SWMOD SW(Ron=0.05 Roff=1Meg Von=2.5 Voff=2.5)
-D1 0 sw DSCH
-.model DSCH D(Is=1e-6 Rs=0.02 N=1.2)
-L1 sw out 33u
-C1 out coutn 220u
-Resr coutn 0 0.03
-R1 out 0 1.6667
-.tran 0.5u 10m 5m 0.5u
-.meas TRAN vavg AVG V(out) FROM=8m TO=10m
-.meas TRAN vmax MAX V(out) FROM=8m TO=10m
-.meas TRAN vmin MIN V(out) FROM=8m TO=10m
+S1 in sw drv 0 SWMOD
+D1 0 sw DMOD
+L1 sw vo 33u
+C1 vo 0 220u Rser=30m
+Rload vo 0 5
+Vdrive drv 0 PULSE(0 1 0 10n 10n 2.933u 6.6667u)
+.model SWMOD SW(Ron=0.05 Roff=1Meg Vt=0.5 Vh=0.1)
+.model DMOD D(Ron=0.01 Vfwd=0.5 epsilon=0.1)
+.tran 0 5m 3m uic
+.meas TRAN vavg AVG V(vo) FROM 4.5m TO 5m
+.meas TRAN vmax MAX V(vo) FROM 4.5m TO 5m
+.meas TRAN vmin MIN V(vo) FROM 4.5m TO 5m
+.meas TRAN vpp PARAM vmax-vmin
+.meas TRAN ilpp PARAM iLmax-iLmin
+.meas TRAN iLmax MAX I(L1) FROM 4.5m TO 5m
+.meas TRAN iLmin MIN I(L1) FROM 4.5m TO 5m
 .end
