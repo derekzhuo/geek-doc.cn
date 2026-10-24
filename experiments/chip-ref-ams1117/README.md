@@ -1,6 +1,6 @@
 # chip-ref-ams1117：AMS1117-3.3 结温实算
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ams1117-3.3.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ams1117-3-3.html（上线后生效）
 
 ## 复现方式
 
