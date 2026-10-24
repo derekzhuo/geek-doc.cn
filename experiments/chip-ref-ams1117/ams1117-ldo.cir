@@ -1,0 +1,15 @@
+* AMS1117-3.3 LDO 行为模型：dropout 1.1V（datasheet 典型），负载瞬态响应
+* 时间轴：0-0.5ms Vin=4.5V 预热；0.5ms Vin 跳到 {VIN}；1ms 负载 10mA->500mA；3ms 回落
+Vin in 0 PWL(0 4.5 0.5m 4.5 0.501m {VIN})
+B1 o0 0 V = (V(in) > 4.4) ? 3.3 : V(in)-1.1
+Rp o0 out 0.3
+Cp out 0 330u
+Iload out 0 PWL(0 0.01 1m 0.01 1.001m 0.5 3m 0.5 3.001m 0.01)
+Cout out 0 22u Rser=50m
+.param VIN=5
+.step param VIN list 5 4.5 4.3
+.tran 0 5m 0 500n
+.meas TRAN vreg AVG V(out) FROM 0.8m TO 1m
+.meas TRAN vunder MIN V(out) FROM 1m TO 2m
+.meas TRAN vover MAX V(out) FROM 3.001m TO 4m
+.end

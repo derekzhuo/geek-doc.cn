@@ -1,0 +1,42 @@
+LTspice 26.1.1 for Windows
+Circuit: D:\win-jobs-tools\ltspice-tp4056\tp4056.cir
+Start Time: Sat Oct 24 23:39:00 2026
+
+.step iprog=0.12
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+AsciiRawFile = true
+Warning: Capacitor Cbat has large value 3.600e+03 F. By default LTspice adds a parallel resistor = 1/(C * 1e-12) = 2.778e+08 Ohm.
+         To avoid this, define parallel resistance Rpar for this capacitor, or add '.options gfarad=0' to the circuit.
+Per .tran options, skipping operating point for transient analysis.
+
+.step iprog=0.6
+
+.step iprog=1
+Total elapsed time: 0.228 seconds.
+Total iterations: 4720
+
+Files loaded:
+D:\win-jobs-tools\ltspice-tp4056\tp4056.cir
+
+
+Measurement: tcc
+  step	I(Bch)=0.995*IPROG
+     1	35458.121253
+     2	6658.12028914
+     3	3778.12026446
+
+Measurement: tend
+  step	I(Bch)=0.1*IPROG
+     1	36703.1658289
+     2	7903.08492907
+     3	5023.08478081
+
+Measurement: vocv_cv
+  step	V(ocv)	at
+     1	4.18193724777	35458.121253
+     2	4.10968669119	6658.12028914
+     3	4.04947783792	3778.12026446

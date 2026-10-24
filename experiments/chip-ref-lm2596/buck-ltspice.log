@@ -1,0 +1,23 @@
+LTspice 26.1.1 for Windows
+Circuit: D:\win-jobs-tools\ltspice-lm2596\buck.cir
+Start Time: Sat Oct 24 23:25:02 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+AsciiRawFile = true
+Per .tran options, skipping operating point for transient analysis.
+Total elapsed time: 0.303 seconds.
+Total iterations: 60580
+
+Files loaded:
+D:\win-jobs-tools\ltspice-lm2596\buck.cir
+
+vavg: AVG(V(vo))=4.9704957363 FROM 0.0045 TO 0.005
+vmax: MAX(V(vo))=4.98084277956 FROM 0.0045 TO 0.005
+vmin: MIN(V(vo))=4.95999875262 FROM 0.0045 TO 0.005
+vpp: vmax-vmin=0.0208440269391
+ilpp: iLmax-iLmin=0.62918520639
+ilmax: MAX(I(L1))=1.30921197556 FROM 0.0045 TO 0.005
+ilmin: MIN(I(L1))=0.680026769169 FROM 0.0045 TO 0.005

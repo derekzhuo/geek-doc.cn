@@ -1,20 +1,23 @@
-# chip-ref-stm32f103c8t6：USART 波特率误差实测计算
+# chip-ref-stm32f103c8t6：XSim 复现 USART 波特率发生器双 APB 域实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/stm32f103c8t6.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/chip-ref/stm32f103c8t6.html
 
 ## 复现方式
 
-```bash
-node baud-error.js
+需要 Vivado Simulator（本实验用 2017.4，Windows）：
+
+```bat
+xvlog tb_baud.v && xelab -debug typical tb -s sim && xsim sim -R
 ```
 
-无需任何依赖，Node 18+ 直接跑。
+仓库内 `xsim-run1.log` 是本次实测的原始输出。
 
-## 说明
+## 实验设计
 
-按 ST RM0008 §27.3.4 的 BRR 取整规则，计算 STM32F103 在标准 72MHz 配置下 USART1（APB2 72MHz）与 USART2/3（APB1 36MHz）两组时钟域对 11 档标准波特率的实际误差。`results.txt` 是真实运行输出。
+Verilog 行为模型复现 STM32F103 的 BRR 过采样累加器语义：每个 APB 时钟累加 16，累到 BRR 进位产生一次 16 倍过采样 tick，等效 bit 周期 = BRR/APB 秒。115200 档两组时钟域同图对照：APB1=36MHz（BRR=313）与 APB2=72MHz（BRR=625，整除），实量 1024 个过采样 tick 的平均周期换算误差。
 
-## 关键结论
+## 关键结论（本次实测）
 
-- 72MHz/36MHz 下 1200–115200 全部零误差，230400 起出现 ±0.160% 量级误差，全部远在 ±2% 可用线内。
-- 同片两组 APB 时钟误差谱不同：38400 在 APB2 零误差、APB1 上 -0.053%——选哪个 USART 接对误差敏感的外设（如某些 GPS/4G 模组）有讲究。
+- APB1（36MHz）：实际 115015.0 baud，误差 **−0.161%**（312.5 取 313 丢的半精度）。
+- APB2（72MHz）：实际 115207.4 baud，误差 **+0.006%**（整除几乎零误差）。
+- 两个时钟域都远在 ±2% 窗口深处，F103 跑 115200 完全不用操心。

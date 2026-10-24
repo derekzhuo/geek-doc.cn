@@ -1,0 +1,64 @@
+LTspice 26.1.1 for Windows
+Circuit: D:\win-jobs-tools\ltspice-ne555\ne555.cir
+Start Time: Sat Oct 24 23:35:59 2026
+
+.step x=1
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+AsciiRawFile = true
+Per .tran options, skipping operating point for transient analysis.
+
+.step x=2
+
+.step x=3
+Total elapsed time: 4.622 seconds.
+Total iterations: 100167
+
+Files loaded:
+D:\win-jobs-tools\ltspice-ne555\ne555.cir
+
+
+Measurement: ta
+  step	V(c)=1.6667
+     1	0.00034672204959
+     2	0.00342978309601
+     3	0.00399610805419
+
+Measurement: tb
+  step	V(c)=3.3334
+     1	0.000423129757085
+     2	0.00419386077514
+     3	0.00469012852051
+
+Measurement: td
+  step	V(c)=1.6667
+     1	0.000497762592342
+     2	0.00492130748848
+     3	0.00579118588034
+
+Measurement: period
+  step	td-ta
+     1	0.000151040542752
+     2	0.00149152439247
+     3	0.00179507782615
+
+Measurement: freq
+  step	1/period
+     1	6620.7389207
+     2	670.455009017
+     3	557.078910692
+
+Measurement: thigh
+  step	tb-ta
+     1	7.64077074945e-05
+     2	0.000764077679131
+     3	0.000694020466318
+
+Measurement: duty
+  step	thigh/period*100
+     1	50.587548285
+     2	51.2279707252
+     3	38.6624165374
