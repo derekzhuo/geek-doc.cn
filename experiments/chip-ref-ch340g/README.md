@@ -1,19 +1,23 @@
-# chip-ref-ch340g：两端误差叠加判定（CH340 × 常见 MCU）
+# chip-ref-ch340g：XSim 实测 UART 波特率误差失效边界
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ch340g.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ch340g.html
 
 ## 复现方式
 
-```bash
-node stack-judge.js        # 无需任何依赖，Node 18+ 直接跑
+需要 Vivado Simulator（本实验用 2017.4，Windows）：
+
+```bat
+xvlog tb_uart_tol.v && xelab -debug typical tb -s sim_ch340g && xsim sim_ch340g -R
 ```
 
-## 说明
+仓库内 `xsim-run1.log` 是本次实测的原始输出（25 档 MEAS 行）。
 
-串口能否通信取决于发送端与接收端波特率误差之和是否落在接收容忍窗（本实验取 ±2%）。脚本把 CH340 侧按 datasheet 保证的 <0.3% 最坏情况计，MCU 侧用各自真实分频公式实算：STM32F103（APB1 36MHz，BRR 1/16 分辨率）、ATmega328P（16MHz，UBRR 整数分频，U2X 开/关）、ESP32（80MHz，4bit 小数分频）。逐组合输出 MCU 侧误差 / 叠加误差 / 绿红判定。`results.txt` 是真实运行输出。
+## 实验设计
 
-## 关键结论
+Verilog 搭 UART 收发对：TX 按「标称 115200 × (1+err)」真实波特率背靠背连发 0x55/0xAA 共 50 帧（无空闲位，最严苛工况），RX 按标称波特率中点采样解码并校验停止位；err 从 −6% 扫到 +6%（步长 0.5%）统计误帧数，找失效边界。RX 带 20-bit 看门狗防止失步后无限等起始沿。
 
-- STM32/ESP32 × CH340：全档位绿（叠加 ≤0.46%），CH340 的 0.3% 不构成瓶颈。
-- ATmega328P × CH340：**57600 起不开 U2X 即红**；115200 开 U2X 后叠加 2.42% 压红线（零裕量）；≥230400 全灭。
-- 瓶颈永远在 MCU 侧整数分频，判通断要算两端之和。
+## 关键结论（本次实测）
+
+- **−4.5% ~ +5.5% 区间 50/50 帧零误码**；−5.0% 整档全错（停止位采样点撞上后一帧起始位下降沿）；+6.0% 出现 25/50 误帧。
+- 实测边界与理想中点采样理论极限 ±5.26% 吻合。
+- 「两端叠加 ±2%」工程判据裕量巨大；115200 乱码的真凶几乎从来不是 CH340（自身 <0.2%），而是 MCU 侧时钟源误差。
