@@ -1,0 +1,5 @@
+# step 2: elaborate and dump per-module statistics
+read_verilog demo.v
+hierarchy -top top_demo
+proc
+stat

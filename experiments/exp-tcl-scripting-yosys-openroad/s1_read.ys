@@ -1,0 +1,4 @@
+# step 1: read design, list hierarchy
+read_verilog demo.v
+hierarchy -top top_demo
+ls

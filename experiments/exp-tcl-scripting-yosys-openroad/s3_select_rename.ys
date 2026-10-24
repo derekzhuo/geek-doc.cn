@@ -1,0 +1,13 @@
+# step 3: select + rename demo. Plain `select u_add` matches MODULE names in
+# yosys, so we demonstrate with the module sub_add (deterministic: it exists
+# right after read_verilog + hierarchy, nothing has been flattened yet).
+read_verilog demo.v
+hierarchy -check -top top_demo
+proc
+stat
+select -assert-any sub_add
+select -list
+rename sub_add sub_adder
+select -assert-none sub_add
+select -assert-any  sub_adder
+stat

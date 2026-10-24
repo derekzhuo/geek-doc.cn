@@ -1,0 +1,6 @@
+# step 4: full generic synthesis, write out netlist + json
+read_verilog demo.v
+synth -top top_demo
+stat
+write_verilog synth_out.v
+write_json  synth_out.json
