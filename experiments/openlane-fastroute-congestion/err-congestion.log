@@ -1,0 +1,118 @@
+# command: timeout 900 docker run --rm -v /opt/openlane-src/OpenLane:/openlane -v /home/ubuntu/.volare:/home/ubuntu/.volare -v /tmp/errlog-evidence-b4/src/n7design:/designs/mult_array -w /openlane -e PDK_ROOT=/home/ubuntu/.volare -e PDK=sky130A -e PWD=/openlane efabless/openlane:d054702b2cce04761cc2bc598f6b95c9d8ca7c6c-amd64 ./flow.tcl -design /designs/mult_array -tag n7_err -overwrite
+# date: 2026-10-26T01:45:53+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+OpenLane d054702b2cce04761cc2bc598f6b95c9d8ca7c6c
+All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
+Available under the Apache License, version 2.0. See the LICENSE file for more details.
+
+[INFO]: Using configuration in '../designs/mult_array/config.json'...
+[INFO]: PDK Root: /home/ubuntu/.volare
+[INFO]: Process Design Kit: sky130A
+[INFO]: Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Run Directory: /designs/mult_array/runs/n7_err
+[INFO]: Saving runtime environment...
+[INFO]: Preparing LEF files for the nom corner...
+[INFO]: Preparing LEF files for the min corner...
+[INFO]: Preparing LEF files for the max corner...
+[INFO]: Running linter (Verilator) (log: ../designs/mult_array/runs/n7_err/logs/synthesis/linter.log)...
+[INFO]: 0 errors found by linter
+[WARNING]: 4 warnings found by linter
+[STEP 1]
+[INFO]: Running Synthesis (log: ../designs/mult_array/runs/n7_err/logs/synthesis/1-synthesis.log)...
+[STEP 2]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../designs/mult_array/runs/n7_err/logs/synthesis/2-sta.log)...
+[STEP 3]
+[INFO]: Running Initial Floorplanning (log: ../designs/mult_array/runs/n7_err/logs/floorplan/3-initial_fp.log)...
+[INFO]: Floorplanned with width 255.76 and height 255.68.
+[STEP 4]
+[INFO]: Running IO Placement...
+[STEP 5]
+[INFO]: Running Tap/Decap Insertion (log: ../designs/mult_array/runs/n7_err/logs/floorplan/5-tap.log)...
+[INFO]: Power planning with power {VPWR} and ground {VGND}...
+[STEP 6]
+[INFO]: Generating PDN (log: ../designs/mult_array/runs/n7_err/logs/floorplan/6-pdn.log)...
+[STEP 7]
+[INFO]: Running Global Placement (log: ../designs/mult_array/runs/n7_err/logs/placement/7-global.log)...
+[STEP 8]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../designs/mult_array/runs/n7_err/logs/placement/8-gpl_sta.log)...
+[STEP 9]
+[INFO]: Running Placement Resizer Design Optimizations (log: ../designs/mult_array/runs/n7_err/logs/placement/9-resizer.log)...
+[STEP 10]
+[INFO]: Running Detailed Placement (log: ../designs/mult_array/runs/n7_err/logs/placement/10-detailed.log)...
+[STEP 11]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../designs/mult_array/runs/n7_err/logs/placement/11-dpl_sta.log)...
+[STEP 12]
+[INFO]: Running Clock Tree Synthesis (log: ../designs/mult_array/runs/n7_err/logs/cts/12-cts.log)...
+[STEP 13]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../designs/mult_array/runs/n7_err/logs/cts/13-cts_sta.log)...
+[STEP 14]
+[INFO]: Running Placement Resizer Timing Optimizations (log: ../designs/mult_array/runs/n7_err/logs/cts/14-resizer.log)...
+[STEP 15]
+[INFO]: Running Global Routing Resizer Design Optimizations (log: ../designs/mult_array/runs/n7_err/logs/routing/15-resizer_design.log)...
+[STEP 16]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../designs/mult_array/runs/n7_err/logs/routing/16-rsz_design_sta.log)...
+[STEP 17]
+[INFO]: Running Global Routing Resizer Timing Optimizations (log: ../designs/mult_array/runs/n7_err/logs/routing/17-resizer_timing.log)...
+[ERROR]: during executing openroad script /openlane/scripts/openroad/resizer_routing_timing.tcl
+[ERROR]: Log: ../designs/mult_array/runs/n7_err/logs/routing/17-resizer_timing.log
+[ERROR]: Last 10 lines:
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0103] Extra Run for hard benchmark.
+[INFO GRT-0197] Via related to pin nodes: 32956
+[INFO GRT-0198] Via related Steiner nodes: 736
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 38671
+[INFO GRT-0112] Final usage 3D: 149090
+[ERROR GRT-0119] Routing congestion too high. Check the congestion heatmap in the GUI and load /designs/mult_array/runs/n7_err/tmp/routing/resizer-routing-timing-congestion.rpt in the DRC viewer.
+Error: resizer_routing_timing.tcl, 46 GRT-0119
+child process exited abnormally
+
+[ERROR]: Creating issue reproducible...
+[INFO]: Saving runtime environment...
+OpenLane TCL Issue Packager
+
+EFABLESS CORPORATION AND ALL AUTHORS OF THE OPENLANE PROJECT SHALL NOT BE HELD
+LIABLE FOR ANY LEAKS THAT MAY OCCUR TO ANY PROPRIETARY DATA AS A RESULT OF USING
+THIS SCRIPT. THIS SCRIPT IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND.
+
+BY USING THIS SCRIPT, YOU ACKNOWLEDGE THAT YOU FULLY UNDERSTAND THIS DISCLAIMER
+AND ALL IT ENTAILS.
+
+Parsing config file(s)…
+Setting up /designs/mult_array/runs/n7_err/issue_reproducible…
+[WRN] /designs/mult_array/runs/n7_err/tmp/17-mult_array.sdc was not found, might be a product. Skipping
+Done.
+[INFO]: Reproducible packaged: Please tarball and upload '../designs/mult_array/runs/n7_err/issue_reproducible' if you're going to submit an issue.
+[ERROR]: Step 17 (routing) failed with error:
+-code 1 -level 0 -errorcode NONE -errorinfo {
+    while executing
+"throw_error"
+    (procedure "run_tcl_script" line 219)
+    invoked from within
+"run_tcl_script -tool openroad -no_consume {*}$args"
+    (procedure "run_openroad_script" line 2)
+    invoked from within
+"run_openroad_script $::env(SCRIPTS_DIR)/openroad/resizer_routing_timing.tcl -indexed_log $log -save "dir=$::env(routing_tmpfiles),def,sdc,odb,netlist,..."
+    (procedure "run_resizer_timing_routing" line 9)
+    invoked from within
+"run_resizer_timing_routing"
+    (procedure "run_routing" line 9)
+    invoked from within
+"run_routing"
+    (procedure "run_routing_step" line 7)
+    invoked from within
+"run_routing_step"} -errorline 1
+[INFO]: Saving current set of views in '../designs/mult_array/runs/n7_err/results/final'...
+[INFO]: Generating final set of reports...
+[INFO]: Created manufacturability report at '../designs/mult_array/runs/n7_err/reports/manufacturability.rpt'.
+[INFO]: Created metrics report at '../designs/mult_array/runs/n7_err/reports/metrics.csv'.
+[INFO]: Saving runtime environment...
+[ERROR]: Flow failed.
+[INFO]: The failure may have been because of the following warnings:
+[WARNING]: 4 warnings found by linter
+
+---
+# exit_code: 0

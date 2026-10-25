@@ -1,0 +1,8 @@
+{
+  "DESIGN_NAME": "mult_array",
+  "VERILOG_FILES": "dir::src/*.v",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10.0,
+  "FP_CORE_UTIL": 95,
+  "PL_TARGET_DENSITY": 0.99
+}
