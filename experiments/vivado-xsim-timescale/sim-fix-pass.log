@@ -1,0 +1,44 @@
+﻿===== 2026-10-26T02:34:04.1328933+08:00 =====
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b4/v3-xsim-timescale/dut_with_ts.v" into library work
+INFO: [VRFC 10-311] analyzing module dut
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b4/v3-xsim-timescale/tb_ts.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_ts
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb_ts 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.dut
+Compiling module work.tb_ts
+Built simulation snapshot work.tb_ts
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b4/v3-xsim-timescale/xsim.dir/work.tb_ts/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Oct 26 02:34:05 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_ts/xsim_script.tcl
+# xsim {work.tb_ts} -autoloadwcfg -tclbatch {xsim_run.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source xsim_run.tcl
+## open_vcd dump.vcd
+## log_vcd [get_objects -r /tb_ts/*]
+## run 200ns
+$finish called at time : 62 ns : File "C:/eda-lab/b4/v3-xsim-timescale/tb_ts.v" Line 11
+## close_vcd
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Oct 26 02:34:09 2026...
+exit=0
