@@ -1,0 +1,37 @@
+# command: make RANDOM_SEED=1234
+# date: 2026-10-26T02:12:00+08:00
+# host-toolchain: cocotb 2.1.0 / Icarus Verilog 13.0 (stable) / Python 3.13
+---
+rm -f results.xml
+mkdir -p sim_build
+/usr/local/bin/iverilog -o sim_build/sim.vvp -s dut_counter -g2012 -f sim_build/cmds.f  /tmp/errlog-evidence/ts-cocotb-testfailed-assertion/lab/dut.sv
+/Users/derekzhuo/.venvs/cocotb/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:67: Using MODULE is deprecated, please use COCOTB_TEST_MODULES instead.
+rm -f results.xml
+COCOTB_TEST_MODULES=test_assert COCOTB_TESTCASE=  COCOTB_TOPLEVEL=dut_counter TOPLEVEL_LANG=verilog       \
+		 /usr/local/bin/vvp -m /Users/derekzhuo/.venvs/cocotb/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/local/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Python'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:234  in gpi_load_users                  Running entry func 'initialize' from loaded library '/Users/derekzhuo/.venvs/cocotb/lib/python3.13/site-packages/cocotb/simulator.cpython-313-darwin.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:115  in initialize                      Using Python 3.13.15 interpreter at /Users/derekzhuo/.venvs/cocotb/bin/python3.13
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1234
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /Users/derekzhuo/.venvs/cocotb/lib/python3.13/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 13.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_assert.counter_wrong_expect (1/1)
+    30.00ns INFO     cocotb.dut_counter                 q=1, expecting 7 (deliberately wrong)
+    30.00ns WARNING  cocotb.regression                  test_assert.counter_wrong_expect failed
+                                                        Traceback (most recent call last):
+                                                          File "/private/tmp/errlog-evidence/ts-cocotb-testfailed-assertion/lab/test_assert.py", line 16, in counter_wrong_expect
+                                                            assert got == 7, "counter mismatch: got %d expect 7" % got
+                                                        AssertionError: counter mismatch: got 1 expect 7
+                                                        assert 1 == 7
+    30.00ns INFO     cocotb.regression                  ******************************************************************************************
+                                                        ** TEST                              STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ******************************************************************************************
+                                                        ** test_assert.counter_wrong_expect   FAIL          30.00           0.00      34377.52  **
+                                                        ******************************************************************************************
+                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                     30.00           0.00      10970.30  **
+                                                        ******************************************************************************************
+make: *** [results.xml] Error 1
+---
+# exit_code: 2
