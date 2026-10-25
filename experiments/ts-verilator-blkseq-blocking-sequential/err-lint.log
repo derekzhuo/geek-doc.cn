@@ -1,0 +1,12 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence-b4/src/n3_bad.v
+# date: 2026-10-26T01:42:58+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+%Warning-BLKSEQ: /tmp/errlog-evidence-b4/src/n3_bad.v:3:8: Blocking assignments (=) in sequential (flop or latch) block
+                                                         : ... Suggest delayed assignments (<=)
+    3 |     q1 = d;     
+      |        ^
+                 ... Use "/* verilator lint_off BLKSEQ */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+---
+# exit_code: 0

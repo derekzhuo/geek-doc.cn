@@ -1,0 +1,7 @@
+# command: yosys -p read_verilog src/n5_top.v; hierarchy -top n5_top
+# date: 2026-10-26T01:42:59+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+ERROR: Can't open input file `src/n5_top.v' for reading: No such file or directory
+---
+# exit_code: 0

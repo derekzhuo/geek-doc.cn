@@ -1,0 +1,76 @@
+$date
+	Mon Oct 26 01:42:58 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module n3_tb $end
+$var wire 1 ! q2f $end
+$var wire 1 " q2b $end
+$var wire 1 # q1f $end
+$var wire 1 $ q1b $end
+$var reg 1 % clk $end
+$var reg 1 & d $end
+$scope module ub $end
+$var wire 1 % clk $end
+$var wire 1 & d $end
+$var reg 1 $ q1 $end
+$var reg 1 " q2 $end
+$upscope $end
+$scope module uf $end
+$var wire 1 % clk $end
+$var wire 1 & d $end
+$var reg 1 # q1 $end
+$var reg 1 ! q2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0&
+0%
+x$
+x#
+x"
+x!
+$end
+#3000
+1&
+#5000
+1#
+1"
+1$
+1%
+#10000
+0%
+#15000
+1!
+1%
+#20000
+0%
+#25000
+1%
+#30000
+0%
+#35000
+1%
+#40000
+0%
+#43000
+0&
+#45000
+0#
+0"
+0$
+1%
+#50000
+0%
+#55000
+0!
+1%
+#60000
+0%
+#63000

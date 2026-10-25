@@ -1,0 +1,10 @@
+# command: iverilog -o /dev/null /tmp/errlog-evidence-b4/src/n6_none.v
+# date: 2026-10-26T01:45:53+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+/tmp/errlog-evidence-b4/src/n6_none.v:7: error: Net sig_daat is not defined in this context.
+/tmp/errlog-evidence-b4/src/n6_none.v:7: error: Output port expression must support continuous assignment.
+/tmp/errlog-evidence-b4/src/n6_none.v:7:      : Port 2 (q) of n6_sub is connected to sig_daat
+2 error(s) during elaboration.
+---
+# exit_code: 0

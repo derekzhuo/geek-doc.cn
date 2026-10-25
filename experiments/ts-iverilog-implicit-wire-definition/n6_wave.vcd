@@ -1,0 +1,38 @@
+$date
+	Mon Oct 26 02:15:47 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module n6_tb $end
+$var wire 1 ! y $end
+$var reg 1 " a $end
+$scope module u $end
+$var wire 1 " a $end
+$var wire 1 # sig_data $end
+$var wire 1 ! y $end
+$var wire 1 $ sig_daat $end
+$scope module u $end
+$var wire 1 " d $end
+$var wire 1 $ q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+z#
+0"
+z!
+$end
+#10000
+1$
+1"
+#30000
+0$
+0"
+#40000
