@@ -1,0 +1,14 @@
+﻿===== 2026-10-26T02:33:16.0016333+08:00 =====
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b4/v3-xsim-timescale/dut_no_ts.v" into library work
+INFO: [VRFC 10-311] analyzing module dut
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b4/v3-xsim-timescale/tb_ts.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_ts
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_ts 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+ERROR: [XSIM 43-4099] "C:/eda-lab/b4/v3-xsim-timescale/dut_no_ts.v" Line 1. Module dut doesn't have a timescale but at least one module in design has a timescale.
+exit=1
