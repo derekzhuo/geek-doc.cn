@@ -1,0 +1,6 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence-b4/src/n4_delete.v
+# date: 2026-10-26T01:42:58+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+---
+# exit_code: 0

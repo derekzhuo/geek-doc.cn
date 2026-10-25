@@ -1,0 +1,8 @@
+# command: iverilog -o /dev/null /tmp/errlog-evidence-b4/src/c1_paren.v
+# date: 2026-10-26T01:42:57+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+/tmp/errlog-evidence-b4/src/c1_paren.v:2: syntax error
+/tmp/errlog-evidence-b4/src/c1_paren.v:2: error: syntax error in continuous assignment
+---
+# exit_code: 0

@@ -1,0 +1,8 @@
+# command: iverilog -Wimplicit -o n6_tb.vvp n6_tb.v n6_bad.v n6_sub.v
+# date: 2026-10-26T02:15:47+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+n6_bad.v:3: warning: implicit definition of wire 'sig_daat'.
+---
+# exit_code: 0
+VCD info: dumpfile n6_wave.vcd opened for output.

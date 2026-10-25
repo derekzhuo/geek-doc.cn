@@ -1,0 +1,64 @@
+# command: yosys -p read_verilog /tmp/errlog-evidence-b4/src/n5_top.v; hierarchy -top n5_top; stat
+# date: 2026-10-26T01:42:59+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Running command `read_verilog /tmp/errlog-evidence-b4/src/n5_top.v; hierarchy -top n5_top; stat' --
+
+1. Executing Verilog-2005 frontend: /tmp/errlog-evidence-b4/src/n5_top.v
+Parsing Verilog input from `/tmp/errlog-evidence-b4/src/n5_top.v' to AST representation.
+Generating RTLIL representation for module `\n5_top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \n5_top
+
+2.2. Analyzing design hierarchy..
+Top module:  \n5_top
+Removed 0 unused modules.
+
+3. Printing statistics.
+
+=== n5_top ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $xor                            1
+
+End of script. Logfile hash: 3e6f8e9a45
+CPU: user 0.00s system 0.00s, MEM: 15.55 MB total, 9.25 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 70% 2x read_verilog (0 sec), 23% 1x hierarchy (0 sec), ...
+---
+# exit_code: 0

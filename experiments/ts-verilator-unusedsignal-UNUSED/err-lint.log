@@ -1,0 +1,12 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence-b4/src/n4_bad.v
+# date: 2026-10-26T01:42:58+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+%Warning-UNUSED: /tmp/errlog-evidence-b4/src/n4_bad.v:1:40: Signal is not used: 'debug_cfg'
+                                                          : ... In instance n4_bad
+    1 | module n4_bad(input wire a, input wire debug_cfg, output wire y);
+      |                                        ^~~~~~~~~
+                 ... Use "/* verilator lint_off UNUSED */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+---
+# exit_code: 0

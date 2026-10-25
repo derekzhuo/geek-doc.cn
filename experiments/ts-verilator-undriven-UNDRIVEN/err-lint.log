@@ -1,0 +1,12 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence-b4/src/n1_bad.v
+# date: 2026-10-26T01:42:58+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad / iverilog 11.0
+---
+%Warning-UNDRIVEN: /tmp/errlog-evidence-b4/src/n1_bad.v:2:8: Signal is not driven: 'u'
+                                                           : ... In instance n1_bad
+    2 |   wire u;         
+      |        ^
+                   ... Use "/* verilator lint_off UNDRIVEN */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+---
+# exit_code: 0
