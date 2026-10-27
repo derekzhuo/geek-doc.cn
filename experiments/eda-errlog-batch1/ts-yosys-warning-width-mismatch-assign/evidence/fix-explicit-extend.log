@@ -1,0 +1,80 @@
+# command: yosys -Q -T -p read_verilog /tmp/errlog-evidence/src/width_ok.v; hierarchy -top width_ok; proc; opt; check
+# date: 2026-10-21T01:40:22+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+
+-- Running command `read_verilog /tmp/errlog-evidence/src/width_ok.v; hierarchy -top width_ok; proc; opt; check' --
+
+1. Executing Verilog-2005 frontend: /tmp/errlog-evidence/src/width_ok.v
+Parsing Verilog input from `/tmp/errlog-evidence/src/width_ok.v' to AST representation.
+Generating RTLIL representation for module `\width_ok'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \width_ok
+
+2.2. Analyzing design hierarchy..
+Top module:  \width_ok
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_INIT pass (extract init attributes).
+
+3.4. Executing PROC_ARST pass (detect async resets in processes).
+
+3.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module width_ok.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\width_ok'.
+Removed a total of 0 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \width_ok..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \width_ok.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\width_ok'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \width_ok..
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module width_ok.
+
+4.9. Finished OPT passes. (There is nothing left to do.)
+
+5. Executing CHECK pass (checking for obvious problems).
+checking module width_ok..
+found and reported 0 problems.
+---
+# exit_code: 0

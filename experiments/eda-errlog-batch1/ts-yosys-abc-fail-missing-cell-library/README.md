@@ -21,4 +21,4 @@ Yosys ≥ 0.9；修复项另需 sky130A PDK（volare 或 open_pdks）。
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-yosys-abc-fail-missing-cell-library/>
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）

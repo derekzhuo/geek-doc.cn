@@ -1,0 +1,57 @@
+# command: env PATH=/opt/eda-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin make MODULE=nonexistent_tb
+# date: 2026-10-21T01:40:24+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+PATH=/opt/eda-venv/bin:$PATH PYTHONPATH=testbench \
+  make -f /opt/eda-venv/lib/python3.10/site-packages/cocotb/share/makefiles/Makefile.sim \
+  SIM=icarus WAVES=1 TOPLEVEL_LANG=verilog \
+  VERILOG_SOURCES="rtl/async_fifo.v" TOPLEVEL=async_fifo MODULE=nonexistent_tb COMPILE_ARGS="-g2012"
+make[1]: Entering directory '/tmp/errlog-evidence/ts-cocotb-NO_TEST_ERROR/lab'
+rm -f results.xml
+make -f /opt/eda-venv/lib/python3.10/site-packages/cocotb/share/makefiles/Makefile.sim results.xml
+make[2]: Entering directory '/tmp/errlog-evidence/ts-cocotb-NO_TEST_ERROR/lab'
+rm -f results.xml
+MODULE=nonexistent_tb TESTCASE= TOPLEVEL=async_fifo TOPLEVEL_LANG=verilog \
+         /usr/bin/vvp -M /opt/eda-venv/lib/python3.10/site-packages/cocotb/libs -m libcocotbvpi_icarus   sim_build/sim.vvp -fst
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:76   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 11.0 (stable)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.8.1 from /opt/eda-venv/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1792518029
+     0.00ns CRITICAL cocotb.regression                  Failed to import module nonexistent_tb: No module named 'nonexistent_tb'
+     0.00ns INFO     cocotb.regression                  MODULE variable was "nonexistent_tb"
+     0.00ns INFO     cocotb.regression                  Traceback: 
+     0.00ns INFO     cocotb.regression                  Traceback (most recent call last):
+                                                          File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/regression.py", line 203, in _discover_tests
+                                                            module = _my_import(module_name)
+                                                          File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/regression.py", line 72, in _my_import
+                                                            mod = __import__(name)
+                                                        ModuleNotFoundError: No module named 'nonexistent_tb'
+                                                        
+Traceback (most recent call last):
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/__init__.py", line 233, in _initialise_testbench
+    _initialise_testbench_(argv_)
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/__init__.py", line 316, in _initialise_testbench_
+    regression_manager = RegressionManager.from_discovery(top)
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/regression.py", line 174, in from_discovery
+    return cls(dut, tests)
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/regression.py", line 153, in __init__
+    for test in tests:
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/regression.py", line 203, in _discover_tests
+    module = _my_import(module_name)
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/regression.py", line 72, in _my_import
+    mod = __import__(name)
+ModuleNotFoundError: No module named 'nonexistent_tb'
+Traceback (most recent call last):
+  File "/opt/eda-venv/lib/python3.10/site-packages/cocotb/__init__.py", line 332, in _sim_event
+    scheduler.log.error(msg)
+AttributeError: 'NoneType' object has no attribute 'log'
+     0.00ns ERROR    gpi                                Passing event to upper layer failed
+ERROR: results.xml was not written by the simulation!
+make[2]: *** [/opt/eda-venv/lib/python3.10/site-packages/cocotb/share/makefiles/simulators/Makefile.icarus:96: results.xml] Error 1
+make[2]: Leaving directory '/tmp/errlog-evidence/ts-cocotb-NO_TEST_ERROR/lab'
+make[1]: *** [/opt/eda-venv/lib/python3.10/site-packages/cocotb/share/makefiles/Makefile.inc:40: sim] Error 2
+make[1]: Leaving directory '/tmp/errlog-evidence/ts-cocotb-NO_TEST_ERROR/lab'
+make: *** [Makefile:15: run] Error 2
+---
+# exit_code: 0

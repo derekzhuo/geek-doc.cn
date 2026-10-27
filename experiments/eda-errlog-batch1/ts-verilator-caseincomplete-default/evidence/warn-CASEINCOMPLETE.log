@@ -1,0 +1,11 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence/src/case_bad.v
+# date: 2026-10-21T01:40:23+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+%Warning-CASEINCOMPLETE: /tmp/errlog-evidence/src/case_bad.v:3:5: Case values incompletely covered (example pattern 0x2)
+    3 |     case (sel)
+      |     ^~~~
+                         ... Use "/* verilator lint_off CASEINCOMPLETE */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+---
+# exit_code: 0

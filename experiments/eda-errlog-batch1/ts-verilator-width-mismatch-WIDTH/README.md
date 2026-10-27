@@ -17,4 +17,4 @@ Verilator ≥ 4.0（`apt install verilator` / `brew install verilator`）。
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-verilator-width-mismatch-WIDTH/>
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）

@@ -21,4 +21,4 @@ Yosys ≥ 0.9（`apt install yosys` / `brew install yosys`）。
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-yosys-error-no-top-module/>（2026-10-21，Yosys 0.9）
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）（2026-10-21，Yosys 0.9）

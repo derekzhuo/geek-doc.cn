@@ -1,0 +1,13 @@
+# command: yosys -Q -T -p synth -top counter8
+# date: 2026-10-21T01:40:21+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+
+-- Running command `synth -top counter8' --
+
+1. Executing SYNTH pass.
+
+1.1. Executing HIERARCHY pass (managing design hierarchy).
+ERROR: Module `counter8' not found!
+---
+# exit_code: 0
