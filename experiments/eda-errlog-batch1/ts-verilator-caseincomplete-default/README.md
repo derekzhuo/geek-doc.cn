@@ -17,4 +17,4 @@ Verilator ≥ 4.0。
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-verilator-caseincomplete-default/>
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）

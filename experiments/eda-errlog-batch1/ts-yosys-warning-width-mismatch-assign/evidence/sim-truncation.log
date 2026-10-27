@@ -1,0 +1,28 @@
+# command: iverilog -o trunc trunc_tb.v && vvp trunc
+# date: 2026-10-21T01:50:05+08:00
+# host-toolchain: Icarus Verilog version 11.0 (stable) ()
+---
+VCD info: dumpfile trunc.vcd opened for output.
+t=10000 wide=0 (8'h00) -> narrow_bad=0 (4'h0) extended_ok=0
+t=20000 wide=1 (8'h01) -> narrow_bad=1 (4'h1) extended_ok=1
+t=30000 wide=2 (8'h02) -> narrow_bad=2 (4'h2) extended_ok=2
+t=40000 wide=3 (8'h03) -> narrow_bad=3 (4'h3) extended_ok=3
+t=50000 wide=4 (8'h04) -> narrow_bad=4 (4'h4) extended_ok=4
+t=60000 wide=5 (8'h05) -> narrow_bad=5 (4'h5) extended_ok=5
+t=70000 wide=6 (8'h06) -> narrow_bad=6 (4'h6) extended_ok=6
+t=80000 wide=7 (8'h07) -> narrow_bad=7 (4'h7) extended_ok=7
+t=90000 wide=8 (8'h08) -> narrow_bad=8 (4'h8) extended_ok=8
+t=100000 wide=9 (8'h09) -> narrow_bad=9 (4'h9) extended_ok=9
+t=110000 wide=10 (8'h0a) -> narrow_bad=10 (4'ha) extended_ok=10
+t=120000 wide=11 (8'h0b) -> narrow_bad=11 (4'hb) extended_ok=11
+t=130000 wide=12 (8'h0c) -> narrow_bad=12 (4'hc) extended_ok=12
+t=140000 wide=13 (8'h0d) -> narrow_bad=13 (4'hd) extended_ok=13
+t=150000 wide=14 (8'h0e) -> narrow_bad=14 (4'he) extended_ok=14
+t=160000 wide=15 (8'h0f) -> narrow_bad=15 (4'hf) extended_ok=15
+t=170000 wide=16 (8'h10) -> narrow_bad=0 (4'h0) extended_ok=0
+t=180000 wide=17 (8'h11) -> narrow_bad=1 (4'h1) extended_ok=1
+t=190000 wide=18 (8'h12) -> narrow_bad=2 (4'h2) extended_ok=2
+t=200000 wide=19 (8'h13) -> narrow_bad=3 (4'h3) extended_ok=3
+t=210000 wide=20 (8'h14) -> narrow_bad=4 (4'h4) extended_ok=4
+SIM DONE: truncation loss observed when wide > 15
+# exit_code: 0

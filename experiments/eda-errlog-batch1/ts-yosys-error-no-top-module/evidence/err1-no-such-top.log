@@ -1,0 +1,18 @@
+# command: yosys -Q -T -p read_verilog /tmp/errlog-evidence/src/counter8.v; synth -top top
+# date: 2026-10-21T01:40:21+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+
+-- Running command `read_verilog /tmp/errlog-evidence/src/counter8.v; synth -top top' --
+
+1. Executing Verilog-2005 frontend: /tmp/errlog-evidence/src/counter8.v
+Parsing Verilog input from `/tmp/errlog-evidence/src/counter8.v' to AST representation.
+Generating RTLIL representation for module `\counter8'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+ERROR: Module `top' not found!
+---
+# exit_code: 0

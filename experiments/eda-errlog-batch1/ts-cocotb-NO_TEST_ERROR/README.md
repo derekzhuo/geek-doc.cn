@@ -32,4 +32,4 @@ RTL 的 full/empty 直接用当前格雷指针比较（不用 next 指针反馈�
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-cocotb-NO_TEST_ERROR/>（2026-10-21，cocotb 1.8.1 / Icarus 11.0）
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）（2026-10-21，cocotb 1.8.1 / Icarus 11.0）

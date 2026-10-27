@@ -1,0 +1,10 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence/src/vwidth_ok.v
+# date: 2026-10-21T01:46:28+08:00
+# host-toolchain: Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+# fixed source (explicit zero-extension):
+     1	module vwidth_ok(input [3:0] a, output reg [11:0] y);
+     2	  always @(*) y = {8'b0, a};
+     3	endmodule
+---
+verdict: lint clean, 0 warnings (WIDTH 不再出现)
+# exit_code: 0

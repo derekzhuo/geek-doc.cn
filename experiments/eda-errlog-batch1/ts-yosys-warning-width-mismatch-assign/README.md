@@ -20,4 +20,4 @@ Yosys ≥ 0.9、Icarus Verilog ≥ 11。
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-yosys-warning-width-mismatch-assign/>
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）

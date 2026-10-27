@@ -20,4 +20,4 @@ Yosys ≥ 0.9。
 
 ## 原始证据
 
-<https://geek-doc.cn/shots/ts-yosys-error-module-not-declared-synth/>
+本目录 `evidence/`（原始日志，与教程内嵌摘录同源）

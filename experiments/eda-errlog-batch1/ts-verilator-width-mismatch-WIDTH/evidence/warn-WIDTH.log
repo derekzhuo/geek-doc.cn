@@ -1,0 +1,12 @@
+# command: verilator --lint-only -Wall /tmp/errlog-evidence/src/vwidth_bad.v
+# date: 2026-10-21T01:40:22+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+%Warning-WIDTH: /tmp/errlog-evidence/src/vwidth_bad.v:2:17: Operator ASSIGN expects 12 bits on the Assign RHS, but Assign RHS's VARREF 'a' generates 4 bits.
+                                                          : ... In instance vwidth_bad
+    2 |   always @(*) y = a;   
+      |                 ^
+                ... Use "/* verilator lint_off WIDTH */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+---
+# exit_code: 0

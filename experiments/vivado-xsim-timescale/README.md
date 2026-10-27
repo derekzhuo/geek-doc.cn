@@ -1,6 +1,6 @@
 # vivado-xsim-timescale：XSIM 43-4099 timescale 不一致复现
 
-**对应教程**：https://geek-doc.cn/fpga/beginner/ts-vivado-xsim-43-4099-timescale.html（上线后生效）
+**对应教程**：https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html（同错误码 43-4099 的已上线教程，本实验为其配套证据）
 
 ## 环境
 

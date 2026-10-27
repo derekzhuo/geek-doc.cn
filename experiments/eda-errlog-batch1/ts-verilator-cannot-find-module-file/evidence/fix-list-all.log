@@ -1,0 +1,10 @@
+# command: verilator --lint-only /tmp/errlog-evidence/src/top_use_adder.v /tmp/errlog-evidence/src/sub_adder.v
+# date: 2026-10-21T01:46:50+08:00
+# host-toolchain: Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+# fix: 顶层与子模块文件一起给出（或加 -I 搜索路径）
+# files:
+-rw-rw-r-- 1 ubuntu ubuntu  94 Oct 21 01:40 /tmp/errlog-evidence/src/sub_adder.v
+-rw-rw-r-- 1 ubuntu ubuntu 118 Oct 21 01:40 /tmp/errlog-evidence/src/top_use_adder.v
+---
+verdict: lint pass, 子模块 sub_adder 成功解析
+# exit_code: 0

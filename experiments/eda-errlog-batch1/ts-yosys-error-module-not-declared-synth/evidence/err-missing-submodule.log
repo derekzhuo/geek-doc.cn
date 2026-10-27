@@ -1,0 +1,20 @@
+# command: yosys -Q -T -p read_verilog /tmp/errlog-evidence/src/top_use_adder.v; synth -top top_use_adder
+# date: 2026-10-21T01:40:22+08:00
+# host-toolchain: Yosys 0.9 (git sha1 1979e0b) / Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad
+---
+
+-- Running command `read_verilog /tmp/errlog-evidence/src/top_use_adder.v; synth -top top_use_adder' --
+
+1. Executing Verilog-2005 frontend: /tmp/errlog-evidence/src/top_use_adder.v
+Parsing Verilog input from `/tmp/errlog-evidence/src/top_use_adder.v' to AST representation.
+Generating RTLIL representation for module `\top_use_adder'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+ERROR: Module `\sub_adder' referenced in module `\top_use_adder' in cell `\u_add' is not part of the design.
+---
+# exit_code: 0
