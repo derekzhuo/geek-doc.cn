@@ -1,0 +1,33 @@
+OpenSTA 2.4.0 41a51eaf4c Copyright (c) 2021, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Startpoint: _00_ (rising edge-triggered flip-flop clocked by clk_b)
+Endpoint: _16_ (rising edge-triggered flip-flop clocked by clk_b)
+Path Group: clk_b
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk_b (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _00_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.27    0.27 v _00_/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.00    0.27 v _16_/D (sky130_fd_sc_hd__dfxtp_1)
+           0.27   data arrival time
+
+   7.00    7.00   clock clk_b (rise edge)
+   0.00    7.00   clock network delay (ideal)
+   0.00    7.00   clock reconvergence pessimism
+           7.00 ^ _16_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.11    6.89   library setup time
+           6.89   data required time
+---------------------------------------------------------
+           6.89   data required time
+          -0.27   data arrival time
+---------------------------------------------------------
+           6.62   slack (MET)
+
+

@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv axi_lite_regs_bad.v
+read -formal -sv axi_lite_checker.sv
+prep -top axi_lite_regs_bad
+
+[files]
+axi_lite_regs_bad.v
+axi_lite_checker.sv

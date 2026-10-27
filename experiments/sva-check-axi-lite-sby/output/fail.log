@@ -1,0 +1,477 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.30+48 (git sha1 14d50a176d5, gcc 8.3.1 -fPIC -Os)
+
+
+-- Running command `read -formal -sv axi_lite_regs_bad.v axi_lite_checker.sv formal_top_bad.sv; prep -top formal_top_bad; write_smt2 -wires design.smt2' --
+
+1. Executing Verilog-2005 frontend: axi_lite_regs_bad.v
+Parsing formal SystemVerilog input from `axi_lite_regs_bad.v' to AST representation.
+Storing AST representation for module `$abstract\axi_lite_regs_bad'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: axi_lite_checker.sv
+Parsing formal SystemVerilog input from `axi_lite_checker.sv' to AST representation.
+Storing AST representation for module `$abstract\axi_lite_checker'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: formal_top_bad.sv
+Parsing formal SystemVerilog input from `formal_top_bad.sv' to AST representation.
+Storing AST representation for module `$abstract\formal_top_bad'.
+Successfully finished Verilog frontend.
+
+4. Executing PREP pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_top_bad'.
+Generating RTLIL representation for module `\formal_top_bad'.
+
+4.2.1. Analyzing design hierarchy..
+Top module:  \formal_top_bad
+
+4.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_checker'.
+Generating RTLIL representation for module `\axi_lite_checker'.
+
+4.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_regs_bad'.
+Generating RTLIL representation for module `\axi_lite_regs_bad'.
+
+4.2.4. Analyzing design hierarchy..
+Top module:  \formal_top_bad
+Used module:     \axi_lite_checker
+Used module:     \axi_lite_regs_bad
+
+4.2.5. Analyzing design hierarchy..
+Top module:  \formal_top_bad
+Used module:     \axi_lite_checker
+Used module:     \axi_lite_regs_bad
+Removing unused module `$abstract\formal_top_bad'.
+Removing unused module `$abstract\axi_lite_checker'.
+Removing unused module `$abstract\axi_lite_regs_bad'.
+Removed 3 unused modules.
+Module axi_lite_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+Module formal_top_bad directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4.3. Executing PROC pass (convert processes to netlists).
+
+4.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$axi_lite_regs_bad.v:21$65 in module axi_lite_regs_bad.
+Removed a total of 0 dead cases.
+
+4.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 21 assignments to connections.
+
+4.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\axi_lite_checker.$proc$axi_lite_checker.sv:0$57'.
+  Set init value: $formal$axi_lite_checker.sv:21$14_EN = 1'0
+Found init rule in `\axi_lite_checker.$proc$axi_lite_checker.sv:0$55'.
+  Set init value: $formal$axi_lite_checker.sv:17$13_EN = 1'0
+Found init rule in `\axi_lite_checker.$proc$axi_lite_checker.sv:0$53'.
+  Set init value: $formal$axi_lite_checker.sv:13$12_EN = 1'0
+
+4.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+4.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+Creating decoders for process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+     1/14: $2$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$84
+     2/14: $2$memwr$\regs$axi_lite_regs_bad.v:30$63_DATA[31:0]$83
+     3/14: $2$memwr$\regs$axi_lite_regs_bad.v:30$63_ADDR[1:0]$82
+     4/14: $0\rvalid[0:0]
+     5/14: $0\arready[0:0]
+     6/14: $0\wready[0:0]
+     7/14: $0\awready[0:0]
+     8/14: $1$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$72
+     9/14: $1$memwr$\regs$axi_lite_regs_bad.v:30$63_DATA[31:0]$71
+    10/14: $1$memwr$\regs$axi_lite_regs_bad.v:30$63_ADDR[1:0]$70
+    11/14: $0\rresp[1:0]
+    12/14: $0\rdata[31:0]
+    13/14: $0\bvalid[0:0]
+    14/14: $0\bresp[1:0]
+Creating decoders for process `\axi_lite_checker.$proc$axi_lite_checker.sv:0$57'.
+Creating decoders for process `\axi_lite_checker.$proc$axi_lite_checker.sv:0$55'.
+Creating decoders for process `\axi_lite_checker.$proc$axi_lite_checker.sv:0$53'.
+Creating decoders for process `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+     1/2: $0$formal$axi_lite_checker.sv:21$14_EN[0:0]$44
+     2/2: $0$formal$axi_lite_checker.sv:21$14_CHECK[0:0]$43
+Creating decoders for process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+     1/2: $0$formal$axi_lite_checker.sv:17$13_EN[0:0]$32
+     2/2: $0$formal$axi_lite_checker.sv:17$13_CHECK[0:0]$31
+Creating decoders for process `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+     1/2: $0$formal$axi_lite_checker.sv:13$12_EN[0:0]$20
+     2/2: $0$formal$axi_lite_checker.sv:13$12_CHECK[0:0]$19
+
+4.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\axi_lite_regs_bad.\i' from process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+No latch inferred for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:17$59_EN' from process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+No latch inferred for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:17$60_EN' from process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+No latch inferred for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:17$61_EN' from process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+No latch inferred for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:17$62_EN' from process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+
+4.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\axi_lite_regs_bad.\awready' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$182' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\wready' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$183' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\bresp' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$184' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\bvalid' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$185' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\arready' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$186' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\rdata' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$187' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\rresp' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$188' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.\rvalid' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$189' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:30$63_ADDR' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$190' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:30$63_DATA' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$191' with positive edge clock.
+Creating register for signal `\axi_lite_regs_bad.$memwr$\regs$axi_lite_regs_bad.v:30$63_EN' using process `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+  created $dff cell `$procdff$192' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:21$9$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+  created $dff cell `$procdff$193' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:22$10$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+  created $dff cell `$procdff$194' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:22$11$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+  created $dff cell `$procdff$195' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$formal$axi_lite_checker.sv:21$14_CHECK' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+  created $dff cell `$procdff$196' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$formal$axi_lite_checker.sv:21$14_EN' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+  created $dff cell `$procdff$197' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:17$5$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+  created $dff cell `$procdff$198' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:18$6$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+  created $dff cell `$procdff$199' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:18$7$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+  created $dff cell `$procdff$200' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:18$8$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+  created $dff cell `$procdff$201' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$formal$axi_lite_checker.sv:17$13_CHECK' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+  created $dff cell `$procdff$202' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$formal$axi_lite_checker.sv:17$13_EN' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+  created $dff cell `$procdff$203' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:13$2$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+  created $dff cell `$procdff$204' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:14$3$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+  created $dff cell `$procdff$205' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$past$axi_lite_checker.sv:14$4$0' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+  created $dff cell `$procdff$206' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$formal$axi_lite_checker.sv:13$12_CHECK' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+  created $dff cell `$procdff$207' with positive edge clock.
+Creating register for signal `\axi_lite_checker.$formal$axi_lite_checker.sv:13$12_EN' using process `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+  created $dff cell `$procdff$208' with positive edge clock.
+
+4.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:0$95'.
+Found and cleaned up 5 empty switches in `\axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+Removing empty process `axi_lite_regs_bad.$proc$axi_lite_regs_bad.v:21$65'.
+Removing empty process `axi_lite_checker.$proc$axi_lite_checker.sv:0$57'.
+Removing empty process `axi_lite_checker.$proc$axi_lite_checker.sv:0$55'.
+Removing empty process `axi_lite_checker.$proc$axi_lite_checker.sv:0$53'.
+Found and cleaned up 1 empty switch in `\axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+Removing empty process `axi_lite_checker.$proc$axi_lite_checker.sv:20$39'.
+Found and cleaned up 1 empty switch in `\axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+Removing empty process `axi_lite_checker.$proc$axi_lite_checker.sv:16$26'.
+Found and cleaned up 1 empty switch in `\axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+Removing empty process `axi_lite_checker.$proc$axi_lite_checker.sv:12$15'.
+Cleaned up 8 empty switches.
+
+4.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_regs_bad.
+<suppressed ~15 debug messages>
+Optimizing module axi_lite_checker.
+Optimizing module formal_top_bad.
+
+4.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_regs_bad.
+Optimizing module axi_lite_checker.
+Optimizing module formal_top_bad.
+
+4.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_regs_bad..
+Finding unused cells or wires in module \axi_lite_checker..
+Finding unused cells or wires in module \formal_top_bad..
+Removed 5 unused cells and 81 unused wires.
+<suppressed ~7 debug messages>
+
+4.6. Executing CHECK pass (checking for obvious problems).
+Checking module axi_lite_checker...
+Checking module axi_lite_regs_bad...
+Checking module formal_top_bad...
+Found and reported 0 problems.
+
+4.7. Executing OPT pass (performing simple optimizations).
+
+4.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_checker.
+Optimizing module axi_lite_regs_bad.
+Optimizing module formal_top_bad.
+
+4.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_checker'.
+Finding identical cells in module `\axi_lite_regs_bad'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\formal_top_bad'.
+Removed a total of 3 cells.
+
+4.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \axi_lite_regs_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$104.
+    dead port 2/2 on $mux $procmux$110.
+    dead port 2/2 on $mux $procmux$116.
+Running muxtree optimizer on module \formal_top_bad..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 3 multiplexer ports.
+<suppressed ~17 debug messages>
+
+4.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_checker.
+  Optimizing cells in module \axi_lite_regs_bad.
+    Consolidated identical input bits for $mux cell $procmux$101:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$101_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$101_Y [0]
+      New connections: $procmux$101_Y [31:1] = { $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] $procmux$101_Y [0] }
+  Optimizing cells in module \axi_lite_regs_bad.
+    Consolidated identical input bits for $mux cell $procmux$134:
+      Old ports: A=0, B=$2$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$84, Y=$0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68
+      New ports: A=1'0, B=$procmux$101_Y [0], Y=$0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0]
+      New connections: $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [31:1] = { $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] $0$memwr$\regs$axi_lite_regs_bad.v:30$63_EN[31:0]$68 [0] }
+  Optimizing cells in module \axi_lite_regs_bad.
+  Optimizing cells in module \formal_top_bad.
+Performed a total of 2 changes.
+
+4.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_checker'.
+Finding identical cells in module `\axi_lite_regs_bad'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\formal_top_bad'.
+Removed a total of 1 cells.
+
+4.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_checker..
+Finding unused cells or wires in module \axi_lite_regs_bad..
+Finding unused cells or wires in module \formal_top_bad..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+4.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_checker.
+Optimizing module axi_lite_regs_bad.
+Optimizing module formal_top_bad.
+
+4.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \axi_lite_regs_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_top_bad..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+4.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_checker.
+  Optimizing cells in module \axi_lite_regs_bad.
+  Optimizing cells in module \formal_top_bad.
+Performed a total of 0 changes.
+
+4.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_checker'.
+Finding identical cells in module `\axi_lite_regs_bad'.
+Finding identical cells in module `\formal_top_bad'.
+Removed a total of 0 cells.
+
+4.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_checker..
+Finding unused cells or wires in module \axi_lite_regs_bad..
+Finding unused cells or wires in module \formal_top_bad..
+
+4.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_checker.
+Optimizing module axi_lite_regs_bad.
+Optimizing module formal_top_bad.
+
+4.7.14. Finished OPT passes. (There is nothing left to do.)
+
+4.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 address bits (of 32) from memory init port axi_lite_regs_bad.$meminit$\regs$axi_lite_regs_bad.v:17$91 (regs).
+Removed top 30 address bits (of 32) from memory init port axi_lite_regs_bad.$meminit$\regs$axi_lite_regs_bad.v:17$92 (regs).
+Removed top 30 address bits (of 32) from memory init port axi_lite_regs_bad.$meminit$\regs$axi_lite_regs_bad.v:17$93 (regs).
+Removed top 30 address bits (of 32) from memory init port axi_lite_regs_bad.$meminit$\regs$axi_lite_regs_bad.v:17$94 (regs).
+Removed top 31 bits (of 32) from port B of cell axi_lite_regs_bad.$add$axi_lite_regs_bad.v:43$90 ($add).
+
+4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_checker..
+Finding unused cells or wires in module \axi_lite_regs_bad..
+Finding unused cells or wires in module \formal_top_bad..
+
+4.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.11. Executing OPT pass (performing simple optimizations).
+
+4.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_checker.
+Optimizing module axi_lite_regs_bad.
+Optimizing module formal_top_bad.
+
+4.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_checker'.
+Finding identical cells in module `\axi_lite_regs_bad'.
+Finding identical cells in module `\formal_top_bad'.
+Removed a total of 0 cells.
+
+4.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_checker..
+Finding unused cells or wires in module \axi_lite_regs_bad..
+Finding unused cells or wires in module \formal_top_bad..
+
+4.11.4. Finished fast OPT passes.
+
+4.12. Printing statistics.
+
+=== axi_lite_checker ===
+
+   Number of wires:                 45
+   Number of wire bits:            107
+   Number of public wires:           7
+   Number of public wire bits:      38
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 41
+     $assert                         3
+     $dff                           16
+     $eq                             1
+     $logic_and                      6
+     $logic_not                      6
+     $logic_or                       3
+     $mux                            6
+
+=== axi_lite_regs_bad ===
+
+   Number of wires:                 52
+   Number of wire bits:            497
+   Number of public wires:          21
+   Number of public wire bits:     181
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 40
+     $add                            1
+     $dff                            8
+     $logic_and                      8
+     $logic_not                      2
+     $mem_v2                         1
+     $mux                           20
+
+=== formal_top_bad ===
+
+   Number of wires:                 19
+   Number of wire bits:            148
+   Number of public wires:          19
+   Number of public wire bits:     148
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     axi_lite_checker                1
+     axi_lite_regs_bad               1
+
+=== design hierarchy ===
+
+   formal_top_bad                    1
+     axi_lite_checker                1
+     axi_lite_regs_bad               1
+
+   Number of wires:                116
+   Number of wire bits:            752
+   Number of public wires:          47
+   Number of public wire bits:     367
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 81
+     $add                            1
+     $assert                         3
+     $dff                           24
+     $eq                             1
+     $logic_and                     14
+     $logic_not                      8
+     $logic_or                       3
+     $mem_v2                         1
+     $mux                           26
+
+4.13. Executing CHECK pass (checking for obvious problems).
+Checking module axi_lite_checker...
+Checking module axi_lite_regs_bad...
+Checking module formal_top_bad...
+Found and reported 0 problems.
+
+5. Executing SMT2 backend.
+
+5.1. Executing BMUXMAP pass.
+
+5.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module axi_lite_checker.
+Creating SMT-LIBv2 representation of module axi_lite_regs_bad.
+Creating SMT-LIBv2 representation of module formal_top_bad.
+
+End of script. Logfile hash: 9c514a9d1f, CPU: user 0.08s system 0.02s, MEM: 12.62 MB peak
+Yosys 0.30+48 (git sha1 14d50a176d5, gcc 8.3.1 -fPIC -Os)
+Time spent: 21% 5x opt_clean (0 sec), 21% 6x opt_expr (0 sec), ...
+##   0:00:00  Solver: z3
+##   0:00:00  Checking assertions in step 0..
+##   0:00:00  Checking assertions in step 1..
+##   0:00:00  BMC failed!
+##   0:00:00  Assert failed in formal_top_bad.chk: $assert$axi_lite_checker.sv:13$50
+##   0:00:00  Assert failed in formal_top_bad.chk: $assert$axi_lite_checker.sv:17$51
+##   0:00:00  Assert failed in formal_top_bad.chk: $assert$axi_lite_checker.sv:21$52
+##   0:00:00  Writing trace to VCD file: trace.vcd
+##   0:00:00  Status: FAILED (!)

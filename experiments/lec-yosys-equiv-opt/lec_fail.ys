@@ -1,0 +1,12 @@
+# lec_fail.ys — equivalence check: RTL vs buggy variant (expect FAIL)
+read_verilog simple_alu.v
+proc simple_alu
+opt simple_alu
+rename simple_alu gold
+read_verilog simple_alu_bad.v
+proc simple_alu_bad
+opt simple_alu_bad
+rename simple_alu_bad gate
+equiv_make gold gate equiv
+equiv_simple
+equiv_status

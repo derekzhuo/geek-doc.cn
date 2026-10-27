@@ -1,0 +1,261 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.30+48 (git sha1 14d50a176d5, gcc 8.3.1 -fPIC -Os)
+
+
+-- Running command `read -formal -sv req_ack_bad.v; prep -top req_ack_bad; write_smt2 -wires design.smt2' --
+
+1. Executing Verilog-2005 frontend: req_ack_bad.v
+Parsing formal SystemVerilog input from `req_ack_bad.v' to AST representation.
+Storing AST representation for module `$abstract\req_ack_bad'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\req_ack_bad'.
+Generating RTLIL representation for module `\req_ack_bad'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \req_ack_bad
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \req_ack_bad
+Removing unused module `$abstract\req_ack_bad'.
+Removed 1 unused modules.
+Module req_ack_bad directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$req_ack_bad.v:9$12 in module req_ack_bad.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 11 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\req_ack_bad.$proc$req_ack_bad.v:0$52'.
+  Set init value: $formal$req_ack_bad.v:27$11_EN = 1'0
+Found init rule in `\req_ack_bad.$proc$req_ack_bad.v:0$50'.
+  Set init value: $formal$req_ack_bad.v:23$10_EN = 1'0
+Found init rule in `\req_ack_bad.$proc$req_ack_bad.v:0$48'.
+  Set init value: $formal$req_ack_bad.v:19$9_EN = 1'0
+Found init rule in `\req_ack_bad.$proc$req_ack_bad.v:0$46'.
+  Set init value: $formal$req_ack_bad.v:18$8_EN = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~6 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:0$52'.
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:0$50'.
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:0$48'.
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:0$46'.
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:26$37'.
+     1/2: $0$formal$req_ack_bad.v:27$11_EN[0:0]$39
+     2/2: $0$formal$req_ack_bad.v:27$11_CHECK[0:0]$38
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+     1/2: $0$formal$req_ack_bad.v:23$10_EN[0:0]$32
+     2/2: $0$formal$req_ack_bad.v:23$10_CHECK[0:0]$31
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+     1/4: $0$formal$req_ack_bad.v:18$8_EN[0:0]$20
+     2/4: $0$formal$req_ack_bad.v:18$8_CHECK[0:0]$19
+     3/4: $0$formal$req_ack_bad.v:19$9_EN[0:0]$22
+     4/4: $0$formal$req_ack_bad.v:19$9_CHECK[0:0]$21
+Creating decoders for process `\req_ack_bad.$proc$req_ack_bad.v:9$12'.
+     1/1: $0\ack[0:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:27$11_CHECK' using process `\req_ack_bad.$proc$req_ack_bad.v:26$37'.
+  created $dff cell `$procdff$81' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:27$11_EN' using process `\req_ack_bad.$proc$req_ack_bad.v:26$37'.
+  created $dff cell `$procdff$82' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:23$5$0' using process `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+  created $dff cell `$procdff$83' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:24$6$0' using process `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+  created $dff cell `$procdff$84' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:24$7$0' using process `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+  created $dff cell `$procdff$85' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:23$10_CHECK' using process `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+  created $dff cell `$procdff$86' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:23$10_EN' using process `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+  created $dff cell `$procdff$87' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:17$1$0' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$88' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:18$2$0' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$89' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:18$3$0' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$90' with positive edge clock.
+Creating register for signal `\req_ack_bad.$past$req_ack_bad.v:19$4$0' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$91' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:18$8_CHECK' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$92' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:18$8_EN' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$93' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:19$9_CHECK' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$94' with positive edge clock.
+Creating register for signal `\req_ack_bad.$formal$req_ack_bad.v:19$9_EN' using process `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+  created $dff cell `$procdff$95' with positive edge clock.
+Creating register for signal `\req_ack_bad.\ack' using process `\req_ack_bad.$proc$req_ack_bad.v:9$12'.
+  created $dff cell `$procdff$96' with positive edge clock.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:0$52'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:0$50'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:0$48'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:0$46'.
+Found and cleaned up 1 empty switch in `\req_ack_bad.$proc$req_ack_bad.v:26$37'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:26$37'.
+Found and cleaned up 1 empty switch in `\req_ack_bad.$proc$req_ack_bad.v:22$27'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:22$27'.
+Found and cleaned up 3 empty switches in `\req_ack_bad.$proc$req_ack_bad.v:16$14'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:16$14'.
+Found and cleaned up 1 empty switch in `\req_ack_bad.$proc$req_ack_bad.v:9$12'.
+Removing empty process `req_ack_bad.$proc$req_ack_bad.v:9$12'.
+Cleaned up 6 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module req_ack_bad.
+<suppressed ~1 debug messages>
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module req_ack_bad.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \req_ack_bad..
+Removed 1 unused cells and 34 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module req_ack_bad...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module req_ack_bad.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\req_ack_bad'.
+Removed a total of 0 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \req_ack_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \req_ack_bad.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\req_ack_bad'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \req_ack_bad..
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module req_ack_bad.
+
+2.7.8. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \req_ack_bad..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module req_ack_bad.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\req_ack_bad'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \req_ack_bad..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== req_ack_bad ===
+
+   Number of wires:                 42
+   Number of wire bits:             42
+   Number of public wires:           4
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 43
+     $assert                         2
+     $assume                         2
+     $dff                           16
+     $eq                             1
+     $logic_and                      4
+     $logic_not                      4
+     $logic_or                       1
+     $mux                           13
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module req_ack_bad...
+Found and reported 0 problems.
+
+3. Executing SMT2 backend.
+
+3.1. Executing BMUXMAP pass.
+
+3.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module req_ack_bad.
+
+End of script. Logfile hash: 6470d2d2c1, CPU: user 0.04s system 0.01s, MEM: 12.45 MB peak
+Yosys 0.30+48 (git sha1 14d50a176d5, gcc 8.3.1 -fPIC -Os)
+Time spent: 29% 5x opt_expr (0 sec), 20% 4x opt_clean (0 sec), ...
+##   0:00:00  Solver: z3
+##   0:00:00  Checking assertions in step 0..
+##   0:00:00  Checking assertions in step 1..
+##   0:00:00  BMC failed!
+##   0:00:00  Assert failed in req_ack_bad: $assert$req_ack_bad.v:23$44
+##   0:00:00  Assert failed in req_ack_bad: $assert$req_ack_bad.v:27$45
+##   0:00:00  Writing trace to VCD file: trace.vcd
+##   0:00:00  Status: FAILED (!)
