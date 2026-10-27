@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv req_ack_good.v
+prep -top req_ack_good
+
+[files]
+req_ack_good.v

@@ -1,0 +1,4 @@
+# synth.ys — one-shot synth command equivalent for comparison
+read_verilog rtl/async_fifo.v
+synth -top async_fifo
+stat

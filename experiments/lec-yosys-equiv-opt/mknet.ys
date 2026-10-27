@@ -1,0 +1,4 @@
+# mknet.ys — produce generic gate-level netlist for LEC / GLS
+read_verilog simple_alu.v
+synth -top simple_alu
+write_verilog alu_net.v

@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv req_ack_bad.v
+prep -top req_ack_bad
+
+[files]
+req_ack_bad.v

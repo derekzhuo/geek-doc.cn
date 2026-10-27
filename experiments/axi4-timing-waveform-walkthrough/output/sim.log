@@ -1,0 +1,7 @@
+VCD info: dumpfile axi4.vcd opened for output.
+WRITE burst done: BRESP=OKAY at 105000
+READ beat 0: rdata=a5a50001 OK at 135000
+READ beat 1: rdata=a5a50002 OK at 145000
+READ beat 2: rdata=a5a50003 OK at 155000
+READ beat 3: rdata=a5a50004 OK at 165000
+TB_RESULT: PASS (write+read burst, 4 beats each)

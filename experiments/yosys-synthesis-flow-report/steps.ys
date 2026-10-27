@@ -1,0 +1,12 @@
+# steps.ys — step-by-step synthesis of async_fifo with stat after each major phase
+read_verilog rtl/async_fifo.v
+hierarchy -check -top async_fifo
+stat
+proc
+opt
+stat
+techmap
+opt
+abc
+opt_clean
+stat

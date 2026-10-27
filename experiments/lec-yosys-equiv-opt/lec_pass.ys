@@ -1,0 +1,9 @@
+# lec_pass.ys — equivalence check: RTL vs synthesized netlist (expect PASS)
+read_verilog simple_alu.v
+prep -top simple_alu
+rename simple_alu gold
+read_verilog alu_net.v
+rename simple_alu gate
+equiv_make gold gate equiv
+equiv_simple
+equiv_status

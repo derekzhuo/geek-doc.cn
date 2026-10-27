@@ -1,0 +1,212 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Executing script file `lec_fail.ys' --
+
+1. Executing Verilog-2005 frontend: simple_alu.v
+Parsing Verilog input from `simple_alu.v' to AST representation.
+Generating RTLIL representation for module `\simple_alu'.
+Successfully finished Verilog frontend.
+
+2. Executing PROC pass (convert processes to netlists).
+
+2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$simple_alu.v:10$1 in module simple_alu.
+Removed a total of 0 dead cases.
+
+2.3. Executing PROC_INIT pass (extract init attributes).
+
+2.4. Executing PROC_ARST pass (detect async resets in processes).
+
+2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\simple_alu.$proc$simple_alu.v:10$1'.
+     1/2: $1\y[7:0]
+     2/2: $0\y[7:0]
+
+2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\simple_alu.\y' from process `\simple_alu.$proc$simple_alu.v:10$1'.
+
+2.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\simple_alu.$proc$simple_alu.v:10$1'.
+Removing empty process `simple_alu.$proc$simple_alu.v:10$1'.
+Cleaned up 1 empty switch.
+
+3. Executing OPT pass (performing simple optimizations).
+
+3.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module simple_alu.
+<suppressed ~2 debug messages>
+
+3.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\simple_alu'.
+Removed a total of 0 cells.
+
+3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \simple_alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \simple_alu.
+Performed a total of 0 changes.
+
+3.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\simple_alu'.
+Removed a total of 0 cells.
+
+3.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+3.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \simple_alu..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+3.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module simple_alu.
+
+3.9. Finished OPT passes. (There is nothing left to do.)
+Renaming module \simple_alu to \gold.
+
+4. Executing Verilog-2005 frontend: simple_alu_bad.v
+Parsing Verilog input from `simple_alu_bad.v' to AST representation.
+Generating RTLIL representation for module `\simple_alu_bad'.
+Successfully finished Verilog frontend.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$simple_alu_bad.v:9$12 in module simple_alu_bad.
+Removed a total of 0 dead cases.
+
+5.3. Executing PROC_INIT pass (extract init attributes).
+
+5.4. Executing PROC_ARST pass (detect async resets in processes).
+
+5.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\simple_alu_bad.$proc$simple_alu_bad.v:9$12'.
+     1/2: $1\y[7:0]
+     2/2: $0\y[7:0]
+
+5.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\simple_alu_bad.\y' from process `\simple_alu_bad.$proc$simple_alu_bad.v:9$12'.
+
+5.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+5.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\simple_alu_bad.$proc$simple_alu_bad.v:9$12'.
+Removing empty process `simple_alu_bad.$proc$simple_alu_bad.v:9$12'.
+Cleaned up 1 empty switch.
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module simple_alu_bad.
+<suppressed ~2 debug messages>
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\simple_alu_bad'.
+Removed a total of 0 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \simple_alu_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \simple_alu_bad.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\simple_alu_bad'.
+Removed a total of 0 cells.
+
+6.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \simple_alu_bad..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module simple_alu_bad.
+
+6.9. Finished OPT passes. (There is nothing left to do.)
+Renaming module \simple_alu_bad to \gate.
+
+7. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: a_gold (\a_gold), a_gate (\a_gate) -> a
+Presumably equivalent wires: b_gold (\b_gold), b_gate (\b_gate) -> b
+Presumably equivalent wires: op_gold (\op_gold), op_gate (\op_gate) -> op
+Presumably equivalent wires: y_gold (\y_gold), y_gate (\y_gate) -> y
+Presumably equivalent wires: zero_gold (\zero_gold), zero_gate (\zero_gate) -> zero
+
+8. Executing EQUIV_SIMPLE pass.
+Found 9 unproven $equiv cells (2 groups) in equiv:
+  Trying to prove $equiv for \zero: failed.
+ Grouping SAT models for \y:
+  Trying to prove $equiv for \y [0]: failed.
+  Trying to prove $equiv for \y [1]: failed.
+  Trying to prove $equiv for \y [2]: failed.
+  Trying to prove $equiv for \y [3]: failed.
+  Trying to prove $equiv for \y [4]: failed.
+  Trying to prove $equiv for \y [5]: failed.
+  Trying to prove $equiv for \y [6]: failed.
+  Trying to prove $equiv for \y [7]: failed.
+Proved 0 previously unproven $equiv cells.
+
+9. Executing EQUIV_STATUS pass.
+Found 9 $equiv cells in equiv:
+  Of those cells 0 are proven and 9 are unproven.
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$32: \zero_gold \zero_gate
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$31: \y_gold [7] \y_gate [7]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$30: \y_gold [6] \y_gate [6]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$29: \y_gold [5] \y_gate [5]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$28: \y_gold [4] \y_gate [4]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$27: \y_gold [3] \y_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$26: \y_gold [2] \y_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$25: \y_gold [1] \y_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:251:find_same_wires$24: \y_gold [0] \y_gate [0]
+No $equiv cells found in gate.
+No $equiv cells found in gold.
+Found a total of 9 unproven $equiv cells.
+
+End of script. Logfile hash: 48a1d73286
+CPU: user 0.02s system 0.00s, MEM: 20.65 MB total, 10.66 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 44% 1x equiv_simple (0 sec), 12% 4x opt_expr (0 sec), ...
+YOSYS_EXIT=0

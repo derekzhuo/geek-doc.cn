@@ -1,6 +1,6 @@
 # sv-constraint-random-vs-cocotb
 
-**对应教程**：https://geek-doc.cn/chip-design/intermediate/sv-constraint-random-vs-cocotb.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/verification/sv-constraint-random-vs-cocotb.html（上线后生效）
 
 同一随机激励需求的两条实现路径对照实验的 cocotb 侧：用 Python `random` 给一个 8 位宽、16 深度的异步 FIFO 打 200 笔随机背靠背读写（写概率 0.8 / 读概率 0.7，固定种子 20261020），在 Icarus Verilog 上回归，验证跨时钟域数据完整性。
 
