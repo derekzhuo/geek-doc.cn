@@ -1,0 +1,23 @@
+# command: iverilog -g2005 -o inout_bad.vvp inout_bad.v && vvp inout_fixed.vvp
+# date: 2026-10-29
+# host-toolchain: Icarus Verilog version 13.0 (stable) (v13_0)
+
+$ iverilog -g2005 -o inout_bad.vvp inout_bad.v
+inout_bad.v:19: error: Variable 'data_bus' cannot be driven by a primitive.
+inout_bad.v:19: error: Inout port expression must support continuous assignment.
+inout_bad.v:19:      : Port 1 (data) of sram_if is connected to data_bus
+inout_bad.v:22: error: Variable 'data_bus' cannot be driven by a continuous assignment/module.
+inout_bad.v:22:      : This is allowed when SystemVerilog is enabled.
+3 error(s) during elaboration.
+# exit_code: 3
+
+$ iverilog -g2005 -o inout_fixed.vvp inout_fixed.v
+# exit_code: 0 (compile ok)
+
+$ vvp inout_fixed.vvp
+dut_drive:  data_bus=a5 (expect a5)
+peer_drive: data_bus=3c (expect 3c)
+both_z:     data_bus=zz (expect zz)
+PASS: inout connected via wire, three-state resolved
+inout_fixed.v:33: $finish called at 40000 (1ps)
+# exit_code: 0
