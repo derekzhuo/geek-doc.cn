@@ -1,0 +1,49 @@
+# command: docker run --rm -v $PWD/stepN:/work -w /work geek-eda:0.2 verilator --lint-only -Wall reg_bank.v (N=1..4)
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+
+===== step1: verilator --lint-only -Wall reg_bank.v =====
+%Warning-WIDTHTRUNC: reg_bank.v:16:21: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'wdata' generates 16 bits.
+                                     : ... note: In instance 'reg_bank'
+   16 |     assign led_data = wdata;
+      |                     ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: reg_bank.v:22:17: Operator EQ expects 32 or 10 bits on the LHS, but LHS's VARREF 'cnt' generates 8 bits.
+                                      : ... note: In instance 'reg_bank'
+   22 |         if (cnt == 1000)
+      |                 ^~
+%Warning-UNUSEDSIGNAL: reg_bank.v:4:24: Bits of signal are not used: 'addr'[31:4]
+                                      : ... note: In instance 'reg_bank'
+    4 |     input  wire [31:0] addr,
+      |                        ^~~~
+%Warning-UNUSEDSIGNAL: reg_bank.v:5:24: Bits of signal are not used: 'wdata'[15:8]
+                                      : ... note: In instance 'reg_bank'
+    5 |     input  wire [15:0] wdata,
+      |                        ^~~~~
+%Error: Exiting due to 4 warning(s)
+exit=1
+
+===== step2: verilator --lint-only -Wall reg_bank.v =====
+exit=0
+
+===== step3: verilator --lint-only -Wall reg_bank.v =====
+%Warning-WIDTHEXPAND: reg_bank.v:24:17: Operator EQ expects 32 or 10 bits on the LHS, but LHS's VARREF 'cnt' generates 8 bits.
+                                      : ... note: In instance 'reg_bank'
+   24 |         if (cnt == 1000)
+      |                 ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: reg_bank.v:4:24: Bits of signal are not used: 'addr'[31:4]
+                                      : ... note: In instance 'reg_bank'
+    4 |     input  wire [31:0] addr,
+      |                        ^~~~
+%Warning-UNUSEDSIGNAL: reg_bank.v:5:24: Bits of signal are not used: 'wdata'[15:8]
+                                      : ... note: In instance 'reg_bank'
+    5 |     input  wire [15:0] wdata,
+      |                        ^~~~~
+%Error: Exiting due to 3 warning(s)
+exit=1
+
+===== step4: verilator --lint-only -Wall reg_bank.v =====
+exit=0
