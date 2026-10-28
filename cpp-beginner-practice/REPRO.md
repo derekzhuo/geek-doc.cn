@@ -30,7 +30,7 @@ make run-cli ARGS="--count 3 data.txt"
 
 ## 实测输出（Linux, g++）
 
-```
+```bash
 $ make
 g++ -O0 -g -Wall -Wextra -std=c++17 book_mgmt.cpp -o book_mgmt
 g++ -O0 -g -Wall -Wextra -std=c++17 grade_system.cpp -o grade_system

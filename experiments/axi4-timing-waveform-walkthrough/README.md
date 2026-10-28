@@ -25,7 +25,7 @@ vvp axi4_tb.out            # 同时产出 axi4.vcd 波形
 
 仿真 PASS：写突发 BRESP=OKAY，读突发 4 拍数据 `a5a50001`~`a5a50004` 逐一比对一致，末拍 RLAST 正确举起：
 
-```
+```bash
 WRITE burst done: BRESP=OKAY at 105000
 READ beat 0: rdata=a5a50001 OK at 135000
 READ beat 3: rdata=a5a50004 OK at 165000

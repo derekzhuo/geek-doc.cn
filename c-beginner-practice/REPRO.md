@@ -27,7 +27,7 @@ make run-guess  # 猜数字（交互式）
 
 ## 实测输出（Linux, gcc）
 
-```
+```bash
 $ make
 gcc -O0 -g guess_number.c -o guess_number
 gcc -O0 -g calculator.c -o calculator
