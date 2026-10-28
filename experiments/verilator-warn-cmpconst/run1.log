@@ -1,0 +1,20 @@
+# command: docker run --rm -v .:/work -w /work geek-eda:0.2 verilator --lint-only -Wall cmpconst_bad.v
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+---
+
+$ verilator --version
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+
+$ verilator --lint-only -Wall cmpconst_bad.v
+%Warning-CMPCONST: cmpconst_bad.v:15:21: Comparison is constant due to limited range
+                                       : ... note: In instance 'cmpconst_bad'
+   15 |             if (cnt > 8'd255)
+      |                     ^
+                   ... For warning description see https://verilator.org/warn/CMPCONST?v=5.020
+                   ... Use "/* verilator lint_off CMPCONST */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+# exit_code: 1
+
+$ verilator --lint-only -Wall cmpconst_fixed.v
+# exit_code: 0
