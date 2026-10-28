@@ -1,0 +1,22 @@
+# command: iverilog -o sim_bad dut.v tb.v && vvp sim_bad; iverilog -Wtimescale -o sim_bad dut.v tb.v; iverilog -o sim_ok tb.v dut_fixed.v && vvp sim_ok
+# date: 2026-10-29
+# host-toolchain: Icarus Verilog 13.0
+---
+$ iverilog -o sim_bad dut.v tb.v
+warning: Found both default and `timescale based delays. Use
+       : -Wtimescale to find the module(s) with no `timescale.
+$ vvp sim_bad
+tb timescale: 1ns/1ps, #5 应为 5ns
+time=52000 y=0
+tb.v:18: $finish called at 72000 (1ps)
+$ iverilog -Wtimescale -o sim_bad dut.v tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module dut declared here: dut.v:2
+warning: Found both default and `timescale based delays. Use
+       : -Wtimescale to find the module(s) with no `timescale.
+$ iverilog -o sim_ok tb.v dut_fixed.v
+$ vvp sim_ok
+tb timescale: 1ns/1ps, #5 应为 5ns
+time=52000 y=1
+tb.v:18: $finish called at 72000 (1ps)
