@@ -1,0 +1,40 @@
+# command: 见下逐段（iverilog 复现 -> 修复 -> 复跑）
+# date: 2026-10-29
+# host-toolchain: Icarus Verilog version 13.0 (stable) (v13_0)
+
+$ iverilog -o demo_bad.vvp demo_bad.v
+demo_bad.v:3: warning: macro BUS_W undefined (and assumed null) at this point.
+demo_bad.v:4: warning: macro BUS_W undefined (and assumed null) at this point.
+demo_bad.v:7: warning: macro BUS_W undefined (and assumed null) at this point.
+exit=0
+
+# 关键：只是 warning 不是 error，编译照样通过，但宏被假设为空串
+$ iverilog -E -o bad_pp.v demo_bad.v && sed -n "3p;4p;7p" bad_pp.v
+demo_bad.v:3: warning: macro BUS_W undefined (and assumed null) at this point.
+demo_bad.v:4: warning: macro BUS_W undefined (and assumed null) at this point.
+demo_bad.v:7: warning: macro BUS_W undefined (and assumed null) at this point.
+                input wire [-1:0] din,
+                output reg [-1:0] dout);
+      dout <= {{1'b0}};
+
+# 下游恶果：[-1:0] 静默降级成 2 位向量，8 位总线宽度凭空消失
+$ iverilog demo_order.v defs_order.v   # 命令行顺序错：宏定义文件排在后面
+demo_order.v:2: warning: macro BUS_W undefined (and assumed null) at this point.
+demo_order.v:3: warning: macro BUS_W undefined (and assumed null) at this point.
+exit=0
+
+$ iverilog defs_order.v demo_order.v   # 定义文件放前面，干净了
+exit=0
+
+$ iverilog -DBUS_W=8 -o demo_bad.vvp demo_bad.v   # 用 -D 传参修复
+exit=0
+
+$ iverilog -DBUS_W=8 -E -o good_pp.v demo_bad.v && sed -n "3p;7p" good_pp.v
+                input wire [8-1:0] din,
+      dout <= {8{1'b0}};
+
+$ iverilog -o demo_fixed.vvp demo_fixed.v   # 用 `include 修复后复跑
+exit=0
+
+$ vvp demo_fixed.vvp
+exit=0
