@@ -4,7 +4,7 @@
 
 **现象**：把 ModelSim 的 `wave add` 脚本直接拿给 XSim 跑，仿真器报：
 
-```
+```bash
 invalid command name "wave"
 ```
 

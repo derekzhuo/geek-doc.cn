@@ -16,7 +16,7 @@ make run        # 默认 node0 vs node1，64MB
 
 ## 实测数据（见 results.txt）
 
-```
+```bash
 本地访问时间: 1245us
 远程访问时间: 3720us
 开销比: 2.99x

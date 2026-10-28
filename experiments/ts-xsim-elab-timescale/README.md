@@ -4,7 +4,7 @@
 
 **现象**：`xelab` 编译时报错中止：
 
-```
+```bash
 ERROR: [XSIM 43-4099] "counter4.v" Line 1. Module counter4 doesn't have a timescale but at least one module in design has a timescale.
 ```
 

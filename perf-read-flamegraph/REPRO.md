@@ -27,7 +27,7 @@ updated: 2026-10-22
 
 ## 1. 实测环境
 
-```
+```bash
 Linux 3.10.0-1160.el7.x86_64, 4 核 x86_64, load avg 0.01
 gcc 4.8.5 (-O2 -g -fno-omit-frame-pointer -std=gnu99)
 perf 3.10 (kernel-tools)
@@ -59,7 +59,7 @@ FG=$HOME/FlameGraph bash run_lab.sh
 
 `perf report --no-children`（self 占比）：
 
-```
+```bash
 base: leaf_spin 56.63% | hash_djb2 21.16% | walk_array 19.23%
 opt : leaf_spin 56.50% | walk_array 36.56% | hash_djb2  0.30%
 ```

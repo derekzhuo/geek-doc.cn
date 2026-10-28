@@ -33,7 +33,7 @@ sudo docker run --rm -v $PWD:/w -w /w \
 
 ## 关键结果
 
-```
+```bash
 Startpoint: _37_ (rising edge-triggered flip-flop clocked by clk)
 Endpoint:   _44_ ...
   1.17   data arrival time
