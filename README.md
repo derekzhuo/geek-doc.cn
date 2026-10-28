@@ -1,6 +1,6 @@
 # geek-doc.cn — 「极客工场」配套可运行实验代码集
 
-> 与中文技术知识库「极客工场」**https://geek-doc.cn** 配套的**可运行实验代码**：覆盖 Linux 性能剖析、开源 EDA 工具链、Vivado/FPGA 实战、CPU 微架构建模等。
+> 与中文技术知识库「极客工场」[geek-doc.cn](https://geek-doc.cn) 配套的**可运行实验代码**：覆盖 Linux 性能剖析、开源 EDA 工具链、Vivado/FPGA 实战、CPU 微架构建模等。
 > 每个 demo 独立可编译、可运行，`make run` 即出结果。
 
 [![Site](https://img.shields.io/badge/站点-geek-doc.cn-blue?style=flat-square&logo=readthedocs&logoColor=white)](https://geek-doc.cn)
@@ -16,7 +16,7 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 
 > 运行要求：性能剖析类 demo 依赖 Linux（`/proc`、`perf` 等），macOS 可编译多数 demo 但部分输出不同；EDA 类实验需要对应工具链（iverilog / verilator / yosys / cocotb / Vivado 等，各实验 README 有说明）。
 >
-> 📖 配套理论讲解、perf 命令逐行解读与原始输出分析，全在站点的 **「perf 实验」栏目**：**https://geek-doc.cn/demos/**。
+> 📖 配套理论讲解、perf 命令逐行解读与原始输出分析，全在站点的 **「perf 实验」栏目**：[geek-doc.cn/demos/](https://geek-doc.cn/demos/)。
 
 ## 目录总览
 
@@ -41,7 +41,7 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 | - | [crash-signals](crash-signals/) | 崩溃信号复现（10 个程序） | `make -C crash-signals run` |
 | E1 | [echo](echo/) | 高并发 TCP echo 服务器实战（day-01 ~ day-06 渐进式代码与压测脚本） | `make -C echo/day-01`（再分别 `run-server` / `run-client`） |
 
-> 💡 记不住地址？直接收藏 **https://geek-doc.cn/demos/**（站点左侧目录「perf 实验索引」）——每个 demo 都有对应页面，含复现命令、代码讲解与实测数据。
+> 💡 记不住地址？直接收藏 [geek-doc.cn/demos/](https://geek-doc.cn/demos/)（站点左侧目录「perf 实验索引」）——每个 demo 都有对应页面，含复现命令、代码讲解与实测数据。
 
 ## 专题实战目录（仓库根下）
 
@@ -90,8 +90,8 @@ make -C <demo> clean      # 清理
 
 这里只提供**可运行代码**；每个实验背后的原理、`perf` 工具用法、原始输出与逐行分析，请到配套文档站阅读：
 
-- **站点首页**：https://geek-doc.cn
-- **perf 实验栏目**：https://geek-doc.cn/demos/
+- **站点首页**：[geek-doc.cn](https://geek-doc.cn)
+- **perf 实验栏目**：[geek-doc.cn/demos/](https://geek-doc.cn/demos/)
 - 站内搜索「性能剖析」「perf」即可直达对应理论章节
 
 > 为什么"跑"和"读"分开？因为**代码就该能跑，原理就该讲透**——在站点读完理论，回这里 `make run` 亲手验证，效果最好。
@@ -102,4 +102,4 @@ make -C <demo> clean      # 清理
 
 ---
 
-**站点**：https://geek-doc.cn · 喜欢这个仓库的话，欢迎在 GitHub 点个 ⭐
+**站点**：[geek-doc.cn](https://geek-doc.cn) · 喜欢这个仓库的话，欢迎在 GitHub 点个 ⭐
