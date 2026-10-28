@@ -1,0 +1,23 @@
+# command: iverilog -o simv top.v sub.v && vvp simv
+# date: 2026-10-29
+# host-toolchain: Icarus Verilog 13.0
+
+$ iverilog -o simv top.v sub.v
+top.v:8: warning: Port 1 (a) of module adder8 expects 8 bit(s), given 4.
+top.v:8:        : Padding 4 high bits of the port.
+(exit=0，警告不阻断编译)
+
+$ vvp simv
+sum = 10 (expected 10 if zero-extended)
+PASS: zero-extension worked
+top.v:23: $finish called at 1 (1s)
+
+--- 修复：a4 改为 8 位 reg [7:0] a8（top_fixed.v） ---
+
+$ iverilog -o simv_fixed top_fixed.v sub.v
+(exit=0，无任何警告输出)
+
+$ vvp simv_fixed
+sum = 10 (expected 10)
+PASS
+top_fixed.v:22: $finish called at 1 (1s)
