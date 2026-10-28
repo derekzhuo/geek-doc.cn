@@ -1,0 +1,22 @@
+# command: docker run --rm -v .:/work -w /work geek-eda:0.2 verilator --lint-only -Wall <file>.v
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+
+$ verilator --lint-only -Wall implicit_bad.v
+%Warning-IMPLICIT: implicit_bad.v:8:10: Signal definition not found, creating implicitly: 'sum_ab'
+    8 |   assign sum_ab = a & b;
+      |          ^~~~~~
+                   ... For warning description see https://verilator.org/warn/IMPLICIT?v=5.020
+                   ... Use "/* verilator lint_off IMPLICIT */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+exit=1
+
+$ verilator --lint-only -Wall implicit_none.v
+%Error: implicit_none.v:9:10: Signal definition not found, and implicit disabled with `default_nettype: 'sum_ab'
+    9 |   assign sum_ab = a & b;
+      |          ^~~~~~
+%Error: Exiting due to 1 error(s)
+exit=1
+
+$ verilator --lint-only -Wall implicit_fixed.v
+exit=0
