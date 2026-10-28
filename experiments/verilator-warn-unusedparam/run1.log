@@ -1,0 +1,20 @@
+# command: docker run --rm -v $PWD:/work -w /work geek-eda:0.2 verilator --lint-only -Wall unusedparam_bad.v; 修复后同命令跑 unusedparam_fixed.v
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+$ verilator --version
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+$ verilator --lint-only -Wall unusedparam_bad.v
+%Warning-UNUSEDPARAM: unusedparam_bad.v:4:15: Parameter is not used: 'MAX_DEPTH'
+                                            : ... note: In instance 'unusedparam_bad'
+    4 |     parameter MAX_DEPTH   = 16,
+      |               ^~~~~~~~~
+                      ... For warning description see https://verilator.org/warn/UNUSEDPARAM?v=5.020
+                      ... Use "/* verilator lint_off UNUSEDPARAM */" and lint_on around source to disable this message.
+%Warning-UNUSEDPARAM: unusedparam_bad.v:5:15: Parameter is not used: 'DEBUG_LEVEL'
+                                            : ... note: In instance 'unusedparam_bad'
+    5 |     parameter DEBUG_LEVEL = 2
+      |               ^~~~~~~~~~~
+%Error: Exiting due to 2 warning(s)
+$ verilator --lint-only -Wall unusedparam_fixed.v
+$ echo $?
+0
