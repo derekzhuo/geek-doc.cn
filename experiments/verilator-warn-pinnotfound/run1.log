@@ -1,0 +1,20 @@
+# command: verilator --lint-only -Wall --top-module top_bad top_bad.v adder.v ; 修复后 verilator --lint-only -Wall --top-module top_fixed top_fixed.v adder.v
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+
+$ verilator --lint-only -Wall --top-module top_bad top_bad.v adder.v
+%Warning-PINMISSING: top_bad.v:7:9: Cell has missing pin: 'a'
+    7 |   adder u_adder (
+      |         ^~~~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=5.020
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Error-PINNOTFOUND: top_bad.v:8:8: Pin not found: 'data_a'
+    8 |       .data_a (x),      
+      |        ^~~~~~
+%Error: Exiting due to 1 error(s), 1 warning(s)
+(exit code: 1)
+
+# --- 把 .data_a 改回模块真实端口名 .a 后复跑 ---
+
+$ verilator --lint-only -Wall --top-module top_fixed top_fixed.v adder.v
+(exit code: 0)
