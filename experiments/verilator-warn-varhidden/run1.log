@@ -1,0 +1,18 @@
+# command: docker run --rm -v $PWD:/work -w /work geek-eda:0.2 verilator --lint-only -Wall varhidden_bad.v; 修复后同命令跑 varhidden_fixed.v
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+$ verilator --version
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+$ verilator --lint-only -Wall varhidden_bad.v
+%Warning-VARHIDDEN: varhidden_bad.v:14:18: Declaration of signal hides declaration in upper scope: 'i'
+   14 |         for (int i = 0; i < 8; i = i + 1) begin
+      |                  ^
+                    varhidden_bad.v:8:13: ... Location of original declaration
+    8 |     integer i;               
+      |             ^
+                    ... For warning description see https://verilator.org/warn/VARHIDDEN?v=5.020
+                    ... Use "/* verilator lint_off VARHIDDEN */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+$ verilator --lint-only -Wall varhidden_fixed.v
+$ echo $?
+0
