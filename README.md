@@ -1,6 +1,6 @@
 # geek-doc.cn — Linux 系统实验可复现代码集
 
-> 与《Linux 性能剖析》站点 **https://geek-doc.cn** 配套的**可运行实验代码**。
+> 与中文技术知识库「极客工场」**https://geek-doc.cn** 配套的**可运行实验代码**。
 > 每个 demo 独立可编译、可运行，`make run` 即出结果。
 
 [![Site](https://img.shields.io/badge/站点-geek-doc.cn-blue?style=flat-square&logo=readthedocs&logoColor=white)](https://geek-doc.cn)
@@ -39,7 +39,7 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 | D14 | [mt-io-demo](mt-io-demo/) | 多线程 + IO 分析方法演练 | `make -C mt-io-demo run` |
 | - | [compiler-reordering](compiler-reordering/) | 编译器重排与 data-race UB | `make -C compiler-reordering run` |
 | - | [crash-signals](crash-signals/) | 崩溃信号复现（10 个程序） | `make -C crash-signals run` |
-| E1 | [echo](echo/) | 百万 QPS TCP 高并发实战（8 阶段 × 30 天） | 见 [echo/REPRO.md](echo/REPRO.md) |
+| E1 | [echo](echo/) | 高并发 TCP echo 服务器实战（day-01 ~ day-06 渐进式代码与压测脚本） | `make -C echo/day-01`（再分别 `run-server` / `run-client`） |
 
 > 💡 记不住地址？站点首页 **https://geek-doc.cn** → 顶部导航「演示程序」→ 每个 demo 都有对应页面，含复现命令、代码讲解与实测数据。
 
