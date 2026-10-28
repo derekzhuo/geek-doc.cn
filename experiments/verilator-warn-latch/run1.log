@@ -1,0 +1,19 @@
+# command: docker run --rm -v .:/work -w /work geek-eda:0.2 verilator --lint-only -Wall latch_bad.v
+# date: 2026-10-29
+# host-toolchain: Verilator 5.020 (geek-eda:0.2 docker)
+---
+$ verilator --version
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+
+$ verilator --lint-only -Wall latch_bad.v
+%Warning-LATCH: latch_bad.v:7:3: Latch inferred for signal 'y' (not all control paths of combinational always assign a value)
+                               : ... Suggest use of always_latch for intentional latches
+    7 |   always @(*) begin
+      |   ^~~~~~
+                ... For warning description see https://verilator.org/warn/LATCH?v=5.020
+                ... Use "/* verilator lint_off LATCH */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+# exit_code: 1
+
+$ verilator --lint-only -Wall latch_fixed.v
+# exit_code: 0
