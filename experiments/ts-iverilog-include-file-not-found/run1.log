@@ -1,0 +1,43 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: x86_64 / macOS 26.5.2 / Icarus Verilog 13.0 (stable) (v13_0)
+
+== root-no-I ==
++ iverilog -g2012 -s tb_include -o build/root-no-I.vvp src/top.sv
+src/top.sv:2: Include file local.svh not found
+Preprocessor failed with 1 errors.
+root-no-I exit=1 (expected=1)
+
+== root-src-only ==
++ iverilog -g2012 -Isrc -s tb_include -o build/root-src-only.vvp src/top.sv
+src/top.sv:3: Include file config.svh not found
+Preprocessor failed with 1 errors.
+root-src-only exit=1 (expected=1)
+
+== root-with-I ==
++ iverilog -g2012 -Isrc -Iinclude -s tb_include -o build/root-with-I.vvp src/top.sv
+root-with-I exit=0 (expected=0)
+
+== root-with-I-sim ==
++ vvp build/root-with-I.vvp
+PASS: LOCAL_VALUE=42 CFG_WIDTH=6
+src/top.sv:12: $finish called at 0 (1s)
+root-with-I-sim exit=0 (expected=0)
+
+== src-cwd-no-I ==
++ bash -c cd\ src\ \&\&\ iverilog\ -g2012\ -s\ tb_include\ -o\ ../build/src-cwd-no-I.vvp\ top.sv
+top.sv:3: Include file config.svh not found
+Preprocessor failed with 1 errors.
+src-cwd-no-I exit=1 (expected=1)
+
+== src-cwd-with-I ==
++ bash -c cd\ src\ \&\&\ iverilog\ -g2012\ -I../include\ -s\ tb_include\ -o\ ../build/src-cwd-with-I.vvp\ top.sv
+src-cwd-with-I exit=0 (expected=0)
+
+== src-cwd-with-I-sim ==
++ vvp build/src-cwd-with-I.vvp
+PASS: LOCAL_VALUE=42 CFG_WIDTH=6
+top.sv:12: $finish called at 0 (1s)
+src-cwd-with-I-sim exit=0 (expected=0)
+
+PASS: all include-path cases matched expected exit codes
