@@ -1,0 +1,20 @@
+# command: docker run --rm -v "$PWD":/work -w /work geek-eda:0.2 make run
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Verilator 5.020
+bash run.sh
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+%Warning-WIDTHEXPAND: widthexpand_broken.sv:7:28: Operator ASSIGNW expects 16 bits on the Assign RHS, but Assign RHS's VARREF 'unsigned_data' generates 8 bits.
+                                                : ... note: In instance 'widthexpand_broken'
+    7 |     assign unsigned_result = unsigned_data;
+      |                            ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: widthexpand_broken.sv:8:28: Operator ASSIGNW expects 16 bits on the Assign RHS, but Assign RHS's VARREF 'signed_data' generates 8 bits.
+                                                : ... note: In instance 'widthexpand_broken'
+    8 |     assign signed_result   = signed_data;
+      |                            ^
+%Error: Exiting due to 2 warning(s)
+broken exit=1
+fixed diagnostics: none
+fixed exit=0
+PASS: broken reported unsigned and signed WIDTHEXPAND; fixed lint exited 0
