@@ -1,0 +1,1265 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Yosys 0.33 (git sha1 2584903a060)
+
+=== conflict ===
+$ yosys -p 'read_verilog top.v pulse_a.v pulse_b.v; hierarchy -check -top top; check -assert'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog top.v pulse_a.v pulse_b.v; hierarchy -check -top top; check -assert' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pulse_a.v
+Parsing Verilog input from `pulse_a.v' to AST representation.
+Generating RTLIL representation for module `\pulse'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: pulse_b.v
+pulse_b.v:1: ERROR: Re-definition of module `\pulse'!
+exit=1
+
+=== repeated_input ===
+$ yosys -p 'read_verilog top.v pulse_a.v pulse_a.v; hierarchy -check -top top; check -assert'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog top.v pulse_a.v pulse_a.v; hierarchy -check -top top; check -assert' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pulse_a.v
+Parsing Verilog input from `pulse_a.v' to AST representation.
+Generating RTLIL representation for module `\pulse'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: pulse_a.v
+pulse_a.v:1: ERROR: Re-definition of module `\pulse'!
+exit=1
+
+=== defer_is_not_dedup ===
+$ yosys -p 'read_verilog -defer top.v pulse_a.v pulse_b.v; hierarchy -check -top top; check -assert'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog -defer top.v pulse_a.v pulse_b.v; hierarchy -check -top top; check -assert' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Storing AST representation for module `$abstract\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pulse_a.v
+Parsing Verilog input from `pulse_a.v' to AST representation.
+Storing AST representation for module `$abstract\pulse'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: pulse_b.v
+pulse_b.v:1: ERROR: Re-definition of module `$abstract\pulse'!
+exit=1
+
+=== lib_replaces_blackbox ===
+$ yosys -p 'read_verilog -lib pulse_a.v pulse_b.v'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog -lib pulse_a.v pulse_b.v' --
+
+1. Executing Verilog-2005 frontend: pulse_a.v
+Parsing Verilog input from `pulse_a.v' to AST representation.
+Generating RTLIL representation for module `\pulse'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pulse_b.v
+Parsing Verilog input from `pulse_b.v' to AST representation.
+Replacing existing blackbox module `\pulse' at pulse_b.v:1.1-7.10.
+Generating RTLIL representation for module `\pulse'.
+Successfully finished Verilog frontend.
+
+End of script. Logfile hash: eb5fcbda80, CPU: user 0.01s system 0.00s, MEM: 11.99 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 100% 3x read_verilog (0 sec)
+exit=0
+
+=== fixed_dedup ===
+$ yosys -p 'read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -top top; check -assert'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -top top; check -assert' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pulse_a.v
+Parsing Verilog input from `pulse_a.v' to AST representation.
+Generating RTLIL representation for module `\pulse'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse
+
+3.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse
+Removed 0 unused modules.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module pulse...
+Checking module top...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.6.9. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.8.9. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module pulse:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module top:
+  created 0 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.14.9. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.19.10. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $and.
+No more expansions possible.
+<suppressed ~74 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\pulse' to `<abc-temp-dir>/input.blif'..
+Extracted 1 gates and 3 wires to a netlist network with 2 inputs and 1 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        2
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+4.22.2. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse.
+Optimizing module top.
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== pulse ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_AND_                          1
+
+=== top ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     pulse                           1
+
+=== design hierarchy ===
+
+   top                               1
+     pulse                           1
+
+   Number of wires:                  6
+   Number of wire bits:              6
+   Number of public wires:           6
+   Number of public wire bits:       6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_AND_                          1
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module pulse...
+Checking module top...
+Found and reported 0 problems.
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module pulse...
+Checking module top...
+Found and reported 0 problems.
+
+End of script. Logfile hash: ac44e1799f, CPU: user 0.07s system 0.01s, MEM: 12.38 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 35% 1x abc (0 sec), 15% 13x opt_expr (0 sec), ...
+exit=0
+
+=== fixed_rename ===
+$ yosys -p 'read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -top top; check -assert'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -top top; check -assert' --
+
+1. Executing Verilog-2005 frontend: top_fixed.v
+Parsing Verilog input from `top_fixed.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pulse_a.v
+Parsing Verilog input from `pulse_a.v' to AST representation.
+Generating RTLIL representation for module `\pulse'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: pulse_or.v
+Parsing Verilog input from `pulse_or.v' to AST representation.
+Generating RTLIL representation for module `\pulse_or'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse_or
+
+4.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse_or
+Removing unused module `\pulse'.
+Removed 1 unused modules.
+
+5. Executing SYNTH pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse_or
+
+5.1.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse_or
+Removed 0 unused modules.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+5.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+5.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+5.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.5. Executing CHECK pass (checking for obvious problems).
+Checking module pulse_or...
+Checking module top...
+Found and reported 0 problems.
+
+5.6. Executing OPT pass (performing simple optimizations).
+
+5.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse_or..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse_or.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.6.9. Finished OPT passes. (There is nothing left to do.)
+
+5.7. Executing FSM pass (extract and optimize FSM).
+
+5.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+5.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.8. Executing OPT pass (performing simple optimizations).
+
+5.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse_or..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse_or.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.8.9. Finished OPT passes. (There is nothing left to do.)
+
+5.9. Executing WREDUCE pass (reducing word size of cells).
+
+5.10. Executing PEEPOPT pass (run peephole optimizers).
+
+5.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module pulse_or:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module top:
+  created 0 $alu and 0 $macc cells.
+
+5.13. Executing SHARE pass (SAT-based resource sharing).
+
+5.14. Executing OPT pass (performing simple optimizations).
+
+5.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse_or..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse_or.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.14.9. Finished OPT passes. (There is nothing left to do.)
+
+5.15. Executing MEMORY pass.
+
+5.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.17. Executing OPT pass (performing simple optimizations).
+
+5.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.17.5. Finished fast OPT passes.
+
+5.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5.19. Executing OPT pass (performing simple optimizations).
+
+5.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pulse_or..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pulse_or.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.19.6. Executing OPT_SHARE pass.
+
+5.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.19.10. Finished OPT passes. (There is nothing left to do.)
+
+5.20. Executing TECHMAP pass (map to technology primitives).
+
+5.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~74 debug messages>
+
+5.21. Executing OPT pass (performing simple optimizations).
+
+5.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+
+5.21.5. Finished fast OPT passes.
+
+5.22. Executing ABC pass (technology mapping using ABC).
+
+5.22.1. Extracting gate netlist of module `\pulse_or' to `<abc-temp-dir>/input.blif'..
+Extracted 1 gates and 3 wires to a netlist network with 2 inputs and 1 outputs.
+
+5.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.1.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        2
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+5.22.2. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+5.23. Executing OPT pass (performing simple optimizations).
+
+5.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pulse_or.
+Optimizing module top.
+
+5.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pulse_or'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pulse_or..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+5.23.5. Finished fast OPT passes.
+
+5.24. Executing HIERARCHY pass (managing design hierarchy).
+
+5.24.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse_or
+
+5.24.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \pulse_or
+Removed 0 unused modules.
+
+5.25. Printing statistics.
+
+=== pulse_or ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_OR_                           1
+
+=== top ===
+
+   Number of wires:                  3
+   Number of wire bits:              3
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     pulse_or                        1
+
+=== design hierarchy ===
+
+   top                               1
+     pulse_or                        1
+
+   Number of wires:                  6
+   Number of wire bits:              6
+   Number of public wires:           6
+   Number of public wire bits:       6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_OR_                           1
+
+5.26. Executing CHECK pass (checking for obvious problems).
+Checking module pulse_or...
+Checking module top...
+Found and reported 0 problems.
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module pulse_or...
+Checking module top...
+Found and reported 0 problems.
+
+End of script. Logfile hash: e753d64bed, CPU: user 0.07s system 0.01s, MEM: 12.50 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 34% 1x abc (0 sec), 15% 13x opt_expr (0 sec), ...
+exit=0
+
+PASS: duplicate errors reproduced; dedup and rename designs synthesized successfully
