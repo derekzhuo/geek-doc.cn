@@ -18,6 +18,8 @@ module tb;
 
     initial begin
         #2 mr_n = 0;
+        #2 stcp = 1;
+        #2 stcp = 0;
         #2 mr_n = 1;
         for (i = 7; i >= 0; i = i - 1) begin
             ds = pattern[i];
@@ -52,11 +54,20 @@ module tb;
         oe_n = 0;
         mr_n = 0;
         #1;
+        if (q !== 8'ha6 || q7s !== 1'b0) begin
+            errors = errors + 1;
+            $display("FAIL MR immediate q=%02h q7s=%b", q, q7s);
+        end else begin
+            $display("RESET MR low cleared shift register but Q held a6");
+        end
+        #2 stcp = 1;
+        #2 stcp = 0;
+        #1;
         if (q !== 8'h00) begin
             errors = errors + 1;
-            $display("FAIL reset q=%02h", q);
+            $display("FAIL latch after reset q=%02h", q);
         end else begin
-            $display("RESET MR low cleared shift and latch registers");
+            $display("LATCH next STCP copied cleared shift register to Q");
         end
         $display("SUMMARY errors=%0d", errors);
         if (errors == 0) $display("PASS shift latch tristate reset");
