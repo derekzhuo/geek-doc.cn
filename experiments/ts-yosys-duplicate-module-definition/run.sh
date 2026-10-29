@@ -46,8 +46,8 @@ run_expect 1 defer_is_not_dedup \
 run_expect 0 lib_replaces_blackbox \
     'read_verilog -lib pulse_a.v pulse_b.v'
 run_expect 0 fixed_dedup \
-    'read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -top top; check -assert'
+    'read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -noabc -top top; check -assert'
 run_expect 0 fixed_rename \
-    'read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -top top; check -assert'
+    'read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -noabc -top top; check -assert'
 
 printf '\nPASS: duplicate errors reproduced; dedup and rename designs synthesized successfully\n'

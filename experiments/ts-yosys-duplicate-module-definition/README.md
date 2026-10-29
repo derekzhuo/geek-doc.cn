@@ -27,4 +27,4 @@ bash run.sh
 bash run.sh 2>&1 | tee run1.log
 ```
 
-脚本预期普通冲突、重复输入和 `-defer` 三个用例退出码为 1；`-lib` 用例退出码为 0，但会报告替换已有黑盒；去重与改名版本都经过 `hierarchy -check`、`synth` 和 `check -assert`，退出码为 0。全部符合预期时输出 `PASS`。
+脚本预期普通冲突、重复输入和 `-defer` 三个用例退出码为 1；`-lib` 用例退出码为 0，但会报告替换已有黑盒；去重与改名版本都经过 `hierarchy -check`、`synth -noabc` 和 `check -assert`，退出码为 0。全部符合预期时输出 `PASS`。
