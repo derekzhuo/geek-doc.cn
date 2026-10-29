@@ -1,0 +1,165 @@
+# command: docker run --rm -v "/Users/derekzhuo/Project/geek-doc.cn/experiments/ts-yosys-multiple-clocks-always:/work" -w /work geek-eda:0.2 bash run.sh
+# date: 2026-10-29T19:53:06Z
+# host-toolchain: geek-eda:0.2 / Yosys 0.33 (git sha1 2584903a060)
+=== bad: two clock edges in one always ===
+# run: yosys -p 'read_verilog multi_clock_bad.v; hierarchy -top multi_clock_bad; proc; check'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog multi_clock_bad.v; hierarchy -top multi_clock_bad; proc; check' --
+
+1. Executing Verilog-2005 frontend: multi_clock_bad.v
+Parsing Verilog input from `multi_clock_bad.v' to AST representation.
+Generating RTLIL representation for module `\multi_clock_bad'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \multi_clock_bad
+
+2.2. Analyzing design hierarchy..
+Top module:  \multi_clock_bad
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\multi_clock_bad.$proc$multi_clock_bad.v:9$1'.
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+ERROR: Multiple edge sensitive events found for this signal!
+# bad-exit-code: 1
+
+=== fixed: one clock per always ===
+# run: yosys -p 'read_verilog multi_clock_fixed.v; hierarchy -top multi_clock_fixed; proc; check'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog multi_clock_fixed.v; hierarchy -top multi_clock_fixed; proc; check' --
+
+1. Executing Verilog-2005 frontend: multi_clock_fixed.v
+Parsing Verilog input from `multi_clock_fixed.v' to AST representation.
+Generating RTLIL representation for module `\multi_clock_fixed'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \multi_clock_fixed
+
+2.2. Analyzing design hierarchy..
+Top module:  \multi_clock_fixed
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\multi_clock_fixed.$proc$multi_clock_fixed.v:13$2'.
+Creating decoders for process `\multi_clock_fixed.$proc$multi_clock_fixed.v:9$1'.
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\multi_clock_fixed.\q_b' using process `\multi_clock_fixed.$proc$multi_clock_fixed.v:13$2'.
+  created $dff cell `$procdff$3' with positive edge clock.
+Creating register for signal `\multi_clock_fixed.\q_a' using process `\multi_clock_fixed.$proc$multi_clock_fixed.v:9$1'.
+  created $dff cell `$procdff$4' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `multi_clock_fixed.$proc$multi_clock_fixed.v:13$2'.
+Removing empty process `multi_clock_fixed.$proc$multi_clock_fixed.v:9$1'.
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module multi_clock_fixed.
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module multi_clock_fixed...
+Found and reported 0 problems.
+
+End of script. Logfile hash: 4ea40b6109, CPU: user 0.01s system 0.00s, MEM: 9.25 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 39% 1x opt_expr (0 sec), 25% 2x read_verilog (0 sec), ...
+# fixed-exit-code: 0
+RESULT: PASS (bad rejected with exit 1; fixed passed with exit 0)
