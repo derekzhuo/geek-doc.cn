@@ -1,0 +1,257 @@
+# command: yosys -Q -T -p 'read_verilog top.v; hierarchy -check -top top; check; stat'
+# date: 2026-10-29
+# host-toolchain: Docker geek-eda:0.2 / Yosys 0.33 (git sha1 2584903a060)
+
+=== CASE: unknown-module ===
+
+-- Running command `read_verilog top.v; hierarchy -check -top top; check; stat' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+ERROR: Module `\vendor_adder' referenced in module `\top' in cell `\u_adder' is not part of the design.
+EXIT_CODE=1
+
+=== CASE: explicit-blackbox ===
+# command: yosys -Q -T -p 'read_verilog top.v blackbox.v; hierarchy -check -top top; check; stat'
+
+-- Running command `read_verilog top.v blackbox.v; hierarchy -check -top top; check; stat' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: blackbox.v
+Parsing Verilog input from `blackbox.v' to AST representation.
+Generating RTLIL representation for module `\vendor_adder'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \top
+
+3.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+5. Printing statistics.
+
+=== top ===
+
+   Number of wires:                  3
+   Number of wire bits:             12
+   Number of public wires:           3
+   Number of public wire bits:      12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     vendor_adder                    1
+
+EXIT_CODE=0
+
+=== CASE: real-implementation ===
+# command: yosys -Q -T -p 'read_verilog top.v vendor_adder.v; hierarchy -check -top top; proc; opt; check; stat'
+
+-- Running command `read_verilog top.v vendor_adder.v; hierarchy -check -top top; proc; opt; check; stat' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: vendor_adder.v
+Parsing Verilog input from `vendor_adder.v' to AST representation.
+Generating RTLIL representation for module `\vendor_adder'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \vendor_adder
+Parameter \WIDTH = 4
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\vendor_adder'.
+Parameter \WIDTH = 4
+Generating RTLIL representation for module `$paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100'.
+
+3.3. Analyzing design hierarchy..
+Top module:  \top
+Used module:     $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100
+
+3.4. Analyzing design hierarchy..
+Top module:  \top
+Used module:     $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100
+Removing unused module `\vendor_adder'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100.
+Optimizing module top.
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100.
+Optimizing module top.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100.
+Optimizing module top.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module \top..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100.
+Optimizing module top.
+
+5.16. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100...
+Checking module top...
+Found and reported 0 problems.
+
+7. Printing statistics.
+
+=== $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                  3
+   Number of wire bits:             12
+   Number of public wires:           3
+   Number of public wire bits:      12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $add                            1
+
+=== top ===
+
+   Number of wires:                  3
+   Number of wire bits:             12
+   Number of public wires:           3
+   Number of public wire bits:      12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100      1
+
+=== design hierarchy ===
+
+   top                               1
+     $paramod\vendor_adder\WIDTH=s32'00000000000000000000000000000100      1
+
+   Number of wires:                  6
+   Number of wire bits:             24
+   Number of public wires:           6
+   Number of public wire bits:      24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $add                            1
+
+EXIT_CODE=0
+
+SUMMARY: PASS (unknown=1, blackbox=0, implementation=0)
