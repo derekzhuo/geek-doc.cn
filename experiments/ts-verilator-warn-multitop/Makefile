@@ -1,4 +1,4 @@
 .PHONY: run
 
 run:
-	bash run.sh
+	@bash run.sh
