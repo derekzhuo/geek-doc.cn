@@ -1,0 +1,15 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Darwin x86_64 / Icarus Verilog version 13.0 (stable) (v13_0)
+
+$ iverilog -g2012 -s tb_bad -o build/tb_bad.vvp counter.v tb_bad.v
+tb_bad.v:7: error: port ``rest_n'' is not a port of dut.
+1 error(s) during elaboration.
+[exit] 1
+
+$ iverilog -g2012 -s tb_good -o build/tb_good.vvp counter.v tb_good.v
+[exit] 0
+
+$ vvp build/tb_good.vvp
+PASS count=3
+[exit] 0
