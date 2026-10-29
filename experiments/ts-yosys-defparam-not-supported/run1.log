@@ -1,0 +1,225 @@
+# command: bash /Users/derekzhuo/Project/geek-doc.cn/experiments/ts-yosys-defparam-not-supported/run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Yosys 0.33 (git sha1 2584903a060) / v26.3.0
+Yosys 0.33 (git sha1 2584903a060)
+== defparam hierarchical override ==
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog experiments/ts-yosys-defparam-not-supported/defparam.v; hierarchy -check -top top; proc; opt_clean; check -assert; write_json experiments/ts-yosys-defparam-not-supported/.tmp.EDzoNp/defparam.json' --
+
+1. Executing Verilog-2005 frontend: experiments/ts-yosys-defparam-not-supported/defparam.v
+Parsing Verilog input from `experiments/ts-yosys-defparam-not-supported/defparam.v' to AST representation.
+Generating RTLIL representation for module `\child'.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \child
+Parameter \WIDTH = 8
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\child'.
+Parameter \WIDTH = 8
+Generating RTLIL representation for module `$paramod\child\WIDTH=s32'00000000000000000000000000001000'.
+
+2.3. Analyzing design hierarchy..
+Top module:  \top
+Used module:     $paramod\child\WIDTH=s32'00000000000000000000000000001000
+Used module:     \child
+
+2.4. Analyzing design hierarchy..
+Top module:  \top
+Used module:     $paramod\child\WIDTH=s32'00000000000000000000000000001000
+Used module:     \child
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\child\WIDTH=s32'00000000000000000000000000001000.
+Optimizing module top.
+Optimizing module child.
+
+4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\child\WIDTH=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \child..
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\child\WIDTH=s32'00000000000000000000000000001000...
+Checking module child...
+Checking module top...
+Found and reported 0 problems.
+
+6. Executing JSON backend.
+
+End of script. Logfile hash: 065760b4f8, CPU: user 0.01s system 0.01s, MEM: 11.88 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 20% 1x opt_expr (0 sec), 17% 1x opt_clean (0 sec), ...
+== instance parameter list ==
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog experiments/ts-yosys-defparam-not-supported/fixed.v; hierarchy -check -top top; proc; opt_clean; check -assert; write_json experiments/ts-yosys-defparam-not-supported/.tmp.EDzoNp/fixed.json' --
+
+1. Executing Verilog-2005 frontend: experiments/ts-yosys-defparam-not-supported/fixed.v
+Parsing Verilog input from `experiments/ts-yosys-defparam-not-supported/fixed.v' to AST representation.
+Generating RTLIL representation for module `\child'.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \child
+Parameter \WIDTH = 8
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\child'.
+Parameter \WIDTH = 8
+Generating RTLIL representation for module `$paramod\child\WIDTH=s32'00000000000000000000000000001000'.
+
+2.3. Analyzing design hierarchy..
+Top module:  \top
+Used module:     $paramod\child\WIDTH=s32'00000000000000000000000000001000
+Used module:     \child
+
+2.4. Analyzing design hierarchy..
+Top module:  \top
+Used module:     $paramod\child\WIDTH=s32'00000000000000000000000000001000
+Used module:     \child
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\child\WIDTH=s32'00000000000000000000000000001000.
+Optimizing module top.
+Optimizing module child.
+
+4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\child\WIDTH=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \child..
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\child\WIDTH=s32'00000000000000000000000000001000...
+Checking module child...
+Checking module top...
+Found and reported 0 problems.
+
+6. Executing JSON backend.
+
+End of script. Logfile hash: f814fb046a, CPU: user 0.01s system 0.01s, MEM: 9.97 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 24% 1x opt_expr (0 sec), 20% 1x opt_clean (0 sec), ...
+== verification summary ==
+defparam: u_default type=child WIDTH=4 OUT_WIDTH=5 connection_y=5
+defparam: u_override type=$paramod\child\WIDTH=s32'00000000000000000000000000001000 WIDTH=8 OUT_WIDTH=9 connection_y=9
+PASS: defparam keeps default WIDTH=4 and applies override WIDTH=8; derived OUT_WIDTH=5/9
+fixed: u_default type=child WIDTH=4 OUT_WIDTH=5 connection_y=5
+fixed: u_override type=$paramod\child\WIDTH=s32'00000000000000000000000000001000 WIDTH=8 OUT_WIDTH=9 connection_y=9
+PASS: fixed keeps default WIDTH=4 and applies override WIDTH=8; derived OUT_WIDTH=5/9
+ALL CHECKS PASS
+exit=0
