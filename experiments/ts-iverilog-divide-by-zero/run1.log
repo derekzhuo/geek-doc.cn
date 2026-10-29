@@ -1,0 +1,21 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Darwin 25.5.0 x86_64 / Icarus Verilog version 13.0 (stable) (v13_0)
+$ iverilog -g2012 -s tb -o bad_simv bad.sv
+bad compile exit=0
+$ vvp bad_simv
+constant quotient=0xxx is_x=1
+variable divisor=0 quotient=0xxx propagated=0xxx is_x=1
+normal divisor=4 quotient=0x19
+bad.sv:37: $finish called at 2000 (1ps)
+bad run exit=0
+$ iverilog -g2012 -s tb -o fixed_simv fixed.sv
+fixed compile exit=0
+$ vvp fixed_simv
+guarded valid=1 divisor=0 quotient=0x00 safe=0
+guarded valid=1 divisor=4 quotient=0x19 safe=1
+guarded valid=0 divisor=4 quotient=0x00 safe=0
+PASS: zero divisor guarded and valid division preserved
+fixed.sv:56: $finish called at 3000 (1ps)
+fixed run exit=0
+PASS: x behavior observed and guarded division verified
