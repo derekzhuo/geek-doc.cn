@@ -1,0 +1,20 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Icarus Verilog version 13.0 (stable) (v13_0)
+
+=== broken: misspelled $fopen ===
+$ iverilog -g2012 -s typo_tb -o typo.vvp broken_typo.v
+typo compile exit=0
+$ vvp typo.vvp
+broken_typo.v:7: Error: System task/function $fopne() is not defined by any module.
+typo.vvp: Program not runnable, 1 errors.
+typo simulation exit=1
+
+=== fixed: corrected $fopen ===
+$ iverilog -g2012 -s fixed_tb -o fixed.vvp fixed_typo.v
+fixed compile exit=0
+$ vvp fixed.vvp
+PASS: $fopen opened smoke.txt
+fixed simulation exit=0
+
+PASS: unknown system function reproduced; typo fix compiled and ran
