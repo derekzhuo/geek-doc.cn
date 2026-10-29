@@ -1,0 +1,26 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: macOS / Icarus Verilog 13.0 (stable)
+
+=== broken_integer ===
+$ iverilog -g2005 -s broken_integer -o broken_integer.vvp broken_integer.v
+broken_integer.v:7: error: genvar is missing for generate "loop" variable 'i'.
+1 error(s) during elaboration.
+broken_integer exit=1
+
+=== broken_no_generate ===
+$ iverilog -g2005 -s broken_no_generate -o broken_no_generate.vvp broken_no_generate.v
+broken_no_generate exit=0
+
+=== fixed_generate ===
+$ iverilog -g2005 -s fixed_generate -o fixed_generate.vvp fixed_generate.v
+fixed_generate exit=0
+
+=== fixed simulation ===
+$ iverilog -g2005 -s tb_fixed_generate -o tb_fixed_generate.vvp fixed_generate.v tb_fixed_generate.v
+fixed-testbench-compile exit=0
+$ vvp tb_fixed_generate.vvp
+fixed simulation PASS: all 16 input patterns
+fixed-simulation exit=0
+
+PASS: integer genvar error reproduced; omitted generate accepted; fixed compile and simulation exited 0
