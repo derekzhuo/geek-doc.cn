@@ -1,0 +1,31 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Darwin 25.5.0 / Icarus Verilog version 13.0 (stable) (v13_0)
+
+=== broken: named file does not exist ===
+broken compile exit=0 (expected=0)
+ERROR: broken/tb_readmemh.sv:7: $readmemh: Unable to open data/not-present.hex for reading.
+FATAL: broken/tb_readmemh.sv:13: FAIL: memory was not initialized: xx xx xx xx
+       Time: 1000  Scope: tb_readmemh
+broken simulation exit=1 (expected=1)
+
+=== fixed: launch from experiment root ===
+fixed compile exit=0 (expected=0)
+PASS: memory initialized from hex file
+fixed/tb_readmemh.sv:16: $finish called at 1000 (1ps)
+fixed simulation exit=0 (expected=0)
+
+=== wrong cwd: same fixed vvp launched from fixed/ ===
+ERROR: fixed/tb_readmemh.sv:7: $readmemh: Unable to open data/pattern.hex for reading.
+FATAL: fixed/tb_readmemh.sv:13: FAIL: memory was not initialized: xx xx xx xx
+       Time: 1000  Scope: tb_readmemh
+wrong-cwd simulation exit=1 (expected=1)
+
+=== malformed: file exists but contains non-hex data ===
+malformed compile exit=0 (expected=0)
+ERROR: malformed/tb_readmemh.sv:7: $readmemh(data/malformed.hex): Invalid input character: G
+FATAL: malformed/tb_readmemh.sv:13: FAIL: memory was not initialized: 11 22 xx xx
+       Time: 1000  Scope: tb_readmemh
+malformed simulation exit=1 (expected=1)
+
+PASS: missing file and wrong cwd failed; fixed path passed; malformed hex was distinguished
