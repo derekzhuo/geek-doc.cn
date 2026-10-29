@@ -1,0 +1,23 @@
+# command: docker run --rm -v "$PWD":/work -w /work geek-eda:0.2 make run
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Verilator 5.020
+bash run.sh
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+%Error-NEEDTIMINGOPT: needtimingopt_broken.sv:5:9: Use --timing or --no-timing to specify how delays should be handled
+                                                 : ... note: In instance 'needtimingopt_broken'
+    5 |         #10;
+      |         ^
+                      ... For error description see https://verilator.org/warn/NEEDTIMINGOPT?v=5.020
+%Error: Exiting due to 1 error(s)
+default exit=1
+--timing diagnostics: none
+--timing exit=0
+%Warning-STMTDLY: needtimingopt_broken.sv:5:9: Ignoring delay on this statement due to --no-timing
+                                             : ... note: In instance 'needtimingopt_broken'
+    5 |         #10;
+      |         ^
+                  ... For warning description see https://verilator.org/warn/STMTDLY?v=5.020
+                  ... Use "/* verilator lint_off STMTDLY */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+--no-timing exit=1
+PASS: default NEEDTIMINGOPT; --timing clean; --no-timing STMTDLY and nonzero under -Wall
