@@ -1,0 +1,23 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: macOS 26.5.2 x86_64 / Icarus Verilog 13.0
+=== implicit signed port ===
+$ iverilog -g2012 -s tb -o bad_simv bad.sv
+bad compile exit=0
+$ vvp bad_simv
+implicit raw=0xff raw_unsigned=255
+implicit port=0xff port_signed=-1
+implicit negative=1
+bad.sv:25: $finish called at 1000 (1ps)
+bad run exit=0
+=== explicit signed cast ===
+$ iverilog -g2012 -s tb -o fixed_simv fixed.sv
+fixed compile exit=0
+$ vvp fixed_simv
+fixed raw=0xff raw_unsigned=255
+fixed port=0xff port_signed=-1
+fixed negative=1
+PASS: explicit signed port keeps 0xff and evaluates -1
+fixed.sv:34: $finish called at 1000 (1ps)
+fixed run exit=0
+PASS: implicit result observed and explicit signed conversion verified
