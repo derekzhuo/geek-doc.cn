@@ -1,0 +1,47 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: macOS 26.5.2 x86_64 / Icarus Verilog 13.0 (stable)
+compile exit=0
+
+=== bad-char ===
+$ vvp simv +MEM_FILE=bad-char.hex
+ERROR: tb.sv:16: $readmemh(bad-char.hex): Invalid input character: G
+mem[0]=00
+mem[1]=11
+mem[2]=xx
+mem[3]=xx
+mem[4]=xx
+mem[5]=xx
+mem[6]=xx
+mem[7]=xx
+tb.sv:19: $finish called at 0 (1ps)
+bad-char exit=0
+
+=== bad-address ===
+$ vvp simv +MEM_FILE=bad-address.hex
+ERROR: tb.sv:16: $readmemh(bad-address.hex): address (0x8) is out of range [0x0:0x7]
+mem[0]=00
+mem[1]=11
+mem[2]=22
+mem[3]=33
+mem[4]=44
+mem[5]=55
+mem[6]=66
+mem[7]=77
+tb.sv:19: $finish called at 0 (1ps)
+bad-address exit=0
+
+=== fixed ===
+$ vvp simv +MEM_FILE=fixed.hex
+mem[0]=00
+mem[1]=11
+mem[2]=22
+mem[3]=33
+mem[4]=44
+mem[5]=55
+mem[6]=66
+mem[7]=77
+tb.sv:19: $finish called at 0 (1ps)
+fixed exit=0
+
+PASS: invalid character and out-of-range address diagnosed; fixed data loaded
