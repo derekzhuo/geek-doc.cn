@@ -1,0 +1,14 @@
+# command: ./run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+$ docker run --rm -v "$PWD":/work -w /work geek-eda:0.2 verilator --lint-only -Wall --top-module top_bad child.v top_bad.v
+%Warning-PINCONNECTEMPTY: top_bad.v:8:8: Cell pin connected by name with empty reference: 'debug'
+    8 |       .debug()
+      |        ^~~~~
+                          ... For warning description see https://verilator.org/warn/PINCONNECTEMPTY?v=5.020
+                          ... Use "/* verilator lint_off PINCONNECTEMPTY */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+# broken_exit_code: 1
+$ docker run --rm -v "$PWD":/work -w /work geek-eda:0.2 verilator --lint-only -Wall --top-module top_fixed child.v top_fixed.v
+# fixed_exit_code: 0
+PASS: PINCONNECTEMPTY reproduced; named unused signal fixes lint
