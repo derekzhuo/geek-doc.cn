@@ -1,0 +1,21 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+
+=== broken ===
+$ verilator --lint-only -Wall --language 1364-2005 broken.v
+broken exit=1
+
+=== fixed-assign ===
+$ verilator --lint-only -Wall --language 1364-2005 fixed_assign.v
+fixed-assign exit=0
+
+=== fixed-reg ===
+$ verilator --lint-only -Wall --language 1364-2005 fixed_reg.v
+fixed-reg exit=0
+
+=== fixed-logic ===
+$ verilator --lint-only -Wall --language 1800-2017 fixed_logic.sv
+fixed-logic exit=0
+
+PASS: PROCASSWIRE reproduced; all three fixes exited 0
