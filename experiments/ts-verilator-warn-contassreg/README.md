@@ -2,7 +2,7 @@
 
 **对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-contassreg.html（上线后生效）
 
-这组实验复现 Verilog `reg` 被 `assign` 连续赋值驱动的 CONTASSREG 警告，并验证三种修复：SystemVerilog `logic`、Verilog `wire`、保留 `reg` 改用组合过程赋值。
+这组实验复现 Verilog `reg` 被 `assign` 连续赋值驱动的 CONTASSREG 错误，并验证三种修复：SystemVerilog `logic`、Verilog `wire`、保留 `reg` 改用组合过程赋值。
 
 ## 运行环境
 
