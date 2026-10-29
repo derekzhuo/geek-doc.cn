@@ -4,6 +4,13 @@
 
 === broken ===
 $ verilator --lint-only -Wall --language 1364-2005 broken.v
+%Error-PROCASSWIRE: broken.v:8:9: Procedural assignment to wire, perhaps intended var (IEEE 1800-2017 6.5): 'q'
+                                : ... note: In instance 'broken'
+    8 |         q = a;
+      |         ^
+                    ... For error description see https://verilator.org/warn/PROCASSWIRE?v=5.020
+%Error: Exiting due to 1 error(s)
+        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.
 broken exit=1
 
 === fixed-assign ===

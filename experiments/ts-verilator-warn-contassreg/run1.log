@@ -1,0 +1,28 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+
+=== broken ===
+$ verilator --lint-only -Wall --language 1364-2005 broken.v
+%Error-CONTASSREG: broken.v:7:12: Continuous assignment to reg, perhaps intended wire (IEEE 1364-2005 6.1; Verilog only, legal in SV): 'q'
+                                : ... note: In instance 'broken'
+    7 |     assign q = a;
+      |            ^
+                   ... For error description see https://verilator.org/warn/CONTASSREG?v=5.020
+%Error: Exiting due to 1 error(s)
+        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.
+broken exit=1
+
+=== fixed-logic ===
+$ verilator --lint-only -Wall --language 1800-2017 fixed_logic.sv
+fixed-logic exit=0
+
+=== fixed-wire ===
+$ verilator --lint-only -Wall --language 1364-2005 fixed_wire.v
+fixed-wire exit=0
+
+=== fixed-proc ===
+$ verilator --lint-only -Wall --language 1364-2005 fixed_proc.v
+fixed-proc exit=0
+
+PASS: CONTASSREG reproduced; all three fixes exited 0
