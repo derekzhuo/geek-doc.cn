@@ -1,0 +1,19 @@
+sh run.sh
+# command: docker run --rm -v "$PWD":/work -w /work geek-eda:0.2 make run
+# date: 2026-10-30
+# host-toolchain: geek-eda:0.2 / Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+
+== broken ==
+%Warning-UNSIGNED: unsigned_broken.sv:6:40: Comparison is constant due to unsigned arithmetic
+                                          : ... note: In instance 'unsigned_broken'
+    6 |     assign underflow = (count + delta) < 0;
+      |                                        ^
+                   ... For warning description see https://verilator.org/warn/UNSIGNED?v=5.020
+                   ... Use "/* verilator lint_off UNSIGNED */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+broken exit=1
+
+== fixed ==
+fixed diagnostics: none
+fixed exit=0
+PASS: mixed-sign comparison reported UNSIGNED; fixed lint exited 0
