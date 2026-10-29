@@ -1,10 +1,10 @@
-﻿===== cmd: Set-Location 'C:\win-jobs\runs\chipref-74hc595-r2-20261030-mac'; cmd /c run.bat =====
+﻿===== cmd: Set-Location 'C:\win-jobs\runs\chipref-74hc595-r4-20261030-mac'; cmd /c run.bat =====
 # command: xvlog shift_register.v tb.v && xelab tb -s snap && xsim snap -R
 # date: 2026-10-30
 # host-toolchain: Windows worker / Vivado XSim 2017.4
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/win-jobs/runs/chipref-74hc595-r2-20261030-mac/shift_register.v" into library work
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/win-jobs/runs/chipref-74hc595-r4-20261030-mac/shift_register.v" into library work
 INFO: [VRFC 10-311] analyzing module shift_74hc595
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/win-jobs/runs/chipref-74hc595-r2-20261030-mac/tb.v" into library work
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/win-jobs/runs/chipref-74hc595-r4-20261030-mac/tb.v" into library work
 INFO: [VRFC 10-311] analyzing module tb
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
@@ -24,8 +24,8 @@ Built simulation snapshot snap
   **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
-source C:/win-jobs/runs/chipref-74hc595-r2-20261030-mac/xsim.dir/snap/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Fri Oct 30 01:47:31 2026...
+source C:/win-jobs/runs/chipref-74hc595-r4-20261030-mac/xsim.dir/snap/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Oct 30 02:03:23 2026...
 
 ****** xsim v2017.4 (64-bit)
   **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
@@ -39,12 +39,13 @@ Time resolution is 1 ps
 run -all
 LATCH q=a6 after eight shifts and one STCP
 TRISTATE OE high released outputs
-RESET MR low cleared shift and latch registers
+RESET MR low cleared shift register but Q held a6
+LATCH next STCP copied cleared shift register to Q
 SUMMARY errors=0
 PASS shift latch tristate reset
-$finish called at time : 44 ns : File "C:/win-jobs/runs/chipref-74hc595-r2-20261030-mac/tb.v" Line 64
+$finish called at time : 53 ns : File "C:/win-jobs/runs/chipref-74hc595-r4-20261030-mac/tb.v" Line 75
 exit
-INFO: [Common 17-206] Exiting xsim at Fri Oct 30 01:47:35 2026...
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 02:03:27 2026...
 ----- stderr -----
 #< CLIXML
 <Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>正在准备首次使用模块。</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>

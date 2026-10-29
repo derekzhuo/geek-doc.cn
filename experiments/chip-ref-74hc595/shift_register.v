@@ -20,10 +20,7 @@ module shift_74hc595 (
             shift_reg <= {shift_reg[6:0], ds};
     end
 
-    always @(posedge stcp or negedge mr_n) begin
-        if (!mr_n)
-            latch_reg <= 8'h00;
-        else
-            latch_reg <= shift_reg;
+    always @(posedge stcp) begin
+        latch_reg <= shift_reg;
     end
 endmodule
