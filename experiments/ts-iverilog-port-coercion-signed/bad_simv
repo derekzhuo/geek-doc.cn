@@ -1,0 +1,44 @@
+#! /usr/local/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/13.0/lib/ivl/v2009.vpi";
+S_0x7fd8c2706080 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x7fd8c2704810 .scope module, "tb" "tb" 3 10;
+ .timescale -9 -12;
+v0x600002f3c480_0 .net "negative", 0 0, L_0x600002c3c0a0;  1 drivers
+v0x600002f3c510_0 .var "raw_code", 7 0;
+S_0x7fd8c2704980 .scope module, "dut" "signed_decoder" 3 14, 3 3 0, S_0x7fd8c2704810;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 8 "code";
+    .port_info 1 /OUTPUT 1 "negative";
+v0x600002f3c240_0 .net/s *"_ivl_0", 31 0, L_0x600002c3c000;  1 drivers
+L_0x7fd8c3063008 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x600002f3c2d0_0 .net/2s *"_ivl_2", 31 0, L_0x7fd8c3063008;  1 drivers
+v0x600002f3c360_0 .net/s "code", 7 0, v0x600002f3c510_0;  1 drivers
+v0x600002f3c3f0_0 .net "negative", 0 0, L_0x600002c3c0a0;  alias, 1 drivers
+L_0x600002c3c000 .extend/s 32, v0x600002f3c510_0;
+L_0x600002c3c0a0 .cmp/gt.s 32, L_0x7fd8c3063008, L_0x600002c3c000;
+    .scope S_0x7fd8c2704810;
+T_0 ;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x600002f3c510_0, 0, 8;
+    %delay 1000, 0;
+    %vpi_call/w 3 22 "$display", "implicit raw=0x%02h raw_unsigned=%0d", v0x600002f3c510_0, v0x600002f3c510_0 {0 0 0};
+    %vpi_call/w 3 23 "$display", "implicit port=0x%02h port_signed=%0d", v0x600002f3c360_0, v0x600002f3c360_0 {0 0 0};
+    %vpi_call/w 3 24 "$display", "implicit negative=%0b", v0x600002f3c480_0 {0 0 0};
+    %vpi_call/w 3 25 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "bad.sv";
