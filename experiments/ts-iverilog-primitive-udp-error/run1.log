@@ -1,0 +1,17 @@
+# command: bash run.sh
+# date: 2026-10-29T19:44:34Z
+# host-toolchain: Darwin x86_64 / Icarus Verilog version 13.0 (stable) (v13_0)
+$ iverilog -g2012 -tnull udp_bad.v
+udp_bad.v:1: error: The UDP input port count (2) does not match the number of input table entries (3) in primitive "udp_and2_bad".
+# exit_code: 1 (udp_bad.v compile)
+$ iverilog -g2012 -s tb -o .build/and2.vvp udp_fixed.v and2_always.v tb_and2.v
+# exit_code: 0 (fixed and always compile)
+$ vvp .build/and2.vvp
+vector=0 a=0 b=0 udp=0 always=0 expected=0
+vector=1 a=0 b=1 udp=0 always=0 expected=0
+vector=2 a=1 b=0 udp=0 always=0 expected=0
+vector=3 a=1 b=1 udp=1 always=1 expected=1
+PASS: 4/4 binary vectors match; udp and always agree
+tb_and2.v:31: $finish called at 4000 (1ps)
+# exit_code: 0 (four-vector simulation)
+PASS: invalid table rejected; fixed UDP and always passed self-check
