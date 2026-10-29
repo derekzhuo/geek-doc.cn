@@ -31,7 +31,7 @@ function checkInstance(name, expectedWidth) {
   const portWidth = child.ports.y.bits.length;
 
   console.log(
-    `${label}: ${name} type=${cell.type} WIDTH=${width} ` +
+    `${label}: ${name} WIDTH=${width} ` +
       `OUT_WIDTH=${portWidth} connection_y=${connectionWidth}`,
   );
 

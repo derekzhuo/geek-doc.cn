@@ -27,7 +27,7 @@ Yosys 0.33 (git sha1 2584903a060)
  Yosys 0.33 (git sha1 2584903a060)
 
 
--- Running command `read_verilog experiments/ts-yosys-defparam-not-supported/defparam.v; hierarchy -check -top top; proc; opt_clean; check -assert; write_json experiments/ts-yosys-defparam-not-supported/.tmp.EDzoNp/defparam.json' --
+-- Running command `read_verilog experiments/ts-yosys-defparam-not-supported/defparam.v; hierarchy -check -top top; proc; opt_clean; check -assert; write_json experiments/ts-yosys-defparam-not-supported/.tmp.MekGuI/defparam.json' --
 
 1. Executing Verilog-2005 frontend: experiments/ts-yosys-defparam-not-supported/defparam.v
 Parsing Verilog input from `experiments/ts-yosys-defparam-not-supported/defparam.v' to AST representation.
@@ -105,9 +105,9 @@ Found and reported 0 problems.
 
 6. Executing JSON backend.
 
-End of script. Logfile hash: 065760b4f8, CPU: user 0.01s system 0.01s, MEM: 11.88 MB peak
+End of script. Logfile hash: 579698ca48, CPU: user 0.01s system 0.01s, MEM: 9.96 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 20% 1x opt_expr (0 sec), 17% 1x opt_clean (0 sec), ...
+Time spent: 29% 1x opt_expr (0 sec), 19% 1x opt_clean (0 sec), ...
 == instance parameter list ==
 
  /----------------------------------------------------------------------------\
@@ -133,7 +133,7 @@ Time spent: 20% 1x opt_expr (0 sec), 17% 1x opt_clean (0 sec), ...
  Yosys 0.33 (git sha1 2584903a060)
 
 
--- Running command `read_verilog experiments/ts-yosys-defparam-not-supported/fixed.v; hierarchy -check -top top; proc; opt_clean; check -assert; write_json experiments/ts-yosys-defparam-not-supported/.tmp.EDzoNp/fixed.json' --
+-- Running command `read_verilog experiments/ts-yosys-defparam-not-supported/fixed.v; hierarchy -check -top top; proc; opt_clean; check -assert; write_json experiments/ts-yosys-defparam-not-supported/.tmp.MekGuI/fixed.json' --
 
 1. Executing Verilog-2005 frontend: experiments/ts-yosys-defparam-not-supported/fixed.v
 Parsing Verilog input from `experiments/ts-yosys-defparam-not-supported/fixed.v' to AST representation.
@@ -211,15 +211,15 @@ Found and reported 0 problems.
 
 6. Executing JSON backend.
 
-End of script. Logfile hash: f814fb046a, CPU: user 0.01s system 0.01s, MEM: 9.97 MB peak
+End of script. Logfile hash: e4302147b5, CPU: user 0.01s system 0.01s, MEM: 9.97 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 24% 1x opt_expr (0 sec), 20% 1x opt_clean (0 sec), ...
+Time spent: 27% 1x opt_expr (0 sec), 18% 1x opt_clean (0 sec), ...
 == verification summary ==
-defparam: u_default type=child WIDTH=4 OUT_WIDTH=5 connection_y=5
-defparam: u_override type=$paramod\child\WIDTH=s32'00000000000000000000000000001000 WIDTH=8 OUT_WIDTH=9 connection_y=9
+defparam: u_default WIDTH=4 OUT_WIDTH=5 connection_y=5
+defparam: u_override WIDTH=8 OUT_WIDTH=9 connection_y=9
 PASS: defparam keeps default WIDTH=4 and applies override WIDTH=8; derived OUT_WIDTH=5/9
-fixed: u_default type=child WIDTH=4 OUT_WIDTH=5 connection_y=5
-fixed: u_override type=$paramod\child\WIDTH=s32'00000000000000000000000000001000 WIDTH=8 OUT_WIDTH=9 connection_y=9
+fixed: u_default WIDTH=4 OUT_WIDTH=5 connection_y=5
+fixed: u_override WIDTH=8 OUT_WIDTH=9 connection_y=9
 PASS: fixed keeps default WIDTH=4 and applies override WIDTH=8; derived OUT_WIDTH=5/9
 ALL CHECKS PASS
 exit=0
