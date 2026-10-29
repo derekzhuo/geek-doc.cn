@@ -1,0 +1,27 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Intel x86_64 Mac / macOS 26.5.2 / Icarus Verilog 13.0 (stable) (v13_0)
+$ iverilog -g2012 -o build/task_count_bad.vvp task_count_bad.sv
+task_count_bad.sv:18: error: Missing argument 3 of call to task.
+1 error(s) during elaboration.
+task_count_bad compile exit=1 (expected=1)
+$ iverilog -g2012 -o build/task_direction_bad.vvp task_direction_bad.sv
+task_direction_bad.sv:18: Assignment l-value too complex.
+task_direction_bad.sv:18: error: I give up on task port 3 expression: (a)+(b)
+task_direction_bad compile exit=0 (expected=0)
+$ vvp build/task_direction_bad.vvp
+sum=x
+task_direction_bad.sv:20: $finish called at 0 (1s)
+task_direction_bad simulation exit=0 (expected=0)
+$ iverilog -g2012 -o build/function_count_bad.vvp function_count_bad.sv
+function_count_bad.sv:17: error: The function add2 has been called with missing/empty parameters.
+function_count_bad.sv:17:      : Verilog doesn't allow passing empty parameters to functions.
+1 error(s) during elaboration.
+function_count_bad compile exit=1 (expected=1)
+$ iverilog -g2012 -o build/ports_fixed.vvp ports_fixed.sv
+ports_fixed compile exit=0 (expected=0)
+$ vvp build/ports_fixed.vvp
+PASS: task_sum=12 function_sum=12
+ports_fixed.sv:34: $finish called at 0 (1s)
+ports_fixed simulation exit=0 (expected=0)
+PASS: all compile and simulation results matched expectations
