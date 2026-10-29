@@ -1,0 +1,322 @@
+# command: ./run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2 / Yosys 0.33 (git sha1 2584903a060)
+=== toolchain ===
+Yosys 0.33 (git sha1 2584903a060)
+=== bad: string parameter ===
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog param_string_bad.v; hierarchy -top param_string_bad; proc; opt_clean; stat; dump param_string_bad' --
+
+1. Executing Verilog-2005 frontend: param_string_bad.v
+Parsing Verilog input from `param_string_bad.v' to AST representation.
+Generating RTLIL representation for module `\sized_bus'.
+Generating RTLIL representation for module `\param_string_bad'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \param_string_bad
+Used module:     \sized_bus
+Parameter \WIDTH = 8'00111000
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sized_bus'.
+Parameter \WIDTH = 8'00111000
+Generating RTLIL representation for module `$paramod\sized_bus\WIDTH=t8'00111000'.
+
+2.3. Analyzing design hierarchy..
+Top module:  \param_string_bad
+Used module:     $paramod\sized_bus\WIDTH=t8'00111000
+
+2.4. Analyzing design hierarchy..
+Top module:  \param_string_bad
+Used module:     $paramod\sized_bus\WIDTH=t8'00111000
+Removing unused module `\sized_bus'.
+Removed 1 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module param_string_bad.
+Optimizing module $paramod\sized_bus\WIDTH=t8'00111000.
+
+4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \param_string_bad..
+Finding unused cells or wires in module $paramod\sized_bus\WIDTH=t8'00111000..
+
+5. Printing statistics.
+
+=== $paramod\sized_bus\WIDTH=t8'00111000 ===
+
+   Number of wires:                  1
+   Number of wire bits:             56
+   Number of public wires:           1
+   Number of public wire bits:      56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+=== param_string_bad ===
+
+   Number of wires:                  1
+   Number of wire bits:             56
+   Number of public wires:           1
+   Number of public wire bits:      56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $paramod\sized_bus\WIDTH=t8'00111000      1
+
+=== design hierarchy ===
+
+   param_string_bad                  1
+     $paramod\sized_bus\WIDTH=t8'00111000      1
+
+   Number of wires:                  2
+   Number of wire bits:            112
+   Number of public wires:           2
+   Number of public wire bits:     112
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+
+autoidx 1
+
+attribute \top 1
+attribute \src "param_string_bad.v:9.1-15.10"
+module \param_string_bad
+
+  attribute \src "param_string_bad.v:10.22-10.30"
+  wire width 56 output 1 \observed
+
+  attribute \src "param_string_bad.v:12.28-14.4"
+  cell $paramod\sized_bus\WIDTH=t8'00111000 \u_dut
+    connect \mask \observed
+  end
+end
+
+End of script. Logfile hash: 3af43a1474, CPU: user 0.01s system 0.01s, MEM: 12.51 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 29% 1x opt_clean (0 sec), 21% 1x opt_expr (0 sec), ...
+BAD_EXIT=0
+=== fixed: numeric parameter and derived width ===
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog param_fixed.v; hierarchy -top param_fixed; proc; opt_clean; stat; dump param_fixed' --
+
+1. Executing Verilog-2005 frontend: param_fixed.v
+Parsing Verilog input from `param_fixed.v' to AST representation.
+Generating RTLIL representation for module `\sized_bus'.
+Generating RTLIL representation for module `\param_fixed'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \param_fixed
+Used module:     \sized_bus
+Parameter \WIDTH = 8
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sized_bus'.
+Parameter \WIDTH = 8
+Generating RTLIL representation for module `$paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000'.
+
+2.3. Analyzing design hierarchy..
+Top module:  \param_fixed
+Used module:     $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000
+
+2.4. Analyzing design hierarchy..
+Top module:  \param_fixed
+Used module:     $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000
+Removing unused module `\sized_bus'.
+Removed 1 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module param_fixed.
+Optimizing module $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000.
+
+4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \param_fixed..
+Finding unused cells or wires in module $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000..
+
+5. Printing statistics.
+
+=== $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000 ===
+
+   Number of wires:                  2
+   Number of wire bits:             11
+   Number of public wires:           2
+   Number of public wire bits:      11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+=== param_fixed ===
+
+   Number of wires:                  2
+   Number of wire bits:             11
+   Number of public wires:           2
+   Number of public wire bits:      11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000      1
+
+=== design hierarchy ===
+
+   param_fixed                       1
+     $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000      1
+
+   Number of wires:                  4
+   Number of wire bits:             22
+   Number of public wires:           4
+   Number of public wire bits:      22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+
+autoidx 1
+
+attribute \top 1
+attribute \src "param_fixed.v:12.1-20.10"
+module \param_fixed
+
+  attribute \src "param_fixed.v:14.21-14.35"
+  wire width 3 output 2 \observed_index
+
+  attribute \src "param_fixed.v:13.21-13.34"
+  wire width 8 output 1 \observed_mask
+
+  attribute \src "param_fixed.v:16.26-19.4"
+  cell $paramod\sized_bus\WIDTH=s32'00000000000000000000000000001000 \u_dut
+    connect \index \observed_index
+    connect \mask \observed_mask
+  end
+end
+
+End of script. Logfile hash: 548af7c42c, CPU: user 0.01s system 0.01s, MEM: 9.72 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 31% 1x opt_expr (0 sec), 24% 1x opt_clean (0 sec), ...
+FIX_EXIT=0
+=== observed evidence ===
+BAD_EXIT=0
+FIX_EXIT=0
+Parameter \WIDTH = 8'00111000
+Parameter \WIDTH = 8'00111000
+  wire width 56 output 1 \observed
+Parameter \WIDTH = 8
+Parameter \WIDTH = 8
+  wire width 8 output 1 \observed_mask
+  wire width 3 output 2 \observed_index
+PASS: string "8" silently became 56; numeric 8 produced widths 8 and 3
