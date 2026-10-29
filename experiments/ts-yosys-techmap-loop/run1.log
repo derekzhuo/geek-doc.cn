@@ -1,0 +1,124 @@
+# command: docker run --rm -v "/Users/derekzhuo/Project/geek-doc.cn/experiments/ts-yosys-techmap-loop:/work" -w /work geek-eda:0.2 bash run.sh
+# date: 2026-10-29T20:20:28Z
+# host-toolchain: geek-eda:0.2 / Yosys 0.33 (git sha1 2584903a060)
+=== bad: self-referential techmap template ===
+# run: timeout -s KILL 3s yosys -p 'read_verilog top.v; hierarchy -top top; techmap -map loop_bad.v'
+run.sh: line 13:     8 Killed                  ( ulimit -v 262144; timeout -s KILL 3s yosys -p 'read_verilog top.v; hierarchy -top top; techmap -map loop_bad.v' ) > "$raw_log" 2>&1
+# bad-exit-code: 137
+# bad-raw-lines: 48
+# bad-raw-bytes: 2324
+--- bad raw output tail ---
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog top.v; hierarchy -top top; techmap -map loop_bad.v' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \top
+
+2.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+3. Executing TECHMAP pass (map to technology primitives).
+
+3.1. Executing Verilog-2005 frontend: loop_bad.v
+Parsing Verilog input from `loop_bad.v' to AST representation.
+Generating RTLIL representation for module `\$not'.
+Successfully finished Verilog frontend.
+
+3.2. Continuing TECHMAP pass.
+--- end bad raw output tail ---
+
+=== fixed: map target to an explicit gate-level cell ===
+# run: yosys -p 'read_verilog top.v; hierarchy -top top; techmap -map loop_fixed.v; stat; check'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog top.v; hierarchy -top top; techmap -map loop_fixed.v; stat; check' --
+
+1. Executing Verilog-2005 frontend: top.v
+Parsing Verilog input from `top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \top
+
+2.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+3. Executing TECHMAP pass (map to technology primitives).
+
+3.1. Executing Verilog-2005 frontend: loop_fixed.v
+Parsing Verilog input from `loop_fixed.v' to AST representation.
+Generating RTLIL representation for module `\$not'.
+Successfully finished Verilog frontend.
+
+3.2. Continuing TECHMAP pass.
+Using template $paramod$eb1d493a4d5af9c0d5d55affff786b701054b835\$not for cells of type $not.
+No more expansions possible.
+<suppressed ~19 debug messages>
+
+4. Printing statistics.
+
+=== top ===
+
+   Number of wires:                  5
+   Number of wire bits:              5
+   Number of public wires:           2
+   Number of public wire bits:       2
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_NOT_                          1
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+End of script. Logfile hash: 38fca4498c, CPU: user 0.00s system 0.00s, MEM: 9.00 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 45% 3x read_verilog (0 sec), 36% 1x techmap (0 sec), ...
+# fixed-exit-code: 0
+RESULT: PASS (bad stopped with exit 137; fixed passed with exit 0)
