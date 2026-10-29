@@ -36,12 +36,12 @@ Generating RTLIL representation for module `\top'.
 Successfully finished Verilog frontend.
 
 2. Executing Verilog-2005 frontend: pulse_a.v
+pulse_b.v:1: ERROR: Re-definition of module `\pulse'!
 Parsing Verilog input from `pulse_a.v' to AST representation.
 Generating RTLIL representation for module `\pulse'.
 Successfully finished Verilog frontend.
 
 3. Executing Verilog-2005 frontend: pulse_b.v
-pulse_b.v:1: ERROR: Re-definition of module `\pulse'!
 exit=1
 
 === repeated_input ===
@@ -78,12 +78,12 @@ Generating RTLIL representation for module `\top'.
 Successfully finished Verilog frontend.
 
 2. Executing Verilog-2005 frontend: pulse_a.v
+pulse_a.v:1: ERROR: Re-definition of module `\pulse'!
 Parsing Verilog input from `pulse_a.v' to AST representation.
 Generating RTLIL representation for module `\pulse'.
 Successfully finished Verilog frontend.
 
 3. Executing Verilog-2005 frontend: pulse_a.v
-pulse_a.v:1: ERROR: Re-definition of module `\pulse'!
 exit=1
 
 === defer_is_not_dedup ===
@@ -167,13 +167,13 @@ Replacing existing blackbox module `\pulse' at pulse_b.v:1.1-7.10.
 Generating RTLIL representation for module `\pulse'.
 Successfully finished Verilog frontend.
 
-End of script. Logfile hash: eb5fcbda80, CPU: user 0.01s system 0.00s, MEM: 11.99 MB peak
+End of script. Logfile hash: eb5fcbda80, CPU: user 0.01s system 0.00s, MEM: 10.22 MB peak
 Yosys 0.33 (git sha1 2584903a060)
 Time spent: 100% 3x read_verilog (0 sec)
 exit=0
 
 === fixed_dedup ===
-$ yosys -p 'read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -top top; check -assert'
+$ yosys -p 'read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -noabc -top top; check -assert'
 
  /----------------------------------------------------------------------------\
  |                                                                            |
@@ -198,7 +198,7 @@ $ yosys -p 'read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -top 
  Yosys 0.33 (git sha1 2584903a060)
 
 
--- Running command `read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -top top; check -assert' --
+-- Running command `read_verilog top.v pulse_a.v; hierarchy -check -top top; synth -noabc -top top; check -assert' --
 
 1. Executing Verilog-2005 frontend: top.v
 Parsing Verilog input from `top.v' to AST representation.
@@ -597,68 +597,18 @@ Finding unused cells or wires in module \top..
 
 4.21.5. Finished fast OPT passes.
 
-4.22. Executing ABC pass (technology mapping using ABC).
+4.22. Executing HIERARCHY pass (managing design hierarchy).
 
-4.22.1. Extracting gate netlist of module `\pulse' to `<abc-temp-dir>/input.blif'..
-Extracted 1 gates and 3 wires to a netlist network with 2 inputs and 1 outputs.
-
-4.22.1.1. Executing ABC.
-Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
-ABC: ABC command line: "source <abc-temp-dir>/abc.script".
-ABC: 
-ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_library <abc-temp-dir>/stdcells.genlib 
-ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
-ABC: + strash 
-ABC: + dretime 
-ABC: + map 
-ABC: + write_blif <abc-temp-dir>/output.blif 
-
-4.22.1.2. Re-integrating ABC results.
-ABC RESULTS:               AND cells:        1
-ABC RESULTS:        internal signals:        0
-ABC RESULTS:           input signals:        2
-ABC RESULTS:          output signals:        1
-Removing temp directory.
-
-4.22.2. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
-Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
-Don't call ABC as there is nothing to map.
-Removing temp directory.
-
-4.23. Executing OPT pass (performing simple optimizations).
-
-4.23.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module pulse.
-Optimizing module top.
-
-4.23.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\pulse'.
-Finding identical cells in module `\top'.
-Removed a total of 0 cells.
-
-4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
-
-4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \pulse..
-Finding unused cells or wires in module \top..
-Removed 0 unused cells and 3 unused wires.
-<suppressed ~1 debug messages>
-
-4.23.5. Finished fast OPT passes.
-
-4.24. Executing HIERARCHY pass (managing design hierarchy).
-
-4.24.1. Analyzing design hierarchy..
+4.22.1. Analyzing design hierarchy..
 Top module:  \top
 Used module:     \pulse
 
-4.24.2. Analyzing design hierarchy..
+4.22.2. Analyzing design hierarchy..
 Top module:  \top
 Used module:     \pulse
 Removed 0 unused modules.
 
-4.25. Printing statistics.
+4.23. Printing statistics.
 
 === pulse ===
 
@@ -699,7 +649,7 @@ Removed 0 unused modules.
    Number of cells:                  1
      $_AND_                          1
 
-4.26. Executing CHECK pass (checking for obvious problems).
+4.24. Executing CHECK pass (checking for obvious problems).
 Checking module pulse...
 Checking module top...
 Found and reported 0 problems.
@@ -709,13 +659,13 @@ Checking module pulse...
 Checking module top...
 Found and reported 0 problems.
 
-End of script. Logfile hash: ac44e1799f, CPU: user 0.07s system 0.01s, MEM: 12.38 MB peak
+End of script. Logfile hash: d3be4d760f, CPU: user 0.07s system 0.00s, MEM: 12.38 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 35% 1x abc (0 sec), 15% 13x opt_expr (0 sec), ...
+Time spent: 22% 12x opt_expr (0 sec), 21% 4x read_verilog (0 sec), ...
 exit=0
 
 === fixed_rename ===
-$ yosys -p 'read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -top top; check -assert'
+$ yosys -p 'read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -noabc -top top; check -assert'
 
  /----------------------------------------------------------------------------\
  |                                                                            |
@@ -740,7 +690,7 @@ $ yosys -p 'read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top
  Yosys 0.33 (git sha1 2584903a060)
 
 
--- Running command `read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -top top; check -assert' --
+-- Running command `read_verilog top_fixed.v pulse_a.v pulse_or.v; hierarchy -check -top top; synth -noabc -top top; check -assert' --
 
 1. Executing Verilog-2005 frontend: top_fixed.v
 Parsing Verilog input from `top_fixed.v' to AST representation.
@@ -1145,68 +1095,18 @@ Finding unused cells or wires in module \top..
 
 5.21.5. Finished fast OPT passes.
 
-5.22. Executing ABC pass (technology mapping using ABC).
+5.22. Executing HIERARCHY pass (managing design hierarchy).
 
-5.22.1. Extracting gate netlist of module `\pulse_or' to `<abc-temp-dir>/input.blif'..
-Extracted 1 gates and 3 wires to a netlist network with 2 inputs and 1 outputs.
-
-5.22.1.1. Executing ABC.
-Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
-ABC: ABC command line: "source <abc-temp-dir>/abc.script".
-ABC: 
-ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_library <abc-temp-dir>/stdcells.genlib 
-ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
-ABC: + strash 
-ABC: + dretime 
-ABC: + map 
-ABC: + write_blif <abc-temp-dir>/output.blif 
-
-5.22.1.2. Re-integrating ABC results.
-ABC RESULTS:                OR cells:        1
-ABC RESULTS:        internal signals:        0
-ABC RESULTS:           input signals:        2
-ABC RESULTS:          output signals:        1
-Removing temp directory.
-
-5.22.2. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
-Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
-Don't call ABC as there is nothing to map.
-Removing temp directory.
-
-5.23. Executing OPT pass (performing simple optimizations).
-
-5.23.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module pulse_or.
-Optimizing module top.
-
-5.23.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\pulse_or'.
-Finding identical cells in module `\top'.
-Removed a total of 0 cells.
-
-5.23.3. Executing OPT_DFF pass (perform DFF optimizations).
-
-5.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \pulse_or..
-Finding unused cells or wires in module \top..
-Removed 0 unused cells and 3 unused wires.
-<suppressed ~1 debug messages>
-
-5.23.5. Finished fast OPT passes.
-
-5.24. Executing HIERARCHY pass (managing design hierarchy).
-
-5.24.1. Analyzing design hierarchy..
+5.22.1. Analyzing design hierarchy..
 Top module:  \top
 Used module:     \pulse_or
 
-5.24.2. Analyzing design hierarchy..
+5.22.2. Analyzing design hierarchy..
 Top module:  \top
 Used module:     \pulse_or
 Removed 0 unused modules.
 
-5.25. Printing statistics.
+5.23. Printing statistics.
 
 === pulse_or ===
 
@@ -1247,7 +1147,7 @@ Removed 0 unused modules.
    Number of cells:                  1
      $_OR_                           1
 
-5.26. Executing CHECK pass (checking for obvious problems).
+5.24. Executing CHECK pass (checking for obvious problems).
 Checking module pulse_or...
 Checking module top...
 Found and reported 0 problems.
@@ -1257,9 +1157,9 @@ Checking module pulse_or...
 Checking module top...
 Found and reported 0 problems.
 
-End of script. Logfile hash: e753d64bed, CPU: user 0.07s system 0.01s, MEM: 12.50 MB peak
+End of script. Logfile hash: 348316bb97, CPU: user 0.07s system 0.01s, MEM: 12.12 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 34% 1x abc (0 sec), 15% 13x opt_expr (0 sec), ...
+Time spent: 22% 5x read_verilog (0 sec), 22% 12x opt_expr (0 sec), ...
 exit=0
 
 PASS: duplicate errors reproduced; dedup and rename designs synthesized successfully
