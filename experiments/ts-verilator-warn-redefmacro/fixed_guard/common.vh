@@ -1,0 +1,4 @@
+`ifndef REDEFMACRO_DEMO_COMMON_VH
+`define REDEFMACRO_DEMO_COMMON_VH
+`define DATA_W 8
+`endif

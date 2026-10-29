@@ -1,0 +1,34 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+=== broken-default ===
+$ verilator --lint-only -Ibroken_conflict broken_conflict/top.sv
+%Warning-REDEFMACRO: broken_conflict/top.sv:3:19: Redefining existing define: 'DATA_W', with different value: '16'
+                     broken_conflict/common.vh:3:1: ... Location of previous definition, with value: '8'
+                     ... For warning description see https://verilator.org/warn/REDEFMACRO?v=5.020
+                     ... Use "/* verilator lint_off REDEFMACRO */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+broken-default exit=1
+
+=== broken-same ===
+$ verilator --lint-only -Wall -Wwarn-REDEFMACRO -Ibroken broken/top.sv
+broken-same exit=0
+
+=== broken-conflict ===
+$ verilator --lint-only -Wall -Wwarn-REDEFMACRO -Ibroken_conflict broken_conflict/top.sv
+%Warning-REDEFMACRO: broken_conflict/top.sv:3:19: Redefining existing define: 'DATA_W', with different value: '16'
+                     broken_conflict/common.vh:3:1: ... Location of previous definition, with value: '8'
+                     ... For warning description see https://verilator.org/warn/REDEFMACRO?v=5.020
+                     ... Use "/* verilator lint_off REDEFMACRO */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+broken-conflict exit=1
+
+=== fixed-guard ===
+$ verilator --lint-only -Wall -Wwarn-REDEFMACRO -Ifixed_guard fixed_guard/top.sv
+fixed-guard exit=0
+
+=== fixed-pragma ===
+$ verilator --lint-only -Wall -Wwarn-REDEFMACRO -Ifixed_pragma fixed_pragma/top.sv
+fixed-pragma exit=0
+
+PASS: REDEFMACRO reproduced; include guard and pragma once exited 0
