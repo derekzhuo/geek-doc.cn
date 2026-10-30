@@ -1,0 +1,118 @@
+# command: bash run.sh
+# date: 2026-10-31
+# host-toolchain: Docker geek-eda:0.2, Ubuntu 24.04, OpenSTA 2.0.17 (Debian official package)
+
+===== wrong_instance =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: linked design top
+CASE: wrong instance u_buffer; netlist has u_buf
+Error: wrong_instance.sdf, line 8 instance u_buffer not found.
+Startpoint: u_stage (rising edge-triggered flip-flop clocked by clk)
+Endpoint: q (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock clk (rise edge)
+   0.000    0.000   clock network delay (ideal)
+   0.000    0.000 ^ u_stage/C (DFF_P)
+   0.200    0.200 ^ u_stage/Q (DFF_P)
+   0.300    0.500 ^ u_buf/Y (BUF_X1)
+   0.000    0.500 ^ q (out)
+            0.500   data arrival time
+
+  10.000   10.000   clock clk (rise edge)
+   0.000   10.000   clock network delay (ideal)
+   0.000   10.000   clock reconvergence pessimism
+  -1.000    9.000   output external delay
+            9.000   data required time
+-----------------------------------------------------------
+            9.000   data required time
+           -0.500   data arrival time
+-----------------------------------------------------------
+            8.500   slack (MET)
+
+
+CASE_EXIT wrong_instance=0
+
+===== wrong_design =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: linked design top
+CASE: wrong SDF DESIGN chip_top; linked design is top
+Startpoint: u_stage (rising edge-triggered flip-flop clocked by clk)
+Endpoint: q (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock clk (rise edge)
+   0.000    0.000   clock network delay (ideal)
+   0.000    0.000 ^ u_stage/C (DFF_P)
+   0.200    0.200 ^ u_stage/Q (DFF_P)
+   0.800    1.000 ^ u_buf/Y (BUF_X1)
+   0.000    1.000 ^ q (out)
+            1.000   data arrival time
+
+  10.000   10.000   clock clk (rise edge)
+   0.000   10.000   clock network delay (ideal)
+   0.000   10.000   clock reconvergence pessimism
+  -1.000    9.000   output external delay
+            9.000   data required time
+-----------------------------------------------------------
+            9.000   data required time
+           -1.000   data arrival time
+-----------------------------------------------------------
+            8.000   slack (MET)
+
+
+CASE_EXIT wrong_design=0
+
+===== fixed =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: linked design top
+CASE: fixed DESIGN top and INSTANCE u_buf
+Startpoint: u_stage (rising edge-triggered flip-flop clocked by clk)
+Endpoint: q (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock clk (rise edge)
+   0.000    0.000   clock network delay (ideal)
+   0.000    0.000 ^ u_stage/C (DFF_P)
+   0.200    0.200 ^ u_stage/Q (DFF_P)
+   0.800    1.000 ^ u_buf/Y (BUF_X1)
+   0.000    1.000 ^ q (out)
+            1.000   data arrival time
+
+  10.000   10.000   clock clk (rise edge)
+   0.000   10.000   clock network delay (ideal)
+   0.000   10.000   clock reconvergence pessimism
+  -1.000    9.000   output external delay
+            9.000   data required time
+-----------------------------------------------------------
+            9.000   data required time
+           -1.000   data arrival time
+-----------------------------------------------------------
+            8.000   slack (MET)
+
+
+CASE_EXIT fixed=0
