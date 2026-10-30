@@ -1,0 +1,67 @@
+library (demo) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  capacitive_load_unit (1, pf);
+  nom_process : 1.0;
+  nom_temperature : 25.0;
+  nom_voltage : 1.0;
+  input_threshold_pct_rise : 50.0;
+  output_threshold_pct_rise : 50.0;
+  slew_lower_threshold_pct_rise : 20.0;
+  slew_upper_threshold_pct_rise : 80.0;
+  input_threshold_pct_fall : 50.0;
+  output_threshold_pct_fall : 50.0;
+  slew_lower_threshold_pct_fall : 20.0;
+  slew_upper_threshold_pct_fall : 80.0;
+
+  cell (DFFX1) {
+    area : 1.0;
+    ff (IQ, IQN) {
+      clocked_on : "CK";
+      next_state : "D";
+    }
+    pin (D) {
+      direction : input;
+      capacitance : 0.001;
+    }
+    pin (CK) {
+      direction : input;
+      capacitance : 0.001;
+      clock : true;
+    }
+    pin (Q) {
+      direction : output;
+      function : "IQ";
+      timing () {
+        related_pin : "CK";
+        timing_type : rising_edge;
+        cell_rise (scalar) { values ("0.100"); }
+        cell_fall (scalar) { values ("0.100"); }
+        rise_transition (scalar) { values ("0.010"); }
+        fall_transition (scalar) { values ("0.010"); }
+      }
+    }
+  }
+
+  cell (BUFX1) {
+    area : 1.0;
+    pin (A) {
+      direction : input;
+      capacitance : 0.001;
+    }
+    pin (Y) {
+      direction : output;
+      function : "A";
+      timing () {
+        related_pin : "A";
+        timing_sense : positive_unate;
+        cell_rise (scalar) { values ("0.050"); }
+        cell_fall (scalar) { values ("0.050"); }
+        rise_transition (scalar) { values ("0.010"); }
+        fall_transition (scalar) { values ("0.010"); }
+      }
+    }
+  }
+}
