@@ -1,0 +1,44 @@
+COMMAND: bash run.sh
+WORKDIR: /work
+DATE_UTC: 2026-10-30T19:28:46Z
+2.0.17
+
+CASE: violation
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+CASE_SDC: violation.sdc
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                       4.00        0.00      1.00
+MIN_PULSE_WIDTH_CHECKS
+                                     Required  Actual
+Pin                                    Width   Width   Slack
+------------------------------------------------------------
+u_stage/C (high)                        2.00    1.00   -1.00 (VIOLATED)
+u_stage/C (low)                         2.00    3.00    1.00 (MET)
+
+CASE_EXIT violation=0
+
+CASE: pass
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+CASE_SDC: pass.sdc
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+MIN_PULSE_WIDTH_CHECKS
+                                     Required  Actual
+Pin                                    Width   Width   Slack
+------------------------------------------------------------
+u_stage/C (high)                        2.00    5.00    3.00 (MET)
+u_stage/C (low)                         2.00    5.00    3.00 (MET)
+
+CASE_EXIT pass=0
