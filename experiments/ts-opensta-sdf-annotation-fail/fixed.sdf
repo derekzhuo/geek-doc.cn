@@ -1,0 +1,11 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (DESIGN "top")
+  (DIVIDER /)
+  (TIMESCALE 1ns)
+  (CELL
+    (CELLTYPE "BUF_X1")
+    (INSTANCE u_buf)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH A Y (0.800:0.800:0.800) (0.800:0.800:0.800))))))
