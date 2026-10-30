@@ -1,0 +1,42 @@
+# command: bash run.sh
+# date: 2026-10-31
+# host-toolchain: Docker geek-eda:0.2, Ubuntu 24.04, OpenSTA 2.0.17 (Debian official package)
+
+===== compat =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: six loads on u_drive/Y
+CASE: probe report_check_types -max_fanout on OpenSTA 2.0.17
+Error: compat.tcl, 3 report_check_types -max_fanout is not a known keyword or flag.
+CASE_EXIT compat=0
+
+===== violation =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: six loads on u_drive/Y
+CASE: max_fanout limit 4, actual loads 6
+MAX_FANOUT_CHECK net=n driver=u_drive/Y limit=4.0 fanout=6 slack=-2.0
+MAX_FANOUT_VIOLATION net=n loads=6 limit=4.0
+CASE_EXIT violation=0
+
+===== relaxed =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: six loads on u_drive/Y
+CASE: diagnostic max_fanout limit 6, actual loads 6
+MAX_FANOUT_CHECK net=n driver=u_drive/Y limit=6.0 fanout=6 slack=0.0
+MAX_FANOUT_OK net=n loads=6 limit=6.0
+RELAXED_CHECK_DONE: no design changes
+CASE_EXIT relaxed=0
