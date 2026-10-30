@@ -1,0 +1,36 @@
+library(experiment_only) {
+  time_unit : "1ns";
+  delay_model : table_lookup;
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  capacitive_load_unit(1, pf);
+  input_threshold_pct_rise : 50.0;
+  output_threshold_pct_rise : 50.0;
+  slew_lower_threshold_pct_rise : 20.0;
+  slew_upper_threshold_pct_rise : 80.0;
+  input_threshold_pct_fall : 50.0;
+  output_threshold_pct_fall : 50.0;
+  slew_lower_threshold_pct_fall : 20.0;
+  slew_upper_threshold_pct_fall : 80.0;
+
+  cell(BUF_X1) {
+    pin(A) {
+      direction : input;
+      capacitance : 0.001;
+    }
+    pin(Y) {
+      direction : output;
+      function : "A";
+      max_fanout : 4.0;
+      timing() {
+        related_pin : "A";
+        timing_type : combinational;
+        timing_sense : positive_unate;
+        cell_rise(scalar) { values("0.30"); }
+        cell_fall(scalar) { values("0.30"); }
+        rise_transition(scalar) { values("0.05"); }
+        fall_transition(scalar) { values("0.05"); }
+      }
+    }
+  }
+}
