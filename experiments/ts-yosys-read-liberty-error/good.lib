@@ -1,0 +1,33 @@
+library (demo) {
+  delay_model : table_lookup;
+  cell (INV_X1) {
+    pin (A) {
+      direction : input;
+    }
+    pin (Y) {
+      direction : output;
+      function : "!A";
+    }
+  }
+  cell (BUF_X1) {
+    pin (A) {
+      direction : input;
+    }
+    pin (Y) {
+      direction : output;
+      function : "A";
+    }
+  }
+  cell (NAND2_X1) {
+    pin (A) {
+      direction : input;
+    }
+    pin (B) {
+      direction : input;
+    }
+    pin (Y) {
+      direction : output;
+      function : "!(A * B)";
+    }
+  }
+}
