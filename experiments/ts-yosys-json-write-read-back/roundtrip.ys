@@ -1,0 +1,11 @@
+read_verilog -sv roundtrip.v
+hierarchy -check -top top
+proc
+opt_clean
+write_json roundtrip.json
+design -reset
+read_json roundtrip.json
+hierarchy -check -top top
+stat
+check
+write_verilog roundtrip_out.v
