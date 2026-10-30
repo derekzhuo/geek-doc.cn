@@ -1,0 +1,122 @@
+# command: bash run.sh
+# date: 2026-10-30
+# host-toolchain: Docker geek-eda:0.2, Ubuntu 24.04, OpenSTA 2.0.17 (Debian official package)
+
+===== no_clock =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: read_verilog and link_design completed
+CASE: no create_clock
+Warning: There are 2 input ports missing set_input_delay.
+  clk
+  d
+Warning: There is 1 output port missing set_output_delay.
+  q
+Warning: There is 1 unclocked register/latch pin.
+  u_stage/C
+Warning: There are 2 unconstrained endpoints.
+  q
+  u_stage/D
+Clock                   Period          Waveform
+----------------------------------------------------
+No paths found.
+CASE_EXIT no_clock=0
+
+===== fixed =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: read_verilog and link_design completed
+CASE: correct create_clock
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+Startpoint: u_stage (rising edge-triggered flip-flop clocked by clk)
+Endpoint: q (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ u_stage/C (DFF_P)
+                  0.050    0.200    0.200 ^ u_stage/Q (DFF_P)
+    1    0.000                              stage (net)
+                  0.050    0.000    0.200 ^ u_buf/A (BUF_X1)
+                  0.050    0.300    0.500 ^ u_buf/Y (BUF_X1)
+    1    0.000                              q (net)
+                  0.050    0.000    0.500 ^ q (out)
+                                    0.500   data arrival time
+
+                  0.000   10.000   10.000   clock clk (rise edge)
+                           0.000   10.000   clock network delay (ideal)
+                           0.000   10.000   clock reconvergence pessimism
+                          -1.000    9.000   output external delay
+                                    9.000   data required time
+--------------------------------------------------------------------------------
+                                    9.000   data required time
+                                   -0.500   data arrival time
+--------------------------------------------------------------------------------
+                                    8.500   slack (MET)
+
+
+CASE_EXIT fixed=0
+
+===== wrong_port =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: read_verilog and link_design completed
+CASE: wrong port name clck
+Warning: wrong_port.sdc, 1 port 'clck' not found.
+Warning: There is 1 input port missing set_input_delay.
+  clk
+Warning: There is 1 unclocked register/latch pin.
+  u_stage/C
+Warning: There are 2 unconstrained endpoints.
+  q
+  u_stage/D
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+Startpoint: u_stage (rising edge-triggered flip-flop)
+Endpoint: q (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000 ^ u_stage/C (DFF_P)
+                  0.050    0.200    0.200 ^ u_stage/Q (DFF_P)
+    1    0.000                              stage (net)
+                  0.050    0.000    0.200 ^ u_buf/A (BUF_X1)
+                  0.050    0.300    0.500 ^ u_buf/Y (BUF_X1)
+    1    0.000                              q (net)
+                  0.050    0.000    0.500 ^ q (out)
+                                    0.500   data arrival time
+
+                  0.000   10.000   10.000   clock clk (rise edge)
+                           0.000   10.000   clock network delay (ideal)
+                           0.000   10.000   clock reconvergence pessimism
+                          -1.000    9.000   output external delay
+                                    9.000   data required time
+--------------------------------------------------------------------------------
+                                    9.000   data required time
+                                   -0.500   data arrival time
+--------------------------------------------------------------------------------
+                                    8.500   slack (MET)
+
+
+CASE_EXIT wrong_port=0
+RUN_EXIT=0
