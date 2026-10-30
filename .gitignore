@@ -63,3 +63,7 @@ results.xml
 dumpfile.fst
 dumpfile.vcd
 *.vvp
+
+# FIFO 入门工程运行与打包产物（脚本自动重建，不入库）
+fifo-starter-kit/out/
+fifo-starter-kit/dist/
