@@ -52,6 +52,7 @@ make -C cpu-demo run        # 跑第一个 demo：CPU 使用率三场景
 | [cpu-model-isa-iss](cpu-model-isa-iss/) | ISA 指令集模拟器（ISS） | 配套「CPU 微架构」系列 |
 | [cpu-model-sim-platform-lab](cpu-model-sim-platform-lab/) | 仿真平台实验 | 配套「CPU 微架构」系列 |
 | [cpu-model-systemc-tlm-lab](cpu-model-systemc-tlm-lab/) | SystemC/TLM 建模实验 | 配套「CPU 微架构」系列 |
+| [fifo-starter-kit](fifo-starter-kit/) | 同步 FIFO 入门工程 | 参数化 RTL、自校验回归、VCD 波形和中文快速开始 |
 | [demos/fpga-beginner](demos/fpga-beginner/) | FPGA 入门实验 | 组合逻辑、LED 计数器、仿真、XDC/GPIO |
 | [perf-read-flamegraph](perf-read-flamegraph/) | perf + 火焰图实战 | 热点定位完整演练 |
 | [signal-vs-eventfd](signal-vs-eventfd/) | 信号 vs eventfd 对比 | Linux 事件通知机制 |
