@@ -1,0 +1,174 @@
+# command: bash run.sh
+# date: 2026-11-02
+# host-toolchain: Docker geek-eda:0.3-sta, Ubuntu 24.04, cocotb 2.1.0 / Icarus Verilog
+==================== CASE: c1-reset-polarity ====================
+rm -f results.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s edge_dut -g2012 -f sim_build/cmds.f  /work/cases/c1-reset-polarity/../../rtl/edge_dut.v
+rm -f results.xml
+COCOTB_TEST_MODULES=test_c1 COCOTB_TESTCASE=  COCOTB_TOPLEVEL=edge_dut TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793557348
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_c1.active_low_reset_wait_wrong_edge (1/1)
+    20.00ns INFO     cocotb.edge_dut                    C1: about to wait RisingEdge(rst_n) while it is held low ...
+make: *** [/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:68: results.xml] Terminated
+c1-reset-polarity_EXIT=124
+
+==================== CASE: c2-clock-not-started ====================
+rm -f results.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s edge_dut -g2012 -f sim_build/cmds.f  /work/cases/c2-clock-not-started/../../rtl/edge_dut.v
+rm -f results.xml
+COCOTB_TEST_MODULES=test_c2 COCOTB_TESTCASE=  COCOTB_TOPLEVEL=edge_dut TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793557378
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_c2.wait_clock_edge_before_clock_started (1/1)
+     0.00ns INFO     cocotb.edge_dut                    C2: awaiting RisingEdge(clk), Clock was never started
+16489486.00ns WARNING  cocotb.regression                  test_c2.wait_clock_edge_before_clock_started failed
+                                                        cocotb.regression.SimFailure: cocotb expected it would shut down the simulation, but the simulation ended prematurely. This could be due to an assertion failure or a call to an exit routine in the HDL, or due to the simulator running out of events to process (is your clock running?).
+16489486.00ns INFO     cocotb.regression                  ******************************************************************************************************
+                                                        ** TEST                                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ******************************************************************************************************
+                                                        ** test_c2.wait_clock_edge_before_clock_started   FAIL    16489486.00          29.16     565438.10  **
+                                                        ******************************************************************************************************
+                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                           16489486.00          29.16     565426.96  **
+                                                        ******************************************************************************************************
+c2-clock-not-started_EXIT=124
+
+==================== CASE: c2b-no-events ====================
+rm -f results.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s edge_dut -g2012 -f sim_build/cmds.f  /work/cases/c2b-no-events/../../rtl/edge_dut.v
+rm -f results.xml
+COCOTB_TEST_MODULES=test_c2b COCOTB_TESTCASE=  COCOTB_TOPLEVEL=edge_dut TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793557408
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_c2b.wait_edge_with_no_events_at_all (1/1)
+     0.00ns INFO     cocotb.edge_dut                    C2B: no clock, no Timer, awaiting RisingEdge(clk) at 0ns
+     0.00ns WARNING  cocotb.regression                  test_c2b.wait_edge_with_no_events_at_all failed
+                                                        cocotb.regression.SimFailure: cocotb expected it would shut down the simulation, but the simulation ended prematurely. This could be due to an assertion failure or a call to an exit routine in the HDL, or due to the simulator running out of events to process (is your clock running?).
+     0.00ns INFO     cocotb.regression                  **************************************************************************************************
+                                                        ** TEST                                      STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **************************************************************************************************
+                                                        ** test_c2b.wait_edge_with_no_events_at_all   FAIL           0.00           0.00          0.00  **
+                                                        **************************************************************************************************
+                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                              0.00           0.00          0.00  **
+                                                        **************************************************************************************************
+make: *** [/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:69: results.xml] Error 1
+c2b-no-events_EXIT=2
+
+==================== CASE: c3-comb-edge ====================
+rm -f results.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s edge_dut -g2012 -f sim_build/cmds.f  /work/cases/c3-comb-edge/../../rtl/edge_dut.v
+rm -f results.xml
+COCOTB_TEST_MODULES=test_c3 COCOTB_TESTCASE=  COCOTB_TOPLEVEL=edge_dut TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793557409
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_c3.wait_edge_on_stable_combinational_signal (1/1)
+    20.00ns INFO     cocotb.edge_dut                    C3: comb_gate=0, waiting for its rising edge that never comes
+make: *** [/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:68: results.xml] Terminated
+c3-comb-edge_EXIT=124
+
+==================== CASE: c4-timer-vs-edge ====================
+rm -f results.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s edge_dut -g2012 -f sim_build/cmds.f  /work/cases/c4-timer-vs-edge/../../rtl/edge_dut.v
+rm -f results.xml
+COCOTB_TEST_MODULES=test_c4 COCOTB_TESTCASE=  COCOTB_TOPLEVEL=edge_dut TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793557439
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_c4.edge_where_timer_was_needed (1/1)
+    30.00ns INFO     cocotb.edge_dut                    C4: want a fixed 200ns delay, wrongly awaiting RisingEdge(busy)
+   230.00ns WARNING  cocotb.regression                  test_c4.edge_where_timer_was_needed failed
+                                                        Traceback (most recent call last):
+                                                          File "/work/cases/c4-timer-vs-edge/test_c4.py", line 22, in edge_where_timer_was_needed
+                                                            await with_timeout(RisingEdge(dut.busy), 200, "ns")
+                                                          File "/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/_extended_awaitables.py", line 360, in with_timeout
+                                                            raise SimTimeoutError
+                                                        cocotb.triggers.SimTimeoutError
+   230.00ns INFO     cocotb.regression                  *********************************************************************************************
+                                                        ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *********************************************************************************************
+                                                        ** test_c4.edge_where_timer_was_needed   FAIL         230.00           0.00     126091.24  **
+                                                        *********************************************************************************************
+                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                       230.00           0.00      65472.30  **
+                                                        *********************************************************************************************
+make: *** [/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb_tools/makefiles/simulators/Makefile.icarus:69: results.xml] Error 1
+c4-timer-vs-edge_EXIT=2
+
+==================== CASE: c5-skipping ====================
+rm -f results.xml
+Skipping simulation as only Verilog is supported on simulator=icarus
+c5-skipping_EXIT=0
+
+==================== CASE: good ====================
+rm -f results.xml
+mkdir -p sim_build
+/usr/bin/iverilog -o sim_build/sim.vvp -s edge_dut -g2012 -f sim_build/cmds.f  /work/cases/good/../../rtl/edge_dut.v
+rm -f results.xml
+COCOTB_TEST_MODULES=test_good COCOTB_TESTCASE=  COCOTB_TOPLEVEL=edge_dut TOPLEVEL_LANG=verilog       \
+	 /usr/bin/vvp -m /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_icarus.so   sim_build/sim.vvp   
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/venvs/cocotb/lib/python3.12/site-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/venvs/cocotb/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793557440
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/venvs/cocotb/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_good.edge_usage_all_correct (1/1)
+    50.00ns INFO     cocotb.edge_dut                    GOOD: dout sampled as 5, all edge waits returned
+    50.00ns INFO     cocotb.regression                  test_good.edge_usage_all_correct passed
+    50.00ns INFO     cocotb.regression                  ******************************************************************************************
+                                                        ** TEST                              STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ******************************************************************************************
+                                                        ** test_good.edge_usage_all_correct   PASS          50.00           0.00      65186.75  **
+                                                        ******************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                     50.00           0.00      43383.31  **
+                                                        ******************************************************************************************
+good_EXIT=0
+
+==================== SUMMARY ====================
+c1-reset-polarity results.xml: absent (simulation did not run or was killed)
+c2-clock-not-started results.xml: <testsuite name="test_c2" errors="0" failures="1" skipped="0" tests="1" time="29.162">
+c2b-no-events results.xml: <testsuite name="test_c2b" errors="0" failures="1" skipped="0" tests="1" time="0.001">
+c3-comb-edge results.xml: absent (simulation did not run or was killed)
+c4-timer-vs-edge results.xml: <testsuite name="test_c4" errors="0" failures="1" skipped="0" tests="1" time="0.002">
+c5-skipping results.xml: absent (simulation did not run or was killed)
+good results.xml: <testsuite name="test_good" errors="0" failures="0" skipped="0" tests="1" time="0.001">
