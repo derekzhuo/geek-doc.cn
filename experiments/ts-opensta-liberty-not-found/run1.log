@@ -1,0 +1,75 @@
+# command: bash run.sh
+# date: 2026-11-02
+# host-toolchain: Docker geek-eda:0.3-sta, Ubuntu 24.04, OpenSTA 2.0.17 (Debian official package)
+TOOL_VERSION: 2.0.17
+
+===== missing =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+MISSING_CASE_1: relative path ./lib/not_here.lib (cwd is the run directory)
+Tcl result: Error: cannot read file ./lib/not_here.lib.
+MISSING_CASE_2: path built from unset env var STA_LIB
+Tcl result: can't read "::env(STA_LIB)": no such variable
+CASE_EXIT missing=0
+
+===== broken =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+BROKEN_CASE_1: truncated liberty file (unbalanced braces)
+Error: broken.lib, line 7 syntax error.
+BROKEN_CASE_2: Verilog netlist fed to read_liberty
+Error: top.v, line 1 syntax error.
+BROKEN_CASE_3: gzip-compressed liberty without gunzip first
+Error: mini.lib.gz, line 1 syntax error.
+BROKEN_CASE_4: corner name ff was never defined by define_corners
+Tcl result: Error: broken.tcl, 19 ff is not the name of process corner.
+CASE_EXIT broken=0
+
+===== valid =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+VALID_CASE: read_liberty minimal.lib then read_verilog and link
+LINK_OK: minimal.lib accepted and top linked
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+Startpoint: u_stage (rising edge-triggered flip-flop clocked by clk)
+Endpoint: q (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_stage/C (DFF_P)
+   0.20    0.20 ^ u_stage/Q (DFF_P)
+   0.30    0.50 ^ u_buf/Y (BUF_X1)
+   0.00    0.50 ^ q (out)
+           0.50   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+  -1.00    9.00   output external delay
+           9.00   data required time
+---------------------------------------------------------
+           9.00   data required time
+          -0.50   data arrival time
+---------------------------------------------------------
+           8.50   slack (MET)
+
+
+CASE_EXIT valid=0

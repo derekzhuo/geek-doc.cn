@@ -1,0 +1,6 @@
+library (broken_lib) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  cell (BUF_X1) {
+    pin (A) {
+      direction : input;
