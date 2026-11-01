@@ -6,7 +6,7 @@ from cocotb.triggers import ClockCycles, FallingEdge, Timer
 @cocotb.test()
 async def counter_increments_after_reset(dut):
     clock = Clock(dut.clk, 10, unit="ns")
-    await cocotb.start(clock.start())
+    cocotb.start_soon(clock.start())
 
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 2)
