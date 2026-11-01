@@ -1,0 +1,42 @@
+{
+  "milestone": "M2",
+  "task": "先用只读工具了解 calculator.py 和工作区，演示一次参数错误后的恢复，再修复 square 并运行测试。",
+  "system_prompt": "你可以并行请求互不依赖的只读工具。工具错误会作为结构化结果返回，读懂错误后修正参数继续，不要中断任务。",
+  "replies": [
+    {
+      "content": "先并行读取源码、列出工作区并搜索 square。",
+      "tool_calls": [
+        {"id": "call_1", "name": "read_file", "arguments": {"path": "calculator.py"}},
+        {"id": "call_2", "name": "list_files", "arguments": {}},
+        {"id": "call_3", "name": "search_text", "arguments": {"query": "square", "max_matches": 10}}
+      ]
+    },
+    {
+      "content": "再用 JSON 字符串传参读取局部行；这里故意给倒置区间，观察错误如何回流。",
+      "tool_calls": [
+        {"id": "call_4", "name": "read_lines", "arguments": "{\"path\":\"calculator.py\",\"start_line\":6,\"end_line\":2}"}
+      ]
+    },
+    {
+      "content": "错误指出 end_line 小于 start_line，改成合法区间后继续。",
+      "tool_calls": [
+        {"id": "call_5", "name": "read_lines", "arguments": {"path": "calculator.py", "start_line": 4, "end_line": 6}}
+      ]
+    },
+    {
+      "content": "已定位 return n + n，做唯一匹配替换。",
+      "tool_calls": [
+        {"id": "call_6", "name": "edit_file", "arguments": {"path": "calculator.py", "old_string": "    return n + n", "new_string": "    return n * n"}}
+      ]
+    },
+    {
+      "content": "修改完成，运行单元测试验证。",
+      "tool_calls": [
+        {"id": "call_7", "name": "run_test", "arguments": {}}
+      ]
+    },
+    {
+      "content": "M2 演示完成：三个只读工具并发执行，参数错误结构化回流后恢复，square 已修复且测试全部通过。"
+    }
+  ]
+}

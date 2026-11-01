@@ -1,0 +1,28 @@
+{
+  "task": "calculator.py 里的 square 函数实现有误，请先读文件确认问题，修复后运行测试验证。",
+  "system_prompt": "你是一个最小 coding agent。每一步只能调用一个工具：需要信息先 read_file，确认修改方案后 edit_file，最后 run_test 验证。拿到测试结果后给出最终结论。",
+  "replies": [
+    {
+      "content": "我先读 calculator.py，确认 square 的实现。",
+      "tool_calls": [
+        {"id": "call_1", "name": "read_file", "arguments": {"path": "calculator.py"}}
+      ]
+    },
+    {
+      "content": "square 写成了 n + n，平方应为 n * n，现在修复。",
+      "tool_calls": [
+        {"id": "call_2", "name": "edit_file",
+         "arguments": {"path": "calculator.py", "old_string": "    return n + n", "new_string": "    return n * n"}}
+      ]
+    },
+    {
+      "content": "修改完成，运行单元测试验证。",
+      "tool_calls": [
+        {"id": "call_3", "name": "run_test", "arguments": {}}
+      ]
+    },
+    {
+      "content": "测试全部通过：square(4) == 16，缺陷已修复并验证。"
+    }
+  ]
+}

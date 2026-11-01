@@ -1,0 +1,9 @@
+# Codex CLI 0.156.1 的八个配置字段样例。
+model = "gpt-5.5"
+model_reasoning_effort = "low"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+notify = ["./notify.sh"]
+history.persistence = "none"
+tui.alternate_screen = "never"
+web_search = "live"
