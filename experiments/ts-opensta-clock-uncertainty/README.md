@@ -16,7 +16,8 @@ OpenSTA `set_clock_uncertainty` 未生效的最小复现实验：时钟名拼错
 |---|---|---|
 | `bad_name.tcl` | 时钟名 `clkc` 拼错 | `Warning: ... clock 'clkc' not found.`，`get_clocks` 返回空，slack 仍为 9.70 |
 | `order.tcl` | 先设 uncertainty 后 create_clock | 时钟尚不存在，Warning 后约束丢弃，slack 仍为 9.70 |
-| `scope.tcl` | `-rise/-fall` 单时钟误用；setup/hold 分设 | 两行 Error：`-rise, -fall options not allowed for single clock uncertainty`；setup 减 0.5、hold 加 0.3 |
+| `scope.tcl` | `-rise/-fall` 单时钟误用；setup/hold 分设 | 两行 Error：`-rise, -fall options not allowed for single clock uncertainty`；setup 减 0.5、hold 加 0.3（hold 因此 VIOLATED -0.10） |
+| `default_unc.tcl` | 不带 `-setup/-hold` | 同一 0.5 同时作用两类检查：setup slack 9.20，hold slack -0.30 VIOLATED |
 | `override.tcl` | 同作用域设置两次 | 后值 0.8 覆盖前值 0.5（不累加），slack 8.90 |
 | `big_unc.tcl` | uncertainty 9.9ns | slack -0.20 VIOLATED |
 | `fixed.tcl` | 正确顺序 + 正确名字 + setup/hold 分开 | setup slack 9.20，hold slack 0.00 |

@@ -3,7 +3,7 @@
 # 同作用域覆盖 / 数值过大）+ 修复
 set -u
 STA_BIN="${STA_BIN:-sta}"
-for case_name in bad_name order scope override big_unc fixed; do
+for case_name in bad_name order scope default_unc override big_unc fixed; do
   printf '\n===== %s =====\n' "$case_name"
   "$STA_BIN" -no_init -exit "${case_name}.tcl" 2>&1
   rc=$?
