@@ -1,0 +1,107 @@
+/* Teaching-only minimal liberty for the first OpenSTA run.
+ * Three cells: BUF_X1 / NAND2_X1 / DFF_P.
+ * Replace with a real PDK library (e.g. sky130) for any sign-off use. */
+library(tiny_teaching) {
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  pulling_resistance_unit : "1kohm";
+  delay_model : table_lookup;
+  capacitive_load_unit (1,pf);
+  input_threshold_pct_rise : 50.0;
+  output_threshold_pct_rise : 50.0;
+  slew_lower_threshold_pct_rise : 20.0;
+  slew_upper_threshold_pct_rise : 80.0;
+  input_threshold_pct_fall : 50.0;
+  output_threshold_pct_fall : 50.0;
+  slew_lower_threshold_pct_fall : 20.0;
+  slew_upper_threshold_pct_fall : 80.0;
+  lu_table_template(delay_1d) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("0.000, 0.010");
+  }
+  lu_table_template(slew_1d) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("0.000, 0.010");
+  }
+
+  cell(BUF_X1) {
+    area : 1;
+    pin(A) { direction : input; capacitance : 0.001; }
+    pin(Y) {
+      direction : output;
+      function : "A";
+      max_capacitance : 0.05;
+      timing() {
+        related_pin : "A";
+        timing_sense : positive_unate;
+        cell_rise(delay_1d) { values("0.080, 0.120"); }
+        cell_fall(delay_1d) { values("0.080, 0.120"); }
+        rise_transition(slew_1d) { values("0.020, 0.040"); }
+        fall_transition(slew_1d) { values("0.020, 0.040"); }
+      }
+    }
+  }
+
+  cell(NAND2_X1) {
+    area : 2;
+    pin(A) { direction : input; capacitance : 0.001; }
+    pin(B) { direction : input; capacitance : 0.001; }
+    pin(Y) {
+      direction : output;
+      function : "!(A B)";
+      max_capacitance : 0.05;
+      timing() {
+        related_pin : "A";
+        timing_sense : negative_unate;
+        cell_rise(delay_1d) { values("0.120, 0.180"); }
+        cell_fall(delay_1d) { values("0.100, 0.150"); }
+        rise_transition(slew_1d) { values("0.025, 0.050"); }
+        fall_transition(slew_1d) { values("0.025, 0.050"); }
+      }
+      timing() {
+        related_pin : "B";
+        timing_sense : negative_unate;
+        cell_rise(delay_1d) { values("0.120, 0.180"); }
+        cell_fall(delay_1d) { values("0.100, 0.150"); }
+        rise_transition(slew_1d) { values("0.025, 0.050"); }
+        fall_transition(slew_1d) { values("0.025, 0.050"); }
+      }
+    }
+  }
+
+  cell(DFF_P) {
+    area : 4;
+    ff(IQ, IQN) { clocked_on : "C"; next_state : "D"; }
+    pin(C) { direction : input; clock : true; capacitance : 0.001; }
+    pin(D) {
+      direction : input;
+      capacitance : 0.002;
+      timing() {
+        related_pin : "C";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.100"); }
+        fall_constraint(scalar) { values("0.100"); }
+      }
+      timing() {
+        related_pin : "C";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("0.020"); }
+        fall_constraint(scalar) { values("0.020"); }
+      }
+    }
+    pin(Q) {
+      direction : output;
+      function : "IQ";
+      max_capacitance : 0.05;
+      timing() {
+        related_pin : "C";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("0.200"); }
+        cell_fall(scalar) { values("0.200"); }
+        rise_transition(scalar) { values("0.030"); }
+        fall_transition(scalar) { values("0.030"); }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+read_verilog counter.v fifo.v fsm3.v latch.v
+synth -top %TOP%
+dfflibmap -liberty tiny.lib
+abc -liberty tiny.lib
+stat -liberty tiny.lib

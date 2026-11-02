@@ -1,0 +1,31 @@
+name: verilator-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    name: lint gate (--lint-only -Wall)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Verilator
+        run: sudo apt-get update && sudo apt-get install -y verilator
+      - name: Verilator static lint
+        run: verilator --lint-only -Wall --top-module counter rtl/counter.v
+
+  sim:
+    name: sim gate (--cc --exe C++ harness)
+    needs: lint
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Verilator and a C++ toolchain
+        run: sudo apt-get update && sudo apt-get install -y verilator build-essential
+      - name: Build and run C++ simulation
+        run: |
+          verilator --cc --exe --build --top-module counter \
+                    rtl/counter.v sim/tb_counter.cpp
+          ./obj_dir/Vcounter

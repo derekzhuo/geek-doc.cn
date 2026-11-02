@@ -1,0 +1,6 @@
+# 综合前置门禁脚本：check -assert 把任何问题升级为致命错误，
+# yosys 以非零状态退出，CI / Makefile 可以直接据此拦截。
+read_verilog alu.v
+hierarchy -top alu
+proc
+check -assert

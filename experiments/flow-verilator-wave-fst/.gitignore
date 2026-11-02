@@ -1,0 +1,6 @@
+# Verilator 构建目录与波形产物（make vcd/fst 生成，可复现，不入库）
+obj_vcd/
+obj_fst/
+obj_dir/
+*.vcd
+*.fst

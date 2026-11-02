@@ -1,0 +1,9 @@
+# 用 -run 标签把 synth 宏切成三段，段段 stat 观察网表变化
+read_verilog demo.v
+synth -top demo -run begin:coarse
+stat
+synth -top demo -run coarse:fine
+stat
+synth -top demo -run fine:
+stat
+check

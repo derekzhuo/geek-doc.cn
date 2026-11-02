@@ -1,0 +1,4 @@
+obj_dir/
+build/
+*.o
+*.a

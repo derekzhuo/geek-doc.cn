@@ -1,0 +1,810 @@
+# command: private/ops/p0-1000-staging/evidence-src/flow-yosys-memory-inference (sh run.sh)
+# date: 2026-11-03
+# host-toolchain: Yosys 0.33 (geek-eda:0.3-sta docker)
+### yosys -V
+Yosys 0.33 (git sha1 2584903a060)
+### help memory
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `help memory' --
+
+    memory [-norom] [-nomap] [-nordff] [-nowiden] [-nosat] [-memx] [-no-rw-check] [-bram <bram_rules>] [selection]
+
+This pass calls all the other memory_* passes in a useful order:
+
+    opt_mem
+    opt_mem_priority
+    opt_mem_feedback
+    memory_bmux2rom                     (skipped if called with -norom)
+    memory_dff [-no-rw-check]           (skipped if called with -nordff or -memx)
+    opt_clean
+    memory_share [-nowiden] [-nosat]
+    opt_mem_widen
+    memory_memx                         (when called with -memx)
+    opt_clean
+    memory_collect
+    memory_bram -rules <bram_rules>     (when called with -bram)
+    memory_map                          (skipped if called with -nomap)
+
+This converts memories to word-wide DFFs and address decoders
+or multiport memory blocks if called with the -nomap option.
+
+End of script. Logfile hash: 537add4a3a, CPU: user 0.00s system 0.01s, MEM: 12.23 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 100% 1x help (0 sec)
+### help synth_ice40 (memory related lines)
+    -nobram
+        memory_dff [-no-rw-check]
+        memory -nomap [-no-rw-check]
+        memory_libmap -lib +/ice40/brams.txt -lib +/ice40/spram.txt -no-auto-huge [-no-auto-huge] [-no-auto-block]    (-no-auto-huge unless -spram, -no-auto-block if -nobram)
+        techmap -map +/ice40/brams_map.v -map +/ice40/spram_map.v
+        ice40_braminit
+        memory_map
+############################################################
+### module: ram_sync
+############################################################
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `
+read_verilog rtl.v
+hierarchy -top ram_sync
+log [STAGE 1] after hierarchy: processes / memories 还在前端形态
+stat
+proc
+opt_clean
+log [STAGE 2] after proc+opt: 数组是 memrd/memwr 单元
+stat
+memory -nomap
+log [STAGE 3] after memory -nomap: 粗粒度 mem_v2
+stat
+memory_map
+opt_clean
+log [STAGE 4] after memory_map: 摊平为门级 DFF/MUX
+stat
+' --
+
+1. Executing Verilog-2005 frontend: rtl.v
+Parsing Verilog input from `rtl.v' to AST representation.
+Generating RTLIL representation for module `\ram_sync'.
+Generating RTLIL representation for module `\ram_async'.
+Generating RTLIL representation for module `\ram_flat'.
+Warning: Replacing memory \mem with list of registers. See rtl.v:56
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \ram_sync
+
+2.2. Analyzing design hierarchy..
+Top module:  \ram_sync
+Removing unused module `\ram_flat'.
+Removing unused module `\ram_async'.
+Removed 2 unused modules.
+[STAGE 1] after hierarchy: processes / memories 还在前端形态
+
+3. Printing statistics.
+
+=== ram_sync ===
+
+   Number of wires:                 19
+   Number of wire bits:            118
+   Number of public wires:           6
+   Number of public wire bits:      26
+   Number of memories:               1
+   Number of memory bits:          128
+   Number of processes:              2
+   Number of cells:                  2
+     $meminit_v2                     1
+     $memrd                          1
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl.v:20$3 in module ram_sync.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 5 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ram_sync.$proc$rtl.v:0$12'.
+Creating decoders for process `\ram_sync.$proc$rtl.v:20$3'.
+     1/3: $1$memwr$\mem$rtl.v:21$2_EN[7:0]$9
+     2/3: $1$memwr$\mem$rtl.v:21$2_DATA[7:0]$8
+     3/3: $1$memwr$\mem$rtl.v:21$2_ADDR[3:0]$7
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ram_sync.$memwr$\mem$rtl.v:17$1_EN' from process `\ram_sync.$proc$rtl.v:0$12'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ram_sync.\rdata' using process `\ram_sync.$proc$rtl.v:20$3'.
+  created $dff cell `$procdff$42' with positive edge clock.
+Creating register for signal `\ram_sync.$memwr$\mem$rtl.v:21$2_ADDR' using process `\ram_sync.$proc$rtl.v:20$3'.
+  created $dff cell `$procdff$43' with positive edge clock.
+Creating register for signal `\ram_sync.$memwr$\mem$rtl.v:21$2_DATA' using process `\ram_sync.$proc$rtl.v:20$3'.
+  created $dff cell `$procdff$44' with positive edge clock.
+Creating register for signal `\ram_sync.$memwr$\mem$rtl.v:21$2_EN' using process `\ram_sync.$proc$rtl.v:20$3'.
+  created $dff cell `$procdff$45' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `ram_sync.$proc$rtl.v:0$12'.
+Found and cleaned up 1 empty switch in `\ram_sync.$proc$rtl.v:20$3'.
+Removing empty process `ram_sync.$proc$rtl.v:20$3'.
+Cleaned up 1 empty switch.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_sync.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_sync..
+Removed 3 unused cells and 15 unused wires.
+<suppressed ~4 debug messages>
+[STAGE 2] after proc+opt: 数组是 memrd/memwr 单元
+
+6. Printing statistics.
+
+=== ram_sync ===
+
+   Number of wires:                 10
+   Number of wire bits:             54
+   Number of public wires:           6
+   Number of public wire bits:      26
+   Number of memories:               1
+   Number of memory bits:          128
+   Number of processes:              0
+   Number of cells:                  7
+     $dff                            1
+     $meminit_v2                     1
+     $memrd                          1
+     $memwr_v2                       1
+     $mux                            3
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing ram_sync.mem write port 0.
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\mem'[0] in module `\ram_sync': merging output FF to cell.
+    Write port 0: non-transparent.
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_sync..
+Removed 1 unused cells and 9 unused wires.
+<suppressed ~2 debug messages>
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_sync..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+[STAGE 3] after memory -nomap: 粗粒度 mem_v2
+
+8. Printing statistics.
+
+=== ram_sync ===
+
+   Number of wires:                  9
+   Number of wire bits:             46
+   Number of public wires:           6
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $mem_v2                         1
+     $mux                            3
+
+9. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \mem in module \ram_sync:
+  created 16 $dff cells and 0 static cells of width 8.
+Extracted data FF from read port 0 of ram_sync.mem: $\mem$rdreg[0]
+  read interface: 1 $dff and 15 $mux cells.
+  write interface: 128 write mux blocks.
+
+10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_sync..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~1 debug messages>
+[STAGE 4] after memory_map: 摊平为门级 DFF/MUX
+
+11. Printing statistics.
+
+=== ram_sync ===
+
+   Number of wires:                328
+   Number of wire bits:            582
+   Number of public wires:          22
+   Number of public wire bits:     154
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                323
+     $and                          152
+     $dff                           17
+     $eq                             8
+     $mux                          146
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 89040853d8, CPU: user 0.02s system 0.01s, MEM: 11.00 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 37% 4x opt_clean (0 sec), 28% 2x read_verilog (0 sec), ...
+############################################################
+### module: ram_async
+############################################################
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `
+read_verilog rtl.v
+hierarchy -top ram_async
+log [STAGE 1] after hierarchy: processes / memories 还在前端形态
+stat
+proc
+opt_clean
+log [STAGE 2] after proc+opt: 数组是 memrd/memwr 单元
+stat
+memory -nomap
+log [STAGE 3] after memory -nomap: 粗粒度 mem_v2
+stat
+memory_map
+opt_clean
+log [STAGE 4] after memory_map: 摊平为门级 DFF/MUX
+stat
+' --
+
+1. Executing Verilog-2005 frontend: rtl.v
+Parsing Verilog input from `rtl.v' to AST representation.
+Generating RTLIL representation for module `\ram_sync'.
+Generating RTLIL representation for module `\ram_async'.
+Generating RTLIL representation for module `\ram_flat'.
+Warning: Replacing memory \mem with list of registers. See rtl.v:56
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \ram_async
+
+2.2. Analyzing design hierarchy..
+Top module:  \ram_async
+Removing unused module `\ram_flat'.
+Removing unused module `\ram_sync'.
+Removed 2 unused modules.
+[STAGE 1] after hierarchy: processes / memories 还在前端形态
+
+3. Printing statistics.
+
+=== ram_async ===
+
+   Number of wires:                 16
+   Number of wire bits:             94
+   Number of public wires:           6
+   Number of public wire bits:      26
+   Number of memories:               1
+   Number of memory bits:          128
+   Number of processes:              1
+   Number of cells:                  1
+     $memrd                          1
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl.v:38$15 in module ram_async.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 3 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ram_async.$proc$rtl.v:38$15'.
+     1/3: $1$memwr$\mem$rtl.v:39$14_EN[7:0]$21
+     2/3: $1$memwr$\mem$rtl.v:39$14_DATA[7:0]$20
+     3/3: $1$memwr$\mem$rtl.v:39$14_ADDR[3:0]$19
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ram_async.$memwr$\mem$rtl.v:39$14_ADDR' using process `\ram_async.$proc$rtl.v:38$15'.
+  created $dff cell `$procdff$42' with positive edge clock.
+Creating register for signal `\ram_async.$memwr$\mem$rtl.v:39$14_DATA' using process `\ram_async.$proc$rtl.v:38$15'.
+  created $dff cell `$procdff$43' with positive edge clock.
+Creating register for signal `\ram_async.$memwr$\mem$rtl.v:39$14_EN' using process `\ram_async.$proc$rtl.v:38$15'.
+  created $dff cell `$procdff$44' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ram_async.$proc$rtl.v:38$15'.
+Removing empty process `ram_async.$proc$rtl.v:38$15'.
+Cleaned up 1 empty switch.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_async.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_async..
+Removed 3 unused cells and 13 unused wires.
+<suppressed ~4 debug messages>
+[STAGE 2] after proc+opt: 数组是 memrd/memwr 单元
+
+6. Printing statistics.
+
+=== ram_async ===
+
+   Number of wires:                  9
+   Number of wire bits:             46
+   Number of public wires:           6
+   Number of public wire bits:      26
+   Number of memories:               1
+   Number of memory bits:          128
+   Number of processes:              0
+   Number of cells:                  5
+     $memrd                          1
+     $memwr_v2                       1
+     $mux                            3
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing ram_async.mem write port 0.
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\mem'[0] in module `\ram_async': no output FF found.
+Checking read port address `\mem'[0] in module `\ram_async': no address FF found.
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_async..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_async..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+[STAGE 3] after memory -nomap: 粗粒度 mem_v2
+
+8. Printing statistics.
+
+=== ram_async ===
+
+   Number of wires:                  9
+   Number of wire bits:             46
+   Number of public wires:           6
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $mem_v2                         1
+     $mux                            3
+
+9. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \mem in module \ram_async:
+  created 16 $dff cells and 0 static cells of width 8.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 128 write mux blocks.
+
+10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_async..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~1 debug messages>
+[STAGE 4] after memory_map: 摊平为门级 DFF/MUX
+
+11. Printing statistics.
+
+=== ram_async ===
+
+   Number of wires:                327
+   Number of wire bits:            574
+   Number of public wires:          22
+   Number of public wire bits:     154
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                322
+     $and                          152
+     $dff                           16
+     $eq                             8
+     $mux                          146
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: d1224711eb, CPU: user 0.03s system 0.01s, MEM: 10.62 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 36% 4x opt_clean (0 sec), 32% 2x read_verilog (0 sec), ...
+############################################################
+### module: ram_flat
+############################################################
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `
+read_verilog rtl.v
+hierarchy -top ram_flat
+log [STAGE 1] after hierarchy: processes / memories 还在前端形态
+stat
+proc
+opt_clean
+log [STAGE 2] after proc+opt: 数组是 memrd/memwr 单元
+stat
+memory -nomap
+log [STAGE 3] after memory -nomap: 粗粒度 mem_v2
+stat
+memory_map
+opt_clean
+log [STAGE 4] after memory_map: 摊平为门级 DFF/MUX
+stat
+' --
+
+1. Executing Verilog-2005 frontend: rtl.v
+Parsing Verilog input from `rtl.v' to AST representation.
+Generating RTLIL representation for module `\ram_sync'.
+Generating RTLIL representation for module `\ram_async'.
+Generating RTLIL representation for module `\ram_flat'.
+Warning: Replacing memory \mem with list of registers. See rtl.v:56
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \ram_flat
+
+2.2. Analyzing design hierarchy..
+Top module:  \ram_flat
+Removing unused module `\ram_async'.
+Removing unused module `\ram_sync'.
+Removed 2 unused modules.
+[STAGE 1] after hierarchy: processes / memories 还在前端形态
+
+3. Printing statistics.
+
+=== ram_flat ===
+
+   Number of wires:                 78
+   Number of wire bits:            597
+   Number of public wires:          20
+   Number of public wire bits:     149
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              2
+   Number of cells:                  0
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$rtl.v:0$30 in module ram_flat.
+Marked 1 switch rules as full_case in process $proc$rtl.v:0$30 in module ram_flat.
+Removed 1 dead cases from process $proc$rtl.v:55$25 in module ram_flat.
+Marked 2 switch rules as full_case in process $proc$rtl.v:55$25 in module ram_flat.
+Removed a total of 2 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 19 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ram_flat.$proc$rtl.v:0$30'.
+     1/1: $1$mem2reg_rd$\mem$rtl.v:59$24_DATA[7:0]$32
+Creating decoders for process `\ram_flat.$proc$rtl.v:55$25'.
+     1/34: $2\mem[0][7:0]
+     2/34: $2\mem[15][7:0]
+     3/34: $2\mem[14][7:0]
+     4/34: $2\mem[13][7:0]
+     5/34: $2\mem[12][7:0]
+     6/34: $2\mem[11][7:0]
+     7/34: $2\mem[10][7:0]
+     8/34: $2\mem[9][7:0]
+     9/34: $2\mem[8][7:0]
+    10/34: $2\mem[7][7:0]
+    11/34: $2\mem[6][7:0]
+    12/34: $2\mem[5][7:0]
+    13/34: $2\mem[4][7:0]
+    14/34: $2\mem[3][7:0]
+    15/34: $2\mem[2][7:0]
+    16/34: $2\mem[1][7:0]
+    17/34: $1\mem[15][7:0]
+    18/34: $1\mem[14][7:0]
+    19/34: $1\mem[13][7:0]
+    20/34: $1\mem[12][7:0]
+    21/34: $1\mem[11][7:0]
+    22/34: $1\mem[10][7:0]
+    23/34: $1\mem[9][7:0]
+    24/34: $1\mem[8][7:0]
+    25/34: $1\mem[7][7:0]
+    26/34: $1\mem[6][7:0]
+    27/34: $1\mem[5][7:0]
+    28/34: $1\mem[4][7:0]
+    29/34: $1\mem[3][7:0]
+    30/34: $1\mem[2][7:0]
+    31/34: $1\mem[1][7:0]
+    32/34: $1\mem[0][7:0]
+    33/34: $1$mem2reg_wr$\mem$rtl.v:56$23_ADDR[3:0]$28
+    34/34: $1$mem2reg_wr$\mem$rtl.v:56$23_DATA[7:0]$29
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ram_flat.$mem2reg_rd$\mem$rtl.v:59$24_DATA' from process `\ram_flat.$proc$rtl.v:0$30'.
+No latch inferred for signal `\ram_flat.$mem2reg_wr$\mem$rtl.v:56$23_ADDR' from process `\ram_flat.$proc$rtl.v:55$25'.
+No latch inferred for signal `\ram_flat.$mem2reg_wr$\mem$rtl.v:56$23_DATA' from process `\ram_flat.$proc$rtl.v:55$25'.
+Latch inferred for signal `\ram_flat.\mem[0]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$506
+Latch inferred for signal `\ram_flat.\mem[1]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$583
+Latch inferred for signal `\ram_flat.\mem[2]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$660
+Latch inferred for signal `\ram_flat.\mem[3]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$737
+Latch inferred for signal `\ram_flat.\mem[4]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$814
+Latch inferred for signal `\ram_flat.\mem[5]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$891
+Latch inferred for signal `\ram_flat.\mem[6]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$968
+Latch inferred for signal `\ram_flat.\mem[7]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1045
+Latch inferred for signal `\ram_flat.\mem[8]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1122
+Latch inferred for signal `\ram_flat.\mem[9]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1199
+Latch inferred for signal `\ram_flat.\mem[10]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1276
+Latch inferred for signal `\ram_flat.\mem[11]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1353
+Latch inferred for signal `\ram_flat.\mem[12]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1430
+Latch inferred for signal `\ram_flat.\mem[13]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1507
+Latch inferred for signal `\ram_flat.\mem[14]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1584
+Latch inferred for signal `\ram_flat.\mem[15]' from process `\ram_flat.$proc$rtl.v:55$25': $auto$proc_dlatch.cc:427:proc_dlatch$1661
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ram_flat.$proc$rtl.v:0$30'.
+Removing empty process `ram_flat.$proc$rtl.v:0$30'.
+Found and cleaned up 2 empty switches in `\ram_flat.$proc$rtl.v:55$25'.
+Removing empty process `ram_flat.$proc$rtl.v:55$25'.
+Cleaned up 3 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_flat.
+<suppressed ~611 debug messages>
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_flat..
+Removed 34 unused cells and 705 unused wires.
+<suppressed ~35 debug messages>
+[STAGE 2] after proc+opt: 数组是 memrd/memwr 单元
+
+6. Printing statistics.
+
+=== ram_flat ===
+
+   Number of wires:                341
+   Number of wire bits:            470
+   Number of public wires:          20
+   Number of public wire bits:     149
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                338
+     $and                           32
+     $dlatch                        16
+     $eq                           240
+     $logic_not                     16
+     $not                            1
+     $pmux                           1
+     $reduce_or                     32
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_flat..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_flat..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+[STAGE 3] after memory -nomap: 粗粒度 mem_v2
+
+8. Printing statistics.
+
+=== ram_flat ===
+
+   Number of wires:                341
+   Number of wire bits:            470
+   Number of public wires:          20
+   Number of public wire bits:     149
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                338
+     $and                           32
+     $dlatch                        16
+     $eq                           240
+     $logic_not                     16
+     $not                            1
+     $pmux                           1
+     $reduce_or                     32
+
+9. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_flat..
+[STAGE 4] after memory_map: 摊平为门级 DFF/MUX
+
+11. Printing statistics.
+
+=== ram_flat ===
+
+   Number of wires:                341
+   Number of wire bits:            470
+   Number of public wires:          20
+   Number of public wire bits:     149
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                338
+     $and                           32
+     $dlatch                        16
+     $eq                           240
+     $logic_not                     16
+     $not                            1
+     $pmux                           1
+     $reduce_or                     32
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 94f8283fa2, CPU: user 0.08s system 0.01s, MEM: 12.75 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 26% 1x proc_dlatch (0 sec), 25% 4x opt_clean (0 sec), ...

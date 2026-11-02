@@ -1,0 +1,62 @@
+/* 教学用最小 liberty：ff 工艺角，标量延时，不对应任何真实工艺；产线请替换为 PDK 签核库 */
+library(ff_teaching) {
+  time_unit : "1ns";
+  delay_model : table_lookup;
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  capacitive_load_unit(1, pf);
+  input_threshold_pct_rise : 50.0;
+  output_threshold_pct_rise : 50.0;
+  slew_lower_threshold_pct_rise : 20.0;
+  slew_upper_threshold_pct_rise : 80.0;
+  input_threshold_pct_fall : 50.0;
+  output_threshold_pct_fall : 50.0;
+  slew_lower_threshold_pct_fall : 20.0;
+  slew_upper_threshold_pct_fall : 80.0;
+  cell(DFF_P) {
+    ff(IQ, IQN) { clocked_on : "C"; next_state : "D"; }
+    pin(D) {
+      direction : input;
+      timing() {
+        related_pin : "C";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.06"); }
+        fall_constraint(scalar) { values("0.06"); }
+      }
+      timing() {
+        related_pin : "C";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("0.12"); }
+        fall_constraint(scalar) { values("0.12"); }
+      }
+    }
+    pin(C) { direction : input; clock : true; }
+    pin(Q) {
+      direction : output;
+      function : "IQ";
+      timing() {
+        related_pin : "C";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("0.05"); }
+        cell_fall(scalar) { values("0.05"); }
+        rise_transition(scalar) { values("0.02"); }
+        fall_transition(scalar) { values("0.02"); }
+      }
+    }
+  }
+  cell(BUF_X1) {
+    pin(A) { direction : input; }
+    pin(Y) {
+      direction : output;
+      function : "A";
+      timing() {
+        related_pin : "A";
+        timing_type : combinational;
+        cell_rise(scalar) { values("0.03"); }
+        cell_fall(scalar) { values("0.03"); }
+        rise_transition(scalar) { values("0.02"); }
+        fall_transition(scalar) { values("0.02"); }
+      }
+    }
+  }
+}
