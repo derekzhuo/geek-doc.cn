@@ -6,7 +6,7 @@ Verilator 两段式 CI（lint gate -> sim gate）的最小可复现实例：一�
 
 ## 目录
 
-```text
+```bash
 .github/workflows/verilator-ci.yml   # CI 定义：lint 与 sim 两个 job
 rtl/counter.v                        # 8 位计数器 DUT（异步复位/使能/并行加载）
 sim/tb_counter.cpp                   # C++ 自校验 testbench，打印 TEST PASS/TEST FAIL
