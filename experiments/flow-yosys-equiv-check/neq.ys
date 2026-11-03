@@ -1,0 +1,16 @@
+# golden RTL vs buggy 综合后网表：应当 NOT EQUIVALENT
+read_verilog golden.v
+prep -top decoder
+splitnets -ports
+design -stash gold
+
+read_verilog buggy.v
+synth -flatten -top decoder
+splitnets -ports
+design -stash gate
+
+design -copy-from gold -as gold decoder
+design -copy-from gate -as gate decoder
+equiv_make gold gate miter
+equiv_simple miter
+equiv_status miter

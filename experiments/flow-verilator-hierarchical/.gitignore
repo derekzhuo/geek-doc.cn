@@ -1,0 +1,4 @@
+obj_dir/
+Vtop_flat
+Vtop_hierarchical
+*.o *.a *.d

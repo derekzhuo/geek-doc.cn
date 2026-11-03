@@ -1,0 +1,7 @@
+# Yosys 综合脚本：映射到教学库 mini.lib
+read_verilog top.v
+synth -top top
+dfflibmap -liberty mini.lib
+abc -liberty mini.lib
+clean
+write_verilog -noattr top_synth.v

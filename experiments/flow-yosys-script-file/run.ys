@@ -1,0 +1,25 @@
+# ============================================================
+# run.ys - 4 位累加器综合脚本（Yosys 0.33）
+# 组织方式：读入 -> 定顶 -> 综合 -> 出图 -> 落盘，每节一条注释
+# 执行方式： yosys -s run.ys
+# ============================================================
+
+# ---- 第 1 节：逐个读入 RTL 文件（被例化的子模块放前面）----
+read_verilog adder.v
+read_verilog acc.v
+
+# ---- 第 2 节：确定顶层，展开参数并检查例化完整性 ----
+hierarchy -top acc -check
+
+# 先画一张 RTL 级结构图（$add 等粗粒度算子原样可见）
+show -format dot -prefix acc_rtl
+
+# ---- 第 3 节：一条宏命令完成 proc/opt/techmap 全流程 ----
+synth -top acc
+
+# ---- 第 4 节：打印统计，再画一张通用门级结构图 ----
+stat
+show -format dot -prefix acc_gate
+
+# ---- 第 5 节：把当前设计写成门级网表落盘 ----
+write_verilog -noattr netlist.v

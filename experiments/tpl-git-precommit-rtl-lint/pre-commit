@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# pre-commit：对暂存区里的 Verilog/SystemVerilog 文件跑 verilator lint
+set -u
+cd "$(git rev-parse --show-toplevel)" || exit 2
+
+files=()
+while IFS= read -r f; do
+    [ -n "$f" ] && files+=("$f")
+done < <(git diff --cached --name-only --diff-filter=ACMR -- '*.v' '*.sv')
+[ ${#files[@]} -eq 0 ] && exit 0
+
+# 优先用本机 verilator，否则回退到 geek-eda docker 镜像
+if command -v verilator >/dev/null 2>&1; then
+    run_lint() { verilator --lint-only -Wall "$1"; }
+else
+    run_lint() {
+        docker run --rm -v "$PWD":/work -w /work geek-eda:0.4-flow \
+            verilator --lint-only -Wall "$1"
+    }
+fi
+
+# lint 的是暂存区快照（git show :file），不是工作区当前内容
+tmp=$(mktemp -d .git/hooks/.lint-tmp.XXXXXX)
+trap 'rm -rf "$tmp"' EXIT
+
+fail=0
+for f in "${files[@]}"; do
+    mkdir -p "$tmp/$(dirname "$f")"
+    git show ":$f" > "$tmp/$f"
+    echo "[pre-commit] verilator lint: $f"
+    if run_lint "$tmp/$f"; then
+        echo "[pre-commit] PASS: $f"
+    else
+        echo "[pre-commit] FAIL: $f（lint 未通过，提交已拦截；git commit --no-verify 可临时跳过）"
+        fail=1
+    fi
+done
+exit $fail

@@ -1,0 +1,115 @@
+/* 教学用最小工艺库：仅含 BUF/NOT/AND2/OR2/DFF，单位 ns/pF。
+   延迟数值为教学假设的常数表，产线请替换为代工厂提供的真实 PDK liberty。 */
+library(mini) {
+  delay_model : table_lookup ;
+  time_unit : "1ns" ;
+  voltage_unit : "1V" ;
+  current_unit : "1mA" ;
+  pulling_resistance_unit : "1kohm" ;
+  capacitive_load_unit (1, pf) ;
+  default_max_transition : 1.0 ;
+  default_fanout_load : 1.0 ;
+  default_cell_leakage_power : 0 ;
+  default_leakage_power_density : 0 ;
+  input_threshold_pct_rise : 0.5 ;
+  input_threshold_pct_fall : 0.5 ;
+  output_threshold_pct_rise : 0.5 ;
+  output_threshold_pct_fall : 0.5 ;
+  slew_lower_threshold_pct_rise : 0.2 ;
+  slew_upper_threshold_pct_rise : 0.8 ;
+  slew_lower_threshold_pct_fall : 0.2 ;
+  slew_upper_threshold_pct_fall : 0.8 ;
+
+  lu_table_template(d3x3) {
+    variable_1 : input_net_transition ;
+    variable_2 : total_output_net_capacitance ;
+    index_1 ("0.010, 0.050, 0.200") ;
+    index_2 ("0.005, 0.020, 0.100") ;
+  }
+  lu_table_template(c3x1) {
+    variable_1 : related_pin_transition ;
+    index_1 ("0.010, 0.050, 0.200") ;
+  }
+
+  cell(BUF) {
+    area : 1 ;
+    pin(A) { direction : input ; capacitance : 0.002 ; }
+    pin(Y) { direction : output ; function : "A" ;
+      timing() { related_pin : "A" ;
+        cell_rise(d3x3) { values("0.050, 0.050, 0.050", "0.050, 0.050, 0.050", "0.050, 0.050, 0.050") ; }
+        cell_fall(d3x3) { values("0.050, 0.050, 0.050", "0.050, 0.050, 0.050", "0.050, 0.050, 0.050") ; }
+        rise_transition(d3x3) { values("0.020, 0.020, 0.020", "0.020, 0.020, 0.020", "0.020, 0.020, 0.020") ; }
+        fall_transition(d3x3) { values("0.020, 0.020, 0.020", "0.020, 0.020, 0.020", "0.020, 0.020, 0.020") ; }
+      }
+    }
+  }
+
+  cell(NOT) {
+    area : 1 ;
+    pin(A) { direction : input ; capacitance : 0.002 ; }
+    pin(Y) { direction : output ; function : "(!A)" ;
+      timing() { related_pin : "A" ;
+        cell_rise(d3x3) { values("0.040, 0.040, 0.040", "0.040, 0.040, 0.040", "0.040, 0.040, 0.040") ; }
+        cell_fall(d3x3) { values("0.040, 0.040, 0.040", "0.040, 0.040, 0.040", "0.040, 0.040, 0.040") ; }
+        rise_transition(d3x3) { values("0.020, 0.020, 0.020", "0.020, 0.020, 0.020", "0.020, 0.020, 0.020") ; }
+        fall_transition(d3x3) { values("0.020, 0.020, 0.020", "0.020, 0.020, 0.020", "0.020, 0.020, 0.020") ; }
+      }
+    }
+  }
+
+  cell(AND2) {
+    area : 1.5 ;
+    pin(A) { direction : input ; capacitance : 0.002 ; }
+    pin(B) { direction : input ; capacitance : 0.002 ; }
+    pin(Y) { direction : output ; function : "(A&B)" ;
+      timing() { related_pin : "A" ;
+        cell_rise(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        cell_fall(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        rise_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; }
+        fall_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; } }
+      timing() { related_pin : "B" ;
+        cell_rise(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        cell_fall(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        rise_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; }
+        fall_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; } }
+    }
+  }
+
+  cell(OR2) {
+    area : 1.5 ;
+    pin(A) { direction : input ; capacitance : 0.002 ; }
+    pin(B) { direction : input ; capacitance : 0.002 ; }
+    pin(Y) { direction : output ; function : "(A+B)" ;
+      timing() { related_pin : "A" ;
+        cell_rise(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        cell_fall(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        rise_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; }
+        fall_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; } }
+      timing() { related_pin : "B" ;
+        cell_rise(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        cell_fall(d3x3) { values("0.080, 0.080, 0.080", "0.080, 0.080, 0.080", "0.080, 0.080, 0.080") ; }
+        rise_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; }
+        fall_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; } }
+    }
+  }
+
+  cell(DFF) {
+    area : 4 ;
+    ff(IQN, IQN_STATE) { clocked_on : CLK ; next_state : D ; }
+    pin(D) { direction : input ; capacitance : 0.002 ;
+      timing() { related_pin : "CLK" ; timing_type : setup_rising ;
+        rise_constraint(c3x1) { values("0.030, 0.030, 0.030") ; }
+        fall_constraint(c3x1) { values("0.030, 0.030, 0.030") ; }
+      }
+    }
+    pin(CLK) { direction : input ; capacitance : 0.002 ; clock : true ; }
+    pin(Q) { direction : output ; function : "IQN" ;
+      timing() { related_pin : "CLK" ; timing_type : rising_edge ;
+        cell_rise(d3x3) { values("0.100, 0.100, 0.100", "0.100, 0.100, 0.100", "0.100, 0.100, 0.100") ; }
+        cell_fall(d3x3) { values("0.100, 0.100, 0.100", "0.100, 0.100, 0.100", "0.100, 0.100, 0.100") ; }
+        rise_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; }
+        fall_transition(d3x3) { values("0.030, 0.030, 0.030", "0.030, 0.030, 0.030", "0.030, 0.030, 0.030") ; }
+      }
+    }
+  }
+}
