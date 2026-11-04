@@ -1,0 +1,13 @@
+[options]
+mode cover
+depth 12
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -formal cover.v
+prep -top top
+
+[files]
+cover.v

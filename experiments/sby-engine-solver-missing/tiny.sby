@@ -1,0 +1,12 @@
+[options]
+mode prove
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -formal tiny.v
+prep -top top
+
+[files]
+tiny.v
