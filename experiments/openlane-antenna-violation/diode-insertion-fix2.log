@@ -7,3 +7,9 @@ This program is licensed under the BSD-3 license. See the LICENSE file for detai
 Components of this program may be licensed under more restrictive licenses which must be honored.
 Design name: antenna_wide
 Inserted 28521 diodes.
+
+# 以下两行是该子日志在主 flow 日志中的挂载位置（wide_m2_fix2.log 原文）：
+[STEP 19]
+[INFO]: Running Heuristic Diode Insertion (log: ant_wide_m2_fix2/runs/wide_m2_fix2/logs/routing/19-diodes.log)...
+[STEP 20]
+[INFO]: Running Detailed Placement (log: ant_wide_m2_fix2/runs/wide_m2_fix2/logs/routing/20-diode_legalization.log)...

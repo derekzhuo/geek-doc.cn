@@ -1,7 +1,15 @@
-# command: OpenROAD check_antennas -verbose 汇总（36-arc.log 末四行）
+# command: OpenROAD check_antennas -verbose 汇总（36-arc.log 末段，含最后违例点与 ANT 计数）
 # date: 2026-11-06T02:48:28+08:00
 # host-toolchain: OpenROAD 41a51eaf in OpenLane d054702b container / sky130A
 ---
+      Cumulative area ratio:    0.41
+      Required ratio:    0.00 (Cumulative area) 
+
+    Via: L1M1_PR
+      Partial area ratio:    0.23
+      Required ratio:    3.00 (Gate area) 
+      Cumulative area ratio:    0.23
+      Required ratio:    0.00 (Cumulative area) 
 
 
 [INFO ANT-0002] Found 133 net violations.

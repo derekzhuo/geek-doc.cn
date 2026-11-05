@@ -13,6 +13,7 @@ docker: Error response from daemon: invalid mode: /data
 Run 'docker run --help' for more information
 ## case2 exit: 125
 ## case3: 正确的 WSL 挂载路径 /mnt/c/...
+docker run --rm -v /tmp/c-drive-mock:/data "$IMG" sh -c 'echo mount-ok; ls -ld /data'
 mount-ok
 drwxrwxr-x 2 1000 1001 4096 Nov  5 17:53 /data
 ## case3 exit: 0

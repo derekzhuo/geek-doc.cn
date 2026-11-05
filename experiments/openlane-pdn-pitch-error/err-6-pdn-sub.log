@@ -1,3 +1,7 @@
+# command: cat runs/e39_err/logs/floorplan/6-pdn.log（OpenROAD pdn.tcl 子脚本日志，由 flow.tcl -design /work/e39_design 产生）
+# date: 2026-11-06T01:20:00+08:00
+# host-toolchain: OpenROAD 41a51eaf in OpenLane d054702b container / sky130A
+---
 OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
