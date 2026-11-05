@@ -1,0 +1,19 @@
+{
+  "DESIGN_NAME": "small_counter",
+  "VERILOG_FILES": "dir::src/small_counter.v",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20,
+  "FP_SIZING": "relative",
+  "FP_CORE_UTIL": 40,
+  "PL_TARGET_DENSITY": 0.5,
+  "SYNTH_STRATEGY": "AREA 0",
+  "RUN_MAGIC_DRC": true,
+  "RUN_LVS": true,
+  "QUIT_ON_MAGIC_DRC": true,
+  "QUIT_ON_LVS_ERROR": true,
+  "FP_PDN_AUTO_ADJUST": 0,
+  "FP_PDN_VPITCH": 13.34,
+  "FP_PDN_VOFFSET": 7.115,
+  "FP_PDN_HPITCH": 13.34,
+  "FP_PDN_HOFFSET": 7.115
+}
