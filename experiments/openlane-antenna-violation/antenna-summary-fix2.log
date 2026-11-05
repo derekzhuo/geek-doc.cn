@@ -1,0 +1,8 @@
+# command: cat runs/wide_m2_fix2/reports/manufacturability.rpt (from wide_m2_fix2 flow, PDK=sky130A)
+# date: 2026-11-06T03:37:00+08:00
+# host-toolchain: OpenLane d054702b / sky130A / 16 vCPU / 30GB
+---
+Antenna Summary:
+Source: /work/ant_wide_m2_fix2/runs/wide_m2_fix2/logs/signoff/38-arc.log
+Pin violations: 18
+Net violations: 18

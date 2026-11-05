@@ -1,0 +1,18 @@
+{
+  "DESIGN_NAME": "antenna_wide",
+  "VERILOG_FILES": "dir::src/antenna_wide.v",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20,
+  "FP_SIZING": "relative",
+  "FP_CORE_UTIL": 40,
+  "PL_TARGET_DENSITY": 0.45,
+  "SYNTH_STRATEGY": "AREA 0",
+  "RUN_MAGIC_DRC": false,
+  "RUN_LVS": false,
+  "GRT_REPAIR_ANTENNAS": 1,
+  "RUN_HEURISTIC_DIODE_INSERTION": 1,
+  "HEURISTIC_ANTENNA_THRESHOLD": 40,
+  "DIODE_ON_PORTS": "in",
+  "DIODE_INSERTION_STRATEGY": 0,
+  "RT_MAX_LAYER": "met2"
+}

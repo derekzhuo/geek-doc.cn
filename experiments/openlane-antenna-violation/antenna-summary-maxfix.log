@@ -1,0 +1,8 @@
+# command: cat runs/wide_maxfix/reports/manufacturability.rpt (from wide_maxfix flow, full metal stack + threshold 40 + port protect, PDK=sky130A)
+# date: 2026-11-06T04:24:00+08:00
+# host-toolchain: OpenLane d054702b / sky130A / 16 vCPU / 30GB
+---
+Antenna Summary:
+Source: /work/ant_wide_maxfix/runs/wide_maxfix/logs/signoff/38-arc.log
+Pin violations: 43
+Net violations: 43

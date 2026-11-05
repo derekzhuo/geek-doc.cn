@@ -1,0 +1,8 @@
+# command: OpenROAD check_antennas -verbose 汇总（36-arc.log 末四行）
+# date: 2026-11-06T02:48:28+08:00
+# host-toolchain: OpenROAD 41a51eaf in OpenLane d054702b container / sky130A
+---
+
+
+[INFO ANT-0002] Found 133 net violations.
+[INFO ANT-0001] Found 138 pin violations.

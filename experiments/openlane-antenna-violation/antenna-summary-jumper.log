@@ -1,0 +1,8 @@
+# command: cat runs/wide_jumper/reports/manufacturability.rpt (from wide_jumper flow, full metal stack, PDK=sky130A)
+# date: 2026-11-06T04:00:00+08:00
+# host-toolchain: OpenLane d054702b / sky130A / 16 vCPU / 30GB
+---
+Antenna Summary:
+Source: /work/ant_wide_jumper/runs/wide_jumper/logs/signoff/38-arc.log
+Pin violations: 40
+Net violations: 40
