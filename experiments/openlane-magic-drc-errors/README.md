@@ -5,7 +5,7 @@
 ## 环境
 
 - Magic 8.3 rev413（OpenLANE d054702b 容器内）/ sky130A tech 1.0.424
-- 日期：2026-11-06；原始输出见 `logs/bad-magic-drc.log`、`logs/good-magic-drc.log`
+- 日期：2026-11-06；原始输出见 `bad-magic-drc.log`、`good-magic-drc.log`
 
 ## 复现
 
@@ -22,4 +22,4 @@ PDKR=$HOME/.volare ./run.sh
 
 - `tcl/drc-bad.tcl` / `tcl/drc-good.tcl`：违例 / 干净两组 Magic Tcl 版图脚本。
 - `run.sh`：在 OpenLANE 容器内连跑两轮的对照脚本。
-- `logs/`：两轮真机日志（含三行头与 rule hits 统计）。
+- `bad-magic-drc.log` / `good-magic-drc.log`：两轮真机日志（含三行头与 rule hits 统计）。

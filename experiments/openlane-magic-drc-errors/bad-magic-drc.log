@@ -1,0 +1,38 @@
+# command: magic -dnull -noconsole -rcfile sky130A.magicrc drc-bad.tcl (standalone sky130A full DRC)
+# date: 2026-11-06T02:02:54+08:00
+# host-toolchain: Magic 8.3 rev413 in OpenLane d054702b container / sky130A tech 1.0.424
+---
+
+Magic 8.3 revision 413 - Compiled on Wed Jul 12 10:04:40 UTC 2023.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "drc-bad.tcl" from command line.
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.500 x 2.000   ( 0.000,  0.000), ( 0.500,  2.000)  1.000     
+lambda:    50.00 x 200.00  (  0.00,  0.00 ), ( 50.00,  200.00)  10000.00  
+internal:    100 x 400     (     0,  0    ), (   100,  400  )  40000     
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.500 x 2.000   ( 0.530,  0.000), ( 1.030,  2.000)  1.000     
+lambda:    50.00 x 200.00  ( 53.00,  0.00 ), ( 103.00,  200.00)  10000.00  
+internal:    100 x 400     (   106,  0    ), (   206,  400  )  40000     
+DRC style is now "drc(full)"
+=== DRC VIOLATIONS (bad) ===
+Loading DRC CIF style.
+Metal1 spacing < 0.14um (met1.2)
+  rect: 106 0 128 400
+=== TOTAL: 2 rule hits ===
+---
+# exit_code: 0

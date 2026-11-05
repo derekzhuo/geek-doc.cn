@@ -5,7 +5,7 @@
 ## 环境
 
 - OpenLANE（efabless/openlane docker 镜像，d054702b）+ sky130A PDK（volare）
-- 日期：2026-11-06；原始输出见 `logs/err-pdn.log`、`logs/err-6-pdn-sub.log`、`logs/fix-grid-aligned.log`
+- 日期：2026-11-06；原始输出见 `err-pdn.log`、`err-6-pdn-sub.log`、`fix-grid-aligned.log`
 
 ## 复现
 
@@ -28,4 +28,4 @@ cp configs/config.base.json config.json
 - `src/small_counter.v`：最小计数器设计（clk/rst_n/en + 12 位计数）。
 - `configs/config.err.json`：`FP_PDN_AUTO_ADJUST=0` 强制手写 pitch，13.337/7.113 触发 PDN-0191。
 - `configs/config.base.json`：同设计把四个 `FP_PDN_*` 参数对齐 0.005um 网格后的修复配置。
-- `logs/`：两轮 flow 的完整真机日志（含三行头与 exit_code）。
+- `err-pdn.log` / `err-6-pdn-sub.log` / `fix-grid-aligned.log`：两轮 flow 的完整真机日志（含三行头与 exit_code）。
