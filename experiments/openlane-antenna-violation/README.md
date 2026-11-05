@@ -66,3 +66,4 @@ docker run --rm -v $HOME/.volare:$HOME/.volare -v $PWD:/work -w /work \
 - `diode-insertion*.log`：两轮启发式二极管插入计数（13785 / 28521）。
 - `antenna-summary-{fix,fix2,jumper,maxfix}.log`：四轮修复后的 Antenna Summary。
 - `fix-antenna-flow.log`：默认修复轮全 flow 日志（含 STEP 19 二极管插入、STEP 20 合法化）。
+- `fix2-first-residual.log`：加严轮首个残余违例网络 chain[123] 的逐层比率节选（18 条 VIOLATED 全在 met1）。
