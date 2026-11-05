@@ -1,6 +1,6 @@
 # chip-ref-esp32-wroom-32：XSim 复现 80MHz 小数分频 UART 双档实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/esp32-wroom-32.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/esp32-wroom-32.html>
 
 ## 复现方式
 

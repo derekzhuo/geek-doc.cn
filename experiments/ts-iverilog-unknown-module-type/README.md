@@ -1,6 +1,6 @@
 # ts-iverilog-unknown-module-type：iverilog "Unknown module type" 复现实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-unknown-module-type.html
+**对应教程**：<https://geek-doc.cn/eda/ts-iverilog-unknown-module-type.html>
 
 ## 复现
 

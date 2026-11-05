@@ -1,6 +1,6 @@
 # Yosys 综合流程与 stat 报告解读（yosys-synthesis-flow-report）
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/yosys-synthesis-flow-report.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/beginner/yosys-synthesis-flow-report.html>（上线后生效）
 
 对一个异步 FIFO 分别跑「分步综合」（read / hierarchy / proc / opt / techmap / abc / stat，每步留快照）与「一键 synth 宏」两条流程，对照 stat 报告看设计在综合各阶段的形态变化。
 

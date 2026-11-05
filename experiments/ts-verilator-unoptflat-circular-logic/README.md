@@ -1,6 +1,6 @@
 # ts-verilator-unoptflat-circular-logic
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-unoptflat-circular-logic.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-unoptflat-circular-logic.html>（上线后生效）
 
 Verilator `%Warning-UNOPTFLAT: Signal unoptimizable: circular logic` 的最小复现与修复对照。
 

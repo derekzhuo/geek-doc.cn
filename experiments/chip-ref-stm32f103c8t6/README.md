@@ -1,6 +1,6 @@
 # chip-ref-stm32f103c8t6：XSim 复现 USART 波特率发生器双 APB 域实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/stm32f103c8t6.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/stm32f103c8t6.html>
 
 ## 复现方式
 

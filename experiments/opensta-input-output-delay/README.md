@@ -1,6 +1,6 @@
 # OpenSTA set_input_delay / set_output_delay 对照实验（opensta-input-output-delay）
 
-**对应教程**：https://geek-doc.cn/chip-design/intermediate/opensta-input-output-delay.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/intermediate/opensta-input-output-delay.html>（上线后生效）
 
 同一网表、同一 10ns 时钟跑两遍：一遍无 IO 约束，一遍加 `set_input_delay 2.0` + `set_output_delay 1.5`，对照最差路径与 slack 的变化——IO 延迟直接吃进建立时间预算。
 

@@ -1,6 +1,6 @@
 # chip-ref-atmega328p：XSim 复现 USART 波特率发生器实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/atmega328p.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/atmega328p.html>
 
 ## 复现方式
 

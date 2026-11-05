@@ -1,6 +1,6 @@
 # ts-verilator-timing-delay-unsupported
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-timing-delay-unsupported.html
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-timing-delay-unsupported.html>
 
 Verilator 报 `Unsupported: Ignoring delay on this delayed statement`（STMTDLY）的最小复现与修复对照。
 

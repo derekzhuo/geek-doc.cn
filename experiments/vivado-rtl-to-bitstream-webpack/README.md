@@ -1,6 +1,6 @@
 # vivado-rtl-to-bitstream-webpack
 
-**对应教程**：https://geek-doc.cn/fpga/beginner/exp-vivado-rtl-to-bitstream-webpack.html
+**对应教程**：<https://geek-doc.cn/fpga/beginner/exp-vivado-rtl-to-bitstream-webpack.html>
 
 Vivado WebPACK（2017.4 免费授权档）从 RTL 到比特流的完整流程复现：工程模式批处理跑综合 → 实现 → 生成 `.bit`，附利用率与时序报告。
 

@@ -1,6 +1,6 @@
 # vivado-xdc-timing-compare
 
-**对应教程**：https://geek-doc.cn/fpga/intermediate/exp-vivado-xdc-constraints-template.html
+**对应教程**：<https://geek-doc.cn/fpga/intermediate/exp-vivado-xdc-constraints-template.html>
 
 同一份 RTL 在「宽松 100MHz」与「收紧 500MHz」两档 XDC 时钟约束下的实现与时序对照：直观看到 create_clock 周期如何决定 WNS/TNS 与布线结果。
 

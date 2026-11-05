@@ -1,6 +1,6 @@
 # vivado-utilization-report-read — 综合后资源利用率报告怎么读
 
-**对应教程**：https://geek-doc.cn/fpga/beginner/vivado-utilization-report-read.html（极客工场站点对应篇目，上线后此链接即生效）
+**对应教程**：<https://geek-doc.cn/fpga/beginner/vivado-utilization-report-read.html>（极客工场站点对应篇目，上线后此链接即生效）
 
 **实测数字**（Vivado 2017.4，器件 xc7a35tcpg236-1，2026-10-22 真机综合）：
 

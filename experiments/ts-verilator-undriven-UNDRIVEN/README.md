@@ -1,6 +1,6 @@
 # ts-verilator-undriven-UNDRIVEN：Verilator UNDRIVEN 告警复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-undriven-UNDRIVEN.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-undriven-UNDRIVEN.html>（上线后生效）
 
 ## 环境
 

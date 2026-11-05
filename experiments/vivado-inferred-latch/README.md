@@ -1,6 +1,6 @@
 # vivado-inferred-latch：Vivado 推断锁存器复现
 
-**对应教程**：https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-327-inferred-latch.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-327-inferred-latch.html>（上线后生效）
 
 ## 环境
 

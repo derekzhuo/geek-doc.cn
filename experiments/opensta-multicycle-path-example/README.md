@@ -1,6 +1,6 @@
 # OpenSTA 多周期路径 set_multicycle_path 对照实验（opensta-multicycle-path-example）
 
-**对应教程**：https://geek-doc.cn/chip-design/intermediate/opensta-multicycle-path-example.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/intermediate/opensta-multicycle-path-example.html>（上线后生效）
 
 同一网表跑两遍：默认单拍 setup 检查 vs 加 `set_multicycle_path 2 -setup`（hold 回到 1），看 data required time 从 10.00 变 20.00、slack 从 8.76 变 18.76。
 

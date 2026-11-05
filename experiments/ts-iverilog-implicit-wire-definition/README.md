@@ -1,6 +1,6 @@
 # ts-iverilog-implicit-wire-definition：iverilog implicit definition of wire 复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-implicit-wire-definition.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-iverilog-implicit-wire-definition.html>（上线后生效）
 
 ## 环境
 
