@@ -8,13 +8,19 @@ on:
 
 jobs:
   docs-and-cpp:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Install EDA tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends iverilog yosys verilator
 
       - name: Check experiment documentation
         run: node scripts/check-experiment-docs.mjs
@@ -27,3 +33,21 @@ jobs:
 
       - name: Build branch-predict
         run: make -C branch-predict
+
+      - name: Run busy-wait vs sleep benchmark
+        run: make -C experiments/busy-wait-vs-sleep run
+
+      - name: Run lock-free queue benchmark
+        run: make -C experiments/spsc-mpsc-queue run
+
+      - name: Test FIFO starter kit
+        run: make -C fifo-starter-kit test
+
+      - name: Run Icarus Verilog simulation
+        run: make -C experiments/flow-iverilog-first-simulation run
+
+      - name: Run Yosys error and recovery experiments
+        run: make -C experiments/eda-lab-yosys-common-errors run
+
+      - name: Run Verilator lint and waiver experiments
+        run: make -C experiments/eda-lab-verilator-lint run

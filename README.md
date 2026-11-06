@@ -5,6 +5,7 @@
 [![文档站](https://img.shields.io/badge/文档站-geek--doc.cn-2563eb)](https://geek-doc.cn)
 [![实验索引](https://img.shields.io/badge/实验索引-持续更新-0f766e)](experiments/README.md)
 [![License](https://img.shields.io/badge/License-MIT-475569)](LICENSE)
+[![verify](https://github.com/derekzhuo/geek-doc.cn/actions/workflows/verify.yml/badge.svg)](https://github.com/derekzhuo/geek-doc.cn/actions/workflows/verify.yml)
 
 ![极客工场实验仓：读文章的时候，也可以动手试一试](assets/social-preview.svg)
 
