@@ -37,8 +37,8 @@ jobs:
       - name: Run busy-wait vs sleep benchmark
         run: make -C experiments/busy-wait-vs-sleep run
 
-      - name: Run lock-free queue benchmark
-        run: make -C experiments/spsc-mpsc-queue run
+      - name: Build lock-free queue benchmark
+        run: make -C experiments/spsc-mpsc-queue
 
       - name: Test FIFO starter kit
         run: make -C fifo-starter-kit test
