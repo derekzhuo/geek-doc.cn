@@ -1,5 +1,7 @@
 # eda-lab-iverilog-vcd-wave
 
+**对应教程**：<https://geek-doc.cn/eda-lab/wave/el-iverilog-vcd-wave.html>
+
 Icarus Verilog（iverilog 12.0）下 `$dumpfile` / `$dumpvars` / `$dumpoff` / `$dumpon` / `$dumpflush` 的实操实验：
 同一设计、同一激励，分别全量 dump 与「限定层级 + 跳过预热段」dump，实测两个 VCD 文件大小差异。
 

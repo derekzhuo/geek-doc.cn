@@ -1,5 +1,7 @@
 # 跨 NUMA 节点内存访问开销（numa-access）
 
+**对应教程**：<https://geek-doc.cn/concepts/cpu/numa-optimization.html>
+
 量化"本地节点 vs 远程节点"内存访问的延迟差距。
 
 - **来源文档**：站点 `concepts/cpu/numa-optimization.md`（量化分析跨 NUMA 内存访问开销）

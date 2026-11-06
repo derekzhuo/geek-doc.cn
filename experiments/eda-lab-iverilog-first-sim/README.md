@@ -1,5 +1,7 @@
 # eda-lab-iverilog-first-sim
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-iverilog-first-sim.html>
+
 Icarus Verilog（iverilog）仿真入门实验：4 位计数器 + testbench，
 编译 → 运行 → `$dumpvars` 导出 VCD 波形。
 

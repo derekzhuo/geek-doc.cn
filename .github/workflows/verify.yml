@@ -1,0 +1,29 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docs-and-cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check experiment documentation
+        run: node scripts/check-experiment-docs.mjs
+
+      - name: Build cpu-demo
+        run: make -C cpu-demo
+
+      - name: Build cache-miss
+        run: make -C cache-miss
+
+      - name: Build branch-predict
+        run: make -C branch-predict

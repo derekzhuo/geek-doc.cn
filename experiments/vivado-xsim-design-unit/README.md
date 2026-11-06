@@ -1,5 +1,7 @@
 # vivado-xsim-design-unit
 
+**对应教程**：<https://geek-doc.cn/fpga/beginner/ts-vivado-xsim-design-unit.html>
+
 Vivado XSim「找不到设计单元 / 快照不存在」排查实验：4 位计数器 + testbench，
 分别复现 `ERROR: [XSIM 43-3225] Cannot find design unit`（xelab 顶层名写错）
 与 `snapshot name ... does not exist`（没跑 xelab 直接 xsim）两类报错，再给出正确三连。

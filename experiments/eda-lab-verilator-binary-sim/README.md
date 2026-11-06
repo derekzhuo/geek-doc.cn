@@ -1,5 +1,7 @@
 # eda-lab-verilator-binary-sim
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-verilator-binary-sim.html>
+
 verilator `--binary` 与 iverilog 跑同一份计数器 TB 的速度对比实验。
 
 ## 运行（Docker 主轨）

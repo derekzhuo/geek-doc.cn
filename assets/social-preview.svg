@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">极客工场实验仓</title>
+  <desc id="desc">Linux 性能剖析、开源 EDA、FPGA 的可运行实验，配套中文教程与真实数据</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="32" fill="url(#bg)"/>
+  <path d="M80 90h1040M80 540h1040" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="142" fill="#93c5fd" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="28" font-weight="600">GEEK-DOC.CN · EXPERIMENTS</text>
+  <text x="80" y="235" fill="#f8fafc" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="64" font-weight="700">极客工场实验仓</text>
+  <text x="80" y="296" fill="#cbd5e1" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="30">代码能跑 · 原理讲透 · 数据可复现</text>
+  <g font-family="Arial,'Microsoft YaHei',sans-serif">
+    <rect x="80" y="350" width="312" height="128" rx="18" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="108" y="398" fill="#bfdbfe" font-size="25" font-weight="600">Linux 性能剖析</text>
+    <text x="108" y="442" fill="#f8fafc" font-size="22">perf · 缓存 · 并发</text>
+    <rect x="444" y="350" width="312" height="128" rx="18" fill="#134e4a" stroke="#14b8a6"/>
+    <text x="472" y="398" fill="#99f6e4" font-size="25" font-weight="600">开源 EDA</text>
+    <text x="472" y="442" fill="#f8fafc" font-size="22">RTL · 仿真 · 时序</text>
+    <rect x="808" y="350" width="312" height="128" rx="18" fill="#4c1d95" stroke="#a78bfa"/>
+    <text x="836" y="398" fill="#ddd6fe" font-size="25" font-weight="600">FPGA 实战</text>
+    <text x="836" y="442" fill="#f8fafc" font-size="22">Vivado · Quartus</text>
+  </g>
+  <text x="80" y="586" fill="#94a3b8" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="22">独立工程 · 中文教程 · 原始输出 · 复现命令</text>
+</svg>

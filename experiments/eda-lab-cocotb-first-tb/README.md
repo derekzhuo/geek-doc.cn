@@ -1,5 +1,7 @@
 # eda-lab-cocotb-first-tb
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-cocotb-first-tb.html>
+
 cocotb 2.1.0 入门实验：Python testbench 驱动 4 位计数器（带溢出标志），
 随机使能激励 + 逐拍断言，多 seed 回归，另附一次故意注错（off-by-one）的 FAIL 演示。
 

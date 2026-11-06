@@ -1,5 +1,7 @@
 # eda-lab-yosys-synth-steps
 
+**对应教程**：<https://geek-doc.cn/eda-lab/synth/el-yosys-synth-steps.html>
+
 把 `yosys synth -top` 一把梭流程拆成单步逐步执行，每步后 `stat` 落盘，观察资源（线网/单元）随步骤的变化；并与 `synth -top` 对照组比较最终结果。
 
 配套文档：geek-doc.cn《yosys synth 流程拆解》。

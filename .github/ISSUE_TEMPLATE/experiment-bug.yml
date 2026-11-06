@@ -1,0 +1,38 @@
+name: 实验运行失败
+description: 报告某个实验无法编译、运行或复现结果
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: input
+    id: experiment
+    attributes:
+      label: 实验目录
+      description: 例如 experiments/opensta-create-clock-report/
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 操作系统、编译器/工具版本、CPU 架构；商业工具请写完整版本
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: 完整命令
+      description: 从 clone 到出错所执行的关键命令
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 原始错误输出
+      description: 粘贴真实日志并脱敏，不要只写“运行失败”
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果与实际差异

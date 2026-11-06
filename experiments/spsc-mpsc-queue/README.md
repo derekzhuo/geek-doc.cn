@@ -1,5 +1,7 @@
 # SPSC / SPMC / MPSC / MPMC 消息队列基准（spsc-mpsc-queue）
 
+**对应教程**：<https://geek-doc.cn/concepts/latency/spsc-mpsc-queue.html>
+
 对比 **SPSC 无锁环形队列**（零 CAS、零内存回收）与 **`std::queue` + `std::mutex`** 的吞吐，并给出四象限（SPSC/SPMC/MPSC/MPMC）性能量级参考。
 
 - **来源文档**：站点 `concepts/latency/spsc-mpsc-queue.md`（消息队列四象限全景）

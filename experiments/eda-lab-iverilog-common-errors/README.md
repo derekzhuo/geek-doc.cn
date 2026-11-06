@@ -1,5 +1,7 @@
 # eda-lab-iverilog-common-errors
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-iverilog-common-errors.html>
+
 故意触发 Icarus Verilog（iverilog）4 类最常见报错的最小用例集，配套 geek-doc.cn 文档
 《iverilog 常见报错：语法错误、未声明、端口连接与未知模块排查》。
 
