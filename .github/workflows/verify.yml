@@ -19,8 +19,8 @@ jobs:
 
       - name: Install EDA tools
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends iverilog yosys verilator
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 update
+          timeout 180s sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 install -y --no-install-recommends iverilog yosys verilator
 
       - name: Check experiment documentation
         run: node scripts/check-experiment-docs.mjs
