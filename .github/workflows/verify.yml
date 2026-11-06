@@ -38,7 +38,7 @@ jobs:
         run: make -C experiments/busy-wait-vs-sleep run
 
       - name: Build lock-free queue benchmark
-        run: make -C experiments/spsc-mpsc-queue
+        run: g++ -O2 -g -std=c++17 -pthread -o /tmp/spsc_bench experiments/spsc-mpsc-queue/spsc_bench.cpp
 
       - name: Test FIFO starter kit
         run: make -C fifo-starter-kit test
