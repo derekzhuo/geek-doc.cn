@@ -1,6 +1,6 @@
 # 74HC138 使能与地址组合穷举仿真
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/74hc138.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/chip-ref/74hc138.html
 
 用行为级 Verilog 描述 74HC138 的三个使能输入、三位地址输入和八路低有效输出，并在 Vivado Simulator 2017.4 中遍历全部 64 种输入组合。
 

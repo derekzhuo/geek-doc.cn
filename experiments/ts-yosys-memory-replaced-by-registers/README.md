@@ -1,6 +1,6 @@
 # Yosys memory_map 展开对照实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-memory-replaced-by-registers.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-memory-replaced-by-registers.html
 
 `async_read.v` 与 `sync_read.v` 都是 64×16 位、同步写的数组；区别只在读口。`run.sh` 在 `memory_dff`、`memory_collect`、`memory_map` 后各执行一次 `stat`，用来区分「已收集成 memory cell」与「后续被展开成触发器和多路选择器」。
 

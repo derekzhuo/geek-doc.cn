@@ -1,6 +1,6 @@
 # verilator-warn-cmpconst
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-cmpconst.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-cmpconst.html
 
 Verilator `%Warning-CMPCONST`（比较条件因操作数取值范围受限而恒为常量）的最小复现与修复对照。
 

@@ -10,7 +10,7 @@ Vivado WebPACK（2017.4 免费授权档）从 RTL 到比特流的完整流程复
 - `top.xdc`：板卡引脚与 100MHz 时钟约束
 - `build.tcl`：工程模式批处理全流程（create_project → synth_1 → impl_1 → write_bitstream → 报告）
 - `gui.tcl`：GUI 打开完成后的工程（截图用）
-- `run.bat` / `launch_gui.bat` / `cap.ps1`：无人值守执行与窗口截图辅助（Windows）
+- `run.bat` / `launch_gui.bat` / `cap.ps1`：批处理执行与窗口截图辅助（Windows）
 
 ## 复现
 

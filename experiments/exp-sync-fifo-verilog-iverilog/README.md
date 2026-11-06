@@ -1,6 +1,6 @@
 # exp-sync-fifo-verilog-iverilog
 
-> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-sync-fifo-verilog-iverilog.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-sync-fifo-verilog-iverilog.html
 
 同步 FIFO 的 Verilog 实现与 Icarus 回归：参数化深度/位宽的同步 FIFO，testbench 覆盖填满、读空、随机读写与指针环绕四类场景。
 

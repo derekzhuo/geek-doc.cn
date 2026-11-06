@@ -1,6 +1,6 @@
 # tpl-sim-makefile —— 仿真工程通用 Makefile 模板
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-sim-makefile.html （上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-sim-makefile.html
 
 一个可直接搬进工程的仿真 Makefile 模板：`SIM ?= iverilog` 双后端切换
 （Icarus Verilog 走编译 + vvp；Verilator 走 `--binary --timing` 直接编译出可执行仿真器），

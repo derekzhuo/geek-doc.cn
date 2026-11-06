@@ -1,6 +1,6 @@
 # ts-opensta-liberty-not-found
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-liberty-not-found.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-liberty-not-found.html
 
 复现 OpenSTA `read_liberty` 报「库文件找不到 / 读不进」的两类故障：路径错误（相对路径、未设置环境变量）与文件内容/格式错误（截断的 Liberty、把 Verilog 当成库、直接喂 `.lib.gz`、corner 名未定义），并附一份可正常链接的最小库作为对照。
 

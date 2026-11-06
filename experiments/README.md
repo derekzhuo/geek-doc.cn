@@ -185,7 +185,7 @@
 | 综合实验 | [AXI4 时序逐拍走查（axi4-timing-waveform-walkthrough）](./axi4-timing-waveform-walkthrough/) | [教程](https://geek-doc.cn/chip-design/intermediate/axi4-timing-waveform-walkthrough.html) | output/ |
 | 综合实验 | [Codex config.toml 八字段探针](./codex-config-toml-fields/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-config-toml-fields.html) | output/ |
 | 综合实验 | [Verilator 覆盖率：行覆盖与翻转覆盖（coverage-types-verilator）](./coverage-types-verilator/) | [教程](https://geek-doc.cn/chip-design/verification/coverage-types-verilator.html) | output/ |
-| 综合实验 | [eda-errlog batch1：开源 EDA 工具真实报错复现实验](./eda-errlog-batch1/) | [教程](https://geek-doc.cn/eda/ts-yosys-error-no-top-module.html) | 日志/数据 + 图/波形 |
+| 综合实验 | [开源 EDA 工具报错复现实验](./eda-errlog-batch1/) | [教程](https://geek-doc.cn/eda/ts-yosys-error-no-top-module.html) | 日志/数据 + 图/波形 |
 | 综合实验 | [门级网表仿真（GLS）：RTL 与网表逐行比对（gls-netlist-simulation-iverilog）](./gls-netlist-simulation-iverilog/) | [教程](https://geek-doc.cn/chip-design/intermediate/gls-netlist-simulation-iverilog.html) | output/ |
 | 综合实验 | [iverilog 参数绑定失败报错复现：defparam 指向不存在的参数/层级](./iverilog-cannot-bind-param/) | [教程](https://geek-doc.cn/eda/ts-iverilog-cannot-bind-param.html) | 见 README |
 | 综合实验 | [iverilog 模块重复定义报错复现实验](./iverilog-duplicate-module/) | [教程](https://geek-doc.cn/eda/ts-iverilog-duplicate-module.html) | 见 README |
@@ -247,7 +247,7 @@
 | EDA 流程实操 | [flow-gtkwave-scripting](./flow-gtkwave-scripting/) | [教程](https://geek-doc.cn/eda/flow-gtkwave-scripting.html) | 见 README |
 | EDA 流程实操 | [flow-gtkwave-vcd-analysis](./flow-gtkwave-vcd-analysis/) | [教程](https://geek-doc.cn/eda/flow-gtkwave-vcd-analysis.html) | 日志/数据 |
 | EDA 流程实操 | [iverilog 编译选项实战实验](./flow-iverilog-compile-flags/) | [教程](https://geek-doc.cn/eda/flow-iverilog-compile-flags.html) | 见 README |
-| EDA 流程实操 | [flow-iverilog-first-simulation：iverilog 第一次仿真最小闭环](./flow-iverilog-first-simulation/) | [教程](https://geek-doc.cn/chip-design/beginner/flow-iverilog-first-simulation.html) | 见 README |
+| EDA 流程实操 | [flow-iverilog-first-simulation：iverilog 第一次仿真最小完整流程](./flow-iverilog-first-simulation/) | [教程](https://geek-doc.cn/chip-design/beginner/flow-iverilog-first-simulation.html) | 见 README |
 | EDA 流程实操 | [iverilog -g2012 SystemVerilog 子集支持矩阵探针](./flow-iverilog-g2012-sv/) | [教程](https://geek-doc.cn/eda/flow-iverilog-g2012-sv.html) | 见 README |
 | EDA 流程实操 | [iverilog 多文件工程组织：最小三模块实验](./flow-iverilog-multi-file-project/) | [教程](https://geek-doc.cn/eda/flow-iverilog-multi-file-project.html) | 见 README |
 | EDA 流程实操 | [flow-iverilog-regression-script](./flow-iverilog-regression-script/) | [教程](https://geek-doc.cn/eda/flow-iverilog-regression-script.html) | 见 README |
@@ -284,7 +284,7 @@
 | EDA 流程实操 | [flow-yosys-synth-command-anatomy](./flow-yosys-synth-command-anatomy/) | [教程](https://geek-doc.cn/eda/flow-yosys-synth-command-anatomy.html) | 日志/数据 |
 | EDA 流程实操 | [flow-yosys-synth-ice40：iCE40 RTL 到比特流最小链路](./flow-yosys-synth-ice40/) | [教程](https://geek-doc.cn/eda/flow-yosys-synth-ice40.html) | 见 README |
 | EDA 流程实操 | [flow-yosys-write-netlist](./flow-yosys-write-netlist/) | [教程](https://geek-doc.cn/eda/flow-yosys-write-netlist.html) | 日志/数据 |
-| OpenSTA / 时序分析 | [OpenSTA create_clock 与 report_checks 最小闭环（opensta-create-clock-report）](./opensta-create-clock-report/) | [教程](https://geek-doc.cn/chip-design/beginner/opensta-create-clock-report.html) | output/ |
+| OpenSTA / 时序分析 | [OpenSTA create_clock 与 report_checks 最小完整流程（opensta-create-clock-report）](./opensta-create-clock-report/) | [教程](https://geek-doc.cn/chip-design/beginner/opensta-create-clock-report.html) | output/ |
 | OpenSTA / 时序分析 | [OpenSTA 异步时钟：set_false_path 与 set_clock_groups 对照（opensta-false-path-async-clock）](./opensta-false-path-async-clock/) | [教程](https://geek-doc.cn/chip-design/intermediate/opensta-false-path-async-clock.html) | output/ |
 | OpenSTA / 时序分析 | [OpenSTA set_input_delay / set_output_delay 对照实验（opensta-input-output-delay）](./opensta-input-output-delay/) | [教程](https://geek-doc.cn/chip-design/intermediate/opensta-input-output-delay.html) | output/ |
 | OpenSTA / 时序分析 | [OpenSTA 多周期路径 set_multicycle_path 对照实验（opensta-multicycle-path-example）](./opensta-multicycle-path-example/) | [教程](https://geek-doc.cn/chip-design/intermediate/opensta-multicycle-path-example.html) | output/ |

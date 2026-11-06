@@ -1,6 +1,6 @@
 # cocotb await 边沿误用导致挂死：最小复现工程
 
-**对应教程**：https://geek-doc.cn/eda/ts-cocotb-fallingedge-misuse.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-cocotb-fallingedge-misuse.html
 
 复现 cocotb 测试平台中 `RisingEdge` / `FallingEdge` / `Timer` 选型错误导致协程永远等不到的四类场景，并用退出码区分三种结局：
 

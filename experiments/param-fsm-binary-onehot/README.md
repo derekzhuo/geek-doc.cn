@@ -13,7 +13,7 @@ Yosys 0.33 映射到教学最小 liberty 后统计触发器/单元/面积，Open
 - `tb/tb_fsm_walker.v` — 同激励下三编码输出逐拍比对
 - `liberty/teaching.lib` — 教学用最小标准单元库（DFF_P + NAND2_X1 + INV_X1 + BUF_X1，标量延时，不对应真实工艺）
 - `constraints.sdc` — 10 ns 时钟周期
-- `run.sh` — 一键：等价性仿真 → 9 次综合+stat → 9 次 STA，汇总 `work/results.csv`
+- `run.sh` — 流程：等价性仿真 → 9 次综合+stat → 9 次 STA，汇总 `work/results.csv`
 - `plot.py` — 读 `work/results.csv` 画两张 SVG 对比图（本机 matplotlib venv）
 
 ## 复现

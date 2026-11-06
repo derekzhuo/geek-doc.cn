@@ -1,8 +1,8 @@
-# flow-iverilog-first-simulation：iverilog 第一次仿真最小闭环
+# flow-iverilog-first-simulation：iverilog 第一次仿真最小完整流程
 
 **对应教程**：https://geek-doc.cn/chip-design/beginner/flow-iverilog-first-simulation.html
 
-用 Icarus Verilog 13.0 跑通的最小仿真闭环：写 testbench → `iverilog` 编译 → `vvp` 运行 → 看 VCD 波形。
+用 Icarus Verilog 13.0 跑通的最小仿真流程：写 testbench → `iverilog` 编译 → `vvp` 运行 → 看 VCD 波形。
 
 ## 文件
 
@@ -10,7 +10,7 @@
 |------|------|
 | `counter.v` | 被测设计（DUT）：4 位带使能递增计数器，异步低有效复位，计到 15 时 `carry` 拉高 |
 | `tb_counter.v` | testbench：产生 10ns 周期时钟与复位/使能激励，导出 `wave.vcd`，并做逐拍自校验 |
-| `Makefile` | `make run` 一键编译并运行 |
+| `Makefile` | `make run` 自动编译并运行 |
 
 ## 复现
 

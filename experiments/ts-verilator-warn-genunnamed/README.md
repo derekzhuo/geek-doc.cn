@@ -1,6 +1,6 @@
 # Verilator GENUNNAMED 未命名 generate 复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-genunnamed.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-genunnamed.html
 
 `unnamed.sv` 用未命名的条件 `generate` 块触发 `GENUNNAMED`，`named.sv` 只给块增加 `g_select` 标签，其余组合逻辑不变。`run.sh` 验证前者按预期失败、后者通过 `-Wall`  lint。
 

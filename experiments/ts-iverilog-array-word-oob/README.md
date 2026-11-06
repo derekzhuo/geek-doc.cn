@@ -1,6 +1,6 @@
 # Icarus Verilog unpacked array 整个 word 越界读写实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-array-word-oob.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-array-word-oob.html
 
 这个最小测试平台对 `reg [7:0] mem [0:3]` 分别使用运行期上界索引 4、负索引 -1 和 X 索引，观察读取结果以及写入后四个合法 word 是否改变。
 

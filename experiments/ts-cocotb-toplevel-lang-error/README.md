@@ -1,6 +1,6 @@
 # ts-cocotb-toplevel-lang-error
 
-**对应教程**：https://geek-doc.cn/eda/ts-cocotb-toplevel-lang-error.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-cocotb-toplevel-lang-error.html
 
 复现 cocotb Makefile 中 `TOPLEVEL_LANG` / `TOPLEVEL` / `SIM` 三类配置错配的真实报错，并给出修复与复跑确认。
 

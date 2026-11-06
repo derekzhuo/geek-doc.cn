@@ -1,6 +1,6 @@
 # verilator-warn-initialdly
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-initialdly.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-initialdly.html
 
 Verilator 对 `initial` 块中 `#` 延时与非阻塞赋值的告警复现与修复示例（Verilator 5.020）。
 

@@ -10,7 +10,7 @@
 - `loose.xdc` / `tight.xdc`：10ns / 2ns 两档 `create_clock`
 - `run_pass.tcl`：非工程模式单趟实现（read → synth → place → route → timing report → checkpoint）
 - `gui.tcl`：GUI 打开 tight 档布线 checkpoint 并调出 Timing Summary 页签（截图用）
-- `run.bat` / `launch_gui.bat` / `cap.ps1`：无人值守执行与窗口截图辅助（Windows）
+- `run.bat` / `launch_gui.bat` / `cap.ps1`：批处理执行与窗口截图辅助（Windows）
 
 ## 复现
 

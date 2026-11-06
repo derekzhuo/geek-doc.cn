@@ -1,6 +1,6 @@
 # exp-two-flop-synchronizer-mtf
 
-> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-two-flop-synchronizer-mtf.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-two-flop-synchronizer-mtf.html
 
 两级触发器同步器实验：异步单比特信号经 2-FF 同步器打两拍，testbench 实测从输入变化到输出跟随的延迟拍数，并输出 VCD 波形。
 

@@ -1,6 +1,6 @@
 # Verilator ALWCOMBORDER 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-alwcomborder.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-alwcomborder.html
 
 本目录给出 `always_comb` 中先读后写触发 `ALWCOMBORDER` 的最小源码，以及调整赋值顺序后的修复版。
 

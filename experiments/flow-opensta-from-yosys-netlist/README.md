@@ -15,7 +15,7 @@
 | `constraints.sdc` | 一条 `create_clock`，周期 1.0ns |
 | `synth.ys` | Yosys 脚本：read/synth -flatten/dfflibmap/abc/stat/write_verilog |
 | `sta_setup.tcl` / `sta_hold.tcl` | OpenSTA setup(max) / hold(min) 脚本，各自独立进程 |
-| `run.sh` | 全链一键跑（含两个反例：顶层名写错、漏 dfflibmap） |
+| `run.sh` | 全链自动跑（含两个反例：顶层名写错、漏 dfflibmap） |
 
 ## 复现
 

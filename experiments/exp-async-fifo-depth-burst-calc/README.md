@@ -1,6 +1,6 @@
 # exp-async-fifo-depth-burst-calc
 
-> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-async-fifo-depth-burst-calc.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-async-fifo-depth-burst-calc.html
 
 异步 FIFO 深度计算对照实验：深度满足突发需求（AW=4，深 16）的一组 PASS，深度减半（AW=2，深 4）的一组溢出丢数 FAIL，验证「深度 = 突发长度 − 突发期间读出数」的选型公式。
 

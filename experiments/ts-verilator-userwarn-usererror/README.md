@@ -1,6 +1,6 @@
 # Verilator USERWARN 与 USERERROR 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-userwarn-usererror.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-userwarn-usererror.html
 
 - `userwarn_bad.sv`：非法深度触发 elaboration 阶段的 `$warning`。
 - `usererror_bad.sv`：非法位宽触发 elaboration 阶段的 `$error`。

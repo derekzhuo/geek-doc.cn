@@ -1,6 +1,6 @@
 # Icarus Verilog vvp 日志与波形选项实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-vvp-log-and-trace.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-vvp-log-and-trace.html
 
 本目录对照 `vvp -l`、选项位置、VCD dump 系统任务和 `-lxt2` 参数的实际行为。
 

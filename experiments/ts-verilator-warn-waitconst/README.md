@@ -1,6 +1,6 @@
 # Verilator WAITCONST 常量等待最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-waitconst.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-waitconst.html
 
 `waitconst_bad.sv` 与 `waitconst_false.sv` 分别用 `wait (1'b1)` 和 `wait (1'b0)` 对比常真、常假语义；前者触发 WAITCONST，后者在本版本静默通过。`waitconst_fixed.sv` 改为等待会变化的 `start`、`done` 条件。
 

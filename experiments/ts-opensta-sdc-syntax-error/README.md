@@ -1,6 +1,6 @@
 # ts-opensta-sdc-syntax-error
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-sdc-syntax-error.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-sdc-syntax-error.html
 
 手写 SDC 六类常见语法/语义错误的最小复现：命令拼错、缺 `-period`、花括号不配对、对象列表为空、数值带单位、`-waveform` 奇数个边沿点；外加一份全部写对的 `fixed.sdc`。
 
@@ -20,6 +20,6 @@ bash run.sh
 - `top.v`：一个 DFF 加输出缓冲的最小网表，端口 `clk`/`d`/`q`；
 - `e*.sdc` / `e*.tcl`：六类错误用例（SDC 与其加载脚本）；
 - `fixed.sdc` / `fixed.tcl`：修复用例，`report_checks` 应输出 `slack (MET)`；
-- `run.sh`：一键复现脚本。
+- `run.sh`：完整复现脚本。
 
 注意：六类错误触发时 OpenSTA 进程退出码仍为 0，错误只能靠 stderr 文本与后续检查识别，不能只判断退出码。

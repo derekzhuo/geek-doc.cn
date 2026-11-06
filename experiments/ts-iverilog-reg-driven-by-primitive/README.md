@@ -1,6 +1,6 @@
 # Icarus Verilog：reg 被原语或连续赋值驱动
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-reg-driven-by-primitive.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-reg-driven-by-primitive.html
 
 本目录提供 `reg` 作为连续赋值目标和门原语输出时的最小复现，以及分别改为 `wire` 和 `always @*` 过程赋值后的验证代码。
 

@@ -1,6 +1,6 @@
 # vivado-multi-driver：Vivado 2017.4 多驱动复现
 
-**对应教程**：<https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-3352-multiple-driver.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-3352-multiple-driver.html>
 
 ## 环境
 

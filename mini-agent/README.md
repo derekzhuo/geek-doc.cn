@@ -1,6 +1,6 @@
 # mini-agent：从零解剖 coding agent 的最小可运行工程
 
-**对应教程**：[M1 Agent Loop 解剖](https://geek-doc.cn/ai-tools/agent-internals/agent-loop-anatomy.html)（上线后生效）；[M2 function calling 工具系统](https://geek-doc.cn/ai-tools/agent-internals/agent-tool-system.html)（上线后生效）
+**对应教程**：[M1 Agent Loop 解剖](https://geek-doc.cn/ai-tools/agent-internals/agent-loop-anatomy.html)；[M2 function calling 工具系统](https://geek-doc.cn/ai-tools/agent-internals/agent-tool-system.html)
 
 mini-agent 是一个只用 Python 3 标准库的教学工程，目标不是做产品，而是把
 coding agent 的运行机制拆到能逐行读懂、逐消息追踪。

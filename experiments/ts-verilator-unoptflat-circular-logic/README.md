@@ -1,6 +1,6 @@
 # ts-verilator-unoptflat-circular-logic
 
-**对应教程**：<https://geek-doc.cn/eda/ts-verilator-unoptflat-circular-logic.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-unoptflat-circular-logic.html>
 
 Verilator `%Warning-UNOPTFLAT: Signal unoptimizable: circular logic` 的最小复现与修复对照。
 
@@ -8,7 +8,7 @@ Verilator `%Warning-UNOPTFLAT: Signal unoptimizable: circular logic` 的最小�
 
 - `loop_bad.v`：两条互斥 assign 构成的组合逻辑环（x 依赖 z、z 依赖 x），lint 必报 UNOPTFLAT。
 - `loop_fix.v`：把 z 打一拍寄存（z_q），组合环被时序单元切断，lint 干净。
-- `run.sh`：一键复现脚本。
+- `run.sh`：完整复现脚本。
 - `logs/`：真机跑出的原始输出（Verilator 4.038，云主机 Docker 容器内）。
 
 ## 复现

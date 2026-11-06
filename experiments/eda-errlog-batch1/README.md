@@ -1,8 +1,7 @@
-# eda-errlog batch1：开源 EDA 工具真实报错复现实验
+# 开源 EDA 工具报错复现实验
 
-8 个最小复现工程，对应 geek-doc.cn 已发布的 8 篇报错速查文档。每个目录含报错源码、
-一键复现脚本 `run.sh` 与说明；原始证据日志（2026-10-21 凌晨在 eda-golden v1 镜像
-实例真机采集）见 geek-doc.cn 站点各文档引用的 `/shots/<slug>/*.log`，可下载核对。
+8 个最小复现工程，对应 geek-doc.cn 已发布的 8 篇报错速查文档。每个目录包含报错源码、
+完整复现脚本 `run.sh` 和说明。原始日志于 2026-10-21 在 eda-golden v1 镜像中采集，见各文档引用的 `/shots/<slug>/*.log`。
 
 | 目录 | 工具 | 对应文档（geek-doc.cn） |
 |---|---|---|
@@ -24,7 +23,6 @@
 
 ## 来源说明
 
-7 个 HDL 实验源码原样重建自内容仓采集脚本 `collect-evidence.sh` 的 heredoc（零信息损失）；
-cocotb 实验的原始 lab 位于 eda-golden 镜像内、未入库，本目录的 `ts-cocotb-NO_TEST_ERROR/lab/`
-是按原始日志（TOPLEVEL/MODULE/两个测试名与断言信息）重建的等价最小工程，2026-10-22 在
-macOS + Icarus 13 + cocotb 1.9 本地复跑通过，见该目录 README。
+7 个 HDL 实验根据原始实验源码整理；cocotb 实验的原始 lab 位于 eda-golden 镜像内、未入库。
+本目录的 `ts-cocotb-NO_TEST_ERROR/lab/` 根据原始日志中的 TOPLEVEL、MODULE、测试名和断言信息重建，
+并于 2026-10-22 在 macOS + Icarus 13 + cocotb 1.9 环境复跑通过，见该目录 README。

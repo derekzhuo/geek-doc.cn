@@ -29,7 +29,7 @@ Makefile                             # make run / make clean
 wire [7:0] next_q = q + 8'd1;
 ```
 
-再跑 `make run`，lint 阶段报 `%Warning-UNUSEDSIGNAL` 并以退出码 1 中止，sim 阶段被跳过。删掉该行即恢复全绿。
+再跑 `make run`，lint 阶段报 `%Warning-UNUSEDSIGNAL` 并以退出码 1 中止，sim 阶段被跳过。删掉该行即可恢复通过。
 
 ## 说明
 

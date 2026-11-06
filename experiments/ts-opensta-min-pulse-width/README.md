@@ -1,6 +1,6 @@
 # OpenSTA 最小脉宽违规：波形对照实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-min-pulse-width.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-min-pulse-width.html
 
 同一 DFF 网表和同一 Liberty 库分别加载两份 SDC，观察 `min_pulse_width` 的 VIOLATED 与无违规报告。库规定时钟高、低电平都不得小于 2ns；违规组使用 4ns 周期和 `{0 1}` 波形，满足组使用 10ns 周期和 `{0 5}` 波形。
 

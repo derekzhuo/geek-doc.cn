@@ -1,6 +1,6 @@
 # OpenSTA link 找不到 cell 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-link-missing-cell.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-link-missing-cell.html
 
 本实验用同一份 Liberty 和两份只差一个 cell 名的网表，对照严格链接时的未定义 cell、未读 Liberty 与修复后的 `report_checks`。故障脚本设置 `set link_make_black_boxes 0`，避免链接器把缺失定义静默改成黑盒。
 

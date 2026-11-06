@@ -1,5 +1,5 @@
 ---
-description: 'FPGA 第一个工程 demo 用时钟分频加计数器驱动 LED 闪烁，配套 testbench 与 XDC 约束模板，走通「iverilog 仿真 → 综合 → 下载上板」全流程的最小闭环，Vivado/Quartus 通用。'
+description: 'FPGA 第一个工程 demo 用时钟分频加计数器驱动 LED 闪烁，配套 testbench 与 XDC 约束模板，走通「iverilog 仿真 → 综合 → 下载上板」全流程的最小完整流程，Vivado/Quartus 通用。'
 updated: 2026-09-05
 ---
 
@@ -29,4 +29,4 @@ gtkwave led_blink_tb.vcd   # 看 led 每 5 个时钟周期翻转一次
 
 ## 一句话总结
 
-**一句话总结**：这个 demo 用「计数器数到 N 就翻转 LED」实现了可参数化的闪烁电路，仿真时用小参数快速验证翻转逻辑、上板时把参数换回真实时钟频率，是走通 FPGA「仿真→综合→下载」全流程的最小闭环。
+**一句话总结**：这个 demo 用「计数器数到 N 就翻转 LED」实现了可参数化的闪烁电路，仿真时用小参数快速验证翻转逻辑、上板时把参数换回真实时钟频率，是走通 FPGA「仿真→综合→下载」全流程的最小完整流程。

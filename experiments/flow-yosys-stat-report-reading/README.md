@@ -17,7 +17,7 @@
 | `ram_midstat.ys` | 综合到 memory_collect 前看 `$mem_v2` |
 | `area_cmos.ys` | `stat -tech cmos` 通用晶体管估算 |
 | `area_lib.ys` | 映射到 tiny.lib 后 `stat -liberty` 出 Chip area |
-| `run.sh` | 一键复现文章引用的全部统计输出 |
+| `run.sh` | 完整复现文章引用的全部统计输出 |
 
 ## 复现
 

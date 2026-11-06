@@ -6,7 +6,7 @@ updated: 2026-08-24
 
 > 多线程 + IO 分析方法演练
 >
-> 📖 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/mt-io-demo/](https://geek-doc.cn/demos/mt-io-demo/)
+> 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/mt-io-demo/](https://geek-doc.cn/demos/mt-io-demo/)
 
 ## 构建与运行
 

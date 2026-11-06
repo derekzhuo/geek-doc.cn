@@ -1,6 +1,6 @@
 # iverilog 零重复拼接最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-concat-repeat-zero.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-concat-repeat-zero.html
 
 ## 文件
 

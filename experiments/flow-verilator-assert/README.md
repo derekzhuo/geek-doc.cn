@@ -13,7 +13,7 @@
 | `tb_fixed.cpp` | 修复后 harness：写满 -> 读空校验 -> 回绕再写读，自校验打印 `RESULT: PASS` |
 | `sva_subset_delay.sv` | 故意触发编译期 `UNSUPPORTED` 的 `##` 延迟序列样例 |
 | `run-native.sh` | 容器或本机执行的四步命令 |
-| `run.sh` | 一键起 `geek-eda:0.3-sta` 容器复现 |
+| `run.sh` | 自动启动 `geek-eda:0.3-sta` 容器复现 |
 | `Makefile` | `make run` / `make clean` |
 
 ## 复现

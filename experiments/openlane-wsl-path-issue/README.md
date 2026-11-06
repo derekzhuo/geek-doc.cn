@@ -1,6 +1,6 @@
 # openlane-wsl-path-issue：Docker bind mount 盘符路径报错复现
 
-**对应教程**：<https://geek-doc.cn/eda/ts-openlane-wsl-path-issue.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-openlane-wsl-path-issue.html>
 
 ## 环境
 

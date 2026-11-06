@@ -1,6 +1,6 @@
 # Verilator PROCASSWIRE 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-procasswire.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-procasswire.html
 
 这组实验复现 Verilog `wire` 在 `always @*` 中被过程赋值导致的 PROCASSWIRE，并验证三种修复：保留 `wire` 改用连续赋值、改用 Verilog `reg` 保留过程赋值、改用 SystemVerilog `logic` 与 `always_comb`。
 

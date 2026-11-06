@@ -1,6 +1,6 @@
 # ts-yosys-techmap-loop
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-techmap-loop.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-techmap-loop.html
 
 Yosys 0.33 自定义 `techmap` 模板自引用的最小复现，以及把 `$not` 显式替换为门级 `$_NOT_` 后的收敛对照。
 

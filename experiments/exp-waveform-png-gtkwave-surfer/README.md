@@ -1,6 +1,6 @@
 # exp-waveform-png-gtkwave-surfer
 
-> **对应教程**：https://geek-doc.cn/eda-lab/wave/exp-waveform-png-gtkwave-surfer.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/eda-lab/wave/exp-waveform-png-gtkwave-surfer.html
 
 无头环境波形出图实验：iverilog 产出 VCD 后，优先用 gtkwave 无头模式转 PNG，无 X11 环境自动兜底为 vcd2wavedrom.py 生成 WaveJSON（供 wavedrom-cli 渲染）。
 

@@ -1,6 +1,6 @@
 # ts-yosys-cant-open-input-file：yosys Cant open input file 复现
 
-**对应教程**：<https://geek-doc.cn/eda/ts-yosys-cant-open-input-file.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-yosys-cant-open-input-file.html>
 
 ## 环境
 

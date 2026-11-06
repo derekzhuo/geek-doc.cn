@@ -1,8 +1,8 @@
-# OpenSTA create_clock 与 report_checks 最小闭环（opensta-create-clock-report）
+# OpenSTA create_clock 与 report_checks 最小完整流程（opensta-create-clock-report）
 
-**对应教程**：<https://geek-doc.cn/chip-design/beginner/opensta-create-clock-report.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/beginner/opensta-create-clock-report.html>
 
-最小 STA 闭环：sky130 单元库 + 一个综合后的寄存器级网表，`create_clock` 10ns 后 `report_checks` 出完整 setup 报告，slack 8.76 MET。
+最小 STA 完整流程：sky130 单元库 + 一个综合后的寄存器级网表，`create_clock` 10ns 后 `report_checks` 出完整 setup 报告，slack 8.76 MET。
 
 ## 文件
 

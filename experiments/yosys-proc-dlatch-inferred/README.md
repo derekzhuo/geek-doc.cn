@@ -1,6 +1,6 @@
 # yosys-proc-dlatch-inferred
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-proc-dlatch-inferred.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-proc-dlatch-inferred.html
 
 Yosys `proc` 阶段 `proc_dlatch` 推断出锁存器（"Latch inferred" / 网表中出现 `$dlatch`）的最小复现与修复对照。
 

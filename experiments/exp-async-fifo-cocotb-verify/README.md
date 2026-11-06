@@ -1,6 +1,6 @@
 # exp-async-fifo-cocotb-verify
 
-> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-async-fifo-cocotb-verify.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-async-fifo-cocotb-verify.html
 
 异步 FIFO 的 cocotb 验证：Python 测试平台跨读写两个时钟域校验 FIFO 数据完整性，覆盖满（写侧反压）与空（读侧停顿）边界，随机种子确定可复现。
 

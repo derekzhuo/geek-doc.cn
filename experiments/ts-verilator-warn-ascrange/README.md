@@ -1,6 +1,6 @@
 # Verilator ASCRANGE 升序位选最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-ascrange.html（教程上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-ascrange.html
 
 本目录用一个四位输入端口复现 `[0:3]` 升序位选声明触发的 `ASCRANGE`，再把声明统一为 `[3:0]`，保持拼接表达式不变并复跑 lint。Verilator 5.020 使用 `ASCRANGE`；旧资料中的 `LITENDIAN` 是兼容别名。
 

@@ -1,6 +1,6 @@
 # 安全状态机 Verilog 模板
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-verilog-fsm-safe.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-verilog-fsm-safe.html
 
 两段式三态状态机：正常分支完整，非法编码在一个时钟内回到 `IDLE`，恢复前 `busy` 和 `valid` 均保持安全值 0。
 

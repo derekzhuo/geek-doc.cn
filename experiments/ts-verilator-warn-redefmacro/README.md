@@ -1,6 +1,6 @@
 # Verilator REDEFMACRO 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-redefmacro.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-redefmacro.html
 
 用 Verilator 5.020 复现宏值冲突，并验证 include guard 与 `pragma once` 两种修复。
 

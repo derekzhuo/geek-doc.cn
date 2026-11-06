@@ -1,6 +1,6 @@
 # flow-yosys-synth-command-anatomy
 
-**对应教程**：https://geek-doc.cn/eda/flow-yosys-synth-command-anatomy.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/flow-yosys-synth-command-anatomy.html
 
 把 Yosys 0.33 的 `synth` 宏逐段拆开：同一份计数器加 16×8 RAM 的小设计，分别整跑、用 `-run` 标签分段跑、手工逐条展开子命令跑，三路 stat 在每个断点逐位一致，证明宏就是一张按 begin / coarse / fine / check 标签编排的命令清单。
 

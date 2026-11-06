@@ -1,6 +1,6 @@
 # iverilog 编译选项实战实验
 
-**对应教程**：https://geek-doc.cn/eda/flow-iverilog-compile-flags.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/flow-iverilog-compile-flags.html
 
 本目录用 Icarus Verilog 13.0 对六个常用编译选项做「加 / 不加」的真实对照：
 

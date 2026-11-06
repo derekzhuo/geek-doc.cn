@@ -1,6 +1,6 @@
 # Verilator EOFNEWLINE 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-eofnewline.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-eofnewline.html
 
 `eofnewline.sv` 的最后一个字节是分号，不是换行符；`eofnewline_fixed.sv` 仅在文件末尾多一个 LF。两个空模块用于隔离告警，避免位宽、未使用信号等其他检查干扰结果。
 

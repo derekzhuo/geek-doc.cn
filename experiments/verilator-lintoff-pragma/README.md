@@ -1,6 +1,6 @@
 # verilator-lintoff-pragma：lint_off pragma 最小豁免实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-lintoff-pragma.html（教程上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-lintoff-pragma.html
 
 用同一份 `reg_bank.v` 的四个版本演示 `/* verilator lint_off ... */` 的正确用法与滥用后果：
 

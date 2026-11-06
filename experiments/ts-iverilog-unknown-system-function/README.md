@@ -1,6 +1,6 @@
 # Icarus Verilog unknown system function 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-unknown-system-function.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-unknown-system-function.html
 
 本目录对比 `$fopne` 拼写错误与正确的 `$fopen`。`broken_typo.v` 可通过编译，但 `vvp` 启动时会报系统函数未定义，`fixed_typo.v` 应编译并运行成功。
 

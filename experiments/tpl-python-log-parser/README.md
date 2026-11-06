@@ -1,6 +1,6 @@
 # 仿真日志解析 Python 模板
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-python-log-parser.html （上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-python-log-parser.html
 
 只依赖 Python 3 标准库，从仿真日志的 `RESULT` 行提取用例名、随机种子和 PASS/FAIL 状态，打印逐项表格、失败种子列表与总计。正常解析返回 0；使用 `--fail-on-test` 且存在失败用例时返回 1；文件缺失、无法读取、编码错误、结果行格式异常或没有结果行时返回 2。
 

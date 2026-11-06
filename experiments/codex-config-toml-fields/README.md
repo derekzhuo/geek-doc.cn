@@ -1,6 +1,6 @@
 # Codex config.toml 八字段探针
 
-**对应教程**：https://geek-doc.cn/ai-tools/codex/codex-config-toml-fields.html（上线后生效）
+**对应教程**：https://geek-doc.cn/ai-tools/codex/codex-config-toml-fields.html
 
 本目录对应当前机器上的 Codex CLI 0.156.1，包含八个字段的改后样例、严格配置检查脚本、通知接收脚本和真实输出。
 

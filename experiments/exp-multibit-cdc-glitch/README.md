@@ -1,6 +1,6 @@
 # exp-multibit-cdc-glitch
 
-> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-multibit-cdc-glitch.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-multibit-cdc-glitch.html
 
 多比特跨时钟域毛刺对照实验：计数器值直接打拍同步会出现非法中间值，改用格雷码后每个时钟沿只翻转一位、非法值消失，仿真给出两组证据。
 

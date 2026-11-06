@@ -1,6 +1,6 @@
 # ts-opensta-false-path-no-match
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-false-path-no-match.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-false-path-no-match.html
 
 演示 OpenSTA 中 `set_false_path` 的对象选择器匹配不到 pin 时的“假豁免”现象：约束命令失败、时序路径仍被分析。
 

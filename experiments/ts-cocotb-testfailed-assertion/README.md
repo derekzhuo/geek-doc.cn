@@ -1,6 +1,6 @@
 # ts-cocotb-testfailed-assertion
 
-**对应教程**：<https://geek-doc.cn/eda/ts-cocotb-testfailed-assertion.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-cocotb-testfailed-assertion.html>
 
 cocotb 断言失败（AssertionError / TestFailed）读法演示：一个 4 bit 计数器 DUT + 一个故意写错期望值的 testbench，用固定 RANDOM_SEED=1234 跑两次，验证「同 seed 输出完全一致」。
 

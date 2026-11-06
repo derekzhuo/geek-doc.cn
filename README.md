@@ -1,24 +1,24 @@
 # 极客工场实验仓
 
-> Linux 性能剖析、开源 EDA、FPGA 与 CPU 微架构的可运行实验。每个实验都配套中文教程、复现命令和真实实验材料。
+> 这里收集极客工场文章里的实验。你可以先读教程，再在自己的机器上跑一遍；结果对不上时，也可以对照我们留下的日志、波形和报告，看看问题出在哪。
 
 [![文档站](https://img.shields.io/badge/文档站-geek--doc.cn-2563eb)](https://geek-doc.cn)
 [![实验索引](https://img.shields.io/badge/实验索引-持续更新-0f766e)](experiments/README.md)
 [![License](https://img.shields.io/badge/License-MIT-475569)](LICENSE)
 
-![极客工场实验仓：代码能跑，原理讲透，数据可复现](assets/social-preview.svg)
+![极客工场实验仓：读文章的时候，也可以动手试一试](assets/social-preview.svg)
 
-## 从这里开始
+## 想先试试？可以从这三类实验开始
 
-| 学习方向 | 推荐实验 | 你会得到什么 |
+| 学习方向 | 推荐实验 | 适合什么时候看 |
 |---|---|---|
-| **Linux 性能剖析** | [忙等待 vs 睡眠调度](experiments/busy-wait-vs-sleep/) · [缓存未命中](cache-miss/) · [perf 火焰图](perf-read-flamegraph/) | 可重复的性能数据、perf 分析和代码级解释 |
-| **开源 EDA** | [FIFO 入门工程](fifo-starter-kit/) · [Yosys 常见报错](experiments/eda-lab-yosys-common-errors/) · [OpenSTA 实验](experiments/opensta-create-clock-report/) | RTL、testbench、综合/时序报告和完整回归 |
-| **FPGA / Vivado / Quartus** | [Vivado RTL→Bitstream](experiments/vivado-rtl-to-bitstream-webpack/) · [XSim 设计单元排错](experiments/vivado-xsim-design-unit/) | 真实工具输出、约束/仿真验证和排错路径 |
+| **Linux 性能剖析** | [忙等待 vs 睡眠调度](experiments/busy-wait-vs-sleep/) · [缓存未命中](cache-miss/) · [perf 火焰图](perf-read-flamegraph/) | 想看程序为什么慢、CPU 为什么忙，并希望用数据验证自己的判断 |
+| **开源 EDA** | [FIFO 入门工程](fifo-starter-kit/) · [Yosys 常见报错](experiments/eda-lab-yosys-common-errors/) · [OpenSTA 实验](experiments/opensta-create-clock-report/) | 想亲手跑一遍仿真、综合和时序分析，而不是只看命令截图 |
+| **FPGA / Vivado / Quartus** | [Vivado RTL→Bitstream](experiments/vivado-rtl-to-bitstream-webpack/) · [XSim 设计单元排错](experiments/vivado-xsim-design-unit/) | 想跟着日志熟悉工具，遇到报错时知道下一步该查什么 |
 
-不知道选哪一个？进入 **[完整实验索引](experiments/README.md)**，按主题、教程和实验材料筛选。
+暂时拿不定主意，也可以去 **[完整实验索引](experiments/README.md)** 按主题慢慢翻。
 
-## 快速运行
+## 先跑两个小实验
 
 ```bash
 git clone --depth 1 https://github.com/derekzhuo/geek-doc.cn.git
@@ -31,9 +31,9 @@ make -C fifo-starter-kit test
 make -C cache-miss run
 ```
 
-性能剖析实验通常依赖 Linux、`perf` 和 `/proc`；EDA 实验需要各自 README 标明的工具链。商业工具实验不会被伪装成开源替代品，Vivado/Quartus 的结果来自对应工具的真实运行。
+性能剖析实验通常依赖 Linux、`perf` 和 `/proc`；EDA 实验需要各自 README 标明的工具链。Vivado/Quartus 相关实验使用对应工具实际运行，需要的版本也会写在各实验的 README 里。
 
-### 真实结果长什么样
+### 先给你看一组结果
 
 以下是 `experiments/busy-wait-vs-sleep` 已归档的实测结果，运行环境和完整数据见 [results.txt](experiments/busy-wait-vs-sleep/results.txt)：
 
@@ -42,11 +42,11 @@ make -C cache-miss run
 | 忙等待 | 1.245 μs | ~100% |
 | 睡眠调度 | 8.92 μs | ~10% |
 
-仓库强调的不只是“有代码”，还包括**输入、输出、对照数据、实验环境和教程回链**。
+读结论时，你也可以继续往下看输入、输出和实验环境，不用只凭一句话判断它是否可信。
 
-## 仓库内容
+## 里面都有哪些实验
 
-### 旗舰系列
+### 几条持续展开的系列
 
 | 系列 | 内容 |
 |---|---|
@@ -63,13 +63,13 @@ make -C cache-miss run
 
 **[查看全部 276 个实验 →](experiments/README.md)**
 
-## 每个实验的交付约定
+## 打开一个实验，你通常会看到
 
-- 独立目录与 README，说明学习目标和工具链。
-- 给出可执行的复现命令，而不是只贴代码片段。
-- 保留适用的日志、报告、数据、波形或截图。
-- 链接对应的中文教程，便于先读原理再动手验证。
-- 编译产物、临时文件和敏感信息不进入仓库。
+- 它要解决什么问题，以及需要哪些工具。
+- 可以直接照着运行的命令，而不只是几段代码。
+- 用来核对结果的日志、报告、数据、波形或截图。
+- 对应的中文教程，忘了原理时可以回去接着读。
+- 只保留源码和实验材料，编译产物与临时文件不会混进来。
 
 新增实验请阅读 [贡献指南](CONTRIBUTING.md)。运行遇到问题，可以通过 [Issue](https://github.com/derekzhuo/geek-doc.cn/issues) 提交环境、完整命令和原始错误输出。
 
@@ -92,4 +92,4 @@ node scripts/check-experiment-docs.mjs
 - [贡献指南](CONTRIBUTING.md) · [安全说明](SECURITY.md)
 - [MIT License](LICENSE)
 
-**代码能跑，原理讲透，数据可复现。**
+**希望这些实验能帮你看懂原理，也少走一些配置环境的弯路。**

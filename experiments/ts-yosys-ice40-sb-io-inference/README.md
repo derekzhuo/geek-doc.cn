@@ -1,6 +1,6 @@
 # Yosys iCE40 SB_IO 推断与显式例化对照
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-ice40-sb-io-inference.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-ice40-sb-io-inference.html
 
 本目录包含 Yosys 0.33 的五组真实综合对照：顶层双向口、内部三态、显式 `SB_IO`、低有效输出使能，以及 `tribuf -logic` 的内部三态转换。
 

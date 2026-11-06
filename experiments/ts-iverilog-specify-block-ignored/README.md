@@ -1,6 +1,6 @@
 # Icarus Verilog specify 块支持边界对照
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-specify-block-ignored.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-specify-block-ignored.html
 
 这组实验用同一个输入分别驱动带 specify 路径延迟的缓冲器和带显式连续赋值延迟的缓冲器，再对带 setup/hold 检查的 D 触发器施加违例与合规激励。
 

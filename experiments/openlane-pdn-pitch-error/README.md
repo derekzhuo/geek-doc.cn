@@ -1,6 +1,6 @@
 # openlane-pdn-pitch-error：OpenLANE PDN pitch 不对齐制造网格复现
 
-**对应教程**：<https://geek-doc.cn/eda/ts-openlane-pdn-pitch-error.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-openlane-pdn-pitch-error.html>
 
 ## 环境
 

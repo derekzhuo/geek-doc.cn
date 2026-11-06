@@ -1,6 +1,6 @@
 # Icarus Verilog 端口 signed 转换对照实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-port-coercion-signed.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-port-coercion-signed.html
 
 本实验比较无符号 `raw_code` 直接连接 signed 端口与通过 `$signed(raw_code)` 显式连接的结果。两个用例使用相同的 `8'hff` 位型；修复版用断言检查位型、十进制解释和负数比较。
 

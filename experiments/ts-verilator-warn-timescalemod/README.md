@@ -1,6 +1,6 @@
 # Verilator TIMESCALEMOD 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-timescalemod.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-timescalemod.html
 
 本目录用两个跨文件模块复现：顶层声明 `timescale 1ns/1ps`，叶子模块缺少声明。测试在 0.5ns 检查脉冲仍为低，在 1.5ns 检查脉冲已经升高，因此叶子模块的 `#1` 必须解释为 1ns。
 

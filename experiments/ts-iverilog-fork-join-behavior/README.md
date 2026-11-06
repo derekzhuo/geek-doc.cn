@@ -1,6 +1,6 @@
 # Icarus Verilog fork/join 并发调度实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-fork-join-behavior.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-fork-join-behavior.html
 
 这个最小测试平台用带时间戳的输出对照 `fork/join`、`fork/join_any`、`fork/join_none` 和 `disable fork`，并在最后一个用例中让父 `initial` 块直接结束，观察分离子进程完成前仿真是否保持运行。源码没有调用 `$finish`。
 

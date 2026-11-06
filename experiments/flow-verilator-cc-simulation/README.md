@@ -11,7 +11,7 @@
 | `top.v` | DUT：4 位计数器 + 分频脉冲 |
 | `tb_top.cpp` | 手写 C++ harness，含复位/时钟/自校验与 `--trace` 波形开关 |
 | `run-native.sh` | 容器或本机执行的三步命令 |
-| `run.sh` | 一键起 `geek-eda:0.3-sta` 容器复现 |
+| `run.sh` | 自动启动 `geek-eda:0.3-sta` 容器复现 |
 | `Makefile` | `make run` / `make clean` |
 
 ## 复现

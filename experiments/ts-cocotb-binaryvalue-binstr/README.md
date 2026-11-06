@@ -1,6 +1,6 @@
 # cocotb BinaryValue 迁移与 LogicArray 转换边界
 
-**对应教程**：https://geek-doc.cn/eda/ts-cocotb-binaryvalue-binstr.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-cocotb-binaryvalue-binstr.html
 
 本目录包含一个 8 位计数器和两组最小 cocotb testbench。`legacy_test.py` 复现旧教程的 `BinaryValue` 导入失败；`modern_test.py` 验证 `LogicArray`、信号 `.value` 赋值、`str()` / `int()` 转换，以及含 `X` 值不能直接转整数的边界。
 

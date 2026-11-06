@@ -1,6 +1,6 @@
 # Yosys defparam 层次参数覆盖复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-defparam-not-supported.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-defparam-not-supported.html
 
 本实验对比两种 Verilog 参数覆盖写法：独立的 `defparam u_override.WIDTH = 8;`，以及实例参数列表 `child #(.WIDTH(8)) u_override (...)`。两个设计都保留一个使用默认参数的实例，并让 `OUT_WIDTH = WIDTH + 1` 参与端口位宽计算，用来检查覆盖值与派生位宽，而不只是观察命令是否退出成功。
 

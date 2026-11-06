@@ -1,6 +1,6 @@
 # iverilog-numeric-truncation
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-numeric-truncation.html（教程上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-numeric-truncation.html
 
 复现 Icarus Verilog 数值字面量位宽截断（老版本报 `warning: Numeric constant truncated to X bits`，13.0 静默吞掉）的最小实验。
 

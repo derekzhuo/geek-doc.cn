@@ -1,6 +1,6 @@
 # SystemVerilog Assertion 高频模板实验
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-sva-assertions.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-sva-assertions.html
 
 一个自包含的 SystemVerilog 测试台，验证握手保持、同步复位、FIFO 空/满保护和独热授权五个性质断言。`run.sh` 先跑正常路径，再通过 `+INJECT_FAULTS` 故意制造五类违例；两轮都必须以 `RESULT PASS` 结束，第二轮的五个 `EXPECTED_FAIL` 是断言动作块捕获的预期结果。
 

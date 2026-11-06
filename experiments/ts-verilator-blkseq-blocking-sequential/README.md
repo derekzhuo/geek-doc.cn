@@ -1,6 +1,6 @@
 # ts-verilator-blkseq-blocking-sequential：Verilator BLKSEQ 告警复现
 
-**对应教程**：<https://geek-doc.cn/eda/ts-verilator-blkseq-blocking-sequential.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-blkseq-blocking-sequential.html>
 
 ## 环境
 
@@ -12,5 +12,5 @@
 ```bash
 verilator --lint-only -Wall n3_bad.v    # 时序块用阻塞赋值触发 %Warning-BLKSEQ
 verilator --lint-only -Wall n3_fixed.v  # 改非阻塞后 0 告警
-iverilog -o n3_tb.vvp n3_tb.v n3_bad.v && vvp n3_tb.vvp   # 波形对拍（n3_wave.vcd）
+iverilog -o n3_tb.vvp n3_tb.v n3_bad.v && vvp n3_tb.vvp   # 波形对照（n3_wave.vcd）
 ```

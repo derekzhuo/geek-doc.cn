@@ -2,8 +2,8 @@
 
 **对应教程**：
 
-- <https://geek-doc.cn/eda/ts-openlane-antenna-violation.html>（上线后生效）
-- <https://geek-doc.cn/eda/ts-openlane-drc-antenna.html>（上线后生效）
+- <https://geek-doc.cn/eda/ts-openlane-antenna-violation.html>
+- <https://geek-doc.cn/eda/ts-openlane-drc-antenna.html>
 
 ## 环境
 

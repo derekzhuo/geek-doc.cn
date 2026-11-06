@@ -1,6 +1,6 @@
 # Yosys SystemVerilog interface 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-interface-unsupported.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-interface-unsupported.html
 
 `interface_bad.sv` 在非 ANSI 端口声明中使用 `interface` 与 `modport`，触发 Yosys 0.33 的前端语法错误；`plain_ports.v` 把同一计数器改成显式 `clk`、`req`、`data` 端口，并运行 `hierarchy`、`proc`、`stat`。
 

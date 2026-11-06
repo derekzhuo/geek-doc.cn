@@ -1,6 +1,6 @@
 # openlane-magic-drc-errors：Magic 独立 DRC 间距违例复现
 
-**对应教程**：<https://geek-doc.cn/eda/ts-openlane-magic-drc-errors.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-openlane-magic-drc-errors.html>
 
 ## 环境
 

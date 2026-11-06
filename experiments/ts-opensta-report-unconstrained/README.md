@@ -1,6 +1,6 @@
 # ts-opensta-report-unconstrained
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-report-unconstrained.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-report-unconstrained.html
 
 OpenSTA `report_checks` 整份报告端点全部 unconstrained 的三种真实根因复现：时钟建到错误网络、时钟端口对但内部缓冲在 Liberty 中缺时序弧导致时钟不传、SDC 未被 source（含 link 之前过早 source）。
 

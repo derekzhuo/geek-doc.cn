@@ -1,6 +1,6 @@
 # Icarus Verilog task/function 端口不匹配复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-task-function-port-mismatch.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-task-function-port-mismatch.html
 
 ## 文件
 

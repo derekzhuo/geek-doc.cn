@@ -1,6 +1,6 @@
 # OpenSTA no clocks found：缺失与错名对照实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-no-clocks-found.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-no-clocks-found.html
 
 同一网表分别运行无 `create_clock`、正确端口约束和错误端口名三组 STA，观察 `report_clock_properties` 与 `report_checks` 的差异。
 

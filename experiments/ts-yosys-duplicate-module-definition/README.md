@@ -1,6 +1,6 @@
 # Yosys 模块重复定义最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-duplicate-module-definition.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-duplicate-module-definition.html
 
 本例用两个同名但逻辑不同的 `pulse` 模块复现 Yosys 的 `Re-definition of module` 错误，并对照同文件重复传入、`-defer`、`-lib`、文件去重和模块改名六种情况。
 

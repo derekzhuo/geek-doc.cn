@@ -6,7 +6,7 @@ updated: 2026-08-24
 
 > 锁争用诊断实验（perf lock）
 >
-> 📖 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/lock-contention/](https://geek-doc.cn/demos/lock-contention/)
+> 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/lock-contention/](https://geek-doc.cn/demos/lock-contention/)
 
 ## 构建与运行
 

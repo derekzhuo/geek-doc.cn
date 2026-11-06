@@ -1,6 +1,6 @@
 # ts-opensta-input-delay-no-clock
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-input-delay-no-clock.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-input-delay-no-clock.html
 
 OpenSTA `set_input_delay -clock` 引用未定义时钟的最小复现实验：忘建时钟、时钟名拼错/写成层次名、时钟建在错误端口三种触发，外加修复组。
 

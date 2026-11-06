@@ -1,6 +1,6 @@
 # ts-verilator-multidriven-MULTIDRIVEN：Verilator MULTIDRIVEN 告警复现
 
-**对应教程**：<https://geek-doc.cn/eda/ts-verilator-multidriven-MULTIDRIVEN.html>（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-multidriven-MULTIDRIVEN.html>
 
 ## 环境
 

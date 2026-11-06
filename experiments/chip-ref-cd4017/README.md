@@ -1,6 +1,6 @@
 # CD4017 十进制计数器行为仿真
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/cd4017.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/chip-ref/cd4017.html
 
 本实验用 Vivado Simulator 2017.4 验证 CD4017 行为模型的十拍循环、时钟禁止、异步复位与进位关系。模型用于说明逻辑功能，不包含厂商传播延迟和电气参数；输出 `carry_n` 是实物 CARRY-OUT 的补码，在 Q0～Q4 为低、Q5～Q9 为高。
 

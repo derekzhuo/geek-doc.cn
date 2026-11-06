@@ -1,6 +1,6 @@
 # OpenSTA read_sdf 标注失败：实例路径与设计名对照实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-sdf-annotation-fail.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-sdf-annotation-fail.html
 
 同一个 DFF 加输出缓冲网表分别读取三份 SDF，对比错误实例名、错误 DESIGN 头和完全修正后的 `report_checks` 输出。
 

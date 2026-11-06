@@ -1,6 +1,6 @@
 # ts-yosys-multiple-clocks-always
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-multiple-clocks-always.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-multiple-clocks-always.html
 
 Yosys 0.33 对单个 `always` 过程混用两个时钟边沿的最小复现，以及按时钟域拆成两个过程后的修复对照。
 

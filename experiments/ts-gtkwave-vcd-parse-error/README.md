@@ -1,6 +1,6 @@
 # GTKWave VCD 解析失败复现实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-gtkwave-vcd-parse-error.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-gtkwave-vcd-parse-error.html
 
 本目录用 Icarus Verilog 生成正常 VCD 和无信号定义 VCD，再确定性地构造截断、残缺 header、非法时间戳与残缺变量定义，使用 GTKWave 的无界面加载模式检查解析结果。
 

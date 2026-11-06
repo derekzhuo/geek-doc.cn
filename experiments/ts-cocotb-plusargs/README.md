@@ -1,6 +1,6 @@
 # cocotb plusargs 与环境变量传参实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-cocotb-plusargs.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-cocotb-plusargs.html
 
 本目录用无端口 RTL 和一个 cocotb 测试对比两条传参通道：`COCOTB_PLUSARGS` 中的仿真器 plusargs 由 `cocotb.plusargs` 读取，进程环境变量由 `os.environ` 读取。测试还验证带等号的值均为字符串、纯开关 plusarg 的值为布尔值 `True`，以及未导出的 shell 变量不会进入 Python 进程环境。另有一组实验把 plusargs 错放进 `SIM_ARGS`，观察 Icarus Verilog 在加载 Python 测试前报错。
 

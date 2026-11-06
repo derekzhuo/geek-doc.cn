@@ -1,6 +1,6 @@
 # Verilator UNOPTTHREADS 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-unoptthreads.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-unoptthreads.html
 
 四个独立计数器用于观察 Verilator 5.020 的线程分区行为。`--threads-max-mtasks 2` 把小型示例的分区上限压低，使调度器在请求两个线程时稳定进入 UNOPTTHREADS；这不是建议给正常工程设置的值。
 

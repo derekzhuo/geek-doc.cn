@@ -2,7 +2,7 @@
 
 **对应教程**：<https://geek-doc.cn/fpga/intermediate/vivado-cli-batch-sim.html>（极客工场站点对应篇目，上线后此链接即生效）
 
-不开 Vivado IDE，用 `xvlog → xelab → xsim -R` 三步批处理跑完一次行为仿真，适合 CI / 无人值守环境。
+不开 Vivado IDE，用 `xvlog → xelab → xsim -R` 三步批处理跑完一次行为仿真，适合 CI 和自动化环境。
 
 **文件**
 
@@ -10,7 +10,7 @@
 |---|---|
 | `counter4.v` | 4 位计数器 DUT |
 | `tb_counter4.v` | testbench（$monitor 打印计数、回卷后 $finish） |
-| `run.bat` | 一键三步脚本（改前三个路径变量即可） |
+| `run.bat` | 自动执行三步脚本（改前三个路径变量即可） |
 | `sim-batch.log` | 真实批处理日志（三步 exit 0、TEST PASS，全程约 6 秒） |
 
 **用法**

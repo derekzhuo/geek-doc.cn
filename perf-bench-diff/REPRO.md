@@ -6,7 +6,7 @@ updated: 2026-08-24
 
 > 微基准 + 优化对比实验（perf bench/diff）
 >
-> 📖 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/perf-bench-diff/](https://geek-doc.cn/demos/perf-bench-diff/)
+> 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/perf-bench-diff/](https://geek-doc.cn/demos/perf-bench-diff/)
 
 ## 构建与运行
 

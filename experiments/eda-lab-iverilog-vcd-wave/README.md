@@ -12,7 +12,7 @@ Icarus Verilog（iverilog 12.0）下 `$dumpfile` / `$dumpvars` / `$dumpoff` / `$
 | `counter.v` | 被测设计：`counter_top`（计数器）内嵌 `baud_gen`（波特率发生器）子模块，含若干内部信号 |
 | `tb_full.v` | 全量 testbench：`$dumpvars` 无参数，dump 所有层级所有信号 → `full.vcd` |
 | `tb_slim.v` | 瘦身 testbench：`$dumpvars(1, tb_slim)` 只 dump 顶层 1 层 + `$dumpoff/$dumpon` 跳过前 1000 拍 → `slim.vcd` |
-| `Makefile` | `make run` 一键编译、仿真、生成大小对比 `report.txt` |
+| `Makefile` | `make run` 自动编译、仿真、生成大小对比 `report.txt` |
 
 ## 运行（Docker，推荐）
 

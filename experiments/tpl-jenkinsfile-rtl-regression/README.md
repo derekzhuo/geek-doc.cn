@@ -21,7 +21,7 @@ chmod +x run-regression.sh tests/*/run.sh
 ./run-regression.sh              # 全量：1 PASS + 1 FAIL，退出码 1
 TESTFILTER=tc_pass SEED=314 ./run-regression.sh   # 过滤：1 PASS，退出码 0
 bash -n run-regression.sh        # 语法校验
-bash run-evidence.sh             # 一键跑完上述全部检查
+bash run-evidence.sh             # 自动完成上述全部检查
 ```
 
 Jenkinsfile 使用前需在 Jenkins 侧准备：两个 agent 标签 `sim-iverilog` / `sim-verilator`、凭据 `rtl-regression-notify-mail`（以及可选的 `notify-webhook`），并把 mock 的 `tests/` 换成真实 testbench、`make compile SIM=...` 换成工程实际编译命令。

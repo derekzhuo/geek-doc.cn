@@ -1,6 +1,6 @@
 # Verilator WIDTHCONCAT 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-widthconcat.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-widthconcat.html
 
 四个 SystemVerilog 用例分别展示赋值与端口连接中的拼接位宽告警，以及显式补位、拆分中间信号两种修复。
 

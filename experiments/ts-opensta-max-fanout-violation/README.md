@@ -1,6 +1,6 @@
 # OpenSTA 最大扇出违规：最小复现与诊断对照
 
-**对应教程**：https://geek-doc.cn/eda/ts-opensta-max-fanout-violation.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-opensta-max-fanout-violation.html
 
 用一个 BUF 驱动六个 BUF 负载，分别把设计最大扇出门限设为 4 和 6。OpenSTA 2.0.17 不支持 `report_check_types -max_fanout`，因此实验先保留该命令的真实兼容性输出，再通过 `get_pins` / `get_ports` 查询网表对象，计算负载数和 `limit - fanout`。第二组只用于诊断约束来源，没有修改网表，也不是修复。
 

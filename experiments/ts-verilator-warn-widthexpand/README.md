@@ -1,6 +1,6 @@
 # Verilator WIDTHEXPAND 零扩展与符号扩展对照
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-widthexpand.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-widthexpand.html
 
 这个最小实验比较隐式扩位与显式扩位。broken 同时包含 unsigned 和 signed 的 8 位到 16 位赋值；fixed 分别用零拼接和符号位复制写出扩展规则。
 
