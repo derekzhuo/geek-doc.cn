@@ -24,7 +24,7 @@ chmod +x *.sh
 ./run-all.sh | tee run1.log
 ```
 
-也可以单独执行某一个脚本。所有镜像产物落在 `output/`（已 gitignore），删掉即可完全复原。
+也可以单独执行某一个脚本。所有镜像产物落在 `output/`（已 gitignore），删掉即可完全复原。重跑前建议先 `rm -rf output/`：QEMU 11 的 `create`/`convert` 对已存在文件是静默覆盖，APFS 下复用旧 inode 会让 `du` 保留历史块计数，清场后各步体积数值才可逐次复现。
 
 ## 设计说明
 
