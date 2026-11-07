@@ -7,3 +7,5 @@ echo
 "$DIR/02-resize-snapshot-compress.sh"
 echo
 "$DIR/03-backing-file-clone.sh"
+echo
+"$DIR/04-formats-compare.sh"

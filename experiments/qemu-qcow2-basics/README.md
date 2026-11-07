@@ -1,16 +1,18 @@
-# qemu-qcow2-basics：qcow2 镜像管理三组真机实验
+# qemu-qcow2-basics：qcow2 镜像管理四组真机实验
 
 **对应教程**：
 
 - <https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html>
 - <https://geek-doc.cn/soc-qemu/qcow2-resize-compress-snapshot.html>
 - <https://geek-doc.cn/soc-qemu/qcow2-backing-file-clone.html>
+- <https://geek-doc.cn/soc-qemu/qcow2-raw-vmdk-formats.html>
 
-只用 QEMU 自带的 `qemu-img` 与 `qemu-io`，不装客户机系统，把 qcow2 的三件核心事在本机跑透：
+只用 QEMU 自带的 `qemu-img` 与 `qemu-io`，不装客户机系统，把 qcow2 的四件核心事在本机跑透：
 
 1. `01-create-info-convert.sh`：创建 raw / qcow2 两种镜像，对比虚拟大小与真实磁盘占用，双向格式转换；
 2. `02-resize-snapshot-compress.sh`：扩容与安全缩容、内部快照增删查、`convert -c` 压缩前后体积对比；
-3. `03-backing-file-clone.sh`：backing file 增量链、两个 overlay 秒级克隆、写隔离验证、断链报错复现与 `rebase -u` 修复。
+3. `03-backing-file-clone.sh`：backing file 增量链、两个 overlay 秒级克隆、写隔离验证、断链报错复现与 `rebase -u` 修复；
+4. `04-formats-compare.sh`：同一份 qcow2 转成 vmdk / vdi / raw，对照四种格式的真实占用与 `info` 字段差异。
 
 ## 依赖
 
