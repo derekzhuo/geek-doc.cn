@@ -1,0 +1,37 @@
+# command: vivado.bat -mode batch -source v6_err.tcl  (cwd C:\eda-lab\b1\v6-named-port-not-exist)
+# date: 2026-11-08T02:08:41+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source v6_err.tcl
+# read_verilog and_sub.v port_bad.v
+# synth_design -top port_bad -part xc7a35tcpg236-1
+Command: synth_design -top port_bad -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 18572 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 388.391 ; gain = 97.730
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'port_bad' [C:/eda-lab/b1/v6-named-port-not-exist/port_bad.v:3]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/eda-lab/b1/v6-named-port-not-exist/port_bad.v:9]
+INFO: [Synth 8-638] synthesizing module 'and_sub' [C:/eda-lab/b1/v6-named-port-not-exist/and_sub.v:2]
+INFO: [Synth 8-256] done synthesizing module 'and_sub' (1#1) [C:/eda-lab/b1/v6-named-port-not-exist/and_sub.v:2]
+ERROR: [Synth 8-448] named port connection 'c' does not exist for instance 'u_and' of module 'and_sub' [C:/eda-lab/b1/v6-named-port-not-exist/port_bad.v:12]
+ERROR: [Synth 8-285] failed synthesizing module 'port_bad' [C:/eda-lab/b1/v6-named-port-not-exist/port_bad.v:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 440.016 ; gain = 149.355
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+5 Infos, 1 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  8 02:09:29 2026...
