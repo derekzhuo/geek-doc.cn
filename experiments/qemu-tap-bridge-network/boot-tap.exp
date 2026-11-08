@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+# tap 桥接虚拟机启动后自动登录，验证 DHCP 地址/路由/网关/WAN/DNS 再关机
+# 环境变量：VM_PW_FILE（默认 ~/.vm-demo.pw）、VM_IMG（默认当前目录云镜像）
+set timeout 540
+if {[info exists env(VM_PW_FILE)]} { set pwfile $env(VM_PW_FILE) } else { set pwfile "$env(HOME)/.vm-demo.pw" }
+set pw [string trim [exec cat $pwfile]]
+if {[info exists env(VM_IMG)]} { set img $env(VM_IMG) } else { set img "noble-server-cloudimg-riscv64.img" }
+spawn qemu-system-riscv64 \
+  -machine virt -m 2048 -smp 2 -nographic \
+  -bios /usr/lib/riscv64-linux-gnu/opensbi/generic/fw_jump.bin \
+  -kernel vmlinuz -initrd initrd.img \
+  -append "root=LABEL=cloudimg-rootfs ro rootwait earlycon console=ttyS0 systemd.mask=boot-efi.mount systemd.mask=systemd-networkd-wait-online.service" \
+  -drive file=$img,if=virtio,format=qcow2 \
+  -netdev tap,id=n0,ifname=tap0,script=no,downscript=no \
+  -device virtio-net-pci,netdev=n0,mac=52:54:00:10:88:01
+expect {
+  -re "ubuntu login:" { send "ubuntu\r" }
+  timeout { puts "TIMEOUT_LOGIN"; exit 1 }
+}
+expect -re "Password:"
+send "$pw\r"
+expect -re {[#\$] $}
+send "echo NET_PROBE_START; ip -br addr; ip route; echo ---DNS---; cat /etc/resolv.conf | grep -v ^#; echo ---PING-GW---; ping -c 2 -W 3 10.88.0.1; echo ---PING-WAN---; ping -c 2 -W 3 223.5.5.5; echo ---DNS-LOOKUP---; getent hosts archive.ubuntu.com | head -2; echo NET_PROBE_DONE\r"
+expect "NET_PROBE_DONE"
+send "sudo poweroff\r"
+expect eof

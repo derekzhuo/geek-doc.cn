@@ -1,0 +1,45 @@
+### 主机网络现状（找出口网卡，不动它）
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             UP             172.17.16.35/20 metric 100 fe80::5054:ff:feac:56c/64 
+docker0          DOWN           172.18.0.1/16 fe80::7c22:eeff:fee2:7a28/64 
+
+### 1. 建网桥 br0 与 tap0（属主 ubuntu，qemu 可直接 fd 接管）
+br0              UP             be:05:90:f0:73:ad <BROADCAST,MULTICAST,UP,LOWER_UP> 
+tap0             UNKNOWN        36:63:6c:f3:a6:eb <BROADCAST,MULTICAST,UP> 
+9: tap0: <BROADCAST,MULTICAST,UP> mtu 1500 master br0 state forwarding priority 32 cost 100 
+
+### 2. 开启转发 + NAT 出口（masquerade，不桥接物理网卡）
+1
+WAN iface=eth0
+Chain POSTROUTING (policy ACCEPT)
+num  target     prot opt source               destination         
+1    MASQUERADE  all  --  172.18.0.0/16        0.0.0.0/0           
+2    MASQUERADE  all  --  10.88.0.0/24         0.0.0.0/0           
+
+### 3. dnsmasq 可用性（给 VM 发 DHCP，没有就装）
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+### 1. 确认系统 dnsmasq 未占端口（Ubuntu 默认服务可能 enabled 但未 run）
+failed
+system dnsmasq: inactive/none
+UNCONN 0      0                      127.0.0.53%lo:53        0.0.0.0:*          
+
+### 2. 写 br0 专用配置（不读 /etc/dnsmasq.conf，--conf-file 独立）
+# br0 独立 dnsmasq：只服务 10.88.0.0/24 的 tap 客户机
+interface=br0
+bind-dynamic
+dhcp-range=10.88.0.50,10.88.0.150,255.255.255.0,12h
+dhcp-option=option:router,10.88.0.1
+dhcp-option=option:dns-server,10.88.0.1
+log-dhcp
+log-facility=/home/ubuntu/soc-qemu-b2/q075-tap/dnsmasq.log
+pid-file=/home/ubuntu/soc-qemu-b2/q075-tap/dnsmasq.pid
+leasefile-ro
+
+### 3. 起独立实例并核验监听面
+UNCONN 0      0                            127.0.0.1:53        0.0.0.0:*          
+UNCONN 0      0                            10.88.0.1:53        0.0.0.0:*          
+UNCONN 0      0                        127.0.0.53%lo:53        0.0.0.0:*          
+UNCONN 0      0                                [::1]:53           [::]:*          
+UNCONN 0      0      [fe80::bc05:90ff:fef0:73ad]%br0:53           [::]:*          
+15716
+(pid 文件就绪)

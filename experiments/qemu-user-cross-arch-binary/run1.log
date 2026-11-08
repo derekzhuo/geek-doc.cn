@@ -1,0 +1,52 @@
+### 1. 交叉编译（x86 主机产出 RISC-V ELF）
+riscv64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+hello-riscv64: ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=56368579aeaac5c012820b7f12579a152b884e1e, for GNU/Linux 4.15.0, not stripped
+
+### 2. 直接执行：架构不匹配报错
+hello from pid=12308 on arch=riscv64 (uname machine follows)
+exit=0
+
+### 3. qemu-riscv64 显式转译执行
+hello from pid=12310 on arch=riscv64 (uname machine follows)
+exit=0
+
+### 4. binfmt_misc 注册状态
+qemu-riscv32
+qemu-riscv64
+enabled
+interpreter /usr/libexec/qemu-binfmt/riscv64-binfmt-P
+flags: PF
+offset 0
+magic 7f454c460201010000000000000000000200f300
+mask ffffffffffffff00fffffffffffffffffeffffff
+
+### 5. 注册后直接执行（内核经 binfmt 调 qemu-riscv64）
+hello from pid=12316 on arch=riscv64 (uname machine follows)
+exit=0
+
+### 6. 动态链接版对照（需 -L 指定 sysroot）
+hello-riscv64-dyn: ELF 64-bit LSB pie executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-riscv64-lp64d.so.1, BuildID[sha1]=1e9ac381ef679bdd9b0ed1d461269c062de52cc5, for GNU/Linux 4.15.0, not stripped
+hello from pid=12324 on arch=riscv64 (uname machine follows)
+exit=0
+### 2-real. 临时注销 binfmt 后直接执行（复现原生 Exec format error）
+(qemu-riscv64 已注销)
+bash: line 5: ./hello-riscv64: cannot execute binary file: Exec format error
+exit=126
+
+### 恢复注册（systemd-binfmt 重放 /usr/lib/binfmt.d）
+bash: line 10: ./hello-riscv64: cannot execute binary file: Exec format error
+exit=126
+
+### 附：uname 机器字段在 qemu-user 下透传宿主
+(无独立 uname，程序内 getpid/printf 已证)
+cat: /proc/sys/fs/binfmt_misc/qemu-riscv64: No such file or directory
+### 恢复注册（update-binfmts --import）
+enabled
+interpreter /usr/libexec/qemu-binfmt/riscv64-binfmt-P
+flags: PF
+offset 0
+hello from pid=12618 on arch=riscv64 (uname machine follows)
+exit=0
+
+### qemu-user（非 static 包）注册项对照
+28

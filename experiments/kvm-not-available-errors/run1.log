@@ -1,0 +1,40 @@
+### 环境事实：CPU 无虚拟化标志
+(以上为空=无 vmx/svm)
+
+### 报错类 1：内核模块加载失败（嵌套虚拟化未开）
+modprobe kvm exit=0
+modprobe: ERROR: could not insert 'kvm_intel': Operation not supported
+modprobe kvm_intel exit=1
+
+### 报错类 2：/dev/kvm 不存在时 qemu -enable-kvm
+ls: cannot access '/dev/kvm': No such file or directory
+Could not access KVM kernel module: No such file or directory
+qemu-system-x86_64: failed to initialize kvm: No such file or directory
+qemu exit=1
+
+### 报错类 3：/dev/kvm 权限不足（root 600 节点 bind 挂载复现）
+mount: /dev/kvm: mount point does not exist.
+Could not access KVM kernel module: No such file or directory
+qemu-system-x86_64: failed to initialize kvm: No such file or directory
+qemu exit=1
+umount: /dev/kvm: no mount point specified.
+
+### 恢复确认
+ls: cannot access '/dev/kvm': No such file or directory
+### 报错类 3（重做）：建 root:600 的 /dev/kvm 节点复现权限拒绝
+crw------- 1 root root 10, 232 Nov  8 12:11 /dev/kvm
+Could not access KVM kernel module: Permission denied
+qemu-system-x86_64: failed to initialize kvm: Permission denied
+qemu exit=1
+
+### 对照组：节点放开 666 后错误类型变化（不再是权限，而是无效 ioctl，证明节点只是占位）
+Could not access KVM kernel module: No such device
+qemu-system-x86_64: failed to initialize kvm: No such device
+qemu exit=1
+
+### TCG 兜底：同机无 KVM 仍可纯软件模拟启动（-machine q35 默认 tcg，版本信息佐证）
+pc                   Standard PC (i440FX + PIIX, 1996) (alias of pc-i440fx-6.2)
+q35                  Standard PC (Q35 + ICH9, 2009) (alias of pc-q35-6.2)
+Accelerators supported in QEMU binary:
+tcg
+kvm

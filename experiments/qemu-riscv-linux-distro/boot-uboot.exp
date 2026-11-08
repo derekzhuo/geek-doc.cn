@@ -1,0 +1,23 @@
+#!/usr/bin/expect -f
+# 完整固件链启动：OpenSBI -> U-Boot -> EFI GRUB/extlinux -> 内核，自动登录取证后关机
+# 环境变量：VM_PW_FILE（默认 ~/.vm-demo.pw）、VM_IMG（默认当前目录云镜像）
+set timeout 540
+if {[info exists env(VM_PW_FILE)]} { set pwfile $env(VM_PW_FILE) } else { set pwfile "$env(HOME)/.vm-demo.pw" }
+set pw [string trim [exec cat $pwfile]]
+if {[info exists env(VM_IMG)]} { set img $env(VM_IMG) } else { set img "noble-server-cloudimg-riscv64.img" }
+spawn qemu-system-riscv64 \
+  -machine virt -m 2048 -smp 2 -nographic \
+  -bios /usr/lib/riscv64-linux-gnu/opensbi/generic/fw_jump.bin \
+  -kernel /usr/lib/u-boot/qemu-riscv64_smode/u-boot.bin \
+  -drive file=$img,if=virtio,format=qcow2
+expect {
+  -re "ubuntu login:" { send "ubuntu\r" }
+  timeout { puts "EXPECT_TIMEOUT_AT_LOGIN"; exit 1 }
+}
+expect -re "Password:"
+send "$pw\r"
+expect -re {[#\$] $}
+send "echo CHAIN_PROBE_START; uname -m; uname -r; systemctl is-system-running 2>/dev/null || true; echo CHAIN_PROBE_DONE\r"
+expect "CHAIN_PROBE_DONE"
+send "sudo poweroff\r"
+expect eof
