@@ -1,0 +1,364 @@
+{
+  "slug": "atmega328p",
+  "title": "ATmega328P minimum UART and LED wiring",
+  "components": [
+    {
+      "ref": "U1",
+      "value": "ATmega328P-P",
+      "lib_id": "MCU_Microchip_ATmega:ATmega328P-P",
+      "lib_file": "MCU_Microchip_ATmega.kicad_sym",
+      "x": 152.4,
+      "y": 127,
+      "rot": 0
+    },
+    {
+      "ref": "Y1",
+      "value": "16MHz",
+      "lib_id": "Device:Crystal",
+      "lib_file": "Device.kicad_sym",
+      "x": 76.2,
+      "y": 101.6,
+      "rot": 0
+    },
+    {
+      "ref": "C1",
+      "value": "22pF",
+      "lib_id": "Device:C",
+      "lib_file": "Device.kicad_sym",
+      "x": 50.8,
+      "y": 114.3,
+      "rot": 0
+    },
+    {
+      "ref": "C2",
+      "value": "22pF",
+      "lib_id": "Device:C",
+      "lib_file": "Device.kicad_sym",
+      "x": 76.2,
+      "y": 114.3,
+      "rot": 0
+    },
+    {
+      "ref": "C3",
+      "value": "100nF",
+      "lib_id": "Device:C",
+      "lib_file": "Device.kicad_sym",
+      "x": 228.6,
+      "y": 76.2,
+      "rot": 0
+    },
+    {
+      "ref": "C4",
+      "value": "100nF",
+      "lib_id": "Device:C",
+      "lib_file": "Device.kicad_sym",
+      "x": 76.2,
+      "y": 165.1,
+      "rot": 0
+    },
+    {
+      "ref": "R1",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "lib_file": "Device.kicad_sym",
+      "x": 76.2,
+      "y": 76.2,
+      "rot": 0
+    },
+    {
+      "ref": "R2",
+      "value": "330R",
+      "lib_id": "Device:R",
+      "lib_file": "Device.kicad_sym",
+      "x": 241.3,
+      "y": 152.4,
+      "rot": 0
+    },
+    {
+      "ref": "D1",
+      "value": "LED",
+      "lib_id": "Device:LED",
+      "lib_file": "Device.kicad_sym",
+      "x": 266.7,
+      "y": 152.4,
+      "rot": 0
+    },
+    {
+      "ref": "P5V",
+      "value": "+5V",
+      "lib_id": "power:+5V",
+      "lib_file": "power.kicad_sym",
+      "x": 25.4,
+      "y": 50.8,
+      "rot": 0
+    },
+    {
+      "ref": "PG1",
+      "value": "GND",
+      "lib_id": "power:GND",
+      "lib_file": "power.kicad_sym",
+      "x": 25.4,
+      "y": 203.2,
+      "rot": 0
+    },
+    {
+      "ref": "PF1",
+      "value": "PWR_FLAG",
+      "lib_id": "power:PWR_FLAG",
+      "lib_file": "power.kicad_sym",
+      "x": 25.4,
+      "y": 63.5,
+      "rot": 0
+    },
+    {
+      "ref": "PF2",
+      "value": "PWR_FLAG",
+      "lib_id": "power:PWR_FLAG",
+      "lib_file": "power.kicad_sym",
+      "x": 25.4,
+      "y": 190.5,
+      "rot": 0
+    },
+    {
+      "ref": "J2",
+      "value": "EXT_2",
+      "lib_id": "Connector_Generic:Conn_01x02",
+      "lib_file": "Connector_Generic.kicad_sym",
+      "x": 279.4,
+      "y": 114.3,
+      "rot": 0
+    }
+  ],
+  "links": [
+    {
+      "ref": "U1",
+      "pin": "7",
+      "net": "+5V"
+    },
+    {
+      "ref": "U1",
+      "pin": "20",
+      "net": "+5V"
+    },
+    {
+      "ref": "U1",
+      "pin": "8",
+      "net": "GND"
+    },
+    {
+      "ref": "U1",
+      "pin": "1",
+      "net": "RESET_N"
+    },
+    {
+      "ref": "U1",
+      "pin": "9",
+      "net": "XTAL1"
+    },
+    {
+      "ref": "U1",
+      "pin": "10",
+      "net": "XTAL2"
+    },
+    {
+      "ref": "U1",
+      "pin": "21",
+      "net": "AREF"
+    },
+    {
+      "ref": "U1",
+      "pin": "2",
+      "net": "UART_RXD"
+    },
+    {
+      "ref": "U1",
+      "pin": "3",
+      "net": "UART_TXD"
+    },
+    {
+      "ref": "U1",
+      "pin": "19",
+      "net": "LED_DRIVE"
+    },
+    {
+      "ref": "Y1",
+      "pin": "1",
+      "net": "XTAL1"
+    },
+    {
+      "ref": "Y1",
+      "pin": "2",
+      "net": "XTAL2"
+    },
+    {
+      "ref": "C1",
+      "pin": "1",
+      "net": "XTAL1"
+    },
+    {
+      "ref": "C1",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "C2",
+      "pin": "1",
+      "net": "XTAL2"
+    },
+    {
+      "ref": "C2",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "C3",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "C3",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "C4",
+      "pin": "1",
+      "net": "AREF"
+    },
+    {
+      "ref": "C4",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "R1",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "R1",
+      "pin": "2",
+      "net": "RESET_N"
+    },
+    {
+      "ref": "R2",
+      "pin": "1",
+      "net": "LED_DRIVE"
+    },
+    {
+      "ref": "R2",
+      "pin": "2",
+      "net": "LED_A"
+    },
+    {
+      "ref": "D1",
+      "pin": "1",
+      "net": "LED_A"
+    },
+    {
+      "ref": "D1",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "P5V",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "PG1",
+      "pin": "1",
+      "net": "GND"
+    },
+    {
+      "ref": "PF1",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "PF2",
+      "pin": "1",
+      "net": "GND"
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "net": "UART_RXD"
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "net": "UART_TXD"
+    }
+  ],
+  "no_connect": [
+    {
+      "ref": "U1",
+      "pin": "4"
+    },
+    {
+      "ref": "U1",
+      "pin": "5"
+    },
+    {
+      "ref": "U1",
+      "pin": "6"
+    },
+    {
+      "ref": "U1",
+      "pin": "11"
+    },
+    {
+      "ref": "U1",
+      "pin": "12"
+    },
+    {
+      "ref": "U1",
+      "pin": "13"
+    },
+    {
+      "ref": "U1",
+      "pin": "14"
+    },
+    {
+      "ref": "U1",
+      "pin": "15"
+    },
+    {
+      "ref": "U1",
+      "pin": "16"
+    },
+    {
+      "ref": "U1",
+      "pin": "17"
+    },
+    {
+      "ref": "U1",
+      "pin": "18"
+    },
+    {
+      "ref": "U1",
+      "pin": "23"
+    },
+    {
+      "ref": "U1",
+      "pin": "24"
+    },
+    {
+      "ref": "U1",
+      "pin": "25"
+    },
+    {
+      "ref": "U1",
+      "pin": "26"
+    },
+    {
+      "ref": "U1",
+      "pin": "27"
+    },
+    {
+      "ref": "U1",
+      "pin": "28"
+    }
+  ]
+}

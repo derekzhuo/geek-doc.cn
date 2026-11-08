@@ -1,0 +1,228 @@
+{
+  "slug": "74hc595",
+  "title": "74HC595 serial LED wiring",
+  "components": [
+    {
+      "ref": "U1",
+      "value": "74HC595",
+      "lib_id": "74xx:74HC595",
+      "lib_file": "74xx.kicad_sym",
+      "x": 152.4,
+      "y": 127,
+      "rot": 0
+    },
+    {
+      "ref": "R1",
+      "value": "330R",
+      "lib_id": "Device:R",
+      "lib_file": "Device.kicad_sym",
+      "x": 215.9,
+      "y": 152.4,
+      "rot": 0
+    },
+    {
+      "ref": "D1",
+      "value": "LED",
+      "lib_id": "Device:LED",
+      "lib_file": "Device.kicad_sym",
+      "x": 241.3,
+      "y": 152.4,
+      "rot": 0
+    },
+    {
+      "ref": "C1",
+      "value": "100nF",
+      "lib_id": "Device:C",
+      "lib_file": "Device.kicad_sym",
+      "x": 76.2,
+      "y": 177.8,
+      "rot": 0
+    },
+    {
+      "ref": "P5V",
+      "value": "+5V",
+      "lib_id": "power:+5V",
+      "lib_file": "power.kicad_sym",
+      "x": 50.8,
+      "y": 50.8,
+      "rot": 0
+    },
+    {
+      "ref": "PG1",
+      "value": "GND",
+      "lib_id": "power:GND",
+      "lib_file": "power.kicad_sym",
+      "x": 50.8,
+      "y": 203.2,
+      "rot": 0
+    },
+    {
+      "ref": "PF1",
+      "value": "PWR_FLAG",
+      "lib_id": "power:PWR_FLAG",
+      "lib_file": "power.kicad_sym",
+      "x": 25.4,
+      "y": 50.8,
+      "rot": 0
+    },
+    {
+      "ref": "PF2",
+      "value": "PWR_FLAG",
+      "lib_id": "power:PWR_FLAG",
+      "lib_file": "power.kicad_sym",
+      "x": 25.4,
+      "y": 203.2,
+      "rot": 0
+    },
+    {
+      "ref": "J1",
+      "value": "EXT_3",
+      "lib_id": "Connector_Generic:Conn_01x03",
+      "lib_file": "Connector_Generic.kicad_sym",
+      "x": 279.4,
+      "y": 101.6,
+      "rot": 0
+    }
+  ],
+  "links": [
+    {
+      "ref": "U1",
+      "pin": "16",
+      "net": "+5V"
+    },
+    {
+      "ref": "U1",
+      "pin": "8",
+      "net": "GND"
+    },
+    {
+      "ref": "U1",
+      "pin": "14",
+      "net": "SER"
+    },
+    {
+      "ref": "U1",
+      "pin": "11",
+      "net": "SRCLK"
+    },
+    {
+      "ref": "U1",
+      "pin": "12",
+      "net": "RCLK"
+    },
+    {
+      "ref": "U1",
+      "pin": "10",
+      "net": "+5V"
+    },
+    {
+      "ref": "U1",
+      "pin": "13",
+      "net": "GND"
+    },
+    {
+      "ref": "U1",
+      "pin": "15",
+      "net": "Q0_LED"
+    },
+    {
+      "ref": "R1",
+      "pin": "1",
+      "net": "Q0_LED"
+    },
+    {
+      "ref": "R1",
+      "pin": "2",
+      "net": "LED_A"
+    },
+    {
+      "ref": "D1",
+      "pin": "1",
+      "net": "LED_A"
+    },
+    {
+      "ref": "D1",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "C1",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "C1",
+      "pin": "2",
+      "net": "GND"
+    },
+    {
+      "ref": "P5V",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "PG1",
+      "pin": "1",
+      "net": "GND"
+    },
+    {
+      "ref": "PF1",
+      "pin": "1",
+      "net": "+5V"
+    },
+    {
+      "ref": "PF2",
+      "pin": "1",
+      "net": "GND"
+    },
+    {
+      "ref": "J1",
+      "pin": "1",
+      "net": "SER"
+    },
+    {
+      "ref": "J1",
+      "pin": "2",
+      "net": "SRCLK"
+    },
+    {
+      "ref": "J1",
+      "pin": "3",
+      "net": "RCLK"
+    }
+  ],
+  "no_connect": [
+    {
+      "ref": "U1",
+      "pin": "1"
+    },
+    {
+      "ref": "U1",
+      "pin": "2"
+    },
+    {
+      "ref": "U1",
+      "pin": "3"
+    },
+    {
+      "ref": "U1",
+      "pin": "4"
+    },
+    {
+      "ref": "U1",
+      "pin": "5"
+    },
+    {
+      "ref": "U1",
+      "pin": "6"
+    },
+    {
+      "ref": "U1",
+      "pin": "7"
+    },
+    {
+      "ref": "U1",
+      "pin": "9"
+    }
+  ]
+}
