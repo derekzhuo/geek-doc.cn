@@ -1,4 +1,5 @@
 ===== 2026-11-10T01:58:45+08:00 =====
+$ xsim.bat tb_assert_bad -t xsim_run.tcl
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-assertion-failure/dut_counter.v" into library work
 INFO: [VRFC 10-311] analyzing module dut_counter
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-assertion-failure/tb_assert_bad.v" into library work
