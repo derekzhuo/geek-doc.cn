@@ -1,0 +1,11 @@
+=== CRC16 双配置自校验 ===
+[INFO] CCITT '123456789': ser=29b1 par=29b1 sw=29b1 (expect 29B1)
+[INFO] ARC   '123456789': ser=bb3d par=bb3d sw=bb3d (expect BB3D)
+=== 随机帧双配置对拍（150 帧，长度 1~40） ===
+[INFO] 随机对拍通过 150/150
+=== 比特翻转检错（CCITT，单/双比特各 40 组） ===
+[INFO] 单比特检错：40/40 检出
+[INFO] 无错帧余数归零：resid=0000（期望 0000）
+=== 汇总: PASS=152 FAIL=0, 单比特检错=40/40 ===
+RESULT: ALL PASS
+tb_crc16.sv:176: $finish called at 393750000 (1ps)
