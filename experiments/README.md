@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **276 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **296 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -12,13 +12,13 @@
 | 可运行模板 | 18 |
 | 排错案例 | 89 |
 | 数字设计实验 | 18 |
-| 芯片参考与器件实验 | 14 |
+| 芯片参考与器件实验 | 15 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
-| 综合实验 | 56 |
+| 综合实验 | 71 |
 | EDA 流程实操 | 46 |
 | OpenSTA / 时序分析 | 5 |
-| Vivado / XSim / XDC | 11 |
+| Vivado / XSim / XDC | 15 |
 
 ## 全部实验
 
@@ -175,6 +175,7 @@
 | 芯片参考与器件实验 | [chip-ref-stm32f103c8t6：XSim 复现 USART 波特率发生器双 APB 域实测](./chip-ref-stm32f103c8t6/) | [教程](https://geek-doc.cn/chip-design/chip-ref/stm32f103c8t6.html) | 日志/数据 |
 | 芯片参考与器件实验 | [chip-ref-stm32f407vet6：XSim 实测 PLL 约束枚举与 168MHz 频计验证](./chip-ref-stm32f407vet6/) | [教程](https://geek-doc.cn/chip-design/chip-ref/stm32f407vet6.html) | 日志/数据 |
 | 芯片参考与器件实验 | [chip-ref-tp4056：LTspice CC/CV 充电全程实测](./chip-ref-tp4056/) | [教程](https://geek-doc.cn/chip-design/chip-ref/tp4056.html) | 日志/数据 |
+| 芯片参考与器件实验 | [常用芯片最小接线原理图（chip-ref-wiring）](./chip-ref-wiring/) | [教程](https://geek-doc.cn/chip-design/chip-ref/) | 图/波形 + 日志/数据 |
 | 性能剖析 | [忙等待 vs 睡眠调度（busy-wait-vs-sleep）](./busy-wait-vs-sleep/) | [教程](https://geek-doc.cn/concepts/latency/low-latency-patterns.html) | 日志/数据 |
 | 性能剖析 | [跨 NUMA 节点内存访问开销（numa-access）](./numa-access/) | [教程](https://geek-doc.cn/concepts/cpu/numa-optimization.html) | 日志/数据 |
 | 性能剖析 | [SPSC / SPMC / MPSC / MPMC 消息队列基准（spsc-mpsc-queue）](./spsc-mpsc-queue/) | [教程](https://geek-doc.cn/concepts/latency/spsc-mpsc-queue.html) | 日志/数据 |
@@ -197,6 +198,7 @@
 | 综合实验 | [iverilog timescale 继承警告复现](./iverilog-timescale-inherit/) | [教程](https://geek-doc.cn/eda/ts-iverilog-timescale-inherit.html) | 日志/数据 |
 | 综合实验 | [iverilog 宏未定义报错（macro undefined）复现与修复](./iverilog-undefined-macro/) | [教程](https://geek-doc.cn/eda/ts-iverilog-undefined-macro.html) | 日志/数据 |
 | 综合实验 | [iverilog 仿真跑完无波形输出（$dumpfile/$dumpvars 缺漏排查）](./iverilog-vcd-dumpvars-missing/) | [教程](https://geek-doc.cn/eda/ts-iverilog-vcd-dumpvars-missing.html) | 见 README |
+| 综合实验 | [kvm-not-available-errors：KVM 不可用的三类报错与 TCG 兜底](./kvm-not-available-errors/) | [教程](https://geek-doc.cn/soc-qemu/kvm-not-available-errors.html) | 日志/数据 |
 | 综合实验 | [Yosys 逻辑等价检查（LEC）：RTL vs 综合网表（lec-yosys-equiv-opt）](./lec-yosys-equiv-opt/) | [教程](https://geek-doc.cn/chip-design/intermediate/lec-yosys-equiv-opt.html) | output/ |
 | 综合实验 | [openlane-antenna-violation：OpenLANE 天线违例复现与修复策略对照](./openlane-antenna-violation/) | [教程](https://geek-doc.cn/eda/ts-openlane-antenna-violation.html) | 日志/数据 |
 | 综合实验 | [openlane-config-key-unknown](./openlane-config-key-unknown/) | [教程](https://geek-doc.cn/eda/ts-openlane-config-key-unknown.html) | 日志/数据 |
@@ -208,6 +210,20 @@
 | 综合实验 | [openlane-resume-from-tag](./openlane-resume-from-tag/) | [教程](https://geek-doc.cn/eda/ts-openlane-resume-from-tag.html) | 日志/数据 |
 | 综合实验 | [openlane-wsl-path-issue：Docker bind mount 盘符路径报错复现](./openlane-wsl-path-issue/) | [教程](https://geek-doc.cn/eda/ts-openlane-wsl-path-issue.html) | 日志/数据 |
 | 综合实验 | [param-fsm-binary-onehot](./param-fsm-binary-onehot/) | [教程](https://geek-doc.cn/chip-design/beginner/param-fsm-binary-onehot.html) | 见 README |
+| 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | 见 README |
+| 综合实验 | [qemu-direct-kernel-initramfs：跳过引导加载器直接引导 RISC-V 内核](./qemu-direct-kernel-initramfs/) | [教程](https://geek-doc.cn/soc-qemu/qemu-direct-kernel-initramfs.html) | 日志/数据 |
+| 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | 见 README |
+| 综合实验 | [qemu-install-linux-distro：两大包管理体系下装齐 QEMU](./qemu-install-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-linux-distro.html) | 日志/数据 |
+| 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | 见 README |
+| 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | 见 README |
+| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | 见 README |
+| 综合实验 | [qemu-riscv-linux-distro：QEMU 启动完整 RISC-V Linux 发行版](./qemu-riscv-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-riscv-linux-distro.html) | 日志/数据 |
+| 综合实验 | [qemu-riscv-virt-first-boot：零工具链跑通第一个 RISC-V 虚拟平台](./qemu-riscv-virt-first-boot/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-first-riscv-virt.html) | 见 README |
+| 综合实验 | [qemu-serial-console-wiring：三种串口控制台接线对照实验](./qemu-serial-console-wiring/) | [教程](https://geek-doc.cn/soc-qemu/qemu-serial-console-wiring.html) | 见 README |
+| 综合实验 | [qemu-slirp-user-network：SLIRP 用户态网络默认行为实验](./qemu-slirp-user-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-slirp-user-network.html) | 见 README |
+| 综合实验 | [qemu-system-vs-user-mode：整机模拟与单进程转译的实测对照](./qemu-system-vs-user-mode/) | [教程](https://geek-doc.cn/soc-qemu/qemu-system-vs-user-mode.html) | 日志/数据 |
+| 综合实验 | [qemu-tap-bridge-network：tap 设备 + Linux bridge 二层联网](./qemu-tap-bridge-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-tap-bridge-network.html) | 日志/数据 |
+| 综合实验 | [qemu-user-cross-arch-binary：x86 主机直接跑 RISC-V ELF](./qemu-user-cross-arch-binary/) | [教程](https://geek-doc.cn/soc-qemu/qemu-user-cross-arch-binary.html) | 日志/数据 |
 | 综合实验 | [Quartus Lite 25.1 首个工程实战（led_blink）](./quartus-lite-first-project/) | [教程](https://geek-doc.cn/fpga/beginner/quartus-lite-first-project.html) | 日志/数据 + 图/波形 |
 | 综合实验 | [sv-constraint-random-vs-cocotb](./sv-constraint-random-vs-cocotb/) | [教程](https://geek-doc.cn/chip-design/verification/sv-constraint-random-vs-cocotb.html) | output/ |
 | 综合实验 | [verilator-lintoff-pragma：lint_off pragma 最小豁免实验](./verilator-lintoff-pragma/) | [教程](https://geek-doc.cn/eda/ts-verilator-lintoff-pragma.html) | 日志/数据 |
@@ -289,10 +305,14 @@
 | OpenSTA / 时序分析 | [OpenSTA set_input_delay / set_output_delay 对照实验（opensta-input-output-delay）](./opensta-input-output-delay/) | [教程](https://geek-doc.cn/chip-design/intermediate/opensta-input-output-delay.html) | output/ |
 | OpenSTA / 时序分析 | [OpenSTA 多周期路径 set_multicycle_path 对照实验（opensta-multicycle-path-example）](./opensta-multicycle-path-example/) | [教程](https://geek-doc.cn/chip-design/intermediate/opensta-multicycle-path-example.html) | output/ |
 | OpenSTA / 时序分析 | [STA setup 检查原理：逐行读一份完整报告（sta-setup-check-principle-opensta）](./sta-setup-check-principle-opensta/) | [教程](https://geek-doc.cn/chip-design/beginner/sta-setup-check-principle-opensta.html) | output/ |
+| Vivado / XSim / XDC | [vivado-ambiguous-clock：多时钟 always 综合报错复现](./vivado-ambiguous-clock/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-91-ambiguous-clock.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-cli-batch-sim — Vivado 命令行批处理仿真（无 GUI）](./vivado-cli-batch-sim/) | [教程](https://geek-doc.cn/fpga/intermediate/vivado-cli-batch-sim.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-drc-nstd-ucio：Vivado DRC NSTD-1/UCIO-1 复现](./vivado-drc-nstd-ucio/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-drc-nstd-1-ucio-1-bitstream.html) | 日志/数据 |
+| Vivado / XSim / XDC | [vivado-force-not-supported：force/release 综合报错复现](./vivado-force-not-supported/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-27-force-not-supported.html) | 日志/数据 |
+| Vivado / XSim / XDC | [vivado-index-out-of-range：Vivado 位选越界告警复现](./vivado-index-out-of-range/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-324-index-out-of-range.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-inferred-latch：Vivado 推断锁存器复现](./vivado-inferred-latch/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-327-inferred-latch.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-multi-driver：Vivado 2017.4 多驱动复现](./vivado-multi-driver/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-3352-multiple-driver.html) | 日志/数据 |
+| Vivado / XSim / XDC | [vivado-named-port-not-exist：例化命名端口不存在复现](./vivado-named-port-not-exist/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-448-named-port-not-exist.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-rtl-to-bitstream-webpack](./vivado-rtl-to-bitstream-webpack/) | [教程](https://geek-doc.cn/fpga/beginner/exp-vivado-rtl-to-bitstream-webpack.html) | 见 README |
 | Vivado / XSim / XDC | [vivado-set-property-empty：Vivado set_property 空对象复现](./vivado-set-property-empty/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-common-17-55-set-property.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-utilization-report-read — 综合后资源利用率报告怎么读](./vivado-utilization-report-read/) | [教程](https://geek-doc.cn/fpga/beginner/vivado-utilization-report-read.html) | 日志/数据 |
