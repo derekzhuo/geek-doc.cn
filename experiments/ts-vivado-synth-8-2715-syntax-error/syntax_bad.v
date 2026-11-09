@@ -1,6 +1,6 @@
 // Syntax error trigger: the continuous assignment is missing its terminating
 // semicolon. The parser cannot recover at the next 'assign' keyword and
-// reports the token position where parsing broke.
+// reports the keyword position where parsing broke.
 module syntax_bad (
     input  wire a,
     input  wire b,
