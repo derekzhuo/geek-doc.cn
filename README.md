@@ -60,9 +60,9 @@ make -C cache-miss run
 
 ### 文档内嵌实验
 
-`experiments/` 当前收录 **296 个实验**，覆盖开源 EDA 入门、数字设计、OpenSTA、Vivado/XSim、排错案例、芯片参考和性能专题。每个目录都有独立 README。
+`experiments/` 当前收录 **295 个实验**，覆盖开源 EDA 入门、数字设计、OpenSTA、Vivado/XSim、排错案例、芯片参考和性能专题。每个目录都有独立 README。
 
-**[查看全部 296 个实验 →](experiments/README.md)**
+**[查看全部 295 个实验 →](experiments/README.md)**
 
 ## 打开一个实验，你通常会看到
 

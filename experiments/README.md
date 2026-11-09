@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **296 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **295 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -12,7 +12,7 @@
 | 可运行模板 | 18 |
 | 排错案例 | 89 |
 | 数字设计实验 | 18 |
-| 芯片参考与器件实验 | 15 |
+| 芯片参考与器件实验 | 14 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
 | 综合实验 | 71 |
@@ -175,7 +175,6 @@
 | 芯片参考与器件实验 | [chip-ref-stm32f103c8t6：XSim 复现 USART 波特率发生器双 APB 域实测](./chip-ref-stm32f103c8t6/) | [教程](https://geek-doc.cn/chip-design/chip-ref/stm32f103c8t6.html) | 日志/数据 |
 | 芯片参考与器件实验 | [chip-ref-stm32f407vet6：XSim 实测 PLL 约束枚举与 168MHz 频计验证](./chip-ref-stm32f407vet6/) | [教程](https://geek-doc.cn/chip-design/chip-ref/stm32f407vet6.html) | 日志/数据 |
 | 芯片参考与器件实验 | [chip-ref-tp4056：LTspice CC/CV 充电全程实测](./chip-ref-tp4056/) | [教程](https://geek-doc.cn/chip-design/chip-ref/tp4056.html) | 日志/数据 |
-| 芯片参考与器件实验 | [常用芯片最小接线原理图（chip-ref-wiring）](./chip-ref-wiring/) | [教程](https://geek-doc.cn/chip-design/chip-ref/) | 图/波形 + 日志/数据 |
 | 性能剖析 | [忙等待 vs 睡眠调度（busy-wait-vs-sleep）](./busy-wait-vs-sleep/) | [教程](https://geek-doc.cn/concepts/latency/low-latency-patterns.html) | 日志/数据 |
 | 性能剖析 | [跨 NUMA 节点内存访问开销（numa-access）](./numa-access/) | [教程](https://geek-doc.cn/concepts/cpu/numa-optimization.html) | 日志/数据 |
 | 性能剖析 | [SPSC / SPMC / MPSC / MPMC 消息队列基准（spsc-mpsc-queue）](./spsc-mpsc-queue/) | [教程](https://geek-doc.cn/concepts/latency/spsc-mpsc-queue.html) | 日志/数据 |
