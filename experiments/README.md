@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **295 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **305 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -9,8 +9,8 @@
 | 分类 | 数量 |
 |---|---:|
 | 开源 EDA 入门 | 12 |
-| 可运行模板 | 18 |
-| 排错案例 | 89 |
+| 可运行模板 | 21 |
+| 排错案例 | 96 |
 | 数字设计实验 | 18 |
 | 芯片参考与器件实验 | 14 |
 | 性能剖析 | 3 |
@@ -39,10 +39,13 @@
 | 可运行模板 | [异步 FIFO 可复用 Verilog 模板（格雷码指针 + 两级同步器）](./tpl-async-fifo-verilog/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-async-fifo-verilog.html) | 见 README |
 | 可运行模板 | [tpl-axi-lite-register-sv：AXI4-Lite 从机寄存器接口模板](./tpl-axi-lite-register-sv/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-axi-lite-register-sv.html) | 见 README |
 | 可运行模板 | [cocotb 最小测试平台 Python 模板实验](./tpl-cocotb-minimal-python/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-cocotb-minimal-python.html) | 见 README |
+| 可运行模板 | [CRC16 SystemVerilog 模板实验（CCITT-FALSE 与 ARC 双配置）](./tpl-crc16-sv/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-crc16-sv.html) | 日志/数据 |
+| 可运行模板 | [CRC8 SystemVerilog 模板实验（逐位 LFSR vs 字节并行）](./tpl-crc8-sv/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-crc8-sv.html) | 日志/数据 |
 | 可运行模板 | [tpl-dockerfile-eda-env：开源 EDA 一体化 Dockerfile 模板](./tpl-dockerfile-eda-env/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-dockerfile-eda-env.html) | 见 README |
 | 可运行模板 | [RTL 提交前 lint 钩子模板（pre-commit + Verilator）](./tpl-git-precommit-rtl-lint/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-git-precommit-rtl-lint.html) | 见 README |
 | 可运行模板 | [IO 约束 XDC 模板 · OpenSTA 验证实验](./tpl-io-constraint-xdc/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-io-constraint-xdc.html) | 见 README |
 | 可运行模板 | [RTL 回归 Jenkinsfile 模板（tpl-jenkinsfile-rtl-regression）](./tpl-jenkinsfile-rtl-regression/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-jenkinsfile-rtl-regression.html) | 见 README |
+| 可运行模板 | [LFSR/PRBS SystemVerilog 模板实验（Galois 与 Fibonacci 两种结构）](./tpl-lfsr-prbs-sv/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-lfsr-prbs-sv.html) | 日志/数据 |
 | 可运行模板 | [tpl-openlane-config-json](./tpl-openlane-config-json/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-openlane-config-json.html) | 日志/数据 |
 | 可运行模板 | [仿真日志解析 Python 模板](./tpl-python-log-parser/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-python-log-parser.html) | 日志/数据 |
 | 可运行模板 | [tpl-regression-shell：仿真回归控制 Shell 脚本模板](./tpl-regression-shell/) | [教程](https://geek-doc.cn/chip-design/beginner/tpl-regression-shell.html) | 见 README |
@@ -124,8 +127,15 @@
 | 排错案例 | [Verilator WIDTHCONCAT 最小复现](./ts-verilator-warn-widthconcat/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-widthconcat.html) | 见 README |
 | 排错案例 | [Verilator WIDTHEXPAND 零扩展与符号扩展对照](./ts-verilator-warn-widthexpand/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-widthexpand.html) | 日志/数据 |
 | 排错案例 | [Verilator WIDTHTRUNC 最小复现](./ts-verilator-warn-widthtrunc/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-widthtrunc.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-synth-8-2715-syntax-error](./ts-vivado-synth-8-2715-syntax-error/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-2715-syntax-error.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-synth-8-327-case-latch](./ts-vivado-synth-8-327-case-latch/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-327-case-latch.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-synth-8-3352-multi-driven-net](./ts-vivado-synth-8-3352-multi-driven-net/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-3352-multi-driven-net.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-synth-8-439-module-not-found](./ts-vivado-synth-8-439-module-not-found/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-439-module-not-found.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-xdc-create-clock-missing](./ts-vivado-xdc-create-clock-missing/) | [教程](https://geek-doc.cn/eda/ts-vivado-xdc-create-clock-missing.html) | 日志/数据 |
+| 排错案例 | [ts-xsim-assertion-failure](./ts-xsim-assertion-failure/) | [教程](https://geek-doc.cn/eda/ts-xsim-assertion-failure.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复](./ts-xsim-elab-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-wave-invalid-command — XSim 报 `invalid command name "wave"`](./ts-xsim-wave-invalid-command/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-wave-invalid-command.html) | 日志/数据 |
+| 排错案例 | [ts-xsim-x-propagation-hang](./ts-xsim-x-propagation-hang/) | [教程](https://geek-doc.cn/eda/ts-xsim-x-propagation-hang.html) | 日志/数据 |
 | 排错案例 | [Yosys 普通读取与 formal 模式下的断言对照](./ts-yosys-assertion-ignored/) | [教程](https://geek-doc.cn/eda/ts-yosys-assertion-ignored.html) | 见 README |
 | 排错案例 | [Yosys 未知模块与显式黑盒对照实验](./ts-yosys-blackbox-cell-unknown/) | [教程](https://geek-doc.cn/eda/ts-yosys-blackbox-cell-unknown.html) | 日志/数据 |
 | 排错案例 | [ts-yosys-cant-open-input-file：yosys Cant open input file 复现](./ts-yosys-cant-open-input-file/) | [教程](https://geek-doc.cn/eda/ts-yosys-cant-open-input-file.html) | 日志/数据 |
