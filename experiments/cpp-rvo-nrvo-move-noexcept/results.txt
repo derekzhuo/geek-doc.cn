@@ -1,0 +1,41 @@
+# RVO/NRVO/移动语义与 vector 扩容基准 (2026-11-11 02:39:43)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -O2 -std=c++17 -Wall；反证构建叠加 -fno-elide-constructors
+
+===== 默认构建（复制消除开启）单次完整输出 =====
+# RVO/NRVO/移动语义与 vector 扩容基准
+is_nothrow_move_constructible SafeWidget=1 RiskyWidget=0
+rvo        param=1 copy=0 move=0 (id=7)
+nrvo       param=1 copy=0 move=0 (id=8)
+
+# 小规模扩容轨迹（N=20，每次 capacity 变化打印一行）
+trace safe  size=   1 cap=   1 copy=0 move=1
+trace safe  size=   2 cap=   2 copy=0 move=3
+trace safe  size=   3 cap=   4 copy=0 move=6
+trace safe  size=   5 cap=   8 copy=0 move=12
+trace safe  size=   9 cap=  16 copy=0 move=24
+trace safe  size=  17 cap=  32 copy=0 move=48
+grow  safe  n=20 elapsed_ms=   0.008 copy_ctor=0 move_ctor=51 param_ctor=20 final_cap=32
+---
+trace risky size=   1 cap=   1 copy=0 move=1
+trace risky size=   2 cap=   2 copy=1 move=2
+trace risky size=   3 cap=   4 copy=3 move=3
+trace risky size=   5 cap=   8 copy=7 move=5
+trace risky size=   9 cap=  16 copy=15 move=9
+trace risky size=  17 cap=  32 copy=31 move=17
+grow  risky n=20 elapsed_ms=   0.014 copy_ctor=31 move_ctor=20 param_ctor=20 final_cap=32
+
+# 大规模扩容计时（N=200000，二进制内预热一次）
+grow  safe-warm n=200000 elapsed_ms=  49.979 copy_ctor=0 move_ctor=462143 param_ctor=200000 final_cap=262144
+grow  risky-warm n=200000 elapsed_ms= 108.836 copy_ctor=262143 move_ctor=200000 param_ctor=200000 final_cap=262144
+grow  safe  n=200000 elapsed_ms=  28.750 copy_ctor=0 move_ctor=462143 param_ctor=200000 final_cap=262144
+grow  risky n=200000 elapsed_ms= 113.397 copy_ctor=262143 move_ctor=200000 param_ctor=200000 final_cap=262144
+
+===== 大规模扩容 7 次计时中位（N=200000） =====
+safe   n=200000 median_ms=27.286 copy_ctor=0 move_ctor=462143
+risky  n=200000 median_ms=103.767 copy_ctor=262143 move_ctor=200000
+
+===== 反证构建 -fno-elide-constructors 的 RVO/NRVO 计数 =====
+rvo        param=1 copy=0 move=0 (id=7)
+nrvo       param=1 copy=0 move=1 (id=8)
+done
