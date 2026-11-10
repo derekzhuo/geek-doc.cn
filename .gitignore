@@ -33,6 +33,8 @@ fpe_*
 __pycache__/
 experiments/**/sim_build/
 experiments/**/logs/
+# Verilator 生成的 C++ 骨架与编译目录（verilate/make 自动重建，不入库）
+experiments/**/obj_dir/
 
 # vim-cpp 系列编译产物（make 一键重建，不入库）
 *.dSYM/
@@ -77,3 +79,8 @@ experiments/cpp-lto-thin-full-benchmark/worker*.cpp
 experiments/cpp-pgo-two-stage-benchmark/bin/
 experiments/cpp-pgo-two-stage-benchmark/*.profraw
 experiments/cpp-pgo-two-stage-benchmark/*.profdata
+
+# 去虚化条件基准：构建目录、训练剖面与采集临时产物（run.sh 自动重建，不入库）
+experiments/cpp-virtual-devirtualization-conditions/bin/
+experiments/cpp-virtual-devirtualization-conditions/*.profraw
+experiments/cpp-virtual-devirtualization-conditions/*.profdata

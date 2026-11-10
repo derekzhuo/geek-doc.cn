@@ -1,0 +1,39 @@
+## 五形态去虚化证据（Apple clang 21.0.0，-O2，100M 次/形态）
+## 间接调用按符号地址区间统计（规避 LTO ICF 标签合并）
+===== bin/bench-none =====
+bench-none   __Z10run_directl         indirect_callq=0
+bench-none   __Z13run_heap_openl      indirect_callq=2
+bench-none   __Z14run_heap_finall     indirect_callq=2
+bench-none   __Z17run_visible_locall  indirect_callq=1
+bench-none   __Z12run_cross_tul       indirect_callq=2
+
+===== bin/bench-lto =====
+bench-lto    __Z10run_directl         indirect_callq=0
+bench-lto    __Z12run_cross_tul       indirect_callq=0
+bench-lto    __Z13run_heap_openl      indirect_callq=2
+bench-lto    __Z14run_heap_finall     indirect_callq=2
+bench-lto    __Z17run_visible_locall  indirect_callq=1
+
+===== bin/bench-pgo =====
+bench-pgo    __Z10run_directl         indirect_callq=0
+bench-pgo    __Z12run_cross_tul       indirect_callq=0
+bench-pgo    __Z13run_heap_openl      indirect_callq=2
+bench-pgo    __Z14run_heap_finall     indirect_callq=2
+bench-pgo    __Z17run_visible_locall  indirect_callq=1
+
+===== none 版 heap_open 热循环（间接调用 callq *0x10(%rcx) 每轮一次） =====
+000000010000061f	callq	0x1000009ec                     ## symbol stub for: __Znwm
+0000000100000649	callq	*0x10(%rcx)
+000000010000064f	jne	0x100000640
+0000000100000657	jmp	0x10000065f
+0000000100000662	callq	*0x8(%rax)
+
+===== pgo 版 heap_open 热循环（守卫比较 + 函数体内联，jne 走冷兜底） =====
+00000001000005a3	callq	0x1000009be                     ## symbol stub for: __Znwm
+00000001000005bb	leaq	__ZNK11OpenDerived4stepEx(%rip), %r12 ## OpenDerived::step(long long) const
+00000001000005d7	cmpq	%r12, %rax
+00000001000005da	jne	0x100000601
+00000001000005dc	imulq	$0x41c64e6d, %r14, %r14         ## imm = 0x41C64E6D
+00000001000005e3	addq	$0x3039, %r14                   ## imm = 0x3039
+00000001000005ed	jne	0x1000005d0
+00000001000005f2	callq	*0x8(%rax)
