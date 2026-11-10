@@ -93,3 +93,6 @@ experiments/cpp-rvo-nrvo-move-noexcept/bin/
 
 # shared_ptr 引用计数争用基准：构建目录（run.sh 自动重建，不入库）
 experiments/cpp-shared-ptr-refcount-contention/bin/
+
+# std::function SBO 阈值基准：构建目录（run.sh 自动重建，不入库）
+experiments/cpp-std-function-heap-alloc-threshold/bin/
