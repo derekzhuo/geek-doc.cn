@@ -1,38 +1,38 @@
-# LTO 三档基准 (2026-11-11 01:30:00)
+# LTO 三档基准 (2026-11-11 01:33:10)
 # compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
 # flags: -O2 -std=c++17 -Wall，workers=8，outer=2000，运行 7 次（另含 1 次预热），构建测 3 次
 
 == none ==
-build_samples_ms=758 700 711 build_median_ms=711 size_bytes=11816
-elapsed_ms=43.177 checksum=-5567146740081486195
-elapsed_ms=46.867 checksum=-5567146740081486195
-elapsed_ms=44.299 checksum=-5567146740081486195
-elapsed_ms=46.755 checksum=-5567146740081486195
-elapsed_ms=45.151 checksum=-5567146740081486195
-elapsed_ms=45.221 checksum=-5567146740081486195
-elapsed_ms=44.234 checksum=-5567146740081486195
-runtime_median_ms=45.151
+build_samples_ms=809 845 772 build_median_ms=809 size_bytes=11816
+elapsed_ms=51.515 checksum=-5567146740081486195
+elapsed_ms=51.206 checksum=-5567146740081486195
+elapsed_ms=51.099 checksum=-5567146740081486195
+elapsed_ms=51.140 checksum=-5567146740081486195
+elapsed_ms=51.328 checksum=-5567146740081486195
+elapsed_ms=51.069 checksum=-5567146740081486195
+elapsed_ms=51.355 checksum=-5567146740081486195
+runtime_median_ms=51.206
 
 == full ==
-build_samples_ms=710 714 735 build_median_ms=714 size_bytes=15472
-elapsed_ms=16.437 checksum=-5567146740081486195
-elapsed_ms=18.749 checksum=-5567146740081486195
-elapsed_ms=18.777 checksum=-5567146740081486195
-elapsed_ms=16.630 checksum=-5567146740081486195
-elapsed_ms=16.984 checksum=-5567146740081486195
-elapsed_ms=16.873 checksum=-5567146740081486195
-elapsed_ms=17.042 checksum=-5567146740081486195
-runtime_median_ms=16.984
+build_samples_ms=774 767 770 build_median_ms=770 size_bytes=15472
+elapsed_ms=19.374 checksum=-5567146740081486195
+elapsed_ms=19.208 checksum=-5567146740081486195
+elapsed_ms=19.209 checksum=-5567146740081486195
+elapsed_ms=19.221 checksum=-5567146740081486195
+elapsed_ms=19.245 checksum=-5567146740081486195
+elapsed_ms=19.233 checksum=-5567146740081486195
+elapsed_ms=19.229 checksum=-5567146740081486195
+runtime_median_ms=19.229
 
 == thin ==
-build_samples_ms=693 688 685 build_median_ms=688 size_bytes=15544
-elapsed_ms=17.365 checksum=-5567146740081486195
-elapsed_ms=16.590 checksum=-5567146740081486195
-elapsed_ms=16.200 checksum=-5567146740081486195
-elapsed_ms=16.099 checksum=-5567146740081486195
-elapsed_ms=16.490 checksum=-5567146740081486195
-elapsed_ms=16.362 checksum=-5567146740081486195
-elapsed_ms=16.361 checksum=-5567146740081486195
-runtime_median_ms=16.362
+build_samples_ms=744 766 759 build_median_ms=759 size_bytes=15544
+elapsed_ms=19.008 checksum=-5567146740081486195
+elapsed_ms=22.269 checksum=-5567146740081486195
+elapsed_ms=19.705 checksum=-5567146740081486195
+elapsed_ms=18.432 checksum=-5567146740081486195
+elapsed_ms=19.150 checksum=-5567146740081486195
+elapsed_ms=19.072 checksum=-5567146740081486195
+elapsed_ms=18.944 checksum=-5567146740081486195
+runtime_median_ms=19.072
 
 done
