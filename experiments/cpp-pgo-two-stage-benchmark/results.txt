@@ -1,0 +1,75 @@
+# PGO 两阶段基准 (2026-11-11 01:57:04)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# profdata: /Library/Developer/CommandLineTools/usr/bin/llvm-profdata
+# flags: -O2 -std=c++17 -Wall，迭代 3000 万次/轮，运行 7 次（另含 1 次预热）
+
+== 阶段 1：插桩版采训练剖面（偏斜负载 90/5/4/1） ==
+mode=train elapsed_ms=103.435 checksum=261562504
+merge 输出：pgo.profdata（800 B）
+
+== 剖面摘要（llvm-profdata show --detailed-summary） ==
+Instrumentation level: IR  entry_first = 0  instrument_loop_entries = 0
+Total functions: 2
+Maximum function count: 30000000
+Maximum internal block count: 30000000
+Total number of blocks: 13
+Total count: 129374994
+Detailed summary:
+2 blocks (15.38%) with count >= 30000000 account for 1% of the total counts.
+2 blocks (15.38%) with count >= 30000000 account for 10% of the total counts.
+2 blocks (15.38%) with count >= 30000000 account for 20% of the total counts.
+2 blocks (15.38%) with count >= 30000000 account for 30% of the total counts.
+2 blocks (15.38%) with count >= 30000000 account for 40% of the total counts.
+4 blocks (30.77%) with count >= 26953122 account for 50% of the total counts.
+4 blocks (30.77%) with count >= 26953122 account for 60% of the total counts.
+4 blocks (30.77%) with count >= 26953122 account for 70% of the total counts.
+4 blocks (30.77%) with count >= 26953122 account for 80% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 90% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 95% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 99% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 99.9% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 99.99% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 99.999% of the total counts.
+5 blocks (38.46%) with count >= 15468748 account for 99.9999% of the total counts.
+
+== 阶段 2：剖面引导重建 ==
+baseline 体积：8592 B
+pgo 体积：8592 B
+
+== 评估负载：matched ==
+mode=matched elapsed_ms=96.269 checksum=261562504
+mode=matched elapsed_ms=92.140 checksum=261562504
+mode=matched elapsed_ms=96.413 checksum=261562504
+mode=matched elapsed_ms=96.292 checksum=261562504
+mode=matched elapsed_ms=96.261 checksum=261562504
+mode=matched elapsed_ms=96.046 checksum=261562504
+mode=matched elapsed_ms=96.191 checksum=261562504
+baseline runtime_median_ms=96.261 checksum=261562504
+mode=matched elapsed_ms=65.831 checksum=261562504
+mode=matched elapsed_ms=66.322 checksum=261562504
+mode=matched elapsed_ms=65.431 checksum=261562504
+mode=matched elapsed_ms=66.835 checksum=261562504
+mode=matched elapsed_ms=66.686 checksum=261562504
+mode=matched elapsed_ms=66.329 checksum=261562504
+mode=matched elapsed_ms=66.218 checksum=261562504
+pgo runtime_median_ms=66.322 checksum=261562504
+
+== 评估负载：uniform ==
+mode=uniform elapsed_ms=85.418 checksum=146953187
+mode=uniform elapsed_ms=86.307 checksum=146953187
+mode=uniform elapsed_ms=85.784 checksum=146953187
+mode=uniform elapsed_ms=85.321 checksum=146953187
+mode=uniform elapsed_ms=85.787 checksum=146953187
+mode=uniform elapsed_ms=85.386 checksum=146953187
+mode=uniform elapsed_ms=86.693 checksum=146953187
+baseline runtime_median_ms=85.784 checksum=146953187
+mode=uniform elapsed_ms=77.829 checksum=146953187
+mode=uniform elapsed_ms=77.950 checksum=146953187
+mode=uniform elapsed_ms=77.821 checksum=146953187
+mode=uniform elapsed_ms=77.877 checksum=146953187
+mode=uniform elapsed_ms=77.867 checksum=146953187
+mode=uniform elapsed_ms=77.923 checksum=146953187
+mode=uniform elapsed_ms=77.850 checksum=146953187
+pgo runtime_median_ms=77.867 checksum=146953187
+
+done

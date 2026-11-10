@@ -72,3 +72,8 @@ fifo-starter-kit/dist/
 # LTO 三档基准：构建目录与生成的 worker TU（make gen / run.sh 自动重建，不入库）
 experiments/cpp-lto-thin-full-benchmark/bin/
 experiments/cpp-lto-thin-full-benchmark/worker*.cpp
+
+# PGO 两阶段基准：构建目录与训练剖面（run.sh 自动重建，不入库）
+experiments/cpp-pgo-two-stage-benchmark/bin/
+experiments/cpp-pgo-two-stage-benchmark/*.profraw
+experiments/cpp-pgo-two-stage-benchmark/*.profdata
