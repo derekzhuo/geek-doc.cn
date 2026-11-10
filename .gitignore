@@ -84,3 +84,6 @@ experiments/cpp-pgo-two-stage-benchmark/*.profdata
 experiments/cpp-virtual-devirtualization-conditions/bin/
 experiments/cpp-virtual-devirtualization-conditions/*.profraw
 experiments/cpp-virtual-devirtualization-conditions/*.profdata
+
+# 异常/错误码/Expected 基准：构建目录（run.sh 自动重建，不入库）
+experiments/cpp-exception-vs-error-code-cost/bin/
