@@ -68,3 +68,7 @@ dumpfile.vcd
 # FIFO 入门工程运行与打包产物（脚本自动重建，不入库）
 fifo-starter-kit/out/
 fifo-starter-kit/dist/
+
+# LTO 三档基准：构建目录与生成的 worker TU（make gen / run.sh 自动重建，不入库）
+experiments/cpp-lto-thin-full-benchmark/bin/
+experiments/cpp-lto-thin-full-benchmark/worker*.cpp
