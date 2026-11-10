@@ -1,0 +1,7 @@
+CMOS inverter without model cards
+Vdd vdd 0 DC 1.8
+Vin in 0 DC 0.9
+M1 out in vdd vdd pmos W=2u L=0.18u
+M2 out in 0 0 nmos W=1u L=0.18u
+.op
+.end

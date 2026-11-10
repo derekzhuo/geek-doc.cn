@@ -1,0 +1,3 @@
+read_verilog param_mod.v
+chparam -set DEPTH 8 param_mod
+stat

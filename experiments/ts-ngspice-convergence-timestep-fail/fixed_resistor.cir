@@ -1,0 +1,8 @@
+Fixed: a series resistor gives the two-source loop a unique solution
+V1 1 0 DC 1
+V2 2 0 DC 2
+Rs 1 2 100
+R1 1 0 1k
+.op
+.print op v(1)
+.end

@@ -1,0 +1,10 @@
+CMOS inverter with level 1 model cards
+.model nmos nmos (level=1 vto=0.45 gamma=0.4 phi=0.7)
+.model pmos pmos (level=1 vto=-0.45 gamma=0.4 phi=0.7)
+Vdd vdd 0 DC 1.8
+Vin in 0 DC 0
+M1 out in vdd vdd pmos W=2u L=0.18u
+M2 out in 0 0 nmos W=1u L=0.18u
+.dc Vin 0 1.8 0.3
+.print dc v(in) v(out)
+.end

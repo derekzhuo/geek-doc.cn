@@ -1,0 +1,8 @@
+Measure references a non-existent vector name
+V1 in 0 PWL(0 0 1u 1)
+R1 in out 1k
+C1 out 0 10n
+.tran 0.1u 20u
+.meas tran tcross when v(outx)=0.5 cross=1
+.print tran v(in) v(out)
+.end
