@@ -1,0 +1,64 @@
+# std::variant+visit vs 虚函数多态基准 (2026-11-12 01:58:44)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/O0 各运行 7 次取中位
+
+===== -O2 首次完整输出（sizeof / 分配计数 / 六格耗时） =====
+# ---- sizeof 对照（字节）----
+sizeof(Circle)=8 sizeof(Square)=8 sizeof(Rectangle)=16 sizeof(Triangle)=24
+sizeof(ShapeV)=32 sizeof(VShape*)=8 sizeof(unique_ptr<VShape>)=8
+# ---- 构造 10000 个混合 shape 的内存对照 ----
+virtual: 对象堆分配 10000 次 / 220000 字节；指针数组 80000 字节；合计约 300000 字节
+variant: 对象堆分配 0 次 / 0 字节；定长数组 320000 字节（唯一分配是 vector 扩容缓冲）
+析构段 delete 计数 10000（与 virtual 对象分配数对应）
+# ---- 千万次 area+perimeter 调用耗时（O2）----
+[O2] virtual 单态: 4.06 ns/次 checksum=308029079.7
+[O2] visit   单态: 3.68 ns/次 checksum=308029079.7 checksum=一致
+[O2] get_if  单态: 1.67 ns/次 checksum=308029079.7 checksum=一致
+[O2] virtual 混合: 6.67 ns/次 checksum=255303387.8
+[O2] visit   混合: 4.79 ns/次 checksum=255303387.8 checksum=一致
+[O2] get_if  混合: 1.98 ns/次 checksum=255303387.8 checksum=一致
+
+===== -O2 耗时行 7 次中位 =====
+[O2] virtual 单态: 中位=4.05 ns/次
+[O2] visit   单态: 中位=3.69 ns/次
+[O2] get_if  单态: 中位=1.68 ns/次
+[O2] virtual 混合: 中位=6.66 ns/次
+[O2] visit   混合: 中位=4.79 ns/次
+[O2] get_if  混合: 中位=1.99 ns/次
+
+===== -O0 耗时行 7 次中位 =====
+[O0] virtual 单态: 中位=12.35 ns/次
+[O0] visit   单态: 中位=95.98 ns/次
+[O0] get_if  单态: 中位=49.78 ns/次
+[O0] virtual 混合: 中位=15.74 ns/次
+[O0] visit   混合: 中位=119.59 ns/次
+[O0] get_if  混合: 中位=92.49 ns/次
+
+===== 二进制证据：虚表与类型信息符号（仅虚多态实现需要） =====
+0000000100003240 S __ZTI10VRectangle
+00000001000031b8 S __ZTI6VShape
+00000001000031a0 S __ZTI7VCircle
+00000001000031f8 S __ZTI7VSquare
+0000000100003288 S __ZTI9VTriangle
+0000000100003210 s __ZTV10VRectangle
+0000000100003170 s __ZTV7VCircle
+00000001000031c8 s __ZTV7VSquare
+
+===== 反汇编证据：虚函数 runner 热循环里的间接 callq（vtable 槽位） =====
+0000000100000a6e	callq	*0x10(%rax)
+0000000100000a7c	callq	*0x18(%rax)
+
+===== 反汇编证据：visit runner 热循环里的分派（按 discriminant 索引的函数表） =====
+0000000100000bd5	callq	*(%rax,%rcx,8)
+0000000100000bf7	callq	*(%rcx,%rax,8)
+0000000100000c27	callq	__ZNSt3__126__throw_bad_variant_accessEv ## std::__1::__throw_bad_variant_access()
+
+===== 反汇编证据：get_if runner 热循环里零 call，索引跳转表加内联算术 =====
+0000000100000db8	jmp	0x100000df1
+0000000100000e14	jmpq	*%rdi
+0000000100000e2a	jmp	0x100000dd9
+0000000100000e93	jmp	0x100000dd9
+0000000100000eb0	jmp	0x100000dd9
+0000000100000eb7	callq	__ZNSt3__126__throw_bad_variant_accessEv ## std::__1::__throw_bad_variant_access()
+0000000100000ebf	jmpq	*%rsp
+done
