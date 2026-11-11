@@ -1,0 +1,53 @@
+library(tiny) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  pulling_resistance_unit : "1kohm";
+  capacitive_load_unit(1,pf);
+  nom_process : 1;
+  nom_voltage : 1.0;
+  nom_temperature : 25;
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  lu_table_template(delay_template_1x1) {
+    variable_1 : input_net_transition;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0.01");
+    index_2 ("0.01");
+  }
+  cell(BUF_X1) {
+    area : 1;
+    pin(A) { direction : input; capacitance : 0.01; }
+    pin(Y) {
+      direction : output;
+      function : "A";
+      timing() {
+        related_pin : "A";
+        timing_sense : positive_unate;
+        cell_rise(delay_template_1x1) { values("0.05"); }
+        cell_fall(delay_template_1x1) { values("0.05"); }
+        rise_transition(delay_template_1x1) { values("0.02"); }
+        fall_transition(delay_template_1x1) { values("0.02"); }
+      }
+    }
+  }
+  cell(DFF_X1) {
+    area : 2;
+    ff(IQ, IQN) { clocked_on : CK; next_state : D; }
+    pin(CK) { direction : input; capacitance : 0.02; }
+    pin(D) { direction : input; capacitance : 0.01;
+      timing() { related_pin : "CK"; timing_type : setup_rising;
+        rise_constraint(delay_template_1x1) { values("0.08"); } }
+      timing() { related_pin : "CK"; timing_type : hold_rising;
+        rise_constraint(delay_template_1x1) { values("0.02"); } }
+    }
+    pin(Q) { direction : output; function : "IQ"; }
+  }
+}

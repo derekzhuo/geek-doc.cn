@@ -1,0 +1,26 @@
+*SPEF "IEEE 1481-1998"
+*DESIGN "top"
+*DATE "Thu Nov 12 02:05:00 2026"
+*VENDOR "manual"
+*PROGRAM "hand"
+*VERSION "1.0"
+*DESIGN_FLOW "MIN_CAP"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER [ ]
+*T_UNIT 1.0 NS
+*C_UNIT 1.0 PF
+*R_UNIT 1.0 OHM
+*L_UNIT 1.0 HENRY
+
+*NAME_MAP
+*1 n1
+
+*D_NET *1 0.02
+*CONN
+*I u_buf1:Y O
+*I u_bufx:A I
+*CAP
+1 u_buf1:Y 0.01
+2 u_bufx:A 0.01
+*END
