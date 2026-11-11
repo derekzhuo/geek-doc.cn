@@ -1,0 +1,99 @@
+# std::string SSO / 移动 / string_view 基准 (2026-11-12 01:08:01)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/O0 各运行 7 次取中位
+
+===== -O2 首次完整输出 =====
+# std::string SSO / 移动 / string_view 基准 (CALL_ITERS=20000000 MOVE_ITERS=10000000)
+# sizeof(std::string)=24 sizeof(string_view)=16
+
+# ---- SSO 长度扫档（构造后立即析构的分配次数） ----
+len= 0 allocs=0 bytes=0 deallocs=0
+len= 1 allocs=0 bytes=0 deallocs=0
+len= 2 allocs=0 bytes=0 deallocs=0
+len= 3 allocs=0 bytes=0 deallocs=0
+len= 4 allocs=0 bytes=0 deallocs=0
+len= 5 allocs=0 bytes=0 deallocs=0
+len= 6 allocs=0 bytes=0 deallocs=0
+len= 7 allocs=0 bytes=0 deallocs=0
+len= 8 allocs=0 bytes=0 deallocs=0
+len= 9 allocs=0 bytes=0 deallocs=0
+len=10 allocs=0 bytes=0 deallocs=0
+len=11 allocs=0 bytes=0 deallocs=0
+len=12 allocs=0 bytes=0 deallocs=0
+len=13 allocs=0 bytes=0 deallocs=0
+len=14 allocs=0 bytes=0 deallocs=0
+len=15 allocs=0 bytes=0 deallocs=0
+len=16 allocs=0 bytes=0 deallocs=0
+len=17 allocs=0 bytes=0 deallocs=0
+len=18 allocs=0 bytes=0 deallocs=0
+len=19 allocs=0 bytes=0 deallocs=0
+len=20 allocs=0 bytes=0 deallocs=0
+len=21 allocs=0 bytes=0 deallocs=0
+len=22 allocs=0 bytes=0 deallocs=0
+len=23 allocs=1 bytes=26 deallocs=1
+len=24 allocs=1 bytes=32 deallocs=1
+len=25 allocs=1 bytes=32 deallocs=1
+len=26 allocs=1 bytes=32 deallocs=1
+len=27 allocs=1 bytes=32 deallocs=1
+len=28 allocs=1 bytes=32 deallocs=1
+len=29 allocs=1 bytes=32 deallocs=1
+len=30 allocs=1 bytes=32 deallocs=1
+len=31 allocs=1 bytes=32 deallocs=1
+len=32 allocs=1 bytes=40 deallocs=1
+
+# ---- 接口对照：每次调用的分配次数 ----
+value(短串左值 SSO)            10万次调用 allocs=0 (0.000/次)
+value(长串左值 堆)            10万次调用 allocs=100000 (1.000/次)
+value(长字面量)                10万次调用 allocs=100000 (1.000/次)
+cref(短串左值)                 10万次调用 allocs=0 (0.000/次)
+cref(长串左值)                 10万次调用 allocs=0 (0.000/次)
+string_view(短串)                10万次调用 allocs=0 (0.000/次)
+string_view(长串)                10万次调用 allocs=0 (0.000/次)
+string_view(字面量)             10万次调用 allocs=0 (0.000/次)
+
+# ---- 接口对照：2000 万次调用耗时（单次运行 ns/次） ----
+value(短串左值 SSO)            10.06 ns/次
+value(长串左值 堆)            147.38 ns/次
+cref(短串左值)                 7.75 ns/次
+cref(长串左值)                 94.27 ns/次
+string_view(短串)                7.31 ns/次
+string_view(长串)                93.02 ns/次
+
+# ---- 移动构造耗时与分配 ----
+SSO 串(len=12)              2.15 ns/轮（含一次复制+一次移动，区间分配 0 次）
+堆串(len=120)              55.66 ns/轮（含一次复制+一次移动，区间分配 10000000 次）
+
+===== -O2 耗时行 7 次中位 =====
+value(短串左值 SSO) 中位=10.07 ns
+value(长串左值 堆) 中位=148.55 ns
+cref(短串左值) 中位=7.80 ns
+cref(长串左值) 中位=93.55 ns
+string_view(短串) 中位=7.30 ns
+string_view(长串) 中位=93.03 ns
+SSO 串(len=12) 中位=2.06 ns
+堆串(len=120) 中位=56.10 ns
+
+===== -O0 耗时行 7 次中位 =====
+value(短串左值 SSO) 中位=203.83 ns
+value(长串左值 堆) 中位=1382.44 ns
+cref(短串左值) 中位=196.13 ns
+cref(长串左值) 中位=1282.57 ns
+string_view(短串) 中位=37.18 ns
+string_view(长串) 中位=282.82 ns
+SSO 串(len=12) 中位=30.44 ns
+堆串(len=120) 中位=86.98 ns
+
+===== 二进制证据：operator new 被本程序重载（T=本二进制定义） =====
+00000001000007d0 T __ZdaPvSt11align_val_t
+0000000100000830 T __ZdaPvmSt11align_val_t
+00000001000007a0 T __ZdlPvSt11align_val_t
+0000000100000800 T __ZdlPvmSt11align_val_t
+0000000100000610 T __Znam
+0000000100002050 t __Znam.cold.1
+0000000100000750 T __ZnamSt11align_val_t
+0000000100002050 t __ZnamSt11align_val_t.cold.1
+
+===== 反汇编证据：-O2 下 new 内联为 malloc/aligned_alloc 调用点 =====
+   2 _aligned_alloc
+   6 _malloc
+done

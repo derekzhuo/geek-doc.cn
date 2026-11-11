@@ -96,3 +96,6 @@ experiments/cpp-shared-ptr-refcount-contention/bin/
 
 # std::function SBO 阈值基准：构建目录（run.sh 自动重建，不入库）
 experiments/cpp-std-function-heap-alloc-threshold/bin/
+
+# string SSO/移动/string_view 基准：构建目录（run.sh 自动重建，不入库）
+experiments/cpp-string-sso-move-string-view/bin/
