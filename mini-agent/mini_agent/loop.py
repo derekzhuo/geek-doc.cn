@@ -10,10 +10,13 @@ loop 不做任何业务判断——这就是 coding agent 与聊天机器人的�
 """
 
 
-def run_loop(model, tools, messages, tracer, max_steps=8, reporter=None):
+def run_loop(model, tools, messages, tracer, max_steps=8, reporter=None,
+             context_window=None):
     tracer.event("session_start", max_steps=max_steps)
     for step in range(max_steps):
         tracer.event("step_begin", step=step)
+        if context_window is not None:  # M3：模型调用前先做窗口治理
+            context_window.before_model_call(messages, tracer, step)
         reply = model.complete(messages)  # ① 模型决策
         messages.append(reply)
         tracer.message(reply)

@@ -4,6 +4,14 @@ M1 只包含：消息抽象、脚本化模型适配器、read/edit/run_test 三�
 agent loop 主循环与 JSONL trace。后续里程碑在这些边界上增量扩展。
 """
 
+from .compression import (
+    AgingCompressor,
+    CompressionPipeline,
+    ContextOverflowError,
+    ContextWindow,
+    SummaryCompressor,
+    estimate_tokens,
+)
 from .loop import run_loop
 from .messages import assistant_msg, tool_msg, user_msg
 from .model import ScriptedModel
@@ -18,4 +26,10 @@ __all__ = [
     "ScriptedModel",
     "ToolRegistry",
     "Tracer",
+    "AgingCompressor",
+    "SummaryCompressor",
+    "CompressionPipeline",
+    "ContextWindow",
+    "ContextOverflowError",
+    "estimate_tokens",
 ]

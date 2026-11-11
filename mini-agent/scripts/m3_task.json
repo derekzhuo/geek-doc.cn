@@ -1,0 +1,89 @@
+{
+  "milestone": "M3",
+  "task": "在一个含大体积笔记文件的工作区里完成多轮排查：反复读取与检索 long_notes.txt，中间穿插目录浏览和源码阅读，最后给出结论。",
+  "system_prompt": "你是一个严格按步骤工作的 coding agent。工具结果可能很长，harness 会在上下文超阈值时自动压缩旧消息；压缩后仍要依据保留下来的首尾片段与摘要继续完成任务。",
+  "threshold": 1200,
+  "replies": [
+    {
+      "content": "先完整读取长笔记，了解记录格式。",
+      "tool_calls": [
+        {"id": "m3_1", "name": "read_file", "arguments": {"path": "long_notes.txt"}}
+      ]
+    },
+    {
+      "content": "看一下工作区里还有哪些文件。",
+      "tool_calls": [
+        {"id": "m3_2", "name": "list_files", "arguments": {}}
+      ]
+    },
+    {
+      "content": "检索笔记中的 NOTE 标记，确认分布。",
+      "tool_calls": [
+        {"id": "m3_3", "name": "search_text", "arguments": {"query": "NOTE", "max_matches": 30}}
+      ]
+    },
+    {
+      "content": "读取笔记开头 40 行细看格式。",
+      "tool_calls": [
+        {"id": "m3_4", "name": "read_lines", "arguments": {"path": "long_notes.txt", "start_line": 1, "end_line": 40}}
+      ]
+    },
+    {
+      "content": "再次完整读取长笔记，对照第一次的印象。",
+      "tool_calls": [
+        {"id": "m3_5", "name": "read_file", "arguments": {"path": "long_notes.txt"}}
+      ]
+    },
+    {
+      "content": "读取中段第 50 到 90 行。",
+      "tool_calls": [
+        {"id": "m3_6", "name": "read_lines", "arguments": {"path": "long_notes.txt", "start_line": 50, "end_line": 90}}
+      ]
+    },
+    {
+      "content": "检索所有包含 line 的行。",
+      "tool_calls": [
+        {"id": "m3_7", "name": "search_text", "arguments": {"query": "line", "max_matches": 40}}
+      ]
+    },
+    {
+      "content": "再列一次目录，确认没有新增文件。",
+      "tool_calls": [
+        {"id": "m3_8", "name": "list_files", "arguments": {}}
+      ]
+    },
+    {
+      "content": "读取第 100 到 140 行。",
+      "tool_calls": [
+        {"id": "m3_9", "name": "read_lines", "arguments": {"path": "long_notes.txt", "start_line": 100, "end_line": 140}}
+      ]
+    },
+    {
+      "content": "顺便读一下计算器源码。",
+      "tool_calls": [
+        {"id": "m3_10", "name": "read_file", "arguments": {"path": "calculator.py"}}
+      ]
+    },
+    {
+      "content": "检索源码与笔记里的 def。",
+      "tool_calls": [
+        {"id": "m3_11", "name": "search_text", "arguments": {"query": "def", "max_matches": 20}}
+      ]
+    },
+    {
+      "content": "最后回看笔记前 20 行收尾。",
+      "tool_calls": [
+        {"id": "m3_12", "name": "read_lines", "arguments": {"path": "long_notes.txt", "start_line": 1, "end_line": 20}}
+      ]
+    },
+    {
+      "content": "再完整读一遍长笔记，确认结尾内容。",
+      "tool_calls": [
+        {"id": "m3_13", "name": "read_file", "arguments": {"path": "long_notes.txt"}}
+      ]
+    },
+    {
+      "content": "M3 长会话任务完成：经历多轮工具结果老化与滚动摘要后，上下文仍保持在阈值之内，结论可以正常给出。"
+    }
+  ]
+}

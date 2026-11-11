@@ -36,3 +36,26 @@ class ScriptedModel(object):
         if recorded.get("tool_calls"):
             reply["tool_calls"] = recorded["tool_calls"]
         return reply
+
+    def summarize(self, messages):
+        """把一段历史消息压成确定性摘要文本（M3 滚动摘要使用）。
+
+        摘要内容全部来自消息本身：逐条记录模型动作、工具名与回报首行，
+        不访问外部 API。接真实模型时同名方法改成一次 summarize 提示词
+        调用即可，SummaryCompressor 无需改动。
+        """
+        lines = ["共压缩 %d 条历史消息，要点如下：" % len(messages)]
+        for msg in messages:
+            role = msg.get("role")
+            content = (msg.get("content") or "").splitlines()
+            first = content[0][:60] if content else ""
+            if role == "assistant":
+                names = ", ".join(call["name"] for call in msg.get("tool_calls", []))
+                lines.append("- 模型动作：%s（调用工具：%s）"
+                             % (first or "无文本", names or "无"))
+            elif role == "tool":
+                lines.append("  - 工具 %s 回报：%s"
+                             % (msg.get("tool_call_id"), first))
+            else:
+                lines.append("- %s 消息：%s" % (role, first))
+        return "\n".join(lines)
