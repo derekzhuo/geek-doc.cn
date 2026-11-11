@@ -103,3 +103,5 @@ experiments/cpp-vector-deque-list-traversal/bin/
 
 # map/unordered_map/sorted-vector 查找基准：构建目录（run.sh 自动重建，不入库）
 experiments/cpp-unordered-map-sorted-vector-lookup/bin/
+experiments/cpp-open-addressing-hash-table/bin/
+experiments/cpp-variant-vs-virtual-dispatch/bin/
