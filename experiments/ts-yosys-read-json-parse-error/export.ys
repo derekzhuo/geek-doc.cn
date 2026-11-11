@@ -1,0 +1,3 @@
+read_verilog counter.v
+synth -top counter -run coarse
+write_json counter.json

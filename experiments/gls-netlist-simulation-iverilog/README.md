@@ -1,6 +1,6 @@
 # 门级网表仿真（GLS）：RTL 与网表逐行比对（gls-netlist-simulation-iverilog）
 
-**对应教程**：https://geek-doc.cn/chip-design/intermediate/gls-netlist-simulation-iverilog.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/intermediate/gls-netlist-simulation-iverilog.html>
 
 yosys 把 8-bit ALU 综合成通用门级网表，同一个自检 testbench（8 组激励：加/减/与/或/进位环绕/相等减/零标志）分别跑 RTL 与网表，两侧输出逐行一致、全 PASS。
 

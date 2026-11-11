@@ -1,0 +1,21 @@
+# 公共基底参考写法：从干净 debian 一行 apt 装齐三件套
+# 适用：能正常访问 Docker Hub 与 debian apt 源的环境。
+# 受限网络拉不动 docker.io/library 镜像时，改用同目录 Dockerfile（本地团队基底）。
+# 构建：docker build -f Dockerfile.public -t geek-eda-mini:public .
+FROM debian:bookworm-slim
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 一层完成 apt 安装与清理，避免缓存层撑大镜像
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        iverilog \
+        verilator \
+        yosys \
+        make \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /work
+
+CMD ["bash", "-lc", "iverilog -V | head -1; verilator --version; yosys -V"]

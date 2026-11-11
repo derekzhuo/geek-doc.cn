@@ -1,6 +1,6 @@
 # 用 SVA 给 AXI-Lite slave 做形式检查（sva-check-axi-lite-sby）
 
-**对应教程**：https://geek-doc.cn/chip-design/verification/sva-check-axi-lite-sby.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/verification/sva-check-axi-lite-sby.html>
 
 对 AXI-Lite slave 挂三条协议断言做形式验证：A1 rvalid 举起不许撤、A2 stall 期间 rdata 不许变、A3 bvalid 不许撤。三份证据：修复版 PASSED；故意坏版三断言全 FAILED；意外收获——实验室原始 RTL 本身就是 FAIL，checker 抓到一个真实的协议违例。
 

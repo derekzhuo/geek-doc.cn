@@ -6,7 +6,7 @@ updated: 2026-08-24
 
 > TLB 页表缓存抖动实验
 >
-> 📖 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/tlb-thrashing/](https://geek-doc.cn/demos/tlb-thrashing/)
+> 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/tlb-thrashing/](https://geek-doc.cn/demos/tlb-thrashing/)
 
 ## 构建与运行
 

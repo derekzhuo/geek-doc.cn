@@ -1,0 +1,5 @@
+Missing subcircuit test
+Vin in 0 DC 1
+X1 in out amp
+R1 out 0 1k
+.end

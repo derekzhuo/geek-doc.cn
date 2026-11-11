@@ -1,0 +1,14 @@
+### iptables nat
+-A POSTROUTING -s 172.18.0.0/16 ! -o docker0 -j MASQUERADE
+-A POSTROUTING -s 10.88.0.0/24 -o eth0 -j MASQUERADE
+### iptables forward
+-P FORWARD DROP
+-A FORWARD -i eth0 -o br0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i br0 -o eth0 -j ACCEPT
+-A FORWARD -j DOCKER-USER
+### bridge link
+tap0             DOWN           36:63:6c:f3:a6:eb <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+### ip_forward
+1
+### br0 addr
+    inet 10.88.0.1/24 scope global br0

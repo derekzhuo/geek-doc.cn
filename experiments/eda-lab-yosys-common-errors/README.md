@@ -1,5 +1,7 @@
 # eda-lab-yosys-common-errors
 
+**对应教程**：<https://geek-doc.cn/eda-lab/synth/el-yosys-common-errors.html>
+
 yosys 0.33 四类常见报错的真实触发实验（配套 geek-doc.cn 文档「yosys 常见报错」）。
 
 ## 内容

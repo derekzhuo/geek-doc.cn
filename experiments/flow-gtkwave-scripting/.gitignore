@@ -1,0 +1,7 @@
+sim.vvp
+wave.vcd
+*.fst
+*.gtkw
+facs.txt
+cnt_changes.txt
+load.out

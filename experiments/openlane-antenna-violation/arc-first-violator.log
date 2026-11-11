@@ -1,0 +1,59 @@
+# command: OpenROAD check_antennas -verbose（OpenLane flow STEP 36，源日志 runs/wide_m2/logs/signoff/36-arc.log 节选）
+# date: 2026-11-06T02:48:28+08:00
+# host-toolchain: OpenROAD 41a51eaf in OpenLane d054702b container / sky130A / 16 vCPU / 30GB
+---
+OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO]: Reading ODB at '/work/ant_wide_m2/runs/wide_m2/results/routing/antenna_wide.odb'…
+define_corners Typical
+read_liberty -corner Typical /home/ubuntu/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading design constraints file at '/work/ant_wide_m2/runs/wide_m2/tmp/17-antenna_wide.sdc'…
+Net: _08195_
+  Pin: _32459_/A (sky130_fd_sc_hd__clkbuf_4)
+    Layer: met2
+      Partial area ratio:   46.42
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:  233.24
+      Required ratio: 3669.20 (Side area) 
+      Cumulative area ratio:  175.98
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:  896.58
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: met1
+      Partial area ratio:    1.60
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:    8.48
+      Required ratio:  400.00 (Side area) 
+      Cumulative area ratio:    1.60
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:    8.48
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: li1
+      Partial area ratio:    0.00
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:    0.00
+      Required ratio:   75.00 (Side area) 
+      Cumulative area ratio:    0.00
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:    0.00
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Via: M1M2_PR
+      Partial area ratio:    0.11
+      Required ratio:    6.00 (Gate area) 
+      Cumulative area ratio:    0.24
+      Required ratio:    0.00 (Cumulative area) 
+
+    Via: L1M1_PR
+      Partial area ratio:    0.14
+      Required ratio:    3.00 (Gate area) 

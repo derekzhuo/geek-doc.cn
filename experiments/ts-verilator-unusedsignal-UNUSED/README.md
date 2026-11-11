@@ -1,6 +1,6 @@
 # ts-verilator-unusedsignal-UNUSED：Verilator UNUSEDSIGNAL/UNUSED 告警复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-unusedsignal-UNUSED.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-verilator-unusedsignal-UNUSED.html>
 
 ## 环境
 

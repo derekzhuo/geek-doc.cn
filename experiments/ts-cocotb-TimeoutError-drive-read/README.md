@@ -1,6 +1,6 @@
 # ts-cocotb-TimeoutError-drive-read：cocotb with_timeout 超时复现实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-cocotb-TimeoutError-drive-read.html
+**对应教程**：<https://geek-doc.cn/eda/ts-cocotb-TimeoutError-drive-read.html>
 
 ## 复现
 

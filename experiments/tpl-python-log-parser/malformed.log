@@ -1,0 +1,2 @@
+[INFO] deliberately malformed input for parser validation
+RESULT test=broken_seed seed=abc status=FAIL

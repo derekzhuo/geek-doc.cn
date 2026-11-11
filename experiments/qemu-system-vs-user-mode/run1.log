@@ -1,0 +1,17 @@
+### A. user 态：qemu-riscv64 只是转译单进程（无整机、无内核）
+hello from pid=14753 on arch=riscv64 (uname machine follows)
+0
+
+### B. system 态：qemu-system-riscv64 起一台 virt 整机（-S 暂停，QMP 接管）
+qemu 进程:   14757 32092 qemu-system-ris
+{"QMP": {"version": {"qemu": {"micro": 0, "minor": 2, "major": 6}, "package": "D
+{"return": {}}
+{"return": {"status": "prelaunch", "singlestep": false, "running": false}}
+{"return": [{"thread-id": 14761, "props": {"core-id": 0}, "qom-path": "/machine/soc0/harts[0]", "cpu-index": 0, "target": "riscv64"}, {"thread-id": 14762, "props": {"core-id": 1}, "qom-path": "/machine/soc0/harts[1]", "cpu-index": 1, "target": "riscv64"}]}
+{"timestamp": {"seconds": 1794111178, "microseconds": 762834}, "event": "SHUTDOWN", "data": {"guest": false, "reason": "host-qmp-quit"}}
+qemu 退出码=0
+
+### C. 两种模式的二进制与 help 自省差异
+/usr/bin/qemu-riscv64
+/usr/bin/qemu-system-riscv64
+8

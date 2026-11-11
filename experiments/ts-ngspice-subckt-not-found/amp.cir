@@ -1,0 +1,5 @@
+.subckt amp in out
+Rin in 0 10k
+Rf in out 100k
+Eamp out 0 in 0 10
+.ends

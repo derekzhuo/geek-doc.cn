@@ -1,6 +1,6 @@
 # Yosys 字符串参数静默转换复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-parameter-type-mismatch.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-parameter-type-mismatch.html
 
 本实验验证 Yosys 0.33 对 `parameter integer WIDTH = 8` 被 `.WIDTH("8")` 覆盖时的真实行为：编译不报错，字符串按 ASCII 位型变成 `8'00111000`，即十进制 56；修复版改用 `.WIDTH(8)`，并由 `$clog2(WIDTH)` 派生 3 位索引宽度。
 

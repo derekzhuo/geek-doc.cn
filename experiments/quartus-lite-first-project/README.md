@@ -19,6 +19,6 @@ Windows 下把 `led_blink.v`、`flow.tcl` 放同一目录，然后：
 | 文件 | 作用 |
 |---|---|
 | `led_blink.v` | LED 闪烁顶层：50MHz 时钟 25_000_000 分频，约 0.5Hz 翻转 |
-| `flow.tcl` | 一键建工程 + 全编译脚本（器件/引脚/电平全在脚本里） |
+| `flow.tcl` | 自动建工程 + 全编译脚本（器件/引脚/电平全在脚本里） |
 | `compile-full.log` | 本实验在 Quartus Lite 25.1std.0.1129 上的真实编译日志 |
 | `qgui.png` | Quartus GUI 打开工程的真机截图 |

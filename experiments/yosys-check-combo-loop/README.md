@@ -1,6 +1,6 @@
 # yosys-check-combo-loop
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-check-combo-loop.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-check-combo-loop.html
 
 Yosys `check` 报 `found logic loop`（组合逻辑环）的最小复现与修复实验。
 

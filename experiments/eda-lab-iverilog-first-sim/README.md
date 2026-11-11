@@ -1,5 +1,7 @@
 # eda-lab-iverilog-first-sim
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-iverilog-first-sim.html>
+
 Icarus Verilog（iverilog）仿真入门实验：4 位计数器 + testbench，
 编译 → 运行 → `$dumpvars` 导出 VCD 波形。
 
@@ -7,7 +9,7 @@ Icarus Verilog（iverilog）仿真入门实验：4 位计数器 + testbench，
 
 - `counter.v` —— 被测设计（DUT），同步复位、使能计数的 4 位计数器
 - `counter_tb.v` —— 测试平台，产生 10ns 时钟与激励，`$dumpvars` 导出 `out/counter.vcd`
-- `Makefile` —— `make run` 一键编译运行，日志存 `out/sim.log`
+- `Makefile` —— `make run` 自动编译运行，日志存 `out/sim.log`
 - `out/` —— 运行产物（`counter_sim.vvp`、`counter.vcd`、`sim.log`）
 
 ## 运行（Docker，geek-eda:0.1）

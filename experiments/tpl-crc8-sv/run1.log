@@ -1,0 +1,10 @@
+=== CRC8/POLY=0x07/INIT=0x00 (CRC-8/SMBUS) 自校验 ===
+[INFO] check '123456789': serial=f4 parallel=f4 sw=f4 (expect F4)
+=== 随机帧三实现对拍（200 帧，长度 1~32） ===
+[INFO] 随机对拍通过 200/200
+=== 单比特检错：数据+CRC 翻 1 位，余数应非 0 ===
+[INFO] 单比特翻转检错：50/50 被检出（CRC8 汉明距离保证应全部检出）
+[INFO] 无错帧余数归零校验：resid=00（期望 00）
+=== 结果汇总: PASS=202 FAIL=0, 单比特检错=50/50 ===
+RESULT: ALL PASS
+tb_crc8.sv:145: $finish called at 134750000 (1ps)

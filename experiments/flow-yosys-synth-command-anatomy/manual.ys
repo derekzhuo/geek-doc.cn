@@ -1,0 +1,35 @@
+# 手工逐条展开 synth 宏：与整跑 stat 对照，证明宏=子命令脚本
+read_verilog demo.v
+
+# begin 段
+hierarchy -check -top demo
+
+# coarse 段
+proc
+opt_expr
+opt_clean
+check
+opt -nodffe -nosdff
+fsm
+opt
+wreduce
+peepopt
+opt_clean
+alumacc
+share
+opt
+memory -nomap
+opt_clean
+stat
+
+# fine 段
+opt -fast -full
+memory_map
+opt -full
+techmap
+opt -fast
+abc -fast
+opt -fast
+hierarchy -check -top demo
+stat
+check

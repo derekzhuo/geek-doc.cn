@@ -1,0 +1,3 @@
+# Yosys iCE40 综合脚本：RTL -> iCE40 原语 JSON 网表
+read_verilog top.v
+synth_ice40 -top top -json top.json

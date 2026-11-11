@@ -1,6 +1,6 @@
 # Yosys `read_verilog -sv` 不支持 package/import 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-yosys-read-verilog-sv-unsupported.html （上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-yosys-read-verilog-sv-unsupported.html
 
 本目录用同一份参数化连线模块比较 SystemVerilog `package` + `import` 写法与模块参数写法。`package_original.sv` 在 Yosys 0.33 中于模块头的 `import` 位置报错；`localparam_rewritten.sv` 将共享常量改为模块参数，依次通过 `read_verilog -sv`、`hierarchy -top top`、`proc` 和 `check`。
 

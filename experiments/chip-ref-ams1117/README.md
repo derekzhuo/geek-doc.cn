@@ -1,6 +1,6 @@
 # chip-ref-ams1117：LTspice dropout 临界与负载瞬态实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ams1117-3-3.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/ams1117-3-3.html>
 
 ## 复现方式
 

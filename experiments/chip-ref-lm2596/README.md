@@ -1,6 +1,6 @@
 # chip-ref-lm2596：LTspice buck 功率级输出纹波实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/lm2596.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/lm2596.html>
 
 ## 复现方式
 

@@ -1,0 +1,3 @@
+set_io clk 49
+set_io rst 50
+set_io led 23

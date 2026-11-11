@@ -1,0 +1,10 @@
+# 仿真/综合中间产物，全部可由源码重建
+*.vvp
+*.vcd
+*.fst
+build/
+obj_dir/
+sim_build/
+# 工具杂项
+*.log
+.DS_Store

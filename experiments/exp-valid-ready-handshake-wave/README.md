@@ -1,6 +1,6 @@
 # exp-valid-ready-handshake-wave
 
-> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-valid-ready-handshake-wave.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-valid-ready-handshake-wave.html
 
 valid/ready 握手反压实验：带流水寄存器的 valid-ready 管道，下游随机拉低 ready 制造反压，testbench 校验「数据保持到握手完成」语义与传输不丢不重。
 

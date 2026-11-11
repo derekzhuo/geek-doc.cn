@@ -1,6 +1,6 @@
 # chip-ref-stm32f407vet6：XSim 实测 PLL 约束枚举与 168MHz 频计验证
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/stm32f407vet6.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/stm32f407vet6.html>
 
 ## 复现方式
 

@@ -46,7 +46,7 @@ cat /proc/softirqs      # NET_RX 软中断按 CPU 分布
 ethtool -L eth0 combined 4   # 调 RSS 队列数（T7 实验用；调回 32）
 ```
 
-## 测量纪律（E0/E1 踩坑固化）
+## 测量纪律（E0/E1 问题复核）
 
 1. 只信**长稳态**：kp-bench 1000 线程 ramp 需数十秒，热相短于 1 秒的轮次 QPS 抖动大；结论轮次 ≥ 10M 请求。
 2. 采样窗口必须落在热相内：先起压测、sleep ~12s 再 `mpstat/sar`，避免采到 ramp 或尾部 idle。
@@ -62,7 +62,7 @@ ethtool -L eth0 combined 4   # 调 RSS 队列数（T7 实验用；调回 32）
 - **T12 保持**：est 998,537（客户端）/ 1,000,076（内核 & 服务端三方对账一致），HOLD 11 分钟零跌落；服务端应用 RSS 仅 ~2.3MB，内核 Slab 4.58GB（含全部 1M socket 成本），sockstat TCP mem 3585 页 ≈ 14MB 缓冲（无流量 hold）
 - **T11 keepalive 回收**：服务端调快 keepalive（60s+3×10s）后 iptables 断流，105 秒 100 万死连接全部回收（曲线见 `data/E2/NOTES.md`）
 
-E2 新增踩坑（已固化进 conn-ramper.c 注释）：
+E2 新增问题及处理（已写入 conn-ramper.c 注释）：
 1. fd 索引数组必须容忍 fd>65535（教学版 echo-mt-server 段错误根因）
 2. epoll 建连计数按 fd 状态翻转计一次，不能按事件计
 3. **SO_REUSEADDR 禁用于海量出向连接**（bind 放弃冲突检查 → connect 100% EADDRNOTAVAIL）

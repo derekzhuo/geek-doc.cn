@@ -1,0 +1,9 @@
+# 综合模板：run.sh 用 sed 把 @V@ 替换成 top_bad / top_fix
+read_liberty -lib teaching.lib
+read_verilog rtl/@V@.v
+synth -flatten -top top
+dfflibmap -liberty teaching.lib
+abc -liberty teaching.lib
+clean
+stat
+write_verilog -noattr -noexpr build/netlist_@V@.v

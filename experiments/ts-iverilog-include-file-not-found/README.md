@@ -1,6 +1,6 @@
 # Icarus Verilog include 搜索路径最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-include-file-not-found.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-include-file-not-found.html
 
 本实验用两个头文件区分当前工作目录与 `-I` 搜索路径：`src/local.svh` 位于源码目录，`include/config.svh` 位于独立头文件目录。`src/top.sv` 同时包含二者，并检查宏展开后的值。
 

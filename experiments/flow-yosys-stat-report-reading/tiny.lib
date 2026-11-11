@@ -1,0 +1,98 @@
+/* Minimal teaching liberty: only functions and area units.
+   Not a foundry PDK library; area numbers are relative weights. */
+library(tiny) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  leakage_power_unit : "1pW";
+  pulling_resistance_unit : "1kohm";
+  capacitive_load_unit(1, pf);
+
+  cell(BUF) {
+    area : 1;
+    pin(A) { direction : input; }
+    pin(Y) { direction : output; function : "A"; }
+  }
+  cell(INV) {
+    area : 1;
+    pin(A) { direction : input; }
+    pin(Y) { direction : output; function : "(!A)"; }
+  }
+  cell(NAND2) {
+    area : 1;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(Y) { direction : output; function : "(!(A*B))"; }
+  }
+  cell(NOR2) {
+    area : 1;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(Y) { direction : output; function : "(!(A+B))"; }
+  }
+  cell(AND2) {
+    area : 2;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(Y) { direction : output; function : "(A*B)"; }
+  }
+  cell(OR2) {
+    area : 2;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(Y) { direction : output; function : "(A+B)"; }
+  }
+  cell(XOR2) {
+    area : 3;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(Y) { direction : output; function : "(A^B)"; }
+  }
+  cell(XNOR2) {
+    area : 3;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(Y) { direction : output; function : "!((A)^(B))"; }
+  }
+  cell(MUX2) {
+    area : 3;
+    pin(A) { direction : input; }
+    pin(B) { direction : input; }
+    pin(S) { direction : input; }
+    pin(Y) { direction : output; function : "((S*B)+((!S)*A))"; }
+  }
+
+  cell(DFF) {
+    area : 4;
+    ff(IQ, IQN) { clocked_on : CK; next_state : D; }
+    pin(CK) { direction : input; clock : true; }
+    pin(D)  { direction : input; }
+    pin(Q)  { direction : output; function : "IQ"; }
+  }
+  cell(DFFRN) {
+    area : 5;
+    ff(IQ, IQN) { clocked_on : CK; next_state : D; clear : "(!RN)"; }
+    pin(CK) { direction : input; clock : true; }
+    pin(RN) { direction : input; }
+    pin(D)  { direction : input; }
+    pin(Q)  { direction : output; function : "IQ"; }
+  }
+  cell(DFFERN) {
+    area : 6;
+    ff(IQ, IQN) { clocked_on : CK; next_state : "(EN & D) | (!EN & IQ)"; clear : "(!RN)"; }
+    pin(CK) { direction : input; clock : true; }
+    pin(RN) { direction : input; }
+    pin(EN) { direction : input; }
+    pin(D)  { direction : input; }
+    pin(Q)  { direction : output; function : "IQ"; }
+  }
+  cell(DFFE) {
+    area : 5;
+    ff(IQ, IQN) { clocked_on : CK; next_state : "(EN & D) | (!EN & IQ)"; }
+    pin(CK) { direction : input; clock : true; }
+    pin(EN) { direction : input; }
+    pin(D)  { direction : input; }
+    pin(Q)  { direction : output; function : "IQ"; }
+  }
+}

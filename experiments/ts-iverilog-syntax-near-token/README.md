@@ -1,6 +1,6 @@
 # ts-iverilog-syntax-near-token：iverilog syntax error near token 三类触发
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-syntax-near-token.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-iverilog-syntax-near-token.html>
 
 ## 环境
 

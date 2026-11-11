@@ -1,6 +1,6 @@
 # iverilog 仿真跑完无波形输出（$dumpfile/$dumpvars 缺漏排查）
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-vcd-dumpvars-missing.html（文档上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-vcd-dumpvars-missing.html
 
 三个 testbench 复现「iverilog 仿真正常结束但拿不到波形」的两类典型现场：
 

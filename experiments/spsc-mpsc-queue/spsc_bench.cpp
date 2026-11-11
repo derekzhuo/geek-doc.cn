@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     auto u1 = std::chrono::high_resolution_clock::now();
     double lock_us = std::chrono::duration<double, std::micro>(u1 - u0).count();
 
-    auto fmt = [](double us) { return (N * 2.0) / (us / 1e6) / 1e6; };  // M ops/s
+    auto fmt = [N](double us) { return (N * 2.0) / (us / 1e6) / 1e6; };  // M ops/s
     std::cout << "SPSC 无锁环形 : " << spsc_us / 1e3 << " ms, "
               << fmt(spsc_us) << " M ops/s" << std::endl;
     std::cout << "有锁 queue    : " << lock_us / 1e3 << " ms, "

@@ -1,6 +1,6 @@
 # Verilator WIDTHTRUNC 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-widthtrunc.html（文档上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-widthtrunc.html
 
 ## 文件
 

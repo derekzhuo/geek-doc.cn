@@ -1,6 +1,6 @@
 # chip-ref-lm358：LTspice 反相放大增益与单电源削顶实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/lm358.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/lm358.html>
 
 ## 复现方式
 

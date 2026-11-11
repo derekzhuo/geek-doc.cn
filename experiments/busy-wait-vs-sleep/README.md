@@ -1,5 +1,7 @@
 # 忙等待 vs 睡眠调度（busy-wait-vs-sleep）
 
+**对应教程**：<https://geek-doc.cn/concepts/latency/low-latency-patterns.html>
+
 对比两种线程同步等待模型的延迟与 CPU 开销：自旋忙等待 vs mutex + condition_variable 睡眠调度。
 
 - **来源文档**：站点 `concepts/latency/low-latency-patterns.md`（忙等待 vs 睡眠调度）

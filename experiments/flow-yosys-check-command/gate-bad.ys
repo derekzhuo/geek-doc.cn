@@ -1,0 +1,5 @@
+# 综合前置门禁脚本（故意指向带错设计，用于演示 check -assert 失败）
+read_verilog alu_bad.v
+hierarchy -top alu_bad
+proc
+check -assert

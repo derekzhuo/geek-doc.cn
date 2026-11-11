@@ -1,0 +1,93 @@
+// Jenkinsfile -- RTL 夜间回归模板（声明式 pipeline）
+// 三段：① cron 夜间定时 + 手动参数 ② 结果归档（JUnit XML，失败才留日志/波形）
+// ③ 失败通知（email-ext；企业 webhook 方案以注释给出，二选一）。
+// 所有地址/token 均走 Jenkins 凭据或环境变量，禁止把真实值写进本文件。
+
+pipeline {
+    agent none
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()          // 夜间回归不与上一轮撞 workspace
+        buildDiscarder(logRotator(numToKeepStr: '30'))
+    }
+
+    parameters {
+        string(name: 'TESTFILTER', defaultValue: '', description: '只跑名字包含该串的用例，留空跑全部')
+        string(name: 'SEED',       defaultValue: '1',  description: '随机种子，复现失败时填上一轮日志里的 seed')
+        choice(name: 'SIMULATOR',  choices: ['all', 'iverilog', 'verilator'], description: '选择仿真器轴')
+    }
+
+    // H = 由 Jenkins 在该小时内打散，避免所有任务整点齐发；工作日每晚 21 点
+    triggers { cron('H 21 * * 1-5') }
+
+    environment {
+        NOTIFY_MAIL = credentials('rtl-regression-notify-mail') // 在凭据中心配置，形如 rtl-ci@example.invalid
+    }
+
+    stages {
+        stage('Parallel Regression') {
+            parallel {
+                stage('iverilog') {
+                    when { expression { env.SIMULATOR == 'all' || env.SIMULATOR == 'iverilog' } }
+                    agent { label 'sim-iverilog' }
+                    steps {
+                        sh 'make compile SIM=iverilog'
+                        sh "TESTFILTER='${params.TESTFILTER}' SEED='${params.SEED}' " +
+                           "LOG_DIR=logs/iverilog OUT_XML=results/iverilog.xml ./run-regression.sh"
+                    }
+                }
+                stage('verilator') {
+                    when { expression { env.SIMULATOR == 'all' || env.SIMULATOR == 'verilator' } }
+                    agent { label 'sim-verilator' }
+                    steps {
+                        sh 'make compile SIM=verilator'
+                        sh "TESTFILTER='${params.TESTFILTER}' SEED='${params.SEED}' " +
+                           "LOG_DIR=logs/verilator OUT_XML=results/verilator.xml ./run-regression.sh"
+                    }
+                }
+            }
+            post {
+                always {
+                    // JUnit XML 无论成败都发布，趋势图才不断点
+                    junit testResults: 'results/*.xml', allowEmptyResults: true
+                }
+                failure {
+                    // 只在失败时归档日志与波形，省磁盘；波形应由失败用例自己 on-error dump
+                    archiveArtifacts artifacts: 'logs/**/*.log, results/*.xml, failures/**/*.vcd',
+                                     allowEmptyArchive: true, fingerprint: false, onlyIfSuccessful: false
+                }
+            }
+        }
+    }
+
+    post {
+        failure {
+            // 方案 A（默认）：邮件。recipients 来自凭据，@default 附加最后提交者
+            emailext subject: "RTL 回归失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                     body: """\
+                         RTL nightly regression FAILED.
+                         Job: ${env.JOB_NAME} #${env.BUILD_NUMBER}
+                         Seed: ${params.SEED}  Filter: ${params.TESTFILTER}
+                         Console: ${env.BUILD_URL}console
+                         失败用例见归档 logs/ 与 JUnit 报告。""".stripIndent(),
+                     recipientProviders: [requestor(), culprits(), upstreamDevelopers()],
+                     to: env.NOTIFY_MAIL,
+                     attachLog: false
+
+            // 方案 B（可选）：企业 IM webhook。URL/token 放凭据 NOTIFY_WEBHOOK，
+            // 取消注释即可切换；二选一，不要两个都发造成噪音。
+            // withCredentials([string(credentialsId: 'notify-webhook', variable: 'NOTIFY_WEBHOOK')]) {
+            //     sh '''
+            //         curl -fsS -X POST "$NOTIFY_WEBHOOK" \
+            //           -H 'Content-Type: application/json' \
+            //           -d "{\"msg_type\":\"text\",\"content\":{\"text\":\"RTL 回归失败 ${JOB_NAME} #${BUILD_NUMBER} seed=${SEED} ${BUILD_URL}\"}}"
+            //     '''
+            // }
+        }
+        always {
+            // 归档/发布完成后再清 workspace，节点盘不被夜间任务慢慢吃满
+            cleanWs(deleteDirs: true, disableDeferredWipeout: true)
+        }
+    }
+}

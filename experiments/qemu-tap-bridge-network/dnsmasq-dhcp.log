@@ -1,0 +1,47 @@
+Nov  8 12:56:34 dnsmasq[28878]: started, version 2.91 cachesize 150
+Nov  8 12:56:34 dnsmasq[28878]: compile time options: IPv6 GNU-getopt DBus no-UBus i18n IDN2 DHCP DHCPv6 no-Lua TFTP conntrack ipset no-nftset auth DNSSEC loop-detect inotify dumpfile
+Nov  8 12:56:34 dnsmasq-dhcp[28878]: DHCP, IP range 10.88.0.50 -- 10.88.0.150, lease time 12h
+Nov  8 12:56:34 dnsmasq-dhcp[28878]: DHCP, sockets bound exclusively to interface br0
+Nov  8 12:56:34 dnsmasq[28878]: reading /etc/resolv.conf
+Nov  8 12:56:34 dnsmasq[28878]: using nameserver 127.0.0.53#53
+Nov  8 12:56:34 dnsmasq[28878]: read /etc/hosts - 10 names
+Nov  8 12:57:38 dnsmasq-dhcp[28878]: 2530275391 available DHCP range: 10.88.0.50 -- 10.88.0.150
+Nov  8 12:57:38 dnsmasq-dhcp[28878]: 2530275391 client provides name: ubuntu
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 DHCPDISCOVER(br0) 52:54:00:10:88:01 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 tags: br0
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 DHCPOFFER(br0) 10.88.0.65 52:54:00:10:88:01 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 1:netmask, 3:router, 6:dns-server, 12:hostname, 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 15:domain-name, 26:mtu, 33:static-route, 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 42:ntp-server, 114, 119:domain-search, 120:sip-server, 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 121:classless-static-route
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 next server: 10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  1 option: 53 message-type  2
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 54 server-identifier  10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 51 lease-time  12h
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 58 T1  6h
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 59 T2  10h30m
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option:  1 netmask  255.255.255.0
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 28 broadcast  10.88.0.255
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option:  6 dns-server  10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option:  3 router  10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 available DHCP range: 10.88.0.50 -- 10.88.0.150
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 client provides name: ubuntu
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 DHCPREQUEST(br0) 10.88.0.65 52:54:00:10:88:01 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 tags: br0
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 DHCPACK(br0) 10.88.0.65 52:54:00:10:88:01 ubuntu
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 1:netmask, 3:router, 6:dns-server, 12:hostname, 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 15:domain-name, 26:mtu, 33:static-route, 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 42:ntp-server, 114, 119:domain-search, 120:sip-server, 
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 requested options: 121:classless-static-route
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 next server: 10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  1 option: 53 message-type  5
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 54 server-identifier  10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 51 lease-time  12h
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 58 T1  6h
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 59 T2  10h30m
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option:  1 netmask  255.255.255.0
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option: 28 broadcast  10.88.0.255
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  6 option: 12 hostname  ubuntu
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option:  6 dns-server  10.88.0.1
+Nov  8 12:57:41 dnsmasq-dhcp[28878]: 2530275391 sent size:  4 option:  3 router  10.88.0.1
+Nov  8 12:58:44 dnsmasq-dhcp[28878]: 2530275391 available DHCP range: 10.88.0.50 -- 10.88.0.150

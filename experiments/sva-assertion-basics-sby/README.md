@@ -1,6 +1,6 @@
 # SVA 断言入门：req/ack 协议的形式验证（sva-assertion-basics-sby）
 
-**对应教程**：https://geek-doc.cn/chip-design/verification/sva-assertion-basics-sby.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/verification/sva-assertion-basics-sby.html>
 
 对一个 req→ack 握手协议写断言做形式验证：好设计（ack 恰在请求后一拍给一拍脉冲）BMC + 时序归纳 PASSED；坏设计（ack 跟随 req 重复打拍）断言触发 FAILED 并产出反例波形。一正一反两份证据齐全。
 

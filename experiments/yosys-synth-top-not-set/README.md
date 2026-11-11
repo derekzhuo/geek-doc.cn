@@ -9,7 +9,7 @@ Yosys `synth` 不带 `-top` / `-top` 指错模块时「逻辑被悄悄优化光�
 - `chip_top.v`：真顶层，例化 uart_tx / pwm_led / debounce 三个子模块
 - `uart_tx.v` / `pwm_led.v` / `debounce.v`：子模块
 - `glitch_filter.v`：故意留下的「孤儿」模块（不被任何人例化）
-- `run.sh`：四段对照实验一键复现
+- `run.sh`：四段对照实验完整复现
 
 ## 复现
 

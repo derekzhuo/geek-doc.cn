@@ -1,5 +1,7 @@
 # eda-lab-verilator-lint
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-verilator-lint.html>
+
 Verilator `--lint-only` 静态检查实操：一份故意埋了 6 类典型问题的 RTL，收集真实告警原文，并演示两种 waiver（豁免）方式。
 
 配套文档：geek-doc.cn `eda-lab/sim/` 的《verilator lint》篇。

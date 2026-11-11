@@ -1,6 +1,6 @@
 # iverilog 宏未定义报错（macro undefined）复现与修复
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-undefined-macro.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-undefined-macro.html
 
 最小复现 Icarus Verilog 13.0 的 `warning: macro BUS_W undefined (and assumed null)`：用了没定义的宏只是警告而非错误，宏被假设为空串，8 位总线静默降级成 `[-1:0]` 两位向量。
 

@@ -1,0 +1,5 @@
+read_verilog counter.v
+hierarchy -top counter
+synth -flatten -top counter
+stat
+write_verilog -noattr -noexpr netlist.v

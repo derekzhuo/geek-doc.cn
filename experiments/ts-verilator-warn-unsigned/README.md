@@ -1,6 +1,6 @@
 # Verilator UNSIGNED 混合符号比较复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-unsigned.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-unsigned.html
 
 `unsigned_broken.sv` 将无符号计数与有符号增量相加后与零比较，触发 Verilator `UNSIGNED`。`unsigned_fixed.sv` 在运算前把两侧显式扩为 9 位有符号数，保留负值语义。
 

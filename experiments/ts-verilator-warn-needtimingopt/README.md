@@ -1,6 +1,6 @@
 # Verilator NEEDTIMINGOPT 延时处理选项对照
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-needtimingopt.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-needtimingopt.html
 
 这个最小实验用同一份含 `#10` 的 SystemVerilog 源码比较三种调用：不指定延时策略、显式传入 `--timing`、显式传入 `--no-timing`。脚本同时记录诊断和退出码，避免只凭告警文字判断是否通过。
 

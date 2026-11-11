@@ -1,6 +1,6 @@
 # STA setup 检查原理：逐行读一份完整报告（sta-setup-check-principle-opensta）
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/sta-setup-check-principle-opensta.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/beginner/sta-setup-check-principle-opensta.html>
 
 用 `report_checks -path_delay max -format full` 产出一份逐行完整的 setup 检查报告：发射沿、clock network delay、逐级单元延迟（dfxtp→and4→nand4→or3→a21boi）、data arrival 2.82、捕获沿 10.00、reconvergence pessimism、library setup -0.08、data required 9.92、slack 7.11 MET——教程逐行解读这份报告的每一行是怎么算出来的。
 

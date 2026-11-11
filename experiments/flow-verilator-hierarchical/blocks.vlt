@@ -1,0 +1,2 @@
+`verilator_config
+hier_block -module "bigblock";

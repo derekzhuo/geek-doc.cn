@@ -6,7 +6,7 @@ updated: 2026-08-24
 
 > CPU 使用率三场景（perf stat/record 基础）
 >
-> 📖 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/cpu-demo/](https://geek-doc.cn/demos/cpu-demo/)
+> 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/cpu-demo/](https://geek-doc.cn/demos/cpu-demo/)
 
 ## 构建与运行
 

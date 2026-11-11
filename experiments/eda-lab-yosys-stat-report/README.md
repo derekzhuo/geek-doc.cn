@@ -1,5 +1,7 @@
 # eda-lab-yosys-stat-report
 
+**对应教程**：<https://geek-doc.cn/eda-lab/synth/el-yosys-stat-report.html>
+
 yosys `stat` 报表解读实验（geek-doc.cn eda-lab 系列文档配套代码）。
 
 ## 内容

@@ -1,0 +1,5 @@
+# 构建产物与回归结果：make 生成，不入库
+cases/*/sim_build/
+cases/*/results.xml
+__pycache__/
+*.pyc

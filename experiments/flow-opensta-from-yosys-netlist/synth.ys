@@ -1,0 +1,8 @@
+read_liberty -lib teaching.lib
+read_verilog rtl.v
+synth -flatten -top top
+dfflibmap -liberty teaching.lib
+abc -liberty teaching.lib
+clean
+stat
+write_verilog -noattr -noexpr netlist.v

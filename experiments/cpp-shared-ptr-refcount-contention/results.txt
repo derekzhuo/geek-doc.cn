@@ -1,0 +1,67 @@
+# shared_ptr 引用计数争用基准 (2026-11-11 02:49:51)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -O2 -std=c++17 -Wall；总任务 400 万，线程扫档 1/2/4/6/8/12，运行 7 次
+
+===== 首次完整扫档输出 =====
+# shared_ptr 引用计数争用基准 (TOTAL_OPS=4000000, work=64 轮乘加)
+# compiler: Apple clang, -O2 -std=c++17; 每格在线程扫档上运行
+mode=unique      threads= 1 ops=4000000 elapsed_ms=   13.230 ns_per_op=   3.31 checksum=3112931579988535936
+mode=raw         threads= 1 ops=4000000 elapsed_ms=   12.955 ns_per_op=   3.24 checksum=3112931579988535936
+mode=shared_ro    threads= 1 ops=4000000 elapsed_ms=   11.226 ns_per_op=   2.81 checksum=3112931579988535936
+mode=shared_copy  threads= 1 ops=4000000 elapsed_ms=   68.225 ns_per_op=  17.06 checksum=3112931579988535936 use_count_peak=2
+mode=unique      threads= 2 ops=4000000 elapsed_ms=    6.686 ns_per_op=   1.67 checksum=-7820425138780001664
+mode=raw         threads= 2 ops=4000000 elapsed_ms=    6.426 ns_per_op=   1.61 checksum=-7820425138780001664
+mode=shared_ro    threads= 2 ops=4000000 elapsed_ms=    5.638 ns_per_op=   1.41 checksum=-7820425138780001664
+mode=shared_copy  threads= 2 ops=4000000 elapsed_ms=  228.478 ns_per_op=  57.12 checksum=-7820425138780001664 use_count_peak=3
+mode=unique      threads= 4 ops=4000000 elapsed_ms=    3.281 ns_per_op=   0.82 checksum=5159640575545281152
+mode=raw         threads= 4 ops=4000000 elapsed_ms=    3.430 ns_per_op=   0.86 checksum=5159640575545281152
+mode=shared_ro    threads= 4 ops=4000000 elapsed_ms=    2.918 ns_per_op=   0.73 checksum=5159640575545281152
+mode=shared_copy  threads= 4 ops=4000000 elapsed_ms=  225.533 ns_per_op=  56.38 checksum=5159640575545281152 use_count_peak=5
+mode=unique      threads= 6 ops=3999996 elapsed_ms=    2.255 ns_per_op=   0.56 checksum=3288516962186614354
+mode=raw         threads= 6 ops=3999996 elapsed_ms=    2.502 ns_per_op=   0.63 checksum=3288516962186614354
+mode=shared_ro    threads= 6 ops=3999996 elapsed_ms=    2.003 ns_per_op=   0.50 checksum=3288516962186614354
+mode=shared_copy  threads= 6 ops=3999996 elapsed_ms=  225.985 ns_per_op=  56.50 checksum=3288516962186614354 use_count_peak=7
+mode=unique      threads= 8 ops=4000000 elapsed_ms=    2.486 ns_per_op=   0.62 checksum=-6797070641001629056
+mode=raw         threads= 8 ops=4000000 elapsed_ms=    2.302 ns_per_op=   0.58 checksum=-6797070641001629056
+mode=shared_ro    threads= 8 ops=4000000 elapsed_ms=    2.146 ns_per_op=   0.54 checksum=-6797070641001629056
+mode=shared_copy  threads= 8 ops=4000000 elapsed_ms=  250.894 ns_per_op=  62.72 checksum=-6797070641001629056 use_count_peak=9
+mode=unique      threads=12 ops=3999996 elapsed_ms=    2.093 ns_per_op=   0.52 checksum=4342578706372091388
+mode=raw         threads=12 ops=3999996 elapsed_ms=    1.899 ns_per_op=   0.47 checksum=4342578706372091388
+mode=shared_ro    threads=12 ops=3999996 elapsed_ms=    1.899 ns_per_op=   0.47 checksum=4342578706372091388
+mode=shared_copy  threads=12 ops=3999996 elapsed_ms=  205.697 ns_per_op=  51.42 checksum=4342578706372091388 use_count_peak=13
+
+===== 各格 7 次耗时中位 (ms) =====
+unique       threads= 1 median_ms=   12.842 ns_per_op(first)=3.31
+unique       threads= 2 median_ms=    6.551 ns_per_op(first)=1.67
+unique       threads= 4 median_ms=    3.295 ns_per_op(first)=0.82
+unique       threads= 6 median_ms=    2.272 ns_per_op(first)=0.56
+unique       threads= 8 median_ms=    2.504 ns_per_op(first)=0.62
+unique       threads=12 median_ms=    2.157 ns_per_op(first)=0.52
+raw          threads= 1 median_ms=   12.943 ns_per_op(first)=3.24
+raw          threads= 2 median_ms=    6.426 ns_per_op(first)=1.61
+raw          threads= 4 median_ms=    3.430 ns_per_op(first)=0.86
+raw          threads= 6 median_ms=    2.457 ns_per_op(first)=0.63
+raw          threads= 8 median_ms=    2.319 ns_per_op(first)=0.58
+raw          threads=12 median_ms=    1.894 ns_per_op(first)=0.47
+shared_ro    threads= 1 median_ms=   11.226 ns_per_op(first)=2.81
+shared_ro    threads= 2 median_ms=    5.643 ns_per_op(first)=1.41
+shared_ro    threads= 4 median_ms=    2.890 ns_per_op(first)=0.73
+shared_ro    threads= 6 median_ms=    2.003 ns_per_op(first)=0.50
+shared_ro    threads= 8 median_ms=    2.182 ns_per_op(first)=0.54
+shared_ro    threads=12 median_ms=    1.899 ns_per_op(first)=0.47
+shared_copy  threads= 1 median_ms=   68.111 ns_per_op(first)=17.06
+shared_copy  threads= 2 median_ms=  229.535 ns_per_op(first)=57.12
+shared_copy  threads= 4 median_ms=  238.282 ns_per_op(first)=56.38
+shared_copy  threads= 6 median_ms=  239.667 ns_per_op(first)=56.50
+shared_copy  threads= 8 median_ms=  250.324 ns_per_op(first)=62.72
+shared_copy  threads=12 median_ms=  221.887 ns_per_op(first)=51.42
+
+===== 反汇编中的 lock 前缀原子指令（引用计数增减） =====
+lock 前缀指令总数: 7
+   1 lock 0000000100002793	xaddq	%rax, 0x8(%r14)
+   1 lock 0000000100002721	incq	0x8(%r14)
+   1 lock 000000010000255b	xaddq	%rax, 0x8(%r14)
+   1 lock 00000001000024da	incq	0x8(%r14)
+   1 lock 0000000100002347	xaddq	%rax, 0x8(%rbx)
+   1 lock 0000000100001d5f	xaddq	%rax, 0x8(%rbx)
+done

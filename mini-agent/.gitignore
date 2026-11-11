@@ -1,0 +1,5 @@
+# 运行期产物：工作区副本与 trace 由 fixtures/scripts 在运行时重建，不入库
+/workspace/
+/traces/
+__pycache__/
+*.pyc

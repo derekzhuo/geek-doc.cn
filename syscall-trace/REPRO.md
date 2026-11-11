@@ -6,7 +6,7 @@ updated: 2026-08-24
 
 > 系统调用追踪实验
 >
-> 📖 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/syscall-trace/](https://geek-doc.cn/demos/syscall-trace/)
+> 配套理论讲解见站点：[https://geek-doc.cn](https://geek-doc.cn) · 本实验页面：[https://geek-doc.cn/demos/syscall-trace/](https://geek-doc.cn/demos/syscall-trace/)
 
 ## 构建与运行
 

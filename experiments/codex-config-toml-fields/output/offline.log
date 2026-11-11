@@ -1,0 +1,17 @@
+$ codex --version
+codex-cli 0.156.1
+
+$ codex app-server generate-json-schema --out <tmp>/schema
+approval_policy	untrusted | on-request | never
+sandbox_mode	read-only | workspace-write | danger-full-access
+web_search	disabled | cached | indexed | live
+strict-config model="gpt-5.5"                            PASS
+strict-config model_reasoning_effort="low"               PASS
+strict-config approval_policy="never"                    PASS
+strict-config sandbox_mode="workspace-write"             PASS
+strict-config notify=["/bin/true"]                       PASS
+strict-config history.persistence="none"                 PASS
+strict-config tui.alternate_screen="never"               PASS
+strict-config web_search="live"                          PASS
+
+未提供 PROBE_PROVIDER_CONFIG；仅执行离线 schema 与严格配置检查。

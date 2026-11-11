@@ -1,6 +1,6 @@
 # chip-ref-tp4056：LTspice CC/CV 充电全程实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/tp4056.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/tp4056.html>
 
 ## 复现方式
 

@@ -42,7 +42,7 @@
 | 8 | 1,260,147 | 8 个 CPU，top 占 14% | 8 个核 %soft ≈ 64-71% |
 | 32 | 1,776,502 | 32 个 CPU 均匀，top 占 3% | top 核 %soft ≈ 28% |
 
-读法：**队列数就是收包路径的并发度上限**。4 队列时 16 个 worker 线程再闲也没用——包只能由 4 个 CPU 收，softirq 打满即天花板；队列拉到 32，软中断摊开，吞吐翻倍。
+读法：**队列数就是收包路径的并发度上限**。4 队列时 16 个 worker 线程再闲也没用——包只能由 4 个 CPU 收，softirq 达到处理上限；队列拉到 32，软中断摊开，吞吐翻倍。
 
 默认 32 队列下 8/32 线程各点的 `/proc/softirqs` 差分均显示 NET_RX 均匀散布全部 32 核（top CPU 仅 3-4%），说明 virtio 多队列 + RSS 哈希（按四元组）开箱即用，无需手工 IRQ 绑定。
 
@@ -71,6 +71,6 @@
 - `bench/`：矩阵各点 kp-bench 原始输出（warm/run 两轮）+ 长稳态（`*_long.txt` / `*_long2.txt`）
 - `cpu/`：各点 mpstat -P ALL 采样（`mp_*` 矩阵粗采样，`mpB_*` 热相精采样）
 - `misc/`：`/proc/interrupts`、`/proc/softirqs`、`ethtool -S` 前后快照（成对）、sar 采样、NIC 能力（nic_caps.txt）
-- 本批无截图（全文本采集），shots 件豁免（同 E0 口径）
+- 本实验证据以文本日志为主，未包含界面截图
 
-所有文本已过 `sanitize-secrets.mjs --check`（IP/实例 ID 全部占位化）。
+文本中的 IP 和实例 ID 已使用占位符。

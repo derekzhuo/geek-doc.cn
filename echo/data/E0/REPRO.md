@@ -82,4 +82,4 @@ perf record -a -g -F 199 -- sleep 30   # 热相采样（需 pps 触发，见下�
 - `cpu/`：mpstat 采样
 - `perf/`：report.txt（空闲对照）+ report7.txt（热相，pps 触发）
 
-所有文本已过 `sanitize-secrets.mjs --check`（IP/实例 ID 全部占位化）；本批无截图（全文本采集），shots 件豁免。
+文本中的 IP 和实例 ID 已使用占位符；本实验证据以文本日志为主，未包含界面截图。

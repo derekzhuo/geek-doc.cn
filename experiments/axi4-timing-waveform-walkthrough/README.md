@@ -1,6 +1,6 @@
 # AXI4 时序逐拍走查（axi4-timing-waveform-walkthrough）
 
-**对应教程**：https://geek-doc.cn/chip-design/intermediate/axi4-timing-waveform-walkthrough.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/intermediate/axi4-timing-waveform-walkthrough.html>
 
 用 Icarus Verilog 仿真一个最小 AXI4-Full 主从对：testbench 作为主端发起一次 4-beat INCR 写突发（起始地址 0x40）和一次 4-beat 读突发，从端（axi4_slave）按协议逐拍应答，TB 逐拍比对数据并检查 BRESP/RLAST。
 

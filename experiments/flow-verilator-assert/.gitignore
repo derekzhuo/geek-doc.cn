@@ -1,0 +1,5 @@
+# Verilator 构建产物
+build_noassert/
+build_bad/
+build_fixed/
+obj_dir/

@@ -1,6 +1,6 @@
 # 74HC595 移位、锁存、三态与清零行为仿真
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/74hc595.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/chip-ref/74hc595.html
 
 ## 实验内容
 

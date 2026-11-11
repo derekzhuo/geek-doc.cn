@@ -1,6 +1,6 @@
 # openlane-fastroute-congestion：OpenLANE FastRoute 布线拥塞复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-openlane-fastroute-congestion-fail.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/eda/ts-openlane-fastroute-congestion-fail.html>
 
 ## 环境
 

@@ -1,0 +1,105 @@
+# command: bash run.sh
+# date: 2026-11-02
+# host-toolchain: Docker geek-eda:0.3-sta, Ubuntu 24.04, OpenSTA 2.0.17 (Debian official package)
+
+===== bad =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: 0.4ns clock created on port clk
+CASE: bad separator (u_b.D)
+Warning: bad.sdc, 2 pin 'u_b.D' not found.
+Error: no valid objects specified for -to.
+Error: bad.sdc, 2 set_false_path command failed.
+Startpoint: u_a (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_b (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Slew    Delay     Time   Description
+-------------------------------------------------------------------
+   0.000    0.000    0.000   clock clk (rise edge)
+            0.000    0.000   clock network delay (ideal)
+   0.000    0.000    0.000 ^ u_a/C (DFF_P)
+   0.050    0.200    0.200 ^ u_a/Q (DFF_P)
+   0.050    0.000    0.200 ^ u_buf/A (BUF_X1)
+   0.050    0.300    0.500 ^ u_buf/Y (BUF_X1)
+   0.050    0.000    0.500 ^ u_b/D (DFF_P)
+                     0.500   data arrival time
+
+   0.000    0.400    0.400   clock clk (rise edge)
+            0.000    0.400   clock network delay (ideal)
+            0.000    0.400   clock reconvergence pessimism
+                     0.400 ^ u_b/C (DFF_P)
+           -0.100    0.300   library setup time
+                     0.300   data required time
+-------------------------------------------------------------------
+                     0.300   data required time
+                    -0.500   data arrival time
+-------------------------------------------------------------------
+                    -0.200   slack (VIOLATED)
+
+
+CASE_EXIT bad=0
+
+===== warn_empty =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: 0.4ns clock created on port clk
+CASE: regex metachar without -regexp
+MATCH_COUNT=0
+Warning: warn_empty.sdc, 2 pin 'u_b./D' not found.
+Error: no valid objects specified for -to.
+Error: warn_empty.sdc, 2 set_false_path command failed.
+Startpoint: u_a (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_b (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Slew    Delay     Time   Description
+-------------------------------------------------------------------
+   0.000    0.000    0.000   clock clk (rise edge)
+            0.000    0.000   clock network delay (ideal)
+   0.000    0.000    0.000 ^ u_a/C (DFF_P)
+   0.050    0.200    0.200 ^ u_a/Q (DFF_P)
+   0.050    0.000    0.200 ^ u_buf/A (BUF_X1)
+   0.050    0.300    0.500 ^ u_buf/Y (BUF_X1)
+   0.050    0.000    0.500 ^ u_b/D (DFF_P)
+                     0.500   data arrival time
+
+   0.000    0.400    0.400   clock clk (rise edge)
+            0.000    0.400   clock network delay (ideal)
+            0.000    0.400   clock reconvergence pessimism
+                     0.400 ^ u_b/C (DFF_P)
+           -0.100    0.300   library setup time
+                     0.300   data required time
+-------------------------------------------------------------------
+                     0.300   data required time
+                    -0.500   data arrival time
+-------------------------------------------------------------------
+                    -0.200   slack (VIOLATED)
+
+
+CASE_EXIT warn_empty=0
+
+===== fixed =====
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+LINK_OK: 0.4ns clock created on port clk
+CASE: fixed hierarchical pin name
+MATCH_COUNT=1
+REPORT_BEGIN
+No paths found.
+REPORT_END
+CASE_EXIT fixed=0

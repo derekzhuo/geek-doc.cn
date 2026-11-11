@@ -1,8 +1,8 @@
 # exp-cocotb-minimal-testbench
 
-> **对应教程**：https://geek-doc.cn/eda-lab/sim/exp-cocotb-minimal-testbench.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/eda-lab/sim/exp-cocotb-minimal-testbench.html
 
-最小 cocotb 测试平台：对一个计数器写 20 行 Python 测试，不碰 Verilog testbench，跑通 cocotb + Icarus 的最小闭环。
+最小 cocotb 测试平台：对一个计数器写 20 行 Python 测试，不碰 Verilog testbench，跑通 cocotb + Icarus 的最小完整流程。
 
 ## 环境
 

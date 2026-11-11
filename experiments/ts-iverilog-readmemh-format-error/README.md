@@ -1,6 +1,6 @@
 # Icarus Verilog $readmemh 数据格式错误最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-readmemh-format-error.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-readmemh-format-error.html
 
 本目录包含非法十六进制字符、越界显式地址和修复后数据三组对照。测试平台把存储器预置为 `xx`，以便区分数据文件未成功写入与加载了合法零值。
 

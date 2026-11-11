@@ -1,6 +1,6 @@
 # chip-ref-ch340g：XSim 实测 UART 波特率误差失效边界
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ch340g.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/ch340g.html>
 
 ## 复现方式
 

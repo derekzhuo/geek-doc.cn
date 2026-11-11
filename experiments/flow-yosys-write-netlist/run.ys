@@ -1,0 +1,13 @@
+# Yosys 网表输出流程：同一份 RTL 导出三种格式
+read_verilog counter4.v
+hierarchy -top counter4
+synth -flatten -top counter4
+stat
+# 1) 默认 Verilog 网表（保留 attribute，$ 单元写成 cell 实例）
+write_verilog netlist_default.v
+# 2) 交给后端/门仿的干净门级网表
+write_verilog -noattr -noexpr -nodec netlist_clean.v
+# 3) 结构化 JSON 网表（给脚本与可视化工具）
+write_json design.json
+# 4) BLIF：学术工具与 FPGA 流程的交换格式
+write_blif design.blif

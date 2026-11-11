@@ -1,0 +1,28 @@
+#!/usr/bin/expect -f
+# 直挂内核引导后自动串口登录、跑探针、关机
+# 环境变量：VM_PW_FILE（默认 ~/.vm-demo.pw）、VM_IMG（默认当前目录云镜像）
+set timeout 540
+set pwfile $env(VM_PW_FILE)
+catch {set pwfile $env(VM_PW_FILE)}
+if {![info exists env(VM_PW_FILE)]} { set pwfile "$env(HOME)/.vm-demo.pw" }
+set pw [string trim [exec cat $pwfile]]
+if {[info exists env(VM_IMG)]} { set img $env(VM_IMG) } else { set img "noble-server-cloudimg-riscv64.img" }
+spawn qemu-system-riscv64 \
+  -machine virt -m 2048 -smp 2 -nographic \
+  -bios /usr/lib/riscv64-linux-gnu/opensbi/generic/fw_jump.bin \
+  -kernel vmlinuz -initrd initrd.img \
+  -append "root=LABEL=cloudimg-rootfs ro rootwait earlycon console=ttyS0 systemd.mask=boot-efi.mount systemd.mask=systemd-networkd-wait-online.service" \
+  -drive file=$img,if=virtio,format=qcow2
+expect {
+  -re "ubuntu login:" { send "ubuntu\r" }
+  timeout { puts "EXPECT_TIMEOUT_AT_LOGIN"; exit 1 }
+}
+expect {
+  -re "Password:" { send "$pw\r" }
+  timeout { puts "EXPECT_TIMEOUT_AT_PASSWORD"; exit 1 }
+}
+expect -re {[#\$] $}
+send "echo GUEST_PROBE_START; uname -m; uname -r; cat /etc/os-release | head -2; whoami; echo GUEST_PROBE_DONE\r"
+expect "GUEST_PROBE_DONE"
+send "sudo poweroff\r"
+expect eof

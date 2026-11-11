@@ -1,6 +1,6 @@
 # verilator-warn-latch
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-latch.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-latch.html
 
 Verilator `%Warning-LATCH`（组合 always 块分支不全推断出锁存器）的最小复现与修复对照。
 

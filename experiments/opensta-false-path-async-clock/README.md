@@ -1,6 +1,6 @@
 # OpenSTA 异步时钟：set_false_path 与 set_clock_groups 对照（opensta-false-path-async-clock）
 
-**对应教程**：https://geek-doc.cn/chip-design/intermediate/opensta-false-path-async-clock.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/chip-design/intermediate/opensta-false-path-async-clock.html>
 
 一个双时钟设计（clk_a 10ns / clk_b 7ns，跨域走两级同步器），分别用 `set_false_path -from clk_a -to clk_b` 和 `set_clock_groups -asynchronous` 两种写法豁免跨域路径，验证两者检查集合效果一致。
 

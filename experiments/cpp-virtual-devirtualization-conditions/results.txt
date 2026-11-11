@@ -1,0 +1,74 @@
+# 虚函数去虚化条件基准 (2026-11-11 02:12:20)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -O2 -std=c++17 -Wall，100M 次/形态，运行 7 次（二进制内另含预热）
+
+== 训练插桩版并合并剖面 ==
+mode=train form=direct        elapsed_ms=   1.740 checksum=1485977516193069047
+mode=train form=heap_open     elapsed_ms= 450.825 checksum=1485977516193069047
+mode=train form=heap_final    elapsed_ms= 447.903 checksum=1485977516193069047
+mode=train form=visible_local elapsed_ms= 483.927 checksum=1485977516193069047
+mode=train form=cross_tu      elapsed_ms= 475.819 checksum=1485977516193069047
+merge 输出：pgo.profdata（2136 B）
+
+== 配置档：none ==
+direct        median_ms=13.974 checksum=1485977516193069047
+heap_open     median_ms=139.505 checksum=1485977516193069047
+heap_final    median_ms=139.457 checksum=1485977516193069047
+visible_local median_ms=139.544 checksum=1485977516193069047
+cross_tu      median_ms=139.526 checksum=1485977516193069047
+
+== 配置档：lto ==
+direct        median_ms=1.740 checksum=1485977516193069047
+heap_open     median_ms=160.850 checksum=1485977516193069047
+heap_final    median_ms=167.611 checksum=1485977516193069047
+visible_local median_ms=139.539 checksum=1485977516193069047
+cross_tu      median_ms=160.963 checksum=1485977516193069047
+
+== 配置档：pgo ==
+direct        median_ms=13.953 checksum=1485977516193069047
+heap_open     median_ms=111.610 checksum=1485977516193069047
+heap_final    median_ms=111.585 checksum=1485977516193069047
+visible_local median_ms=111.529 checksum=1485977516193069047
+cross_tu      median_ms=111.589 checksum=1485977516193069047
+
+== 反汇编证据 ==
+## 五形态去虚化证据（Apple clang 21.0.0，-O2，100M 次/形态）
+## 间接调用按符号地址区间统计（规避 LTO ICF 标签合并）
+===== bin/bench-none =====
+bench-none   __Z10run_directl         indirect_callq=0
+bench-none   __Z13run_heap_openl      indirect_callq=2
+bench-none   __Z14run_heap_finall     indirect_callq=2
+bench-none   __Z17run_visible_locall  indirect_callq=1
+bench-none   __Z12run_cross_tul       indirect_callq=2
+
+===== bin/bench-lto =====
+bench-lto    __Z10run_directl         indirect_callq=0
+bench-lto    __Z12run_cross_tul       indirect_callq=0
+bench-lto    __Z13run_heap_openl      indirect_callq=2
+bench-lto    __Z14run_heap_finall     indirect_callq=2
+bench-lto    __Z17run_visible_locall  indirect_callq=1
+
+===== bin/bench-pgo =====
+bench-pgo    __Z10run_directl         indirect_callq=0
+bench-pgo    __Z12run_cross_tul       indirect_callq=0
+bench-pgo    __Z13run_heap_openl      indirect_callq=2
+bench-pgo    __Z14run_heap_finall     indirect_callq=2
+bench-pgo    __Z17run_visible_locall  indirect_callq=1
+
+===== none 版 heap_open 热循环（间接调用 callq *0x10(%rcx) 每轮一次） =====
+000000010000061f	callq	0x1000009ec                     ## symbol stub for: __Znwm
+0000000100000649	callq	*0x10(%rcx)
+000000010000064f	jne	0x100000640
+0000000100000657	jmp	0x10000065f
+0000000100000662	callq	*0x8(%rax)
+
+===== pgo 版 heap_open 热循环（守卫比较 + 函数体内联，jne 走冷兜底） =====
+00000001000005a3	callq	0x1000009be                     ## symbol stub for: __Znwm
+00000001000005bb	leaq	__ZNK11OpenDerived4stepEx(%rip), %r12 ## OpenDerived::step(long long) const
+00000001000005d7	cmpq	%r12, %rax
+00000001000005da	jne	0x100000601
+00000001000005dc	imulq	$0x41c64e6d, %r14, %r14         ## imm = 0x41C64E6D
+00000001000005e3	addq	$0x3039, %r14                   ## imm = 0x3039
+00000001000005ed	jne	0x1000005d0
+00000001000005f2	callq	*0x8(%rax)
+done

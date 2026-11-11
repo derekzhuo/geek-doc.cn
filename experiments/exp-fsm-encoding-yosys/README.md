@@ -1,6 +1,6 @@
 # exp-fsm-encoding-yosys
 
-> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-fsm-encoding-yosys.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/intermediate/exp-fsm-encoding-yosys.html
 
 FSM 状态编码综合对比：同一状态机分别用 binary、one-hot、gray 编码实现，用 Yosys stat 对比三者的单元数、线网数与触发器数量。
 

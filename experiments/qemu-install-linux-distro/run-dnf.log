@@ -1,0 +1,20 @@
+== dnf search qemu 可用包（节选）==
+qemu-guest-agent.x86_64 : QEMU guest agent
+qemu-img.x86_64 : QEMU command line tool for manipulating disk images
+qemu-kvm.x86_64 : QEMU is a machine emulator and virtualizer
+qemu-kvm-audio-pa.x86_64 : QEMU PulseAudio audio driver
+qemu-kvm-block-blkio.x86_64 : QEMU libblkio block drivers
+qemu-kvm-block-curl.x86_64 : QEMU CURL block driver
+qemu-kvm-block-rbd.x86_64 : QEMU Ceph/RBD block driver
+qemu-kvm-common.x86_64 : QEMU common files needed by all QEMU targets
+
+== dnf install qemu-kvm qemu-img ==
+  virtiofsd-1.13.3-1.el9.x86_64                                                 
+  xkeyboard-config-2.33-2.el9.0.1.noarch                                        
+
+Complete!
+
+== 版本核验 ==
+qemu-img version 10.1.0 (qemu-kvm-10.1.0-17.el9_8.9)
+-rwxr-xr-x 1 root root 32304048 Oct 23 01:39 /usr/libexec/qemu-kvm
+QEMU emulator version 10.1.0 (qemu-kvm-10.1.0-17.el9_8.9)

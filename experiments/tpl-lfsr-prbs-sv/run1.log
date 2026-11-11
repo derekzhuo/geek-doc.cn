@@ -1,0 +1,15 @@
+=== LFSR/PRBS 自校验 ===
+[INFO] PRBS7 Galois: period=127 distinct=127 ones=64 (期望 127/127/64)
+[PASS] PRBS7 Galois 周期 2^7-1=127
+[PASS] PRBS7 Galois 独立状态 127
+[PASS] m 序列一个周期含 64 个 1
+[INFO] PRBS7 Fibonacci: period=127 distinct=127 (期望 127/127)
+[PASS] PRBS7 Fibonacci 周期 127
+[PASS] PRBS7 Fibonacci 独立状态 127
+[INFO] 全零种子 Galois：20/20 拍保持 0 输出（期望 20，全零陷阱）
+[PASS] 全零种子锁死，无法自启动
+[INFO] PRBS15 Galois: period=32767 (期望 32767)
+[PASS] PRBS15 周期 2^15-1=32767
+=== 汇总: PASS=7 FAIL=0 ===
+RESULT: ALL PASS
+tb_lfsr.sv:115: $finish called at 330500000 (1ps)

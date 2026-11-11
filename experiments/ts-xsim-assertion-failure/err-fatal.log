@@ -1,0 +1,43 @@
+===== 2026-11-10T01:58:45+08:00 =====
+$ xsim.bat tb_assert_bad -t xsim_run.tcl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-assertion-failure/dut_counter.v" into library work
+INFO: [VRFC 10-311] analyzing module dut_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-assertion-failure/tb_assert_bad.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_assert_bad
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_assert_bad 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.dut_counter
+Compiling module work.tb_assert_bad
+Built simulation snapshot work.tb_assert_bad
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-assertion-failure/xsim.dir/work.tb_assert_bad/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov 10 01:58:55 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_assert_bad/xsim_script.tcl
+# xsim {work.tb_assert_bad} -autoloadwcfg -tclbatch {xsim_run.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source xsim_run.tcl
+## run all
+Fatal: bound check failed: cnt=10 exceeded 9
+Time: 115 ns  Iteration: 0  Process: /tb_assert_bad/Always16_2  File: C:/eda-lab/b1/ts-xsim-assertion-failure/tb_assert_bad.v
+$finish called at time : 115 ns
+## quit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 10 01:58:59 2026...

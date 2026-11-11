@@ -1,6 +1,6 @@
 # Verilator PINCONNECTEMPTY 最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-pinconnectempty.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-pinconnectempty.html
 
 `top_bad.v` 用显式空连接 `.debug()` 复现 `%Warning-PINCONNECTEMPTY`；`top_fixed.v` 把该输出接到具名未用线网 `unused_debug`，保留清晰的设计意图。
 

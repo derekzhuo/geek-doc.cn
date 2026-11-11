@@ -1,0 +1,9 @@
+[INFO] regression started; only RESULT lines are parsed
+RESULT test=reset_smoke seed=104729 status=PASS
+RESULT test=fifo_random seed=8675309 status=FAIL
+[ERROR] scoreboard mismatch at cycle 418
+RESULT test=burst_boundary seed=31337 status=PASS
+RESULT test=backpressure seed=424242 status=FAIL
+[ERROR] timeout waiting for output valid
+RESULT test=idle_recovery seed=9001 status=PASS
+[INFO] regression finished

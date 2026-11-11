@@ -1,6 +1,6 @@
 # Icarus Verilog `$readmemh` 相对路径与文件格式对照实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-readmemh-file-missing.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-readmemh-file-missing.html
 
 本实验用 Icarus Verilog 复现四种情况：指定文件不存在、从正确工作目录运行、从错误工作目录运行同一个仿真文件，以及 hex 文件存在但含非法字符。测试平台会检查四个存储单元，避免只凭运行时警告判断结果。
 

@@ -1,6 +1,6 @@
 # Verilator CASEOVERLAP 分支重叠复现实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-caseoverlap.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-verilator-warn-caseoverlap.html
 
 ## 内容
 

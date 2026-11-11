@@ -1,0 +1,26 @@
+# 异常 vs 错误码 vs Expected 基准 (2026-11-11 02:24:09)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -O2 -std=c++17 -Wall，成功路径 5000 万次/格，错误路径 200 万次/格，运行 7 次
+
+exception ok    median_ms=268.518 checksum=199475000000
+exception fail  median_ms=11990.551 checksum=2000000
+errcode   ok    median_ms=348.799 checksum=199475000000
+errcode   fail  median_ms=3.909 checksum=2000000
+expected  ok    median_ms=278.769 checksum=199475000000
+expected  fail  median_ms=3.621 checksum=2000000
+
+== 异常机制证据 ==
+## 异常处理人格符号（仅异常实现需要）
+                 U ___gxx_personality_v0
+
+## __gcc_except_tab 段（异常处理表，正常代码不进热路径）
+  sectname __gcc_except_tab
+   segname __TEXT
+      addr 0x0000000100000d98
+      size 0x0000000000000028
+
+## 成功路径热循环反汇编（run_except_ok，正常路径无 call/无异常指令）
+00000001000005dc	callq	__Z11parseExceptPKci            ## parseExcept(char const*, int)
+00000001000005e9	jne	0x100000580
+00000001000005eb	jmp	0x1000005ef
+00000001000005fe	retq

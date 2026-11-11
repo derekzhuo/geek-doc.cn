@@ -1,0 +1,145 @@
+# std::function SBO 阈值基准 (2026-11-11 03:19:10)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/O0 各运行 7 次取中位
+
+===== -O2 首次完整输出 =====
+# std::function SBO 阈值基准 (CALL_ITERS=20000000 CTOR_ITERS=2000000)
+# 编译器宏: __clang_major__=21 _LIBCPP_VERSION=13000
+
+# ---- 基线 ----
+function_ptr call: 2.22 ns/次
+empty_lambda  call: 1.67 ns/次
+
+# ---- Capture<1> sizeof=8 alignof=4 nothrow_move=1 ----
+construct: allocs=0 bytes=0 deallocs_after_dtor=0
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 3.542 ms (1.77 ns/次, 分配 0 次, 0.000 次/构造)
+call x20000000: 33.617 ms (1.68 ns/次)
+
+# ---- Capture<8> sizeof=12 alignof=4 nothrow_move=1 ----
+construct: allocs=0 bytes=0 deallocs_after_dtor=0
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 3.048 ms (1.52 ns/次, 分配 0 次, 0.000 次/构造)
+call x20000000: 33.448 ms (1.67 ns/次)
+
+# ---- Capture<16> sizeof=20 alignof=4 nothrow_move=1 ----
+construct: allocs=0 bytes=0 deallocs_after_dtor=0
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 3.032 ms (1.52 ns/次, 分配 0 次, 0.000 次/构造)
+call x20000000: 33.501 ms (1.68 ns/次)
+
+# ---- Capture<20> sizeof=24 alignof=4 nothrow_move=1 ----
+construct: allocs=0 bytes=0 deallocs_after_dtor=0
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 3.066 ms (1.53 ns/次, 分配 0 次, 0.000 次/构造)
+call x20000000: 33.423 ms (1.67 ns/次)
+
+# ---- Capture<24> sizeof=28 alignof=4 nothrow_move=1 ----
+construct: allocs=1 bytes=40 deallocs_after_dtor=1
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 4.456 ms (2.23 ns/次, 分配 2000000 次, 1.000 次/构造)
+call x20000000: 28.369 ms (1.42 ns/次)
+
+# ---- Capture<32> sizeof=36 alignof=4 nothrow_move=1 ----
+construct: allocs=1 bytes=48 deallocs_after_dtor=1
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 2.810 ms (1.41 ns/次, 分配 2000000 次, 1.000 次/构造)
+call x20000000: 33.432 ms (1.67 ns/次)
+
+# ---- Capture<40> sizeof=44 alignof=4 nothrow_move=1 ----
+construct: allocs=1 bytes=56 deallocs_after_dtor=1
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 3.343 ms (1.67 ns/次, 分配 2000000 次, 1.000 次/构造)
+call x20000000: 34.038 ms (1.70 ns/次)
+
+# ---- Capture<48> sizeof=52 alignof=4 nothrow_move=1 ----
+construct: allocs=1 bytes=64 deallocs_after_dtor=1
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 2.789 ms (1.39 ns/次, 分配 2000000 次, 1.000 次/构造)
+call x20000000: 28.298 ms (1.41 ns/次)
+
+# ---- Capture<64> sizeof=68 alignof=4 nothrow_move=1 ----
+construct: allocs=1 bytes=80 deallocs_after_dtor=1
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 4.456 ms (2.23 ns/次, 分配 2000000 次, 1.000 次/构造)
+call x20000000: 28.377 ms (1.42 ns/次)
+
+# ---- OverAligned(16B/align64) sizeof=64 alignof=64 nothrow_move=1 ----
+construct: allocs=1 bytes=128 deallocs_after_dtor=1
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 4.454 ms (2.23 ns/次, 分配 2000000 次, 1.000 次/构造)
+call x20000000: 33.600 ms (1.68 ns/次)
+
+# ---- RiskyMove(8B, 非noexcept移动) sizeof=12 alignof=4 nothrow_move=0 ----
+construct: allocs=0 bytes=0 deallocs_after_dtor=0
+move-construct: allocs=0 bytes=0
+ctor/dtor x2000000: 2.519 ms (1.26 ns/次, 分配 0 次, 0.000 次/构造)
+call x20000000: 33.464 ms (1.67 ns/次)
+
+
+===== -O2 各探针 7 次耗时中位 (ns/次) =====
+探针                       构造/析构       调用
+Capture<1> sizeof=8 alignof=4 nothrow_move=1         2.56         1.68
+Capture<8> sizeof=12 alignof=4 nothrow_move=1         1.53         1.67
+Capture<16> sizeof=20 alignof=4 nothrow_move=1         1.53         1.67
+Capture<20> sizeof=24 alignof=4 nothrow_move=1         1.53         1.67
+Capture<24> sizeof=28 alignof=4 nothrow_move=1         2.23         1.42
+Capture<32> sizeof=36 alignof=4 nothrow_move=1         1.39         1.68
+Capture<40> sizeof=44 alignof=4 nothrow_move=1         1.67         1.70
+Capture<48> sizeof=52 alignof=4 nothrow_move=1         1.40         1.41
+Capture<64> sizeof=68 alignof=4 nothrow_move=1         2.23         1.42
+OverAligned(16B/align64) sizeof=64 alignof=64 nothrow_move=1         2.23         1.68
+RiskyMove(8B, 非noexcept移动) sizeof=12 alignof=4 nothrow_move=0         1.26         1.67
+
+===== -O0 各探针 7 次耗时中位 (ns/次) =====
+探针                       构造/析构       调用
+Capture<1> sizeof=8 alignof=4 nothrow_move=1        98.65        16.96
+Capture<8> sizeof=12 alignof=4 nothrow_move=1       106.41        16.75
+Capture<16> sizeof=20 alignof=4 nothrow_move=1        98.41        17.66
+Capture<20> sizeof=24 alignof=4 nothrow_move=1        99.81        16.80
+Capture<24> sizeof=28 alignof=4 nothrow_move=1       228.30        16.77
+Capture<32> sizeof=36 alignof=4 nothrow_move=1       218.86        16.79
+Capture<40> sizeof=44 alignof=4 nothrow_move=1       230.62        16.79
+Capture<48> sizeof=52 alignof=4 nothrow_move=1       218.44        16.98
+Capture<64> sizeof=68 alignof=4 nothrow_move=1       220.36        16.63
+OverAligned(16B/align64) sizeof=64 alignof=64 nothrow_move=1       390.67        16.86
+RiskyMove(8B, 非noexcept移动) sizeof=12 alignof=4 nothrow_move=0       110.25        17.18
+
+===== 分配计数汇总（-O2 首次输出，每个探针的单次构造） =====
+# ---- Capture<1> sizeof=8 alignof=4 nothrow_move=1 ----  construct: allocs=0 bytes=0 deallocs_after_dtor=0
+# ---- Capture<1> sizeof=8 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<8> sizeof=12 alignof=4 nothrow_move=1 ----  construct: allocs=0 bytes=0 deallocs_after_dtor=0
+# ---- Capture<8> sizeof=12 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<16> sizeof=20 alignof=4 nothrow_move=1 ----  construct: allocs=0 bytes=0 deallocs_after_dtor=0
+# ---- Capture<16> sizeof=20 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<20> sizeof=24 alignof=4 nothrow_move=1 ----  construct: allocs=0 bytes=0 deallocs_after_dtor=0
+# ---- Capture<20> sizeof=24 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<24> sizeof=28 alignof=4 nothrow_move=1 ----  construct: allocs=1 bytes=40 deallocs_after_dtor=1
+# ---- Capture<24> sizeof=28 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<32> sizeof=36 alignof=4 nothrow_move=1 ----  construct: allocs=1 bytes=48 deallocs_after_dtor=1
+# ---- Capture<32> sizeof=36 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<40> sizeof=44 alignof=4 nothrow_move=1 ----  construct: allocs=1 bytes=56 deallocs_after_dtor=1
+# ---- Capture<40> sizeof=44 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<48> sizeof=52 alignof=4 nothrow_move=1 ----  construct: allocs=1 bytes=64 deallocs_after_dtor=1
+# ---- Capture<48> sizeof=52 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- Capture<64> sizeof=68 alignof=4 nothrow_move=1 ----  construct: allocs=1 bytes=80 deallocs_after_dtor=1
+# ---- Capture<64> sizeof=68 alignof=4 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- OverAligned(16B/align64) sizeof=64 alignof=64 nothrow_move=1 ----  construct: allocs=1 bytes=128 deallocs_after_dtor=1
+# ---- OverAligned(16B/align64) sizeof=64 alignof=64 nothrow_move=1 ----  move-construct: allocs=0 bytes=0
+# ---- RiskyMove(8B, 非noexcept移动) sizeof=12 alignof=4 nothrow_move=0 ----  construct: allocs=0 bytes=0 deallocs_after_dtor=0
+# ---- RiskyMove(8B, 非noexcept移动) sizeof=12 alignof=4 nothrow_move=0 ----  move-construct: allocs=0 bytes=0
+
+===== 二进制证据：operator new 被本程序重载（T=本二进制定义） =====
+0000000100000870 T __ZdaPvSt11align_val_t
+00000001000008d0 T __ZdaPvmSt11align_val_t
+0000000100000840 T __ZdlPvSt11align_val_t
+00000001000008a0 T __ZdlPvmSt11align_val_t
+00000001000006b0 T __Znam
+0000000100004280 t __Znam.cold.1
+00000001000007f0 T __ZnamSt11align_val_t
+0000000100004280 t __ZnamSt11align_val_t.cold.1
+
+===== 反汇编证据：operator new 在 -O2 被内联，堆路径直接调用 malloc =====
+   6 _aligned_alloc
+  19 _malloc
+done

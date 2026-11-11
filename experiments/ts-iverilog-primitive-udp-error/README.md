@@ -1,6 +1,6 @@
 # iverilog UDP 原语非法表项复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-primitive-udp-error.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-primitive-udp-error.html
 
 这个最小实验复现两输入组合 UDP 的表项误写为三个输入符号，并用修复后的 UDP 与 `always @(*)` 实现跑四组二值向量自检。
 

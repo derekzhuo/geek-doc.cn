@@ -1,6 +1,6 @@
 # Icarus Verilog 除零与除数保护实验
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-divide-by-zero.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-divide-by-zero.html
 
 本目录包含常量除零、变量除零、x 传播以及带有效位保护的最小实验。
 

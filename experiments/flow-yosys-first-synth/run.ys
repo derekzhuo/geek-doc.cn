@@ -1,0 +1,13 @@
+# Yosys 第一次综合最小脚本：每个阶段后插一条 stat，观察电路怎么变
+read_verilog counter4.v
+hierarchy -top counter4
+stat
+proc
+stat
+opt
+stat
+techmap
+stat
+opt_clean
+stat
+write_verilog -noattr netlist.v

@@ -1,5 +1,7 @@
 # eda-lab-verilator-coverage
 
+**对应教程**：<https://geek-doc.cn/eda-lab/sim/el-verilator-coverage.html>
+
 Verilator 5.020 line/toggle/branch 覆盖率收集与解读实验（geek-doc.cn eda-lab 配套代码）。
 
 ## 内容

@@ -7,9 +7,9 @@ updated: 2026-10-22
 
 # perf-read-flamegraph —— 如何分析 perf 的图（动手复现）
 
-> **代码获取**：本实验源码与一键复现脚本已随公开仓库发布，clone 即得：`git clone --depth 1 https://github.com/derekzhuo/geek-doc.cn.git`，目录 `public/demos/perf-read-flamegraph/`。
+> **代码获取**：本实验源码与完整复现脚本已随公开仓库发布，clone 即得：`git clone --depth 1 https://github.com/derekzhuo/geek-doc.cn.git`，目录 `public/demos/perf-read-flamegraph/`。
 
-配套讲解文章：[如何分析 perf 的图：火焰图/perf report/perf annotate 实战读图手册](/concepts/perf/perf-read-graph.md)。本目录提供可一键复现的源码、脚本和三张真实生成的火焰图 SVG。
+配套讲解文章：[如何分析 perf 的图：火焰图/perf report/perf annotate 实战读图手册](/concepts/perf/perf-read-graph.md)。本目录提供可完整复现的源码、脚本和三张真实生成的火焰图 SVG。
 
 > **更新时间**：2026-09-08
 
@@ -44,7 +44,7 @@ export FG=$HOME/FlameGraph     # run_lab.sh 默认读 ~/FlameGraph
 
 权限：若 `perf record` 报 Permission error，需 `sudo` 或让管理员 `sudo sysctl -w kernel.perf_event_paranoid=-1`。
 
-## 3. 一键复现
+## 3. 完整复现
 
 ```bash
 make record          # 等价于 bash run_lab.sh
@@ -81,7 +81,7 @@ opt : leaf_spin 56.50% | walk_array 36.56% | hash_djb2  0.30%
 | 文件 | 说明 |
 |------|------|
 | `hotspot.c` | 含三类热点形态的实验程序（base/opt 由命令行参数切换） |
-| `run_lab.sh` | 一键复现脚本 |
+| `run_lab.sh` | 完整复现脚本 |
 | `Makefile` | build / record / svg / clean 目标 |
 | `images/flame_base.svg` | 优化前 CPU 火焰图（真实采样） |
 | `images/flame_opt.svg` | 优化后 CPU 火焰图（真实采样） |

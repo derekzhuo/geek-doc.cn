@@ -1,6 +1,6 @@
 # exp-verilator-lint-error-matrix
 
-> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-verilator-lint-error-matrix.html（文档上线后生效）
+> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-verilator-lint-error-matrix.html
 
 Verilator lint 错误矩阵：9 个最小 .v 文件各触发一类典型告警（WIDTH/CASEINCOMPLETE/UNOPTFLAT/BLKSEQ/UNUSED/UNDRIVEN/LATCH/MULTIDRIVEN/IMPLICIT），一次收集全部报错文本。
 

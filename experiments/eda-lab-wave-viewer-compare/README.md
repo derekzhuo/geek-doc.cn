@@ -1,5 +1,7 @@
 # eda-lab-wave-viewer-compare
 
+**对应教程**：<https://geek-doc.cn/eda-lab/wave/el-wave-viewer-compare.html>
+
 同一个真实 VCD（`counter.vcd`，4 位计数器，来自 eda-lab-iverilog-first-sim 实验）的三种查看方式对比：
 
 1. **wavedrom**：`wave-window.json` 是从 VCD 真实跳变手工转写的 WaveJSON（10ns-90ns 窗口）。

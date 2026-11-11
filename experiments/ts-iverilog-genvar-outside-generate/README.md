@@ -1,6 +1,6 @@
 # Icarus Verilog genvar 与 generate 错误最小复现
 
-**对应教程**：https://geek-doc.cn/eda/ts-iverilog-genvar-outside-generate.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/ts-iverilog-genvar-outside-generate.html
 
 本目录包含两个对照示例：用 `integer` 驱动生成期循环会报错；在模块中省略 `generate/endgenerate` 则被 Icarus Verilog 13.0 接受。`fixed_generate.v` 给出显式 generate 的修复版本，`tb_fixed_generate.v` 用运行期 `for` 遍历全部 16 种输入。
 

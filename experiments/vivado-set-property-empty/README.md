@@ -1,6 +1,6 @@
 # vivado-set-property-empty：Vivado set_property 空对象复现
 
-**对应教程**：https://geek-doc.cn/fpga/beginner/ts-vivado-common-17-55-set-property.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/fpga/beginner/ts-vivado-common-17-55-set-property.html>
 
 ## 环境
 

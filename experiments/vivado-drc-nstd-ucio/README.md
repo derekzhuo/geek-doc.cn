@@ -1,6 +1,6 @@
 # vivado-drc-nstd-ucio：Vivado DRC NSTD-1/UCIO-1 复现
 
-**对应教程**：https://geek-doc.cn/fpga/beginner/ts-vivado-drc-nstd-1-ucio-1-bitstream.html（上线后生效）
+**对应教程**：<https://geek-doc.cn/fpga/beginner/ts-vivado-drc-nstd-1-ucio-1-bitstream.html>
 
 ## 环境
 

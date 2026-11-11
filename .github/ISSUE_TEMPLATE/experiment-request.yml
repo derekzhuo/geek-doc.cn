@@ -1,0 +1,30 @@
+name: 实验选题建议
+description: 建议一个可复现、可量化并能形成系列的新实验
+title: "[Experiment] "
+labels: [enhancement]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: 实验主题
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 要验证的问题
+      description: 说明假设、变量和对照组，避免只给一个文章标题
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 建议工具链与数据
+      description: 需要的工具、输入、输出和性能/资源指标
+    validations:
+      required: true
+  - type: textarea
+    id: series
+    attributes:
+      label: 所属系列与教程
+      description: 说明与现有实验/教程的关系，避免重复

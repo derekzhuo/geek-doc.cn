@@ -1,0 +1,6 @@
+read_verilog ram16x8.v
+hierarchy -top ram16x8
+proc
+opt
+memory -nomap
+stat

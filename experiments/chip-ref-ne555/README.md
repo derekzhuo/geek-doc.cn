@@ -1,6 +1,6 @@
 # chip-ref-ne555：LTspice 非稳态振荡频率/占空比实测
 
-**对应教程**：https://geek-doc.cn/chip-design/chip-ref/ne555.html
+**对应教程**：<https://geek-doc.cn/chip-design/chip-ref/ne555.html>
 
 ## 复现方式
 

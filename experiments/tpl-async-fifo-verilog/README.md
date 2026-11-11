@@ -1,6 +1,6 @@
 # 异步 FIFO 可复用 Verilog 模板（格雷码指针 + 两级同步器）
 
-**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-async-fifo-verilog.html（上线后生效）
+**对应教程**：https://geek-doc.cn/chip-design/beginner/tpl-async-fifo-verilog.html
 
 参数化（位宽 / 深度，深度必须为 2 的幂）的异步 FIFO：格雷码指针跨时钟同步、两级同步器、满/空标志格雷码比较法（寄存量输出，Cummings 风格）。
 

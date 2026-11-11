@@ -1,5 +1,7 @@
 # eda-lab-iverilog-vcd-wave
 
+**对应教程**：<https://geek-doc.cn/eda-lab/wave/el-iverilog-vcd-wave.html>
+
 Icarus Verilog（iverilog 12.0）下 `$dumpfile` / `$dumpvars` / `$dumpoff` / `$dumpon` / `$dumpflush` 的实操实验：
 同一设计、同一激励，分别全量 dump 与「限定层级 + 跳过预热段」dump，实测两个 VCD 文件大小差异。
 
@@ -10,7 +12,7 @@ Icarus Verilog（iverilog 12.0）下 `$dumpfile` / `$dumpvars` / `$dumpoff` / `$
 | `counter.v` | 被测设计：`counter_top`（计数器）内嵌 `baud_gen`（波特率发生器）子模块，含若干内部信号 |
 | `tb_full.v` | 全量 testbench：`$dumpvars` 无参数，dump 所有层级所有信号 → `full.vcd` |
 | `tb_slim.v` | 瘦身 testbench：`$dumpvars(1, tb_slim)` 只 dump 顶层 1 层 + `$dumpoff/$dumpon` 跳过前 1000 拍 → `slim.vcd` |
-| `Makefile` | `make run` 一键编译、仿真、生成大小对比 `report.txt` |
+| `Makefile` | `make run` 自动编译、仿真、生成大小对比 `report.txt` |
 
 ## 运行（Docker，推荐）
 

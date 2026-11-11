@@ -1,6 +1,8 @@
 # eda-lab-yosys-show
 
-Yosys 网表图与 stat 报表的端到端实验样例（geek-doc.cn eda-lab 文档池 M0 样例，对应选题 `el-yosys-show-netlist`）。
+**对应教程**：<https://geek-doc.cn/eda-lab/synth/el-yosys-show-netlist.html>
+
+Yosys 网表图与 stat 报表的端到端实验，配套教程为《Yosys show 网表图与 stat 报表解读》。
 
 ## 运行（推荐：Docker 容器，零本地依赖）
 
