@@ -3,7 +3,7 @@
 ## 环境
 
 - 服务端 / 客户端各一台腾讯云上海区竞价实例 S9.8XLARGE64（32C64G，TencentOS），内网互联
-- 服务端内网地址以 `<server-internal-ip>` 代称（<server-internal-ip> 段），客户端 21 个辅助源 IP（<client-src-subnet>）
+- 服务端内网地址以 `<server-internal-ip>` 代称（`<server-internal-ip>` 段），客户端 21 个辅助源 IP（`<client-src-subnet>`）
 - 内核参数（两侧）：fs.file-max=4194304、fs.nr_open=4194304、somaxconn=65535、ulimit -n 2097152；nf_conntrack 未加载
 - 服务端 keepalive（仅 T11 阶段调快）：tcp_keepalive_time=60、tcp_keepalive_intvl=10、tcp_keepalive_probes=3
 
@@ -29,7 +29,7 @@
 - sockstat：`TCP: inuse 1000108 mem 3585`（TCP 页 3585×4KB ≈ 14MB 接收/发送缓冲占用，hold 无流量）
 - TCP slab：83438 对象活跃
 
-## T11 keepalive 回收曲线（服务端观测，断流点 T0=1792262006，iptables DROP <client-src-subnet>）
+## T11 keepalive 回收曲线（服务端观测，断流点 T0=1792262006，iptables DROP `<client-src-subnet>`）
 
 | T+秒 | 服务端 estab |
 |---|---|
