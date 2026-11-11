@@ -99,3 +99,7 @@ experiments/cpp-std-function-heap-alloc-threshold/bin/
 
 # string SSO/移动/string_view 基准：构建目录（run.sh 自动重建，不入库）
 experiments/cpp-string-sso-move-string-view/bin/
+experiments/cpp-vector-deque-list-traversal/bin/
+
+# map/unordered_map/sorted-vector 查找基准：构建目录（run.sh 自动重建，不入库）
+experiments/cpp-unordered-map-sorted-vector-lookup/bin/

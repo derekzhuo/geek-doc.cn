@@ -1,0 +1,277 @@
+# map / unordered_map / sorted-vector 查找基准 (2026-11-12 01:33:35)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/O0 各运行 7 次取中位
+
+===== -O2 首次完整输出 =====
+# map / unordered_map / sorted-vector 查找基准
+sizeof: map=24B unordered_map=40B vector<pair>=24B pair<int,int>=8B
+lookups_per_size=100000 内部 3 次取最短
+
+prep   N=8 map 112.62 ns/次
+prep   N=8 unordered_map 217.00 ns/次
+prep   N=8 sorted_vector 50.75 ns/次
+lookup N=8 map 7.07 ns/次
+lookup N=8 unordered_map 8.23 ns/次
+lookup N=8 sorted_vector 6.73 ns/次
+
+prep   N=16 map 453.75 ns/次
+prep   N=16 unordered_map 731.56 ns/次
+prep   N=16 sorted_vector 161.00 ns/次
+lookup N=16 map 8.38 ns/次
+lookup N=16 unordered_map 8.10 ns/次
+lookup N=16 sorted_vector 6.41 ns/次
+
+prep   N=32 map 206.84 ns/次
+prep   N=32 unordered_map 632.28 ns/次
+prep   N=32 sorted_vector 79.88 ns/次
+lookup N=32 map 13.51 ns/次
+lookup N=32 unordered_map 8.55 ns/次
+lookup N=32 sorted_vector 7.44 ns/次
+
+prep   N=64 map 78.72 ns/次
+prep   N=64 unordered_map 96.09 ns/次
+prep   N=64 sorted_vector 31.53 ns/次
+lookup N=64 map 18.81 ns/次
+lookup N=64 unordered_map 10.28 ns/次
+lookup N=64 sorted_vector 7.92 ns/次
+
+prep   N=128 map 104.54 ns/次
+prep   N=128 unordered_map 103.58 ns/次
+prep   N=128 sorted_vector 30.50 ns/次
+lookup N=128 map 19.39 ns/次
+lookup N=128 unordered_map 9.00 ns/次
+lookup N=128 sorted_vector 9.23 ns/次
+
+prep   N=256 map 93.37 ns/次
+prep   N=256 unordered_map 101.18 ns/次
+prep   N=256 sorted_vector 32.05 ns/次
+lookup N=256 map 23.23 ns/次
+lookup N=256 unordered_map 9.10 ns/次
+lookup N=256 sorted_vector 10.74 ns/次
+
+prep   N=512 map 97.83 ns/次
+prep   N=512 unordered_map 83.38 ns/次
+prep   N=512 sorted_vector 38.86 ns/次
+lookup N=512 map 24.83 ns/次
+lookup N=512 unordered_map 9.15 ns/次
+lookup N=512 sorted_vector 12.23 ns/次
+
+prep   N=1024 map 103.40 ns/次
+prep   N=1024 unordered_map 84.77 ns/次
+prep   N=1024 sorted_vector 39.69 ns/次
+lookup N=1024 map 31.27 ns/次
+lookup N=1024 unordered_map 9.59 ns/次
+lookup N=1024 sorted_vector 13.80 ns/次
+
+prep   N=4096 map 128.99 ns/次
+prep   N=4096 unordered_map 102.53 ns/次
+prep   N=4096 sorted_vector 49.12 ns/次
+lookup N=4096 map 39.87 ns/次
+lookup N=4096 unordered_map 11.11 ns/次
+lookup N=4096 sorted_vector 19.31 ns/次
+mem N=4096 map allocs=4096 live=163840B per=40 B/条
+mem N=4096 unordered_map allocs=4108 live=200680B per=48 B/条
+mem N=4096 sorted_vector allocs=1 live=32768B capacity_bytes=32768 per=8 B/条
+
+prep   N=16384 map 161.16 ns/次
+prep   N=16384 unordered_map 100.99 ns/次
+prep   N=16384 sorted_vector 56.28 ns/次
+lookup N=16384 map 71.53 ns/次
+lookup N=16384 unordered_map 14.29 ns/次
+lookup N=16384 sorted_vector 35.03 ns/次
+
+prep   N=65536 map 211.88 ns/次
+prep   N=65536 unordered_map 126.00 ns/次
+prep   N=65536 sorted_vector 64.18 ns/次
+lookup N=65536 map 98.28 ns/次
+lookup N=65536 unordered_map 16.19 ns/次
+lookup N=65536 sorted_vector 82.01 ns/次
+
+prep   N=262144 map 281.76 ns/次
+prep   N=262144 unordered_map 142.99 ns/次
+prep   N=262144 sorted_vector 69.75 ns/次
+lookup N=262144 map 190.63 ns/次
+lookup N=262144 unordered_map 29.71 ns/次
+lookup N=262144 sorted_vector 160.06 ns/次
+
+prep   N=1048576 map 570.92 ns/次
+prep   N=1048576 unordered_map 309.99 ns/次
+prep   N=1048576 sorted_vector 79.58 ns/次
+lookup N=1048576 map 371.77 ns/次
+lookup N=1048576 unordered_map 47.87 ns/次
+lookup N=1048576 sorted_vector 280.09 ns/次
+mem N=1048576 map allocs=1048576 live=41943040B per=40 B/条
+mem N=1048576 unordered_map allocs=1048596 live=51504392B per=49 B/条
+mem N=1048576 sorted_vector allocs=1 live=8388608B capacity_bytes=8388608 per=8 B/条
+
+
+===== -O2 耗时行 7 次中位 =====
+prep   N=8 map 中位=392.62 ns
+prep   N=8 unordered_map 中位=458.75 ns
+prep   N=8 sorted_vector 中位=284.12 ns
+lookup N=8 map 中位=8.43 ns
+lookup N=8 unordered_map 中位=9.15 ns
+lookup N=8 sorted_vector 中位=7.15 ns
+prep   N=16 map 中位=259.69 ns
+prep   N=16 unordered_map 中位=694.06 ns
+prep   N=16 sorted_vector 中位=146.69 ns
+lookup N=16 map 中位=8.77 ns
+lookup N=16 unordered_map 中位=8.33 ns
+lookup N=16 sorted_vector 中位=6.61 ns
+prep   N=32 map 中位=162.28 ns
+prep   N=32 unordered_map 中位=394.28 ns
+prep   N=32 sorted_vector 中位=32.28 ns
+lookup N=32 map 中位=13.90 ns
+lookup N=32 unordered_map 中位=8.79 ns
+lookup N=32 sorted_vector 中位=7.64 ns
+prep   N=64 map 中位=79.84 ns
+prep   N=64 unordered_map 中位=96.09 ns
+prep   N=64 sorted_vector 中位=31.83 ns
+lookup N=64 map 中位=19.09 ns
+lookup N=64 unordered_map 中位=10.29 ns
+lookup N=64 sorted_vector 中位=7.93 ns
+prep   N=128 map 中位=104.54 ns
+prep   N=128 unordered_map 中位=103.58 ns
+prep   N=128 sorted_vector 中位=31.31 ns
+lookup N=128 map 中位=19.38 ns
+lookup N=128 unordered_map 中位=9.00 ns
+lookup N=128 sorted_vector 中位=9.23 ns
+prep   N=256 map 中位=112.79 ns
+prep   N=256 unordered_map 中位=140.85 ns
+prep   N=256 sorted_vector 中位=32.29 ns
+lookup N=256 map 中位=22.70 ns
+lookup N=256 unordered_map 中位=9.07 ns
+lookup N=256 sorted_vector 中位=10.75 ns
+prep   N=512 map 中位=99.48 ns
+prep   N=512 unordered_map 中位=89.36 ns
+prep   N=512 sorted_vector 中位=39.28 ns
+lookup N=512 map 中位=25.05 ns
+lookup N=512 unordered_map 中位=9.17 ns
+lookup N=512 sorted_vector 中位=12.24 ns
+prep   N=1024 map 中位=103.61 ns
+prep   N=1024 unordered_map 中位=84.35 ns
+prep   N=1024 sorted_vector 中位=40.03 ns
+lookup N=1024 map 中位=31.27 ns
+lookup N=1024 unordered_map 中位=9.60 ns
+lookup N=1024 sorted_vector 中位=13.79 ns
+prep   N=4096 map 中位=128.05 ns
+prep   N=4096 unordered_map 中位=96.24 ns
+prep   N=4096 sorted_vector 中位=48.76 ns
+lookup N=4096 map 中位=41.29 ns
+lookup N=4096 unordered_map 中位=10.73 ns
+lookup N=4096 sorted_vector 中位=19.29 ns
+prep   N=16384 map 中位=161.62 ns
+prep   N=16384 unordered_map 中位=101.62 ns
+prep   N=16384 sorted_vector 中位=55.39 ns
+lookup N=16384 map 中位=71.14 ns
+lookup N=16384 unordered_map 中位=14.36 ns
+lookup N=16384 sorted_vector 中位=33.60 ns
+prep   N=65536 map 中位=210.64 ns
+prep   N=65536 unordered_map 中位=114.92 ns
+prep   N=65536 sorted_vector 中位=62.07 ns
+lookup N=65536 map 中位=99.03 ns
+lookup N=65536 unordered_map 中位=16.07 ns
+lookup N=65536 sorted_vector 中位=82.01 ns
+prep   N=262144 map 中位=281.76 ns
+prep   N=262144 unordered_map 中位=142.99 ns
+prep   N=262144 sorted_vector 中位=69.80 ns
+lookup N=262144 map 中位=182.58 ns
+lookup N=262144 unordered_map 中位=25.25 ns
+lookup N=262144 sorted_vector 中位=136.72 ns
+prep   N=1048576 map 中位=533.79 ns
+prep   N=1048576 unordered_map 中位=289.28 ns
+prep   N=1048576 sorted_vector 中位=79.74 ns
+lookup N=1048576 map 中位=380.44 ns
+lookup N=1048576 unordered_map 中位=48.52 ns
+lookup N=1048576 sorted_vector 中位=253.80 ns
+
+===== -O0 耗时行 7 次中位 =====
+prep   N=8 map 中位=1072.38 ns
+prep   N=8 unordered_map 中位=1169.25 ns
+prep   N=8 sorted_vector 中位=487.38 ns
+lookup N=8 map 中位=136.46 ns
+lookup N=8 unordered_map 中位=103.89 ns
+lookup N=8 sorted_vector 中位=107.15 ns
+prep   N=16 map 中位=615.56 ns
+prep   N=16 unordered_map 中位=1072.12 ns
+prep   N=16 sorted_vector 中位=327.81 ns
+lookup N=16 map 中位=155.93 ns
+lookup N=16 unordered_map 中位=103.75 ns
+lookup N=16 sorted_vector 中位=127.68 ns
+prep   N=32 map 中位=463.12 ns
+prep   N=32 unordered_map 中位=738.09 ns
+prep   N=32 sorted_vector 中位=219.38 ns
+lookup N=32 map 中位=172.74 ns
+lookup N=32 unordered_map 中位=104.12 ns
+lookup N=32 sorted_vector 中位=148.83 ns
+prep   N=64 map 中位=398.39 ns
+prep   N=64 unordered_map 中位=598.53 ns
+prep   N=64 sorted_vector 中位=141.16 ns
+lookup N=64 map 中位=196.67 ns
+lookup N=64 unordered_map 中位=107.11 ns
+lookup N=64 sorted_vector 中位=170.07 ns
+prep   N=128 map 中位=451.50 ns
+prep   N=128 unordered_map 中位=432.60 ns
+prep   N=128 sorted_vector 中位=139.99 ns
+lookup N=128 map 中位=217.90 ns
+lookup N=128 unordered_map 中位=104.75 ns
+lookup N=128 sorted_vector 中位=196.88 ns
+prep   N=256 map 中位=461.45 ns
+prep   N=256 unordered_map 中位=423.75 ns
+prep   N=256 sorted_vector 中位=138.68 ns
+lookup N=256 map 中位=237.13 ns
+lookup N=256 unordered_map 中位=104.29 ns
+lookup N=256 sorted_vector 中位=217.93 ns
+prep   N=512 map 中位=476.50 ns
+prep   N=512 unordered_map 中位=389.71 ns
+prep   N=512 sorted_vector 中位=151.37 ns
+lookup N=512 map 中位=256.32 ns
+lookup N=512 unordered_map 中位=105.63 ns
+lookup N=512 sorted_vector 中位=238.23 ns
+prep   N=1024 map 中位=485.62 ns
+prep   N=1024 unordered_map 中位=365.62 ns
+prep   N=1024 sorted_vector 中位=159.38 ns
+lookup N=1024 map 中位=277.63 ns
+lookup N=1024 unordered_map 中位=108.24 ns
+lookup N=1024 sorted_vector 中位=258.54 ns
+prep   N=4096 map 中位=541.45 ns
+prep   N=4096 unordered_map 中位=375.47 ns
+prep   N=4096 sorted_vector 中位=178.08 ns
+lookup N=4096 map 中位=324.25 ns
+lookup N=4096 unordered_map 中位=112.91 ns
+lookup N=4096 sorted_vector 中位=302.66 ns
+prep   N=16384 map 中位=613.49 ns
+prep   N=16384 unordered_map 中位=382.37 ns
+prep   N=16384 sorted_vector 中位=199.55 ns
+lookup N=16384 map 中位=395.39 ns
+lookup N=16384 unordered_map 中位=132.49 ns
+lookup N=16384 sorted_vector 中位=352.92 ns
+prep   N=65536 map 中位=697.84 ns
+prep   N=65536 unordered_map 中位=395.37 ns
+prep   N=65536 sorted_vector 中位=219.93 ns
+lookup N=65536 map 中位=461.72 ns
+lookup N=65536 unordered_map 中位=140.91 ns
+lookup N=65536 sorted_vector 中位=428.81 ns
+prep   N=262144 map 中位=821.35 ns
+prep   N=262144 unordered_map 中位=435.31 ns
+prep   N=262144 sorted_vector 中位=240.13 ns
+lookup N=262144 map 中位=639.88 ns
+lookup N=262144 unordered_map 中位=216.35 ns
+lookup N=262144 sorted_vector 中位=502.96 ns
+prep   N=1048576 map 中位=1167.45 ns
+prep   N=1048576 unordered_map 中位=622.35 ns
+prep   N=1048576 sorted_vector 中位=263.94 ns
+lookup N=1048576 map 中位=1096.36 ns
+lookup N=1048576 unordered_map 中位=399.77 ns
+lookup N=1048576 sorted_vector 中位=648.08 ns
+
+===== 二进制证据：operator new 被本程序重载（T=本二进制定义） =====
+                 U __ZSt9terminatev
+00000001000006e0 T __ZdaPvSt11align_val_t
+0000000100000750 T __ZdaPvmSt11align_val_t
+00000001000006d0 T __ZdlPvSt11align_val_t
+0000000100000730 T __ZdlPvmSt11align_val_t
+0000000100000610 T __Znam
+0000000100000670 T __ZnamSt11align_val_t
+00000001000005e0 T __Znwm
+done

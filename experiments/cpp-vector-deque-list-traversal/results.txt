@@ -1,0 +1,75 @@
+# vector/deque/list 遍历与插删基准 (2026-11-12 01:34:32)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/O0 各运行 7 次取中位
+
+===== -O2 首次完整输出（含 sizeof 与堆占用记账） =====
+# vector/deque/list benchmark N=1000000 K=1000 (all)
+# sizeof: vector<int>=24 deque<int>=48 list<int>=24 bytes
+[footprint]  vector<int> N=1000000: live=4194304 B, 4.19 B/elem, new_calls=21
+[traverse]   vector<int> N=1000000: 0.238 ms
+[head-ins]   vector<int> K=1000 at begin: 109.448 ms
+[mid-ins]    vector<int> K=1000 at N/2: 54.207 ms
+[mid-erase]  vector<int> K=1000 at N/2: 56.082 ms
+[footprint]  deque<int>  N=1000000: live=4009984 B, 4.01 B/elem, new_calls=988
+[traverse]   deque<int>  N=1000000: 1.312 ms
+[head-ins]   deque<int>  K=1000 at begin: 0.009 ms
+[mid-ins]    deque<int>  K=1000 at N/2: 66.218 ms
+[mid-erase]  deque<int>  K=1000 at N/2: 67.283 ms
+[footprint]  list<int>   N=1000000: live=32000000 B, 32.00 B/elem, new_calls=1000000
+[traverse]   list<int>   N=1000000: 3.018 ms
+[head-ins]   list<int>   K=1000 at begin: 0.041 ms
+[mid-ins]    list<int>   K=1000 at N/2: 0.041 ms
+[mid-erase]  list<int>   K=1000 at N/2: 0.056 ms
+sink=499999500000
+
+===== -O2 耗时行 7 次中位 =====
+[traverse]   vector<int> N=1000000 中位=0.180 ms
+[head-ins]   vector<int> K=1000 at begin 中位=107.022 ms
+[mid-ins]    vector<int> K=1000 at N/2 中位=52.785 ms
+[mid-erase]  vector<int> K=1000 at N/2 中位=51.996 ms
+[traverse]   deque<int>  N=1000000 中位=1.141 ms
+[head-ins]   deque<int>  K=1000 at begin 中位=0.008 ms
+[mid-ins]    deque<int>  K=1000 at N/2 中位=55.758 ms
+[mid-erase]  deque<int>  K=1000 at N/2 中位=59.980 ms
+[traverse]   list<int>   N=1000000 中位=2.850 ms
+[head-ins]   list<int>   K=1000 at begin 中位=0.041 ms
+[mid-ins]    list<int>   K=1000 at N/2 中位=0.041 ms
+[mid-erase]  list<int>   K=1000 at N/2 中位=0.055 ms
+
+===== -O0 耗时行 7 次中位 =====
+[traverse]   vector<int> N=1000000 中位=9.992 ms
+[head-ins]   vector<int> K=1000 at begin 中位=110.880 ms
+[mid-ins]    vector<int> K=1000 at N/2 中位=53.593 ms
+[mid-erase]  vector<int> K=1000 at N/2 中位=54.329 ms
+[traverse]   deque<int>  N=1000000 中位=7.522 ms
+[head-ins]   deque<int>  K=1000 at begin 中位=0.099 ms
+[mid-ins]    deque<int>  K=1000 at N/2 中位=110.280 ms
+[mid-erase]  deque<int>  K=1000 at N/2 中位=107.312 ms
+[traverse]   list<int>   N=1000000 中位=12.208 ms
+[head-ins]   list<int>   K=1000 at begin 中位=0.157 ms
+[mid-ins]    list<int>   K=1000 at N/2 中位=0.152 ms
+[mid-erase]  list<int>   K=1000 at N/2 中位=0.098 ms
+
+===== /usr/bin/time -l 单容器内存与调度证据（-O2） =====
+--- vector ---
+            11337728  maximum resident set size
+                3616  page reclaims
+                   0  page faults
+                   0  voluntary context switches
+                  34  involuntary context switches
+
+--- deque ---
+            11026432  maximum resident set size
+                3540  page reclaims
+                   0  page faults
+                   0  voluntary context switches
+                   5  involuntary context switches
+
+--- list ---
+            44900352  maximum resident set size
+               11810  page reclaims
+                   0  page faults
+                   0  voluntary context switches
+                  26  involuntary context switches
+
+done
