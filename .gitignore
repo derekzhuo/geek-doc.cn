@@ -105,3 +105,10 @@ experiments/cpp-vector-deque-list-traversal/bin/
 experiments/cpp-unordered-map-sorted-vector-lookup/bin/
 experiments/cpp-open-addressing-hash-table/bin/
 experiments/cpp-variant-vs-virtual-dispatch/bin/
+
+# placement new 对象池基准：构建目录（run.sh 自动重建，不入库）
+experiments/cpp-placement-new-object-pool/bin/
+
+# iostream/scanf/自定义快读基准：构建目录与生成数据集（run.sh 自动重建，不入库）
+experiments/cpp-iostream-scanf-custom-parser/bin/
+experiments/cpp-iostream-scanf-custom-parser/data.txt

@@ -1,0 +1,107 @@
+# 输入解析四路径吞吐基准 (2026-11-12 02:11:01)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/O0 双档，每组 7 个独立进程取中位
+
+generated 2000000 ints -> data.txt (20000000 bytes)
+
+===== -O2 四组各 7 轮原始输出 =====
+group=scanf N=2000000 bytes=20000000 ms=290.799 throughput=6.878 Mlines/s 68.776 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=293.117 throughput=6.823 Mlines/s 68.232 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=298.794 throughput=6.694 Mlines/s 66.936 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=292.919 throughput=6.828 Mlines/s 68.278 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=291.858 throughput=6.853 Mlines/s 68.526 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=294.683 throughput=6.787 Mlines/s 67.870 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=306.750 throughput=6.520 Mlines/s 65.200 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5864.329 throughput=0.341 Mlines/s 3.410 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5874.011 throughput=0.340 Mlines/s 3.405 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5866.466 throughput=0.341 Mlines/s 3.409 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5872.544 throughput=0.341 Mlines/s 3.406 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5869.637 throughput=0.341 Mlines/s 3.407 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5880.498 throughput=0.340 Mlines/s 3.401 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5875.390 throughput=0.340 Mlines/s 3.404 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5795.844 throughput=0.345 Mlines/s 3.451 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5775.008 throughput=0.346 Mlines/s 3.463 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5922.971 throughput=0.338 Mlines/s 3.377 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5781.480 throughput=0.346 Mlines/s 3.459 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5771.106 throughput=0.347 Mlines/s 3.466 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5772.863 throughput=0.346 Mlines/s 3.464 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5777.713 throughput=0.346 Mlines/s 3.462 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.020 throughput=117.510 Mlines/s 1175.101 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.524 throughput=114.132 Mlines/s 1141.319 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.346 throughput=115.300 Mlines/s 1153.001 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.748 throughput=112.686 Mlines/s 1126.859 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.517 throughput=114.178 Mlines/s 1141.775 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.588 throughput=113.714 Mlines/s 1137.141 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=17.589 throughput=113.710 Mlines/s 1137.100 MB/s checksum=-83231420036564
+
+===== -O2 跨进程中位汇总 =====
+group=scanf median_ms=292.177 throughput=6.845 Mlines/s 68.452 MB/s checksum=-83231420036564
+group=cin-default median_ms=5878.607 throughput=0.340 Mlines/s 3.402 MB/s checksum=-83231420036564
+group=cin-fast median_ms=5781.929 throughput=0.346 Mlines/s 3.459 MB/s checksum=-83231420036564
+group=custom median_ms=17.509 throughput=114.227 Mlines/s 1142.270 MB/s checksum=-83231420036564
+
+===== -O0 四组各 7 轮原始输出 =====
+group=scanf N=2000000 bytes=20000000 ms=287.010 throughput=6.968 Mlines/s 69.684 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=286.433 throughput=6.982 Mlines/s 69.824 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=286.067 throughput=6.991 Mlines/s 69.914 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=289.068 throughput=6.919 Mlines/s 69.188 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=288.552 throughput=6.931 Mlines/s 69.312 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=290.371 throughput=6.888 Mlines/s 68.877 MB/s checksum=-83231420036564
+group=scanf N=2000000 bytes=20000000 ms=287.083 throughput=6.967 Mlines/s 69.666 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5881.349 throughput=0.340 Mlines/s 3.401 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5877.116 throughput=0.340 Mlines/s 3.403 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5886.770 throughput=0.340 Mlines/s 3.397 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5920.912 throughput=0.338 Mlines/s 3.378 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5886.544 throughput=0.340 Mlines/s 3.398 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5877.044 throughput=0.340 Mlines/s 3.403 MB/s checksum=-83231420036564
+group=cin-default N=2000000 bytes=20000000 ms=5878.735 throughput=0.340 Mlines/s 3.402 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5791.431 throughput=0.345 Mlines/s 3.453 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5780.353 throughput=0.346 Mlines/s 3.460 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5778.911 throughput=0.346 Mlines/s 3.461 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5751.263 throughput=0.348 Mlines/s 3.477 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5790.315 throughput=0.345 Mlines/s 3.454 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5777.423 throughput=0.346 Mlines/s 3.462 MB/s checksum=-83231420036564
+group=cin-fast N=2000000 bytes=20000000 ms=5779.266 throughput=0.346 Mlines/s 3.461 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=69.944 throughput=28.594 Mlines/s 285.941 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=67.769 throughput=29.512 Mlines/s 295.121 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=67.362 throughput=29.690 Mlines/s 296.905 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=67.422 throughput=29.664 Mlines/s 296.641 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=67.584 throughput=29.593 Mlines/s 295.927 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=67.760 throughput=29.516 Mlines/s 295.160 MB/s checksum=-83231420036564
+group=custom N=2000000 bytes=20000000 ms=67.621 throughput=29.576 Mlines/s 295.764 MB/s checksum=-83231420036564
+
+===== -O0 跨进程中位汇总 =====
+group=scanf median_ms=287.862 throughput=6.948 Mlines/s 69.478 MB/s checksum=-83231420036564
+group=cin-default median_ms=5878.064 throughput=0.340 Mlines/s 3.402 MB/s checksum=-83231420036564
+group=cin-fast median_ms=5780.862 throughput=0.346 Mlines/s 3.460 MB/s checksum=-83231420036564
+group=custom median_ms=67.665 throughput=29.557 Mlines/s 295.574 MB/s checksum=-83231420036564
+
+===== checksum 一致性核验（去重后应只剩 1 个值） =====
+-83231420036564
+
+===== /usr/bin/time -l 系统侧证据（仅 -O2，每组一次） =====
+--- time -l scanf ---
+group=scanf N=2000000 bytes=20000000 ms=291.454 throughput=6.862 Mlines/s 68.621 MB/s checksum=-83231420036564
+              667648  maximum resident set size
+                 454  page reclaims
+                   0  voluntary context switches
+                  22  involuntary context switches
+--- time -l cin-default ---
+group=cin-default N=2000000 bytes=20000000 ms=5873.540 throughput=0.341 Mlines/s 3.405 MB/s checksum=-83231420036564
+              671744  maximum resident set size
+                 456  page reclaims
+                   0  voluntary context switches
+                 330  involuntary context switches
+--- time -l cin-fast ---
+group=cin-fast N=2000000 bytes=20000000 ms=5784.330 throughput=0.346 Mlines/s 3.458 MB/s checksum=-83231420036564
+              659456  maximum resident set size
+                 451  page reclaims
+                   0  voluntary context switches
+                 815  involuntary context switches
+--- time -l custom ---
+group=custom N=2000000 bytes=20000000 ms=17.118 throughput=116.834 Mlines/s 1168.343 MB/s checksum=-83231420036564
+              737280  maximum resident set size
+                 471  page reclaims
+                   0  voluntary context switches
+                   4  involuntary context switches
+done

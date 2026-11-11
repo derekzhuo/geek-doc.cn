@@ -1,0 +1,8 @@
+ifstream >> int  ms=501.5 sum=-83231420036564
+ifstream getline ms=132.6 lines=2000000
+fread raw        ms=2.4 bytes=20000000
+fscanf %d        ms=289.1 sum=-83231420036564
+ifstream >> int  ms=501.5 sum=-83231420036564
+ifstream getline ms=132.5 lines=2000000
+fread raw        ms=2.4 bytes=20000000
+fscanf %d        ms=289.9 sum=-83231420036564
