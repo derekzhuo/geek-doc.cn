@@ -122,3 +122,6 @@ experiments/cpp-asan-tsan-ubsan-overhead/bin/
 
 # arena 内存池基准：构建目录（run.sh 自动重建，不入库）
 experiments/cpp-arena-pool-allocator-benchmark/bin/
+
+# STREAM 内存带宽基准：构建目录（run.sh 自动重建，不入库）
+experiments/linux-memory-bandwidth-stream-bench/bin/

@@ -1,0 +1,195 @@
+# STREAM 内存带宽基准 (2026-11-13 02:47:12)
+# host: stream-bench | kernel: 5.15.0-190-generic
+# distro: Ubuntu 22.04.5 LTS
+# compiler: gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+# flags: -O3 -std=c11 -fopenmp -march=native -DSTREAM_N=10000000 -DNTIMES=20
+# cpu: Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz
+# threads 扫档: 1,2（本机 1 核 2 线程，2 即 SMT 兄弟线程）
+# lscpu: CPU(s):                                  2
+# lscpu: Thread(s) per core:                      2
+# lscpu: Core(s) per socket:                      1
+# lscpu: Socket(s):                               1
+# lscpu: L1d cache:                               48 KiB (1 instance)
+# lscpu: L2 cache:                                1.3 MiB (1 instance)
+# lscpu: L3 cache:                                54 MiB (1 instance)
+# lscpu: NUMA node(s):                            1
+# lscpu: NUMA node0 CPU(s):                       0,1
+
+===== OMP_NUM_THREADS=1：7 次进程运行（每次含 20 轮，首轮预热） =====
+--- 第 1 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            22.81          22.53          7.013
+Scale           13.02          12.67         12.288
+Add             13.12          12.99         18.292
+Triad           13.01          12.87         18.454
+--- 第 2 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            23.30          22.98          6.866
+Scale           13.47          13.27         11.877
+Add             13.31          13.16         18.030
+Triad           13.28          13.14         18.076
+--- 第 3 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            23.15          22.80          6.912
+Scale           13.32          13.13         12.010
+Add             13.24          13.10         18.120
+Triad           13.34          13.13         17.993
+--- 第 4 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            23.45          23.08          6.823
+Scale           13.40          13.11         11.937
+Add             13.35          13.05         17.977
+Triad           13.32          13.17         18.013
+--- 第 5 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            23.22          22.91          6.891
+Scale           13.31          13.06         12.022
+Add             13.23          13.11         18.143
+Triad           13.26          13.12         18.099
+--- 第 6 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            23.06          22.64          6.938
+Scale           13.31          13.02         12.018
+Add             13.19          13.00         18.190
+Triad           13.18          13.03         18.216
+--- 第 7 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            22.86          22.60          7.000
+Scale           13.05          12.94         12.258
+Add             13.07          12.95         18.358
+Triad           13.05          12.97         18.396
+
+===== 七次运行的最佳 GB/s 中位汇总（threads=1） =====
+Copy   中位最佳带宽    23.15 GB/s
+Scale  中位最佳带宽    13.31 GB/s
+Add    中位最佳带宽    13.23 GB/s
+Triad  中位最佳带宽    13.26 GB/s
+
+===== OMP_NUM_THREADS=2：7 次进程运行（每次含 20 轮，首轮预热） =====
+--- 第 1 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            25.50          24.95          6.276
+Scale           15.11          14.90         10.588
+Add             14.35          14.15         16.727
+Triad           14.40          14.14         16.670
+--- 第 2 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            25.77          25.25          6.208
+Scale           15.23          15.05         10.504
+Add             14.18          13.97         16.927
+Triad           14.18          14.00         16.928
+--- 第 3 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            25.78          25.37          6.207
+Scale           15.08          14.99         10.609
+Add             14.17          14.00         16.933
+Triad           14.34          14.01         16.739
+--- 第 4 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            25.75          25.27          6.213
+Scale           15.14          14.98         10.568
+Add             14.13          13.95         16.983
+Triad           14.11          13.89         17.013
+--- 第 5 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            26.02          25.54          6.148
+Scale           15.21          14.95         10.522
+Add             14.23          13.98         16.864
+Triad           14.11          13.86         17.005
+--- 第 6 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            25.51          25.22          6.272
+Scale           15.19          14.97         10.530
+Add             14.19          14.02         16.909
+Triad           14.13          13.99         16.984
+--- 第 7 次 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            26.19          25.73          6.110
+Scale           15.41          15.29         10.380
+Add             14.38          14.10         16.694
+Triad           14.29          14.11         16.790
+
+===== 七次运行的最佳 GB/s 中位汇总（threads=2） =====
+Copy   中位最佳带宽    25.77 GB/s
+Scale  中位最佳带宽    15.19 GB/s
+Add    中位最佳带宽    14.19 GB/s
+Triad  中位最佳带宽    14.18 GB/s
+
+===== perf stat 系统侧佐证（每线程档一次，sudo） =====
+--- OMP_NUM_THREADS=1 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=1
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            23.33          22.97          6.858
+Scale           13.54          13.24         11.817
+Add             13.28          13.16         18.070
+Triad           13.34          13.11         17.991
+
+ Performance counter stats for 'env OMP_NUM_THREADS=1 ./bin/stream_bench':
+
+            58,739      page-faults                                                 
+                20      context-switches                                            
+       111,268,245      cache-misses                                                
+     1,346,502,166      instructions              #    0.34  insn per cycle         
+     3,986,285,177      cycles                                                      
+
+       1.265763466 seconds time elapsed
+
+       1.168001000 seconds user
+       0.096996000 seconds sys
+
+
+
+--- OMP_NUM_THREADS=2 ---
+STREAM 风格带宽基准：N=10000000（单数组 76.3 MiB，三数组 228.9 MiB），NTIMES=20，OMP 线程=2
+校验通过（20 轮后最大误差 0.000e+00）
+内核    最佳 GB/s    中位 GB/s      最佳 ms
+Copy            26.06          25.65          6.140
+Scale           15.26          15.09         10.484
+Add             14.30          14.06         16.785
+Triad           14.27          14.05         16.821
+
+ Performance counter stats for 'env OMP_NUM_THREADS=2 ./bin/stream_bench':
+
+            58,734      page-faults                                                 
+               409      context-switches                                            
+       115,476,378      cache-misses                                                
+     1,361,888,357      instructions              #    0.20  insn per cycle         
+     6,911,989,570      cycles                                                      
+
+       1.124359456 seconds time elapsed
+
+       2.057445000 seconds user
+       0.127346000 seconds sys
+
+
+
+done
