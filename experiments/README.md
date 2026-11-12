@@ -253,17 +253,17 @@
 | 综合实验 | [openlane-resume-from-tag](./openlane-resume-from-tag/) | [教程](https://geek-doc.cn/eda/ts-openlane-resume-from-tag.html) | 日志/数据 |
 | 综合实验 | [openlane-wsl-path-issue：Docker bind mount 盘符路径报错复现](./openlane-wsl-path-issue/) | [教程](https://geek-doc.cn/eda/ts-openlane-wsl-path-issue.html) | 日志/数据 |
 | 综合实验 | [param-fsm-binary-onehot](./param-fsm-binary-onehot/) | [教程](https://geek-doc.cn/chip-design/beginner/param-fsm-binary-onehot.html) | 见 README |
-| 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | output/ |
+| 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | 见 README |
 | 综合实验 | [qemu-direct-kernel-initramfs：跳过引导加载器直接引导 RISC-V 内核](./qemu-direct-kernel-initramfs/) | [教程](https://geek-doc.cn/soc-qemu/qemu-direct-kernel-initramfs.html) | 日志/数据 |
-| 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | output/ |
+| 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | 见 README |
 | 综合实验 | [qemu-install-linux-distro：两大包管理体系下装齐 QEMU](./qemu-install-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-linux-distro.html) | 日志/数据 |
-| 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | output/ |
-| 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | output/ |
-| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | output/ |
+| 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | 见 README |
+| 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | 见 README |
+| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | 见 README |
 | 综合实验 | [qemu-riscv-linux-distro：QEMU 启动完整 RISC-V Linux 发行版](./qemu-riscv-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-riscv-linux-distro.html) | 日志/数据 |
-| 综合实验 | [qemu-riscv-virt-first-boot：零工具链跑通第一个 RISC-V 虚拟平台](./qemu-riscv-virt-first-boot/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-first-riscv-virt.html) | output/ |
-| 综合实验 | [qemu-serial-console-wiring：三种串口控制台接线对照实验](./qemu-serial-console-wiring/) | [教程](https://geek-doc.cn/soc-qemu/qemu-serial-console-wiring.html) | output/ |
-| 综合实验 | [qemu-slirp-user-network：SLIRP 用户态网络默认行为实验](./qemu-slirp-user-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-slirp-user-network.html) | output/ |
+| 综合实验 | [qemu-riscv-virt-first-boot：零工具链跑通第一个 RISC-V 虚拟平台](./qemu-riscv-virt-first-boot/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-first-riscv-virt.html) | 见 README |
+| 综合实验 | [qemu-serial-console-wiring：三种串口控制台接线对照实验](./qemu-serial-console-wiring/) | [教程](https://geek-doc.cn/soc-qemu/qemu-serial-console-wiring.html) | 见 README |
+| 综合实验 | [qemu-slirp-user-network：SLIRP 用户态网络默认行为实验](./qemu-slirp-user-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-slirp-user-network.html) | 见 README |
 | 综合实验 | [qemu-system-vs-user-mode：整机模拟与单进程转译的实测对照](./qemu-system-vs-user-mode/) | [教程](https://geek-doc.cn/soc-qemu/qemu-system-vs-user-mode.html) | 日志/数据 |
 | 综合实验 | [qemu-tap-bridge-network：tap 设备 + Linux bridge 二层联网](./qemu-tap-bridge-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-tap-bridge-network.html) | 日志/数据 |
 | 综合实验 | [qemu-user-cross-arch-binary：x86 主机直接跑 RISC-V ELF](./qemu-user-cross-arch-binary/) | [教程](https://geek-doc.cn/soc-qemu/qemu-user-cross-arch-binary.html) | 日志/数据 |
@@ -360,6 +360,6 @@
 | Vivado / XSim / XDC | [vivado-set-property-empty：Vivado set_property 空对象复现](./vivado-set-property-empty/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-common-17-55-set-property.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-utilization-report-read — 综合后资源利用率报告怎么读](./vivado-utilization-report-read/) | [教程](https://geek-doc.cn/fpga/beginner/vivado-utilization-report-read.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-xdc-timing-compare](./vivado-xdc-timing-compare/) | [教程](https://geek-doc.cn/fpga/intermediate/exp-vivado-xdc-constraints-template.html) | 见 README |
-| Vivado / XSim / XDC | [vivado-xsim-design-unit](./vivado-xsim-design-unit/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-xsim-design-unit.html) | output/ |
+| Vivado / XSim / XDC | [vivado-xsim-design-unit](./vivado-xsim-design-unit/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-xsim-design-unit.html) | 见 README |
 | Vivado / XSim / XDC | [vivado-xsim-timescale：XSIM 43-4099 timescale 不一致复现](./vivado-xsim-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 图/波形 + 日志/数据 |
 | Vivado / XSim / XDC | [xsim-dump-vcd-offline — 批处理 dump VCD，离线看波形](./xsim-dump-vcd-offline/) | [教程](https://geek-doc.cn/fpga/beginner/xsim-dump-vcd-offline.html) | 图/波形 + 日志/数据 |

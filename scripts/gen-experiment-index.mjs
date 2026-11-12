@@ -2,12 +2,23 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { spawnSync } from 'node:child_process'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const EXPERIMENTS = path.join(ROOT, 'experiments')
 const OUTPUT = path.join(EXPERIMENTS, 'README.md')
 const ROOT_README = path.join(ROOT, 'README.md')
 const CHECK = process.argv.includes('--check')
+
+// 索引必须在任何克隆里逐字节一致：只统计 git 跟踪的文件，本地未跟踪的
+// output/、sim_build 等运行残留不得影响生成结果；非 git 环境（发布 tarball）回退到文件系统扫描。
+function listTrackedExperiments() {
+  const git = spawnSync('git', ['ls-files', 'experiments'], { cwd: ROOT, encoding: 'utf8' })
+  if (git.status !== 0) return null
+  return new Set(git.stdout.split(/\r?\n/).filter(Boolean))
+}
+
+const TRACKED = listTrackedExperiments()
 const CATEGORY_RULES = [
   ['开源 EDA 入门', (s) => s.startsWith('eda-lab-')],
   ['EDA 流程实操', (s) => s.startsWith('flow-')],
@@ -32,40 +43,54 @@ function tutorialOf(text) {
   return match ? match[0].replace(/[。，、]+$/, '') : ''
 }
 
-function hasEvidence(dir) {
-  const stack = [dir]
+function evidenceFromNames(names) {
   const evidence = new Set()
+  for (const name of names) {
+    const base = path.basename(name)
+    if (/(^|\/)(output|out)\//.test(name)) evidence.add('output/')
+    else if (/\.(log|txt|csv|rpt|json)$/i.test(base)) evidence.add('日志/数据')
+    else if (/\.(png|svg|vcd|fst)$/i.test(base)) evidence.add('图/波形')
+  }
+  return [...evidence].join(' + ') || '见 README'
+}
+
+function hasEvidenceFallback(dir) {
+  const stack = [dir]
+  const names = []
   while (stack.length) {
     const current = stack.pop()
     for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
       const full = path.join(current, entry.name)
       if (entry.isDirectory()) {
-        if (entry.name === 'output' || entry.name === 'out') evidence.add('output/')
+        if (entry.name === 'output' || entry.name === 'out') names.push(path.relative(EXPERIMENTS, full) + '/')
         else if (!['.git', 'sim_build', 'node_modules', '__pycache__'].includes(entry.name)) stack.push(full)
-      } else if (/\.(log|txt|csv|rpt|json)$/i.test(entry.name)) {
-        evidence.add('日志/数据')
-      } else if (/\.(png|svg|vcd|fst)$/i.test(entry.name)) {
-        evidence.add('图/波形')
+      } else {
+        names.push(path.relative(EXPERIMENTS, full))
       }
     }
   }
-  return [...evidence].join(' + ') || '见 README'
+  return evidenceFromNames(names)
 }
 
-const dirs = fs.readdirSync(EXPERIMENTS, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory())
-  .map((entry) => entry.name)
-  .sort()
+const dirs = (TRACKED
+  ? [...new Set([...TRACKED].filter((p) => p.split('/').length >= 3).map((p) => p.split('/')[1]))]
+  : fs.readdirSync(EXPERIMENTS, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name)
+).sort()
 const rows = dirs.map((slug) => {
   const dir = path.join(EXPERIMENTS, slug)
   const readme = path.join(dir, 'README.md')
   const text = fs.existsSync(readme) ? fs.readFileSync(readme, 'utf8') : ''
+  const evidence = TRACKED
+    ? evidenceFromNames([...TRACKED].filter((p) => p.startsWith(`experiments/${slug}/`)))
+    : hasEvidenceFallback(dir)
   return {
     slug,
     category: categoryOf(slug),
     title: firstHeading(text, slug),
     tutorial: tutorialOf(text),
-    evidence: hasEvidence(dir),
+    evidence,
   }
 }).sort((a, b) => a.category.localeCompare(b.category, 'zh-CN') || a.slug.localeCompare(b.slug))
 
