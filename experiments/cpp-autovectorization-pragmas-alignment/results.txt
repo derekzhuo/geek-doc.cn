@@ -1,0 +1,163 @@
+# 自动向量化对照基准 (2026-11-13 01:19:48)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra；O2/scalar/native 三档各 7 次取中位
+# N=262144 元素，PASSES=200，时间单位 ns/pass
+
+===== bench-O2 首次完整输出（11 组 ns/pass 与 checksum） =====
+g1_axpy_restrict       ns/pass=1230732.5700 checksum=-787
+g2_isum                ns/pass=59943.4850 checksum=-1274
+g3_recurrence          ns/pass=1532970.7400 checksum=2421660215545583104
+g4_alias               ns/pass=1051128.6400 checksum=-775
+g5_scatter             ns/pass=572585.2200 checksum=0
+g6_fpsum_strict        ns/pass=294637.8800 checksum=-6553974
+g7_fpsum_pragma        ns/pass=73056.6650 checksum=-6553975
+g8_aligned             ns/pass=73312.3500 checksum=-6557225
+g8_misaligned          ns/pass=73017.8800 checksum=-6555825
+g9_isum_plain          ns/pass=47538.6450 checksum=-1274
+g9_isum_unroll         ns/pass=48501.3000 checksum=-1274
+
+===== -O2 档各组 7 次中位（ns/pass） =====
+g1_axpy_restrict       中位=1048869.9700 ns/pass
+g2_isum                中位=49061.1600 ns/pass
+g3_recurrence          中位=1518164.9300 ns/pass
+g4_alias               中位=1051128.6400 ns/pass
+g5_scatter             中位=521101.7400 ns/pass
+g6_fpsum_strict        中位=292688.1550 ns/pass
+g7_fpsum_pragma        中位=73224.4500 ns/pass
+g8_aligned             中位=73453.2600 ns/pass
+g8_misaligned          中位=73072.8550 ns/pass
+g9_isum_plain          中位=49497.4450 ns/pass
+g9_isum_unroll         中位=50349.0500 ns/pass
+
+===== -scalar 档各组 7 次中位（ns/pass） =====
+g1_axpy_restrict       中位=1421617.8100 ns/pass
+g2_isum                中位=79860.0250 ns/pass
+g3_recurrence          中位=1817033.1500 ns/pass
+g4_alias               中位=1400940.8600 ns/pass
+g5_scatter             中位=509344.1650 ns/pass
+g6_fpsum_strict        中位=292308.0100 ns/pass
+g7_fpsum_pragma        中位=73042.8650 ns/pass
+g8_aligned             中位=73315.4700 ns/pass
+g8_misaligned          中位=73057.9000 ns/pass
+g9_isum_plain          中位=80009.4550 ns/pass
+g9_isum_unroll         中位=79718.5300 ns/pass
+
+===== -native 档各组 7 次中位（ns/pass） =====
+g1_axpy_restrict       中位=661502.0250 ns/pass
+g2_isum                中位=36870.3150 ns/pass
+g3_recurrence          中位=866756.2550 ns/pass
+g4_alias               中位=671058.6800 ns/pass
+g5_scatter             中位=516003.5050 ns/pass
+g6_fpsum_strict        中位=292257.2750 ns/pass
+g7_fpsum_pragma        中位=36045.8000 ns/pass
+g8_aligned             中位=36893.1400 ns/pass
+g8_misaligned          中位=36000.9400 ns/pass
+g9_isum_plain          中位=36554.1300 ns/pass
+g9_isum_unroll         中位=488326.0900 ns/pass
+
+===== 向量化加速比（scalar 中位 / O2 中位，1.00x 即未受益） =====
+g1_axpy_restrict       O2=1048869.9700  scalar=1421617.8100  speedup=1.36x
+g2_isum                O2=  49061.1600  scalar=  79860.0250  speedup=1.63x
+g3_recurrence          O2=1518164.9300  scalar=1817033.1500  speedup=1.20x
+g4_alias               O2=1051128.6400  scalar=1400940.8600  speedup=1.33x
+g5_scatter             O2= 521101.7400  scalar= 509344.1650  speedup=0.98x
+g6_fpsum_strict        O2= 292688.1550  scalar= 292308.0100  speedup=1.00x
+g7_fpsum_pragma        O2=  73224.4500  scalar=  73042.8650  speedup=1.00x
+g8_aligned             O2=  73453.2600  scalar=  73315.4700  speedup=1.00x
+g8_misaligned          O2=  73072.8550  scalar=  73057.9000  speedup=1.00x
+g9_isum_plain          O2=  49497.4450  scalar=  80009.4550  speedup=1.62x
+g9_isum_unroll         O2=  50349.0500  scalar=  79718.5300  speedup=1.58x
+
+===== -O2 逐组向量化报告（-Rpass 三兄弟原文摘录） =====
+--- O2-g1_axpy_restrict ---
+src/g1_axpy_restrict.cpp:8:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+--- O2-g2_isum ---
+src/g2_isum.cpp:7:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+--- O2-g3_recurrence ---
+src/g3_recurrence.cpp:8:14: remark: loop not vectorized: unsafe dependent memory operations in loop. Use #pragma clang loop distribute(enable) to allow loop distribution to attempt to isolate the offending operations into a separate loop
+src/g3_recurrence.cpp:7:5: remark: loop not vectorized
+--- O2-g4_alias ---
+src/g4_alias.cpp:8:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+--- O2-g5_scatter ---
+src/g5_scatter.cpp:9:9: remark: loop not vectorized: cannot identify array bounds
+src/g5_scatter.cpp:8:5: remark: loop not vectorized
+--- O2-g6_fpsum_strict ---
+src/g6_fpsum_strict.cpp:9:11: remark: loop not vectorized: cannot prove it is safe to reorder floating-point operations; allow reordering by specifying '#pragma clang loop vectorize(enable)' before the loop or by providing the compiler option '-ffast-math'
+src/g6_fpsum_strict.cpp:8:5: remark: loop not vectorized
+--- O2-g7_fpsum_pragma ---
+src/g7_fpsum_pragma.cpp:9:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+--- O2-g8_align ---
+src/g8_align.cpp:12:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+src/g8_align.cpp:21:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+--- O2-g9_unroll ---
+src/g9_unroll.cpp:8:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that vectorization is not beneficial
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that interleaving is not beneficial and is explicitly disabled or interleave count is set to 1
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that vectorization is not beneficial
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that interleaving is not beneficial and is explicitly disabled or interleave count is set to 1
+
+===== native 档（-march=native）向量宽度变化摘录 =====
+reports/native-g1_axpy_restrict.txt:src/g1_axpy_restrict.cpp:8:5: remark: vectorized loop (vectorization width: 4, interleaved count: 4)
+reports/native-g2_isum.txt:src/g2_isum.cpp:7:5: remark: vectorized loop (vectorization width: 4, interleaved count: 4)
+
+===== -funroll-loops 下 G9 报告（对照 pragma unroll_count） =====
+src/g9_unroll.cpp:8:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2)
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that vectorization is not beneficial
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that interleaving is not beneficial and is explicitly disabled or interleave count is set to 1
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that vectorization is not beneficial
+src/g9_unroll.cpp:17:5: remark: the cost-model indicates that interleaving is not beneficial and is explicitly disabled or interleave count is set to 1
+
+===== 反汇编：三档二进制的打包向量指令条数（SSE addpd/movupd 与 AVX vaddpd/vmovupd 等） =====
+bin/bench-O2: packed_vector_insn=83
+bin/bench-scalar: packed_vector_insn=19
+bin/bench-native: packed_vector_insn=134
+
+===== 反汇编：G4 裸指针版本的运行时别名检查与标量/向量双路径 =====
+000000010000081a	movsd	%xmm0, (%rdi,%rcx,8)
+000000010000084a	movsd	%xmm0, (%rdi,%rcx,8)
+000000010000084f	movsd	0x8(%rsi,%rcx,8), %xmm0
+000000010000085b	movsd	%xmm0, 0x8(%rdi,%rcx,8)
+000000010000086d	movsd	%xmm0, 0x10(%rdi,%rcx,8)
+000000010000087f	movsd	%xmm0, 0x18(%rdi,%rcx,8)
+00000001000008a0	movupd	(%rsi,%rcx,8), %xmm0
+00000001000008a5	movupd	0x10(%rsi,%rcx,8), %xmm1
+00000001000008ab	movupd	(%rdi,%rcx,8), %xmm2
+00000001000008b0	addpd	%xmm0, %xmm2
+00000001000008b4	movupd	0x10(%rdi,%rcx,8), %xmm0
+00000001000008ba	addpd	%xmm1, %xmm0
+00000001000008be	movupd	%xmm2, (%rdi,%rcx,8)
+00000001000008c3	movupd	%xmm0, 0x10(%rdi,%rcx,8)
+
+===== 反汇编：G1 restrict 版本向量主体（movupd/addpd，尾部才回退标量） =====
+00000001000005c9	movsd	(%rsi,%rax,8), %xmm1
+00000001000005d2	addsd	(%rdi,%rax,8), %xmm1
+00000001000005d7	movsd	%xmm1, (%rdi,%rax,8)
+00000001000005f0	movsd	(%rsi,%rax,8), %xmm1
+00000001000005f9	addsd	(%rdi,%rax,8), %xmm1
+00000001000005fe	movsd	%xmm1, (%rdi,%rax,8)
+0000000100000603	movsd	0x8(%rsi,%rax,8), %xmm1
+000000010000060d	addsd	0x8(%rdi,%rax,8), %xmm1
+0000000100000613	movsd	%xmm1, 0x8(%rdi,%rax,8)
+0000000100000640	movupd	(%rsi,%rcx,8), %xmm2
+0000000100000645	movupd	0x10(%rsi,%rcx,8), %xmm3
+000000010000064b	movupd	(%rdi,%rcx,8), %xmm4
+
+===== 反汇编：G8 对齐承诺产生的对齐 load（movapd）对照错位版（movupd） =====
+--- g8_aligned ---
+0000000100000a7e	movapd	0x169a(%rip), %xmm1
+0000000100000a90	addpd	(%rdi,%rcx,8), %xmm0
+0000000100000a95	addpd	0x10(%rdi,%rcx,8), %xmm1
+0000000100000aa4	addpd	%xmm0, %xmm1
+0000000100000aa8	movapd	%xmm1, %xmm0
+--- g8_misaligned ---
+0000000100000afe	movapd	0x161a(%rip), %xmm1
+0000000100000b10	movupd	(%rdi,%rcx,8), %xmm2
+0000000100000b15	addpd	%xmm2, %xmm0
+0000000100000b19	movupd	0x10(%rdi,%rcx,8), %xmm2
+0000000100000b1f	addpd	%xmm2, %xmm1
+0000000100000b2c	addpd	%xmm0, %xmm1
+done
+
+===== 平台探针：Apple clang 对 GCC 风格 -fopt-info-vec 的诊断 =====
+clang++: error: unknown argument: '-fopt-info-vec'
+done
