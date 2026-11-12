@@ -1,0 +1,19 @@
+command: codex -a on-request exec --sandbox read-only --json --ephemeral --skip-git-repo-check --ignore-user-config -C WORKSPACE -c fixture_provider_options PROMPT
+sandbox: read-only
+approval: on-request
+probe: network
+workspace: /tmp/codex-sandbox-matrix/workspace
+outside: /tmp/codex-sandbox-outside/outside
+network_url: http://127.0.0.1:53499/probe/read-only-on-request
+--- merged stdout and stderr ---
+Reading additional input from stdin...
+{"type":"thread.started","thread_id":"<session-id>"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Model metadata for `fixture-model` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."}}
+{"type":"turn.started"}
+2026-10-31T17:30:26.269300Z ERROR codex_core::tools::router: error=approval policy is Never; reject command — you cannot ask for escalated permissions if the approval policy is Never
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"fixture command finished"}}
+{"type":"turn.completed","usage":{"input_tokens":2,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":2,"reasoning_output_tokens":0}}
+--- tool result returned to fixture ---
+["approval policy is Never; reject command — you cannot ask for escalated permissions if the approval policy is Never"]
+
+exit_code: 0

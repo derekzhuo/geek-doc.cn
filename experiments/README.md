@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **325 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **339 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -10,12 +10,12 @@
 |---|---:|
 | 开源 EDA 入门 | 12 |
 | 可运行模板 | 21 |
-| 排错案例 | 109 |
+| 排错案例 | 113 |
 | 数字设计实验 | 18 |
 | 芯片参考与器件实验 | 14 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
-| 综合实验 | 78 |
+| 综合实验 | 88 |
 | EDA 流程实操 | 46 |
 | OpenSTA / 时序分析 | 5 |
 | Vivado / XSim / XDC | 15 |
@@ -94,6 +94,7 @@
 | 排错案例 | [ngspice measure 引用不存在的向量（no such vector）](./ts-ngspice-vector-undefined-plot/) | [教程](https://geek-doc.cn/eda/ts-ngspice-vector-undefined-plot.html) | 见 README |
 | 排错案例 | [ts-opensta-clock-uncertainty](./ts-opensta-clock-uncertainty/) | [教程](https://geek-doc.cn/eda/ts-opensta-clock-uncertainty.html) | 见 README |
 | 排错案例 | [ts-opensta-false-path-no-match](./ts-opensta-false-path-no-match/) | [教程](https://geek-doc.cn/eda/ts-opensta-false-path-no-match.html) | 日志/数据 |
+| 排错案例 | [OpenSTA create_generated_clock 源引脚找不到（object does not exist）](./ts-opensta-generated-clock-source-missing/) | [教程](https://geek-doc.cn/eda/ts-opensta-generated-clock-source-missing.html) | 见 README |
 | 排错案例 | [ts-opensta-input-delay-no-clock](./ts-opensta-input-delay-no-clock/) | [教程](https://geek-doc.cn/eda/ts-opensta-input-delay-no-clock.html) | 见 README |
 | 排错案例 | [ts-opensta-liberty-not-found](./ts-opensta-liberty-not-found/) | [教程](https://geek-doc.cn/eda/ts-opensta-liberty-not-found.html) | 日志/数据 |
 | 排错案例 | [OpenSTA link 找不到 cell 最小复现](./ts-opensta-link-missing-cell/) | [教程](https://geek-doc.cn/eda/ts-opensta-link-missing-cell.html) | 见 README |
@@ -104,6 +105,8 @@
 | 排错案例 | [ts-opensta-report-unconstrained](./ts-opensta-report-unconstrained/) | [教程](https://geek-doc.cn/eda/ts-opensta-report-unconstrained.html) | 见 README |
 | 排错案例 | [ts-opensta-sdc-syntax-error](./ts-opensta-sdc-syntax-error/) | [教程](https://geek-doc.cn/eda/ts-opensta-sdc-syntax-error.html) | 见 README |
 | 排错案例 | [OpenSTA read_sdf 标注失败：实例路径与设计名对照实验](./ts-opensta-sdf-annotation-fail/) | [教程](https://geek-doc.cn/eda/ts-opensta-sdf-annotation-fail.html) | 日志/数据 |
+| 排错案例 | [OpenSTA read_spef 报 instance not found（SPEF 层级名不匹配）](./ts-opensta-spef-read-fail/) | [教程](https://geek-doc.cn/eda/ts-opensta-spef-read-fail.html) | 见 README |
+| 排错案例 | [OpenSTA 调用 PrimeTime 方言命令报 invalid command name](./ts-opensta-tcl-command-unknown/) | [教程](https://geek-doc.cn/eda/ts-opensta-tcl-command-unknown.html) | 见 README |
 | 排错案例 | [ts-verilator-blkseq-blocking-sequential：Verilator BLKSEQ 告警复现](./ts-verilator-blkseq-blocking-sequential/) | [教程](https://geek-doc.cn/eda/ts-verilator-blkseq-blocking-sequential.html) | 日志/数据 + 图/波形 |
 | 排错案例 | [Verilator verilate 通过但 make 阶段编译失败](./ts-verilator-cxx-build-failure/) | [教程](https://geek-doc.cn/eda/ts-verilator-cxx-build-failure.html) | 见 README |
 | 排错案例 | [Verilator DPI-C 原型不匹配报错链](./ts-verilator-dpi-prototype-mismatch/) | [教程](https://geek-doc.cn/eda/ts-verilator-dpi-prototype-mismatch.html) | 见 README |
@@ -143,6 +146,7 @@
 | 排错案例 | [ts-vivado-xdc-create-clock-missing](./ts-vivado-xdc-create-clock-missing/) | [教程](https://geek-doc.cn/eda/ts-vivado-xdc-create-clock-missing.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-assertion-failure](./ts-xsim-assertion-failure/) | [教程](https://geek-doc.cn/eda/ts-xsim-assertion-failure.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复](./ts-xsim-elab-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 日志/数据 |
+| 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/xsim-vcd-wlf-export.html) | 见 README |
 | 排错案例 | [ts-xsim-wave-invalid-command — XSim 报 `invalid command name "wave"`](./ts-xsim-wave-invalid-command/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-wave-invalid-command.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-x-propagation-hang](./ts-xsim-x-propagation-hang/) | [教程](https://geek-doc.cn/eda/ts-xsim-x-propagation-hang.html) | 日志/数据 |
 | 排错案例 | [Yosys 普通读取与 formal 模式下的断言对照](./ts-yosys-assertion-ignored/) | [教程](https://geek-doc.cn/eda/ts-yosys-assertion-ignored.html) | 见 README |
@@ -206,14 +210,24 @@
 | 验证方法学 | [SVA 断言入门：req/ack 协议的形式验证（sva-assertion-basics-sby）](./sva-assertion-basics-sby/) | [教程](https://geek-doc.cn/chip-design/verification/sva-assertion-basics-sby.html) | output/ |
 | 验证方法学 | [用 SVA 给 AXI-Lite slave 做形式检查（sva-check-axi-lite-sby）](./sva-check-axi-lite-sby/) | [教程](https://geek-doc.cn/chip-design/verification/sva-check-axi-lite-sby.html) | output/ |
 | 综合实验 | [AXI4 时序逐拍走查（axi4-timing-waveform-walkthrough）](./axi4-timing-waveform-walkthrough/) | [教程](https://geek-doc.cn/chip-design/intermediate/axi4-timing-waveform-walkthrough.html) | output/ |
+| 综合实验 | [codex-agents-md-nested-rules — 多级 AGENTS.md 嵌套优先级实测](./codex-agents-md-nested-rules/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-agents-md-nested-rules.html) | 见 README |
 | 综合实验 | [Codex config.toml 八字段探针](./codex-config-toml-fields/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-config-toml-fields.html) | output/ |
+| 综合实验 | [Codex filesystem MCP 最小复现](./codex-mcp-setup-practice/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-mcp-setup-practice.html) | 见 README |
+| 综合实验 | [codex-sandbox-approval-matrix — Codex 沙箱模式与审批策略组合矩阵](./codex-sandbox-approval-matrix/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-sandbox-approval-matrix.html) | 日志/数据 |
 | 综合实验 | [Verilator 覆盖率：行覆盖与翻转覆盖（coverage-types-verilator）](./coverage-types-verilator/) | [教程](https://geek-doc.cn/chip-design/verification/coverage-types-verilator.html) | output/ |
 | 综合实验 | [异常、错误码与 Expected：三种错误传递机制的路径级成本基准](./cpp-exception-vs-error-code-cost/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-exception-vs-error-code-cost.html) | 日志/数据 |
+| 综合实验 | [输入解析四路径吞吐基准（cpp-iostream-scanf-custom-parser）](./cpp-iostream-scanf-custom-parser/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-iostream-scanf-custom-parser.html) | 日志/数据 |
 | 综合实验 | [C++ 链接时优化三档对照：无 LTO / 全量 LTO / ThinLTO（cpp-lto-thin-full-benchmark）](./cpp-lto-thin-full-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-lto-thin-full-benchmark.html) | 日志/数据 |
+| 综合实验 | [开寻址哈希表（线性探测）vs std::unordered_map 负载因子扫档](./cpp-open-addressing-hash-table/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-open-addressing-hash-table.html) | 日志/数据 |
 | 综合实验 | [C++ 剖面引导优化两阶段基准：baseline / 插桩训练 / PGO 重建（cpp-pgo-two-stage-benchmark）](./cpp-pgo-two-stage-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-pgo-two-stage-benchmark.html) | 日志/数据 |
+| 综合实验 | [placement new 固定块对象池基准](./cpp-placement-new-object-pool/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-placement-new-object-pool.html) | 日志/数据 |
 | 综合实验 | [RVO/NRVO、移动语义与 noexcept：vector 扩容为什么有时偷偷拷贝](./cpp-rvo-nrvo-move-noexcept/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-rvo-nrvo-move-noexcept.html) | 日志/数据 |
 | 综合实验 | [shared_ptr 原子引用计数争用：线程扫档实测](./cpp-shared-ptr-refcount-contention/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-shared-ptr-refcount-contention.html) | 日志/数据 |
 | 综合实验 | [std::function 小对象缓冲阈值实测](./cpp-std-function-heap-alloc-threshold/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-std-function-heap-alloc-threshold.html) | 日志/数据 |
+| 综合实验 | [std::string SSO、移动成本与 string_view 去拷贝边界实测](./cpp-string-sso-move-string-view/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-string-sso-move-string-view.html) | 日志/数据 |
+| 综合实验 | [map / unordered_map / 排序 vector 查找性能对照基准](./cpp-unordered-map-sorted-vector-lookup/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-unordered-map-sorted-vector-lookup.html) | 日志/数据 |
+| 综合实验 | [cpp-variant-vs-virtual-dispatch](./cpp-variant-vs-virtual-dispatch/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-variant-vs-virtual-dispatch.html) | 日志/数据 |
+| 综合实验 | [vector / deque / list 遍历与插删成本基准](./cpp-vector-deque-list-traversal/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-vector-deque-list-traversal.html) | 日志/数据 |
 | 综合实验 | [虚函数去虚化条件基准：五种调用形态 × none/LTO/PGO 三档（cpp-virtual-devirtualization-conditions）](./cpp-virtual-devirtualization-conditions/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-virtual-devirtualization-conditions.html) | 日志/数据 |
 | 综合实验 | [开源 EDA 工具报错复现实验](./eda-errlog-batch1/) | [教程](https://geek-doc.cn/eda/ts-yosys-error-no-top-module.html) | 日志/数据 + 图/波形 |
 | 综合实验 | [门级网表仿真（GLS）：RTL 与网表逐行比对（gls-netlist-simulation-iverilog）](./gls-netlist-simulation-iverilog/) | [教程](https://geek-doc.cn/chip-design/intermediate/gls-netlist-simulation-iverilog.html) | output/ |
@@ -239,17 +253,17 @@
 | 综合实验 | [openlane-resume-from-tag](./openlane-resume-from-tag/) | [教程](https://geek-doc.cn/eda/ts-openlane-resume-from-tag.html) | 日志/数据 |
 | 综合实验 | [openlane-wsl-path-issue：Docker bind mount 盘符路径报错复现](./openlane-wsl-path-issue/) | [教程](https://geek-doc.cn/eda/ts-openlane-wsl-path-issue.html) | 日志/数据 |
 | 综合实验 | [param-fsm-binary-onehot](./param-fsm-binary-onehot/) | [教程](https://geek-doc.cn/chip-design/beginner/param-fsm-binary-onehot.html) | 见 README |
-| 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | 见 README |
+| 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | output/ |
 | 综合实验 | [qemu-direct-kernel-initramfs：跳过引导加载器直接引导 RISC-V 内核](./qemu-direct-kernel-initramfs/) | [教程](https://geek-doc.cn/soc-qemu/qemu-direct-kernel-initramfs.html) | 日志/数据 |
-| 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | 见 README |
+| 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | output/ |
 | 综合实验 | [qemu-install-linux-distro：两大包管理体系下装齐 QEMU](./qemu-install-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-linux-distro.html) | 日志/数据 |
-| 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | 见 README |
-| 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | 见 README |
-| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | 见 README |
+| 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | output/ |
+| 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | output/ |
+| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | output/ |
 | 综合实验 | [qemu-riscv-linux-distro：QEMU 启动完整 RISC-V Linux 发行版](./qemu-riscv-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-riscv-linux-distro.html) | 日志/数据 |
-| 综合实验 | [qemu-riscv-virt-first-boot：零工具链跑通第一个 RISC-V 虚拟平台](./qemu-riscv-virt-first-boot/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-first-riscv-virt.html) | 见 README |
-| 综合实验 | [qemu-serial-console-wiring：三种串口控制台接线对照实验](./qemu-serial-console-wiring/) | [教程](https://geek-doc.cn/soc-qemu/qemu-serial-console-wiring.html) | 见 README |
-| 综合实验 | [qemu-slirp-user-network：SLIRP 用户态网络默认行为实验](./qemu-slirp-user-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-slirp-user-network.html) | 见 README |
+| 综合实验 | [qemu-riscv-virt-first-boot：零工具链跑通第一个 RISC-V 虚拟平台](./qemu-riscv-virt-first-boot/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-first-riscv-virt.html) | output/ |
+| 综合实验 | [qemu-serial-console-wiring：三种串口控制台接线对照实验](./qemu-serial-console-wiring/) | [教程](https://geek-doc.cn/soc-qemu/qemu-serial-console-wiring.html) | output/ |
+| 综合实验 | [qemu-slirp-user-network：SLIRP 用户态网络默认行为实验](./qemu-slirp-user-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-slirp-user-network.html) | output/ |
 | 综合实验 | [qemu-system-vs-user-mode：整机模拟与单进程转译的实测对照](./qemu-system-vs-user-mode/) | [教程](https://geek-doc.cn/soc-qemu/qemu-system-vs-user-mode.html) | 日志/数据 |
 | 综合实验 | [qemu-tap-bridge-network：tap 设备 + Linux bridge 二层联网](./qemu-tap-bridge-network/) | [教程](https://geek-doc.cn/soc-qemu/qemu-tap-bridge-network.html) | 日志/数据 |
 | 综合实验 | [qemu-user-cross-arch-binary：x86 主机直接跑 RISC-V ELF](./qemu-user-cross-arch-binary/) | [教程](https://geek-doc.cn/soc-qemu/qemu-user-cross-arch-binary.html) | 日志/数据 |
@@ -346,6 +360,6 @@
 | Vivado / XSim / XDC | [vivado-set-property-empty：Vivado set_property 空对象复现](./vivado-set-property-empty/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-common-17-55-set-property.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-utilization-report-read — 综合后资源利用率报告怎么读](./vivado-utilization-report-read/) | [教程](https://geek-doc.cn/fpga/beginner/vivado-utilization-report-read.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-xdc-timing-compare](./vivado-xdc-timing-compare/) | [教程](https://geek-doc.cn/fpga/intermediate/exp-vivado-xdc-constraints-template.html) | 见 README |
-| Vivado / XSim / XDC | [vivado-xsim-design-unit](./vivado-xsim-design-unit/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-xsim-design-unit.html) | 见 README |
+| Vivado / XSim / XDC | [vivado-xsim-design-unit](./vivado-xsim-design-unit/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-xsim-design-unit.html) | output/ |
 | Vivado / XSim / XDC | [vivado-xsim-timescale：XSIM 43-4099 timescale 不一致复现](./vivado-xsim-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 图/波形 + 日志/数据 |
 | Vivado / XSim / XDC | [xsim-dump-vcd-offline — 批处理 dump VCD，离线看波形](./xsim-dump-vcd-offline/) | [教程](https://geek-doc.cn/fpga/beginner/xsim-dump-vcd-offline.html) | 图/波形 + 日志/数据 |

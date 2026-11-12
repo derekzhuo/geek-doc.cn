@@ -1,0 +1,3 @@
+root=/tmp/codex-sandbox-matrix
+port=53499
+codex=codex-cli 0.156.1

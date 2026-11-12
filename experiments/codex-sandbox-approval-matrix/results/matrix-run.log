@@ -1,0 +1,6 @@
+command: CODEX_HOME=TEMP ./run_matrix.sh results
+date: 2026-11-01
+(eval):1: permission denied: /Users/derekzhuo/Project/geek-doc.cn/experiments/codex-sandbox-approval-matrix/run_matrix.sh
+Matrix complete. Raw results: /Users/derekzhuo/Project/geek-doc.cn/experiments/codex-sandbox-approval-matrix/results/raw-results.csv
+Matrix complete. Raw results: /Users/derekzhuo/Project/geek-doc.cn/experiments/codex-sandbox-approval-matrix/results/raw-results.csv
+Matrix complete. Raw results: /Users/derekzhuo/Project/geek-doc.cn/experiments/codex-sandbox-approval-matrix/results/raw-results.csv

@@ -1,0 +1,13 @@
+sandbox,approval,probe,observed,exit_code,log
+read-only,on-request,write,not_written,0,read-only-on-request-write.log
+read-only,on-request,network,no_request,0,read-only-on-request-network.log
+read-only,never,write,not_written,0,read-only-never-write.log
+read-only,never,network,no_request,0,read-only-never-network.log
+workspace-write,on-request,write,not_written,0,workspace-write-on-request-write.log
+workspace-write,on-request,network,no_request,0,workspace-write-on-request-network.log
+workspace-write,never,write,not_written,0,workspace-write-never-write.log
+workspace-write,never,network,no_request,0,workspace-write-never-network.log
+danger-full-access,on-request,write,allowed,0,danger-full-access-on-request-write.log
+danger-full-access,on-request,network,allowed,0,danger-full-access-on-request-network.log
+danger-full-access,never,write,allowed,0,danger-full-access-never-write.log
+danger-full-access,never,network,allowed,0,danger-full-access-never-network.log
