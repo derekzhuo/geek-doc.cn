@@ -1,0 +1,34 @@
+﻿===== cmd: cd C:\win-jobs\runs\v13c-part-repro-20261113-mac; powershell -ExecutionPolicy Bypass -File run-vivado.ps1 -Tcl v13_err.tcl -Log err-part-missing.log =====
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source v13_err.tcl
+# file delete -force ./v13missing
+# puts "MISSING_PART_BEGIN xc6slx9-tqg144-2"
+MISSING_PART_BEGIN xc6slx9-tqg144-2
+# puts "GET_PARTS_MATCH [llength [get_parts -quiet xc6slx9-tqg144-2]]"
+GET_PARTS_MATCH 0
+WARNING: [Device 21-436] No parts matched 'xc6slx9-tqg144-2'
+# set rc [catch {create_project v13missing ./v13missing -part xc6slx9-tqg144-2} result]
+# if {$rc == 0} {
+#   puts "UNEXPECTED_PROJECT_CREATED"
+#   close_project
+#   file delete -force ./v13missing
+#   exit 1
+# } else {
+#   puts "MISSING_PART_RESULT FAILED"
+#   puts "MISSING_PART_ERROR $result"
+# }
+MISSING_PART_RESULT FAILED
+MISSING_PART_ERROR ERROR: [Coretcl 2-106] Specified part could not be found.
+
+# puts "MISSING_PART_END"
+MISSING_PART_END
+# exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 13 02:03:41 2026...
+----- stderr -----
+#< CLIXML
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>正在准备首次使用模块。</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>

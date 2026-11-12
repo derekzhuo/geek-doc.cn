@@ -1,0 +1,30 @@
+﻿===== cmd: cd C:\win-jobs\runs\v13c-part-repro-20261113-mac; powershell -ExecutionPolicy Bypass -File run-vivado.ps1 -Tcl v13_fix.tcl -Log fix-part-installed.log =====
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source v13_fix.tcl
+# file delete -force ./v13fixed
+# puts "INSTALLED_PART_BEGIN xc7a35tcpg236-1"
+INSTALLED_PART_BEGIN xc7a35tcpg236-1
+# puts "GET_PARTS_MATCH [llength [get_parts -quiet xc7a35tcpg236-1]]"
+GET_PARTS_MATCH 1
+# set rc [catch {create_project v13fixed ./v13fixed -part xc7a35tcpg236-1} result]
+# if {$rc == 0} {
+#   puts "INSTALLED_PART_CREATED [get_property PART [current_project]]"
+#   close_project
+#   file delete -force ./v13fixed
+# } else {
+#   puts "INSTALLED_PART_FAILED $result"
+#   exit 1
+# }
+INSTALLED_PART_CREATED xc7a35tcpg236-1
+# puts "INSTALLED_PART_END"
+INSTALLED_PART_END
+# exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 13 02:04:15 2026...
+----- stderr -----
+#< CLIXML
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>正在准备首次使用模块。</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>
