@@ -1,0 +1,88 @@
+# Sanitizer 运行时开销基准 (2026-11-13 01:28:29)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -O2 -g -std=c++17，五变体各 7 个独立进程取中位，RSS 来自 /usr/bin/time -l
+
+sample plain #1 elapsed_ms=127.338 checksum=4970740138870488
+sample plain #2 elapsed_ms=132.37 checksum=4970740138870488
+sample plain #3 elapsed_ms=147.995 checksum=4970740138870488
+sample plain #4 elapsed_ms=142.938 checksum=4970740138870488
+sample plain #5 elapsed_ms=144.102 checksum=4970740138870488
+sample plain #6 elapsed_ms=141.737 checksum=4970740138870488
+sample plain #7 elapsed_ms=144.572 checksum=4970740138870488
+sample ubsan #1 elapsed_ms=215.729 checksum=4970740138870488
+sample ubsan #2 elapsed_ms=219.097 checksum=4970740138870488
+sample ubsan #3 elapsed_ms=214.642 checksum=4970740138870488
+sample ubsan #4 elapsed_ms=224.394 checksum=4970740138870488
+sample ubsan #5 elapsed_ms=224.768 checksum=4970740138870488
+sample ubsan #6 elapsed_ms=208.997 checksum=4970740138870488
+sample ubsan #7 elapsed_ms=207.924 checksum=4970740138870488
+sample asan #1 elapsed_ms=157.368 checksum=4970740138870488
+sample asan #2 elapsed_ms=165.264 checksum=4970740138870488
+sample asan #3 elapsed_ms=160.471 checksum=4970740138870488
+sample asan #4 elapsed_ms=163.548 checksum=4970740138870488
+sample asan #5 elapsed_ms=159.313 checksum=4970740138870488
+sample asan #6 elapsed_ms=160.851 checksum=4970740138870488
+sample asan #7 elapsed_ms=156.077 checksum=4970740138870488
+sample aubsan #1 elapsed_ms=266.246 checksum=4970740138870488
+sample aubsan #2 elapsed_ms=262.787 checksum=4970740138870488
+sample aubsan #3 elapsed_ms=250.825 checksum=4970740138870488
+sample aubsan #4 elapsed_ms=254.994 checksum=4970740138870488
+sample aubsan #5 elapsed_ms=232.009 checksum=4970740138870488
+sample aubsan #6 elapsed_ms=234.191 checksum=4970740138870488
+sample aubsan #7 elapsed_ms=257.648 checksum=4970740138870488
+sample tsan #1 elapsed_ms=230.005 checksum=4970740138870488
+sample tsan #2 elapsed_ms=229.103 checksum=4970740138870488
+sample tsan #3 elapsed_ms=230.121 checksum=4970740138870488
+sample tsan #4 elapsed_ms=229.622 checksum=4970740138870488
+sample tsan #5 elapsed_ms=234.139 checksum=4970740138870488
+sample tsan #6 elapsed_ms=240.83 checksum=4970740138870488
+sample tsan #7 elapsed_ms=226.719 checksum=4970740138870488
+
+variant       median_ms      cpu_x      rss_KiB        mem_x checksum
+plain           142.938       1.00        16300         1.00 4970740138870488
+ubsan           215.729       1.51        26052         1.60 4970740138870488
+asan            160.471       1.12        36804         2.26 4970740138870488
+aubsan          254.994       1.78        36868         2.26 4970740138870488
+tsan            230.005       1.61        79784         4.89 4970740138870488
+
+== TSan 数据竞争实跑（未同步版本，预期必报） ==
+racy:  shared_counter=2000000
+==================
+WARNING: ThreadSanitizer: data race (pid=63564)
+  Write of size 4 at 0x00010b84f000 by thread T2:
+    #0 bump() race_demo.cpp:16 (race:x86_64+0x1000007b5)
+    #1 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, void (*)()>>(void*) thread:298 (race:x86_64+0x100000975)
+
+  Previous write of size 4 at 0x00010b84f000 by thread T1:
+    #0 bump() race_demo.cpp:16 (race:x86_64+0x1000007b5)
+    #1 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, void (*)()>>(void*) thread:298 (race:x86_64+0x100000975)
+
+  Location is global 'shared_counter' at 0x00010b84f000 (race+0x100003000)
+
+  Thread T2 (tid=6831554, running) created by main thread at:
+    #0 pthread_create <null> (libclang_rt.tsan_osx_dynamic.dylib:x86_64h+0x345ca)
+    #1 std::__1::thread::thread<void (&)(), void>(void (&)()) thread:314 (race:x86_64+0x10000086b)
+    #2 main race_demo.cpp:22 (race:x86_64+0x1000006d3)
+
+  Thread T1 (tid=6831553, finished) created by main thread at:
+    #0 pthread_create <null> (libclang_rt.tsan_osx_dynamic.dylib:x86_64h+0x345ca)
+    #1 std::__1::thread::thread<void (&)(), void>(void (&)()) thread:314 (race:x86_64+0x10000086b)
+    #2 main race_demo.cpp:21 (race:x86_64+0x1000006c3)
+
+SUMMARY: ThreadSanitizer: data race race_demo.cpp:16 in bump()
+==================
+ThreadSanitizer: reported 1 warnings
+racy build data-race warnings: 1
+
+== TSan 修复对照（atomic 版本，预期零报告） ==
+fixed: shared_counter=2000000
+fixed build ThreadSanitizer warnings: 0
+
+== UBSan 检测能力演示（有符号溢出 + 非法移位） ==
+ub_demo sink=-2147483647
+ub_demo.cpp:5:69: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior ub_demo.cpp:5:69 
+ub_demo.cpp:7:67: runtime error: shift exponent 32 is too large for 32-bit type 'int'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior ub_demo.cpp:7:67 
+
+done
