@@ -1,0 +1,69 @@
+{
+  "milestone": "M4",
+  "task": "主代理收到一个横跨两个模块的改动请求：alpha 模块要调整常量，beta 模块要调整超时。两个文件互不依赖，主代理 fork 两个子代理分别处理，回收结果后向用户汇总。",
+  "system_prompt": "你是主代理。单个上下文装不下全部子任务细节时，把独立子任务 fork 给拥有独立上下文的子代理；你只会收到它们的最终回复与 trace 摘要，看不到它们的中间消息。",
+  "shared_inputs": {
+    "编码规范": "只修改被指派的文件，其余内容保持原样",
+    "任务编号": "M4-001",
+    "回归要求": "改动后工作区测试必须仍能通过"
+  },
+  "delay": 0.08,
+  "reps": 5,
+  "files": {
+    "alpha_module.py": "# alpha 模块：教学用常量与加法函数\nVALUE = 1\n\n\ndef add(a, b):\n    return a + b\n",
+    "beta_module.py": "# beta 模块：教学用超时配置与探活函数\nTIMEOUT = 5\n\n\ndef ping():\n    return 'pong'\n"
+  },
+  "subagents": {
+    "alpha": {
+      "task": "把 alpha_module.py 顶部的 VALUE 从 1 调整为 42，其余内容保持不变，完成后汇报改动。",
+      "replies": [
+        {
+          "content": "先读取被指派的 alpha_module.py，确认当前内容。",
+          "tool_calls": [
+            {"id": "m4_a_1", "name": "read_file", "arguments": {"path": "alpha_module.py"}}
+          ]
+        },
+        {
+          "content": "常量定义唯一命中，执行精确替换。",
+          "tool_calls": [
+            {"id": "m4_a_2", "name": "edit_file", "arguments": {"path": "alpha_module.py", "old_string": "VALUE = 1", "new_string": "VALUE = 42"}}
+          ]
+        },
+        {
+          "content": "alpha 子任务完成：alpha_module.py 的 VALUE 已从 1 调整为 42，add 函数与注释保持原样。"
+        }
+      ]
+    },
+    "beta": {
+      "task": "把 beta_module.py 顶部的 TIMEOUT 从 5 调整为 30，其余内容保持不变，完成后汇报改动。",
+      "replies": [
+        {
+          "content": "先读取被指派的 beta_module.py，确认当前内容。",
+          "tool_calls": [
+            {"id": "m4_b_1", "name": "read_file", "arguments": {"path": "beta_module.py"}}
+          ]
+        },
+        {
+          "content": "超时定义唯一命中，执行精确替换。",
+          "tool_calls": [
+            {"id": "m4_b_2", "name": "edit_file", "arguments": {"path": "beta_module.py", "old_string": "TIMEOUT = 5", "new_string": "TIMEOUT = 30"}}
+          ]
+        },
+        {
+          "content": "beta 子任务完成：beta_module.py 的 TIMEOUT 已从 5 调整为 30，ping 函数与注释保持原样。"
+        }
+      ]
+    }
+  },
+  "parent_replies": [
+    {
+      "content": "两个模块互不依赖，fork alpha、beta 两个子代理并行处理，各自独立上下文。",
+      "tool_calls": [
+        {"id": "m4_fork_1", "name": "fork_subagents", "arguments": {"jobs": ["alpha", "beta"]}}
+      ]
+    },
+    {
+      "content": "两个子代理均成功回传：alpha 的 VALUE=42，beta 的 TIMEOUT=30，汇总完成。"
+    }
+  ]
+}

@@ -9,13 +9,19 @@ M1 用 ScriptedModel：按对话步数返回预先录制的确定性回复，不
 只需新写一个同接口的实现，loop 与工具层不用改。
 """
 
+import time
+
 
 class ScriptedModel(object):
-    def __init__(self, script, system_prompt=""):
+    def __init__(self, script, system_prompt="", delay=0.0):
         # script 是一个回复列表，每项形如：
         # {"content": "...", "tool_calls": [...]}；按调用次序逐条返回。
+        # delay 是每次 complete 调用前的固定等待秒数，模拟真实模型的推理
+        # 往返耗时，让 M4 串并行子代理编排的计时差异可测量；默认 0，
+        # M1-M3 的既有行为与计时完全不变。
         self._script = list(script)
         self._system_prompt = system_prompt
+        self.delay = delay
         self.calls = 0
 
     @property
@@ -23,6 +29,8 @@ class ScriptedModel(object):
         return self._system_prompt
 
     def complete(self, messages):
+        if self.delay:
+            time.sleep(self.delay)
         if self.calls >= len(self._script):
             raise RuntimeError("脚本回复已用尽，但 loop 仍未结束")
         recorded = self._script[self.calls]

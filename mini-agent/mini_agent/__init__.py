@@ -15,6 +15,15 @@ from .compression import (
 from .loop import run_loop
 from .messages import assistant_msg, tool_msg, user_msg
 from .model import ScriptedModel
+from .subagent import (
+    ForkingToolRegistry,
+    MemoryTracer,
+    SubagentJob,
+    SubagentOrchestrator,
+    SubagentResult,
+    SubagentRunner,
+    aggregate,
+)
 from .tools import ToolRegistry
 from .trace import Tracer
 
@@ -32,4 +41,11 @@ __all__ = [
     "ContextWindow",
     "ContextOverflowError",
     "estimate_tokens",
+    "SubagentJob",
+    "SubagentResult",
+    "SubagentRunner",
+    "SubagentOrchestrator",
+    "ForkingToolRegistry",
+    "MemoryTracer",
+    "aggregate",
 ]
