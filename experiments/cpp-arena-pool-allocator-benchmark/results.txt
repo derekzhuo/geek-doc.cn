@@ -1,0 +1,85 @@
+# arena 内存池基准 (2026-11-13 02:03:26)
+# compiler: Apple clang version 21.0.0 (clang-2100.1.1.101)
+# flags: -std=c++17 -Wall -Wextra -pthread；O2/O0 各运行 7 次取中位
+
+===== -O2 首次完整输出 =====
+== ST O2 单线程批量建/毁，N=1000000，5 轮取中位 ==
+[ST|32B|raw]   中位   73.82 ns/对象  样本 91.04 77.26 73.74 73.82 72.80
+[ST|32B|arena] 中位   15.43 ns/对象  样本 15.43 16.03 15.32 15.23 15.49
+[ST|128B|raw]   中位  105.91 ns/对象  样本 154.50 106.55 105.91 104.80 105.85
+[ST|128B|arena] 中位   59.77 ns/对象  样本 58.42 59.24 62.50 59.77 59.93
+[ST|256B|raw]   中位  148.47 ns/对象  样本 257.03 148.47 146.55 147.52 155.31
+[ST|256B|arena] 中位  117.84 ns/对象  样本 114.06 117.84 115.84 120.12 120.14
+== MT O2 多线程争用，每线程 200000 个 32B 对象，5 轮取中位 ==
+[MT|1t|raw-batch] 总   15.142 ms   75.71 ns/对象  吞吐    13.21 M对象/s
+[MT|1t|arena-thread] 总    1.024 ms    5.12 ns/对象  吞吐   195.36 M对象/s
+[MT|1t|arena-shared] 总    4.473 ms   22.37 ns/对象  吞吐    44.71 M对象/s
+[MT|2t|raw-batch] 总   40.046 ms  100.11 ns/对象  吞吐     9.99 M对象/s
+[MT|2t|arena-thread] 总    2.661 ms    6.65 ns/对象  吞吐   150.34 M对象/s
+[MT|2t|arena-shared] 总   21.859 ms   54.65 ns/对象  吞吐    18.30 M对象/s
+[MT|4t|raw-batch] 总   82.684 ms  103.35 ns/对象  吞吐     9.68 M对象/s
+[MT|4t|arena-thread] 总    5.834 ms    7.29 ns/对象  吞吐   137.13 M对象/s
+[MT|4t|arena-shared] 总   45.930 ms   57.41 ns/对象  吞吐    17.42 M对象/s
+[MT|8t|raw-batch] 总  146.910 ms   91.82 ns/对象  吞吐    10.89 M对象/s
+[MT|8t|arena-thread] 总   10.227 ms    6.39 ns/对象  吞吐   156.44 M对象/s
+[MT|8t|arena-shared] 总  113.474 ms   70.92 ns/对象  吞吐    14.10 M对象/s
+== 单轮分配计数 delta（ST 取 32B 档，MT 取 4 线程）==
+[count|ST-32B-raw]   new=1000001 次/40000000 字节  delete=1000001 次
+[count|ST-32B-arena] new=1 次/536870912 字节  delete=1 次（reset 不进分配器）
+[count|MT-4t-raw-batch] new=800020 次/166218136 字节  delete=800018 次
+[count|MT-4t-arena-thread] new=20 次/201327000 字节  delete=18 次
+[count|MT-4t-arena-shared] new=16 次/134218136 字节  delete=14 次
+== 全程累计（含 5 轮 × 各档重复）==
+operator new 调用 31801099 次，累计 21363076144 字节，delete 31801099 次
+sink 5438365740
+
+===== 七轮中位汇总：单线程 ns/对象 =====
+[O2][ST|32B|raw] 中位 73.82 ns/对象
+[O2][ST|32B|arena] 中位 15.25 ns/对象
+[O2][ST|128B|raw] 中位 106.31 ns/对象
+[O2][ST|128B|arena] 中位 59.79 ns/对象
+[O2][ST|256B|raw] 中位 149.92 ns/对象
+[O2][ST|256B|arena] 中位 116.54 ns/对象
+[O0][ST|32B|raw] 中位 116.53 ns/对象
+[O0][ST|32B|arena] 中位 27.76 ns/对象
+[O0][ST|128B|raw] 中位 155.44 ns/对象
+[O0][ST|128B|arena] 中位 77.97 ns/对象
+[O0][ST|256B|raw] 中位 200.83 ns/对象
+[O0][ST|256B|arena] 中位 142.75 ns/对象
+
+===== 七轮中位汇总：多线程 ns/对象 =====
+[O2][MT|1t|raw-batch] 中位 75.53 ns/对象
+[O2][MT|1t|arena-thread] 中位 5.12 ns/对象
+[O2][MT|1t|arena-shared] 中位 20.99 ns/对象
+[O2][MT|2t|raw-batch] 中位 107.32 ns/对象
+[O2][MT|2t|arena-thread] 中位 8.19 ns/对象
+[O2][MT|2t|arena-shared] 中位 49.01 ns/对象
+[O2][MT|4t|raw-batch] 中位 106.34 ns/对象
+[O2][MT|4t|arena-thread] 中位 8.45 ns/对象
+[O2][MT|4t|arena-shared] 中位 59.61 ns/对象
+[O2][MT|8t|raw-batch] 中位 97.95 ns/对象
+[O2][MT|8t|arena-thread] 中位 7.52 ns/对象
+[O2][MT|8t|arena-shared] 中位 67.21 ns/对象
+[O0][MT|1t|raw-batch] 中位 132.68 ns/对象
+[O0][MT|1t|arena-thread] 中位 14.80 ns/对象
+[O0][MT|1t|arena-shared] 中位 35.73 ns/对象
+[O0][MT|2t|raw-batch] 中位 127.60 ns/对象
+[O0][MT|2t|arena-thread] 中位 24.39 ns/对象
+[O0][MT|2t|arena-shared] 中位 84.91 ns/对象
+[O0][MT|4t|raw-batch] 中位 115.22 ns/对象
+[O0][MT|4t|arena-thread] 中位 23.66 ns/对象
+[O0][MT|4t|arena-shared] 中位 99.92 ns/对象
+[O0][MT|8t|raw-batch] 中位 104.57 ns/对象
+[O0][MT|8t|arena-thread] 中位 17.71 ns/对象
+[O0][MT|8t|arena-shared] 中位 123.69 ns/对象
+
+===== /usr/bin/time -l 系统侧资源（O2 单次） =====
+           744808448  maximum resident set size
+                   4  page faults
+                   0  voluntary context switches
+              352555  involuntary context switches
+
+===== 末轮累计计数（O2） =====
+== 全程累计（含 5 轮 × 各档重复）==
+operator new 调用 31801099 次，累计 21363076144 字节，delete 31801099 次
+sink 5439372300
