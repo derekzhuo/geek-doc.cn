@@ -1,0 +1,68 @@
+# CFS nice weight 基准 (2026-11-13 04:43:15)
+# host: lp08-nice | kernel: 5.15.0-190-generic
+# distro: Ubuntu 22.04.5 LTS
+# compiler: gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+# cpu: Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz
+# lscpu: CPU(s):                                  2
+# lscpu: Thread(s) per core:                      2
+# lscpu: Core(s) per socket:                      1
+# lscpu: Socket(s):                               1
+# CLK_TCK=100 | 每组 2 进程 | 窗口 8s | 重复 5 次
+
+===== 四组 nice 组合各 5 次重复（4 进程超额订阅 2 vCPU） =====
+RESULT combo=base rep=1 niceA=0 niceB=0 procs=2 utimeA_ms=8912.11 utimeB_ms=8968.89 ratio=0.994 jiffyA=800 jiffyB=799 jratio=1.001
+RESULT combo=base rep=2 niceA=0 niceB=0 procs=2 utimeA_ms=8985.96 utimeB_ms=8902.82 ratio=1.009 jiffyA=804 jiffyB=794 jratio=1.013
+RESULT combo=base rep=3 niceA=0 niceB=0 procs=2 utimeA_ms=8961.76 utimeB_ms=8919.57 ratio=1.005 jiffyA=801 jiffyB=796 jratio=1.006
+RESULT combo=base rep=4 niceA=0 niceB=0 procs=2 utimeA_ms=8940.32 utimeB_ms=8954.55 ratio=0.998 jiffyA=799 jiffyB=801 jratio=0.998
+RESULT combo=base rep=5 niceA=0 niceB=0 procs=2 utimeA_ms=8936.74 utimeB_ms=8972.74 ratio=0.996 jiffyA=799 jiffyB=801 jratio=0.998
+RESULT combo=n10 rep=1 niceA=0 niceB=10 procs=2 utimeA_ms=16120.39 utimeB_ms=1765.46 ratio=9.131 jiffyA=1444 jiffyB=152 jratio=9.500
+RESULT combo=n10 rep=2 niceA=0 niceB=10 procs=2 utimeA_ms=15990.48 utimeB_ms=1729.57 ratio=9.245 jiffyA=1428 jiffyB=151 jratio=9.457
+RESULT combo=n10 rep=3 niceA=0 niceB=10 procs=2 utimeA_ms=16142.84 utimeB_ms=1748.73 ratio=9.231 jiffyA=1443 jiffyB=152 jratio=9.493
+RESULT combo=n10 rep=4 niceA=0 niceB=10 procs=2 utimeA_ms=16118.29 utimeB_ms=1758.03 ratio=9.168 jiffyA=1441 jiffyB=154 jratio=9.357
+RESULT combo=n10 rep=5 niceA=0 niceB=10 procs=2 utimeA_ms=16139.95 utimeB_ms=1746.76 ratio=9.240 jiffyA=1442 jiffyB=152 jratio=9.487
+RESULT combo=n20 rep=1 niceA=0 niceB=20 procs=2 utimeA_ms=17598.31 utimeB_ms=326.30 ratio=53.933 jiffyA=1577 jiffyB=22 jratio=71.682
+RESULT combo=n20 rep=2 niceA=0 niceB=20 procs=2 utimeA_ms=17577.49 utimeB_ms=307.58 ratio=57.148 jiffyA=1571 jiffyB=22 jratio=71.409
+RESULT combo=n20 rep=3 niceA=0 niceB=20 procs=2 utimeA_ms=17494.36 utimeB_ms=397.71 ratio=43.988 jiffyA=1574 jiffyB=22 jratio=71.545
+RESULT combo=n20 rep=4 niceA=0 niceB=20 procs=2 utimeA_ms=17605.68 utimeB_ms=297.23 ratio=59.233 jiffyA=1575 jiffyB=22 jratio=71.591
+RESULT combo=n20 rep=5 niceA=0 niceB=20 procs=2 utimeA_ms=17563.93 utimeB_ms=306.52 ratio=57.301 jiffyA=1572 jiffyB=22 jratio=71.455
+RESULT combo=neg10 rep=1 niceA=-10 niceB=0 procs=2 utimeA_ms=16125.94 utimeB_ms=1832.76 ratio=8.799 jiffyA=1463 jiffyB=155 jratio=9.439
+RESULT combo=neg10 rep=2 niceA=-10 niceB=0 procs=2 utimeA_ms=16131.75 utimeB_ms=1833.49 ratio=8.798 jiffyA=1465 jiffyB=156 jratio=9.391
+RESULT combo=neg10 rep=3 niceA=-10 niceB=0 procs=2 utimeA_ms=16142.38 utimeB_ms=1842.31 ratio=8.762 jiffyA=1466 jiffyB=156 jratio=9.397
+RESULT combo=neg10 rep=4 niceA=-10 niceB=0 procs=2 utimeA_ms=16105.14 utimeB_ms=1832.85 ratio=8.787 jiffyA=1460 jiffyB=155 jratio=9.419
+RESULT combo=neg10 rep=5 niceA=-10 niceB=0 procs=2 utimeA_ms=16089.70 utimeB_ms=1824.43 ratio=8.819 jiffyA=1461 jiffyB=156 jratio=9.365
+
+===== 各组合五次重复的 CPU 时间比中位（getrusage 与 /proc 双口径） =====
+MEDIAN combo=base   ratio=   0.998 jratio=   1.001 n=5
+MEDIAN combo=n10    ratio=   9.231 jratio=   9.487 n=5
+MEDIAN combo=n20    ratio=  57.148 jratio=  71.545 n=5
+MEDIAN combo=neg10  ratio=   8.798 jratio=   9.397 n=5
+
+===== perf stat 佐证（n10 组合，sudo） =====
+# CFS nice weight 基准 (2026-11-13 04:46:16)
+# host: lp08-nice | kernel: 5.15.0-190-generic
+# distro: Ubuntu 22.04.5 LTS
+# compiler: gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+# cpu: Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz
+# lscpu: CPU(s):                                  2
+# lscpu: Thread(s) per core:                      2
+# lscpu: Core(s) per socket:                      1
+# lscpu: Socket(s):                               1
+# CLK_TCK=100 | 每组 2 进程 | 窗口 8s | 重复 5 次
+
+===== 四组 nice 组合各 1 次重复（4 进程超额订阅 2 vCPU） =====
+RESULT combo=n10 rep=1 niceA=0 niceB=10 procs=2 utimeA_ms=16132.26 utimeB_ms=1757.75 ratio=9.178 jiffyA=1442 jiffyB=153 jratio=9.425
+done
+
+ Performance counter stats for 'bash run.sh --one n10:0:10':
+
+             4,205      context-switches          #  233.740 /sec                   
+                79      cpu-migrations            #    4.391 /sec                   
+         17,990.09 msec task-clock                #    1.977 CPUs utilized          
+
+       9.101018314 seconds time elapsed
+
+      17.970138000 seconds user
+       0.020721000 seconds sys
+
+
+done
