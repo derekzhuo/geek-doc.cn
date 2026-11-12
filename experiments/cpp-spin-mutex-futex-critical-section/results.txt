@@ -1,0 +1,676 @@
+# 三锁临界区长度扫档基准 (2026-11-13 03:21:42)
+# host: spinlock | kernel: 5.15.0-190-generic
+# distro: Ubuntu 22.04.5 LTS
+# compiler: g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+# cpu: Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz
+# lscpu: CPU(s):                                  2
+# lscpu: Thread(s) per core:                      2
+# lscpu: Core(s) per socket:                      1
+# lscpu: Socket(s):                               1
+# lscpu: L1d cache:                               48 KiB (1 instance)
+# lscpu: L2 cache:                                1.3 MiB (1 instance)
+# lscpu: L3 cache:                                54 MiB (1 instance)
+# lscpu: NUMA node(s):                            1
+# lscpu: NUMA node0 CPU(s):                       0,1
+
+===== 完整基准 5 次进程运行（每次 3 锁 × 6 临界区级 × 4 线程档） =====
+--- 第 1 次 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.79
+# CALIB cs=w30         mean_ns=     37.91
+# CALIB cs=w300        mean_ns=    365.24
+# CALIB cs=w3000       mean_ns=   3663.06
+# CALIB cs=w30000      mean_ns=  36521.81
+# CALIB cs=sleep100us  mean_ns= 157490.14
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=1 cs=w1          ns_op=      8.25 throughput_mops= 121.199 ops=400000
+RESULT lock=spin     threads=2 cs=w1          ns_op=     19.97 throughput_mops=  50.072 ops=800000
+RESULT lock=spin     threads=4 cs=w1          ns_op=     21.72 throughput_mops=  46.037 ops=1600000
+RESULT lock=spin     threads=8 cs=w1          ns_op=     72.40 throughput_mops=  13.812 ops=3200000
+RESULT lock=spin     threads=1 cs=w30         ns_op=     38.64 throughput_mops=  25.880 ops=100000
+RESULT lock=spin     threads=2 cs=w30         ns_op=     54.66 throughput_mops=  18.295 ops=200000
+RESULT lock=spin     threads=4 cs=w30         ns_op=    101.09 throughput_mops=   9.892 ops=400000
+RESULT lock=spin     threads=8 cs=w30         ns_op=    142.91 throughput_mops=   6.997 ops=800000
+RESULT lock=spin     threads=1 cs=w300        ns_op=    368.94 throughput_mops=   2.710 ops=40000
+RESULT lock=spin     threads=2 cs=w300        ns_op=    386.45 throughput_mops=   2.588 ops=80000
+RESULT lock=spin     threads=4 cs=w300        ns_op=    599.09 throughput_mops=   1.669 ops=160000
+RESULT lock=spin     threads=8 cs=w300        ns_op=   1403.27 throughput_mops=   0.713 ops=320000
+RESULT lock=spin     threads=1 cs=w3000       ns_op=   3661.04 throughput_mops=   0.273 ops=10000
+RESULT lock=spin     threads=2 cs=w3000       ns_op=   3688.61 throughput_mops=   0.271 ops=20000
+RESULT lock=spin     threads=4 cs=w3000       ns_op=   6463.13 throughput_mops=   0.155 ops=40000
+RESULT lock=spin     threads=8 cs=w3000       ns_op=  13633.10 throughput_mops=   0.073 ops=80000
+RESULT lock=spin     threads=1 cs=w30000      ns_op=  36518.05 throughput_mops=   0.027 ops=2000
+RESULT lock=spin     threads=2 cs=w30000      ns_op=  36757.67 throughput_mops=   0.027 ops=4000
+RESULT lock=spin     threads=4 cs=w30000      ns_op=  70214.21 throughput_mops=   0.014 ops=8000
+RESULT lock=spin     threads=8 cs=w30000      ns_op= 136026.84 throughput_mops=   0.007 ops=16000
+RESULT lock=spin     threads=1 cs=sleep100us  ns_op= 156361.98 throughput_mops=   0.006 ops=1000
+RESULT lock=spin     threads=2 cs=sleep100us  ns_op= 159516.63 throughput_mops=   0.006 ops=2000
+RESULT lock=spin     threads=4 cs=sleep100us  ns_op= 251994.85 throughput_mops=   0.004 ops=4000
+RESULT lock=spin     threads=8 cs=sleep100us  ns_op=2650747.89 throughput_mops=   0.000 ops=8000
+RESULT lock=mutex    threads=1 cs=w1          ns_op=     19.67 throughput_mops=  50.832 ops=400000
+RESULT lock=mutex    threads=2 cs=w1          ns_op=     63.61 throughput_mops=  15.720 ops=800000
+RESULT lock=mutex    threads=4 cs=w1          ns_op=     61.57 throughput_mops=  16.240 ops=1600000
+RESULT lock=mutex    threads=8 cs=w1          ns_op=     64.31 throughput_mops=  15.549 ops=3200000
+RESULT lock=mutex    threads=1 cs=w30         ns_op=     39.41 throughput_mops=  25.374 ops=100000
+RESULT lock=mutex    threads=2 cs=w30         ns_op=     69.07 throughput_mops=  14.478 ops=200000
+RESULT lock=mutex    threads=4 cs=w30         ns_op=    113.18 throughput_mops=   8.836 ops=400000
+RESULT lock=mutex    threads=8 cs=w30         ns_op=    115.11 throughput_mops=   8.687 ops=800000
+RESULT lock=mutex    threads=1 cs=w300        ns_op=    368.86 throughput_mops=   2.711 ops=40000
+RESULT lock=mutex    threads=2 cs=w300        ns_op=    593.19 throughput_mops=   1.686 ops=80000
+RESULT lock=mutex    threads=4 cs=w300        ns_op=    813.57 throughput_mops=   1.229 ops=160000
+RESULT lock=mutex    threads=8 cs=w300        ns_op=    705.42 throughput_mops=   1.418 ops=320000
+RESULT lock=mutex    threads=1 cs=w3000       ns_op=   3654.15 throughput_mops=   0.274 ops=10000
+RESULT lock=mutex    threads=2 cs=w3000       ns_op=   5622.01 throughput_mops=   0.178 ops=20000
+RESULT lock=mutex    threads=4 cs=w3000       ns_op=   5484.71 throughput_mops=   0.182 ops=40000
+RESULT lock=mutex    threads=8 cs=w3000       ns_op=   4201.91 throughput_mops=   0.238 ops=80000
+RESULT lock=mutex    threads=1 cs=w30000      ns_op=  36509.82 throughput_mops=   0.027 ops=2000
+RESULT lock=mutex    threads=2 cs=w30000      ns_op=  40129.18 throughput_mops=   0.025 ops=4000
+RESULT lock=mutex    threads=4 cs=w30000      ns_op=  38530.40 throughput_mops=   0.026 ops=8000
+RESULT lock=mutex    threads=8 cs=w30000      ns_op=  38832.70 throughput_mops=   0.026 ops=16000
+RESULT lock=mutex    threads=1 cs=sleep100us  ns_op= 156596.65 throughput_mops=   0.006 ops=1000
+RESULT lock=mutex    threads=2 cs=sleep100us  ns_op= 158262.69 throughput_mops=   0.006 ops=2000
+RESULT lock=mutex    threads=4 cs=sleep100us  ns_op= 160459.92 throughput_mops=   0.006 ops=4000
+RESULT lock=mutex    threads=8 cs=sleep100us  ns_op= 159970.86 throughput_mops=   0.006 ops=8000
+RESULT lock=adaptive threads=1 cs=w1          ns_op=     19.87 throughput_mops=  50.335 ops=400000
+RESULT lock=adaptive threads=2 cs=w1          ns_op=     24.17 throughput_mops=  41.372 ops=800000
+RESULT lock=adaptive threads=4 cs=w1          ns_op=     23.00 throughput_mops=  43.472 ops=1600000
+RESULT lock=adaptive threads=8 cs=w1          ns_op=     24.02 throughput_mops=  41.631 ops=3200000
+RESULT lock=adaptive threads=1 cs=w30         ns_op=     38.86 throughput_mops=  25.737 ops=100000
+RESULT lock=adaptive threads=2 cs=w30         ns_op=     42.83 throughput_mops=  23.351 ops=200000
+RESULT lock=adaptive threads=4 cs=w30         ns_op=     46.00 throughput_mops=  21.738 ops=400000
+RESULT lock=adaptive threads=8 cs=w30         ns_op=     45.08 throughput_mops=  22.181 ops=800000
+RESULT lock=adaptive threads=1 cs=w300        ns_op=    368.15 throughput_mops=   2.716 ops=40000
+RESULT lock=adaptive threads=2 cs=w300        ns_op=    477.13 throughput_mops=   2.096 ops=80000
+RESULT lock=adaptive threads=4 cs=w300        ns_op=    441.69 throughput_mops=   2.264 ops=160000
+RESULT lock=adaptive threads=8 cs=w300        ns_op=    437.62 throughput_mops=   2.285 ops=320000
+RESULT lock=adaptive threads=1 cs=w3000       ns_op=   3675.96 throughput_mops=   0.272 ops=10000
+RESULT lock=adaptive threads=2 cs=w3000       ns_op=   5591.70 throughput_mops=   0.179 ops=20000
+RESULT lock=adaptive threads=4 cs=w3000       ns_op=   4234.40 throughput_mops=   0.236 ops=40000
+RESULT lock=adaptive threads=8 cs=w3000       ns_op=   4055.41 throughput_mops=   0.247 ops=80000
+RESULT lock=adaptive threads=1 cs=w30000      ns_op=  36583.72 throughput_mops=   0.027 ops=2000
+RESULT lock=adaptive threads=2 cs=w30000      ns_op=  37867.64 throughput_mops=   0.026 ops=4000
+RESULT lock=adaptive threads=4 cs=w30000      ns_op=  38529.67 throughput_mops=   0.026 ops=8000
+RESULT lock=adaptive threads=8 cs=w30000      ns_op=  38875.70 throughput_mops=   0.026 ops=16000
+RESULT lock=adaptive threads=1 cs=sleep100us  ns_op= 156509.55 throughput_mops=   0.006 ops=1000
+RESULT lock=adaptive threads=2 cs=sleep100us  ns_op= 159091.66 throughput_mops=   0.006 ops=2000
+RESULT lock=adaptive threads=4 cs=sleep100us  ns_op= 158879.76 throughput_mops=   0.006 ops=4000
+RESULT lock=adaptive threads=8 cs=sleep100us  ns_op= 159570.71 throughput_mops=   0.006 ops=8000
+done sink=11955694777163861072
+--- 第 2 次 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.78
+# CALIB cs=w30         mean_ns=     37.90
+# CALIB cs=w300        mean_ns=    365.47
+# CALIB cs=w3000       mean_ns=   3664.37
+# CALIB cs=w30000      mean_ns=  36745.88
+# CALIB cs=sleep100us  mean_ns= 156518.93
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=1 cs=w1          ns_op=      8.24 throughput_mops= 121.291 ops=400000
+RESULT lock=spin     threads=2 cs=w1          ns_op=      8.04 throughput_mops= 124.307 ops=800000
+RESULT lock=spin     threads=4 cs=w1          ns_op=     35.11 throughput_mops=  28.480 ops=1600000
+RESULT lock=spin     threads=8 cs=w1          ns_op=     55.05 throughput_mops=  18.166 ops=3200000
+RESULT lock=spin     threads=1 cs=w30         ns_op=     38.59 throughput_mops=  25.910 ops=100000
+RESULT lock=spin     threads=2 cs=w30         ns_op=     55.38 throughput_mops=  18.057 ops=200000
+RESULT lock=spin     threads=4 cs=w30         ns_op=     68.52 throughput_mops=  14.594 ops=400000
+RESULT lock=spin     threads=8 cs=w30         ns_op=    189.26 throughput_mops=   5.284 ops=800000
+RESULT lock=spin     threads=1 cs=w300        ns_op=    369.15 throughput_mops=   2.709 ops=40000
+RESULT lock=spin     threads=2 cs=w300        ns_op=    578.59 throughput_mops=   1.728 ops=80000
+RESULT lock=spin     threads=4 cs=w300        ns_op=    642.38 throughput_mops=   1.557 ops=160000
+RESULT lock=spin     threads=8 cs=w300        ns_op=   1488.39 throughput_mops=   0.672 ops=320000
+RESULT lock=spin     threads=1 cs=w3000       ns_op=   3655.80 throughput_mops=   0.274 ops=10000
+RESULT lock=spin     threads=2 cs=w3000       ns_op=   3683.94 throughput_mops=   0.271 ops=20000
+RESULT lock=spin     threads=4 cs=w3000       ns_op=   6586.57 throughput_mops=   0.152 ops=40000
+RESULT lock=spin     threads=8 cs=w3000       ns_op=  12286.35 throughput_mops=   0.081 ops=80000
+RESULT lock=spin     threads=1 cs=w30000      ns_op=  37185.52 throughput_mops=   0.027 ops=2000
+RESULT lock=spin     threads=2 cs=w30000      ns_op=  36759.98 throughput_mops=   0.027 ops=4000
+RESULT lock=spin     threads=4 cs=w30000      ns_op=  68176.90 throughput_mops=   0.015 ops=8000
+RESULT lock=spin     threads=8 cs=w30000      ns_op= 136727.15 throughput_mops=   0.007 ops=16000
+RESULT lock=spin     threads=1 cs=sleep100us  ns_op= 157421.91 throughput_mops=   0.006 ops=1000
+RESULT lock=spin     threads=2 cs=sleep100us  ns_op= 158341.67 throughput_mops=   0.006 ops=2000
+RESULT lock=spin     threads=4 cs=sleep100us  ns_op= 230085.14 throughput_mops=   0.004 ops=4000
+RESULT lock=spin     threads=8 cs=sleep100us  ns_op=2838079.63 throughput_mops=   0.000 ops=8000
+RESULT lock=mutex    threads=1 cs=w1          ns_op=     19.63 throughput_mops=  50.938 ops=400000
+RESULT lock=mutex    threads=2 cs=w1          ns_op=     36.76 throughput_mops=  27.201 ops=800000
+RESULT lock=mutex    threads=4 cs=w1          ns_op=     59.18 throughput_mops=  16.899 ops=1600000
+RESULT lock=mutex    threads=8 cs=w1          ns_op=     63.94 throughput_mops=  15.638 ops=3200000
+RESULT lock=mutex    threads=1 cs=w30         ns_op=     38.85 throughput_mops=  25.738 ops=100000
+RESULT lock=mutex    threads=2 cs=w30         ns_op=     38.68 throughput_mops=  25.855 ops=200000
+RESULT lock=mutex    threads=4 cs=w30         ns_op=    107.88 throughput_mops=   9.269 ops=400000
+RESULT lock=mutex    threads=8 cs=w30         ns_op=    106.60 throughput_mops=   9.381 ops=800000
+RESULT lock=mutex    threads=1 cs=w300        ns_op=    368.05 throughput_mops=   2.717 ops=40000
+RESULT lock=mutex    threads=2 cs=w300        ns_op=    625.77 throughput_mops=   1.598 ops=80000
+RESULT lock=mutex    threads=4 cs=w300        ns_op=    840.72 throughput_mops=   1.189 ops=160000
+RESULT lock=mutex    threads=8 cs=w300        ns_op=    789.73 throughput_mops=   1.266 ops=320000
+RESULT lock=mutex    threads=1 cs=w3000       ns_op=   3661.56 throughput_mops=   0.273 ops=10000
+RESULT lock=mutex    threads=2 cs=w3000       ns_op=   5080.27 throughput_mops=   0.197 ops=20000
+RESULT lock=mutex    threads=4 cs=w3000       ns_op=   4831.92 throughput_mops=   0.207 ops=40000
+RESULT lock=mutex    threads=8 cs=w3000       ns_op=   4210.53 throughput_mops=   0.237 ops=80000
+RESULT lock=mutex    threads=1 cs=w30000      ns_op=  36525.38 throughput_mops=   0.027 ops=2000
+RESULT lock=mutex    threads=2 cs=w30000      ns_op=  37830.23 throughput_mops=   0.026 ops=4000
+RESULT lock=mutex    threads=4 cs=w30000      ns_op=  39163.28 throughput_mops=   0.026 ops=8000
+RESULT lock=mutex    threads=8 cs=w30000      ns_op=  39044.59 throughput_mops=   0.026 ops=16000
+RESULT lock=mutex    threads=1 cs=sleep100us  ns_op= 156441.84 throughput_mops=   0.006 ops=1000
+RESULT lock=mutex    threads=2 cs=sleep100us  ns_op= 159626.62 throughput_mops=   0.006 ops=2000
+RESULT lock=mutex    threads=4 cs=sleep100us  ns_op= 158838.10 throughput_mops=   0.006 ops=4000
+RESULT lock=mutex    threads=8 cs=sleep100us  ns_op= 160431.09 throughput_mops=   0.006 ops=8000
+RESULT lock=adaptive threads=1 cs=w1          ns_op=     19.76 throughput_mops=  50.595 ops=400000
+RESULT lock=adaptive threads=2 cs=w1          ns_op=     24.04 throughput_mops=  41.597 ops=800000
+RESULT lock=adaptive threads=4 cs=w1          ns_op=     23.72 throughput_mops=  42.155 ops=1600000
+RESULT lock=adaptive threads=8 cs=w1          ns_op=     23.76 throughput_mops=  42.087 ops=3200000
+RESULT lock=adaptive threads=1 cs=w30         ns_op=     38.81 throughput_mops=  25.766 ops=100000
+RESULT lock=adaptive threads=2 cs=w30         ns_op=     46.82 throughput_mops=  21.358 ops=200000
+RESULT lock=adaptive threads=4 cs=w30         ns_op=     46.73 throughput_mops=  21.397 ops=400000
+RESULT lock=adaptive threads=8 cs=w30         ns_op=     46.28 throughput_mops=  21.609 ops=800000
+RESULT lock=adaptive threads=1 cs=w300        ns_op=    369.32 throughput_mops=   2.708 ops=40000
+RESULT lock=adaptive threads=2 cs=w300        ns_op=    490.39 throughput_mops=   2.039 ops=80000
+RESULT lock=adaptive threads=4 cs=w300        ns_op=    436.34 throughput_mops=   2.292 ops=160000
+RESULT lock=adaptive threads=8 cs=w300        ns_op=    442.18 throughput_mops=   2.262 ops=320000
+RESULT lock=adaptive threads=1 cs=w3000       ns_op=   3653.97 throughput_mops=   0.274 ops=10000
+RESULT lock=adaptive threads=2 cs=w3000       ns_op=   4906.26 throughput_mops=   0.204 ops=20000
+RESULT lock=adaptive threads=4 cs=w3000       ns_op=   4122.18 throughput_mops=   0.243 ops=40000
+RESULT lock=adaptive threads=8 cs=w3000       ns_op=   4043.17 throughput_mops=   0.247 ops=80000
+RESULT lock=adaptive threads=1 cs=w30000      ns_op=  36490.02 throughput_mops=   0.027 ops=2000
+RESULT lock=adaptive threads=2 cs=w30000      ns_op=  38932.26 throughput_mops=   0.026 ops=4000
+RESULT lock=adaptive threads=4 cs=w30000      ns_op=  38559.73 throughput_mops=   0.026 ops=8000
+RESULT lock=adaptive threads=8 cs=w30000      ns_op=  38808.71 throughput_mops=   0.026 ops=16000
+RESULT lock=adaptive threads=1 cs=sleep100us  ns_op= 156837.51 throughput_mops=   0.006 ops=1000
+RESULT lock=adaptive threads=2 cs=sleep100us  ns_op= 158063.45 throughput_mops=   0.006 ops=2000
+RESULT lock=adaptive threads=4 cs=sleep100us  ns_op= 159269.81 throughput_mops=   0.006 ops=4000
+RESULT lock=adaptive threads=8 cs=sleep100us  ns_op= 159466.19 throughput_mops=   0.006 ops=8000
+done sink=11955694777163861072
+--- 第 3 次 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.78
+# CALIB cs=w30         mean_ns=     37.90
+# CALIB cs=w300        mean_ns=    365.31
+# CALIB cs=w3000       mean_ns=   3655.42
+# CALIB cs=w30000      mean_ns=  36523.14
+# CALIB cs=sleep100us  mean_ns= 156349.88
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=1 cs=w1          ns_op=      8.30 throughput_mops= 120.457 ops=400000
+RESULT lock=spin     threads=2 cs=w1          ns_op=     20.42 throughput_mops=  48.980 ops=800000
+RESULT lock=spin     threads=4 cs=w1          ns_op=     33.56 throughput_mops=  29.801 ops=1600000
+RESULT lock=spin     threads=8 cs=w1          ns_op=     56.42 throughput_mops=  17.723 ops=3200000
+RESULT lock=spin     threads=1 cs=w30         ns_op=     38.69 throughput_mops=  25.845 ops=100000
+RESULT lock=spin     threads=2 cs=w30         ns_op=     55.24 throughput_mops=  18.104 ops=200000
+RESULT lock=spin     threads=4 cs=w30         ns_op=     71.12 throughput_mops=  14.062 ops=400000
+RESULT lock=spin     threads=8 cs=w30         ns_op=    184.02 throughput_mops=   5.434 ops=800000
+RESULT lock=spin     threads=1 cs=w300        ns_op=    368.03 throughput_mops=   2.717 ops=40000
+RESULT lock=spin     threads=2 cs=w300        ns_op=    385.42 throughput_mops=   2.595 ops=80000
+RESULT lock=spin     threads=4 cs=w300        ns_op=    592.15 throughput_mops=   1.689 ops=160000
+RESULT lock=spin     threads=8 cs=w300        ns_op=   1195.46 throughput_mops=   0.836 ops=320000
+RESULT lock=spin     threads=1 cs=w3000       ns_op=   3661.92 throughput_mops=   0.273 ops=10000
+RESULT lock=spin     threads=2 cs=w3000       ns_op=   3693.06 throughput_mops=   0.271 ops=20000
+RESULT lock=spin     threads=4 cs=w3000       ns_op=   6179.50 throughput_mops=   0.162 ops=40000
+RESULT lock=spin     threads=8 cs=w3000       ns_op=  13376.47 throughput_mops=   0.075 ops=80000
+RESULT lock=spin     threads=1 cs=w30000      ns_op=  36498.68 throughput_mops=   0.027 ops=2000
+RESULT lock=spin     threads=2 cs=w30000      ns_op=  36677.33 throughput_mops=   0.027 ops=4000
+RESULT lock=spin     threads=4 cs=w30000      ns_op=  75121.59 throughput_mops=   0.013 ops=8000
+RESULT lock=spin     threads=8 cs=w30000      ns_op= 134786.76 throughput_mops=   0.007 ops=16000
+RESULT lock=spin     threads=1 cs=sleep100us  ns_op= 156406.44 throughput_mops=   0.006 ops=1000
+RESULT lock=spin     threads=2 cs=sleep100us  ns_op= 160966.69 throughput_mops=   0.006 ops=2000
+RESULT lock=spin     threads=4 cs=sleep100us  ns_op= 228224.74 throughput_mops=   0.004 ops=4000
+RESULT lock=spin     threads=8 cs=sleep100us  ns_op=2433644.16 throughput_mops=   0.000 ops=8000
+RESULT lock=mutex    threads=1 cs=w1          ns_op=     19.74 throughput_mops=  50.656 ops=400000
+RESULT lock=mutex    threads=2 cs=w1          ns_op=     74.24 throughput_mops=  13.470 ops=800000
+RESULT lock=mutex    threads=4 cs=w1          ns_op=     68.71 throughput_mops=  14.555 ops=1600000
+RESULT lock=mutex    threads=8 cs=w1          ns_op=     77.75 throughput_mops=  12.862 ops=3200000
+RESULT lock=mutex    threads=1 cs=w30         ns_op=     39.12 throughput_mops=  25.565 ops=100000
+RESULT lock=mutex    threads=2 cs=w30         ns_op=     66.62 throughput_mops=  15.010 ops=200000
+RESULT lock=mutex    threads=4 cs=w30         ns_op=    100.97 throughput_mops=   9.904 ops=400000
+RESULT lock=mutex    threads=8 cs=w30         ns_op=     98.12 throughput_mops=  10.192 ops=800000
+RESULT lock=mutex    threads=1 cs=w300        ns_op=    369.69 throughput_mops=   2.705 ops=40000
+RESULT lock=mutex    threads=2 cs=w300        ns_op=    600.21 throughput_mops=   1.666 ops=80000
+RESULT lock=mutex    threads=4 cs=w300        ns_op=    794.23 throughput_mops=   1.259 ops=160000
+RESULT lock=mutex    threads=8 cs=w300        ns_op=    690.07 throughput_mops=   1.449 ops=320000
+RESULT lock=mutex    threads=1 cs=w3000       ns_op=   3656.23 throughput_mops=   0.274 ops=10000
+RESULT lock=mutex    threads=2 cs=w3000       ns_op=   4941.01 throughput_mops=   0.202 ops=20000
+RESULT lock=mutex    threads=4 cs=w3000       ns_op=   5390.61 throughput_mops=   0.186 ops=40000
+RESULT lock=mutex    threads=8 cs=w3000       ns_op=   4248.77 throughput_mops=   0.235 ops=80000
+RESULT lock=mutex    threads=1 cs=w30000      ns_op=  36484.71 throughput_mops=   0.027 ops=2000
+RESULT lock=mutex    threads=2 cs=w30000      ns_op=  37778.45 throughput_mops=   0.026 ops=4000
+RESULT lock=mutex    threads=4 cs=w30000      ns_op=  38513.26 throughput_mops=   0.026 ops=8000
+RESULT lock=mutex    threads=8 cs=w30000      ns_op=  38783.75 throughput_mops=   0.026 ops=16000
+RESULT lock=mutex    threads=1 cs=sleep100us  ns_op= 156466.72 throughput_mops=   0.006 ops=1000
+RESULT lock=mutex    threads=2 cs=sleep100us  ns_op= 157979.47 throughput_mops=   0.006 ops=2000
+RESULT lock=mutex    threads=4 cs=sleep100us  ns_op= 159537.29 throughput_mops=   0.006 ops=4000
+RESULT lock=mutex    threads=8 cs=sleep100us  ns_op= 160341.19 throughput_mops=   0.006 ops=8000
+RESULT lock=adaptive threads=1 cs=w1          ns_op=     19.78 throughput_mops=  50.560 ops=400000
+RESULT lock=adaptive threads=2 cs=w1          ns_op=     22.55 throughput_mops=  44.351 ops=800000
+RESULT lock=adaptive threads=4 cs=w1          ns_op=     21.96 throughput_mops=  45.536 ops=1600000
+RESULT lock=adaptive threads=8 cs=w1          ns_op=     22.44 throughput_mops=  44.573 ops=3200000
+RESULT lock=adaptive threads=1 cs=w30         ns_op=     38.64 throughput_mops=  25.880 ops=100000
+RESULT lock=adaptive threads=2 cs=w30         ns_op=     46.54 throughput_mops=  21.487 ops=200000
+RESULT lock=adaptive threads=4 cs=w30         ns_op=     43.84 throughput_mops=  22.812 ops=400000
+RESULT lock=adaptive threads=8 cs=w30         ns_op=     46.18 throughput_mops=  21.654 ops=800000
+RESULT lock=adaptive threads=1 cs=w300        ns_op=    368.13 throughput_mops=   2.716 ops=40000
+RESULT lock=adaptive threads=2 cs=w300        ns_op=    460.63 throughput_mops=   2.171 ops=80000
+RESULT lock=adaptive threads=4 cs=w300        ns_op=    435.13 throughput_mops=   2.298 ops=160000
+RESULT lock=adaptive threads=8 cs=w300        ns_op=    442.87 throughput_mops=   2.258 ops=320000
+RESULT lock=adaptive threads=1 cs=w3000       ns_op=   3658.31 throughput_mops=   0.273 ops=10000
+RESULT lock=adaptive threads=2 cs=w3000       ns_op=   5470.91 throughput_mops=   0.183 ops=20000
+RESULT lock=adaptive threads=4 cs=w3000       ns_op=   4300.71 throughput_mops=   0.233 ops=40000
+RESULT lock=adaptive threads=8 cs=w3000       ns_op=   4003.63 throughput_mops=   0.250 ops=80000
+RESULT lock=adaptive threads=1 cs=w30000      ns_op=  36497.74 throughput_mops=   0.027 ops=2000
+RESULT lock=adaptive threads=2 cs=w30000      ns_op=  38280.65 throughput_mops=   0.026 ops=4000
+RESULT lock=adaptive threads=4 cs=w30000      ns_op=  39257.58 throughput_mops=   0.025 ops=8000
+RESULT lock=adaptive threads=8 cs=w30000      ns_op=  38860.93 throughput_mops=   0.026 ops=16000
+RESULT lock=adaptive threads=1 cs=sleep100us  ns_op= 159833.99 throughput_mops=   0.006 ops=1000
+RESULT lock=adaptive threads=2 cs=sleep100us  ns_op= 158745.99 throughput_mops=   0.006 ops=2000
+RESULT lock=adaptive threads=4 cs=sleep100us  ns_op= 159849.53 throughput_mops=   0.006 ops=4000
+RESULT lock=adaptive threads=8 cs=sleep100us  ns_op= 159704.61 throughput_mops=   0.006 ops=8000
+done sink=11955694777163861072
+--- 第 4 次 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.80
+# CALIB cs=w30         mean_ns=     37.90
+# CALIB cs=w300        mean_ns=    365.30
+# CALIB cs=w3000       mean_ns=   3649.35
+# CALIB cs=w30000      mean_ns=  36548.49
+# CALIB cs=sleep100us  mean_ns= 156443.57
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=1 cs=w1          ns_op=      8.27 throughput_mops= 120.859 ops=400000
+RESULT lock=spin     threads=2 cs=w1          ns_op=     16.06 throughput_mops=  62.258 ops=800000
+RESULT lock=spin     threads=4 cs=w1          ns_op=     32.60 throughput_mops=  30.677 ops=1600000
+RESULT lock=spin     threads=8 cs=w1          ns_op=     49.74 throughput_mops=  20.103 ops=3200000
+RESULT lock=spin     threads=1 cs=w30         ns_op=     38.66 throughput_mops=  25.868 ops=100000
+RESULT lock=spin     threads=2 cs=w30         ns_op=     54.80 throughput_mops=  18.248 ops=200000
+RESULT lock=spin     threads=4 cs=w30         ns_op=     68.15 throughput_mops=  14.673 ops=400000
+RESULT lock=spin     threads=8 cs=w30         ns_op=    128.15 throughput_mops=   7.803 ops=800000
+RESULT lock=spin     threads=1 cs=w300        ns_op=    368.05 throughput_mops=   2.717 ops=40000
+RESULT lock=spin     threads=2 cs=w300        ns_op=    386.39 throughput_mops=   2.588 ops=80000
+RESULT lock=spin     threads=4 cs=w300        ns_op=    765.85 throughput_mops=   1.306 ops=160000
+RESULT lock=spin     threads=8 cs=w300        ns_op=   1261.08 throughput_mops=   0.793 ops=320000
+RESULT lock=spin     threads=1 cs=w3000       ns_op=   3651.91 throughput_mops=   0.274 ops=10000
+RESULT lock=spin     threads=2 cs=w3000       ns_op=   3684.86 throughput_mops=   0.271 ops=20000
+RESULT lock=spin     threads=4 cs=w3000       ns_op=   7030.46 throughput_mops=   0.142 ops=40000
+RESULT lock=spin     threads=8 cs=w3000       ns_op=  12890.81 throughput_mops=   0.078 ops=80000
+RESULT lock=spin     threads=1 cs=w30000      ns_op=  36514.00 throughput_mops=   0.027 ops=2000
+RESULT lock=spin     threads=2 cs=w30000      ns_op=  36673.25 throughput_mops=   0.027 ops=4000
+RESULT lock=spin     threads=4 cs=w30000      ns_op=  78306.38 throughput_mops=   0.013 ops=8000
+RESULT lock=spin     threads=8 cs=w30000      ns_op= 128740.72 throughput_mops=   0.008 ops=16000
+RESULT lock=spin     threads=1 cs=sleep100us  ns_op= 158827.40 throughput_mops=   0.006 ops=1000
+RESULT lock=spin     threads=2 cs=sleep100us  ns_op= 158851.49 throughput_mops=   0.006 ops=2000
+RESULT lock=spin     threads=4 cs=sleep100us  ns_op= 281796.65 throughput_mops=   0.004 ops=4000
+RESULT lock=spin     threads=8 cs=sleep100us  ns_op=2920432.82 throughput_mops=   0.000 ops=8000
+RESULT lock=mutex    threads=1 cs=w1          ns_op=     22.89 throughput_mops=  43.688 ops=400000
+RESULT lock=mutex    threads=2 cs=w1          ns_op=     64.08 throughput_mops=  15.607 ops=800000
+RESULT lock=mutex    threads=4 cs=w1          ns_op=     69.91 throughput_mops=  14.304 ops=1600000
+RESULT lock=mutex    threads=8 cs=w1          ns_op=     76.23 throughput_mops=  13.117 ops=3200000
+RESULT lock=mutex    threads=1 cs=w30         ns_op=     58.24 throughput_mops=  17.170 ops=100000
+RESULT lock=mutex    threads=2 cs=w30         ns_op=     58.12 throughput_mops=  17.205 ops=200000
+RESULT lock=mutex    threads=4 cs=w30         ns_op=    159.19 throughput_mops=   6.282 ops=400000
+RESULT lock=mutex    threads=8 cs=w30         ns_op=    159.84 throughput_mops=   6.256 ops=800000
+RESULT lock=mutex    threads=1 cs=w300        ns_op=    387.18 throughput_mops=   2.583 ops=40000
+RESULT lock=mutex    threads=2 cs=w300        ns_op=    596.00 throughput_mops=   1.678 ops=80000
+RESULT lock=mutex    threads=4 cs=w300        ns_op=    812.40 throughput_mops=   1.231 ops=160000
+RESULT lock=mutex    threads=8 cs=w300        ns_op=    823.91 throughput_mops=   1.214 ops=320000
+RESULT lock=mutex    threads=1 cs=w3000       ns_op=   3675.56 throughput_mops=   0.272 ops=10000
+RESULT lock=mutex    threads=2 cs=w3000       ns_op=   5328.85 throughput_mops=   0.188 ops=20000
+RESULT lock=mutex    threads=4 cs=w3000       ns_op=   5507.00 throughput_mops=   0.182 ops=40000
+RESULT lock=mutex    threads=8 cs=w3000       ns_op=   3982.99 throughput_mops=   0.251 ops=80000
+RESULT lock=mutex    threads=1 cs=w30000      ns_op=  36500.17 throughput_mops=   0.027 ops=2000
+RESULT lock=mutex    threads=2 cs=w30000      ns_op=  37868.07 throughput_mops=   0.026 ops=4000
+RESULT lock=mutex    threads=4 cs=w30000      ns_op=  38633.79 throughput_mops=   0.026 ops=8000
+RESULT lock=mutex    threads=8 cs=w30000      ns_op=  39208.63 throughput_mops=   0.026 ops=16000
+RESULT lock=mutex    threads=1 cs=sleep100us  ns_op= 160660.83 throughput_mops=   0.006 ops=1000
+RESULT lock=mutex    threads=2 cs=sleep100us  ns_op= 158036.05 throughput_mops=   0.006 ops=2000
+RESULT lock=mutex    threads=4 cs=sleep100us  ns_op= 158828.78 throughput_mops=   0.006 ops=4000
+RESULT lock=mutex    threads=8 cs=sleep100us  ns_op= 160450.69 throughput_mops=   0.006 ops=8000
+RESULT lock=adaptive threads=1 cs=w1          ns_op=     19.76 throughput_mops=  50.617 ops=400000
+RESULT lock=adaptive threads=2 cs=w1          ns_op=     28.15 throughput_mops=  35.525 ops=800000
+RESULT lock=adaptive threads=4 cs=w1          ns_op=     24.02 throughput_mops=  41.636 ops=1600000
+RESULT lock=adaptive threads=8 cs=w1          ns_op=     25.31 throughput_mops=  39.509 ops=3200000
+RESULT lock=adaptive threads=1 cs=w30         ns_op=     40.17 throughput_mops=  24.895 ops=100000
+RESULT lock=adaptive threads=2 cs=w30         ns_op=     45.98 throughput_mops=  21.747 ops=200000
+RESULT lock=adaptive threads=4 cs=w30         ns_op=     46.34 throughput_mops=  21.578 ops=400000
+RESULT lock=adaptive threads=8 cs=w30         ns_op=     46.24 throughput_mops=  21.627 ops=800000
+RESULT lock=adaptive threads=1 cs=w300        ns_op=    368.50 throughput_mops=   2.714 ops=40000
+RESULT lock=adaptive threads=2 cs=w300        ns_op=    493.32 throughput_mops=   2.027 ops=80000
+RESULT lock=adaptive threads=4 cs=w300        ns_op=    466.71 throughput_mops=   2.143 ops=160000
+RESULT lock=adaptive threads=8 cs=w300        ns_op=    462.47 throughput_mops=   2.162 ops=320000
+RESULT lock=adaptive threads=1 cs=w3000       ns_op=   3654.59 throughput_mops=   0.274 ops=10000
+RESULT lock=adaptive threads=2 cs=w3000       ns_op=   5466.47 throughput_mops=   0.183 ops=20000
+RESULT lock=adaptive threads=4 cs=w3000       ns_op=   4176.92 throughput_mops=   0.239 ops=40000
+RESULT lock=adaptive threads=8 cs=w3000       ns_op=   4022.88 throughput_mops=   0.249 ops=80000
+RESULT lock=adaptive threads=1 cs=w30000      ns_op=  36498.84 throughput_mops=   0.027 ops=2000
+RESULT lock=adaptive threads=2 cs=w30000      ns_op=  37868.50 throughput_mops=   0.026 ops=4000
+RESULT lock=adaptive threads=4 cs=w30000      ns_op=  38597.73 throughput_mops=   0.026 ops=8000
+RESULT lock=adaptive threads=8 cs=w30000      ns_op=  39096.05 throughput_mops=   0.026 ops=16000
+RESULT lock=adaptive threads=1 cs=sleep100us  ns_op= 156414.71 throughput_mops=   0.006 ops=1000
+RESULT lock=adaptive threads=2 cs=sleep100us  ns_op= 160766.35 throughput_mops=   0.006 ops=2000
+RESULT lock=adaptive threads=4 cs=sleep100us  ns_op= 158842.40 throughput_mops=   0.006 ops=4000
+RESULT lock=adaptive threads=8 cs=sleep100us  ns_op= 159813.66 throughput_mops=   0.006 ops=8000
+done sink=11955694777163861072
+--- 第 5 次 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.79
+# CALIB cs=w30         mean_ns=     37.90
+# CALIB cs=w300        mean_ns=    365.71
+# CALIB cs=w3000       mean_ns=   3655.71
+# CALIB cs=w30000      mean_ns=  36495.40
+# CALIB cs=sleep100us  mean_ns= 156341.18
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=1 cs=w1          ns_op=      8.23 throughput_mops= 121.531 ops=400000
+RESULT lock=spin     threads=2 cs=w1          ns_op=     18.45 throughput_mops=  54.210 ops=800000
+RESULT lock=spin     threads=4 cs=w1          ns_op=     32.15 throughput_mops=  31.105 ops=1600000
+RESULT lock=spin     threads=8 cs=w1          ns_op=     73.90 throughput_mops=  13.532 ops=3200000
+RESULT lock=spin     threads=1 cs=w30         ns_op=     38.74 throughput_mops=  25.814 ops=100000
+RESULT lock=spin     threads=2 cs=w30         ns_op=     47.24 throughput_mops=  21.169 ops=200000
+RESULT lock=spin     threads=4 cs=w30         ns_op=     74.62 throughput_mops=  13.401 ops=400000
+RESULT lock=spin     threads=8 cs=w30         ns_op=    111.51 throughput_mops=   8.968 ops=800000
+RESULT lock=spin     threads=1 cs=w300        ns_op=    368.21 throughput_mops=   2.716 ops=40000
+RESULT lock=spin     threads=2 cs=w300        ns_op=    386.09 throughput_mops=   2.590 ops=80000
+RESULT lock=spin     threads=4 cs=w300        ns_op=    571.06 throughput_mops=   1.751 ops=160000
+RESULT lock=spin     threads=8 cs=w300        ns_op=   1267.27 throughput_mops=   0.789 ops=320000
+RESULT lock=spin     threads=1 cs=w3000       ns_op=   3651.94 throughput_mops=   0.274 ops=10000
+RESULT lock=spin     threads=2 cs=w3000       ns_op=   3694.20 throughput_mops=   0.271 ops=20000
+RESULT lock=spin     threads=4 cs=w3000       ns_op=   7326.73 throughput_mops=   0.136 ops=40000
+RESULT lock=spin     threads=8 cs=w3000       ns_op=  13204.37 throughput_mops=   0.076 ops=80000
+RESULT lock=spin     threads=1 cs=w30000      ns_op=  36509.15 throughput_mops=   0.027 ops=2000
+RESULT lock=spin     threads=2 cs=w30000      ns_op=  37161.11 throughput_mops=   0.027 ops=4000
+RESULT lock=spin     threads=4 cs=w30000      ns_op=  73306.58 throughput_mops=   0.014 ops=8000
+RESULT lock=spin     threads=8 cs=w30000      ns_op= 126764.56 throughput_mops=   0.008 ops=16000
+RESULT lock=spin     threads=1 cs=sleep100us  ns_op= 156510.23 throughput_mops=   0.006 ops=1000
+RESULT lock=spin     threads=2 cs=sleep100us  ns_op= 163865.52 throughput_mops=   0.006 ops=2000
+RESULT lock=spin     threads=4 cs=sleep100us  ns_op= 239113.45 throughput_mops=   0.004 ops=4000
+RESULT lock=spin     threads=8 cs=sleep100us  ns_op=2780158.74 throughput_mops=   0.000 ops=8000
+RESULT lock=mutex    threads=1 cs=w1          ns_op=     19.71 throughput_mops=  50.730 ops=400000
+RESULT lock=mutex    threads=2 cs=w1          ns_op=     44.86 throughput_mops=  22.292 ops=800000
+RESULT lock=mutex    threads=4 cs=w1          ns_op=     62.69 throughput_mops=  15.951 ops=1600000
+RESULT lock=mutex    threads=8 cs=w1          ns_op=     63.92 throughput_mops=  15.645 ops=3200000
+RESULT lock=mutex    threads=1 cs=w30         ns_op=     38.92 throughput_mops=  25.694 ops=100000
+RESULT lock=mutex    threads=2 cs=w30         ns_op=    115.45 throughput_mops=   8.662 ops=200000
+RESULT lock=mutex    threads=4 cs=w30         ns_op=    103.27 throughput_mops=   9.683 ops=400000
+RESULT lock=mutex    threads=8 cs=w30         ns_op=    113.11 throughput_mops=   8.841 ops=800000
+RESULT lock=mutex    threads=1 cs=w300        ns_op=    367.86 throughput_mops=   2.718 ops=40000
+RESULT lock=mutex    threads=2 cs=w300        ns_op=    571.26 throughput_mops=   1.751 ops=80000
+RESULT lock=mutex    threads=4 cs=w300        ns_op=    790.08 throughput_mops=   1.266 ops=160000
+RESULT lock=mutex    threads=8 cs=w300        ns_op=    840.42 throughput_mops=   1.190 ops=320000
+RESULT lock=mutex    threads=1 cs=w3000       ns_op=   3658.68 throughput_mops=   0.273 ops=10000
+RESULT lock=mutex    threads=2 cs=w3000       ns_op=   5698.81 throughput_mops=   0.175 ops=20000
+RESULT lock=mutex    threads=4 cs=w3000       ns_op=   5462.61 throughput_mops=   0.183 ops=40000
+RESULT lock=mutex    threads=8 cs=w3000       ns_op=   4191.07 throughput_mops=   0.239 ops=80000
+RESULT lock=mutex    threads=1 cs=w30000      ns_op=  36559.11 throughput_mops=   0.027 ops=2000
+RESULT lock=mutex    threads=2 cs=w30000      ns_op=  37861.45 throughput_mops=   0.026 ops=4000
+RESULT lock=mutex    threads=4 cs=w30000      ns_op=  38532.08 throughput_mops=   0.026 ops=8000
+RESULT lock=mutex    threads=8 cs=w30000      ns_op=  38885.44 throughput_mops=   0.026 ops=16000
+RESULT lock=mutex    threads=1 cs=sleep100us  ns_op= 156637.25 throughput_mops=   0.006 ops=1000
+RESULT lock=mutex    threads=2 cs=sleep100us  ns_op= 158090.65 throughput_mops=   0.006 ops=2000
+RESULT lock=mutex    threads=4 cs=sleep100us  ns_op= 159700.08 throughput_mops=   0.006 ops=4000
+RESULT lock=mutex    threads=8 cs=sleep100us  ns_op= 160130.69 throughput_mops=   0.006 ops=8000
+RESULT lock=adaptive threads=1 cs=w1          ns_op=     19.73 throughput_mops=  50.695 ops=400000
+RESULT lock=adaptive threads=2 cs=w1          ns_op=     24.05 throughput_mops=  41.578 ops=800000
+RESULT lock=adaptive threads=4 cs=w1          ns_op=     23.78 throughput_mops=  42.059 ops=1600000
+RESULT lock=adaptive threads=8 cs=w1          ns_op=     23.91 throughput_mops=  41.832 ops=3200000
+RESULT lock=adaptive threads=1 cs=w30         ns_op=     38.57 throughput_mops=  25.929 ops=100000
+RESULT lock=adaptive threads=2 cs=w30         ns_op=     46.65 throughput_mops=  21.436 ops=200000
+RESULT lock=adaptive threads=4 cs=w30         ns_op=     43.98 throughput_mops=  22.736 ops=400000
+RESULT lock=adaptive threads=8 cs=w30         ns_op=     46.06 throughput_mops=  21.711 ops=800000
+RESULT lock=adaptive threads=1 cs=w300        ns_op=    367.86 throughput_mops=   2.718 ops=40000
+RESULT lock=adaptive threads=2 cs=w300        ns_op=    462.28 throughput_mops=   2.163 ops=80000
+RESULT lock=adaptive threads=4 cs=w300        ns_op=    449.57 throughput_mops=   2.224 ops=160000
+RESULT lock=adaptive threads=8 cs=w300        ns_op=    437.08 throughput_mops=   2.288 ops=320000
+RESULT lock=adaptive threads=1 cs=w3000       ns_op=   3773.29 throughput_mops=   0.265 ops=10000
+RESULT lock=adaptive threads=2 cs=w3000       ns_op=   5365.65 throughput_mops=   0.186 ops=20000
+RESULT lock=adaptive threads=4 cs=w3000       ns_op=   4197.13 throughput_mops=   0.238 ops=40000
+RESULT lock=adaptive threads=8 cs=w3000       ns_op=   3983.62 throughput_mops=   0.251 ops=80000
+RESULT lock=adaptive threads=1 cs=w30000      ns_op=  36553.37 throughput_mops=   0.027 ops=2000
+RESULT lock=adaptive threads=2 cs=w30000      ns_op=  38057.42 throughput_mops=   0.026 ops=4000
+RESULT lock=adaptive threads=4 cs=w30000      ns_op=  38649.29 throughput_mops=   0.026 ops=8000
+RESULT lock=adaptive threads=8 cs=w30000      ns_op=  38952.85 throughput_mops=   0.026 ops=16000
+RESULT lock=adaptive threads=1 cs=sleep100us  ns_op= 156260.84 throughput_mops=   0.006 ops=1000
+RESULT lock=adaptive threads=2 cs=sleep100us  ns_op= 160128.99 throughput_mops=   0.006 ops=2000
+RESULT lock=adaptive threads=4 cs=sleep100us  ns_op= 158802.98 throughput_mops=   0.006 ops=4000
+RESULT lock=adaptive threads=8 cs=sleep100us  ns_op= 160358.61 throughput_mops=   0.006 ops=8000
+done sink=11955694777163861072
+
+===== 五次运行 ns_op 中位汇总（按 lock/cs/threads） =====
+MEDIAN lock=adaptive cs=sleep100us  threads=1 ns_op= 156509.55
+MEDIAN lock=adaptive cs=sleep100us  threads=2 ns_op= 159091.66
+MEDIAN lock=adaptive cs=sleep100us  threads=4 ns_op= 159074.79
+MEDIAN lock=adaptive cs=sleep100us  threads=8 ns_op= 159704.61
+MEDIAN lock=adaptive cs=w1          threads=1 ns_op=     19.76
+MEDIAN lock=adaptive cs=w1          threads=2 ns_op=     24.05
+MEDIAN lock=adaptive cs=w1          threads=4 ns_op=     23.43
+MEDIAN lock=adaptive cs=w1          threads=8 ns_op=     23.91
+MEDIAN lock=adaptive cs=w30         threads=1 ns_op=     38.81
+MEDIAN lock=adaptive cs=w30         threads=2 ns_op=     46.54
+MEDIAN lock=adaptive cs=w30         threads=4 ns_op=     46.00
+MEDIAN lock=adaptive cs=w30         threads=8 ns_op=     46.18
+MEDIAN lock=adaptive cs=w300        threads=1 ns_op=    368.15
+MEDIAN lock=adaptive cs=w300        threads=2 ns_op=    477.13
+MEDIAN lock=adaptive cs=w300        threads=4 ns_op=    441.69
+MEDIAN lock=adaptive cs=w300        threads=8 ns_op=    442.18
+MEDIAN lock=adaptive cs=w3000       threads=1 ns_op=   3658.31
+MEDIAN lock=adaptive cs=w3000       threads=2 ns_op=   5466.47
+MEDIAN lock=adaptive cs=w3000       threads=4 ns_op=   4197.13
+MEDIAN lock=adaptive cs=w3000       threads=8 ns_op=   4022.88
+MEDIAN lock=adaptive cs=w30000      threads=1 ns_op=  36498.84
+MEDIAN lock=adaptive cs=w30000      threads=2 ns_op=  38057.42
+MEDIAN lock=adaptive cs=w30000      threads=4 ns_op=  38597.73
+MEDIAN lock=adaptive cs=w30000      threads=8 ns_op=  38875.70
+MEDIAN lock=mutex    cs=sleep100us  threads=1 ns_op= 156596.65
+MEDIAN lock=mutex    cs=sleep100us  threads=2 ns_op= 158090.65
+MEDIAN lock=mutex    cs=sleep100us  threads=4 ns_op= 159618.68
+MEDIAN lock=mutex    cs=sleep100us  threads=8 ns_op= 160341.19
+MEDIAN lock=mutex    cs=w1          threads=1 ns_op=     19.71
+MEDIAN lock=mutex    cs=w1          threads=2 ns_op=     63.61
+MEDIAN lock=mutex    cs=w1          threads=4 ns_op=     62.13
+MEDIAN lock=mutex    cs=w1          threads=8 ns_op=     64.31
+MEDIAN lock=mutex    cs=w30         threads=1 ns_op=     39.12
+MEDIAN lock=mutex    cs=w30         threads=2 ns_op=     66.62
+MEDIAN lock=mutex    cs=w30         threads=4 ns_op=    107.88
+MEDIAN lock=mutex    cs=w30         threads=8 ns_op=    113.11
+MEDIAN lock=mutex    cs=w300        threads=1 ns_op=    368.86
+MEDIAN lock=mutex    cs=w300        threads=2 ns_op=    596.00
+MEDIAN lock=mutex    cs=w300        threads=4 ns_op=    812.40
+MEDIAN lock=mutex    cs=w300        threads=8 ns_op=    789.73
+MEDIAN lock=mutex    cs=w3000       threads=1 ns_op=   3658.68
+MEDIAN lock=mutex    cs=w3000       threads=2 ns_op=   5328.85
+MEDIAN lock=mutex    cs=w3000       threads=4 ns_op=   5462.61
+MEDIAN lock=mutex    cs=w3000       threads=8 ns_op=   4201.91
+MEDIAN lock=mutex    cs=w30000      threads=1 ns_op=  36509.82
+MEDIAN lock=mutex    cs=w30000      threads=2 ns_op=  37861.45
+MEDIAN lock=mutex    cs=w30000      threads=4 ns_op=  38532.08
+MEDIAN lock=mutex    cs=w30000      threads=8 ns_op=  38885.44
+MEDIAN lock=spin     cs=sleep100us  threads=1 ns_op= 156510.23
+MEDIAN lock=spin     cs=sleep100us  threads=2 ns_op= 159516.63
+MEDIAN lock=spin     cs=sleep100us  threads=4 ns_op= 245554.15
+MEDIAN lock=spin     cs=sleep100us  threads=8 ns_op=2780158.74
+MEDIAN lock=spin     cs=w1          threads=1 ns_op=      8.25
+MEDIAN lock=spin     cs=w1          threads=2 ns_op=     18.45
+MEDIAN lock=spin     cs=w1          threads=4 ns_op=     33.08
+MEDIAN lock=spin     cs=w1          threads=8 ns_op=     56.42
+MEDIAN lock=spin     cs=w30         threads=1 ns_op=     38.66
+MEDIAN lock=spin     cs=w30         threads=2 ns_op=     54.80
+MEDIAN lock=spin     cs=w30         threads=4 ns_op=     71.12
+MEDIAN lock=spin     cs=w30         threads=8 ns_op=    142.91
+MEDIAN lock=spin     cs=w300        threads=1 ns_op=    368.21
+MEDIAN lock=spin     cs=w300        threads=2 ns_op=    386.39
+MEDIAN lock=spin     cs=w300        threads=4 ns_op=    599.09
+MEDIAN lock=spin     cs=w300        threads=8 ns_op=   1267.27
+MEDIAN lock=spin     cs=w3000       threads=1 ns_op=   3655.80
+MEDIAN lock=spin     cs=w3000       threads=2 ns_op=   3688.61
+MEDIAN lock=spin     cs=w3000       threads=4 ns_op=   6586.57
+MEDIAN lock=spin     cs=w3000       threads=8 ns_op=  13204.37
+MEDIAN lock=spin     cs=w30000      threads=1 ns_op=  36514.00
+MEDIAN lock=spin     cs=w30000      threads=2 ns_op=  36757.67
+MEDIAN lock=spin     cs=w30000      threads=4 ns_op=  73306.58
+MEDIAN lock=spin     cs=w30000      threads=8 ns_op= 134786.76
+
+===== perf stat 佐证（4 线程，w1 与 sleep100us，sudo） =====
+--- FILTER_LOCK=spin FILTER_CS=w1 FILTER_THREADS=4 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.78
+# CALIB cs=w30         mean_ns=     43.34
+# CALIB cs=w300        mean_ns=    365.18
+# CALIB cs=w3000       mean_ns=   3651.46
+# CALIB cs=w30000      mean_ns=  36591.45
+# CALIB cs=sleep100us  mean_ns= 183718.93
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=4 cs=w1          ns_op=     33.75 throughput_mops=  29.627 ops=1600000
+done sink=13726857695544573872
+
+ Performance counter stats for 'env FILTER_LOCK=spin FILTER_CS=w1 FILTER_THREADS=4 ./bin/lock_bench':
+
+             2,028      context-switches                                            
+               197      page-faults                                                 
+            43,860      cache-misses                                                
+       423,825,035      instructions              #    0.67  insn per cycle         
+       630,236,875      cycles                                                      
+
+       0.511751230 seconds time elapsed
+
+       0.204857000 seconds user
+       0.053441000 seconds sys
+
+
+
+--- FILTER_LOCK=spin FILTER_CS=sleep100us FILTER_THREADS=4 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.79
+# CALIB cs=w30         mean_ns=     37.90
+# CALIB cs=w300        mean_ns=    365.31
+# CALIB cs=w3000       mean_ns=   3709.34
+# CALIB cs=w30000      mean_ns=  36637.43
+# CALIB cs=sleep100us  mean_ns= 183855.54
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=spin     threads=4 cs=sleep100us  ns_op= 508973.02 throughput_mops=   0.002 ops=4000
+done sink=12676031510579696560
+
+ Performance counter stats for 'env FILTER_LOCK=spin FILTER_CS=sleep100us FILTER_THREADS=4 ./bin/lock_bench':
+
+             9,569      context-switches                                            
+               198      page-faults                                                 
+           129,599      cache-misses                                                
+     1,736,131,627      instructions              #    0.14  insn per cycle         
+    12,429,667,635      cycles                                                      
+
+       2.487516901 seconds time elapsed
+
+       3.860132000 seconds user
+       0.210847000 seconds sys
+
+
+
+--- FILTER_LOCK=mutex FILTER_CS=w1 FILTER_THREADS=4 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.81
+# CALIB cs=w30         mean_ns=     37.90
+# CALIB cs=w300        mean_ns=    365.17
+# CALIB cs=w3000       mean_ns=   3719.63
+# CALIB cs=w30000      mean_ns=  36488.17
+# CALIB cs=sleep100us  mean_ns= 189607.00
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=mutex    threads=4 cs=w1          ns_op=     56.47 throughput_mops=  17.708 ops=1600000
+done sink=13726857695544573872
+
+ Performance counter stats for 'env FILTER_LOCK=mutex FILTER_CS=w1 FILTER_THREADS=4 ./bin/lock_bench':
+
+             2,051      context-switches                                            
+               197      page-faults                                                 
+            38,439      cache-misses                                                
+       858,617,725      instructions              #    1.00  insn per cycle         
+       857,435,972      cycles                                                      
+
+       0.552729575 seconds time elapsed
+
+       0.181250000 seconds user
+       0.152632000 seconds sys
+
+
+
+--- FILTER_LOCK=mutex FILTER_CS=sleep100us FILTER_THREADS=4 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      3.11
+# CALIB cs=w30         mean_ns=     38.20
+# CALIB cs=w300        mean_ns=    365.17
+# CALIB cs=w3000       mean_ns=   3728.38
+# CALIB cs=w30000      mean_ns=  36492.98
+# CALIB cs=sleep100us  mean_ns= 183544.95
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=mutex    threads=4 cs=sleep100us  ns_op= 192788.61 throughput_mops=   0.005 ops=4000
+done sink=12676031510579696560
+
+ Performance counter stats for 'env FILTER_LOCK=mutex FILTER_CS=sleep100us FILTER_THREADS=4 ./bin/lock_bench':
+
+             9,215      context-switches                                            
+               198      page-faults                                                 
+            76,053      cache-misses                                                
+       400,461,299      instructions              #    1.13  insn per cycle         
+       354,708,174      cycles                                                      
+
+       1.221625792 seconds time elapsed
+
+       0.096135000 seconds user
+       0.315522000 seconds sys
+
+
+
+--- FILTER_LOCK=adaptive FILTER_CS=w1 FILTER_THREADS=4 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      3.14
+# CALIB cs=w30         mean_ns=     38.31
+# CALIB cs=w300        mean_ns=    375.15
+# CALIB cs=w3000       mean_ns=   3740.40
+# CALIB cs=w30000      mean_ns=  36550.71
+# CALIB cs=sleep100us  mean_ns= 184034.22
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=adaptive threads=4 cs=w1          ns_op=     23.14 throughput_mops=  43.220 ops=1600000
+done sink=13726857695544573872
+
+ Performance counter stats for 'env FILTER_LOCK=adaptive FILTER_CS=w1 FILTER_THREADS=4 ./bin/lock_bench':
+
+             2,035      context-switches                                            
+               193      page-faults                                                 
+            40,179      cache-misses                                                
+       525,270,036      instructions              #    1.01  insn per cycle         
+       521,620,600      cycles                                                      
+
+       0.488635684 seconds time elapsed
+
+       0.166645000 seconds user
+       0.052624000 seconds sys
+
+
+
+--- FILTER_LOCK=adaptive FILTER_CS=sleep100us FILTER_THREADS=4 ---
+# 三锁临界区长度扫档基准
+# 校准（单线程无锁，临界区平均耗时 ns）：
+# CALIB cs=w1          mean_ns=      2.79
+# CALIB cs=w30         mean_ns=     37.91
+# CALIB cs=w300        mean_ns=    365.30
+# CALIB cs=w3000       mean_ns=   3749.32
+# CALIB cs=w30000      mean_ns=  36537.22
+# CALIB cs=sleep100us  mean_ns= 184751.75
+# 字段：lock/threads/cs/ns_op（每次 lock-unlock 平均纳秒）/throughput_mops/ops
+RESULT lock=adaptive threads=4 cs=sleep100us  ns_op= 191610.74 throughput_mops=   0.005 ops=4000
+done sink=12676031510579696560
+
+ Performance counter stats for 'env FILTER_LOCK=adaptive FILTER_CS=sleep100us FILTER_THREADS=4 ./bin/lock_bench':
+
+             9,268      context-switches                                            
+               196      page-faults                                                 
+            72,771      cache-misses                                                
+       400,751,754      instructions              #    1.13  insn per cycle         
+       355,413,745      cycles                                                      
+
+       1.219326388 seconds time elapsed
+
+       0.094789000 seconds user
+       0.323146000 seconds sys
+
+
+
+done
