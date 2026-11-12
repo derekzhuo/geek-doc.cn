@@ -128,3 +128,7 @@ experiments/linux-memory-bandwidth-stream-bench/bin/
 
 # 三锁临界区扫档基准：构建目录（run.sh 自动重建，不入库）
 experiments/cpp-spin-mutex-futex-critical-section/bin/
+
+# minor/major 缺页基准：构建目录与 200MiB 数据文件（run.sh 自动生成，不入库）
+experiments/linux-page-fault-minor-major-cost/bin/
+experiments/linux-page-fault-minor-major-cost/datafile.bin

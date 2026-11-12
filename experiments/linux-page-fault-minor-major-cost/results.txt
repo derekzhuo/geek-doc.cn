@@ -1,0 +1,227 @@
+# minor/major page fault 基准 (2026-11-13 03:58:46)
+# host: VM-16-7-ubuntu | kernel: 5.15.0-190-generic
+# distro: Ubuntu 22.04.5 LTS
+# compiler: gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+# cpu: Intel(R) Xeon(R) Platinum 8374C CPU @ 2.70GHz
+# lscpu: CPU(s):                                  2
+# lscpu: Thread(s) per core:                      2
+# lscpu: Core(s) per socket:                      1
+# lscpu: Socket(s):                               1
+# lscpu: L1d cache:                               48 KiB (1 instance)
+# lscpu: L2 cache:                                1.3 MiB (1 instance)
+# lscpu: L3 cache:                                54 MiB (1 instance)
+# lscpu: NUMA node(s):                            1
+# lscpu: NUMA node0 CPU(s):                       0,1
+
+===== 五配置各 5 次进程运行 =====
+--- 第 1 次进程 ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_cold     rep=1 minor=51202   major=0     elapsed_ms=  71.083 ns_per_fault=  1388.28 ns_per_page= 1388.33 mib_s=  2813.6 sum=-25600
+RESULT cfg=anon_cold     rep=2 minor=51200   major=0     elapsed_ms=  67.745 ns_per_fault=  1323.14 ns_per_page= 1323.14 mib_s=  2952.3 sum=-25600
+RESULT cfg=anon_cold     rep=3 minor=51200   major=0     elapsed_ms=  67.123 ns_per_fault=  1311.00 ns_per_page= 1311.00 mib_s=  2979.6 sum=-25600
+RESULT cfg=anon_cold     rep=4 minor=51200   major=0     elapsed_ms=  67.633 ns_per_fault=  1320.96 ns_per_page= 1320.96 mib_s=  2957.1 sum=-25600
+RESULT cfg=anon_cold     rep=5 minor=51200   major=0     elapsed_ms=  67.753 ns_per_fault=  1323.30 ns_per_page= 1323.30 mib_s=  2951.9 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_refault  rep=1 minor=51202   major=0     elapsed_ms=  67.298 ns_per_fault=  1314.37 ns_per_page= 1314.42 mib_s=  2971.8 sum=-25600
+RESULT cfg=anon_refault  rep=2 minor=51200   major=0     elapsed_ms=  66.930 ns_per_fault=  1307.22 ns_per_page= 1307.22 mib_s=  2988.2 sum=-25600
+RESULT cfg=anon_refault  rep=3 minor=51200   major=0     elapsed_ms=  67.963 ns_per_fault=  1327.40 ns_per_page= 1327.40 mib_s=  2942.8 sum=-25600
+RESULT cfg=anon_refault  rep=4 minor=51200   major=0     elapsed_ms=  67.898 ns_per_fault=  1326.13 ns_per_page= 1326.13 mib_s=  2945.6 sum=-25600
+RESULT cfg=anon_refault  rep=5 minor=51200   major=0     elapsed_ms=  66.853 ns_per_fault=  1305.73 ns_per_page= 1305.73 mib_s=  2991.6 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_prefault rep=1 minor=2       major=0     elapsed_ms=   0.954 ns_per_fault=476754.50 ns_per_page=   18.62 mib_s=209751.6 sum=-25600
+RESULT cfg=anon_prefault rep=2 minor=0       major=0     elapsed_ms=   0.991 ns_per_fault=     0.00 ns_per_page=   19.35 mib_s=201849.1 sum=-25600
+RESULT cfg=anon_prefault rep=3 minor=0       major=0     elapsed_ms=   0.945 ns_per_fault=     0.00 ns_per_page=   18.45 mib_s=211669.1 sum=-25600
+RESULT cfg=anon_prefault rep=4 minor=0       major=0     elapsed_ms=   1.027 ns_per_fault=     0.00 ns_per_page=   20.07 mib_s=194659.9 sum=-25600
+RESULT cfg=anon_prefault rep=5 minor=0       major=0     elapsed_ms=   0.998 ns_per_fault=     0.00 ns_per_page=   19.49 mib_s=200431.3 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_cold     rep=1 minor=3202    major=1601  elapsed_ms= 715.691 ns_per_fault=149009.08 ns_per_page=13978.33 mib_s=   279.5 sum=-37313
+RESULT cfg=file_cold     rep=2 minor=3200    major=1601  elapsed_ms=1153.325 ns_per_fault=240225.99 ns_per_page=22525.88 mib_s=   173.4 sum=-37313
+RESULT cfg=file_cold     rep=3 minor=3201    major=1601  elapsed_ms=1303.038 ns_per_fault=271353.15 ns_per_page=25449.96 mib_s=   153.5 sum=-37313
+RESULT cfg=file_cold     rep=4 minor=3200    major=1601  elapsed_ms=1338.282 ns_per_fault=278750.68 ns_per_page=26138.32 mib_s=   149.4 sum=-37313
+RESULT cfg=file_cold     rep=5 minor=3200    major=1601  elapsed_ms=1314.747 ns_per_fault=273848.51 ns_per_page=25678.65 mib_s=   152.1 sum=-37313
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_warm     rep=1 minor=3204    major=0     elapsed_ms=   8.306 ns_per_fault=  2592.49 ns_per_page=  162.23 mib_s= 24078.0 sum=-37313
+RESULT cfg=file_warm     rep=2 minor=3201    major=0     elapsed_ms=   6.823 ns_per_fault=  2131.67 ns_per_page=  133.27 mib_s= 29310.6 sum=-37313
+RESULT cfg=file_warm     rep=3 minor=3201    major=0     elapsed_ms=   6.587 ns_per_fault=  2057.87 ns_per_page=  128.66 mib_s= 30361.7 sum=-37313
+RESULT cfg=file_warm     rep=4 minor=3201    major=0     elapsed_ms=   6.488 ns_per_fault=  2026.94 ns_per_page=  126.72 mib_s= 30825.0 sum=-37313
+RESULT cfg=file_warm     rep=5 minor=3201    major=0     elapsed_ms=   6.457 ns_per_fault=  2017.19 ns_per_page=  126.11 mib_s= 30974.0 sum=-37313
+--- 第 2 次进程 ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_cold     rep=1 minor=51202   major=0     elapsed_ms=  69.169 ns_per_fault=  1350.91 ns_per_page= 1350.96 mib_s=  2891.5 sum=-25600
+RESULT cfg=anon_cold     rep=2 minor=51200   major=0     elapsed_ms=  67.713 ns_per_fault=  1322.52 ns_per_page= 1322.52 mib_s=  2953.6 sum=-25600
+RESULT cfg=anon_cold     rep=3 minor=51200   major=0     elapsed_ms=  67.043 ns_per_fault=  1309.43 ns_per_page= 1309.43 mib_s=  2983.2 sum=-25600
+RESULT cfg=anon_cold     rep=4 minor=51200   major=0     elapsed_ms=  67.154 ns_per_fault=  1311.61 ns_per_page= 1311.61 mib_s=  2978.2 sum=-25600
+RESULT cfg=anon_cold     rep=5 minor=51200   major=0     elapsed_ms=  66.916 ns_per_fault=  1306.96 ns_per_page= 1306.96 mib_s=  2988.8 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_refault  rep=1 minor=51203   major=0     elapsed_ms=  67.481 ns_per_fault=  1317.90 ns_per_page= 1317.98 mib_s=  2963.8 sum=-25600
+RESULT cfg=anon_refault  rep=2 minor=51200   major=0     elapsed_ms=  66.825 ns_per_fault=  1305.17 ns_per_page= 1305.17 mib_s=  2992.9 sum=-25600
+RESULT cfg=anon_refault  rep=3 minor=51200   major=0     elapsed_ms=  67.820 ns_per_fault=  1324.61 ns_per_page= 1324.61 mib_s=  2949.0 sum=-25600
+RESULT cfg=anon_refault  rep=4 minor=51200   major=0     elapsed_ms=  69.239 ns_per_fault=  1352.33 ns_per_page= 1352.33 mib_s=  2888.5 sum=-25600
+RESULT cfg=anon_refault  rep=5 minor=51200   major=0     elapsed_ms=  68.448 ns_per_fault=  1336.87 ns_per_page= 1336.87 mib_s=  2921.9 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_prefault rep=1 minor=2       major=0     elapsed_ms=   0.979 ns_per_fault=489376.00 ns_per_page=   19.12 mib_s=204341.9 sum=-25600
+RESULT cfg=anon_prefault rep=2 minor=0       major=0     elapsed_ms=   0.955 ns_per_fault=     0.00 ns_per_page=   18.66 mib_s=209353.9 sum=-25600
+RESULT cfg=anon_prefault rep=3 minor=0       major=0     elapsed_ms=   1.012 ns_per_fault=     0.00 ns_per_page=   19.76 mib_s=197701.9 sum=-25600
+RESULT cfg=anon_prefault rep=4 minor=0       major=0     elapsed_ms=   0.979 ns_per_fault=     0.00 ns_per_page=   19.13 mib_s=204231.7 sum=-25600
+RESULT cfg=anon_prefault rep=5 minor=0       major=0     elapsed_ms=   0.963 ns_per_fault=     0.00 ns_per_page=   18.82 mib_s=207603.5 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_cold     rep=1 minor=3201    major=1601  elapsed_ms= 731.548 ns_per_fault=152342.34 ns_per_page=14288.05 mib_s=   273.4 sum=-37313
+RESULT cfg=file_cold     rep=2 minor=3202    major=1601  elapsed_ms=1120.381 ns_per_fault=233266.93 ns_per_page=21882.44 mib_s=   178.5 sum=-37313
+RESULT cfg=file_cold     rep=3 minor=3199    major=1602  elapsed_ms=1309.948 ns_per_fault=272848.99 ns_per_page=25584.92 mib_s=   152.7 sum=-37313
+RESULT cfg=file_cold     rep=4 minor=3199    major=1601  elapsed_ms=1358.561 ns_per_fault=283033.62 ns_per_page=26534.40 mib_s=   147.2 sum=-37313
+RESULT cfg=file_cold     rep=5 minor=3199    major=1601  elapsed_ms=1331.816 ns_per_fault=277461.76 ns_per_page=26012.04 mib_s=   150.2 sum=-37313
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_warm     rep=1 minor=3203    major=0     elapsed_ms=   7.993 ns_per_fault=  2495.35 ns_per_page=  156.11 mib_s= 25023.1 sum=-37313
+RESULT cfg=file_warm     rep=2 minor=3201    major=0     elapsed_ms=   8.102 ns_per_fault=  2531.17 ns_per_page=  158.25 mib_s= 24684.5 sum=-37313
+RESULT cfg=file_warm     rep=3 minor=3201    major=0     elapsed_ms=   6.584 ns_per_fault=  2056.89 ns_per_page=  128.60 mib_s= 30376.2 sum=-37313
+RESULT cfg=file_warm     rep=4 minor=3201    major=0     elapsed_ms=   6.541 ns_per_fault=  2043.38 ns_per_page=  127.75 mib_s= 30577.1 sum=-37313
+RESULT cfg=file_warm     rep=5 minor=3201    major=0     elapsed_ms=   6.496 ns_per_fault=  2029.36 ns_per_page=  126.87 mib_s= 30788.3 sum=-37313
+--- 第 3 次进程 ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_cold     rep=1 minor=51202   major=0     elapsed_ms=  68.349 ns_per_fault=  1334.89 ns_per_page= 1334.94 mib_s=  2926.2 sum=-25600
+RESULT cfg=anon_cold     rep=2 minor=51200   major=0     elapsed_ms=  67.862 ns_per_fault=  1325.43 ns_per_page= 1325.43 mib_s=  2947.2 sum=-25600
+RESULT cfg=anon_cold     rep=3 minor=51200   major=0     elapsed_ms=  68.114 ns_per_fault=  1330.34 ns_per_page= 1330.34 mib_s=  2936.3 sum=-25600
+RESULT cfg=anon_cold     rep=4 minor=51200   major=0     elapsed_ms=  83.558 ns_per_fault=  1632.00 ns_per_page= 1632.00 mib_s=  2393.5 sum=-25600
+RESULT cfg=anon_cold     rep=5 minor=51200   major=0     elapsed_ms=  85.905 ns_per_fault=  1677.83 ns_per_page= 1677.83 mib_s=  2328.2 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_refault  rep=1 minor=51202   major=0     elapsed_ms=  67.355 ns_per_fault=  1315.48 ns_per_page= 1315.53 mib_s=  2969.3 sum=-25600
+RESULT cfg=anon_refault  rep=2 minor=51200   major=0     elapsed_ms=  67.659 ns_per_fault=  1321.46 ns_per_page= 1321.46 mib_s=  2956.0 sum=-25600
+RESULT cfg=anon_refault  rep=3 minor=51200   major=0     elapsed_ms=  69.002 ns_per_fault=  1347.69 ns_per_page= 1347.69 mib_s=  2898.5 sum=-25600
+RESULT cfg=anon_refault  rep=4 minor=51200   major=0     elapsed_ms=  67.700 ns_per_fault=  1322.26 ns_per_page= 1322.26 mib_s=  2954.2 sum=-25600
+RESULT cfg=anon_refault  rep=5 minor=51200   major=0     elapsed_ms=  67.747 ns_per_fault=  1323.19 ns_per_page= 1323.19 mib_s=  2952.1 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_prefault rep=1 minor=3       major=0     elapsed_ms=   1.080 ns_per_fault=359880.33 ns_per_page=   21.09 mib_s=185246.8 sum=-25600
+RESULT cfg=anon_prefault rep=2 minor=0       major=0     elapsed_ms=   0.987 ns_per_fault=     0.00 ns_per_page=   19.27 mib_s=202732.8 sum=-25600
+RESULT cfg=anon_prefault rep=3 minor=0       major=0     elapsed_ms=   1.018 ns_per_fault=     0.00 ns_per_page=   19.89 mib_s=196377.4 sum=-25600
+RESULT cfg=anon_prefault rep=4 minor=0       major=0     elapsed_ms=   1.008 ns_per_fault=     0.00 ns_per_page=   19.69 mib_s=198353.5 sum=-25600
+RESULT cfg=anon_prefault rep=5 minor=0       major=0     elapsed_ms=   0.969 ns_per_fault=     0.00 ns_per_page=   18.93 mib_s=206373.0 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_cold     rep=1 minor=1603    major=1601  elapsed_ms= 718.992 ns_per_fault=224404.62 ns_per_page=14042.82 mib_s=   278.2 sum=-37313
+RESULT cfg=file_cold     rep=2 minor=1600    major=1601  elapsed_ms=1132.999 ns_per_fault=353951.47 ns_per_page=22128.88 mib_s=   176.5 sum=-37313
+RESULT cfg=file_cold     rep=3 minor=1600    major=1601  elapsed_ms=1308.300 ns_per_fault=408716.04 ns_per_page=25552.74 mib_s=   152.9 sum=-37313
+RESULT cfg=file_cold     rep=4 minor=1600    major=1601  elapsed_ms=1342.721 ns_per_fault=419469.17 ns_per_page=26225.02 mib_s=   149.0 sum=-37313
+RESULT cfg=file_cold     rep=5 minor=1600    major=1601  elapsed_ms=1329.291 ns_per_fault=415273.74 ns_per_page=25962.72 mib_s=   150.5 sum=-37313
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_warm     rep=1 minor=3204    major=0     elapsed_ms=   8.530 ns_per_fault=  2662.42 ns_per_page=  166.61 mib_s= 23445.6 sum=-37313
+RESULT cfg=file_warm     rep=2 minor=3201    major=0     elapsed_ms=   8.028 ns_per_fault=  2508.01 ns_per_page=  156.80 mib_s= 24912.4 sum=-37313
+RESULT cfg=file_warm     rep=3 minor=3201    major=0     elapsed_ms=   7.115 ns_per_fault=  2222.72 ns_per_page=  138.96 mib_s= 28109.9 sum=-37313
+RESULT cfg=file_warm     rep=4 minor=3201    major=0     elapsed_ms=   7.066 ns_per_fault=  2207.52 ns_per_page=  138.01 mib_s= 28303.5 sum=-37313
+RESULT cfg=file_warm     rep=5 minor=3201    major=0     elapsed_ms=   7.255 ns_per_fault=  2266.62 ns_per_page=  141.71 mib_s= 27565.5 sum=-37313
+--- 第 4 次进程 ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_cold     rep=1 minor=51203   major=0     elapsed_ms=  69.112 ns_per_fault=  1349.76 ns_per_page= 1349.84 mib_s=  2893.9 sum=-25600
+RESULT cfg=anon_cold     rep=2 minor=51200   major=0     elapsed_ms=  68.079 ns_per_fault=  1329.68 ns_per_page= 1329.68 mib_s=  2937.7 sum=-25600
+RESULT cfg=anon_cold     rep=3 minor=51200   major=0     elapsed_ms=  67.800 ns_per_fault=  1324.22 ns_per_page= 1324.22 mib_s=  2949.9 sum=-25600
+RESULT cfg=anon_cold     rep=4 minor=51200   major=0     elapsed_ms=  68.266 ns_per_fault=  1333.33 ns_per_page= 1333.33 mib_s=  2929.7 sum=-25600
+RESULT cfg=anon_cold     rep=5 minor=51200   major=0     elapsed_ms=  67.697 ns_per_fault=  1322.22 ns_per_page= 1322.22 mib_s=  2954.3 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_refault  rep=1 minor=51203   major=0     elapsed_ms=  67.718 ns_per_fault=  1322.54 ns_per_page= 1322.62 mib_s=  2953.4 sum=-25600
+RESULT cfg=anon_refault  rep=2 minor=51200   major=0     elapsed_ms=  67.416 ns_per_fault=  1316.71 ns_per_page= 1316.71 mib_s=  2966.7 sum=-25600
+RESULT cfg=anon_refault  rep=3 minor=51200   major=0     elapsed_ms=  67.105 ns_per_fault=  1310.65 ns_per_page= 1310.65 mib_s=  2980.4 sum=-25600
+RESULT cfg=anon_refault  rep=4 minor=51200   major=0     elapsed_ms=  67.441 ns_per_fault=  1317.20 ns_per_page= 1317.20 mib_s=  2965.6 sum=-25600
+RESULT cfg=anon_refault  rep=5 minor=51200   major=0     elapsed_ms=  67.858 ns_per_fault=  1325.36 ns_per_page= 1325.36 mib_s=  2947.3 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_prefault rep=1 minor=3       major=0     elapsed_ms=   0.959 ns_per_fault=319655.00 ns_per_page=   18.73 mib_s=208558.2 sum=-25600
+RESULT cfg=anon_prefault rep=2 minor=0       major=0     elapsed_ms=   0.989 ns_per_fault=     0.00 ns_per_page=   19.31 mib_s=202261.9 sum=-25600
+RESULT cfg=anon_prefault rep=3 minor=0       major=0     elapsed_ms=   1.018 ns_per_fault=     0.00 ns_per_page=   19.88 mib_s=196467.7 sum=-25600
+RESULT cfg=anon_prefault rep=4 minor=0       major=0     elapsed_ms=   1.023 ns_per_fault=     0.00 ns_per_page=   19.97 mib_s=195560.8 sum=-25600
+RESULT cfg=anon_prefault rep=5 minor=0       major=0     elapsed_ms=   0.965 ns_per_fault=     0.00 ns_per_page=   18.85 mib_s=207206.4 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_cold     rep=1 minor=3203    major=1601  elapsed_ms= 710.508 ns_per_fault=147899.33 ns_per_page=13877.12 mib_s=   281.5 sum=-37313
+RESULT cfg=file_cold     rep=2 minor=3201    major=1601  elapsed_ms=1095.812 ns_per_fault=228199.04 ns_per_page=21402.57 mib_s=   182.5 sum=-37313
+RESULT cfg=file_cold     rep=3 minor=3202    major=1602  elapsed_ms=1308.791 ns_per_fault=272437.78 ns_per_page=25562.33 mib_s=   152.8 sum=-37313
+RESULT cfg=file_cold     rep=4 minor=3200    major=1601  elapsed_ms=1308.567 ns_per_fault=272561.41 ns_per_page=25557.96 mib_s=   152.8 sum=-37313
+RESULT cfg=file_cold     rep=5 minor=3200    major=1601  elapsed_ms=1304.394 ns_per_fault=271692.12 ns_per_page=25476.44 mib_s=   153.3 sum=-37313
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_warm     rep=1 minor=3203    major=0     elapsed_ms=   7.726 ns_per_fault=  2411.98 ns_per_page=  150.89 mib_s= 25888.1 sum=-37313
+RESULT cfg=file_warm     rep=2 minor=3201    major=0     elapsed_ms=   6.865 ns_per_fault=  2144.71 ns_per_page=  134.09 mib_s= 29132.4 sum=-37313
+RESULT cfg=file_warm     rep=3 minor=3201    major=0     elapsed_ms=   6.805 ns_per_fault=  2125.97 ns_per_page=  132.91 mib_s= 29389.2 sum=-37313
+RESULT cfg=file_warm     rep=4 minor=3201    major=0     elapsed_ms=   7.085 ns_per_fault=  2213.40 ns_per_page=  138.38 mib_s= 28228.2 sum=-37313
+RESULT cfg=file_warm     rep=5 minor=3201    major=0     elapsed_ms=   6.586 ns_per_fault=  2057.54 ns_per_page=  128.64 mib_s= 30366.5 sum=-37313
+--- 第 5 次进程 ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_cold     rep=1 minor=51203   major=0     elapsed_ms=  67.617 ns_per_fault=  1320.57 ns_per_page= 1320.65 mib_s=  2957.8 sum=-25600
+RESULT cfg=anon_cold     rep=2 minor=51200   major=0     elapsed_ms=  67.858 ns_per_fault=  1325.34 ns_per_page= 1325.34 mib_s=  2947.4 sum=-25600
+RESULT cfg=anon_cold     rep=3 minor=51200   major=0     elapsed_ms=  67.590 ns_per_fault=  1320.11 ns_per_page= 1320.11 mib_s=  2959.0 sum=-25600
+RESULT cfg=anon_cold     rep=4 minor=51200   major=0     elapsed_ms=  67.487 ns_per_fault=  1318.11 ns_per_page= 1318.11 mib_s=  2963.5 sum=-25600
+RESULT cfg=anon_cold     rep=5 minor=51200   major=0     elapsed_ms=  67.166 ns_per_fault=  1311.83 ns_per_page= 1311.83 mib_s=  2977.7 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_refault  rep=1 minor=51203   major=0     elapsed_ms=  67.337 ns_per_fault=  1315.11 ns_per_page= 1315.18 mib_s=  2970.1 sum=-25600
+RESULT cfg=anon_refault  rep=2 minor=51200   major=0     elapsed_ms=  68.139 ns_per_fault=  1330.85 ns_per_page= 1330.85 mib_s=  2935.2 sum=-25600
+RESULT cfg=anon_refault  rep=3 minor=51200   major=0     elapsed_ms=  71.373 ns_per_fault=  1394.00 ns_per_page= 1394.00 mib_s=  2802.2 sum=-25600
+RESULT cfg=anon_refault  rep=4 minor=51200   major=0     elapsed_ms=  67.047 ns_per_fault=  1309.52 ns_per_page= 1309.52 mib_s=  2983.0 sum=-25600
+RESULT cfg=anon_refault  rep=5 minor=51200   major=0     elapsed_ms=  67.568 ns_per_fault=  1319.68 ns_per_page= 1319.68 mib_s=  2960.0 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_prefault rep=1 minor=3       major=0     elapsed_ms=   0.988 ns_per_fault=329499.00 ns_per_page=   19.31 mib_s=202327.4 sum=-25600
+RESULT cfg=anon_prefault rep=2 minor=0       major=0     elapsed_ms=   1.051 ns_per_fault=     0.00 ns_per_page=   20.52 mib_s=190329.2 sum=-25600
+RESULT cfg=anon_prefault rep=3 minor=0       major=0     elapsed_ms=   0.941 ns_per_fault=     0.00 ns_per_page=   18.37 mib_s=212595.4 sum=-25600
+RESULT cfg=anon_prefault rep=4 minor=0       major=0     elapsed_ms=   0.990 ns_per_fault=     0.00 ns_per_page=   19.34 mib_s=201968.8 sum=-25600
+RESULT cfg=anon_prefault rep=5 minor=0       major=0     elapsed_ms=   0.944 ns_per_fault=     0.00 ns_per_page=   18.43 mib_s=211923.7 sum=-25600
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_cold     rep=1 minor=3201    major=1602  elapsed_ms= 696.189 ns_per_fault=144948.86 ns_per_page=13597.45 mib_s=   287.3 sum=-37313
+RESULT cfg=file_cold     rep=2 minor=3200    major=1601  elapsed_ms=1115.397 ns_per_fault=232325.88 ns_per_page=21785.09 mib_s=   179.3 sum=-37313
+RESULT cfg=file_cold     rep=3 minor=3200    major=1601  elapsed_ms=1308.257 ns_per_fault=272496.86 ns_per_page=25551.90 mib_s=   152.9 sum=-37313
+RESULT cfg=file_cold     rep=4 minor=3200    major=1601  elapsed_ms=1305.976 ns_per_fault=272021.58 ns_per_page=25507.34 mib_s=   153.1 sum=-37313
+RESULT cfg=file_cold     rep=5 minor=3200    major=1601  elapsed_ms=1307.167 ns_per_fault=272269.80 ns_per_page=25530.61 mib_s=   153.0 sum=-37313
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_warm     rep=1 minor=3203    major=0     elapsed_ms=   8.156 ns_per_fault=  2546.38 ns_per_page=  159.30 mib_s= 24521.7 sum=-37313
+RESULT cfg=file_warm     rep=2 minor=3201    major=0     elapsed_ms=   6.730 ns_per_fault=  2102.36 ns_per_page=  131.44 mib_s= 29719.2 sum=-37313
+RESULT cfg=file_warm     rep=3 minor=3201    major=0     elapsed_ms=   6.485 ns_per_fault=  2025.92 ns_per_page=  126.66 mib_s= 30840.6 sum=-37313
+RESULT cfg=file_warm     rep=4 minor=3201    major=0     elapsed_ms=   6.619 ns_per_fault=  2067.80 ns_per_page=  129.28 mib_s= 30215.9 sum=-37313
+RESULT cfg=file_warm     rep=5 minor=3201    major=0     elapsed_ms=   6.648 ns_per_fault=  2076.93 ns_per_page=  129.85 mib_s= 30083.1 sum=-37313
+
+===== 五次进程中位汇总（按 cfg，ns_per_fault 与 ns_per_page） =====
+MEDIAN cfg=anon_cold     ns_per_fault=   1323.30 ns_per_page=  1323.30
+MEDIAN cfg=anon_prefault ns_per_fault=      0.00 ns_per_page=    19.31
+MEDIAN cfg=anon_refault  ns_per_fault=   1321.46 ns_per_page=  1321.46
+MEDIAN cfg=file_cold     ns_per_fault= 272269.80 ns_per_page= 25507.34
+MEDIAN cfg=file_warm     ns_per_fault=   2131.67 ns_per_page=   133.27
+
+===== perf stat 佐证（代表配置，sudo） =====
+--- perf anon_cold ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=anon_cold     rep=1 minor=51203   major=0     elapsed_ms=  66.397 ns_per_fault=  1296.73 ns_per_page= 1296.81 mib_s=  3012.2 sum=-25600
+RESULT cfg=anon_cold     rep=2 minor=51200   major=0     elapsed_ms=  66.800 ns_per_fault=  1304.69 ns_per_page= 1304.69 mib_s=  2994.0 sum=-25600
+RESULT cfg=anon_cold     rep=3 minor=51200   major=0     elapsed_ms=  66.345 ns_per_fault=  1295.80 ns_per_page= 1295.80 mib_s=  3014.5 sum=-25600
+RESULT cfg=anon_cold     rep=4 minor=51200   major=0     elapsed_ms=  65.950 ns_per_fault=  1288.08 ns_per_page= 1288.08 mib_s=  3032.6 sum=-25600
+RESULT cfg=anon_cold     rep=5 minor=51200   major=0     elapsed_ms=  65.881 ns_per_fault=  1286.74 ns_per_page= 1286.74 mib_s=  3035.8 sum=-25600
+
+ Performance counter stats for './bin/pf_bench anon_cold':
+
+           256,064      page-faults                                                 
+           256,064      minor-faults                                                
+                 0      major-faults                                                
+     1,196,413,961      cycles                                                      
+     1,144,656,790      instructions              #    0.96  insn per cycle         
+
+       0.379604524 seconds time elapsed
+
+       0.028876000 seconds user
+       0.350648000 seconds sys
+
+
+
+--- perf file_cold ---
+# page fault bench: 200 MiB, 51200 pages, 5 repeats per cfg
+RESULT cfg=file_cold     rep=1 minor=3203    major=1601  elapsed_ms= 778.198 ns_per_fault=161989.70 ns_per_page=15199.19 mib_s=   257.0 sum=-37313
+RESULT cfg=file_cold     rep=2 minor=3200    major=1601  elapsed_ms=1314.257 ns_per_fault=273746.58 ns_per_page=25669.09 mib_s=   152.2 sum=-37313
+RESULT cfg=file_cold     rep=3 minor=3200    major=1601  elapsed_ms=1342.402 ns_per_fault=279608.77 ns_per_page=26218.78 mib_s=   149.0 sum=-37313
+RESULT cfg=file_cold     rep=4 minor=3200    major=1601  elapsed_ms=1321.269 ns_per_fault=275207.14 ns_per_page=25806.04 mib_s=   151.4 sum=-37313
+RESULT cfg=file_cold     rep=5 minor=3200    major=1601  elapsed_ms=1292.357 ns_per_fault=269184.91 ns_per_page=25241.34 mib_s=   154.8 sum=-37313
+
+ Performance counter stats for './bin/pf_bench file_cold datafile.bin':
+
+            24,070      page-faults                                                 
+            16,064      minor-faults                                                
+             8,006      major-faults                                                
+     1,555,774,333      cycles                                                      
+     2,000,662,061      instructions              #    1.29  insn per cycle         
+
+       6.195427309 seconds time elapsed
+
+       0.010302000 seconds user
+       0.775772000 seconds sys
+
+
+
+done
