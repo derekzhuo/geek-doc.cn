@@ -39,6 +39,6 @@ bash run.sh
 | 组合单元 | `$_XOR_` × 2、`$_XNOR_` × 1、`$_NAND_` × 1、`$_ANDNOT_` × 1、`$_NOT_` × 1 |
 | 线网 / 线网比特 | 8 / 17 |
 | CHECK pass | 0 problems |
-| 综合耗时（CPU user） | 0.07 s |
+| 综合耗时（CPU user） | 0.08 s |
 
 完整逐 pass 输出见教程附带的运行记录。
