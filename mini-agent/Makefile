@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: run run-m2 run-m3 run-m4 test clean
+.PHONY: run run-m2 run-m3 run-m4 run-m5 run-m6 test clean
 
 run:
 	$(PYTHON) run.py
@@ -13,6 +13,12 @@ run-m3:
 
 run-m4:
 	$(PYTHON) scripts/drive_m4.py
+
+run-m5:
+	$(PYTHON) scripts/drive_m5.py
+
+run-m6:
+	$(PYTHON) scripts/drive_m6.py
 
 test:
 	$(PYTHON) -m unittest discover -s tests -v

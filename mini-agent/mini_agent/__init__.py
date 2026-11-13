@@ -12,6 +12,14 @@ from .compression import (
     SummaryCompressor,
     estimate_tokens,
 )
+from .hooks import (
+    ArgumentRewrite,
+    AuditLog,
+    HookedToolRegistry,
+    PermissionPolicy,
+    PreVerdict,
+    RedactSecrets,
+)
 from .loop import run_loop
 from .messages import assistant_msg, tool_msg, user_msg
 from .model import ScriptedModel
@@ -34,6 +42,12 @@ __all__ = [
     "tool_msg",
     "ScriptedModel",
     "ToolRegistry",
+    "HookedToolRegistry",
+    "PermissionPolicy",
+    "ArgumentRewrite",
+    "AuditLog",
+    "RedactSecrets",
+    "PreVerdict",
     "Tracer",
     "AgingCompressor",
     "SummaryCompressor",
