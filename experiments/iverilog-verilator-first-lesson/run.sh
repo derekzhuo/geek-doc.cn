@@ -8,6 +8,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/rtl"
 
+echo '$ bash run.sh'
 echo "== 工具版本 =="
 iv_ver="$(iverilog -V 2>&1)" && echo "${iv_ver%%$'\n'*}"
 vl_ver="$(verilator --version 2>&1)" && echo "${vl_ver%%$'\n'*}"

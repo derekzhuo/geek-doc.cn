@@ -5,6 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 mkdir -p build
 
+echo '$ bash run.sh'
 echo "== 工具版本 =="
 yosys -V
 echo
