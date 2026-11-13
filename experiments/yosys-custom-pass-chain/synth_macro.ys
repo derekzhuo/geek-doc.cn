@@ -1,0 +1,4 @@
+# 对照基线：直接用 synth 宏，一条命令跑完整条默认 pass 链
+read_verilog rtl/fsm_counter.v
+synth -top fsm_counter
+stat

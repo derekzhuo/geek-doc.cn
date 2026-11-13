@@ -1,0 +1,14 @@
+# 朴素手工链：只凭直觉把「读入→过程块→FSM→内存→工艺映射」串起来，
+# 每段后跟普通 opt，刻意不补 wreduce/peepopt/alumacc/share/abc 等化简 pass，
+# 用来暴露「把 synth 宏想当然展开」会丢掉多少优化。
+read_verilog rtl/fsm_counter.v
+hierarchy -top fsm_counter
+proc
+opt
+fsm
+opt
+memory
+opt
+techmap
+opt
+stat

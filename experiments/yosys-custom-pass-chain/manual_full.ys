@@ -1,0 +1,33 @@
+# 按 synth 宏实际执行序列（从综合日志逐 pass 提取）镜像出的手工链。
+# stat 是只读命令，插在 proc/fsm/memory/techmap 四个阶段后不改变设计，
+# 用于留下逐阶段面积轨迹；终态用于和 synth 宏对照收敛性。
+read_verilog rtl/fsm_counter.v
+hierarchy -top fsm_counter
+proc
+opt_expr
+opt_clean
+check
+opt
+stat
+fsm
+opt
+wreduce
+peepopt
+opt_clean
+alumacc
+share
+opt
+stat
+memory
+opt_clean
+opt
+memory_map
+opt
+stat
+techmap
+opt
+abc
+opt
+hierarchy -top fsm_counter
+check
+stat
