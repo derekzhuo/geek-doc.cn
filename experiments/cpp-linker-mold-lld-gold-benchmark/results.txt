@@ -1,3 +1,4 @@
+$ NTU=300 bash run.sh
 # 链接器对照基准 (2026-11-13 17:26:16)
 # host: Linux 6.5.11-linuxkit x86_64 | Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
 # nproc: 12 | g++: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0

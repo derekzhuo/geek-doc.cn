@@ -18,6 +18,7 @@ median_ms() { printf '%s\n' "$@" | sort -n | awk '{a[NR]=$1} END{print a[int((NR
 : > "$RESULT"
 log() { echo "$@" | tee -a "$RESULT"; }
 
+log "\$ NTU=$NTU bash run.sh"
 log "# 链接器对照基准 ($(date '+%Y-%m-%d %H:%M:%S'))"
 log "# host: $(uname -srm) | $(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 | xargs)"
 log "# nproc: $(nproc) | g++: $(g++ --version | head -1)"
