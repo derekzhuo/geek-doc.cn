@@ -140,3 +140,10 @@ experiments/linux-cfs-nice-weight-throughput/results-single.txt
 # 链接器对照基准：构建目录与生成的 TU 源码（gen_tus.sh / run.sh 自动重建，不入库）
 experiments/cpp-linker-mold-lld-gold-benchmark/build/
 experiments/cpp-linker-mold-lld-gold-benchmark/src/
+
+# 双仿真器入门实验：vvp 字节码、Verilator 构建目录与临时文件（run.sh 自动重建，不入库）
+experiments/iverilog-verilator-first-lesson/rtl/counter-iv.vvp
+experiments/iverilog-verilator-first-lesson/rtl/obj_dir/
+
+# Yosys 入门综合：综合产物网表与构建目录（synth.ys / run.sh 自动重建，不入库）
+experiments/yosys-first-lesson/build/

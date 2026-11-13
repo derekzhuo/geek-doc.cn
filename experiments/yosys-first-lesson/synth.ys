@@ -1,0 +1,6 @@
+# 最小综合脚本：读入 RTL，做通用（generic）综合，打印统计并导出网表。
+# 运行：yosys -s synth.ys
+read_verilog rtl/counter.v
+synth -top counter
+stat
+write_verilog -noattr -noexpr build/counter_netlist.v
