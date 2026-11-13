@@ -1,6 +1,6 @@
 # 极客工场实验仓
 
-> 这里收集极客工场文章里的实验。你可以先读教程，再在自己的机器上跑一遍；结果对不上时，也可以对照我们留下的日志、波形和报告，看看问题出在哪。
+面向**数字 IC、开源 EDA、FPGA、Linux 性能剖析与 AI 编程**的可复现实验集合。这里不只提供示例代码，也尽量保留运行方法、原始结果和对应中文教程，方便你从“看懂”走到“亲手验证”。
 
 [![文档站](https://img.shields.io/badge/文档站-geek--doc.cn-2563eb)](https://geek-doc.cn)
 [![实验索引](https://img.shields.io/badge/实验索引-持续更新-0f766e)](experiments/README.md)
@@ -9,88 +9,120 @@
 
 ![极客工场实验仓：读文章的时候，也可以动手试一试](assets/social-preview.svg)
 
-## 想先试试？可以从这三类实验开始
+[快速开始](#快速开始) · [实验方向](#实验方向) · [仓库结构](#仓库结构) · [贡献指南](CONTRIBUTING.md) · [问题反馈](https://github.com/derekzhuo/geek-doc.cn/issues)
 
-| 学习方向 | 推荐实验 | 适合什么时候看 |
+> [!TIP]
+> 第一次使用，建议先跑 [FIFO Starter Kit](fifo-starter-kit/START-HERE.md)。它只需要 Icarus Verilog，不需要 FPGA 开发板或商业仿真器。
+
+## 实验方向
+
+| 方向 | 推荐入口 | 可以动手验证什么 |
 |---|---|---|
-| **Linux 性能剖析** | [忙等待 vs 睡眠调度](experiments/busy-wait-vs-sleep/) · [缓存未命中](cache-miss/) · [perf 火焰图](perf-read-flamegraph/) | 想看程序为什么慢、CPU 为什么忙，并希望用数据验证自己的判断 |
-| **开源 EDA** | [FIFO 入门工程](fifo-starter-kit/) · [Yosys 常见报错](experiments/eda-lab-yosys-common-errors/) · [OpenSTA 实验](experiments/opensta-create-clock-report/) | 想亲手跑一遍仿真、综合和时序分析，而不是只看命令截图 |
-| **FPGA / Vivado / Quartus** | [Vivado RTL→Bitstream](experiments/vivado-rtl-to-bitstream-webpack/) · [XSim 设计单元排错](experiments/vivado-xsim-design-unit/) | 想跟着日志熟悉工具，遇到报错时知道下一步该查什么 |
+| **数字 IC / 开源 EDA** | [FIFO 入门工程](fifo-starter-kit/) · [Yosys 常见报错](experiments/eda-lab-yosys-common-errors/) · [OpenSTA 实验](experiments/opensta-create-clock-report/) | RTL 仿真、自校验测试、波形、综合和时序报告 |
+| **FPGA / Vivado / Quartus** | [Vivado RTL→Bitstream](experiments/vivado-rtl-to-bitstream-webpack/) · [XSim 设计单元排错](experiments/vivado-xsim-design-unit/) | 工具流程、约束、仿真报错和日志定位 |
+| **Linux 性能剖析** | [忙等待 vs 睡眠调度](experiments/busy-wait-vs-sleep/) · [缓存未命中](cache-miss/REPRO.md) · [perf 火焰图](perf-read-flamegraph/REPRO.md) | CPU 开销、缓存行为、采样分析和性能对照 |
+| **AI 编程与底层原理** | [mini-agent](mini-agent/) · [CPU 微架构系列](cpu-model-core-mem-lab/) | Agent Loop、工具调用、ISA 模拟器和 SystemC/TLM |
 
-暂时拿不定主意，也可以去 **[完整实验索引](experiments/README.md)** 按主题慢慢翻。
+不确定从哪里开始，可以在 **[完整实验索引](experiments/README.md)** 按主题查找。
 
-## 先跑两个小实验
+## 快速开始
+
+### 1. 获取代码
 
 ```bash
 git clone --depth 1 https://github.com/derekzhuo/geek-doc.cn.git
 cd geek-doc.cn
-
-# Linux / macOS：运行 FIFO 自校验回归
-make -C fifo-starter-kit test
-
-# Linux：编译并运行缓存访问模式实验
-make -C cache-miss run
 ```
 
-性能剖析实验通常依赖 Linux、`perf` 和 `/proc`；EDA 实验需要各自 README 标明的工具链。Vivado/Quartus 相关实验使用对应工具实际运行，需要的版本也会写在各实验的 README 里。
+Git 和 Make 是多数独立实验的基础工具。具体依赖以各实验的 README 为准：EDA 实验需要相应仿真或综合工具，Linux 性能实验通常需要 C/C++ 编译器，部分实验还依赖 `perf` 和 `/proc`。
 
-### 先给你看一组结果
+### 2. 跑通一个数字 IC 实验
 
-以下是 `experiments/busy-wait-vs-sleep` 已归档的实测结果，运行环境和完整数据见 [results.txt](experiments/busy-wait-vs-sleep/results.txt)：
+Ubuntu / Debian 可先安装 Icarus Verilog：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y iverilog
+```
+
+运行 FIFO 自校验回归：
+
+```bash
+make -C fifo-starter-kit test
+```
+
+测试通过时，输出末尾包含：
+
+```bash
+RESULT: PASS
+```
+
+完整日志和 VCD 波形分别写入 `fifo-starter-kit/out/sim.log` 与 `fifo-starter-kit/out/sync_fifo.vcd`。Windows、macOS 和波形查看方法见 [START-HERE](fifo-starter-kit/START-HERE.md)。
+
+### 3. 跑通一个 Linux 性能实验
+
+```bash
+make -C experiments/busy-wait-vs-sleep run
+```
+
+这个实验对比忙等待与睡眠调度的延迟和 CPU 开销。源码、复现命令和归档结果见 [实验说明](experiments/busy-wait-vs-sleep/README.md)。
+
+## 如何阅读实验结果
+
+以下是上述等待模型实验的一组已归档结果：
 
 | 模型 | 单次延迟 | CPU 使用率 |
 |---|---:|---:|
-| 忙等待 | 1.245 μs | ~100% |
-| 睡眠调度 | 8.92 μs | ~10% |
+| 忙等待 | 1.245 μs | 约 100% |
+| 睡眠调度 | 8.92 μs | 约 10% |
 
-读结论时，你也可以继续往下看输入、输出和实验环境，不用只凭一句话判断它是否可信。
+完整数据见 [results.txt](experiments/busy-wait-vs-sleep/results.txt)。这些数字用于解释对照关系，不是跨平台性能承诺；实际结果会受硬件、操作系统、编译器和负载影响。复现时请同时记录环境和输入参数，而不是只比较最终数值。
 
-## 里面都有哪些实验
+## 仓库结构
 
-### 几条持续展开的系列
-
-| 系列 | 内容 |
+| 路径 | 内容 |
 |---|---|
-| [echo](echo/) | 高并发 TCP echo 服务器，渐进式代码与压测脚本 |
-| [FIFO Starter Kit](fifo-starter-kit/) | 参数化同步 FIFO、自校验 testbench 和 VCD 波形 |
-| [mini-agent](mini-agent/) | 从最小 Agent Loop 到工具调用的增量工程 |
-| [vim-cpp](vim-cpp/) | 分阶段实现一个迷你 Vim |
-| [CPU 微架构系列](cpu-model-core-mem-lab/) | 核存模型、ISA 模拟器、SystemC/TLM 等实验 |
-| [perf 实验](cpu-demo/) | CPU、缓存、分支、调度、锁竞争和动态探针 |
+| [`experiments/`](experiments/README.md) | 与文档配套的主题实验，覆盖 EDA、数字设计、时序分析、FPGA 和性能专题 |
+| [`fifo-starter-kit/`](fifo-starter-kit/) | 参数化同步 FIFO、自校验 testbench、回归脚本和 VCD 波形 |
+| [`mini-agent/`](mini-agent/) | 从最小 Agent Loop 到工具调用的增量工程 |
+| [`cpu-model-core-mem-lab/`](cpu-model-core-mem-lab/) | CPU 核存模型及后续 ISA、SystemC/TLM 系列入口 |
+| [`echo/`](echo/) | 高并发 TCP echo 服务器的渐进式代码与压测脚本 |
+| [`vim-cpp/`](vim-cpp/) | 分阶段实现一个迷你 Vim |
+| 根目录其他实验 | 缓存、分支预测、锁竞争、调度延迟、信号和系统调用等独立示例 |
 
-### 文档内嵌实验
+打开一个实验，通常可以找到：
 
-`experiments/` 当前收录 **339 个实验**，覆盖开源 EDA 入门、数字设计、OpenSTA、Vivado/XSim、排错案例、芯片参考和性能专题。每个目录都有独立 README。
-
-**[查看全部 339 个实验 →](experiments/README.md)**
-
-## 打开一个实验，你通常会看到
-
-- 它要解决什么问题，以及需要哪些工具。
-- 可以直接照着运行的命令，而不只是几段代码。
-- 用来核对结果的日志、报告、数据、波形或截图。
-- 对应的中文教程，忘了原理时可以回去接着读。
-- 只保留源码和实验材料，编译产物与临时文件不会混进来。
-
-新增实验请阅读 [贡献指南](CONTRIBUTING.md)。运行遇到问题，可以通过 [Issue](https://github.com/derekzhuo/geek-doc.cn/issues) 提交环境、完整命令和原始错误输出。
+- **目标与依赖**：验证什么问题，需要哪些工具和版本。
+- **复现步骤**：可以直接执行的命令、输入和配置。
+- **核对材料**：日志、报告、数据、波形或截图。
+- **中文教程**：解释实验背后的原理和结果。
+- **适用边界**：教学实验与实际项目、工业签核之间的区别。
 
 ## 常用命令
 
 ```bash
 make -C <demo>          # 编译
 make -C <demo> run      # 编译并运行
+make -C <demo> test     # 运行测试（实验提供该目标时）
 make -C <demo> clean    # 清理生成物
+```
 
-# 更新并检查实验索引（需要 Node.js 20+）
+维护实验索引和文档链接需要 Node.js 20+：
+
+```bash
 node scripts/gen-experiment-index.mjs
 node scripts/check-experiment-docs.mjs
 ```
 
-## 文档与许可
+## 文档、提问与贡献
 
-- [极客工场文档站](https://geek-doc.cn)
-- [完整实验索引](experiments/README.md)
-- [贡献指南](CONTRIBUTING.md) · [安全说明](SECURITY.md)
-- [MIT License](LICENSE)
+- 完整原理和系列教程：[极客工场文档站](https://geek-doc.cn)
+- 按主题查找实验：[实验索引](experiments/README.md)
+- 新增或改进实验：[贡献指南](CONTRIBUTING.md)
+- 安全问题：[安全说明](SECURITY.md)
 
-**希望这些实验能帮你看懂原理，也少走一些配置环境的弯路。**
+运行遇到问题，欢迎提交 [Issue](https://github.com/derekzhuo/geek-doc.cn/issues)。请附上操作系统、工具版本、完整命令和原始错误输出，这些信息通常比一张报错截图更有助于定位问题。
+
+## 许可证
+
+本仓库代码与实验材料采用 [MIT License](LICENSE)，除非具体目录另有说明。

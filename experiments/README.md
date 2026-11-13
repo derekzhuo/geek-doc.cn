@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **339 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **347 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -15,10 +15,10 @@
 | 芯片参考与器件实验 | 14 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
-| 综合实验 | 88 |
+| 综合实验 | 95 |
 | EDA 流程实操 | 46 |
 | OpenSTA / 时序分析 | 5 |
-| Vivado / XSim / XDC | 15 |
+| Vivado / XSim / XDC | 16 |
 
 ## 全部实验
 
@@ -215,6 +215,9 @@
 | 综合实验 | [Codex filesystem MCP 最小复现](./codex-mcp-setup-practice/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-mcp-setup-practice.html) | 见 README |
 | 综合实验 | [codex-sandbox-approval-matrix — Codex 沙箱模式与审批策略组合矩阵](./codex-sandbox-approval-matrix/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-sandbox-approval-matrix.html) | 日志/数据 |
 | 综合实验 | [Verilator 覆盖率：行覆盖与翻转覆盖（coverage-types-verilator）](./coverage-types-verilator/) | [教程](https://geek-doc.cn/chip-design/verification/coverage-types-verilator.html) | output/ |
+| 综合实验 | [arena 内存池（bump allocator）对照基准](./cpp-arena-pool-allocator-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-arena-pool-allocator-benchmark.html) | 日志/数据 |
+| 综合实验 | [ASan / TSan / UBSan 运行时开销：同一工作负载的五构建对照基准](./cpp-asan-tsan-ubsan-overhead/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-asan-tsan-ubsan-overhead.html) | 日志/数据 |
+| 综合实验 | [自动向量化对照基准（循环形态、restrict、对齐与展开干预）](./cpp-autovectorization-pragmas-alignment/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-autovectorization-pragmas-alignment.html) | 日志/数据 |
 | 综合实验 | [异常、错误码与 Expected：三种错误传递机制的路径级成本基准](./cpp-exception-vs-error-code-cost/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-exception-vs-error-code-cost.html) | 日志/数据 |
 | 综合实验 | [输入解析四路径吞吐基准（cpp-iostream-scanf-custom-parser）](./cpp-iostream-scanf-custom-parser/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-iostream-scanf-custom-parser.html) | 日志/数据 |
 | 综合实验 | [C++ 链接时优化三档对照：无 LTO / 全量 LTO / ThinLTO（cpp-lto-thin-full-benchmark）](./cpp-lto-thin-full-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-lto-thin-full-benchmark.html) | 日志/数据 |
@@ -223,6 +226,7 @@
 | 综合实验 | [placement new 固定块对象池基准](./cpp-placement-new-object-pool/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-placement-new-object-pool.html) | 日志/数据 |
 | 综合实验 | [RVO/NRVO、移动语义与 noexcept：vector 扩容为什么有时偷偷拷贝](./cpp-rvo-nrvo-move-noexcept/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-rvo-nrvo-move-noexcept.html) | 日志/数据 |
 | 综合实验 | [shared_ptr 原子引用计数争用：线程扫档实测](./cpp-shared-ptr-refcount-contention/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-shared-ptr-refcount-contention.html) | 日志/数据 |
+| 综合实验 | [自旋锁、互斥锁与自适应锁的临界区长度扫档基准](./cpp-spin-mutex-futex-critical-section/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-spin-mutex-futex-critical-section.html) | 日志/数据 |
 | 综合实验 | [std::function 小对象缓冲阈值实测](./cpp-std-function-heap-alloc-threshold/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-std-function-heap-alloc-threshold.html) | 日志/数据 |
 | 综合实验 | [std::string SSO、移动成本与 string_view 去拷贝边界实测](./cpp-string-sso-move-string-view/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-string-sso-move-string-view.html) | 日志/数据 |
 | 综合实验 | [map / unordered_map / 排序 vector 查找性能对照基准](./cpp-unordered-map-sorted-vector-lookup/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-unordered-map-sorted-vector-lookup.html) | 日志/数据 |
@@ -243,6 +247,9 @@
 | 综合实验 | [iverilog 仿真跑完无波形输出（$dumpfile/$dumpvars 缺漏排查）](./iverilog-vcd-dumpvars-missing/) | [教程](https://geek-doc.cn/eda/ts-iverilog-vcd-dumpvars-missing.html) | 见 README |
 | 综合实验 | [kvm-not-available-errors：KVM 不可用的三类报错与 TCG 兜底](./kvm-not-available-errors/) | [教程](https://geek-doc.cn/soc-qemu/kvm-not-available-errors.html) | 日志/数据 |
 | 综合实验 | [Yosys 逻辑等价检查（LEC）：RTL vs 综合网表（lec-yosys-equiv-opt）](./lec-yosys-equiv-opt/) | [教程](https://geek-doc.cn/chip-design/intermediate/lec-yosys-equiv-opt.html) | output/ |
+| 综合实验 | [CFS nice 权重与 CPU 时间占比对照基准](./linux-cfs-nice-weight-throughput/) | [教程](https://geek-doc.cn/concepts/process/linux-cfs-nice-weight-throughput.html) | 日志/数据 |
+| 综合实验 | [STREAM 风格内存带宽基准（Copy / Scale / Add / Triad）](./linux-memory-bandwidth-stream-bench/) | [教程](https://geek-doc.cn/concepts/memory/linux-memory-bandwidth-stream-bench.html) | 日志/数据 |
+| 综合实验 | [minor/major 缺页单次成本对照基准](./linux-page-fault-minor-major-cost/) | [教程](https://geek-doc.cn/concepts/process/linux-page-fault-minor-major-cost.html) | 日志/数据 |
 | 综合实验 | [openlane-antenna-violation：OpenLANE 天线违例复现与修复策略对照](./openlane-antenna-violation/) | [教程](https://geek-doc.cn/eda/ts-openlane-antenna-violation.html) | 日志/数据 |
 | 综合实验 | [openlane-config-key-unknown](./openlane-config-key-unknown/) | [教程](https://geek-doc.cn/eda/ts-openlane-config-key-unknown.html) | 日志/数据 |
 | 综合实验 | [openlane-fastroute-congestion：OpenLANE FastRoute 布线拥塞复现](./openlane-fastroute-congestion/) | [教程](https://geek-doc.cn/eda/ts-openlane-fastroute-congestion-fail.html) | 日志/数据 |
@@ -356,6 +363,7 @@
 | Vivado / XSim / XDC | [vivado-inferred-latch：Vivado 推断锁存器复现](./vivado-inferred-latch/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-327-inferred-latch.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-multi-driver：Vivado 2017.4 多驱动复现](./vivado-multi-driver/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-synth-8-3352-multiple-driver.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-named-port-not-exist：例化命名端口不存在复现](./vivado-named-port-not-exist/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-448-named-port-not-exist.html) | 日志/数据 |
+| Vivado / XSim / XDC | [vivado-part-not-installed：Vivado 指定器件未安装复现](./vivado-part-not-installed/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-part-not-installed.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-rtl-to-bitstream-webpack](./vivado-rtl-to-bitstream-webpack/) | [教程](https://geek-doc.cn/fpga/beginner/exp-vivado-rtl-to-bitstream-webpack.html) | 见 README |
 | Vivado / XSim / XDC | [vivado-set-property-empty：Vivado set_property 空对象复现](./vivado-set-property-empty/) | [教程](https://geek-doc.cn/fpga/beginner/ts-vivado-common-17-55-set-property.html) | 日志/数据 |
 | Vivado / XSim / XDC | [vivado-utilization-report-read — 综合后资源利用率报告怎么读](./vivado-utilization-report-read/) | [教程](https://geek-doc.cn/fpga/beginner/vivado-utilization-report-read.html) | 日志/数据 |
