@@ -1,0 +1,26 @@
+# 链接器对照基准 (2026-11-13 17:26:16)
+# host: Linux 6.5.11-linuxkit x86_64 | Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+# nproc: 12 | g++: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+# ld.bfd: GNU ld (GNU Binutils for Ubuntu) 2.42
+# ld.gold: GNU gold (GNU Binutils for Ubuntu 2.42) 1.16
+# ld.lld: Ubuntu LLD 18.1.3 (compatible with GNU linkers)
+# mold: mold 2.30.0 (compatible with GNU ld)
+# NTU=300 FULL_TRIALS=7 INC_TRIALS=5 CXXFLAGS=-O2 -std=c++17 -Wall
+
+compile_all_ms=2508  # 生成 300 TU + main + sumparts 并全部编译为 .o
+
+== 全量链接（每次先删二进制，链接全部 302 个 .o）==
+full bfd samples_ms="10388 543 553 545 539 528 504" median_ms=543 size_bytes=155048 run="checksum=89307.089187 hash=8951562637802084700"
+full gold samples_ms="206 217 238 218 216 253 213" median_ms=217 size_bytes=155120 run="checksum=89307.089187 hash=8951562637802084700"
+full lld samples_ms="263 262 298 269 250 249 260" median_ms=262 size_bytes=148760 run="checksum=89307.089187 hash=8951562637802084700"
+full mold samples_ms="307 284 284 295 350 290 290" median_ms=290 size_bytes=177496 run="checksum=89307.089187 hash=8951562637802084700"
+
+checksum 一致：1 组输出完全相同
+
+== 增量链接（每轮只改 tu0000.cpp 一个常量，重编该 TU 后重链）==
+incremental bfd relink_samples_ms="551 518 514 520 510" relink_median_ms=518 recompile_median_ms=36
+incremental gold relink_samples_ms="185 192 216 185 217" relink_median_ms=192 recompile_median_ms=37
+incremental lld relink_samples_ms="233 257 230 231 228" relink_median_ms=231 recompile_median_ms=36
+incremental mold relink_samples_ms="277 281 252 255 285" relink_median_ms=277 recompile_median_ms=37
+
+done

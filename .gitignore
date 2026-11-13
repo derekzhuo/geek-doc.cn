@@ -136,3 +136,7 @@ experiments/linux-page-fault-minor-major-cost/datafile.bin
 # CFS nice 权重基准：构建目录与单次递归输出（run.sh 自动重建，不入库）
 experiments/linux-cfs-nice-weight-throughput/bin/
 experiments/linux-cfs-nice-weight-throughput/results-single.txt
+
+# 链接器对照基准：构建目录与生成的 TU 源码（gen_tus.sh / run.sh 自动重建，不入库）
+experiments/cpp-linker-mold-lld-gold-benchmark/build/
+experiments/cpp-linker-mold-lld-gold-benchmark/src/
