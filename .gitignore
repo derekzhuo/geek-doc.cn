@@ -137,6 +137,12 @@ experiments/linux-page-fault-minor-major-cost/datafile.bin
 experiments/linux-cfs-nice-weight-throughput/bin/
 experiments/linux-cfs-nice-weight-throughput/results-single.txt
 
+# THP 三策略基准：构建目录（run.sh 自动重建，不入库；results/ 证据入库）
+experiments/linux-thp-madvise-always-benefit/bin/
+
+# cgroup v2 cpu.max 节流基准：构建目录（run.sh 自动重建，不入库；results/ 证据入库）
+experiments/linux-cgroup-v2-cpu-max-throttling/bin/
+
 # 链接器对照基准：构建目录与生成的 TU 源码（gen_tus.sh / run.sh 自动重建，不入库）
 experiments/cpp-linker-mold-lld-gold-benchmark/build/
 experiments/cpp-linker-mold-lld-gold-benchmark/src/

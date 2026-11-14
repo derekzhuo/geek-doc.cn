@@ -1,0 +1,32 @@
+PATTERN=rand
+SIZE_MB=1024
+PASSES=5
+THP_ADVISE=0
+ALLOC_NS=9644
+FAULT_NS=212485010
+FAULT_MINFLT=585
+COLLAPSE_WAIT_NS=100629443
+ANON_HUGE_MB=1024
+RSS_MB=1025
+HUGE_RATIO=0.9985
+ACCESS_NS=14428349296
+SINK=0
+
+ Performance counter stats for 'bin/thp_bench rand 1024 5':
+
+           119,926      dTLB-load-misses          #    0.01% of all dTLB cache accesses
+     1,355,067,838      dTLB-loads                                                  
+               578      page-faults                                                 
+               578      minor-faults                                                
+                 0      major-faults                                                
+               163      context-switches                                            
+                87      cpu-migrations                                              
+    47,969,894,648      cycles                                                      
+    22,865,109,910      instructions              #    0.48  insn per cycle         
+
+      14.744545322 seconds time elapsed
+
+      14.398609000 seconds user
+       0.231977000 seconds sys
+
+

@@ -1,0 +1,40 @@
+never    seq  round 1  huge=0.0000  access=680252927 ns
+never    seq  round 2  huge=0.0000  access=681662407 ns
+never    seq  round 3  huge=0.0000  access=678373851 ns
+never    seq  round 4  huge=0.0000  access=692294822 ns
+never    seq  round 5  huge=0.0000  access=687134379 ns
+never    rand round 1  huge=0.0000  access=27865815362 ns
+never    rand round 2  huge=0.0000  access=27875057334 ns
+never    rand round 3  huge=0.0000  access=27913357336 ns
+never    rand round 4  huge=0.0000  access=27895640776 ns
+never    rand round 5  huge=0.0000  access=27992756744 ns
+madvise  seq  round 1  huge=0.9984  access=675143220 ns
+madvise  seq  round 2  huge=0.9984  access=669217535 ns
+madvise  seq  round 3  huge=0.9985  access=667385129 ns
+madvise  seq  round 4  huge=0.9984  access=668098703 ns
+madvise  seq  round 5  huge=0.9984  access=668331852 ns
+madvise  rand round 1  huge=0.9985  access=14485497932 ns
+madvise  rand round 2  huge=0.9986  access=14452038721 ns
+madvise  rand round 3  huge=0.9986  access=14698392668 ns
+madvise  rand round 4  huge=0.9986  access=14470823186 ns
+madvise  rand round 5  huge=0.9986  access=14461201619 ns
+always   seq  round 1  huge=0.9984  access=670069141 ns
+always   seq  round 2  huge=0.9984  access=673253713 ns
+always   seq  round 3  huge=0.9986  access=667090056 ns
+always   seq  round 4  huge=0.9984  access=663287184 ns
+always   seq  round 5  huge=0.9983  access=670157067 ns
+always   rand round 1  huge=0.9983  access=14765015600 ns
+always   rand round 2  huge=0.9984  access=14785006037 ns
+always   rand round 3  huge=0.9984  access=14581999104 ns
+always   rand round 4  huge=0.9984  access=14479548055 ns
+always   rand round 5  huge=0.9985  access=14428349296 ns
+
+== 五轮中位数汇总（单位见列名）==
+always:rand          0.9984      215025295      100660360    14581999104          586         145178
+always:seq           0.9984      210001952      100661835      670069141          587           4117
+config:pat           huge中位     fault_ns中位     collapse中位    access_ns中位     minflt中位    dtlb_miss中位
+madvise:rand         0.9986      211784381              0    14470823186          586         104581
+madvise:seq          0.9984      214272285              0      668331852          585           3830
+never:rand           0.0000      342038038              0    27895640776       262218     1332698002
+never:seq            0.0000      340109863              0      681662407       262218          91304
+已恢复 THP enabled=madvise defrag=madvise

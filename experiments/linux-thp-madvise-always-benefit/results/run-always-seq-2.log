@@ -1,0 +1,32 @@
+PATTERN=seq
+SIZE_MB=1024
+PASSES=5
+THP_ADVISE=0
+ALLOC_NS=7805
+FAULT_NS=216367720
+FAULT_MINFLT=587
+COLLAPSE_WAIT_NS=100649718
+ANON_HUGE_MB=1024
+RSS_MB=1025
+HUGE_RATIO=0.9984
+ACCESS_NS=673253713
+SINK=0
+
+ Performance counter stats for 'bin/thp_bench seq 1024 5':
+
+             4,807      dTLB-load-misses          #    0.07% of all dTLB cache accesses
+         7,225,199      dTLB-loads                                                  
+               578      page-faults                                                 
+               578      minor-faults                                                
+                 0      major-faults                                                
+                28      context-switches                                            
+                 8      cpu-migrations                                              
+     2,909,111,096      cycles                                                      
+     6,739,467,515      instructions              #    2.32  insn per cycle         
+
+       0.993765305 seconds time elapsed
+
+       0.667708000 seconds user
+       0.222569000 seconds sys
+
+
