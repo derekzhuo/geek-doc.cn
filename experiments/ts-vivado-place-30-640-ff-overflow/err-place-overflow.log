@@ -1,0 +1,293 @@
+# command: vivado.bat -mode batch -source v10_err.tcl  (cwd C:\eda-lab\b1\ts-vivado-place-30-640-ff-overflow)
+# date: 2026-11-14T01:51:49+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source v10_err.tcl
+# file delete -force ./v10bad
+# create_project v10bad ./v10bad -part xc7a35tcpg236-1
+# add_files v10_overflow_bad.v
+# update_compile_order -fileset sources_1
+# puts "V10_BAD_BEGIN synth 60000 FF design on xc7a35t"
+V10_BAD_BEGIN synth 60000 FF design on xc7a35t
+# synth_design -top v10_overflow_bad
+Command: synth_design -top v10_overflow_bad
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2952 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 389.750 ; gain = 98.352
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'v10_overflow_bad' [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_bad.v:3]
+INFO: [Synth 8-5534] Detected attribute (* DONT_TOUCH = "true" *) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_bad.v:9]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "no" *) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_bad.v:9]
+INFO: [Synth 8-256] done synthesizing module 'v10_overflow_bad' (1#1) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_bad.v:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 01:50:40 ; elapsed = 01:53:38 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 01:51:10 ; elapsed = 01:54:08 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 01:51:10 ; elapsed = 01:54:08 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 02:05:55 ; elapsed = 02:09:20 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |\reg          |           1|     60000|
++------+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register chain_reg [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_bad.v:14]
+Detailed RTL Component Info : 
++---Registers : 
+	            60000 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register chain_reg [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_bad.v:14]
+Hierarchical RTL Component report 
+Module v10_overflow_bad 
+Detailed RTL Component Info : 
++---Registers : 
+	            60000 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 02:06:01 ; elapsed = 02:09:26 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |\reg          |           1|     60000|
++------+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 02:06:02 ; elapsed = 02:09:27 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |\reg          |           1|     60000|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 02:06:14 ; elapsed = 02:09:40 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 02:06:19 ; elapsed = 02:09:45 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 02:06:19 ; elapsed = 02:09:45 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 02:06:21 ; elapsed = 02:09:46 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 02:06:21 ; elapsed = 02:09:47 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 02:06:27 ; elapsed = 02:09:53 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 02:06:27 ; elapsed = 02:09:53 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |FDRE | 60000|
+|3     |IBUF |     3|
+|4     |OBUF |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       | 60005|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 02:06:27 ; elapsed = 02:09:53 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 02:06:27 ; elapsed = 02:09:53 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+Synthesis Optimization Complete : Time (s): cpu = 02:06:27 ; elapsed = 02:09:53 . Memory (MB): peak = 17694.824 ; gain = 17403.426
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'v10_overflow_bad' is not ideal for floorplanning, since the cellview 'v10_overflow_bad' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+15 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 02:06:52 ; elapsed = 02:10:20 . Memory (MB): peak = 17694.824 ; gain = 17416.430
+WARNING: [Common 17-673] Cannot get value of property 'STATISTICS.FFs' because this property is not valid in conjunction with other property setting on this object.
+# puts "V10_BAD_POST_SYNTH [get_property STATISTICS.FFs [get_runs synth_1]]"
+V10_BAD_POST_SYNTH 
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 17694.824 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 469f39da
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 17694.824 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 17694.824 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+ERROR: [Place 30-640] Place Check : This design requires more Register as Flip Flop cells than are available in the target device. This design requires 60000 of such cell types but only 41600 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.
+ERROR: [Place 30-640] Place Check : This design requires more Slice Registers cells than are available in the target device. This design requires 60000 of such cell types but only 41600 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 469f39da
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 17694.824 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 469f39da
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 17694.824 ; gain = 0.000
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer stopped due to earlier errors. Implementation Feasibility check failed, Please see the previously displayed individual error or warning messages for more details.'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: 469f39da
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 17694.824 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+place_design failed
+# set rc [catch {place_design} result]
+# if {$rc != 0} {
+#   puts "V10_BAD_PLACE_FAILED"
+#   puts "V10_BAD_PLACE_ERROR $result"
+# } else {
+#   puts "V10_BAD_UNEXPECTED_PLACE_OK"
+# }
+V10_BAD_PLACE_FAILED
+V10_BAD_PLACE_ERROR ERROR: [Common 17-69] Command failed: Placer could not place all instances
+
+# puts "V10_BAD_END"
+V10_BAD_END
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 14 04:03:46 2026...
