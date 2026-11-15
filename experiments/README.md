@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **359 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **363 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -10,12 +10,12 @@
 |---|---:|
 | 开源 EDA 入门 | 12 |
 | 可运行模板 | 21 |
-| 排错案例 | 116 |
+| 排错案例 | 117 |
 | 数字设计实验 | 18 |
 | 芯片参考与器件实验 | 14 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
-| 综合实验 | 104 |
+| 综合实验 | 107 |
 | EDA 流程实操 | 46 |
 | OpenSTA / 时序分析 | 5 |
 | Vivado / XSim / XDC | 16 |
@@ -149,6 +149,7 @@
 | 排错案例 | [ts-xsim-assertion-failure](./ts-xsim-assertion-failure/) | [教程](https://geek-doc.cn/eda/ts-xsim-assertion-failure.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-module-not-found — XSim elaboration 找不到模块的报错与修复对照](./ts-xsim-elab-module-not-found/) | [教程](https://geek-doc.cn/eda/ts-xsim-elab-module-not-found.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复](./ts-xsim-elab-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 日志/数据 |
+| 排错案例 | [ts-xsim-timescale-precision-rounding — XSim 时间精度取整的无告警行为对照](./ts-xsim-timescale-precision-rounding/) | [教程](https://geek-doc.cn/eda/ts-xsim-timescale-precision-rounding.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/ts-xsim-vcd-export-error.html) | 日志/数据 + 图/波形 |
 | 排错案例 | [ts-xsim-wave-invalid-command — XSim 报 `invalid command name "wave"`](./ts-xsim-wave-invalid-command/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-wave-invalid-command.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-x-propagation-hang](./ts-xsim-x-propagation-hang/) | [教程](https://geek-doc.cn/eda/ts-xsim-x-propagation-hang.html) | 日志/数据 |
@@ -254,9 +255,12 @@
 | 综合实验 | [Yosys 逻辑等价检查（LEC）：RTL vs 综合网表（lec-yosys-equiv-opt）](./lec-yosys-equiv-opt/) | [教程](https://geek-doc.cn/chip-design/intermediate/lec-yosys-equiv-opt.html) | output/ |
 | 综合实验 | [CFS nice 权重与 CPU 时间占比对照基准](./linux-cfs-nice-weight-throughput/) | [教程](https://geek-doc.cn/concepts/process/linux-cfs-nice-weight-throughput.html) | 日志/数据 |
 | 综合实验 | [cgroup v2 cpu.max 带宽限制与节流延迟对照基准](./linux-cgroup-v2-cpu-max-throttling/) | [教程](https://geek-doc.cn/concepts/container/linux-cgroup-v2-cpu-max-throttling.html) | 日志/数据 |
+| 综合实验 | [cgroup v2 memory.high / memory.max 回收、PSI 与 OOM 对照实验](./linux-cgroup-v2-memory-max-reclaim-psi/) | [教程](https://geek-doc.cn/concepts/container/linux-cgroup-v2-memory-max-reclaim-psi.html) | 日志/数据 |
 | 综合实验 | [STREAM 风格内存带宽基准（Copy / Scale / Add / Triad）](./linux-memory-bandwidth-stream-bench/) | [教程](https://geek-doc.cn/concepts/memory/linux-memory-bandwidth-stream-bench.html) | 日志/数据 |
 | 综合实验 | [minor/major 缺页单次成本对照基准](./linux-page-fault-minor-major-cost/) | [教程](https://geek-doc.cn/concepts/process/linux-page-fault-minor-major-cost.html) | 日志/数据 |
+| 综合实验 | [systemd 单元资源指令到 cgroup v2 接口的对照实验](./linux-systemd-unit-resource-limits/) | [教程](https://geek-doc.cn/concepts/container/linux-systemd-unit-resource-limits.html) | 日志/数据 |
 | 综合实验 | [THP 三策略（never / madvise / always）收益与代价对照基准](./linux-thp-madvise-always-benefit/) | [教程](https://geek-doc.cn/concepts/memory/linux-thp-madvise-always-benefit.html) | 日志/数据 |
+| 综合实验 | [zswap 开/关 × 可压缩/不可压缩负载的四格对照实验](./linux-zswap-vs-swap-pressure/) | [教程](https://geek-doc.cn/concepts/memory/linux-zswap-vs-swap-pressure.html) | 日志/数据 |
 | 综合实验 | [openlane-antenna-violation：OpenLANE 天线违例复现与修复策略对照](./openlane-antenna-violation/) | [教程](https://geek-doc.cn/eda/ts-openlane-antenna-violation.html) | 日志/数据 |
 | 综合实验 | [openlane-config-key-unknown](./openlane-config-key-unknown/) | [教程](https://geek-doc.cn/eda/ts-openlane-config-key-unknown.html) | 日志/数据 |
 | 综合实验 | [openlane-fastroute-congestion：OpenLANE FastRoute 布线拥塞复现](./openlane-fastroute-congestion/) | [教程](https://geek-doc.cn/eda/ts-openlane-fastroute-congestion-fail.html) | 日志/数据 |
