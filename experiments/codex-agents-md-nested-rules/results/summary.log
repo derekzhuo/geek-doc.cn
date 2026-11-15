@@ -1,0 +1,27 @@
+$ bash run.sh <output-directory>
+Codex: codex-cli 0.156.1
+每组均为独立进程、独立临时 CODEX_HOME，工作目录逐级深入。
+
+[01-root-only]
+case=01-root-only
+rules=root/AGENTS.md
+exit_code=0
+final_answer=ROOT_ONLY
+
+[02-root-child]
+case=02-root-child
+rules=root/AGENTS.md + service/AGENTS.md
+exit_code=0
+final_answer=CHILD_ONLY
+
+[03-root-child-grandchild]
+case=03-root-child-grandchild
+rules=root/AGENTS.md + service/AGENTS.md + service/api/AGENTS.md
+exit_code=0
+final_answer=GRANDCHILD_ONLY
+
+[04-explicit-conflict]
+case=04-explicit-conflict
+rules=root/AGENTS.md + service/AGENTS.md + service/api/AGENTS.md
+exit_code=0
+final_answer=PROMPT_ONLY

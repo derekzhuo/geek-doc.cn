@@ -9,6 +9,8 @@ trap 'rm -rf "$TMP_ROOT"' EXIT
 REPO="$TMP_ROOT/repository"
 mkdir -p "$REPO/service/api"
 
+PROVIDER_CONFIG="${PROBE_PROVIDER_CONFIG:-$HOME/.codex/arkcli.config.toml}"
+
 cat > "$REPO/AGENTS.md" <<'EOF'
 # 根目录规则
 当用户要求返回规则测试标记时，只输出 ROOT_ONLY，不输出其他文字。
@@ -25,7 +27,7 @@ EOF
 codex --version > "$OUT_DIR/environment.log"
 sw_vers >> "$OUT_DIR/environment.log"
 printf '实验目录：系统临时目录，结束后自动删除\n' >> "$OUT_DIR/environment.log"
-printf '配置隔离：每组使用独立临时 CODEX_HOME，不加载 config.toml\n' >> "$OUT_DIR/environment.log"
+printf '配置隔离：每组使用独立临时 CODEX_HOME，仅注入 provider 连接配置，不加载其他个人配置\n' >> "$OUT_DIR/environment.log"
 
 run_case() {
   local name="$1"
@@ -35,13 +37,15 @@ run_case() {
   local answer="$TMP_ROOT/answer-$name.txt"
   local log="$OUT_DIR/$name.log"
   mkdir -p "$home"
+  cp "$PROVIDER_CONFIG" "$home/config.toml"
+  chmod 600 "$home/config.toml"
   if [[ -f "$HOME/.codex/auth.json" ]]; then
     cp "$HOME/.codex/auth.json" "$home/auth.json"
     chmod 600 "$home/auth.json"
   fi
 
   {
-    printf '$ codex exec --ignore-user-config --ephemeral --skip-git-repo-check -C <%s> --color never "%s"\n' "$name" "$prompt"
+    printf '$ codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C <%s> --color never "<prompt>"\n' "$name"
     printf 'case=%s\n' "$name"
     printf 'rules=root/AGENTS.md'
     [[ "$name" != "01-root-only" ]] && printf ' + service/AGENTS.md'
@@ -51,7 +55,6 @@ run_case() {
 
   set +e
   CODEX_HOME="$home" codex exec \
-    --ignore-user-config \
     --ephemeral \
     --skip-git-repo-check \
     --sandbox read-only \
@@ -69,7 +72,7 @@ run_case() {
     printf '<missing>' >> "$log"
   fi
   printf '\n' >> "$log"
-  return "$status"
+  return 0
 }
 
 BASE_PROMPT='请返回当前生效规则要求的测试标记，只输出标记，不要解释。'

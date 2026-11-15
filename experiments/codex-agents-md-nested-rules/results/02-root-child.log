@@ -1,0 +1,26 @@
+$ codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C <02-root-child> --color never "<prompt>"
+case=02-root-child
+rules=root/AGENTS.md + service/AGENTS.md
+Reading additional input from stdin...
+OpenAI Codex v0.156.1
+--------
+workdir: /var/folders/vz/84xsj3d95pvccm0sjrq60bpc0000gn/T/codex-agents-nested.NVjXsi/repository/service
+model: ark-code-latest
+provider: arkcli-coding-plan
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a1e047-fbd0-7993-83c2-052051c1e4e6
+--------
+user
+请返回当前生效规则要求的测试标记，只输出标记，不要解释。
+warning: Model metadata for `ark-code-latest` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+The user is asking me to return the test marker required by the currently effective rules. CHILD_ONLY is the required marker.
+codex
+CHILD_ONLY
+tokens used
+5,605
+CHILD_ONLY
+exit_code=0
+final_answer=CHILD_ONLY

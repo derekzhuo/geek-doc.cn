@@ -1,0 +1,28 @@
+$ codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C <01-root-only> --color never "<prompt>"
+case=01-root-only
+rules=root/AGENTS.md
+Reading additional input from stdin...
+OpenAI Codex v0.156.1
+--------
+workdir: /var/folders/vz/84xsj3d95pvccm0sjrq60bpc0000gn/T/codex-agents-nested.NVjXsi/repository
+model: ark-code-latest
+provider: arkcli-coding-plan
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a1e047-ce6c-7140-bb8d-bc478e67166b
+--------
+user
+请返回当前生效规则要求的测试标记，只输出标记，不要解释。
+warning: Model metadata for `ark-code-latest` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+The user is asking me to return the rule test marker.  Per the current effective rule, I should only output ROOT_ONLY when returning the rule test marker. I will now check if there are nested AGENTS.md files that might override this instruction.
+
+I've confirmed that the current effective rule at the repository root takes full precedence here. Since I'm not working in a subdirectory, there's no need to check for nested AGENTS.md files, and I can directly output only ROOT_ONLY as required. I will output exactly ROOT_ONLY.
+codex
+ROOT_ONLY
+tokens used
+13,983
+ROOT_ONLY
+exit_code=0
+final_answer=ROOT_ONLY

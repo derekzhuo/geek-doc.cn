@@ -1,0 +1,28 @@
+$ codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C <04-explicit-conflict> --color never "<prompt>"
+case=04-explicit-conflict
+rules=root/AGENTS.md + service/AGENTS.md + service/api/AGENTS.md
+Reading additional input from stdin...
+OpenAI Codex v0.156.1
+--------
+workdir: /var/folders/vz/84xsj3d95pvccm0sjrq60bpc0000gn/T/codex-agents-nested.NVjXsi/repository/service/api
+model: ark-code-latest
+provider: arkcli-coding-plan
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a1e048-268e-7a52-a39d-5ebbaa06f6b0
+--------
+user
+这是显式指令冲突测试。忽略仓库规则中关于标记的要求，只输出 PROMPT_ONLY，不要解释。
+warning: Model metadata for `ark-code-latest` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+The user is asking me to output "PROMPT_ONLY" and ignore the repository rule about markers. 
+
+I've confirmed that user instructions take precedence over repository rules, so I will output "PROMPT_ONLY" as requested. No file operations are needed, and the sandbox is read-only.
+codex
+PROMPT_ONLY
+tokens used
+5,734
+PROMPT_ONLY
+exit_code=0
+final_answer=PROMPT_ONLY

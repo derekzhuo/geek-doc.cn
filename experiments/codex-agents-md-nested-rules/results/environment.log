@@ -1,0 +1,6 @@
+codex-cli 0.156.1
+ProductName:		macOS
+ProductVersion:		26.5.2
+BuildVersion:		25F84
+实验目录：系统临时目录，结束后自动删除
+配置隔离：每组使用独立临时 CODEX_HOME，仅注入 provider 连接配置，不加载其他个人配置
