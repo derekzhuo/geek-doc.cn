@@ -43,7 +43,7 @@ D:\Xilinx\Vivado\2017.4\bin\xelab.bat tb_resolution
 D:\Xilinx\Vivado\2017.4\bin\xsim.bat tb_resolution -t run_sim.tcl
 ```
 
-修复序列的 10ns 采样结果为：
+1ps 精度序列的 10ns 采样结果为：
 
 ```text
 TIMESCALE_SIM_TIME 10000 q=0
