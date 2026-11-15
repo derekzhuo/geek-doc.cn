@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **347 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **359 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -10,12 +10,12 @@
 |---|---:|
 | 开源 EDA 入门 | 12 |
 | 可运行模板 | 21 |
-| 排错案例 | 113 |
+| 排错案例 | 116 |
 | 数字设计实验 | 18 |
 | 芯片参考与器件实验 | 14 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
-| 综合实验 | 95 |
+| 综合实验 | 104 |
 | EDA 流程实操 | 46 |
 | OpenSTA / 时序分析 | 5 |
 | Vivado / XSim / XDC | 16 |
@@ -139,15 +139,17 @@
 | 排错案例 | [Verilator WIDTHEXPAND 零扩展与符号扩展对照](./ts-verilator-warn-widthexpand/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-widthexpand.html) | 日志/数据 |
 | 排错案例 | [Verilator WIDTHTRUNC 最小复现](./ts-verilator-warn-widthtrunc/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-widthtrunc.html) | 日志/数据 |
 | 排错案例 | [Verilator --Werror 与 LATCH 告警的致命升级](./ts-verilator-werror-fatal/) | [教程](https://geek-doc.cn/eda/ts-verilator-werror-fatal.html) | 见 README |
+| 排错案例 | [ts-vivado-place-30-640-ff-overflow](./ts-vivado-place-30-640-ff-overflow/) | [教程](https://geek-doc.cn/eda/ts-vivado-place-30-640-ff-overflow.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-synth-8-2715-syntax-error](./ts-vivado-synth-8-2715-syntax-error/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-2715-syntax-error.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-synth-8-327-case-latch](./ts-vivado-synth-8-327-case-latch/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-327-case-latch.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-synth-8-3352-multi-driven-net](./ts-vivado-synth-8-3352-multi-driven-net/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-3352-multi-driven-net.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-synth-8-439-module-not-found](./ts-vivado-synth-8-439-module-not-found/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-439-module-not-found.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-timing-wns-pipeline — 长组合逻辑时序违例与流水化修复对照](./ts-vivado-timing-wns-pipeline/) | [教程](https://geek-doc.cn/eda/ts-vivado-timing-wns-pipeline.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-xdc-create-clock-missing](./ts-vivado-xdc-create-clock-missing/) | [教程](https://geek-doc.cn/eda/ts-vivado-xdc-create-clock-missing.html) | 日志/数据 |
-| 排错案例 | [ts-vivado-timing-wns-pipeline — 长组合逻辑 WNS 违例与流水化修复](./ts-vivado-timing-wns-pipeline/) | [教程](https://geek-doc.cn/eda/ts-vivado-timing-wns-pipeline.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-assertion-failure](./ts-xsim-assertion-failure/) | [教程](https://geek-doc.cn/eda/ts-xsim-assertion-failure.html) | 日志/数据 |
+| 排错案例 | [ts-xsim-elab-module-not-found — XSim elaboration 找不到模块的报错与修复对照](./ts-xsim-elab-module-not-found/) | [教程](https://geek-doc.cn/eda/ts-xsim-elab-module-not-found.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复](./ts-xsim-elab-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 日志/数据 |
-| 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/ts-xsim-vcd-export-error.html) | 日志/数据 |
+| 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/ts-xsim-vcd-export-error.html) | 日志/数据 + 图/波形 |
 | 排错案例 | [ts-xsim-wave-invalid-command — XSim 报 `invalid command name "wave"`](./ts-xsim-wave-invalid-command/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-wave-invalid-command.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-x-propagation-hang](./ts-xsim-x-propagation-hang/) | [教程](https://geek-doc.cn/eda/ts-xsim-x-propagation-hang.html) | 日志/数据 |
 | 排错案例 | [Yosys 普通读取与 formal 模式下的断言对照](./ts-yosys-assertion-ignored/) | [教程](https://geek-doc.cn/eda/ts-yosys-assertion-ignored.html) | 见 README |
@@ -211,7 +213,7 @@
 | 验证方法学 | [SVA 断言入门：req/ack 协议的形式验证（sva-assertion-basics-sby）](./sva-assertion-basics-sby/) | [教程](https://geek-doc.cn/chip-design/verification/sva-assertion-basics-sby.html) | output/ |
 | 验证方法学 | [用 SVA 给 AXI-Lite slave 做形式检查（sva-check-axi-lite-sby）](./sva-check-axi-lite-sby/) | [教程](https://geek-doc.cn/chip-design/verification/sva-check-axi-lite-sby.html) | output/ |
 | 综合实验 | [AXI4 时序逐拍走查（axi4-timing-waveform-walkthrough）](./axi4-timing-waveform-walkthrough/) | [教程](https://geek-doc.cn/chip-design/intermediate/axi4-timing-waveform-walkthrough.html) | output/ |
-| 综合实验 | [codex-agents-md-nested-rules — 多级 AGENTS.md 嵌套优先级实测](./codex-agents-md-nested-rules/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-agents-md-nested-rules.html) | 见 README |
+| 综合实验 | [codex-agents-md-nested-rules — 多级 AGENTS.md 嵌套优先级实测](./codex-agents-md-nested-rules/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-agents-md-nested-rules.html) | 日志/数据 |
 | 综合实验 | [Codex config.toml 八字段探针](./codex-config-toml-fields/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-config-toml-fields.html) | output/ |
 | 综合实验 | [Codex filesystem MCP 最小复现](./codex-mcp-setup-practice/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-mcp-setup-practice.html) | 见 README |
 | 综合实验 | [codex-sandbox-approval-matrix — Codex 沙箱模式与审批策略组合矩阵](./codex-sandbox-approval-matrix/) | [教程](https://geek-doc.cn/ai-tools/codex/codex-sandbox-approval-matrix.html) | 日志/数据 |
@@ -221,6 +223,7 @@
 | 综合实验 | [自动向量化对照基准（循环形态、restrict、对齐与展开干预）](./cpp-autovectorization-pragmas-alignment/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-autovectorization-pragmas-alignment.html) | 日志/数据 |
 | 综合实验 | [异常、错误码与 Expected：三种错误传递机制的路径级成本基准](./cpp-exception-vs-error-code-cost/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-exception-vs-error-code-cost.html) | 日志/数据 |
 | 综合实验 | [输入解析四路径吞吐基准（cpp-iostream-scanf-custom-parser）](./cpp-iostream-scanf-custom-parser/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-iostream-scanf-custom-parser.html) | 日志/数据 |
+| 综合实验 | [四链接器全量/增量链接对照：ld.bfd / gold / lld / mold（cpp-linker-mold-lld-gold-benchmark）](./cpp-linker-mold-lld-gold-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-linker-mold-lld-gold-benchmark.html) | 日志/数据 |
 | 综合实验 | [C++ 链接时优化三档对照：无 LTO / 全量 LTO / ThinLTO（cpp-lto-thin-full-benchmark）](./cpp-lto-thin-full-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-lto-thin-full-benchmark.html) | 日志/数据 |
 | 综合实验 | [开寻址哈希表（线性探测）vs std::unordered_map 负载因子扫档](./cpp-open-addressing-hash-table/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-open-addressing-hash-table.html) | 日志/数据 |
 | 综合实验 | [C++ 剖面引导优化两阶段基准：baseline / 插桩训练 / PGO 重建（cpp-pgo-two-stage-benchmark）](./cpp-pgo-two-stage-benchmark/) | [教程](https://geek-doc.cn/concepts/cpp-perf/cpp-pgo-two-stage-benchmark.html) | 日志/数据 |
@@ -246,11 +249,14 @@
 | 综合实验 | [iverilog timescale 继承警告复现](./iverilog-timescale-inherit/) | [教程](https://geek-doc.cn/eda/ts-iverilog-timescale-inherit.html) | 日志/数据 |
 | 综合实验 | [iverilog 宏未定义报错（macro undefined）复现与修复](./iverilog-undefined-macro/) | [教程](https://geek-doc.cn/eda/ts-iverilog-undefined-macro.html) | 日志/数据 |
 | 综合实验 | [iverilog 仿真跑完无波形输出（$dumpfile/$dumpvars 缺漏排查）](./iverilog-vcd-dumpvars-missing/) | [教程](https://geek-doc.cn/eda/ts-iverilog-vcd-dumpvars-missing.html) | 见 README |
+| 综合实验 | [Icarus Verilog 与 Verilator 双仿真器最小对照（iverilog-verilator-first-lesson）](./iverilog-verilator-first-lesson/) | [教程](https://geek-doc.cn/eda/onboarding/iverilog-first-lesson.html) | 见 README |
 | 综合实验 | [kvm-not-available-errors：KVM 不可用的三类报错与 TCG 兜底](./kvm-not-available-errors/) | [教程](https://geek-doc.cn/soc-qemu/kvm-not-available-errors.html) | 日志/数据 |
 | 综合实验 | [Yosys 逻辑等价检查（LEC）：RTL vs 综合网表（lec-yosys-equiv-opt）](./lec-yosys-equiv-opt/) | [教程](https://geek-doc.cn/chip-design/intermediate/lec-yosys-equiv-opt.html) | output/ |
 | 综合实验 | [CFS nice 权重与 CPU 时间占比对照基准](./linux-cfs-nice-weight-throughput/) | [教程](https://geek-doc.cn/concepts/process/linux-cfs-nice-weight-throughput.html) | 日志/数据 |
+| 综合实验 | [cgroup v2 cpu.max 带宽限制与节流延迟对照基准](./linux-cgroup-v2-cpu-max-throttling/) | [教程](https://geek-doc.cn/concepts/container/linux-cgroup-v2-cpu-max-throttling.html) | 日志/数据 |
 | 综合实验 | [STREAM 风格内存带宽基准（Copy / Scale / Add / Triad）](./linux-memory-bandwidth-stream-bench/) | [教程](https://geek-doc.cn/concepts/memory/linux-memory-bandwidth-stream-bench.html) | 日志/数据 |
 | 综合实验 | [minor/major 缺页单次成本对照基准](./linux-page-fault-minor-major-cost/) | [教程](https://geek-doc.cn/concepts/process/linux-page-fault-minor-major-cost.html) | 日志/数据 |
+| 综合实验 | [THP 三策略（never / madvise / always）收益与代价对照基准](./linux-thp-madvise-always-benefit/) | [教程](https://geek-doc.cn/concepts/memory/linux-thp-madvise-always-benefit.html) | 日志/数据 |
 | 综合实验 | [openlane-antenna-violation：OpenLANE 天线违例复现与修复策略对照](./openlane-antenna-violation/) | [教程](https://geek-doc.cn/eda/ts-openlane-antenna-violation.html) | 日志/数据 |
 | 综合实验 | [openlane-config-key-unknown](./openlane-config-key-unknown/) | [教程](https://geek-doc.cn/eda/ts-openlane-config-key-unknown.html) | 日志/数据 |
 | 综合实验 | [openlane-fastroute-congestion：OpenLANE FastRoute 布线拥塞复现](./openlane-fastroute-congestion/) | [教程](https://geek-doc.cn/eda/ts-openlane-fastroute-congestion-fail.html) | 日志/数据 |
@@ -261,10 +267,12 @@
 | 综合实验 | [openlane-resume-from-tag](./openlane-resume-from-tag/) | [教程](https://geek-doc.cn/eda/ts-openlane-resume-from-tag.html) | 日志/数据 |
 | 综合实验 | [openlane-wsl-path-issue：Docker bind mount 盘符路径报错复现](./openlane-wsl-path-issue/) | [教程](https://geek-doc.cn/eda/ts-openlane-wsl-path-issue.html) | 日志/数据 |
 | 综合实验 | [param-fsm-binary-onehot](./param-fsm-binary-onehot/) | [教程](https://geek-doc.cn/chip-design/beginner/param-fsm-binary-onehot.html) | 见 README |
+| 综合实验 | [qcow2 镜像打不开的三类故障复现](./qcow2-image-open-errors/) | [教程](https://geek-doc.cn/soc-qemu/qcow2-image-open-errors.html) | 见 README |
 | 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | 见 README |
 | 综合实验 | [qemu-direct-kernel-initramfs：跳过引导加载器直接引导 RISC-V 内核](./qemu-direct-kernel-initramfs/) | [教程](https://geek-doc.cn/soc-qemu/qemu-direct-kernel-initramfs.html) | 日志/数据 |
 | 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | 见 README |
 | 综合实验 | [qemu-install-linux-distro：两大包管理体系下装齐 QEMU](./qemu-install-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-linux-distro.html) | 日志/数据 |
+| 综合实验 | [QEMU -kernel/-bios 加载失败四类报错复现](./qemu-kernel-not-found-error/) | [教程](https://geek-doc.cn/soc-qemu/qemu-kernel-not-found-error.html) | 见 README |
 | 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | 见 README |
 | 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | 见 README |
 | 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | 见 README |
@@ -296,10 +304,13 @@
 | 综合实验 | [verilator-warn-unusedparam](./verilator-warn-unusedparam/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-unusedparam.html) | 日志/数据 |
 | 综合实验 | [Verilator VARHIDDEN 变量遮蔽警告复现实验](./verilator-warn-varhidden/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-varhidden.html) | 日志/数据 |
 | 综合实验 | [yosys-check-combo-loop](./yosys-check-combo-loop/) | [教程](https://geek-doc.cn/eda/ts-yosys-check-combo-loop.html) | 见 README |
+| 综合实验 | [Yosys 手工 pass 链与 synth 宏对照实验](./yosys-custom-pass-chain/) | [教程](https://geek-doc.cn/eda/flow-yosys-custom-pass-chain.html) | 见 README |
+| 综合实验 | [Yosys 综合入门：一份计数器 RTL 综合后变成了什么（yosys-first-lesson）](./yosys-first-lesson/) | [教程](https://geek-doc.cn/eda/onboarding/yosys-first-lesson.html) | 见 README |
 | 综合实验 | [yosys-hierarchy-check-fail](./yosys-hierarchy-check-fail/) | [教程](https://geek-doc.cn/eda/ts-yosys-hierarchy-check-fail.html) | 见 README |
 | 综合实验 | [yosys-memory-not-inferred](./yosys-memory-not-inferred/) | [教程](https://geek-doc.cn/eda/ts-yosys-memory-not-inferred.html) | 见 README |
 | 综合实验 | [yosys-proc-dlatch-inferred](./yosys-proc-dlatch-inferred/) | [教程](https://geek-doc.cn/eda/ts-yosys-proc-dlatch-inferred.html) | 见 README |
 | 综合实验 | [yosys-read-verilog-include：Yosys include 文件找不到（Can't open include file）复现与修复](./yosys-read-verilog-include/) | [教程](https://geek-doc.cn/eda/ts-yosys-read-verilog-include.html) | 见 README |
+| 综合实验 | [Yosys sat 形式证明实验](./yosys-sat-proof/) | [教程](https://geek-doc.cn/eda/flow-yosys-sat-proof.html) | 见 README |
 | 综合实验 | [yosys-stat-area-zero](./yosys-stat-area-zero/) | [教程](https://geek-doc.cn/eda/ts-yosys-stat-area-zero.html) | 见 README |
 | 综合实验 | [yosys-synth-top-not-set](./yosys-synth-top-not-set/) | [教程](https://geek-doc.cn/eda/ts-yosys-synth-top-not-set.html) | 见 README |
 | 综合实验 | [Yosys 综合流程与 stat 报告解读（yosys-synthesis-flow-report）](./yosys-synthesis-flow-report/) | [教程](https://geek-doc.cn/chip-design/beginner/yosys-synthesis-flow-report.html) | output/ |
