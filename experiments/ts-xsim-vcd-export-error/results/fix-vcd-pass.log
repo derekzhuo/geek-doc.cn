@@ -1,0 +1,48 @@
+===== 2026-11-16T02:11:45+08:00 =====
+$ xvlog.bat dut_toggle.v tb_toggle.v; xelab.bat -debug typical tb_toggle; xsim.bat tb_toggle -t xsim_vcd_fixed.tcl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vcd-export-error/dut_toggle.v" into library work
+INFO: [VRFC 10-311] analyzing module dut_toggle
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vcd-export-error/tb_toggle.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_toggle
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb_toggle 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.dut_toggle
+Compiling module work.tb_toggle
+Built simulation snapshot work.tb_toggle
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-vcd-export-error/xsim.dir/work.tb_toggle/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov 16 02:11:48 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_toggle/xsim_script.tcl
+# xsim {work.tb_toggle} -autoloadwcfg -tclbatch {xsim_vcd_fixed.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source xsim_vcd_fixed.tcl
+## open_vcd trace.vcd
+## log_vcd /tb_toggle/dut/*
+## run all
+$finish called at time : 313 ns : File "C:/eda-lab/b1/ts-xsim-vcd-export-error/tb_toggle.v" Line 19
+## close_vcd
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 16 02:11:51 2026...
+
+Name      Length LastWriteTime     
+----      ------ -------------     
+trace.vcd   1362 2026/11/16 2:11:50

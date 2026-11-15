@@ -1,0 +1,44 @@
+===== 2026-11-16T02:11:38+08:00 =====
+$ xvlog.bat dut_toggle.v tb_toggle.v; xelab.bat tb_toggle; xsim.bat tb_toggle -t xsim_vcd_bad.tcl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vcd-export-error/dut_toggle.v" into library work
+INFO: [VRFC 10-311] analyzing module dut_toggle
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vcd-export-error/tb_toggle.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_toggle
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_toggle 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.dut_toggle
+Compiling module work.tb_toggle
+Built simulation snapshot work.tb_toggle
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-vcd-export-error/xsim.dir/work.tb_toggle/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov 16 02:11:40 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_toggle/xsim_script.tcl
+# xsim {work.tb_toggle} -autoloadwcfg -tclbatch {xsim_vcd_bad.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source xsim_vcd_bad.tcl
+## if {[catch {log_vcd /tb_toggle/dut/*} msg]} {
+##   puts "EXPECTED_SIMULATOR_45_10 $msg"
+##   quit
+## }
+EXPECTED_SIMULATOR_45_10 ERROR: [Simulator 45-10] The current simulation was compiled without trace information.  To perform the requested operation, please recompile the design with -debug all or typical.
+
+INFO: [Common 17-206] Exiting xsim at Mon Nov 16 02:11:44 2026...

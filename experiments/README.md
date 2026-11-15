@@ -146,7 +146,7 @@
 | 排错案例 | [ts-vivado-xdc-create-clock-missing](./ts-vivado-xdc-create-clock-missing/) | [教程](https://geek-doc.cn/eda/ts-vivado-xdc-create-clock-missing.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-assertion-failure](./ts-xsim-assertion-failure/) | [教程](https://geek-doc.cn/eda/ts-xsim-assertion-failure.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复](./ts-xsim-elab-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 日志/数据 |
-| 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/xsim-vcd-wlf-export.html) | 见 README |
+| 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/ts-xsim-vcd-export-error.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-wave-invalid-command — XSim 报 `invalid command name "wave"`](./ts-xsim-wave-invalid-command/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-wave-invalid-command.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-x-propagation-hang](./ts-xsim-x-propagation-hang/) | [教程](https://geek-doc.cn/eda/ts-xsim-x-propagation-hang.html) | 日志/数据 |
 | 排错案例 | [Yosys 普通读取与 formal 模式下的断言对照](./ts-yosys-assertion-ignored/) | [教程](https://geek-doc.cn/eda/ts-yosys-assertion-ignored.html) | 见 README |

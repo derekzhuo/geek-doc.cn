@@ -1,0 +1,22 @@
+===== 2026-11-16T02:11:53+08:00 =====
+$ xsim.bat tb_toggle -t xsim_wdb.tcl
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_toggle/xsim_script.tcl
+# xsim {work.tb_toggle} -autoloadwcfg -tclbatch {xsim_wdb.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source xsim_wdb.tcl
+## log_wave -r /
+## run all
+$finish called at time : 313 ns : File "C:/eda-lab/b1/ts-xsim-vcd-export-error/tb_toggle.v" Line 19
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 16 02:11:55 2026...
+
+Name               Length
+----               ------
+work.tb_toggle.wdb   5819
