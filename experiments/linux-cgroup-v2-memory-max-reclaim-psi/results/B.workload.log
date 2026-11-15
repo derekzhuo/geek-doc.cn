@@ -1,0 +1,11 @@
+member_cgroup=0::/pp-lp07
+effective: memory.max=max memory.high=314572800 memory.swap.max=max
+[22ms] touched   64 MiB, RSS   65 MiB
+[44ms] touched  128 MiB, RSS  129 MiB
+[66ms] touched  192 MiB, RSS  193 MiB
+[87ms] touched  256 MiB, RSS  257 MiB
+[142ms] touched  320 MiB, RSS  300 MiB
+[210ms] touched  384 MiB, RSS  300 MiB
+[276ms] touched  448 MiB, RSS  300 MiB
+[327ms] touched  500 MiB, RSS  300 MiB
+[327ms] done, 500 MiB touched, checksum 8, RSS 300 MiB

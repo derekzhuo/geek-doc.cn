@@ -1,0 +1,12 @@
+cell=zN-random exit=0 elapsed_s=4.071459129
+pswpout_delta=161861 pages
+psi_some_delta_us=1657577 psi_full_delta_us=1657577
+peak_swap_current=654331904 bytes peak_zswap_stored=0 pages
+zswap_before: stored_pages=0 pool_total_size=0 written_back_pages=0 duplicate_entry=0 
+zswap_after:  stored_pages=0 pool_total_size=0 written_back_pages=0 duplicate_entry=0  (进程退出后条目即释放，看峰值)
+memory.events:
+low 0
+high 0
+max 4020
+oom 0
+oom_kill 0

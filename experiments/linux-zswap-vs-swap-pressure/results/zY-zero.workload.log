@@ -1,0 +1,32 @@
+member_cgroup=0::/pp-lp19
+effective: memory.max=1258291200 memory.swap.max=1258291200
+[25ms] touched   64 MiB, RSS   65 MiB
+[47ms] touched  128 MiB, RSS  129 MiB
+[69ms] touched  192 MiB, RSS  193 MiB
+[91ms] touched  256 MiB, RSS  257 MiB
+[112ms] touched  320 MiB, RSS  321 MiB
+[133ms] touched  384 MiB, RSS  385 MiB
+[154ms] touched  448 MiB, RSS  449 MiB
+[175ms] touched  512 MiB, RSS  513 MiB
+[197ms] touched  576 MiB, RSS  577 MiB
+[218ms] touched  640 MiB, RSS  641 MiB
+[239ms] touched  704 MiB, RSS  705 MiB
+[261ms] touched  768 MiB, RSS  769 MiB
+[282ms] touched  832 MiB, RSS  833 MiB
+[303ms] touched  896 MiB, RSS  897 MiB
+[325ms] touched  960 MiB, RSS  961 MiB
+[346ms] touched 1024 MiB, RSS 1025 MiB
+[367ms] touched 1088 MiB, RSS 1089 MiB
+[388ms] touched 1152 MiB, RSS 1153 MiB
+[486ms] touched 1216 MiB, RSS 1198 MiB
+[564ms] touched 1280 MiB, RSS 1198 MiB
+[637ms] touched 1344 MiB, RSS 1198 MiB
+[716ms] touched 1408 MiB, RSS 1198 MiB
+[791ms] touched 1472 MiB, RSS 1198 MiB
+[864ms] touched 1536 MiB, RSS 1198 MiB
+[938ms] touched 1600 MiB, RSS 1198 MiB
+[1008ms] touched 1664 MiB, RSS 1198 MiB
+[1084ms] touched 1728 MiB, RSS 1197 MiB
+[1156ms] touched 1792 MiB, RSS 1197 MiB
+[1165ms] touched 1800 MiB, RSS 1197 MiB
+[1165ms] done, 1800 MiB touched, checksum 29, RSS 1197 MiB

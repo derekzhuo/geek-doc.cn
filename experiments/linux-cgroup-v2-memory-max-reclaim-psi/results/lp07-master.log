@@ -1,0 +1,170 @@
+mkswap: /swapfile-lp: warning: wiping old swap signature.
+NAME         TYPE SIZE USED PRIO
+/swapfile-lp file   2G   0B   -2
+==================== PHASE A ====================
+---- A before: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- A before: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- A before: memory.current / max / high / swap.max ----
+memory.current=0
+memory.max=max
+memory.high=max
+memory.swap.max=max
+member_cgroup=0::/pp-lp07
+effective: memory.max=max memory.high=max memory.swap.max=max
+[23ms] touched   64 MiB, RSS   65 MiB
+[45ms] touched  128 MiB, RSS  129 MiB
+[67ms] touched  192 MiB, RSS  193 MiB
+[88ms] touched  256 MiB, RSS  257 MiB
+[110ms] touched  320 MiB, RSS  321 MiB
+[131ms] touched  384 MiB, RSS  385 MiB
+[152ms] touched  448 MiB, RSS  449 MiB
+[169ms] touched  500 MiB, RSS  501 MiB
+[169ms] done, 500 MiB touched, checksum 8, RSS 501 MiB
+phase=A exit=0 elapsed_s=.193784159
+---- A after: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- A after: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- A after: memory.current / max / high / swap.max ----
+memory.current=8192
+memory.max=max
+memory.high=max
+memory.swap.max=max
+==================== PHASE B ====================
+---- B before: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- B before: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- B before: memory.current / max / high / swap.max ----
+memory.current=0
+memory.max=max
+memory.high=314572800
+memory.swap.max=max
+member_cgroup=0::/pp-lp07
+effective: memory.max=max memory.high=314572800 memory.swap.max=max
+[22ms] touched   64 MiB, RSS   65 MiB
+[44ms] touched  128 MiB, RSS  129 MiB
+[66ms] touched  192 MiB, RSS  193 MiB
+[87ms] touched  256 MiB, RSS  257 MiB
+[142ms] touched  320 MiB, RSS  300 MiB
+[210ms] touched  384 MiB, RSS  300 MiB
+[276ms] touched  448 MiB, RSS  300 MiB
+[327ms] touched  500 MiB, RSS  300 MiB
+[327ms] done, 500 MiB touched, checksum 8, RSS 300 MiB
+phase=B exit=0 elapsed_s=.371812733
+---- B after: memory.events ----
+low 0
+high 1098
+max 0
+oom 0
+oom_kill 0
+---- B after: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=152214
+full avg10=0.00 avg60=0.00 avg300=0.00 total=152214
+---- B after: memory.current / max / high / swap.max ----
+memory.current=8192
+memory.max=max
+memory.high=314572800
+memory.swap.max=max
+==================== PHASE C ====================
+---- C before: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- C before: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- C before: memory.current / max / high / swap.max ----
+memory.current=0
+memory.max=314572800
+memory.high=max
+memory.swap.max=max
+member_cgroup=0::/pp-lp07
+effective: memory.max=314572800 memory.high=max memory.swap.max=max
+[23ms] touched   64 MiB, RSS   65 MiB
+[45ms] touched  128 MiB, RSS  129 MiB
+[67ms] touched  192 MiB, RSS  193 MiB
+[88ms] touched  256 MiB, RSS  257 MiB
+[142ms] touched  320 MiB, RSS  300 MiB
+[212ms] touched  384 MiB, RSS  300 MiB
+[279ms] touched  448 MiB, RSS  300 MiB
+[333ms] touched  500 MiB, RSS  300 MiB
+[334ms] done, 500 MiB touched, checksum 8, RSS 300 MiB
+phase=C exit=0 elapsed_s=.376916325
+---- C after: memory.events ----
+low 0
+high 0
+max 1097
+oom 0
+oom_kill 0
+---- C after: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=91484
+full avg10=0.00 avg60=0.00 avg300=0.00 total=91484
+---- C after: memory.current / max / high / swap.max ----
+memory.current=4096
+memory.max=314572800
+memory.high=max
+memory.swap.max=max
+==================== PHASE D ====================
+---- D before: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- D before: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- D before: memory.current / max / high / swap.max ----
+memory.current=0
+memory.max=314572800
+memory.high=max
+memory.swap.max=0
+member_cgroup=0::/pp-lp07
+effective: memory.max=314572800 memory.high=max memory.swap.max=0
+[24ms] touched   64 MiB, RSS   65 MiB
+[46ms] touched  128 MiB, RSS  129 MiB
+[69ms] touched  192 MiB, RSS  193 MiB
+[90ms] touched  256 MiB, RSS  257 MiB
+phase=D exit=137 elapsed_s=.144905697
+---- D after: memory.events ----
+low 0
+high 0
+max 37
+oom 1
+oom_kill 1
+---- D after: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=586
+full avg10=0.00 avg60=0.00 avg300=0.00 total=586
+---- D after: memory.current / max / high / swap.max ----
+memory.current=16384
+memory.max=314572800
+memory.high=max
+memory.swap.max=0
+==================== dmesg (OOM 证据) ====================
+[ 4400.913985] memtouch invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=0
+[ 4400.919186]  oom_kill_process.cold+0xb/0x10
+[ 4400.932844] [  pid  ]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name
+[ 4400.932850] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=pp-lp07,mems_allowed=0,oom_memcg=/pp-lp07,task_memcg=/pp-lp07,task=memtouch,pid=27528,uid=0
+[ 4400.932863] Memory cgroup out of memory: Killed process 27528 (memtouch) total-vm:330476kB, anon-rss:306528kB, file-rss:1632kB, shmem-rss:0kB, UID:0 pgtables:644kB oom_score_adj:0
+ALL DONE
+TRAP exit rc=0 line=1 cmd=echo "ALL DONE"

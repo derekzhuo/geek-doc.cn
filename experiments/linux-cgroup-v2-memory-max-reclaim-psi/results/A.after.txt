@@ -1,0 +1,14 @@
+---- A after: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- A after: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- A after: memory.current / max / high / swap.max ----
+memory.current=8192
+memory.max=max
+memory.high=max
+memory.swap.max=max

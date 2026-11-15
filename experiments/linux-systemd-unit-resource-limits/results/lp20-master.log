@@ -1,0 +1,149 @@
+==== 环境 ====
+systemd 249 (249.11-0ubuntu3.22)
+cgroup2fs
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+2
+==================== CASE A ====================
+Running as unit: pp-lp20-test.service
+cgroup path: /system.slice/pp-lp20-test.service
+---- systemctl show 资源指令落点 ----
+ControlGroup=/system.slice/pp-lp20-test.service
+CPUWeight=[not set]
+IOWeight=[not set]
+MemoryHigh=infinity
+MemoryMax=62914560
+MemorySwapMax=0
+---- cgroup v2 原始接口对照 ----
+memory.max = 62914560
+memory.high = max
+memory.swap.max = 0
+cpu.weight = 100
+io.weight = default 100
+---- 运行中轮询（每 0.5s，最多 50 次） ----
+tick=0 state=active high 0;max 0;oom_kill 0;
+tick=1 state=deactivating high 0;max 779;oom_kill 1;
+tick=2 cgroup 目录已消失
+---- 终态 ----
+Result=oom-kill
+ExecMainStatus=2
+OOMScoreAdjust=0
+ActiveState=failed
+SubState=failed
+journal: Nov 16 02:31:22 pp-exp stress-ng[24960]: stress-ng: info:  [24960] setting to a 20 second run per stressor
+journal: Nov 16 02:31:22 pp-exp stress-ng[24960]: stress-ng: info:  [24960] dispatching hogs: 1 vm
+journal: Nov 16 02:31:22 pp-exp stress-ng[24960]: system: 'pp-exp' Linux 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64
+journal: Nov 16 02:31:22 pp-exp stress-ng[24960]: memory (MB): total 7619.82, free 6955.88, shared 2.53, buffer 7.23, swap 2048.00, free swap 2012.96
+journal: Nov 16 02:31:22 pp-exp systemd[1]: pp-lp20-test.service: A process of this unit has been killed by the OOM killer.
+journal: Nov 16 02:31:23 pp-exp stress-ng[24962]: memory (MB): total 7619.82, free 6955.23, shared 4.65, buffer 7.23, swap 2048.00, free swap 2012.96
+journal: Nov 16 02:31:23 pp-exp stress-ng[24960]: stress-ng: error: [24960] process 24962 (stress-ng-vm) terminated with an error, exit status=5 (killed by signal)
+journal: Nov 16 02:31:23 pp-exp stress-ng[24960]: stress-ng: info:  [24960] unsuccessful run completed in 0.57s
+journal: Nov 16 02:31:23 pp-exp systemd[1]: pp-lp20-test.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+journal: Nov 16 02:31:23 pp-exp systemd[1]: pp-lp20-test.service: Failed with result 'oom-kill'.
+==================== CASE B ====================
+Running as unit: pp-lp20-test.service
+cgroup path: /system.slice/pp-lp20-test.service
+---- systemctl show 资源指令落点 ----
+ControlGroup=/system.slice/pp-lp20-test.service
+CPUWeight=[not set]
+IOWeight=[not set]
+MemoryHigh=83886080
+MemoryMax=infinity
+MemorySwapMax=125829120
+---- cgroup v2 原始接口对照 ----
+memory.max = max
+memory.high = 83886080
+memory.swap.max = 125829120
+cpu.weight = 100
+io.weight = default 100
+---- 运行中轮询（每 0.5s，最多 50 次） ----
+tick=0 state=active high 0;max 0;oom_kill 0;
+tick=1 state=active high 467;max 0;oom_kill 0;
+tick=2 state=active high 817;max 0;oom_kill 0;
+tick=3 state=active high 1323;max 0;oom_kill 0;
+tick=4 state=active high 1711;max 0;oom_kill 0;
+tick=5 state=active high 2071;max 0;oom_kill 0;
+tick=6 state=active high 2417;max 0;oom_kill 0;
+tick=7 state=active high 2728;max 0;oom_kill 0;
+tick=8 state=active high 3180;max 0;oom_kill 0;
+tick=9 state=active high 3565;max 0;oom_kill 0;
+tick=10 state=active high 3824;max 0;oom_kill 0;
+tick=11 state=active high 4218;max 0;oom_kill 0;
+tick=12 state=active high 4473;max 0;oom_kill 0;
+tick=13 state=active high 4857;max 0;oom_kill 0;
+tick=14 state=active high 5123;max 0;oom_kill 0;
+tick=15 state=active high 5482;max 0;oom_kill 0;
+tick=16 state=active high 5766;max 0;oom_kill 0;
+tick=17 state=active high 6121;max 0;oom_kill 0;
+tick=18 state=active high 6416;max 0;oom_kill 0;
+tick=19 state=active high 6757;max 0;oom_kill 0;
+tick=20 state=active high 7069;max 0;oom_kill 0;
+tick=21 state=active high 7403;max 0;oom_kill 0;
+tick=22 state=active high 7707;max 0;oom_kill 0;
+tick=23 state=active high 8033;max 0;oom_kill 0;
+tick=24 state=active high 8338;max 0;oom_kill 0;
+tick=25 state=active high 8664;max 0;oom_kill 0;
+tick=26 state=active high 8964;max 0;oom_kill 0;
+tick=27 state=active high 9240;max 0;oom_kill 0;
+tick=28 state=active high 9286;max 0;oom_kill 0;
+tick=29 state=active high 9334;max 0;oom_kill 0;
+tick=30 state=active high 9382;max 0;oom_kill 0;
+tick=31 state=active high 9417;max 0;oom_kill 0;
+tick=32 state=active high 9417;max 0;oom_kill 0;
+tick=33 state=active high 9418;max 0;oom_kill 0;
+tick=34 state=active high 9439;max 0;oom_kill 0;
+tick=35 state=active high 9647;max 0;oom_kill 0;
+tick=36 state=active high 10159;max 0;oom_kill 0;
+tick=37 state=active high 10504;max 0;oom_kill 0;
+tick=38 state=active high 10641;max 0;oom_kill 0;
+tick=39 state=active high 10695;max 0;oom_kill 0;
+tick=40 state=active high 10746;max 0;oom_kill 0;
+tick=41 state=active high 10796;max 0;oom_kill 0;
+tick=42 state=active high 10822;max 0;oom_kill 0;
+tick=43 state=active high 10948;max 0;oom_kill 0;
+tick=44 state=active high 10957;max 0;oom_kill 0;
+tick=45 cgroup 目录已消失
+---- 终态 ----
+Result=success
+ExecMainStatus=0
+OOMScoreAdjust=0
+ActiveState=inactive
+SubState=dead
+journal: Nov 16 02:31:23 pp-exp systemd[1]: pp-lp20-test.service: Failed with result 'oom-kill'.
+journal: Nov 16 02:31:23 pp-exp systemd[1]: Started /usr/bin/stress-ng --vm 1 --vm-bytes 120M --timeout 20s.
+journal: Nov 16 02:31:23 pp-exp stress-ng[24996]: invoked with '/usr/bin/stress-ng --vm 1 --vm-bytes 120M --timeout 20s' by user 0 'root'
+journal: Nov 16 02:31:23 pp-exp stress-ng[24996]: system: 'pp-exp' Linux 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64
+journal: Nov 16 02:31:23 pp-exp stress-ng[24996]: stress-ng: info:  [24996] setting to a 20 second run per stressor
+journal: Nov 16 02:31:23 pp-exp stress-ng[24996]: stress-ng: info:  [24996] dispatching hogs: 1 vm
+journal: Nov 16 02:31:23 pp-exp stress-ng[24996]: memory (MB): total 7619.82, free 6955.23, shared 2.61, buffer 7.23, swap 2048.00, free swap 2012.96
+journal: Nov 16 02:31:46 pp-exp stress-ng[24996]: stress-ng: info:  [24996] successful run completed in 22.66s
+journal: Nov 16 02:31:46 pp-exp systemd[1]: pp-lp20-test.service: Deactivated successfully.
+journal: Nov 16 02:31:46 pp-exp systemd[1]: pp-lp20-test.service: Consumed 4.545s CPU time.
+---- 内核 OOM 证据（dmesg） ----
+[ 3901.357697] stress-ng invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=1000
+[ 3901.376637] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=pp-lp20-test.service,mems_allowed=0,oom_memcg=/system.slice/pp-lp20-test.service,task_memcg=/system.slice/pp-lp20-test.service,task=stress-ng,pid=23967,uid=0
+[ 3901.376651] Memory cgroup out of memory: Killed process 23967 (stress-ng) total-vm:217836kB, anon-rss:58456kB, file-rss:776kB, shmem-rss:32kB, UID:0 pgtables:316kB oom_score_adj:1000
+[ 4021.695963] stress-ng invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=1000
+[ 4021.715630] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=pp-lp20-test.service,mems_allowed=0,oom_memcg=/system.slice/pp-lp20-test.service,task_memcg=/system.slice/pp-lp20-test.service,task=stress-ng,pid=24965,uid=0
+[ 4021.715640] Memory cgroup out of memory: Killed process 24965 (stress-ng) total-vm:217836kB, anon-rss:58444kB, file-rss:840kB, shmem-rss:32kB, UID:0 pgtables:328kB oom_score_adj:1000
+==================== CASE C CPUWeight 对照（超额订阅） ====================
+Running as unit: pp-w1.service
+Running as unit: pp-w2.service
+[t4] pp-w1 cg=/system.slice/pp-w1.service weight=100 state=active
+    usage_usec 736088
+    nr_periods 0
+    nr_throttled 0
+[t4] pp-w2 cg=/system.slice/pp-w2.service weight=1000 state=active
+    usage_usec 7274316
+    nr_periods 0
+    nr_throttled 0
+[t10] pp-w1 cg=/system.slice/pp-w1.service weight=100 state=active
+    usage_usec 1840491
+    nr_periods 0
+    nr_throttled 0
+[t10] pp-w2 cg=/system.slice/pp-w2.service weight=1000 state=active
+    usage_usec 18087308
+    nr_periods 0
+    nr_throttled 0
+pp-w1 终态: success 0 
+pp-w2 终态: success 0 
+ALL DONE

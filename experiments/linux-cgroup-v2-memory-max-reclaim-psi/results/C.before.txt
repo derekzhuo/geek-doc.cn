@@ -1,0 +1,14 @@
+---- C before: memory.events ----
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+---- C before: memory.pressure ----
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+---- C before: memory.current / max / high / swap.max ----
+memory.current=0
+memory.max=314572800
+memory.high=max
+memory.swap.max=max
