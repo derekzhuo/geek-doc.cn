@@ -34,7 +34,7 @@ ERROR: [Simulator 45-10] The current simulation was compiled without trace infor
 To perform the requested operation, please recompile the design with -debug all or typical.
 ```
 
-修复时先删除旧快照，避免 XSim 继续加载没有调试信息的 snapshot。Vivado 2017.4 的 `xelab` 不支持 `--force`，不要用这个选项代替清理：
+修复时先删除旧快照，避免 XSim 继续加载没有调试信息的 snapshot：
 
 ```bat
 rmdir /s /q xsim.dir
