@@ -144,6 +144,7 @@
 | 排错案例 | [ts-vivado-synth-8-3352-multi-driven-net](./ts-vivado-synth-8-3352-multi-driven-net/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-3352-multi-driven-net.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-synth-8-439-module-not-found](./ts-vivado-synth-8-439-module-not-found/) | [教程](https://geek-doc.cn/eda/ts-vivado-synth-8-439-module-not-found.html) | 日志/数据 |
 | 排错案例 | [ts-vivado-xdc-create-clock-missing](./ts-vivado-xdc-create-clock-missing/) | [教程](https://geek-doc.cn/eda/ts-vivado-xdc-create-clock-missing.html) | 日志/数据 |
+| 排错案例 | [ts-vivado-timing-wns-pipeline — 长组合逻辑 WNS 违例与流水化修复](./ts-vivado-timing-wns-pipeline/) | [教程](https://geek-doc.cn/eda/ts-vivado-timing-wns-pipeline.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-assertion-failure](./ts-xsim-assertion-failure/) | [教程](https://geek-doc.cn/eda/ts-xsim-assertion-failure.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-elab-timescale — xelab 报「模块缺 timescale」复现与修复](./ts-xsim-elab-timescale/) | [教程](https://geek-doc.cn/fpga/beginner/ts-xsim-elab-timescale.html) | 日志/数据 |
 | 排错案例 | [ts-xsim-vcd-export-error — XSim 批处理导出 VCD 的报错与修复对照](./ts-xsim-vcd-export-error/) | [教程](https://geek-doc.cn/eda/ts-xsim-vcd-export-error.html) | 日志/数据 |
