@@ -1,0 +1,7 @@
+===== 2026-11-17T01:50:56+08:00 =====
+$ xvlog.bat dff_bad.v (cwd C:\eda-lab\b1\ts-xsim-vrfc-10-1412-syntax-error)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-1412-syntax-error/dff_bad.v" into library work
+INFO: [VRFC 10-311] analyzing module dff_bad
+ERROR: [VRFC 10-1412] syntax error near endmodule [C:/eda-lab/b1/ts-xsim-vrfc-10-1412-syntax-error/dff_bad.v:11]
+ERROR: [VRFC 10-1040] module dff_bad ignored due to previous errors [C:/eda-lab/b1/ts-xsim-vrfc-10-1412-syntax-error/dff_bad.v:4]
+EXPECTED_XVLOG_SYNTAX_ERROR
