@@ -1,6 +1,5 @@
-// V10 fixed case: same shift-register structure, only 2000 FFs,
-// which fits xc7a35t comfortably and completes place_design.
-module v10_overflow_fixed (
+// Same shift-register structure reduced to 2000 flip-flops, within xc7a35t capacity.
+module ff_overflow_fixed (
     input  wire clk,
     input  wire rst,
     input  wire d,

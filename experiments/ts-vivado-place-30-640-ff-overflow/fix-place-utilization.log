@@ -1,5 +1,5 @@
-# command: vivado.bat -mode batch -source v10_fix.tcl  (cwd C:\eda-lab\b1\ts-vivado-place-30-640-ff-overflow)
-# date: 2026-11-15T01:42:17+08:00
+# command: vivado.bat -mode batch -source run_place_fixed.tcl  (cwd C:\eda-lab\b1\ts-vivado-place-30-640-ff-overflow)
+# date: 2026-11-17T01:40:15+08:00
 # host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
 
 
@@ -8,33 +8,33 @@
   **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
-source v10_fix.tcl
-# file delete -force ./v10fixed
-# create_project v10fixed ./v10fixed -part xc7a35tcpg236-1
-# add_files v10_overflow_fixed.v
+source run_place_fixed.tcl
+# file delete -force ./place_fixed
+# create_project place_fixed ./place_fixed -part xc7a35tcpg236-1
+# add_files ff_overflow_fixed.v
 # update_compile_order -fileset sources_1
-# puts "V10_FIX_BEGIN synth 2000 FF design on xc7a35t"
-V10_FIX_BEGIN synth 2000 FF design on xc7a35t
-# synth_design -top v10_overflow_fixed
-Command: synth_design -top v10_overflow_fixed
+# puts "PLACE_FF_FIX_BEGIN synth 2000 FF design on xc7a35t"
+PLACE_FF_FIX_BEGIN synth 2000 FF design on xc7a35t
+# synth_design -top ff_overflow_fixed
+Command: synth_design -top ff_overflow_fixed
 Starting synth_design
 Using part: xc7a35tcpg236-1
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6168 
+INFO: Helper process launched with PID 7772 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 389.023 ; gain = 97.652
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 389.621 ; gain = 97.594
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'v10_overflow_fixed' [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_fixed.v:3]
-INFO: [Synth 8-5534] Detected attribute (* DONT_TOUCH = "true" *) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_fixed.v:9]
-INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "no" *) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_fixed.v:9]
-INFO: [Synth 8-256] done synthesizing module 'v10_overflow_fixed' (1#1) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_fixed.v:3]
+INFO: [Synth 8-638] synthesizing module 'ff_overflow_fixed' [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/ff_overflow_fixed.v:2]
+INFO: [Synth 8-5534] Detected attribute (* DONT_TOUCH = "true" *) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/ff_overflow_fixed.v:8]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "no" *) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/ff_overflow_fixed.v:8]
+INFO: [Synth 8-256] done synthesizing module 'ff_overflow_fixed' (1#1) [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/ff_overflow_fixed.v:2]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 460.199 ; gain = 168.828
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 459.504 ; gain = 167.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 460.199 ; gain = 168.828
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 459.504 ; gain = 167.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -42,10 +42,10 @@ Start Loading Part and Timing Information
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 460.199 ; gain = 168.828
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 459.504 ; gain = 167.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 460.199 ; gain = 168.828
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 459.504 ; gain = 167.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -57,7 +57,7 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register chain_reg [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_fixed.v:14]
+INFO: [Synth 8-3538] Detected potentially large (wide) register chain_reg [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/ff_overflow_fixed.v:13]
 Detailed RTL Component Info : 
 +---Registers : 
 	             2000 Bit    Registers := 1     
@@ -67,9 +67,9 @@ Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register chain_reg [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/v10_overflow_fixed.v:14]
+INFO: [Synth 8-3538] Detected potentially large (wide) register chain_reg [C:/eda-lab/b1/ts-vivado-place-30-640-ff-overflow/ff_overflow_fixed.v:13]
 Hierarchical RTL Component report 
-Module v10_overflow_fixed 
+Module ff_overflow_fixed 
 Detailed RTL Component Info : 
 +---Registers : 
 	             2000 Bit    Registers := 1     
@@ -90,7 +90,7 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 557.523 ; gain = 266.152
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 560.090 ; gain = 268.062
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -103,7 +103,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 557.523 ; gain = 266.152
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 560.090 ; gain = 268.062
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -115,7 +115,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -139,7 +139,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -152,7 +152,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -164,25 +164,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -211,15 +211,15 @@ Report Instance Areas:
 |1     |top      |       |  2005|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 567.816 ; gain = 276.445
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 573.441 ; gain = 281.414
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'v10_overflow_fixed' is not ideal for floorplanning, since the cellview 'v10_overflow_fixed' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+WARNING: [Netlist 29-101] Netlist 'ff_overflow_fixed' is not ideal for floorplanning, since the cellview 'ff_overflow_fixed' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -228,7 +228,7 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 15 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 665.133 ; gain = 386.695
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 669.879 ; gain = 390.773
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -246,123 +246,123 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 665.133 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 669.879 ; gain = 0.000
 Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 469f39da
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 665.133 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 669.879 ; gain = 0.000
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1174.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1181.953 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 14381eaa6
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 1.3 Build Placer Netlist Model
 Phase 1.3 Build Placer Netlist Model | Checksum: 236a5721d
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 1.4 Constrain Clocks/Macros
 Phase 1.4 Constrain Clocks/Macros | Checksum: 236a5721d
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1181.953 ; gain = 512.074
 Phase 1 Placer Initialization | Checksum: 236a5721d
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 2 Global Placement
 Phase 2 Global Placement | Checksum: 1f7206e54
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
 Phase 3.1 Commit Multi Column Macros | Checksum: 1f7206e54
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3.2 Commit Most Macros & LUTRAMs
 Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1a555486a
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3.3 Area Swap Optimization
 Phase 3.3 Area Swap Optimization | Checksum: 14cfa7e0a
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3.4 Pipeline Register Optimization
 Phase 3.4 Pipeline Register Optimization | Checksum: 14cfa7e0a
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3.5 Small Shape Detail Placement
 Phase 3.5 Small Shape Detail Placement | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3.6 Re-assign LUT pins
 Phase 3.6 Re-assign LUT pins | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 3.7 Pipeline Register Optimization
 Phase 3.7 Pipeline Register Optimization | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 Phase 3 Detail Placement | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 4 Post Placement Optimization and Clean-Up
 
 Phase 4.1 Post Commit Optimization
 Phase 4.1 Post Commit Optimization | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 4.2 Post Placement Cleanup
 Phase 4.2 Post Placement Cleanup | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 4.3 Placer Reporting
 Phase 4.3 Placer Reporting | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 
 Phase 4.4 Final Placement Cleanup
 Phase 4.4 Final Placement Cleanup | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 Phase 4 Post Placement Optimization and Clean-Up | Checksum: 173f03d84
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 Ending Placer Task | Checksum: f4a00ca8
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1174.680 ; gain = 509.547
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1181.953 ; gain = 512.074
 INFO: [Common 17-83] Releasing license: Implementation
 26 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1174.680 ; gain = 509.547
+place_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1181.953 ; gain = 512.074
 # set rc [catch {place_design} result]
 # if {$rc != 0} {
-#   puts "V10_FIX_UNEXPECTED_PLACE_FAIL $result"
+#   puts "PLACE_FF_FIX_UNEXPECTED_PLACE_FAIL $result"
 #   exit 1
 # }
-# puts "V10_FIX_PLACE_OK"
-V10_FIX_PLACE_OK
+# puts "PLACE_FF_FIX_PLACE_OK"
+PLACE_FF_FIX_PLACE_OK
 # report_utilization
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sun Nov 15 01:43:57 2026
+| Date         : Tue Nov 17 01:41:56 2026
 | Host         : derekzhuo running 64-bit major release  (build 9200)
 | Command      : report_utilization
-| Design       : v10_overflow_fixed
+| Design       : ff_overflow_fixed
 | Device       : 7a35tcpg236-1
 | Design State : Fully Placed
 ------------------------------------------------------------------------------------
@@ -551,8 +551,8 @@ Table of Contents
 +----------+------+
 
 
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1174.680 ; gain = 0.000
-# puts "V10_FIX_END"
-V10_FIX_END
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1181.953 ; gain = 0.000
+# puts "PLACE_FF_FIX_END"
+PLACE_FF_FIX_END
 # exit
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 15 01:43:57 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 17 01:41:56 2026...

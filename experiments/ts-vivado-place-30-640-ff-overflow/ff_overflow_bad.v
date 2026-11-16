@@ -1,6 +1,6 @@
-// V10 bad case: 60000 explicit FFs on xc7a35t (41600 flip-flops max).
-// SHREG_EXTRACT=no + DONT_TOUCH keep the chain from collapsing into SRL LUTs.
-module v10_overflow_bad (
+// 60000 explicit flip-flops on xc7a35t, whose device limit is 41600 sites.
+// SHREG_EXTRACT=no and DONT_TOUCH prevent synthesis from collapsing the chain into SRL LUTs.
+module ff_overflow_bad (
     input  wire clk,
     input  wire rst,
     input  wire d,

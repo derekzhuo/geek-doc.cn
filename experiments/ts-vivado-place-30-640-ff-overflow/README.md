@@ -11,10 +11,10 @@ xc7a35t 上例化 60000 个显式触发器（`SHREG_EXTRACT = "no"` 加
 
 ## 文件
 
-- `v10_overflow_bad.v` —— 坏版本：60000 级显式 FF 移位链，超出 xc7a35t 触发器上限
-- `v10_overflow_fixed.v` —— 修复版本：同构 2000 级链，器件容量内
-- `v10_err.tcl` —— 坏版本批处理脚本：综合后 `catch` 包裹 `place_design`，打印 `V10_BAD_PLACE_ERROR`
-- `v10_fix.tcl` —— 修复版本脚本：放置成功后 `report_utilization`，打印 `V10_FIX_PLACE_OK`
+- `ff_overflow_bad.v` —— 坏版本：60000 级显式 FF 移位链，超出 xc7a35t 触发器上限
+- `ff_overflow_fixed.v` —— 修复版本：同构 2000 级链，器件容量内
+- `run_place_bad.tcl` —— 坏版本批处理脚本：综合后 `catch` 包裹 `place_design`，打印放置失败标记
+- `run_place_fixed.tcl` —— 修复版本脚本：放置成功后 `report_utilization`，打印通过标记
 - `run-vivado.ps1` —— Windows 批处理包装器，处理连续批跑的辅助进程句柄占用
 - `err-place-overflow.log` —— 真实报错日志：两条 `[Place 30-640]`（Flip Flop 与 Slice Registers 各一条），60000 需求对 41600 站点
 - `fix-place-utilization.log` —— 修复后真实日志：放置通过，Slice Registers 2000/41600（4.81%）
@@ -23,10 +23,10 @@ xc7a35t 上例化 60000 个显式触发器（`SHREG_EXTRACT = "no"` 加
 
 ```bat
 rem 坏版本：综合通过，place_design 报 [Place 30-640]
-D:\Xilinx\Vivado\2017.4\bin\vivado.bat -mode batch -source v10_err.tcl
+D:\Xilinx\Vivado\2017.4\bin\vivado.bat -mode batch -source run_place_bad.tcl
 
 rem 修复版本：放置通过，报告 4.81% 触发器占用
-D:\Xilinx\Vivado\2017.4\bin\vivado.bat -mode batch -source v10_fix.tcl
+D:\Xilinx\Vivado\2017.4\bin\vivado.bat -mode batch -source run_place_fixed.tcl
 ```
 
 坏版本日志里的关键签名：`ERROR: [Place 30-640] Place Check : This design
