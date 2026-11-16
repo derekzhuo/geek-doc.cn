@@ -1,0 +1,93 @@
+$ sudo -E bash run.sh
+== kernel ==
+Linux lp-storage2 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== tool versions ==
+mke2fs 1.46.5 (30-Dec-2021)
+mkfs.xfs version 5.13.0
+== build ==
+cc -O2 -Wall -Wextra -std=c11 -o meta_bench meta_bench.c
+meta_bench.c: In function ‘main’:
+meta_bench.c:111:44: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size between 0 and 511 [-Wformat-truncation=]
+  111 |                 snprintf(p, sizeof(p), "%s/%s", dirp, de->d_name);
+      |                                            ^~
+In file included from /usr/include/stdio.h:894,
+                 from meta_bench.c:10:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 2 and 768 bytes into a destination of size 512
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+meta_bench.c:91:44: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size between 0 and 511 [-Wformat-truncation=]
+   91 |                 snprintf(p, sizeof(p), "%s/%s", dirp, de->d_name);
+      |                                            ^~
+In file included from /usr/include/stdio.h:894,
+                 from meta_bench.c:10:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 2 and 768 bytes into a destination of size 512
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+meta_bench.c:67:43: warning: ‘/f’ directive output may be truncated writing 2 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+   67 |                 snprintf(p, sizeof(p), "%s/f%04d.dat", dirp, f);
+      |                                           ^~
+meta_bench.c:67:40: note: directive argument in the range [0, 2147483646]
+   67 |                 snprintf(p, sizeof(p), "%s/f%04d.dat", dirp, f);
+      |                                        ^~~~~~~~~~~~~~
+In file included from /usr/include/stdio.h:894,
+                 from meta_bench.c:10:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 11 and 528 bytes into a destination of size 512
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+loop devices: ext4=/dev/loop6 xfs=/dev/loop7
+== mount ==
+/dev/loop6 on /mnt/meta-ext4 type ext4 (rw,relatime)
+/dev/loop7 on /mnt/meta-xfs type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+== inode capacity ==
+Filesystem      Inodes IUsed   IFree IUse% Mounted on
+/dev/loop6      262144    11  262133    1% /mnt/meta-ext4
+/dev/loop7     2097152     3 2097149    1% /mnt/meta-xfs
+-- fs=ext4 round=1 phase=create
+fs=ext4 round=1 phase=create files=20000 dirs=100 elapsed_ms=517.634 ops_per_s=38637.3
+-- fs=ext4 round=1 phase=scan
+fs=ext4 round=1 phase=scan entries=20000 dirs=100 elapsed_ms=26.284 ops_per_s=760909.7
+-- fs=ext4 round=1 phase=delete
+fs=ext4 round=1 phase=delete files=20000 dirs=100 elapsed_ms=233.582 ops_per_s=85623.1
+-- fs=ext4 round=2 phase=create
+fs=ext4 round=2 phase=create files=20000 dirs=100 elapsed_ms=482.107 ops_per_s=41484.5
+-- fs=ext4 round=2 phase=scan
+fs=ext4 round=2 phase=scan entries=20000 dirs=100 elapsed_ms=26.254 ops_per_s=761783.1
+-- fs=ext4 round=2 phase=delete
+fs=ext4 round=2 phase=delete files=20000 dirs=100 elapsed_ms=231.976 ops_per_s=86215.9
+-- fs=ext4 round=3 phase=create
+fs=ext4 round=3 phase=create files=20000 dirs=100 elapsed_ms=482.796 ops_per_s=41425.4
+-- fs=ext4 round=3 phase=scan
+fs=ext4 round=3 phase=scan entries=20000 dirs=100 elapsed_ms=27.070 ops_per_s=738837.5
+-- fs=ext4 round=3 phase=delete
+fs=ext4 round=3 phase=delete files=20000 dirs=100 elapsed_ms=231.675 ops_per_s=86327.7
+-- fs=xfs round=1 phase=create
+fs=xfs round=1 phase=create files=20000 dirs=100 elapsed_ms=557.258 ops_per_s=35890.0
+-- fs=xfs round=1 phase=scan
+fs=xfs round=1 phase=scan entries=20000 dirs=100 elapsed_ms=23.962 ops_per_s=834650.2
+-- fs=xfs round=1 phase=delete
+fs=xfs round=1 phase=delete files=20000 dirs=100 elapsed_ms=318.246 ops_per_s=62844.5
+-- fs=xfs round=2 phase=create
+fs=xfs round=2 phase=create files=20000 dirs=100 elapsed_ms=788.593 ops_per_s=25361.6
+-- fs=xfs round=2 phase=scan
+fs=xfs round=2 phase=scan entries=20000 dirs=100 elapsed_ms=24.966 ops_per_s=801085.1
+-- fs=xfs round=2 phase=delete
+fs=xfs round=2 phase=delete files=20000 dirs=100 elapsed_ms=325.032 ops_per_s=61532.3
+-- fs=xfs round=3 phase=create
+fs=xfs round=3 phase=create files=20000 dirs=100 elapsed_ms=761.292 ops_per_s=26271.1
+-- fs=xfs round=3 phase=scan
+fs=xfs round=3 phase=scan entries=20000 dirs=100 elapsed_ms=25.799 ops_per_s=775233.3
+-- fs=xfs round=3 phase=delete
+fs=xfs round=3 phase=delete files=20000 dirs=100 elapsed_ms=325.159 ops_per_s=61508.4
+== DONE ==

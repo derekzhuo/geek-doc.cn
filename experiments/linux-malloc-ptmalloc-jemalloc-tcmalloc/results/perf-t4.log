@@ -1,0 +1,45 @@
+threads=4 iters=2000000 wall_ms=98.582 ops_per_s=20287635.7 p50_ns=44 p99_ns=365 p999_ns=1926 samples=80000
+
+ Performance counter stats for 'env LD_PRELOAD= ./alloc_bench -t 4 -n 2000000':
+
+            164.81 msec task-clock                #    1.537 CPUs utilized          
+               133      context-switches          #  806.981 /sec                   
+                17      cpu-migrations            #  103.148 /sec                   
+             9,529      page-faults               #   57.817 K/sec                  
+
+       0.107248455 seconds time elapsed
+
+       0.149167000 seconds user
+       0.016126000 seconds sys
+
+
+threads=4 iters=2000000 wall_ms=74.315 ops_per_s=26912561.4 p50_ns=46 p99_ns=209 p999_ns=2584 samples=80000
+
+ Performance counter stats for 'env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2 ./alloc_bench -t 4 -n 2000000':
+
+            128.21 msec task-clock                #    1.532 CPUs utilized          
+                96      context-switches          #  748.762 /sec                   
+                10      cpu-migrations            #   77.996 /sec                   
+             8,368      page-faults               #   65.267 K/sec                  
+
+       0.083662419 seconds time elapsed
+
+       0.120425000 seconds user
+       0.008601000 seconds sys
+
+
+threads=4 iters=2000000 wall_ms=40.969 ops_per_s=48817623.7 p50_ns=42 p99_ns=157 p999_ns=486 samples=80000
+
+ Performance counter stats for 'env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libtcmalloc_minimal.so.4 ./alloc_bench -t 4 -n 2000000':
+
+             90.30 msec task-clock                #    1.731 CPUs utilized          
+                52      context-switches          #  575.851 /sec                   
+                 5      cpu-migrations            #   55.370 /sec                   
+             6,624      page-faults               #   73.355 K/sec                  
+
+       0.052172518 seconds time elapsed
+
+       0.076222000 seconds user
+       0.016046000 seconds sys
+
+

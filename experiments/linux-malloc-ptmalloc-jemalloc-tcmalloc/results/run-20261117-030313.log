@@ -1,0 +1,83 @@
+$ sudo -E bash run.sh
+== kernel ==
+Linux lp-storage2 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== allocator versions ==
+libgoogle-perftools-dev:amd64 2.9.1-0ubuntu3
+libgoogle-perftools4:amd64 2.9.1-0ubuntu3
+libjemalloc-dev 5.2.1-4ubuntu1
+libtcmalloc-minimal4:amd64 2.9.1-0ubuntu3
+ldd (Ubuntu GLIBC 2.35-0ubuntu3.13) 2.35
+== build ==
+cc -O2 -Wall -Wextra -std=c11 -pthread -o alloc_bench alloc_bench.c
+== preload check ==
+glibc(ptmalloc): no external malloc preloaded
+	/usr/lib/x86_64-linux-gnu/libjemalloc.so.2 (0x00007f0eb8642000)
+	/usr/lib/x86_64-linux-gnu/libtcmalloc_minimal.so.4 (0x00007fbb2eacc000)
+alloc=glibc threads=1 round=1 threads=1 iters=2000000 wall_ms=84.078 ops_per_s=23787571.0 p50_ns=26 p99_ns=245 p999_ns=1439 samples=20000
+alloc=glibc threads=1 round=2 threads=1 iters=2000000 wall_ms=84.362 ops_per_s=23707279.7 p50_ns=26 p99_ns=264 p999_ns=1454 samples=20000
+alloc=glibc threads=1 round=3 threads=1 iters=2000000 wall_ms=84.080 ops_per_s=23787010.3 p50_ns=26 p99_ns=250 p999_ns=1531 samples=20000
+alloc=glibc threads=2 round=1 threads=2 iters=2000000 wall_ms=83.942 ops_per_s=23825937.3 p50_ns=43 p99_ns=351 p999_ns=1897 samples=40000
+alloc=glibc threads=2 round=2 threads=2 iters=2000000 wall_ms=71.997 ops_per_s=27779073.4 p50_ns=45 p99_ns=343 p999_ns=1942 samples=40000
+alloc=glibc threads=2 round=3 threads=2 iters=2000000 wall_ms=71.352 ops_per_s=28030161.7 p50_ns=46 p99_ns=335 p999_ns=1916 samples=40000
+alloc=glibc threads=4 round=1 threads=4 iters=2000000 wall_ms=92.939 ops_per_s=21519477.4 p50_ns=41 p99_ns=330 p999_ns=1889 samples=80000
+alloc=glibc threads=4 round=2 threads=4 iters=2000000 wall_ms=86.145 ops_per_s=23216540.7 p50_ns=42 p99_ns=351 p999_ns=1912 samples=80000
+alloc=glibc threads=4 round=3 threads=4 iters=2000000 wall_ms=85.936 ops_per_s=23273075.0 p50_ns=46 p99_ns=364 p999_ns=1932 samples=80000
+alloc=jemalloc threads=1 round=1 threads=1 iters=2000000 wall_ms=55.622 ops_per_s=35957018.7 p50_ns=29 p99_ns=129 p999_ns=2148 samples=20000
+alloc=jemalloc threads=1 round=2 threads=1 iters=2000000 wall_ms=56.130 ops_per_s=35631314.4 p50_ns=29 p99_ns=136 p999_ns=2026 samples=20000
+alloc=jemalloc threads=1 round=3 threads=1 iters=2000000 wall_ms=56.189 ops_per_s=35594204.9 p50_ns=29 p99_ns=141 p999_ns=2210 samples=20000
+alloc=jemalloc threads=2 round=1 threads=2 iters=2000000 wall_ms=55.647 ops_per_s=35940950.5 p50_ns=42 p99_ns=162 p999_ns=2194 samples=40000
+alloc=jemalloc threads=2 round=2 threads=2 iters=2000000 wall_ms=55.396 ops_per_s=36103751.7 p50_ns=45 p99_ns=160 p999_ns=2302 samples=40000
+alloc=jemalloc threads=2 round=3 threads=2 iters=2000000 wall_ms=54.826 ops_per_s=36478833.2 p50_ns=44 p99_ns=165 p999_ns=2334 samples=40000
+alloc=jemalloc threads=4 round=1 threads=4 iters=2000000 wall_ms=66.522 ops_per_s=30065436.8 p50_ns=47 p99_ns=212 p999_ns=2292 samples=80000
+alloc=jemalloc threads=4 round=2 threads=4 iters=2000000 wall_ms=66.467 ops_per_s=30089902.2 p50_ns=41 p99_ns=185 p999_ns=2098 samples=80000
+alloc=jemalloc threads=4 round=3 threads=4 iters=2000000 wall_ms=64.638 ops_per_s=30941762.0 p50_ns=47 p99_ns=190 p999_ns=2533 samples=80000
+alloc=tcmalloc threads=1 round=1 threads=1 iters=2000000 wall_ms=32.925 ops_per_s=60744006.6 p50_ns=26 p99_ns=43 p999_ns=203 samples=20000
+alloc=tcmalloc threads=1 round=2 threads=1 iters=2000000 wall_ms=33.015 ops_per_s=60579293.7 p50_ns=26 p99_ns=44 p999_ns=199 samples=20000
+alloc=tcmalloc threads=1 round=3 threads=1 iters=2000000 wall_ms=32.737 ops_per_s=61092900.7 p50_ns=26 p99_ns=47 p999_ns=227 samples=20000
+alloc=tcmalloc threads=2 round=1 threads=2 iters=2000000 wall_ms=35.687 ops_per_s=56042218.4 p50_ns=41 p99_ns=66 p999_ns=278 samples=40000
+alloc=tcmalloc threads=2 round=2 threads=2 iters=2000000 wall_ms=35.661 ops_per_s=56083626.5 p50_ns=40 p99_ns=67 p999_ns=286 samples=40000
+alloc=tcmalloc threads=2 round=3 threads=2 iters=2000000 wall_ms=36.367 ops_per_s=54995569.3 p50_ns=48 p99_ns=177 p999_ns=534 samples=40000
+alloc=tcmalloc threads=4 round=1 threads=4 iters=2000000 wall_ms=40.025 ops_per_s=49969130.3 p50_ns=43 p99_ns=144 p999_ns=449 samples=80000
+alloc=tcmalloc threads=4 round=2 threads=4 iters=2000000 wall_ms=37.854 ops_per_s=52834212.1 p50_ns=42 p99_ns=81 p999_ns=309 samples=80000
+alloc=tcmalloc threads=4 round=3 threads=4 iters=2000000 wall_ms=40.345 ops_per_s=49572676.1 p50_ns=42 p99_ns=75 p999_ns=275 samples=80000
+== perf stat contention evidence (threads=4, one run each) ==
+-- alloc=glibc
+
+            164.81 msec task-clock                #    1.537 CPUs utilized          
+               133      context-switches          #  806.981 /sec                   
+                17      cpu-migrations            #  103.148 /sec                   
+             9,529      page-faults               #   57.817 K/sec                  
+
+       0.107248455 seconds time elapsed
+
+       0.149167000 seconds user
+       0.016126000 seconds sys
+
+
+-- alloc=jemalloc
+
+            128.21 msec task-clock                #    1.532 CPUs utilized          
+                96      context-switches          #  748.762 /sec                   
+                10      cpu-migrations            #   77.996 /sec                   
+             8,368      page-faults               #   65.267 K/sec                  
+
+       0.083662419 seconds time elapsed
+
+       0.120425000 seconds user
+       0.008601000 seconds sys
+
+
+-- alloc=tcmalloc
+
+             90.30 msec task-clock                #    1.731 CPUs utilized          
+                52      context-switches          #  575.851 /sec                   
+                 5      cpu-migrations            #   55.370 /sec                   
+             6,624      page-faults               #   73.355 K/sec                  
+
+       0.052172518 seconds time elapsed
+
+       0.076222000 seconds user
+       0.016046000 seconds sys
+
+
+== DONE ==
