@@ -16,6 +16,7 @@
 | `results/stats-fixed.c` | agent 实际改出的修复版源码 |
 | `results/test.sh` | agent 新写的三用例测试脚本 |
 | `results/run1.log` | 一次完整 `opencode run` 的原始终端记录（安装版本、改码、跑测试） |
+| `results/verify.log` | 进程外独立复测记录：新 shell 重跑 test.sh 与三个边界用例，不依赖 agent 会话 |
 
 ## 复现方式
 
@@ -48,8 +49,9 @@ printf -- '-1' | ./stats     # 期望 avg=0.00
 2. **postinstall 可能被跳过**：全局 npm 配置忽略安装脚本时，`opencode` 只报
    “postinstall script was not run”，按提示进包目录手动 `node postinstall.mjs` 即可。
 3. **Anthropic 兼容端点的 baseURL 要带 `/v1`**：OpenCode 的 anthropic provider 会在
-   baseURL 后直接拼 `/messages`，只填到 `/api/coding` 会打到错误路径，表现为 401
-   Unauthorized；正确写法是 `https://ark.cn-beijing.volces.com/api/coding/v1`。
+   baseURL 后直接拼 `/messages`，只填到 `/api/coding` 会打到错误路径，网关可能返回
+   401 或 404 一类鉴权/路径错误（具体状态码以网关实现为准）；正确写法是
+   `https://ark.cn-beijing.volces.com/api/coding/v1`。
 4. 密钥不要写进 `opencode.json`，用 `{env:ARK_CODING_KEY}` 引用环境变量。
 
 ## 测量口径

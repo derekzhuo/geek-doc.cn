@@ -1,0 +1,20 @@
+== independent verification of agent-produced fix ==
+date: 2026-11-17 02:34:38 CST
+host: Darwin 25.5.0 x86_64
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+
+--- step1: run agent-written test.sh in a fresh shell ---
+PASS: normal sequence
+PASS: single element
+PASS: empty sequence
+----------------
+PASS: 3  FAIL: 0
+test.sh exit=0
+
+--- step2: out-of-process boundary checks (not part of agent session) ---
+avg=1.50
+rc=0
+avg=0.00
+rc=0
+avg=25.00
+rc=0
