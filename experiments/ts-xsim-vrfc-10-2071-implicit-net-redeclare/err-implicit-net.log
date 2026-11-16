@@ -1,0 +1,8 @@
+===== 2026-11-17T02:00:47+08:00 =====
+$ xvlog.bat order_bad.v (cwd C:\eda-lab\b1\ts-xsim-vrfc-10-2071-implicit-net-redeclare)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/order_bad.v" into library work
+INFO: [VRFC 10-311] analyzing module order_bad
+INFO: [VRFC 10-2458] undeclared symbol bus, assumed default net type wire [C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/order_bad.v:8]
+ERROR: [VRFC 10-2071] bus is already implicitly declared on line 8 [C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/order_bad.v:9]
+ERROR: [VRFC 10-1040] module order_bad ignored due to previous errors [C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/order_bad.v:6]
+EXPECTED_IMPLICIT_NET_ERROR

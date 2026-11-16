@@ -1,0 +1,40 @@
+===== 2026-11-17T02:00:47+08:00 =====
+$ xvlog.bat warn_used_before.v; xelab.bat warn_used_before; xsim.bat warn_used_before -t run_sim.tcl (cwd C:\eda-lab\b1\ts-xsim-vrfc-10-2071-implicit-net-redeclare)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/warn_used_before.v" into library work
+INFO: [VRFC 10-311] analyzing module warn_used_before
+WARNING: [VRFC 10-756] identifier W is used before its declaration [C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/warn_used_before.v:7]
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe warn_used_before 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.warn_used_before
+Built simulation snapshot work.warn_used_before
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/xsim.dir/work.warn_used_before/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov 17 01:59:54 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.warn_used_before/xsim_script.tcl
+# xsim {work.warn_used_before} -autoloadwcfg -tclbatch {run_sim.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source run_sim.tcl
+## run all
+WARN_USED_BEFORE cnt=f
+$finish called at time : 10 ns : File "C:/eda-lab/b1/ts-xsim-vrfc-10-2071-implicit-net-redeclare/warn_used_before.v" Line 14
+## exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 17 01:59:58 2026...
