@@ -1,0 +1,20 @@
+# command: xsim.bat simprim_external_glbl -t run_all.tcl  (cwd C:\eda-lab\b1\ts-xsim-sdf-annotation-fail)
+# date: 2026-11-17T05:15:37+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/simprim_external_glbl/xsim_script.tcl
+# xsim {simprim_external_glbl} -autoloadwcfg -tclbatch {run_all.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source run_all.tcl
+## run all
+SDF_SIM_PASS q=1
+$finish called at time : 140 ns : File "C:/eda-lab/b1/ts-xsim-sdf-annotation-fail/tb_sdf_probe.v" Line 22
+## exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 17 05:15:41 2026...

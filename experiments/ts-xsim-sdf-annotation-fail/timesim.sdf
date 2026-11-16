@@ -1,0 +1,82 @@
+(DELAYFILE 
+(SDFVERSION "3.0" )
+(DESIGN "sdf_probe")
+(DATE "Tue Nov 17 05:08:05 2026")
+(VENDOR "XILINX")
+(PROGRAM "Vivado")
+(VERSION "2017.4")
+(DIVIDER /)
+(TIMESCALE 1ps)
+(CELL 
+  (CELLTYPE "BUFG")
+  (INSTANCE clk_IBUF_BUFG_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (91.0:96.0:96.0) (91.0:96.0:96.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "IBUF")
+  (INSTANCE clk_IBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (804.7:938.0:938.0) (804.7:938.0:938.0))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "IBUF")
+  (INSTANCE d_IBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (803.1:936.4:936.4) (803.1:936.4:936.4))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "OBUF")
+  (INSTANCE q_OBUF_inst)
+  (DELAY 
+    (PATHPULSE (50.0))
+    (ABSOLUTE 
+      (IOPATH I O (2436.7:2592.7:2592.7) (2436.7:2592.7:2592.7))
+    )
+  )
+)
+(CELL 
+  (CELLTYPE "FDRE")
+  (INSTANCE q_reg)
+  (DELAY 
+    (ABSOLUTE 
+      (IOPATH C Q (274.0:340.0:340.0) (274.0:340.0:340.0))
+    )
+  )
+    (TIMINGCHECK
+      (SETUPHOLD (posedge CE) (posedge C) (88.0:109.0:109.0) (-9.0:-9.0:-9.0))
+      (SETUPHOLD (negedge CE) (posedge C) (88.0:109.0:109.0) (-9.0:-9.0:-9.0))
+      (SETUPHOLD (posedge D) (posedge C) (-55.0:-45.0:-45.0) (241.0:241.0:241.0))
+      (SETUPHOLD (negedge D) (posedge C) (-55.0:-45.0:-45.0) (241.0:241.0:241.0))
+      (SETUPHOLD (posedge R) (posedge C) (345.0:428.0:428.0) (-60.0:-60.0:-60.0))
+      (SETUPHOLD (negedge R) (posedge C) (345.0:428.0:428.0) (-60.0:-60.0:-60.0))
+      (PERIOD (posedge C) (870.0:1000.0:1000.0))
+      (WIDTH (posedge C) (435.0:500.0:500.0))
+      (WIDTH (posedge C) (435.0:500.0:500.0))
+    )
+)
+(CELL 
+    (CELLTYPE "sdf_probe")
+    (INSTANCE )
+    (DELAY
+      (ABSOLUTE
+      (INTERCONNECT clk_IBUF_BUFG_inst/O q_reg/C (1613.4:1755.4:1755.4) (1613.4:1755.4:1755.4))
+      (INTERCONNECT clk_IBUF_inst/O clk_IBUF_BUFG_inst/I (1868.0:1971.5:1971.5) (1868.0:1971.5:1971.5))
+      (INTERCONNECT d_IBUF_inst/O q_reg/D (936.9:1106.9:1106.9) (936.9:1106.9:1106.9))
+      (INTERCONNECT q_reg/Q q_OBUF_inst/I (1328.1:1534.1:1534.1) (1328.1:1534.1:1534.1))
+      )
+    )
+)
+)

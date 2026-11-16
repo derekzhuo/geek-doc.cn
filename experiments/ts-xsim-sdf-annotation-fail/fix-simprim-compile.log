@@ -1,0 +1,10 @@
+# command: xvlog.bat timesim_netlist.v tb_sdf_probe.v glbl.v  (cwd C:\eda-lab\b1\ts-xsim-sdf-annotation-fail)
+# date: 2026-11-17T05:15:33+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-sdf-annotation-fail/timesim_netlist.v" into library work
+INFO: [VRFC 10-311] analyzing module sdf_probe
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-sdf-annotation-fail/tb_sdf_probe.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_sdf_probe
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/Vivado/2017.4/data/verilog/src/glbl.v" into library work

@@ -1,0 +1,33 @@
+# command: xelab.bat -L unisims_ver work.tb_sdf_probe work.glbl -debug typical -s timesim_embedded  (cwd C:\eda-lab\b1\ts-xsim-sdf-annotation-fail)
+# date: 2026-11-17T05:08:08+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L unisims_ver work.tb_sdf_probe work.glbl -debug typical -s timesim_embedded 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "timesim.sdf", for root module "tb_sdf_probe/dut".
+WARNING: [XSIM 43-3481] Unable to locate information about pathpulse limits for SDG instance clk_IBUF_BUFG_inst of module BUFG.
+WARNING: [XSIM 43-3481] Unable to locate information about pathpulse limits for SDG instance clk_IBUF_inst of module IBUF.
+WARNING: [XSIM 43-3481] Unable to locate information about pathpulse limits for SDG instance d_IBUF_inst of module IBUF.
+WARNING: [XSIM 43-3481] Unable to locate information about pathpulse limits for SDG instance q_OBUF_inst of module OBUF.
+WARNING: [XSIM 43-3472] Unable to find delay expressions for setup between ports CE and C for module FDRE_default.
+WARNING: [XSIM 43-3467] Unable to find delay expressions for hold between ports CE and C for module FDRE_default.
+WARNING: [XSIM 43-3472] Unable to find delay expressions for setup between ports CE and C for module FDRE_default.
+WARNING: [XSIM 43-3467] Unable to find delay expressions for hold between ports CE and C for module FDRE_default.
+WARNING: [XSIM 43-3472] Unable to find delay expressions for setup between ports D and C for module FDRE_default.
+WARNING: [XSIM 43-3467] Unable to find delay expressions for hold between ports D and C for module FDRE_default.
+WARNING: [XSIM 43-3472] Unable to find delay expressions for setup between ports D and C for module FDRE_default.
+WARNING: [XSIM 43-3467] Unable to find delay expressions for hold between ports D and C for module FDRE_default.
+WARNING: [XSIM 43-3472] Unable to find delay expressions for setup between ports R and C for module FDRE_default.
+WARNING: [XSIM 43-3467] Unable to find delay expressions for hold between ports R and C for module FDRE_default.
+WARNING: [XSIM 43-3472] Unable to find delay expressions for setup between ports R and C for module FDRE_default.
+WARNING: [XSIM 43-3467] Unable to find delay expressions for hold between ports R and C for module FDRE_default.
+WARNING: [XSIM 43-3468] Unable to find delay expressions for period for port C for module FDRE_default.
+WARNING: [XSIM 43-3476] Unable to find delay expressions for width for port C for module FDRE_default.
+WARNING: [XSIM 43-3476] Unable to find delay expressions for width for port C for module FDRE_default.
+ERROR: [XSIM 43-3462] Unable to annotate SDF delays in the design.
