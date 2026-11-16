@@ -1,0 +1,14 @@
+===== 2026-11-17T01:54:39+08:00 =====
+$ xvlog.bat gate.v tb_gate_bad.v; xelab.bat tb_gate_bad (cwd C:\eda-lab\b1\ts-xsim-vrfc-10-91-hierarchical-name)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-91-hierarchical-name/gate.v" into library work
+INFO: [VRFC 10-311] analyzing module gate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-91-hierarchical-name/tb_gate_bad.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_gate_bad
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_gate_bad 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-91] u_dut is not declared [C:/eda-lab/b1/ts-xsim-vrfc-10-91-hierarchical-name/tb_gate_bad.v:21]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+EXPECTED_HIER_NAME_ERROR
