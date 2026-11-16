@@ -32,5 +32,5 @@ done
 
 == overhead 对照（2026-11-17 追加，同一 CVM 各跑三次） ==
 裸跑 /usr/bin/time ./malloc_hotspots: 14.42 14.42 14.42 s
-挂 5 uprobe /usr/bin/time bpftrace -c: 15.23 15.23 15.23 s
+挂 4 uprobe（含 interval 定时探针共附着 5 个）/usr/bin/time bpftrace -c: 15.23 15.23 15.23 s
 差值 0.81 s，相对开销 5.6%，陷头总量 333379 次（63600 业务 + 269779 malloc）
