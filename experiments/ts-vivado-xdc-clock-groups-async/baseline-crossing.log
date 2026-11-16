@@ -1,0 +1,725 @@
+# command: vivado.bat -mode batch -source baseline.tcl  (cwd C:\eda-lab\b1\ts-vivado-xdc-clock-groups-async)
+# date: 2026-11-17T04:05:41+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source x15_baseline.tcl
+# read_verilog async_clock_groups.v
+# read_xdc clocks_baseline.xdc
+# synth_design -top async_clock_groups -part xc7a35tcpg236-1
+Command: synth_design -top async_clock_groups -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4412 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 386.969 ; gain = 97.039
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'async_clock_groups' [C:/eda-lab/b1/ts-vivado-xdc-clock-groups-async/async_clock_groups.v:4]
+INFO: [Synth 8-256] done synthesizing module 'async_clock_groups' (1#1) [C:/eda-lab/b1/ts-vivado-xdc-clock-groups-async/async_clock_groups.v:4]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 439.227 ; gain = 149.297
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 439.227 ; gain = 149.297
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/eda-lab/b1/ts-vivado-xdc-clock-groups-async/clocks_baseline.xdc]
+Finished Parsing XDC File [C:/eda-lab/b1/ts-vivado-xdc-clock-groups-async/clocks_baseline.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 691.020 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 691.020 ; gain = 401.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 691.020 ; gain = 401.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 691.020 ; gain = 401.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 691.020 ; gain = 401.090
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module async_clock_groups 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 691.020 ; gain = 401.090
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 742.941 ; gain = 453.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 742.941 ; gain = 453.012
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     2|
+|2     |LUT1 |     1|
+|3     |FDCE |     2|
+|4     |IBUF |     4|
+|5     |OBUF |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    10|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 762.023 ; gain = 220.301
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 762.023 ; gain = 472.094
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/eda-lab/b1/ts-vivado-xdc-clock-groups-async/clocks_baseline.xdc]
+Finished Parsing XDC File [C:/eda-lab/b1/ts-vivado-xdc-clock-groups-async/clocks_baseline.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 776.602 ; gain = 499.410
+# report_clock_interaction
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-164] This design has multiple clocks. Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Nov 17 04:07:03 2026
+| Host         : derekzhuo running 64-bit major release  (build 9200)
+| Command      : report_clock_interaction
+| Design       : async_clock_groups
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.20 2017-11-01
+------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                            WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock     
+From Clock    To Clock      Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints     
+------------  ------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  --------------  
+clk_a         clk_b         rise - rise    -0.38    -0.38            1            1             1.00  No Common Clock      Timed (unsafe)  
+
+
+# report_timing -from [get_cells stage_reg] -to [get_cells q_reg] -max 1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+WARNING: [Timing 38-164] This design has multiple clocks. Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Nov 17 04:07:03 2026
+| Host         : derekzhuo running 64-bit major release  (build 9200)
+| Command      : report_timing -from [get_cells stage_reg] -to [get_cells q_reg] -max 1
+| Design       : async_clock_groups
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.20 2017-11-01
+----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.383ns  (required time - arrival time)
+  Source:                 stage_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_a  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            q_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_b  {rise@0.000ns fall@3.500ns period=7.000ns})
+  Path Group:             clk_b
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            1.000ns  (clk_b rise@21.000ns - clk_a rise@20.000ns)
+  Data Path Delay:        0.790ns  (logic 0.456ns (57.722%)  route 0.334ns (42.278%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.323ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.079ns = ( 23.079 - 21.000 ) 
+    Source Clock Delay      (SCD):    2.402ns = ( 22.402 - 20.000 ) 
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_a rise edge)     20.000    20.000 r  
+                                                      0.000    20.000 r  clk_a (IN)
+                         net (fo=0)                   0.000    20.000    clk_a
+                         IBUF (Prop_ibuf_I_O)         0.923    20.923 r  clk_a_IBUF_inst/O
+                         net (fo=1, unplaced)         0.800    21.722    clk_a_IBUF
+                         BUFG (Prop_bufg_I_O)         0.096    21.818 r  clk_a_IBUF_BUFG_inst/O
+                         net (fo=1, unplaced)         0.584    22.402    clk_a_IBUF_BUFG
+                         FDCE                                         r  stage_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDCE (Prop_fdce_C_Q)         0.456    22.858 r  stage_reg/Q
+                         net (fo=1, unplaced)         0.334    23.192    stage
+                         FDCE                                         r  q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_b rise edge)     21.000    21.000 r  
+                                                      0.000    21.000 r  clk_b (IN)
+                         net (fo=0)                   0.000    21.000    clk_b
+                         IBUF (Prop_ibuf_I_O)         0.789    21.789 r  clk_b_IBUF_inst/O
+                         net (fo=1, unplaced)         0.760    22.549    clk_b_IBUF
+                         BUFG (Prop_bufg_I_O)         0.091    22.640 r  clk_b_IBUF_BUFG_inst/O
+                         net (fo=1, unplaced)         0.439    23.079    clk_b_IBUF_BUFG
+                         FDCE                                         r  q_reg/C
+                         clock pessimism              0.000    23.079    
+                         clock uncertainty           -0.035    23.044    
+                         FDCE (Setup_fdce_C_D)       -0.235    22.809    q_reg
+  -------------------------------------------------------------------
+                         required time                         22.809    
+                         arrival time                         -23.192    
+  -------------------------------------------------------------------
+                         slack                                 -0.383    
+
+
+
+
+# report_timing_summary -max_paths 3
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Nov 17 04:07:03 2026
+| Host         : derekzhuo running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 3
+| Design       : async_clock_groups
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.20 2017-11-01
+------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There is 1 port with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -0.383       -0.383                      1                    1       -0.091       -0.091                      1                    1        3.000        0.000                       0                     4  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)         Period(ns)      Frequency(MHz)
+-----  ------------         ----------      --------------
+clk_a  {0.000 5.000}        10.000          100.000         
+clk_b  {0.000 3.500}        7.000           142.857         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_a                                                                                                                                                           4.500        0.000                       0                     2  
+clk_b                                                                                                                                                           3.000        0.000                       0                     2  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+clk_a         clk_b              -0.383       -0.383                      1                    1       -0.091       -0.091                      1                    1  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_a
+  To Clock:  clk_a
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_a
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk_a }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845                clk_a_IBUF_BUFG_inst/I
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000                stage_reg/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500                stage_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500                stage_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500                stage_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500                stage_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_b
+  To Clock:  clk_b
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_b
+Waveform(ns):       { 0.000 3.500 }
+Period(ns):         7.000
+Sources:            { clk_b }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     BUFG/I   n/a            2.155         7.000       4.845                clk_b_IBUF_BUFG_inst/I
+Min Period        n/a     FDCE/C   n/a            1.000         7.000       6.000                q_reg/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         3.500       3.000                q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         3.500       3.000                q_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         3.500       3.000                q_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         3.500       3.000                q_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_a
+  To Clock:  clk_b
+
+Setup :            1  Failing Endpoint ,  Worst Slack       -0.383ns,  Total Violation       -0.383ns
+Hold  :            1  Failing Endpoint ,  Worst Slack       -0.091ns,  Total Violation       -0.091ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -0.383ns  (required time - arrival time)
+  Source:                 stage_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_a  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            q_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_b  {rise@0.000ns fall@3.500ns period=7.000ns})
+  Path Group:             clk_b
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            1.000ns  (clk_b rise@21.000ns - clk_a rise@20.000ns)
+  Data Path Delay:        0.790ns  (logic 0.456ns (57.722%)  route 0.334ns (42.278%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.323ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.079ns = ( 23.079 - 21.000 ) 
+    Source Clock Delay      (SCD):    2.402ns = ( 22.402 - 20.000 ) 
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_a rise edge)     20.000    20.000 r  
+                                                      0.000    20.000 r  clk_a (IN)
+                         net (fo=0)                   0.000    20.000    clk_a
+                         IBUF (Prop_ibuf_I_O)         0.923    20.923 r  clk_a_IBUF_inst/O
+                         net (fo=1, unplaced)         0.800    21.722    clk_a_IBUF
+                         BUFG (Prop_bufg_I_O)         0.096    21.818 r  clk_a_IBUF_BUFG_inst/O
+                         net (fo=1, unplaced)         0.584    22.402    clk_a_IBUF_BUFG
+                         FDCE                                         r  stage_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDCE (Prop_fdce_C_Q)         0.456    22.858 r  stage_reg/Q
+                         net (fo=1, unplaced)         0.334    23.192    stage
+                         FDCE                                         r  q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_b rise edge)     21.000    21.000 r  
+                                                      0.000    21.000 r  clk_b (IN)
+                         net (fo=0)                   0.000    21.000    clk_b
+                         IBUF (Prop_ibuf_I_O)         0.789    21.789 r  clk_b_IBUF_inst/O
+                         net (fo=1, unplaced)         0.760    22.549    clk_b_IBUF
+                         BUFG (Prop_bufg_I_O)         0.091    22.640 r  clk_b_IBUF_BUFG_inst/O
+                         net (fo=1, unplaced)         0.439    23.079    clk_b_IBUF_BUFG
+                         FDCE                                         r  q_reg/C
+                         clock pessimism              0.000    23.079    
+                         clock uncertainty           -0.035    23.044    
+                         FDCE (Setup_fdce_C_D)       -0.235    22.809    q_reg
+  -------------------------------------------------------------------
+                         required time                         22.809    
+                         arrival time                         -23.192    
+  -------------------------------------------------------------------
+                         slack                                 -0.383    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -0.091ns  (arrival time - required time)
+  Source:                 stage_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_a  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            q_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk_b  {rise@0.000ns fall@3.500ns period=7.000ns})
+  Path Group:             clk_b
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_b rise@0.000ns - clk_a rise@0.000ns)
+  Data Path Delay:        0.282ns  (logic 0.141ns (50.038%)  route 0.141ns (49.962%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.354ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.983ns
+    Source Clock Delay      (SCD):    0.629ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_a rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clk_a (IN)
+                         net (fo=0)                   0.000     0.000    clk_a
+                         IBUF (Prop_ibuf_I_O)         0.152     0.152 r  clk_a_IBUF_inst/O
+                         net (fo=1, unplaced)         0.337     0.489    clk_a_IBUF
+                         BUFG (Prop_bufg_I_O)         0.026     0.515 r  clk_a_IBUF_BUFG_inst/O
+                         net (fo=1, unplaced)         0.114     0.629    clk_a_IBUF_BUFG
+                         FDCE                                         r  stage_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDCE (Prop_fdce_C_Q)         0.141     0.770 r  stage_reg/Q
+                         net (fo=1, unplaced)         0.141     0.911    stage
+                         FDCE                                         r  q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_b rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clk_b (IN)
+                         net (fo=0)                   0.000     0.000    clk_b
+                         IBUF (Prop_ibuf_I_O)         0.340     0.340 r  clk_b_IBUF_inst/O
+                         net (fo=1, unplaced)         0.355     0.695    clk_b_IBUF
+                         BUFG (Prop_bufg_I_O)         0.029     0.724 r  clk_b_IBUF_BUFG_inst/O
+                         net (fo=1, unplaced)         0.259     0.983    clk_b_IBUF_BUFG
+                         FDCE                                         r  q_reg/C
+                         clock pessimism              0.000     0.983    
+                         clock uncertainty            0.035     1.018    
+                         FDCE (Hold_fdce_C_D)        -0.017     1.001    q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.001    
+                         arrival time                           0.911    
+  -------------------------------------------------------------------
+                         slack                                 -0.091    
+
+
+
+
+
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 17 04:07:04 2026...
