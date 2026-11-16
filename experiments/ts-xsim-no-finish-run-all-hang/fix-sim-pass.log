@@ -1,0 +1,39 @@
+===== 2026-11-17T02:19:48+08:00 =====
+$ xvlog.bat tb_with_finish.v; xelab.bat tb_with_finish; xsim.bat tb_with_finish -t run_sim.tcl (cwd C:\eda-lab\b1\ts-xsim-no-finish-run-all-hang)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-no-finish-run-all-hang/tb_with_finish.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_with_finish
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_with_finish 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.tb_with_finish
+Built simulation snapshot work.tb_with_finish
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-no-finish-run-all-hang/xsim.dir/work.tb_with_finish/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov 17 02:18:35 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_with_finish/xsim_script.tcl
+# xsim {work.tb_with_finish} -autoloadwcfg -tclbatch {run_sim.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source run_sim.tcl
+## run all
+NO_FINISH_FLOW_PASS cnt=10
+$finish called at time : 95 ns : File "C:/eda-lab/b1/ts-xsim-no-finish-run-all-hang/tb_with_finish.v" Line 21
+## exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 17 02:18:38 2026...

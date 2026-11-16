@@ -1,0 +1,63 @@
+===== 2026-11-17T02:19:48+08:00 =====
+$ xsim.bat tb_no_finish -t run_sim.tcl (cwd C:\eda-lab\b1\ts-xsim-no-finish-run-all-hang)
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_no_finish/xsim_script.tcl
+# xsim {work.tb_no_finish} -autoloadwcfg -tclbatch {run_sim.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source run_sim.tcl
+## run all
+NO_FINISH_TICK cnt=1
+NO_FINISH_TICK cnt=2
+NO_FINISH_TICK cnt=3
+NO_FINISH_TICK cnt=4
+NO_FINISH_TICK cnt=5
+NO_FINISH_TICK cnt=6
+NO_FINISH_TICK cnt=7
+NO_FINISH_TICK cnt=8
+NO_FINISH_TICK cnt=9
+NO_FINISH_TICK cnt=10
+NO_FINISH_TICK cnt=11
+NO_FINISH_TICK cnt=12
+NO_FINISH_TICK cnt=13
+NO_FINISH_TICK cnt=14
+NO_FINISH_TICK cnt=15
+NO_FINISH_TICK cnt=16
+NO_FINISH_TICK cnt=17
+NO_FINISH_TICK cnt=18
+# ... 中间输出省略：90 秒守护窗口内共 2184358 条 NO_FINISH_TICK，cnt 为 8 位寄存器自然回绕 ...
+NO_FINISH_TICK cnt=137
+NO_FINISH_TICK cnt=138
+NO_FINISH_TICK cnt=139
+NO_FINISH_TICK cnt=140
+NO_FINISH_TICK cnt=141
+NO_FINISH_TICK cnt=142
+NO_FINISH_TICK cnt=143
+NO_FINISH_TICK cnt=144
+NO_FINISH_TICK cnt=145
+NO_FINISH_TICK cnt=146
+NO_FINISH_TICK cnt=147
+NO_FINISH_TICK cnt=148
+NO_FINISH_TICK cnt=149
+NO_FINISH_TICK cnt=150
+NO_FINISH_TICK cnt=151
+NO_FINISH_TICK cnt=152
+NO_FINISH_TICK cnt=153
+NO_FINISH_TICK cnt=154
+NO_FINISH_TICK cnt=155
+NO_FINISH_TICK cnt=156
+NO_FINISH_TICK cnt=157
+NO_FINISH_TICK cnt=158
+NO_FINISH_TICK cnt=159
+NO_FINISH_TICK cnt=160
+NO_FINISH_TICK cnt=161
+NO_FINISH_TICK cnt=162
+NO_FINISH_TICK cnt=163
+NO_FINISH_TICK cnt=164
+NO_FINISH_TICK cnt=165
+NO_FINISH_TICK cnt=166
