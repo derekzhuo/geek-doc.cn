@@ -1,0 +1,3 @@
+nr_dirty 46
+nr_writeback 0
+pgpgout 6026870

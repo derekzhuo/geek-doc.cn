@@ -1,0 +1,182 @@
+== kernel ==
+Linux lp-storage 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== meminfo baseline ==
+MemTotal:        7802700 kB
+Cached:           747364 kB
+Dirty:               308 kB
+== create 512m dataset (direct write, 不污染页缓存) ==
+
+Disk stats (read/write):
+  vda: ios=0/1566, merge=0/84, ticks=0/6785, in_queue=6785, util=96.43%
+########## round=1 ##########
+---- case=cold-seq-r1 ----
+[meminfo before]
+Cached:           230656 kB
+Dirty:               224 kB
+[diskstats before]
+ 252       0 vda 2970671 28952 27288061 6870441 70992 46281 40885012 5346627 0 1059356 12217068 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=0 total_pages=131072 resident_ratio=0.00%
+iops=48962.3 bw_MiB/s=191.26 p50_us=0.3 p99_us=0.6
+[meminfo after]
+Cached:           778364 kB
+Dirty:               240 kB
+[diskstats after]
+ 252       0 vda 2973246 29878 28391909 6875901 70992 46281 40885012 5346627 0 1062244 12222528 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+---- case=hot-seq-r1 ----
+[meminfo before]
+Cached:           778364 kB
+Dirty:               240 kB
+[diskstats before]
+ 252       0 vda 2973246 29878 28391909 6875901 70992 46281 40885012 5346627 0 1062244 12222528 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+iops=41570.6 bw_MiB/s=162.38 p50_us=0.3 p99_us=0.6
+[meminfo after]
+Cached:           778692 kB
+Dirty:               312 kB
+[diskstats after]
+ 252       0 vda 2975315 29908 29441261 6881768 70996 46301 40885212 5346629 0 1065376 12228398 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+---- case=rand-cached-r1 ----
+[meminfo before]
+Cached:           778692 kB
+Dirty:               312 kB
+[diskstats before]
+ 252       0 vda 2975315 29908 29441261 6881768 70996 46301 40885212 5346629 0 1065376 12228398 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+iops=6857.1 bw_MiB/s=26.79 p50_us=995.3 p99_us=2277.4
+[meminfo after]
+Cached:           594896 kB
+Dirty:               380 kB
+[diskstats after]
+ 252       0 vda 3060398 29908 30122077 6900775 71075 46415 40887004 5346670 0 1085348 12247446 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=85059 total_pages=131072 resident_ratio=64.89%
+---- case=rand-direct-r1 ----
+[meminfo before]
+Cached:           594896 kB
+Dirty:               380 kB
+[diskstats before]
+ 252       0 vda 3060398 29908 30122077 6900775 71075 46415 40887004 5346670 0 1085348 12247446 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=85059 total_pages=131072 resident_ratio=64.89%
+iops=6125.0 bw_MiB/s=23.92 p50_us=1138.7 p99_us=2474.0
+[meminfo after]
+Cached:           254708 kB
+Dirty:                40 kB
+[diskstats after]
+ 252       0 vda 3182928 29966 31102765 7059532 71228 46552 40889772 5346769 0 1105324 12406301 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=0 total_pages=131072 resident_ratio=0.00%
+########## round=2 ##########
+---- case=cold-seq-r2 ----
+[meminfo before]
+Cached:           230740 kB
+Dirty:               156 kB
+[diskstats before]
+ 252       0 vda 3183043 30281 31108501 7059599 71228 46552 40889772 5346769 0 1105376 12406369 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=0 total_pages=131072 resident_ratio=0.00%
+iops=49109.0 bw_MiB/s=191.83 p50_us=0.3 p99_us=0.6
+[meminfo after]
+Cached:           778088 kB
+Dirty:               356 kB
+[diskstats after]
+ 252       0 vda 3185593 30919 32209229 7064847 71263 46606 40890604 5346788 0 1108248 12411635 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+---- case=hot-seq-r2 ----
+[meminfo before]
+Cached:           778088 kB
+Dirty:               356 kB
+[diskstats before]
+ 252       0 vda 3185593 30919 32209229 7064847 71263 46606 40890604 5346788 0 1108248 12411635 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+iops=41426.0 bw_MiB/s=161.82 p50_us=0.3 p99_us=0.6
+[meminfo after]
+Cached:           779280 kB
+Dirty:               236 kB
+[diskstats after]
+ 252       0 vda 3187747 31136 33261805 7070900 71319 46629 40891348 5346825 0 1111380 12417725 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+---- case=rand-cached-r2 ----
+[meminfo before]
+Cached:           779280 kB
+Dirty:               236 kB
+[diskstats before]
+ 252       0 vda 3187747 31136 33261805 7070900 71319 46629 40891348 5346825 0 1111380 12417725 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+iops=3309.8 bw_MiB/s=12.93 p50_us=2089.0 p99_us=4079.6
+[meminfo after]
+Cached:           462880 kB
+Dirty:               296 kB
+[diskstats after]
+ 252       0 vda 3239715 31226 33678397 7090310 71421 46767 40893628 5346886 0 1131348 12437196 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=51942 total_pages=131072 resident_ratio=39.63%
+---- case=rand-direct-r2 ----
+[meminfo before]
+Cached:           462880 kB
+Dirty:               296 kB
+[diskstats before]
+ 252       0 vda 3239715 31226 33678397 7090310 71421 46767 40893628 5346886 0 1131348 12437196 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=51942 total_pages=131072 resident_ratio=39.63%
+iops=6118.5 bw_MiB/s=23.90 p50_us=1237.0 p99_us=2539.5
+[meminfo after]
+Cached:           255248 kB
+Dirty:                40 kB
+[diskstats after]
+ 252       0 vda 3362119 31283 34658093 7249207 71558 46903 40896228 5346965 0 1151336 12596172 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=0 total_pages=131072 resident_ratio=0.00%
+########## round=3 ##########
+---- case=cold-seq-r3 ----
+[meminfo before]
+Cached:           230764 kB
+Dirty:               184 kB
+[diskstats before]
+ 252       0 vda 3362198 31572 34663021 7249250 71558 46903 40896228 5346965 0 1151376 12596215 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=0 total_pages=131072 resident_ratio=0.00%
+iops=49017.2 bw_MiB/s=191.47 p50_us=0.3 p99_us=0.6
+[meminfo after]
+Cached:           777892 kB
+Dirty:               264 kB
+[diskstats after]
+ 252       0 vda 3364747 32353 35764741 7254541 71558 46903 40896228 5346965 0 1154252 12601506 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+---- case=hot-seq-r3 ----
+[meminfo before]
+Cached:           777892 kB
+Dirty:               264 kB
+[diskstats before]
+ 252       0 vda 3364747 32353 35764741 7254541 71558 46903 40896228 5346965 0 1154252 12601506 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+iops=41649.8 bw_MiB/s=162.69 p50_us=0.3 p99_us=0.6
+[meminfo after]
+Cached:           778204 kB
+Dirty:               132 kB
+[diskstats after]
+ 252       0 vda 3366820 32353 36813621 7260390 71634 46960 40897572 5347013 0 1157372 12607403 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+---- case=rand-cached-r3 ----
+[meminfo before]
+Cached:           778204 kB
+Dirty:               132 kB
+[diskstats before]
+ 252       0 vda 3366820 32353 36813621 7260390 71634 46960 40897572 5347013 0 1157372 12607403 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=131072 total_pages=131072 resident_ratio=100.00%
+iops=3369.9 bw_MiB/s=13.16 p50_us=2072.6 p99_us=3850.2
+[meminfo after]
+Cached:           465892 kB
+Dirty:               144 kB
+[diskstats after]
+ 252       0 vda 3419628 32557 37239205 7279838 71761 47094 40899996 5347088 0 1177344 12626926 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=52719 total_pages=131072 resident_ratio=40.22%
+---- case=rand-direct-r3 ----
+[meminfo before]
+Cached:           465892 kB
+Dirty:               144 kB
+[diskstats before]
+ 252       0 vda 3419628 32557 37239205 7279838 71761 47094 40899996 5347088 0 1177344 12626926 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=52719 total_pages=131072 resident_ratio=40.22%
+iops=6134.4 bw_MiB/s=23.96 p50_us=1269.8 p99_us=2539.5
+[meminfo after]
+Cached:           255228 kB
+Dirty:               120 kB
+[diskstats after]
+ 252       0 vda 3542350 32647 38221829 7438713 71857 47226 40902188 5347148 0 1197328 12785862 0 0 0 0 0 0
+file=cache-test.bin size=536870912 page_size=4096 resident_pages=0 total_pages=131072 resident_ratio=0.00%
+== DONE ==

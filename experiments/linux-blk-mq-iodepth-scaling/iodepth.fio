@@ -1,0 +1,17 @@
+# LP15：块设备队列深度扫档（randread 4K，direct=1，单任务隔离 iodepth 效应）
+[global]
+filename=/home/ubuntu/lp-storage/lp15/fio-test.bin
+ioengine=libaio
+direct=1
+rw=randread
+bs=4k
+size=2g
+runtime=30
+time_based=1
+group_reporting=1
+norandommap=1
+randrepeat=0
+
+[depth]
+iodepth=${IOD}
+numjobs=1

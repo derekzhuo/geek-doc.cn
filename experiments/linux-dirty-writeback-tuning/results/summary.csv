@@ -1,0 +1,4 @@
+case(bg_ratio/ratio),chunk_lat_p50_ms,chunk_lat_max_ms,chunks_gt100ms,fsync_ms,throughput_MiB_s,vmstat_bo_peak,vmstat_wa_peak_pct
+loose,21.339,673.887,30,8096.2,152.5,245808,98
+medium,192.552,602.703,52,4232.4,153.1,237596,96
+tight,211.892,499.059,62,1941.7,153.0,233696,97

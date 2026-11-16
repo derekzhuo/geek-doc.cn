@@ -1,0 +1,16 @@
+# LP13：同一数据集的冷/热全文件顺序读与缓存命中后的随机读对照
+[global]
+filename=/home/ubuntu/lp-storage/lp13/cache-test.bin
+ioengine=libaio
+bs=4k
+size=512m
+group_reporting=1
+norandommap=1
+randrepeat=0
+
+[job]
+rw=${RW}
+direct=${DIRECT}
+iodepth=${IOD}
+runtime=${RUNTIME}
+time_based=${TIME_BASED}

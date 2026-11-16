@@ -1,0 +1,301 @@
+START Tue Nov 17 01:49:08 AM CST 2026
+== kernel ==
+Linux lp-storage 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== block device ==
+NAME   SIZE ROTA TYPE MODEL
+sr0     19M    1 rom  QEMU DVD-ROM
+vda     80G    1 disk 
+== scheduler (vda) ==
+[mq-deadline] none
+== nr_hw_queues ==
+1
+== fio version ==
+fio-3.28
+---- round=1 iodepth=1 ----
+iops=2307.4 bw_KiB/s=9229 p50=342016 p99=1810432 p999=14352384 max=27273927
+---- round=1 iodepth=2 ----
+iops=3566.4 bw_KiB/s=14265 p50=452608 p99=2244608 p999=15269888 max=31162840
+---- round=1 iodepth=4 ----
+iops=6075.2 bw_KiB/s=24300 p50=485376 p99=2375680 p999=16056320 max=39693299
+---- round=1 iodepth=8 ----
+iops=6053.0 bw_KiB/s=24212 p50=1122304 p99=3620864 p999=16908288 max=26991961
+---- round=1 iodepth=16 ----
+iops=2461.8 bw_KiB/s=9847 p50=6389760 p99=10551296 p999=24772608 max=74289060
+---- round=1 iodepth=32 ----
+iops=2459.2 bw_KiB/s=9836 p50=13041664 p99=18743296 p999=31588352 max=76648720
+---- round=2 iodepth=1 ----
+iops=1664.6 bw_KiB/s=6658 p50=485376 p99=2179072 p999=14745600 max=24671872
+---- round=2 iodepth=2 ----
+iops=3253.3 bw_KiB/s=13013 p50=485376 p99=2179072 p999=14614528 max=30232463
+---- round=2 iodepth=4 ----
+iops=2459.3 bw_KiB/s=9837 p50=1613824 p99=4046848 p999=17432576 max=71366146
+---- round=2 iodepth=8 ----
+iops=2460.0 bw_KiB/s=9839 p50=3162112 p99=7700480 p999=19267584 max=41269018
+---- round=2 iodepth=16 ----
+iops=2459.7 bw_KiB/s=9838 p50=6455296 p99=10682368 p999=21626880 max=45411603
+---- round=2 iodepth=32 ----
+iops=2459.9 bw_KiB/s=9839 p50=13041664 p99=16908288 p999=28442624 max=38939785
+---- round=3 iodepth=1 ----
+iops=1136.2 bw_KiB/s=4544 p50=782336 p99=2736128 p999=16056320 max=38578593
+---- round=3 iodepth=2 ----
+iops=2388.5 bw_KiB/s=9553 p50=757760 p99=2572288 p999=14483456 max=26557699
+---- round=3 iodepth=4 ----
+iops=3854.8 bw_KiB/s=15419 p50=782336 p99=3162112 p999=17432576 max=63959681
+---- round=3 iodepth=8 ----
+iops=2457.2 bw_KiB/s=9828 p50=3162112 p99=6651904 p999=19529728 max=29784266
+---- round=3 iodepth=16 ----
+iops=2459.8 bw_KiB/s=9839 p50=6455296 p99=11075584 p999=22675456 max=62719014
+---- round=3 iodepth=32 ----
+iops=2459.5 bw_KiB/s=9837 p50=13041664 p99=17432576 p999=26869760 max=54964049
+== DONE ==
+LP13-PHASE
+== kernel ==
+Linux lp-storage 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== meminfo baseline ==
+MemTotal:        7802700 kB
+Cached:           356108 kB
+Dirty:               244 kB
+Writeback:             0 kB
+== create 2g dataset ==
+
+Disk stats (read/write):
+  vda: ios=1/6297, merge=0/234, ticks=0/33770, in_queue=33771, util=99.25%
+########## round=1 ##########
+---- case=cold-buffered-r1 ----
+[meminfo before]
+Cached:           229592 kB
+Dirty:               136 kB
+[diskstats before]
+ 252       0 vda 1594858 14091 14853517 5675319 49967 39471 31031020 5269889 0 660204 10945209 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=0'
+fio: unrecognized option '--DIRECT=0'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           256896 kB
+Dirty:               312 kB
+[diskstats after]
+ 252       0 vda 1595686 15313 14919517 5676010 49967 39471 31031020 5269889 0 660656 10945900 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+---- case=hot-buffered-r1 ----
+[meminfo before]
+Cached:           256896 kB
+Dirty:               312 kB
+[diskstats before]
+ 252       0 vda 1595686 15313 14919517 5676010 49967 39471 31031020 5269889 0 660656 10945900 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=0'
+fio: unrecognized option '--DIRECT=0'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           257012 kB
+Dirty:               312 kB
+[diskstats after]
+ 252       0 vda 1595688 15313 14919533 5676012 49967 39471 31031020 5269889 0 660664 10945902 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+---- case=direct-r1 ----
+[meminfo before]
+Cached:           257012 kB
+Dirty:               312 kB
+[diskstats before]
+ 252       0 vda 1595688 15313 14919533 5676012 49967 39471 31031020 5269889 0 660664 10945902 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=1'
+fio: unrecognized option '--DIRECT=1'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           257012 kB
+Dirty:               312 kB
+[diskstats after]
+ 252       0 vda 1595691 15313 14919557 5676014 49967 39471 31031020 5269889 0 660676 10945904 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+########## round=2 ##########
+---- case=cold-buffered-r2 ----
+[meminfo before]
+Cached:           229888 kB
+Dirty:               312 kB
+[diskstats before]
+ 252       0 vda 1595776 15604 14924693 5676076 49967 39471 31031020 5269889 0 660732 10945966 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=0'
+fio: unrecognized option '--DIRECT=0'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           253836 kB
+Dirty:               544 kB
+[diskstats after]
+ 252       0 vda 1596415 16580 14981573 5676570 49967 39471 31031020 5269889 0 661128 10946460 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+---- case=hot-buffered-r2 ----
+[meminfo before]
+Cached:           253836 kB
+Dirty:               544 kB
+[diskstats before]
+ 252       0 vda 1596415 16580 14981573 5676570 49967 39471 31031020 5269889 0 661128 10946460 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=0'
+fio: unrecognized option '--DIRECT=0'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           253952 kB
+Dirty:               544 kB
+[diskstats after]
+ 252       0 vda 1596415 16580 14981573 5676570 49967 39471 31031020 5269889 0 661128 10946460 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+---- case=direct-r2 ----
+[meminfo before]
+Cached:           253952 kB
+Dirty:               544 kB
+[diskstats before]
+ 252       0 vda 1596415 16580 14981573 5676570 49967 39471 31031020 5269889 0 661128 10946460 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=1'
+fio: unrecognized option '--DIRECT=1'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           253952 kB
+Dirty:               544 kB
+[diskstats after]
+ 252       0 vda 1596415 16580 14981573 5676570 49967 39471 31031020 5269889 0 661128 10946460 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+########## round=3 ##########
+---- case=cold-buffered-r3 ----
+[meminfo before]
+Cached:           229360 kB
+Dirty:               544 kB
+[diskstats before]
+ 252       0 vda 1596521 16836 14986965 5676631 49967 39471 31031020 5269889 0 661180 10946521 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=0'
+fio: unrecognized option '--DIRECT=0'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           253188 kB
+Dirty:               568 kB
+[diskstats after]
+ 252       0 vda 1597133 17704 15042765 5677071 49967 39471 31031020 5269889 0 661568 10946960 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+---- case=hot-buffered-r3 ----
+[meminfo before]
+Cached:           253188 kB
+Dirty:               568 kB
+[diskstats before]
+ 252       0 vda 1597133 17704 15042765 5677071 49967 39471 31031020 5269889 0 661568 10946960 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=0'
+fio: unrecognized option '--DIRECT=0'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           253300 kB
+Dirty:               568 kB
+[diskstats after]
+ 252       0 vda 1597134 17704 15042773 5677071 49967 39471 31031020 5269889 0 661572 10946961 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+---- case=direct-r3 ----
+[meminfo before]
+Cached:           253300 kB
+Dirty:               568 kB
+[diskstats before]
+ 252       0 vda 1597134 17704 15042773 5677071 49967 39471 31031020 5269889 0 661572 10946961 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+fio: unrecognized option '--DIRECT=1'
+fio: unrecognized option '--DIRECT=1'
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "/usr/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[meminfo after]
+Cached:           253416 kB
+Dirty:               568 kB
+[diskstats after]
+ 252       0 vda 1597134 17704 15042773 5677071 49967 39471 31031020 5269889 0 661572 10946961 0 0 0 0 0 0
+file=cache-test.bin size=2147483648 page_size=4096 resident_pages=0 total_pages=524288 resident_ratio=0.00%
+== DONE ==
+RERUN-DONE Tue Nov 17 01:58:42 AM CST 2026
