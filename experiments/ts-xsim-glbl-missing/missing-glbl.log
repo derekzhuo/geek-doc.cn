@@ -1,0 +1,15 @@
+# command: xvlog gate_netlist.v tb_glbl_probe.v && xelab -L unisims_ver work.tb_glbl_probe -debug typical  (cwd C:\eda-lab\b1\ts-xsim-glbl-missing)
+# date: 2026-11-17T04:41:21+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-glbl-missing/gate_netlist.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl_probe
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-glbl-missing/tb_glbl_probe.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_glbl_probe
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L unisims_ver work.tb_glbl_probe -debug typical 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-91] glbl is not declared [/wrk/2017.4/nightly/2017_12_15_2086221/data/verilog/src/unisims/BUFG.v:42]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

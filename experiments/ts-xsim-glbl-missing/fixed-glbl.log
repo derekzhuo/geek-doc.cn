@@ -1,0 +1,53 @@
+# command: xvlog gate_netlist.v tb_glbl_probe.v glbl.v && xelab -L unisims_ver work.tb_glbl_probe work.glbl -s glbl_sim && xsim glbl_sim -t run_all.tcl  (cwd C:\eda-lab\b1\ts-xsim-glbl-missing)
+# date: 2026-11-17T04:41:27+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-glbl-missing/gate_netlist.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl_probe
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-glbl-missing/tb_glbl_probe.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_glbl_probe
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/Vivado/2017.4/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L unisims_ver work.tb_glbl_probe work.glbl -debug typical -s glbl_sim 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.VCC
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.FDRE_default
+Compiling module work.glbl_probe
+Compiling module work.tb_glbl_probe
+Compiling module work.glbl
+Built simulation snapshot glbl_sim
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-glbl-missing/xsim.dir/glbl_sim/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov 17 04:41:23 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/glbl_sim/xsim_script.tcl
+# xsim {glbl_sim} -autoloadwcfg -tclbatch {run_all.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source run_all.tcl
+## run all
+GATE_SIM_PASS q=1
+$finish called at time : 140 ns : File "C:/eda-lab/b1/ts-xsim-glbl-missing/tb_glbl_probe.v" Line 22
+## exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 17 04:41:27 2026...
