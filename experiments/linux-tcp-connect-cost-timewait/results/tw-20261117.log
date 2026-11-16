@@ -1,0 +1,34 @@
+$ sudo -E bash run-tw.sh
+server probe http=200
+== kernel ==
+Linux lp-net1 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== original sysctl ==
+ip_local_port_range=32768	60999 tcp_tw_reuse=2 max_tw_buckets=4096
+== case=baseline range=[32768 60999] tw_reuse=0 n=20000 c=64 ==
+-- tw_before=2
+attempted=20000 success=20000 fail_eaddrnotavail=0 fail_other=0
+elapsed=12.579s rps=1590.0
+-- tw_after=19481
+Total: 693 TCP:   20496 (estab 489, closed 19998, orphaned 2, timewait 19998)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  498       496       2         INET	  507       501       6         FRAG	  0         0         0          
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        105313             0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== case=squeezed range=[40000 41499] tw_reuse=0 n=20000 c=64 ==
+-- tw_before=1
+attempted=20000 success=1500 fail_eaddrnotavail=18500 fail_other=0
+elapsed=1.851s rps=810.6
+-- tw_after=1501
+Total: 200 TCP:   1510 (estab 3, closed 1500, orphaned 0, timewait 1500)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  10        8         2         INET	  19        13        6         FRAG	  0         0         0          
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        125313             0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== case=squeezed-reuse range=[40000 41499] tw_reuse=1 n=20000 c=64 ==
+-- tw_before=1
+attempted=20000 success=4002 fail_eaddrnotavail=15998 fail_other=0
+elapsed=2.516s rps=1590.9
+-- tw_after=1039
+Total: 668 TCP:   1974 (estab 466, closed 1496, orphaned 5, timewait 1496)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  478       476       2         INET	  487       481       6         FRAG	  0         0         0          
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        126813             0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== done ==

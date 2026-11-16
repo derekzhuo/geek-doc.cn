@@ -1,0 +1,36 @@
+$ sudo -E bash run.sh
+libc=/usr/lib/x86_64-linux-gnu/libc.so.6
+
+==== 5 s snapshot ====
+@bytes[hot_path_a (64B 高频小块)]: 864000
+@bytes[session_c (256B 中频会话)]: 1728000
+@bytes[loader_b (4KiB 低频大块)]: 14745600
+@calls[loader_b (4KiB 低频大块)]: 3600
+@calls[session_c (256B 中频会话)]: 6750
+@calls[hot_path_a (64B 高频小块)]: 13500
+@total_malloc_calls: 211001
+
+==== 10 s snapshot ====
+@bytes[hot_path_a (64B 高频小块)]: 1632000
+@bytes[session_c (256B 中频会话)]: 3264000
+@bytes[loader_b (4KiB 低频大块)]: 27852800
+@calls[loader_b (4KiB 低频大块)]: 6800
+@calls[session_c (256B 中频会话)]: 12750
+@calls[hot_path_a (64B 高频小块)]: 25500
+@total_malloc_calls: 238218
+pid=7921 start, rounds=24
+done
+
+
+@bytes[hot_path_a (64B 高频小块)]: 2304000
+@bytes[session_c (256B 中频会话)]: 4608000
+@bytes[loader_b (4KiB 低频大块)]: 39321600
+@calls[loader_b (4KiB 低频大块)]: 9600
+@calls[session_c (256B 中频会话)]: 18000
+@calls[hot_path_a (64B 高频小块)]: 36000
+@total_malloc_calls: 269779
+
+== overhead 对照（2026-11-17 追加，同一 CVM 各跑三次） ==
+裸跑 /usr/bin/time ./malloc_hotspots: 14.42 14.42 14.42 s
+挂 5 uprobe /usr/bin/time bpftrace -c: 15.23 15.23 15.23 s
+差值 0.81 s，相对开销 5.6%，陷头总量 333379 次（63600 业务 + 269779 malloc）

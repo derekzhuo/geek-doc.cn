@@ -1,0 +1,142 @@
+$ sudo -E bash bench.sh
+nginx probe http=200
+== kernel ==
+Linux lp-net1 5.15.0-190-generic #200-Ubuntu SMP Fri Aug 7 15:06:04 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== versions ==
+nginx version: nginx/1.18.0 (Ubuntu)
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+== original sysctl ==
+ip_local_port_range=32768	60999 tcp_tw_reuse=2 max_tw_buckets=4096
+== case=guard range=[32768 60999] tw_reuse=0 max_tw_buckets=4096 mode=oneround ==
+-- nstat[before-guard]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        36115              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       152038             0.0
+-- case=guard round=1 tw_before=2
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17796.27 [#/sec] (mean)
+Connect:        0    3   0.4      3       5
+Total:          4    7   0.7      7      21
+round=1 rc=0 tw_after=4097
+Total: 220 TCP:   4109 (estab 7, closed 4096, orphaned 0, timewait 4096)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  13        11        2         INET	  22        16        6         FRAG	  0         0         0          
+-- nstat[after-guard]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        36115              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== case=baseline range=[32768 60999] tw_reuse=0 max_tw_buckets=200000 mode=spaced ==
+-- nstat[before-baseline]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        40211              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+-- case=baseline round=1 tw_before=1
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17441.56 [#/sec] (mean)
+Connect:        0    3   0.4      3       5
+Total:          4    7   0.7      7      15
+round=1 rc=0 tw_after=13511
+Total: 219 TCP:   13522 (estab 6, closed 13510, orphaned 0, timewait 13510)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  12        10        2         INET	  21        15        6         FRAG	  0         0         0          
+-- case=baseline round=2 tw_before=1
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17341.69 [#/sec] (mean)
+Connect:        0    3   0.4      3       6
+Total:          4    7   0.6      7      17
+round=2 rc=0 tw_after=13544
+Total: 213 TCP:   13554 (estab 5, closed 13543, orphaned 0, timewait 13543)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  11        9         2         INET	  20        14        6         FRAG	  0         0         0          
+-- case=baseline round=3 tw_before=1
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17164.32 [#/sec] (mean)
+Connect:        0    3   0.5      3       9
+Total:          3    7   0.7      7      16
+round=3 rc=0 tw_after=13546
+Total: 213 TCP:   13556 (estab 5, closed 13545, orphaned 0, timewait 13545)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  11        9         2         INET	  20        14        6         FRAG	  0         0         0          
+-- nstat[after-baseline]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        67264              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== case=squeezed range=[40000 41499] tw_reuse=0 max_tw_buckets=200000 mode=rapid ==
+-- nstat[before-squeezed]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        80809              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+-- case=squeezed round=1 tw_before=1
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    15737.21 [#/sec] (mean)
+Connect:        0    3   1.2      3       9
+Total:          3    8   2.4      7      31
+round=1 rc=0 tw_after=751
+Total: 213 TCP:   761 (estab 5, closed 750, orphaned 0, timewait 750)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  11        9         2         INET	  20        14        6         FRAG	  0         0         0          
+-- case=squeezed round=2 tw_before=751
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17239.60 [#/sec] (mean)
+Connect:        0    3   0.5      3       5
+Total:          3    7   0.8      7      19
+round=2 rc=0 tw_after=751
+Total: 207 TCP:   760 (estab 4, closed 750, orphaned 0, timewait 750)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  10        8         2         INET	  19        13        6         FRAG	  0         0         0          
+-- case=squeezed round=3 tw_before=751
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17403.59 [#/sec] (mean)
+Connect:        0    3   0.4      3       6
+Total:          3    7   0.8      7      16
+round=3 rc=0 tw_after=751
+Total: 207 TCP:   760 (estab 4, closed 750, orphaned 0, timewait 750)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  10        8         2         INET	  19        13        6         FRAG	  0         0         0          
+-- nstat[after-squeezed]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        80809              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== case=squeezed-reuse range=[40000 41499] tw_reuse=1 max_tw_buckets=200000 mode=rapid ==
+-- nstat[before-squeezed-reuse]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        81559              0.0
+   TcpExtTWRecycled                118                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+-- case=squeezed-reuse round=1 tw_before=1
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17481.73 [#/sec] (mean)
+Connect:        0    3   0.4      3       6
+Total:          4    7   0.6      7      15
+round=1 rc=0 tw_after=751
+Total: 207 TCP:   760 (estab 4, closed 750, orphaned 0, timewait 750)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  10        8         2         INET	  19        13        6         FRAG	  0         0         0          
+-- case=squeezed-reuse round=2 tw_before=751
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17449.00 [#/sec] (mean)
+Connect:        0    3   0.5      3       7
+Total:          2    7   1.1      7      22
+round=2 rc=0 tw_after=751
+Total: 207 TCP:   760 (estab 4, closed 750, orphaned 0, timewait 750)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  10        8         2         INET	  19        13        6         FRAG	  0         0         0          
+-- case=squeezed-reuse round=3 tw_before=751
+Complete requests:      40000
+Failed requests:        0
+Requests per second:    17511.29 [#/sec] (mean)
+Connect:        0    3   0.5      3       6
+Total:          3    7   0.7      7      17
+round=3 rc=0 tw_after=751
+Total: 207 TCP:   760 (estab 4, closed 750, orphaned 0, timewait 750)  Transport Total     IP        IPv6 RAW	  1         0         1         UDP	  8         5         3         TCP	  10        8         2         INET	  19        13        6         FRAG	  0         0         0          
+-- nstat[after-squeezed-reuse]
+   TcpAttemptFails                 4                  0.0
+   TcpExtTW                        81559              0.0
+   TcpExtTWRecycled                217                0.0
+   TcpExtTWKilled                  0                  0.0
+   TcpExtTCPTimeWaitOverflow       177234             0.0
+== done ==

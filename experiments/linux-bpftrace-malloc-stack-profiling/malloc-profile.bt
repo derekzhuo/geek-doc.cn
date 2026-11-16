@@ -1,0 +1,34 @@
+// LP18：在示例程序的三个分配函数入口挂 uprobe，按调用点聚合次数与字节数。
+// 不依赖 ustack 帧回溯（Ubuntu 22.04 glibc 无帧指针，malloc 内栈链不可靠），
+// 探针位置本身就是调用点语义；另挂 libc malloc 统计全进程 malloc 总量做对账。
+// 路径占位符由 run.sh 渲染为绝对路径。
+uprobe:__BIN__:hot_path_a
+{
+    @calls["hot_path_a (64B 高频小块)"] = count();
+    @bytes["hot_path_a (64B 高频小块)"] = sum(64);
+}
+
+uprobe:__BIN__:loader_b
+{
+    @calls["loader_b (4KiB 低频大块)"] = count();
+    @bytes["loader_b (4KiB 低频大块)"] = sum(4096);
+}
+
+uprobe:__BIN__:session_c
+{
+    @calls["session_c (256B 中频会话)"] = count();
+    @bytes["session_c (256B 中频会话)"] = sum(256);
+}
+
+uprobe:__LIBC__:malloc
+{
+    @total_malloc_calls = count();
+}
+
+interval:s:5
+{
+    printf("\n==== %d s snapshot ====\n", elapsed / 1000000000);
+    print(@bytes);
+    print(@calls);
+    print(@total_malloc_calls);
+}
