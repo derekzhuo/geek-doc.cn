@@ -1,0 +1,35 @@
+===== 2026-11-17T02:05:17+08:00 =====
+$ xvlog.bat and_gate.v tb_and.v; xelab.bat tb_and; xsim.bat tb_and -t run_sim.tcl (cwd C:\eda-lab\b1\ts-xsim-stale-snapshot-no-rebuild)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-stale-snapshot-no-rebuild/and_gate.v" into library work
+INFO: [VRFC 10-311] analyzing module and_gate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-stale-snapshot-no-rebuild/tb_and.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_and
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_and 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.and_gate
+Compiling module work.tb_and
+Built simulation snapshot work.tb_and
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_and/xsim_script.tcl
+# xsim {work.tb_and} -autoloadwcfg -tclbatch {run_sim.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source run_sim.tcl
+## run all
+SNAPSHOT_PROBE a=1 b=0 y=1
+$finish called at time : 20 ns : File "C:/eda-lab/b1/ts-xsim-stale-snapshot-no-rebuild/tb_and.v" Line 21
+## exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 17 02:04:37 2026...
+FRESH_FLOW_DONE
