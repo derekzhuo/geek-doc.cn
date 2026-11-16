@@ -1,0 +1,17 @@
+===== 2026-11-17T02:48:50+08:00 =====
+$ xsim.bat tb_tcl -t tcl_bad_order.tcl (cwd C:\eda-lab\b1\ts-xsim-tclbatch-invalid-command)
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_tcl/xsim_script.tcl
+# xsim {work.tb_tcl} -autoloadwcfg -tclbatch {tcl_bad_order.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source tcl_bad_order.tcl
+## exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 17 02:47:50 2026...
+ORDER_RUN_PASS_COUNT=0
+ORDER_NO_RUN_CONFIRMED
