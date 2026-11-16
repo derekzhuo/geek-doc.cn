@@ -2,6 +2,7 @@
 # LP13 页缓存命中率：冷/热全文件顺序读 + 缓存命中下缓冲随机读与 direct 随机读对照
 set -u
 cd "$(dirname "$0")"
+echo '$ sudo -E bash run.sh'
 LOG=~/logs/lp13
 mkdir -p "$LOG"
 make >/dev/null || exit 1

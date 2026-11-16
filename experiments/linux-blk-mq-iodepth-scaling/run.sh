@@ -2,6 +2,7 @@
 # LP15 iodepth 1/2/4/8/16/32 扫档，每档 30s，共 3 轮
 set -u
 cd "$(dirname "$0")"
+echo '$ bash run.sh'
 LOG=~/logs/lp15
 mkdir -p "$LOG"
 DEV=$(lsblk -no PKNAME "$(df --output=source / | tail -1)" 2>/dev/null | head -1)

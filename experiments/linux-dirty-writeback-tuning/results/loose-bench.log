@@ -1,3 +1,4 @@
+$ sudo bash run.sh
 chunk_mb=32 nchunks=80 total_mb=2560
 chunk=000 offset_mb=0 write_lat_ms=20.720
 chunk=001 offset_mb=32 write_lat_ms=20.038

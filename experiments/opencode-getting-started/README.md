@@ -39,8 +39,9 @@ opencode run "修复 stats.c 的除零与整数截断缺陷，并新增 test.sh 
 
 # 4. 独立验证（不要只看 agent 自述）
 ./test.sh
-printf '1 2 -1' | ./stats    # 期望 avg=1.50
-printf -- '-1' | ./stats     # 期望 avg=0.00
+printf '1 2 -1' | ./stats          # 期望 avg=1.50
+printf -- '-1' | ./stats           # 期望 avg=0.00
+printf '10 20 30 40 -1' | ./stats  # 期望 avg=25.00
 ```
 
 ## 接入要点与三个高频坑

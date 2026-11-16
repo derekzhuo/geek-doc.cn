@@ -2,6 +2,7 @@
 # LP12 脏页回写调参：三档 dirty_background_ratio/dirty_ratio 下的突发写卡顿对照
 set -u
 cd "$(dirname "$0")"
+echo '$ sudo bash run.sh'
 LOG=~/logs/lp12
 mkdir -p "$LOG"
 make >/dev/null || exit 1
