@@ -1,0 +1,53 @@
+$ opencode --version
+1.19.5
+
+$ opencode run "修复 stats.c 的两个缺陷并补测试"
+[0m
+> build · ark-code-latest
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead stats.c
+[0m→ [0mRead README.md
+我先修复 `stats.c` 的两处缺陷，再新增 `test.sh`。
+[0m
+[0m← [0mEdit stats.c
+Index: /private/tmp/oc-demo/stats.c
+===================================================================
+--- /private/tmp/oc-demo/stats.c
++++ /private/tmp/oc-demo/stats.c
+@@ -9,9 +9,11 @@
+             break;
+         sum += x;
+         n++;
+     }
+-    return sum / n;
++    if (n == 0)
++        return 0.0;
++    return (double)sum / n;
+ }
+ 
+ int main(void) {
+     printf("avg=%.2f\n", average_until_minus_one());
+
+[0m
+[0m← [0mWrite test.sh
+Wrote file successfully.
+[0m
+[0m$ [0mchmod +x test.sh && ./test.sh
+PASS: normal sequence
+PASS: single element
+PASS: empty sequence
+----------------
+PASS: 3  FAIL: 0
+[0m
+三组用例全部通过。再快速验证小数平均值（确认整数截断已修复）：
+[0m$ [0mprintf '1 2 -1' | ./stats
+avg=1.50
+[0m
+完成，改动如下：
+
+- `stats.c:13` — 空序列（`n == 0`）直接返回 `0.0`，消除除零；返回值改为 `(double)sum / n`，保留小数（验证 `1 2 -1` → `avg=1.50`）。
+- `test.sh` — 自动编译，含正常序列、单元素、空序列三组用例，逐条输出 PASS/FAIL 并汇总，全部失败时返回非零退出码。
+
+测试结果：`PASS: 3  FAIL: 0`。
+EXIT=0

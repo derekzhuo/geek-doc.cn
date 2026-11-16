@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ark": {
+      "npm": "@ai-sdk/anthropic",
+      "name": "火山方舟 Coding Plan",
+      "options": {
+        "baseURL": "https://ark.cn-beijing.volces.com/api/coding/v1",
+        "apiKey": "{env:ARK_CODING_KEY}"
+      },
+      "models": {
+        "ark-code-latest": {
+          "name": "ark-code-latest"
+        }
+      }
+    }
+  },
+  "model": "ark/ark-code-latest"
+}
