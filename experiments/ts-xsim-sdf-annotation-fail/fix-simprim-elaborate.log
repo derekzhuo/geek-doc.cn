@@ -4,7 +4,7 @@
 
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L simprims_ver work.tb_sdf_probe work.glbl -debug typical -s simprim_external_glbl 
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L simprims_ver work.tb_sdf_probe work.glbl -debug typical -s simprim_external_glbl
 Multi-threading is on. Using 14 slave threads.
 Starting static elaboration
 Completed static elaboration

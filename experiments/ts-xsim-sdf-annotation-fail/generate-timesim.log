@@ -16,7 +16,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16228 
+INFO: Helper process launched with PID 16228
 ---------------------------------------------------------------------------------
 Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 388.137 ; gain = 97.957
 ---------------------------------------------------------------------------------
@@ -40,29 +40,29 @@ Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapse
 Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 439.773 ; gain = 149.594
 ---------------------------------------------------------------------------------
 
-Report RTL Partitions: 
+Report RTL Partitions:
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
-Start RTL Component Statistics 
+Start RTL Component Statistics
 ---------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
+Detailed RTL Component Info :
++---Registers :
+	                1 Bit    Registers := 1
 ---------------------------------------------------------------------------------
-Finished RTL Component Statistics 
+Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
+Start RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module sdf_probe 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
+Hierarchical RTL Component report
+Module sdf_probe
+Detailed RTL Component Info :
++---Registers :
+	                1 Bit    Registers := 1
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ Start Cross Boundary and Area Optimization
 Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 544.301 ; gain = 254.121
 ---------------------------------------------------------------------------------
 
-Report RTL Partitions: 
+Report RTL Partitions:
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
@@ -96,7 +96,7 @@ Start Timing Optimization
 Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 544.301 ; gain = 254.121
 ---------------------------------------------------------------------------------
 
-Report RTL Partitions: 
+Report RTL Partitions:
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
@@ -108,7 +108,7 @@ Start Technology Mapping
 Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 553.023 ; gain = 262.844
 ---------------------------------------------------------------------------------
 
-Report RTL Partitions: 
+Report RTL Partitions:
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
@@ -132,7 +132,7 @@ Finished Final Netlist Cleanup
 Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 553.023 ; gain = 262.844
 ---------------------------------------------------------------------------------
 
-Report Check Netlist: 
+Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
@@ -145,7 +145,7 @@ Start Renaming Generated Instances
 Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 553.023 ; gain = 262.844
 ---------------------------------------------------------------------------------
 
-Report RTL Partitions: 
+Report RTL Partitions:
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
@@ -178,13 +178,13 @@ Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
-Report BlackBoxes: 
+Report BlackBoxes:
 +-+--------------+----------+
 | |BlackBox name |Instances |
 +-+--------------+----------+
 +-+--------------+----------+
 
-Report Cell Usage: 
+Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
@@ -194,7 +194,7 @@ Report Cell Usage:
 |4     |OBUF |     1|
 +------+-----+------+
 
-Report Instance Areas: 
+Report Instance Areas:
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+

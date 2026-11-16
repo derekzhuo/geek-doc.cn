@@ -4,7 +4,7 @@
 
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L unisims_ver work.tb_sdf_probe work.glbl -debug typical -s timesim_embedded 
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -L unisims_ver work.tb_sdf_probe work.glbl -debug typical -s timesim_embedded
 Multi-threading is on. Using 14 slave threads.
 Starting static elaboration
 Completed static elaboration
