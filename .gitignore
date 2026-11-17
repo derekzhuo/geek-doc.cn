@@ -153,3 +153,8 @@ experiments/iverilog-verilator-first-lesson/rtl/obj_dir/
 
 # Yosys 入门综合：综合产物网表与构建目录（synth.ys / run.sh 自动重建，不入库）
 experiments/yosys-first-lesson/build/
+
+# LTspice 批处理产物：.raw 波形二进制、.db 与 .op.raw 工作点文件（run.bat 复跑自动重建，不入库）
+experiments/**/*.raw
+experiments/**/*.op.raw
+experiments/**/*.db

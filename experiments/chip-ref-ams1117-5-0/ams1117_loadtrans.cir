@@ -1,0 +1,24 @@
+* AMS1117 fixed LDO load transient at 12 V input, 5.0 V vs 3.3 V cells
+* Behavioral macro: controlled source (nominal clamp, dropout tracking) plus
+* 25 mOhm pass resistance and 10 uF output cap. Load pulse 10 mA to 800 mA,
+* 10 us edges, 2 ms high level, 4 ms period; same stimulus on both cells.
+.param vdo=1.1 rout=0.025
+VIN5 INP5 0 12
+BREG5 INT5 0 V=limit(min(V(INP5)-vdo,5.0),0,5.2)
+R5 INT5 OUT5 {rout}
+C5 OUT5 0 10u
+IL5 OUT5 0 PULSE(0.01 0.8 0.5m 10u 10u 2m 4m)
+VIN3 INP3 0 12
+BREG3 INT3 0 V=limit(min(V(INP3)-vdo,3.3),0,3.5)
+R3 INT3 OUT3 {rout}
+C3 OUT3 0 10u
+IL3 OUT3 0 PULSE(0.01 0.8 0.5m 10u 10u 2m 4m)
+.tran 0 6m 0 2u
+.meas TRAN v5nom AVG V(OUT5) FROM 0.2m TO 0.45m
+.meas TRAN v5lo MIN V(OUT5) FROM 0.5m TO 2.55m
+.meas TRAN v3nom AVG V(OUT3) FROM 0.2m TO 0.45m
+.meas TRAN v3lo MIN V(OUT3) FROM 0.5m TO 2.55m
+.meas TRAN p5hi AVG (V(INP5)-V(OUT5))*I(IL5) FROM 0.55m TO 2.5m
+.meas TRAN p3hi AVG (V(INP3)-V(OUT3))*I(IL3) FROM 0.55m TO 2.5m
+.meas TRAN i5avg AVG I(IL5) FROM 0 TO 6m
+.end

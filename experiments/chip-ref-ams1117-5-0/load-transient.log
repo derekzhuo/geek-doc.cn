@@ -1,0 +1,26 @@
+# command: LTspice.exe -b ams1117_loadtrans.cir  (cwd C:\eda-lab\b1\chip-ref-ams1117-5-0)
+# date: 2026-11-18T01:50:09+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-ams1117-5-0\ams1117_loadtrans.cir
+Start Time: Wed Nov 18 01:50:09 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.049 seconds.
+Total iterations: 6038
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-ams1117-5-0\ams1117_loadtrans.cir
+
+v5nom: AVG(V(OUT5))=4.99975013733 FROM 0.0002 TO 0.00045
+v5lo: MIN(V(OUT5))=4.97968053818 FROM 0.0005 TO 0.00255
+v3nom: AVG(V(OUT3))=3.29975008965 FROM 0.0002 TO 0.00045
+v3lo: MIN(V(OUT3))=3.27968072891 FROM 0.0005 TO 0.00255
+p5hi: AVG(V(INP5)-V(OUT5))*I(IL5)=5.61600006842 FROM 0.00055 TO 0.0025
+p3hi: AVG(V(INP3)-V(OUT3))*I(IL3)=6.97600012683 FROM 0.00055 TO 0.0025
+i5avg: AVG(I(IL5))=0.471491673534 FROM 0 TO 0.006

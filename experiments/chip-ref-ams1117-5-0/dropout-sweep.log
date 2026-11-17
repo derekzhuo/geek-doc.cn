@@ -1,0 +1,22 @@
+# command: LTspice.exe -b ams1117_dropout.cir  (cwd C:\eda-lab\b1\chip-ref-ams1117-5-0)
+# date: 2026-11-18T01:50:09+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-ams1117-5-0\ams1117_dropout.cir
+Start Time: Wed Nov 18 01:50:09 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Total elapsed time: 0.229 seconds.
+Total iterations: 324
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-ams1117-5-0\ams1117_dropout.cir
+
+vin5: V(OUT5)=4.95 AT 6.05249978542
+vin3: V(OUT3)=3.267 AT 4.36950007582
+v5at12: V(OUT5)=4.99749994278 at 12
+v3at12: V(OUT3)=3.2974998951 at 12

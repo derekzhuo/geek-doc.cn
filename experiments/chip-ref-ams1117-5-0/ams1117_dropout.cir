@@ -1,0 +1,22 @@
+* AMS1117 fixed LDO dropout sweep, 5.0 V vs 3.3 V cells
+* Behavioral macro: controlled source with nominal clamp and dropout tracking,
+* plus 25 mOhm pass resistance. Datasheet basis: dropout typ 1.1 V at full load,
+* required output capacitance >= 10 uF, DC load 0.1 A per cell.
+.param vdo=1.1 rout=0.025
+VIN INP 0 12
+* 5.0 V cell
+BREG5 INT5 0 V=limit(min(V(INP)-vdo,5.0),0,5.2)
+R5 INT5 OUT5 {rout}
+C5 OUT5 0 10u
+IL5 OUT5 0 0.1
+* 3.3 V cell, same load
+BREG3 INT3 0 V=limit(min(V(INP)-vdo,3.3),0,3.5)
+R3 INT3 OUT3 {rout}
+C3 OUT3 0 10u
+IL3 OUT3 0 0.1
+.dc VIN 4 12 0.05
+.meas DC vin5 WHEN V(OUT5)=4.95 CROSS=1
+.meas DC vin3 WHEN V(OUT3)=3.267 CROSS=1
+.meas DC v5at12 FIND V(OUT5) AT=12
+.meas DC v3at12 FIND V(OUT3) AT=12
+.end
