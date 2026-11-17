@@ -1,0 +1,26 @@
+# command: LTspice.exe -b lm324_rail_swing.cir  (cwd C:\eda-lab\b1\chip-ref-lm324)
+# date: 2026-11-18T02:37:13+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-lm324\lm324_rail_swing.cir
+Start Time: Wed Nov 18 02:37:13 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.024 seconds.
+Total iterations: 997
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-lm324\lm324_rail_swing.cir
+
+vlow: V(OUT)=0.0329963371158 at 0.001
+vlin: V(OUT)=2.22175335884 at 0.2
+vhigh: V(OUT)=3.46846842766 at 0.5
+vknee: V(OUT)=3.45 AT 0.312494057209

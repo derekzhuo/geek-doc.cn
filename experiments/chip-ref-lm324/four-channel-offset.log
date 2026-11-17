@@ -1,0 +1,26 @@
+# command: LTspice.exe -b lm324_four_channel.cir  (cwd C:\eda-lab\b1\chip-ref-lm324)
+# date: 2026-11-18T02:37:12+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-lm324\lm324_four_channel.cir
+Start Time: Wed Nov 18 02:37:12 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.062 seconds.
+Total iterations: 2096
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-lm324\lm324_four_channel.cir
+
+o1: V(OUT1)=3.2226421833 at 0.3
+o2: V(OUT2)=3.2776362896 at 0.3
+o3: V(OUT3)=3.32163119316 at 0.3
+o4: V(OUT4)=3.37662529945 at 0.3

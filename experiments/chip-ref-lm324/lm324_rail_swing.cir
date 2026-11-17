@@ -1,0 +1,19 @@
+* Single LM324 channel, gain 11, input sweep past both rails to show the
+* output saturation boundaries: low clamp 0.02 V (single-supply ground
+* sensing) and high clamp Vcc-1.5 V = 3.5 V, both inside the macro.
+VCC SUP 0 5
+VIN INP 0 0
+VOS SP INP 2m
+X1 SP SN OUT opamp
+RFG SN 0 1k
+RFF OUT SN 10k
+.subckt opamp sp sn out
+B1 int 0 V=limit(100000*(V(sp)-V(sn)),0.02,3.5)
+Rout int out 100
+.ends
+.dc VIN 0 0.5 0.005
+.meas DC vlow FIND V(OUT) AT=0.001
+.meas DC vlin FIND V(OUT) AT=0.2
+.meas DC vhigh FIND V(OUT) AT=0.5
+.meas DC vknee WHEN V(OUT)=3.45 CROSS=1
+.end

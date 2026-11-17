@@ -1,0 +1,35 @@
+* LM324 four-channel non-inverting amps, gain 11, deterministic offset budget
+* check. Each channel is a behavioral opamp macro: 100 kV/V open-loop gain,
+* output clamped to [0.02 V, Vcc-1.5 V] (LM324 single-supply swing), 100 Ohm
+* open-loop output resistance. Input offset sources use four deterministic
+* values inside the datasheet 7 mV limit; this verifies the output error
+* budget, it does not model a real part-to-part distribution.
+.param rin=0.3
+VCC SUP 0 5
+VIN INP 0 0
+VOS1 SP1 INP -7m
+VOS2 SP2 INP -2m
+VOS3 SP3 INP 2m
+VOS4 SP4 INP 7m
+.subckt opamp sp sn out
+B1 int 0 V=limit(100000*(V(sp)-V(sn)),0.02,3.5)
+Rout int out 100
+.ends
+X1 SP1 SN1 OUT1 opamp
+X2 SP2 SN2 OUT2 opamp
+X3 SP3 SN3 OUT3 opamp
+X4 SP4 SN4 OUT4 opamp
+RFG1 SN1 0 1k
+RFF1 OUT1 SN1 10k
+RFG2 SN2 0 1k
+RFF2 OUT2 SN2 10k
+RFG3 SN3 0 1k
+RFF3 OUT3 SN3 10k
+RFG4 SN4 0 1k
+RFF4 OUT4 SN4 10k
+.dc VIN 0.29 0.31 0.01
+.meas DC o1 FIND V(OUT1) AT=0.3
+.meas DC o2 FIND V(OUT2) AT=0.3
+.meas DC o3 FIND V(OUT3) AT=0.3
+.meas DC o4 FIND V(OUT4) AT=0.3
+.end
