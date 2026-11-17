@@ -1,0 +1,33 @@
+# command: quartus_sh.exe -t flow_bad.tcl  (cwd C:\eda-lab\b1\ts-quartus-10028-multi-driver)
+# date: 2026-11-18T04:40:06+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# led 寄存器被两个 always 块同时驱动
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Nov 18 04:40:06 2026
+Info: Command: quartus_sh -t flow_bad.tcl
+Info (125061): Changed top-level design entity name to "md_top"
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Processing started: Wed Nov 18 04:40:07 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off qdrv_bad -c qdrv_bad
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file md_bad.v
+    Info (12023): Found entity 1: md_top File: C:/eda-lab/b1/ts-quartus-10028-multi-driver/md_bad.v Line: 4
+Info (12127): Elaborating entity "md_top" for the top level hierarchy
+Error (10028): Can't resolve multiple constant drivers for net "led" at md_bad.v(28) File: C:/eda-lab/b1/ts-quartus-10028-multi-driver/md_bad.v Line: 28
+Error (10029): Constant driver at md_bad.v(18) File: C:/eda-lab/b1/ts-quartus-10028-multi-driver/md_bad.v Line: 18
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
+    Error: Peak virtual memory: 4732 megabytes
+    Error: Processing ended: Wed Nov 18 04:40:12 2026
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:12
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 5 errors, 1 warning
+Error (23031): Evaluation of Tcl script flow_bad.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 10 errors, 1 warning
+    Error: Peak virtual memory: 4734 megabytes
+    Error: Processing ended: Wed Nov 18 04:40:12 2026
+    Error: Elapsed time: 00:00:06
+EXPECTED_MULTI_DRIVER_RC_NONZERO
