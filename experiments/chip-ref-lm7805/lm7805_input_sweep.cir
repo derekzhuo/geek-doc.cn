@@ -1,0 +1,19 @@
+* LM7805 fixed 5 V linear regulator, input voltage sweep 6 to 25 V
+* Behavioral macro: B-source spans INP to internal node so load current really
+* comes from the supply; 5 V clamp with 2.0 V dropout (78-series datasheet),
+* 25 mOhm pass resistance, 5 mA quiescent ground current, 0.5 A DC load.
+.param vdo=2.0 rout=0.025 iq=0.005
+VIN INP 0 12
+BREG INP INT V=V(INP)-limit(min(V(INP)-vdo,5.0),0,5.2)
+R0 INT OUT {rout}
+COUT OUT 0 10u
+IL OUT 0 0.5
+IQ INP 0 {iq}
+.dc VIN 6 25 0.1
+.meas DC vdrop WHEN V(OUT)=4.95 CROSS=1
+.meas DC vout7 FIND V(OUT) AT=7
+.meas DC vout12 FIND V(OUT) AT=12
+.meas DC vout25 FIND V(OUT) AT=25
+.meas DC p12 FIND (V(INP)-V(OUT))*I(IL)+V(INP)*I(IQ) AT=12
+.meas DC p25 FIND (V(INP)-V(OUT))*I(IL)+V(INP)*I(IQ) AT=25
+.end

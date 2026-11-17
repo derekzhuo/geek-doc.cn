@@ -1,0 +1,16 @@
+* LM7805 at 12 V input, load transient 0.1 A to 1.0 A
+* Same macro as the sweep: B-source from INP, 2.0 V dropout, 25 mOhm pass
+* resistance, 5 mA quiescent current, 10 uF output cap.
+.param vdo=2.0 rout=0.025 iq=0.005
+VIN INP 0 12
+BREG INP INT V=V(INP)-limit(min(V(INP)-vdo,5.0),0,5.2)
+R0 INT OUT {rout}
+COUT OUT 0 10u
+IL OUT 0 PULSE(0.1 1.0 0.5m 10u 10u 2m 4m)
+IQ INP 0 {iq}
+.tran 0 6m 0 2u
+.meas TRAN vnom AVG V(OUT) FROM 0.2m TO 0.45m
+.meas TRAN vlo MIN V(OUT) FROM 0.5m TO 2.55m
+.meas TRAN phi AVG (V(INP)-V(OUT))*I(IL)+V(INP)*I(IQ) FROM 0.55m TO 2.5m
+.meas TRAN ilo AVG I(IL) FROM 0 TO 6m
+.end

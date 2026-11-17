@@ -1,0 +1,23 @@
+# command: LTspice.exe -b lm7805_load_transient.cir  (cwd C:\eda-lab\b1\chip-ref-lm7805)
+# date: 2026-11-18T02:02:23+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-lm7805\lm7805_load_transient.cir
+Start Time: Wed Nov 18 02:02:23 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.033 seconds.
+Total iterations: 6038
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-lm7805\lm7805_load_transient.cir
+
+vnom: AVG(V(OUT))=4.99749994278 FROM 0.0002 TO 0.00045
+vlo: MIN(V(OUT))=4.97463607788 FROM 0.0005 TO 0.00255
+phi: AVG(V(INP)-V(OUT))*I(IL)+V(INP)*I(IQ)=7.085000094 FROM 0.00055 TO 0.0025
+ilo: AVG(I(IL))=0.625750000605 FROM 0 TO 0.006
