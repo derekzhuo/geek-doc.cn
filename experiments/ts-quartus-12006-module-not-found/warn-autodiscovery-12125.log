@@ -1,0 +1,26 @@
+# command: quartus_sh.exe -t flow_probe.tcl  (cwd C:\eda-lab\b1\ts-quartus-12006-module-not-found\probe)
+# date: 2026-11-18T04:31:15+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# 探针场景：sub_divider.v 未登记进 VERILOG_FILE，但文件与工程同目录
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Info: Command: quartus_sh -t flow_probe.tcl
+Info (125061): Changed top-level design entity name to "top_blink"
+Info: Running Quartus Prime Analysis & Synthesis
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off qmod_probe -c qmod_probe
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file top_blink.v
+    Info (12023): Found entity 1: top_blink File: C:/eda-lab/b1/ts-quartus-12006-module-not-found/probe/top_blink.v Line: 4
+Info (12127): Elaborating entity "top_blink" for the top level hierarchy
+Warning (12125): Using design file sub_divider.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: sub_divider File: C:/eda-lab/b1/ts-quartus-12006-module-not-found/probe/sub_divider.v Line: 2
+Info (12128): Elaborating entity "sub_divider" for hierarchy "sub_divider:u_div" File: C:/eda-lab/b1/ts-quartus-12006-module-not-found/probe/top_blink.v Line: 17
+Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+Info (293000): Quartus Prime Full Compilation was successful. 0 errors, 13 warnings
+Info (23030): Evaluation of Tcl script flow_probe.tcl was successful
+PROBE_QUARTUS_RC=0

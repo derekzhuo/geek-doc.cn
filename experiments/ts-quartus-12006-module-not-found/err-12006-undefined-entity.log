@@ -1,0 +1,31 @@
+# command: quartus_sh.exe -t ..\flow_missing.tcl  (cwd C:\eda-lab\b1\ts-quartus-12006-module-not-found\bad_proj)
+# date: 2026-11-18T04:33:42+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# 坏工程目录只有 top_blink.v，sub_divider.v 物理上不在工程目录内
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Nov 18 04:33:42 2026
+Info: Command: quartus_sh -t ..\flow_missing.tcl
+Info (125061): Changed top-level design entity name to "top_blink"
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Processing started: Wed Nov 18 04:33:42 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off qmod_bad -c qmod_bad
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file top_blink.v
+    Info (12023): Found entity 1: top_blink File: C:/eda-lab/b1/ts-quartus-12006-module-not-found/bad_proj/top_blink.v Line: 4
+Info (12127): Elaborating entity "top_blink" for the top level hierarchy
+Error (12006): Node instance "u_div" instantiates undefined entity "sub_divider". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: C:/eda-lab/b1/ts-quartus-12006-module-not-found/bad_proj/top_blink.v Line: 17
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4732 megabytes
+    Error: Processing ended: Wed Nov 18 04:33:47 2026
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:13
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 3 errors, 1 warning
+Error (23031): Evaluation of Tcl script ..\flow_missing.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 8 errors, 1 warning
+    Error: Peak virtual memory: 4765 megabytes
+    Error: Processing ended: Wed Nov 18 04:33:48 2026
+    Error: Elapsed time: 00:00:06
+EXPECTED_MODULE_UNDEFINED_RC_NONZERO
