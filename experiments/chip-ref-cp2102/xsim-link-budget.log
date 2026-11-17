@@ -1,0 +1,142 @@
+# command: run.bat  (xvlog tb_cp2102_link.v -> xelab -debug typical tb -s sim_cp2102 -> xsim sim_cp2102 -runall, cwd C:\eda-lab\b1\chip-ref-cp2102)
+# date: 2026-11-18T03:26:01+08:00
+# host-toolchain: Vivado Simulator 2017.4 (XSim, Windows)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/chip-ref-cp2102/tb_cp2102_link.v" into library work
+INFO: [VRFC 10-311] analyzing module tb
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb -s sim_cp2102 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.tb
+Built simulation snapshot sim_cp2102
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/chip-ref-cp2102/xsim.dir/sim_cp2102/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 18 03:25:57 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_cp2102/xsim_script.tcl
+# xsim {sim_cp2102} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+CP2102 link bench v2: BAUD=115200 8N1, 50 frames 0x55/0xAA, TX error swept
+counters per scenario: f55=failed 0x55 frames, faa=failed 0xAA frames, nferr=frame errors, nmis=data mismatches
+MEAS err_pct_x0p5=-12 scen=mid_b2b f55=25 faa=25 nferr=13 nmis=37
+MEAS err_pct_x0p5=-12 scen=ovs_b2b f55=25 faa=25 nferr=13 nmis=37
+MEAS err_pct_x0p5=-12 scen=mid_idle f55=25 faa=0 nferr=0 nmis=25
+MEAS err_pct_x0p5=-12 scen=ovs_idle f55=25 faa=0 nferr=0 nmis=25
+MEAS err_pct_x0p5=-11 scen=mid_b2b f55=25 faa=25 nferr=13 nmis=37
+MEAS err_pct_x0p5=-11 scen=ovs_b2b f55=25 faa=25 nferr=13 nmis=37
+MEAS err_pct_x0p5=-11 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-11 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-10 scen=mid_b2b f55=25 faa=25 nferr=13 nmis=37
+MEAS err_pct_x0p5=-10 scen=ovs_b2b f55=25 faa=25 nferr=13 nmis=37
+MEAS err_pct_x0p5=-10 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-10 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-9 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-9 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-9 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-9 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-8 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-8 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-8 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-8 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-7 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-7 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-7 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-7 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-6 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-6 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-6 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-6 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-5 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-5 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-5 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-5 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-4 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-4 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-4 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-4 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-3 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-3 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-3 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-3 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-2 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-2 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-2 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-2 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-1 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-1 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-1 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=-1 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=0 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=0 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=0 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=0 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=1 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=1 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=1 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=1 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=2 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=2 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=2 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=2 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=3 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=3 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=3 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=3 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=4 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=4 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=4 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=4 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=5 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=5 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=5 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=5 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=6 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=6 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=6 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=6 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=7 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=7 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=7 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=7 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=8 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=8 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=8 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=8 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=9 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=9 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=9 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=9 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=10 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=10 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=10 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=10 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=11 scen=mid_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=11 scen=ovs_b2b f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=11 scen=mid_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=11 scen=ovs_idle f55=0 faa=0 nferr=0 nmis=0
+MEAS err_pct_x0p5=12 scen=mid_b2b f55=25 faa=0 nferr=25 nmis=0
+MEAS err_pct_x0p5=12 scen=ovs_b2b f55=25 faa=0 nferr=25 nmis=0
+MEAS err_pct_x0p5=12 scen=mid_idle f55=25 faa=0 nferr=25 nmis=0
+MEAS err_pct_x0p5=12 scen=ovs_idle f55=25 faa=0 nferr=25 nmis=0
+CP2102_BENCH_DONE
+$finish called at time : 658309994053 ps : File "C:/eda-lab/b1/chip-ref-cp2102/tb_cp2102_link.v" Line 168
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 18 03:26:01 2026...
+XSIM_CP2102_JOB_DONE
