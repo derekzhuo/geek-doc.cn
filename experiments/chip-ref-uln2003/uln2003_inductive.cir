@@ -1,0 +1,19 @@
+* ULN2003 driving an inductive load (12 V relay coil model: 10 mH with
+* 47 Ohm series resistance, steady current ~0.23 A). The flywheel diode
+* cathode returns to the 12 V rail via COM, so the inductive kick at
+* switch-off is clamped to Vcc+Vf. Input on for 5 ms then opens; probe
+* points capture the clamped peak and the L/R decay tail.
+.model swmod SW(Ron=10 Roff=10Meg Vt=1.4 Vh=0)
+.model dmod D(Ron=0.1 Vfwd=0.7)
+VLD SUP 0 12
+L1 SUP OUT 10mH Rser=47
+VIN IN 0 PULSE(0 5 0 10n 10n 5m 12m)
+S1 OUT 0 IN 0 swmod
+D1 OUT SUP dmod
+.tran 0 12m 0 0.5u
+.meas TRAN ilmax MAX I(L1)
+.meas TRAN vspike MAX V(OUT)
+.meas TRAN ion FIND I(L1) AT=4.99m
+.meas TRAN ioff1 FIND I(L1) AT=5.5m
+.meas TRAN ioff2 FIND I(L1) AT=6m
+.end

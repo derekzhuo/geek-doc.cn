@@ -1,0 +1,16 @@
+* ULN2003 input threshold on a fixed 1 kOhm load. Differential control
+* with the swept input on the positive control terminal and a 1.4 V
+* reference (two stacked Vbe of the Darlington pair) on the negative:
+* the sink switch closes when IN rises above REF, so a high input pulls
+* OUT low exactly like the real open-collector Darlington output. The
+* flywheel diode is covered by the other two runs.
+.model swmod SW(Ron=10 Roff=10Meg Vt=0 Vh=1m)
+VCC SUP 0 5
+VIN IN 0 0
+VREF REF 0 1.4
+RLOAD SUP OUT 1k
+S1 OUT 0 IN REF swmod
+.dc VIN 0 5 0.01
+.meas DC vth WHEN V(OUT)=2.5 CROSS=1
+.meas DC vol FIND V(OUT) AT=5
+.end

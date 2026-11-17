@@ -1,0 +1,17 @@
+* ULN2003 Vce(sat) vs sink current on five resistive loads, input held
+* at 5 V (fully on). Threshold measurement lives in uln2003_threshold.cir;
+* this stepped run only probes steady on-state points. No freewheel diode
+* here: on the real part its cathode goes to COM, which ties to the supply
+* rail in a low-side resistive bench and stays reverse biased while the
+* output is low. The diode's forward behavior is covered separately in the
+* inductive run where it is correctly returned to the 12 V rail.
+.model swmod SW(Ron=10 Roff=10Meg Vt=1.4 Vh=1m)
+VCC SUP 0 5
+VIN IN 0 5
+RLOAD SUP OUT {rl}
+.step param rl list 1000 470 220 100 50
+S1 OUT 0 IN 0 swmod
+.dc VIN 4.9 5.1 0.1
+.meas DC vcesat FIND V(OUT) AT=5
+.meas DC ic FIND I(RLOAD) AT=5
+.end

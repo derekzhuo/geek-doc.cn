@@ -1,0 +1,24 @@
+# command: LTspice.exe -b uln2003_inductive.cir  (cwd C:\eda-lab\b1\chip-ref-uln2003)
+# date: 2026-11-18T03:10:30+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-uln2003\uln2003_inductive.cir
+Start Time: Wed Nov 18 03:10:30 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.106 seconds.
+Total iterations: 48127
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-uln2003\uln2003_inductive.cir
+
+ilmax: MAX(I(L1))=0.210526317358 FROM 0 TO 0.012
+vspike: MAX(V(OUT))=12.7210521698 FROM 0 TO 0.012
+ion: I(L1)=0.210526317358 at 0.00499
+ioff1: I(L1)=0.00652766410407 at 0.0055
+ioff2: I(L1)=1.20000178676e-06 at 0.006

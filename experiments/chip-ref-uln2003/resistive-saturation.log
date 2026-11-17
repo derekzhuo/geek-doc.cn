@@ -1,0 +1,39 @@
+# command: LTspice.exe -b uln2003_resistive.cir  (cwd C:\eda-lab\b1\chip-ref-uln2003)
+# date: 2026-11-18T03:10:29+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-uln2003\uln2003_resistive.cir
+Start Time: Wed Nov 18 03:10:29 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+.step rl=1000
+.step rl=470
+.step rl=220
+.step rl=100
+.step rl=50
+Total elapsed time: 0.087 seconds.
+Total iterations: 8
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-uln2003\uln2003_resistive.cir
+
+
+Measurement: vcesat
+  step	V(OUT)	at
+     1	0.0495049506426	5
+     2	0.104166664183	5
+     3	0.217391297221	5
+     4	0.454545468092	5
+     5	0.833333313465	5
+
+Measurement: ic
+  step	I(RLOAD)	at
+     1	0.00495049497113	5
+     2	0.0104166669771	5
+     3	0.0217391308397	5
+     4	0.0454545468092	5
+     5	0.0833333358169	5
