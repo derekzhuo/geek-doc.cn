@@ -1,0 +1,45 @@
+# command: quartus_sh.exe -t flow_bad.tcl  (cwd C:\eda-lab\b1\ts-quartus-169216-invalid-io-standard)
+# date: 2026-11-18T05:07:42+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# 变体二：led_b 改派 1.8-V LVCMOS，同样不在合法词表，Fitter 169216 拒绝
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Nov 18 05:07:42 2026
+Info: Command: quartus_sh -t flow_bad.tcl
+Info (125061): Changed top-level design entity name to "ic_top"
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Processing started: Wed Nov 18 05:07:42 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pio_bad -c pio_bad
+Info (12021): Found 1 design units, including 1 entities, in source file io_conflict.v
+    Info (12023): Found entity 1: ic_top File: C:/eda-lab/b1/ts-quartus-169216-invalid-io-standard/io_conflict.v Line: 3
+Info (12127): Elaborating entity "ic_top" for the top level hierarchy
+Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 34 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Processing ended: Wed Nov 18 05:07:48 2026
+    Info: Elapsed time: 00:00:06
+Info: Running Quartus Prime Fitter
+    Info: Processing started: Wed Nov 18 05:07:49 2026
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off pio_bad -c pio_bad
+Info (119006): Selected device EP4CE6E22C8 for design "pio_bad"
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EP4CE10E22C8 is compatible
+Info (169124): Fitter converted 5 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
+    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Error (169216): I/O standard assignment '1.8-V LVCMOS' to pin led_b is not supported by the device. The name '1.8-V LVCMOS' is not a valid I/O standard name. File: C:/eda-lab/b1/ts-quartus-169216-invalid-io-standard/io_conflict.v Line: 8
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Error (171000): Can't fit design in device
+Error: Quartus Prime Fitter was unsuccessful. 2 errors, 3 warnings
+    Error: Processing ended: Wed Nov 18 05:07:49 2026
+    Error: Elapsed time: 00:00:00
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 4 errors, 4 warnings
+Error (23031): Evaluation of Tcl script flow_bad.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 9 errors, 4 warnings
+    Error: Processing ended: Wed Nov 18 05:07:50 2026
+    Error: Elapsed time: 00:00:08
+EXPECTED_IOSTD_CONFLICT_RC_NONZERO
