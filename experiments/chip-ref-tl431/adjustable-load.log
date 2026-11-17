@@ -1,0 +1,78 @@
+# command: LTspice.exe -b tl431_adjustable.cir  (cwd C:\eda-lab\b1\chip-ref-tl431)
+# date: 2026-11-18T02:49:11+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-tl431\tl431_adjustable.cir
+Start Time: Wed Nov 18 02:49:11 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+.step rl=10000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=0
+Source stepping succeeded in finding the operating point.
+
+.step rl=2000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+.step rl=1000
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+.step rl=500
+.step rl=330
+.step rl=250
+Total elapsed time: 0.135 seconds.
+Total iterations: 7
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-tl431\tl431_adjustable.cir
+
+
+Measurement: vka
+  step	V(K)	at
+     1	4.99002838135	12
+     2	4.99002456665	12
+     3	4.99001932144	12
+     4	4.99000930786	12
+     5	4.90247678757	12
+     6	4.13294315338	12
+
+Measurement: vref
+  step	V(REF)	at
+     1	2.49501419067	12
+     2	2.49501228333	12
+     3	2.49500966072	12
+     4	2.49500465393	12
+     5	2.45123839378	12
+     6	2.06647157669	12
+
+Measurement: ikath
+  step	I(B1)	at
+     1	0.014166329056	12
+     2	0.0121703287587	12
+     3	0.00967533234507	12
+     4	0.00468535441905	12
+     5	0	12
+     6	0	12
+
+Measurement: iload
+  step	I(RLOAD)	at
+     1	0.000499002810102	12
+     2	0.00249501224607	12
+     3	0.00499001936987	12
+     4	0.00998001918197	12
+     5	0.0148559901863	12
+     6	0.0165317729115	12

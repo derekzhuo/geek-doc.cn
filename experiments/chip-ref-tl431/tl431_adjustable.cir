@@ -1,0 +1,18 @@
+* TL431 adjustable shunt regulator: 10k/10k divider programs 4.99 V.
+* 12 V supply through 470 Ohm gives ~14.9 mA total shunt headroom; load
+* steps push cathode shunt current past the 1 mA minimum to show where
+* regulation collapses. The stepped parameter is named rl (not rload,
+* which collides with the RLOAD instance name) and referenced via {rl}.
+VSUP SUP 0 12
+RLIM SUP K 470
+RTOP K REF 10k
+RBOT REF 0 10k
+RLOAD K 0 {rl}
+.step param rl list 10000 2000 1000 500 330 250
+B1 K 0 I=limit(1000*(V(REF)-2.495),0,0.1)
+.dc VSUP 11.9 12.1 0.1
+.meas DC vka FIND V(K) AT=12
+.meas DC vref FIND V(REF) AT=12
+.meas DC ikath FIND I(B1) AT=12
+.meas DC iload FIND I(RLOAD) AT=12
+.end

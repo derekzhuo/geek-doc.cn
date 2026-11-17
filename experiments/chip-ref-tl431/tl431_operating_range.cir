@@ -1,0 +1,17 @@
+* TL431 fixed 2.5 V shunt mode (REF tied to cathode): supply sweep from
+* 0 V. The 1000 A/V transconductance clamps V(K) within millivolts of the
+* 2.495 V reference once regulating, so the usable boundary is found by
+* the supply voltage where cathode current reaches the 1 mA datasheet
+* minimum operating current, not by a voltage crossing above 2.495 V.
+VSUP SUP 0 12
+RLIM SUP K 1k
+B1 K 0 I=limit(1000*(V(K)-2.495),0,0.1)
+.dc VSUP 0 24 0.05
+.meas DC vimin WHEN I(B1)=0.001 CROSS=1
+.meas DC vreg5 FIND V(K) AT=5
+.meas DC vreg12 FIND V(K) AT=12
+.meas DC vreg24 FIND V(K) AT=24
+.meas DC ik5 FIND I(B1) AT=5
+.meas DC ik12 FIND I(B1) AT=12
+.meas DC ik24 FIND I(B1) AT=24
+.end
