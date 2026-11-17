@@ -1,0 +1,27 @@
+# command: LTspice.exe -b xl4015_ripple.cir  (cwd C:\eda-lab\b1\chip-ref-xl4015)
+# date: 2026-11-18T02:19:00+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-xl4015\xl4015_ripple.cir
+Start Time: Wed Nov 18 02:19:14 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.486 seconds.
+Total iterations: 368760
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-xl4015\xl4015_ripple.cir
+
+vavg: AVG(V(OUT))=4.98966211321 FROM 0.008 TO 0.014
+vpp: PP(V(OUT))=0.00414419174194 FROM 0.008 TO 0.014
+ilavg: AVG(I(L1))=1.99585110781 FROM 0.008 TO 0.014
+ilmin: MIN(I(L1))=1.90960371494 FROM 0.008 TO 0.014
+ilmax: MAX(I(L1))=2.08219861984 FROM 0.008 TO 0.014
+iinavg: AVG(I(VIN))=-0.881814415787 FROM 0.008 TO 0.014
+swmin: MIN(V(SW))=-0.541643977165 FROM 0.008 TO 0.014
+swmax: MAX(V(SW))=11.9809036255 FROM 0.008 TO 0.014

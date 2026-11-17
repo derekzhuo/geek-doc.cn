@@ -1,0 +1,24 @@
+* XL4015 buck macro, output ripple and inductor current vs load step
+* Same 12 V to 5 V open-loop macro as xl4015_ripple.cir; RL steps cover
+* 0.5 A to 5 A target loads. The macro has no current-limit trip: the 5 A
+* step is a design-check point comparing measured peak switch current with
+* the datasheet 5 A cycle-by-cycle limit, not a simulated protection event.
+.param fsw=180k d=0.442 ton={d/fsw} tper={1/fsw} rl=2.5
+VIN INP 0 12
+VPWM PG 0 PULSE(0 5 0 1n 1n {ton-2n} {tper})
+S1 INP SW PG 0 swmod
+D1 0 SW sch
+L1 SW OUT 100u
+C1 OUT 0 220u Rser=20m
+RL OUT 0 {rl}
+.model swmod SW(Ron=10m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.5 Roff=100Meg)
+.step param rl list 10 5 2.5 1.67 1
+.tran 0 15m 8m 0.1u
+.meas TRAN vavg AVG V(OUT) FROM 9m TO 14m
+.meas TRAN vpp PP V(OUT) FROM 9m TO 14m
+.meas TRAN ilavg AVG I(L1) FROM 9m TO 14m
+.meas TRAN ilmin MIN I(L1) FROM 9m TO 14m
+.meas TRAN ilmax MAX I(L1) FROM 9m TO 14m
+.meas TRAN iinavg AVG I(VIN) FROM 9m TO 14m
+.end
