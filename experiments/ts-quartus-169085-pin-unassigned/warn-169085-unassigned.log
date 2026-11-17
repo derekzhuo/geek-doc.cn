@@ -1,0 +1,53 @@
+# command: quartus_sh.exe -t flow_warn.tcl  (cwd C:\eda-lab\b1\ts-quartus-169085-pin-unassigned)
+# date: 2026-11-18T04:53:57+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# 六个顶层端口全部不写引脚约束，观察 Quartus 是报错还是只告警
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Nov 18 04:53:57 2026
+Info: Command: quartus_sh -t flow_warn.tcl
+Info (125061): Changed top-level design entity name to "pp_top"
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Processing started: Wed Nov 18 04:53:58 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pp_warn -c pp_warn
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file pin_design.v
+    Info (12023): Found entity 1: pp_top File: C:/eda-lab/b1/ts-quartus-169085-pin-unassigned/pin_design.v Line: 3
+Info (12127): Elaborating entity "pp_top" for the top level hierarchy
+Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 36 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Info: Running Quartus Prime Fitter
+    Info: Processing started: Wed Nov 18 04:54:05 2026
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off pp_warn -c pp_warn
+Info (169124): Fitter converted 5 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_ASDO_DATA1~ is reserved at location 6
+    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
+    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Critical Warning (169085): No exact pin location assignment(s) for 6 pins of 6 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pp_warn.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/eda-lab/b1/ts-quartus-169085-pin-unassigned/pin_design.v Line: 4
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+Info (176353): Automatically promoted node rst_n~input (placed in PIN 24 (CLK2, DIFFCLK_1p)) File: C:/eda-lab/b1/ts-quartus-169085-pin-unassigned/pin_design.v Line: 5
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 4 (unused VREF, 2.5V VCCIO, 0 input, 4 output, 0 bidirectional)
+        Info (176212): I/O standards used: 2.5 V.
+        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  6 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  7 pins available
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+Info (293000): Quartus Prime Full Compilation was successful. 0 errors, 12 warnings
+Info (23030): Evaluation of Tcl script flow_warn.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 12 warnings
+    Info: Processing ended: Wed Nov 18 04:54:11 2026
+    Info: Elapsed time: 00:00:14
+WARN_FLOW_RC0
