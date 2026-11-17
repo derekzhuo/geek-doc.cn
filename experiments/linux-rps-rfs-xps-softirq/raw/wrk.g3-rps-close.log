@@ -1,4 +1,4 @@
-Running 25s test @ http://172.17.16.16:8080/
+Running 25s test @ http://<target-内网IP>:8080/
   2 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency     1.42ms  771.63us  15.91ms   79.16%

@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/lp16
-TARGET=http://172.17.16.16:8080/
+TARGET=http://<target-内网IP>:8080/
 for g in g2-single g3-rps; do
   sudo -n ./group.sh $g > result.$g.c256.cfg.log 2>&1
   for mode in ka close; do

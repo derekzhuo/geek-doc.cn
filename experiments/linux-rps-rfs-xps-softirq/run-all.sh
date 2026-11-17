@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/lp16
-TARGET=http://172.17.16.16:8080/
+TARGET=http://<target-内网IP>:8080/
 sudo -n ./sample.sh idle > result.idle.log 2>&1
 for g in g1-rss2 g2-single g3-rps g4-rfs; do
   sudo -n ./group.sh $g | tee result.$g.cfg.log
