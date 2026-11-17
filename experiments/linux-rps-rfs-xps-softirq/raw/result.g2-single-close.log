@@ -1,0 +1,61 @@
+##### SAMPLE g2-single-close 2026-11-18T01:34:12+08:00 #####
+--- mpstat average ---
+Linux 5.15.0-190-generic (lp-net2) 	11/18/2026 	_x86_64_	(2 CPU)
+01:34:12 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:13 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:14 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:15 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:16 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:17 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:18 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:19 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:20 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:21 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:22 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:23 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:24 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:25 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:26 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:27 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:28 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:29 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:30 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:31 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:32 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:33 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:34 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:35 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:34:36 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   11.68    0.00   28.51    0.04    0.00   39.24    0.00    0.00    0.00   20.53
+Average:       0    4.08    0.00    9.03    0.04    0.00   74.91    0.00    0.00    0.00   11.94
+Average:       1   20.04    0.00   49.94    0.04    0.00    0.00    0.00    0.00    0.00   29.98
+--- irq before ---
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:    2167865          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:    3206082          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0    1342800   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1    1882119   PCI-MSI 81924-edge      virtio0-output.1
+--- irq after ---
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:    2907326          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:    5017195          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0    1342800   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1    1882119   PCI-MSI 81924-edge      virtio0-output.1
+--- softnet before ---
+00352376 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+001cfac4 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+--- softnet after ---
+00585085 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+001cfac8 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+--- ss -s ---
+Total: 264
+TCP:   4170 (estab 64, closed 4096, orphaned 3, timewait 4096)
+
+Transport Total     IP        IPv6
+RAW	  1         0         1        
+UDP	  8         5         3        
+TCP	  74        72        2        
+INET	  83        77        6        
+FRAG	  0         0         0        
+

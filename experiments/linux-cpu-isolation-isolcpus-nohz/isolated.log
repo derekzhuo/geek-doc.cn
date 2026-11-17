@@ -1,0 +1,260 @@
+##### MODE=isolated 2026-11-18T01:57:11+08:00 #####
+--- cmdline ---
+BOOT_IMAGE=/boot/vmlinuz-5.15.0-190-generic root=UUID=7bccaefa-b039-4ff6-bd32-22dde0066c0b ro net.ifnames=0 biosdevname=0 console=ttyS0,115200 console=tty0 panic=5 intel_idle.max_cstate=1 intel_pstate=disable processor.max_cstate=1 crashkernel=0M-3G:0M,3G-8G:192M,8G-16G:256M,16G-64G:384M,64G-128G:512M,128G-486G:768M,486G-972G:1024M,972G-:2048M isolcpus=1
+--- isolated cpus ---
+1
+--- nohz_full cpus ---
+(not available: CONFIG_NO_HZ_FULL unset)
+# CONFIG_NO_HZ_FULL is not set
+CONFIG_CPU_ISOLATION=y
+--- pair 0-0 (3 runs x 200000 rounds) ---
+irq.before.0-0:
+           CPU0       CPU1       
+  1:          0          9   IO-APIC   1-edge      i8042
+  4:         26          0   IO-APIC   4-edge      ttyS0
+  6:          0          3   IO-APIC   6-edge      floppy
+  8:          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0   IO-APIC   9-fasteoi   acpi
+ 11:          0          0   IO-APIC  11-fasteoi   virtio2, uhci_hcd:usb1
+ 12:         15          0   IO-APIC  12-edge      i8042
+ 14:        470          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0   IO-APIC  15-edge      ata_piix
+ 24:          0          0   PCI-MSI 98304-edge      virtio1-config
+ 25:          0       9306   PCI-MSI 98305-edge      virtio1-req.0
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:        168          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:        235          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0         86   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1         30   PCI-MSI 81924-edge      virtio0-output.1
+NMI:          0          0   Non-maskable interrupts
+LOC:       8797        278   Local timer interrupts
+SPU:          0          0   Spurious interrupts
+PMI:          0          0   Performance monitoring interrupts
+IWI:          0          0   IRQ work interrupts
+RTR:          0          0   APIC ICR read retries
+RES:       3022         24   Rescheduling interrupts
+CAL:       2740       2812   Function call interrupts
+TLB:          0          0   TLB shootdowns
+TRM:          0          0   Thermal event interrupts
+THR:          0          0   Threshold APIC interrupts
+DFR:          0          0   Deferred Error APIC interrupts
+MCE:          0          0   Machine check exceptions
+MCP:          1          1   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0   Posted-interrupt notification event
+NPI:          0          0   Nested posted-interrupt event
+PIW:          0          0   Posted-interrupt wakeup event
+pair=cpu0-cpu0 rounds=200000 mean=3155 p50=3180 p90=3205 p99=3308 p999=6156 max=72529
+pair=cpu0-cpu0 rounds=200000 mean=3156 p50=3182 p90=3207 p99=3246 p999=6958 max=230311
+pair=cpu0-cpu0 rounds=200000 mean=3129 p50=3172 p90=3202 p99=3234 p999=5134 max=170646
+irq.after.0-0:
+           CPU0       CPU1       
+  1:          0          9   IO-APIC   1-edge      i8042
+  4:         26          0   IO-APIC   4-edge      ttyS0
+  6:          0          3   IO-APIC   6-edge      floppy
+  8:          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0   IO-APIC   9-fasteoi   acpi
+ 11:          0          0   IO-APIC  11-fasteoi   virtio2, uhci_hcd:usb1
+ 12:         15          0   IO-APIC  12-edge      i8042
+ 14:        472          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0   IO-APIC  15-edge      ata_piix
+ 24:          0          0   PCI-MSI 98304-edge      virtio1-config
+ 25:          0       9308   PCI-MSI 98305-edge      virtio1-req.0
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:        170          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:        237          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0         86   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1         30   PCI-MSI 81924-edge      virtio0-output.1
+NMI:          0          0   Non-maskable interrupts
+LOC:       9401        289   Local timer interrupts
+SPU:          0          0   Spurious interrupts
+PMI:          0          0   Performance monitoring interrupts
+IWI:          0          0   IRQ work interrupts
+RTR:          0          0   APIC ICR read retries
+RES:       3024         26   Rescheduling interrupts
+CAL:       2740       2812   Function call interrupts
+TLB:          0          0   TLB shootdowns
+TRM:          0          0   Thermal event interrupts
+THR:          0          0   Threshold APIC interrupts
+DFR:          0          0   Deferred Error APIC interrupts
+MCE:          0          0   Machine check exceptions
+MCP:          1          1   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0   Posted-interrupt notification event
+NPI:          0          0   Nested posted-interrupt event
+PIW:          0          0   Posted-interrupt wakeup event
+--- pair 0-1 (3 runs x 200000 rounds) ---
+irq.before.0-1:
+           CPU0       CPU1       
+  1:          0          9   IO-APIC   1-edge      i8042
+  4:         26          0   IO-APIC   4-edge      ttyS0
+  6:          0          3   IO-APIC   6-edge      floppy
+  8:          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0   IO-APIC   9-fasteoi   acpi
+ 11:          0          0   IO-APIC  11-fasteoi   virtio2, uhci_hcd:usb1
+ 12:         15          0   IO-APIC  12-edge      i8042
+ 14:        472          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0   IO-APIC  15-edge      ata_piix
+ 24:          0          0   PCI-MSI 98304-edge      virtio1-config
+ 25:          0       9308   PCI-MSI 98305-edge      virtio1-req.0
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:        170          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:        237          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0         86   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1         30   PCI-MSI 81924-edge      virtio0-output.1
+NMI:          0          0   Non-maskable interrupts
+LOC:       9402        289   Local timer interrupts
+SPU:          0          0   Spurious interrupts
+PMI:          0          0   Performance monitoring interrupts
+IWI:          0          0   IRQ work interrupts
+RTR:          0          0   APIC ICR read retries
+RES:       3024         26   Rescheduling interrupts
+CAL:       2740       2812   Function call interrupts
+TLB:          0          0   TLB shootdowns
+TRM:          0          0   Thermal event interrupts
+THR:          0          0   Threshold APIC interrupts
+DFR:          0          0   Deferred Error APIC interrupts
+MCE:          0          0   Machine check exceptions
+MCP:          1          1   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0   Posted-interrupt notification event
+NPI:          0          0   Nested posted-interrupt event
+PIW:          0          0   Posted-interrupt wakeup event
+pair=cpu0-cpu1 rounds=200000 mean=14273 p50=15105 p90=16218 p99=21032 p999=25457 max=229040
+pair=cpu0-cpu1 rounds=200000 mean=15446 p50=15714 p90=16468 p99=22342 p999=28213 max=4212300
+pair=cpu0-cpu1 rounds=200000 mean=15554 p50=15680 p90=16415 p99=22506 p999=48790 max=7419297
+irq.after.0-1:
+           CPU0       CPU1       
+  1:          0          9   IO-APIC   1-edge      i8042
+  4:         26          0   IO-APIC   4-edge      ttyS0
+  6:          0          3   IO-APIC   6-edge      floppy
+  8:          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0   IO-APIC   9-fasteoi   acpi
+ 11:          0          0   IO-APIC  11-fasteoi   virtio2, uhci_hcd:usb1
+ 12:         15          0   IO-APIC  12-edge      i8042
+ 14:        482          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0   IO-APIC  15-edge      ata_piix
+ 24:          0          0   PCI-MSI 98304-edge      virtio1-config
+ 25:          0       9734   PCI-MSI 98305-edge      virtio1-req.0
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:        203          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:        289          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0        107   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1         39   PCI-MSI 81924-edge      virtio0-output.1
+NMI:          0          0   Non-maskable interrupts
+LOC:      12515       2680   Local timer interrupts
+SPU:          0          0   Spurious interrupts
+PMI:          0          0   Performance monitoring interrupts
+IWI:          0          0   IRQ work interrupts
+RTR:          0          0   APIC ICR read retries
+RES:       3163         32   Rescheduling interrupts
+CAL:     632061     632276   Function call interrupts
+TLB:          0          3   TLB shootdowns
+TRM:          0          0   Thermal event interrupts
+THR:          0          0   Threshold APIC interrupts
+DFR:          0          0   Deferred Error APIC interrupts
+MCE:          0          0   Machine check exceptions
+MCP:          1          1   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0   Posted-interrupt notification event
+NPI:          0          0   Nested posted-interrupt event
+PIW:          0          0   Posted-interrupt wakeup event
+--- pair 1-1 (3 runs x 200000 rounds) ---
+irq.before.1-1:
+           CPU0       CPU1       
+  1:          0          9   IO-APIC   1-edge      i8042
+  4:         26          0   IO-APIC   4-edge      ttyS0
+  6:          0          3   IO-APIC   6-edge      floppy
+  8:          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0   IO-APIC   9-fasteoi   acpi
+ 11:          0          0   IO-APIC  11-fasteoi   virtio2, uhci_hcd:usb1
+ 12:         15          0   IO-APIC  12-edge      i8042
+ 14:        482          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0   IO-APIC  15-edge      ata_piix
+ 24:          0          0   PCI-MSI 98304-edge      virtio1-config
+ 25:          0       9734   PCI-MSI 98305-edge      virtio1-req.0
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:        203          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:        289          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0        107   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1         39   PCI-MSI 81924-edge      virtio0-output.1
+NMI:          0          0   Non-maskable interrupts
+LOC:      12515       2680   Local timer interrupts
+SPU:          0          0   Spurious interrupts
+PMI:          0          0   Performance monitoring interrupts
+IWI:          0          0   IRQ work interrupts
+RTR:          0          0   APIC ICR read retries
+RES:       3163         32   Rescheduling interrupts
+CAL:     632061     632276   Function call interrupts
+TLB:          0          3   TLB shootdowns
+TRM:          0          0   Thermal event interrupts
+THR:          0          0   Threshold APIC interrupts
+DFR:          0          0   Deferred Error APIC interrupts
+MCE:          0          0   Machine check exceptions
+MCP:          1          1   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0   Posted-interrupt notification event
+NPI:          0          0   Nested posted-interrupt event
+PIW:          0          0   Posted-interrupt wakeup event
+pair=cpu1-cpu1 rounds=200000 mean=3178 p50=3161 p90=3189 p99=5351 p999=10176 max=50478
+pair=cpu1-cpu1 rounds=200000 mean=3144 p50=3166 p90=3204 p99=4628 p999=7573 max=52249
+pair=cpu1-cpu1 rounds=200000 mean=3200 p50=3206 p90=3247 p99=5285 p999=6863 max=52642
+irq.after.1-1:
+           CPU0       CPU1       
+  1:          0          9   IO-APIC   1-edge      i8042
+  4:         26          0   IO-APIC   4-edge      ttyS0
+  6:          0          3   IO-APIC   6-edge      floppy
+  8:          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0   IO-APIC   9-fasteoi   acpi
+ 11:          0          0   IO-APIC  11-fasteoi   virtio2, uhci_hcd:usb1
+ 12:         15          0   IO-APIC  12-edge      i8042
+ 14:        484          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0   IO-APIC  15-edge      ata_piix
+ 24:          0          0   PCI-MSI 98304-edge      virtio1-config
+ 25:          0       9965   PCI-MSI 98305-edge      virtio1-req.0
+ 26:          0          0   PCI-MSI 81920-edge      virtio0-config
+ 27:        264          1   PCI-MSI 81921-edge      virtio0-input.0
+ 28:        379          0   PCI-MSI 81922-edge      virtio0-output.0
+ 29:          0        141   PCI-MSI 81923-edge      virtio0-input.1
+ 30:          1         52   PCI-MSI 81924-edge      virtio0-output.1
+NMI:          0          0   Non-maskable interrupts
+LOC:      13236       3197   Local timer interrupts
+SPU:          0          0   Spurious interrupts
+PMI:          0          0   Performance monitoring interrupts
+IWI:          0          0   IRQ work interrupts
+RTR:          0          0   APIC ICR read retries
+RES:       3169         35   Rescheduling interrupts
+CAL:     632281     632276   Function call interrupts
+TLB:          0          3   TLB shootdowns
+TRM:          0          0   Thermal event interrupts
+THR:          0          0   Threshold APIC interrupts
+DFR:          0          0   Deferred Error APIC interrupts
+MCE:          0          0   Machine check exceptions
+MCP:          1          1   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0   Posted-interrupt notification event
+NPI:          0          0   Nested posted-interrupt event
+PIW:          0          0   Posted-interrupt wakeup event
+--- perf stat on pair 1-1 ---
+pair=cpu1-cpu1 rounds=200000 mean=3565 p50=3361 p90=4811 p99=6084 p999=11152 max=55329
+
+ Performance counter stats for './iso_lat 1 1 200000 10000':
+
+           420,004      context-switches                                            
+                 2      cpu-migrations                                              
+               848      minor-faults                                                
+               848      page-faults                                                 
+
+       0.772147455 seconds time elapsed
+
+       0.124080000 seconds user
+       0.648419000 seconds sys
+
+
+DONE_isolated

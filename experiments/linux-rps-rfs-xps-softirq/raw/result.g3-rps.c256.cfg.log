@@ -1,0 +1,23 @@
+===== GROUP g3-rps 2026-11-18T01:42:24+08:00 =====
+--- ethtool -l ---
+Channel parameters for eth0:
+Pre-set maximums:
+RX:		n/a
+TX:		n/a
+Other:		n/a
+Combined:	2
+Current hardware settings:
+RX:		n/a
+TX:		n/a
+Other:		n/a
+Combined:	1
+--- rps_cpus ---
+2
+--- xps_cpus ---
+3
+--- rps_flow_cnt ---
+4096
+net.core.rps_sock_flow_entries = 0
+--- queues now ---
+rx-0
+tx-0

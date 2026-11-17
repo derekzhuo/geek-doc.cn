@@ -1,0 +1,28 @@
+===== GROUP g1-rss2 2026-11-18T01:32:51+08:00 =====
+--- ethtool -l ---
+Channel parameters for eth0:
+Pre-set maximums:
+RX:		n/a
+TX:		n/a
+Other:		n/a
+Combined:	2
+Current hardware settings:
+RX:		n/a
+TX:		n/a
+Other:		n/a
+Combined:	2
+--- rps_cpus ---
+0
+0
+--- xps_cpus ---
+1
+2
+--- rps_flow_cnt ---
+0
+0
+net.core.rps_sock_flow_entries = 0
+--- queues now ---
+rx-0
+rx-1
+tx-0
+tx-1
