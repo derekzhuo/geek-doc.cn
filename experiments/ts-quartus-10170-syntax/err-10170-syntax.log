@@ -1,0 +1,22 @@
+# command: quartus_sh.exe -t flow_bad.tcl  (cwd C:\eda-lab\b1\ts-quartus-10170-syntax)
+# date: 2026-11-18T04:22:57+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Nov 18 04:22:57 2026
+Info: Command: quartus_sh -t flow_bad.tcl
+Info (125061): Changed top-level design entity name to "led_blink"
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Processing started: Wed Nov 18 04:22:58 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off qerr_bad -c qerr_bad
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Error (10170): Verilog HDL syntax error at led_bad.v(11) near text: "always";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/eda-lab/b1/ts-quartus-10170-syntax/led_bad.v Line: 11
+Error (10112): Ignored design unit "led_blink" at led_bad.v(4) due to previous errors File: C:/eda-lab/b1/ts-quartus-10170-syntax/led_bad.v Line: 4
+Info (12021): Found 0 design units, including 0 entities, in source file led_bad.v
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 4 errors, 1 warning
+Error (23031): Evaluation of Tcl script flow_bad.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 9 errors, 1 warning
+EXPECTED_QUARTUS_10170_RC_NONZERO
