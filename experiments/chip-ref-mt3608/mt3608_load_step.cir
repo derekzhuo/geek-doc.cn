@@ -1,0 +1,22 @@
+* Same 3.7 V to 5 V boost macro with four load steps (~0.25/0.5/0.75/1 A).
+* In a boost converter the inductor (switch) average current runs above
+* output current by the 1/(1-D) factor, so the 2 A switch limit is reached
+* well before the load draws 2 A. The macro has no limit trip: the heaviest
+* step is a design-check point against the datasheet switch current limit.
+.param fsw=1200k d=0.315 ton={d/fsw} tper={1/fsw} rl=10
+VIN INP 0 3.7
+VPWM PG 0 PULSE(0 5 0 1n 1n {ton-2n} {tper})
+L1 INP SW 4.7u
+S1 SW 0 PG 0 swmod
+D1 SW OUT sch
+C1 OUT 0 22u Rser=10m
+RL OUT 0 {rl}
+.model swmod SW(Ron=10m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.4 Roff=100Meg)
+.step param rl list 20 10 6.67 5
+.tran 0 3m 1.5m 20n
+.meas TRAN vavg AVG V(OUT) FROM 1.8m TO 2.8m
+.meas TRAN vpp PP V(OUT) FROM 1.8m TO 2.8m
+.meas TRAN ilavg AVG I(L1) FROM 1.8m TO 2.8m
+.meas TRAN ilmax MAX I(L1) FROM 1.8m TO 2.8m
+.end

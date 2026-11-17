@@ -1,0 +1,25 @@
+* MT3608 boost module, open-loop switched behavioral macro, 3.7 V to 5 V
+* Datasheet anchors: 1.2 MHz switching, 2 A switch current limit, 0.6 V
+* feedback reference. Module values: L=4.7 uH, Cout=22 uF with 10 mOhm ESR,
+* Schottky rectifier Vf~0.4 V.
+* Boost duty from volt-second balance with diode penalty:
+* D=1-Vin/(Vout+Vd)=1-3.7/5.4=0.315. PWM edges 1 ns. Open loop: passive
+* steady-state only; the 2 A switch limit is checked in mt3608_load_step.cir.
+.param fsw=1200k d=0.315 ton={d/fsw} tper={1/fsw}
+VIN INP 0 3.7
+VPWM PG 0 PULSE(0 5 0 1n 1n {ton-2n} {tper})
+L1 INP SW 4.7u
+S1 SW 0 PG 0 swmod
+D1 SW OUT sch
+C1 OUT 0 22u Rser=10m
+RL OUT 0 10
+.model swmod SW(Ron=10m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.4 Roff=100Meg)
+.tran 0 3m 1.5m 20n
+.meas TRAN vavg AVG V(OUT) FROM 1.8m TO 2.8m
+.meas TRAN vpp PP V(OUT) FROM 1.8m TO 2.8m
+.meas TRAN ilavg AVG I(L1) FROM 1.8m TO 2.8m
+.meas TRAN ilmin MIN I(L1) FROM 1.8m TO 2.8m
+.meas TRAN ilmax MAX I(L1) FROM 1.8m TO 2.8m
+.meas TRAN iinavg AVG I(VIN) FROM 1.8m TO 2.8m
+.end

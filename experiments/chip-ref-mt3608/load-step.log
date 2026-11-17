@@ -1,0 +1,58 @@
+# command: LTspice.exe -b mt3608_load_step.cir  (cwd C:\eda-lab\b1\chip-ref-mt3608)
+# date: 2026-11-18T02:28:00+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-mt3608\mt3608_load_step.cir
+Start Time: Wed Nov 18 02:28:02 2026
+
+.step rl=5
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step rl=6.67
+Direct Newton iteration succeeded in finding operating point.
+
+.step rl=10
+Direct Newton iteration succeeded in finding operating point.
+
+.step rl=20
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.972 seconds.
+Total iterations: 369846
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-mt3608\mt3608_load_step.cir
+
+
+Measurement: vavg
+  step	AVG(V(OUT))	FROM	TO
+     1	4.94980231391	0.0018	0.0028
+     2	4.96026825142	0.0018	0.0028
+     3	4.97074705828	0.0018	0.0028
+     4	4.98129065823	0.0018	0.0028
+
+Measurement: vpp
+  step	PP(V(OUT))	FROM	TO
+     1	0.0251178741455	0.0018	0.0028
+     2	0.0186576843262	0.0018	0.0028
+     3	0.0121150016785	0.0018	0.0028
+     4	0.00623655319214	0.0018	0.0028
+
+Measurement: ilavg
+  step	AVG(I(L1))	FROM	TO
+     1	1.44265665046	0.0018	0.0028
+     2	1.08374412947	0.0018	0.0028
+     3	0.724393170979	0.0018	0.0028
+     4	0.362981181299	0.0018	0.0028
+
+Measurement: ilmax
+  step	MAX(I(L1))	FROM	TO
+     1	1.54496729374	0.0018	0.0028
+     2	1.1862026453	0.0018	0.0028
+     3	0.826944351196	0.0018	0.0028
+     4	0.466141492128	0.0018	0.0028
