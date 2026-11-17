@@ -1,0 +1,17 @@
+* AMS1117-ADJ output voltage vs lower divider resistor R2, R1 fixed at 120 Ohm
+* Six R2 settings up to 820 Ohm keep every target inside the 1.1 V dropout
+* headroom at 12 V input; ideal formula Vout = 1.25*(1+R2/R1), real result
+* additionally includes Iadj*R2 (50 uA flowing out of the ADJ pin).
+.param vdo=1.1 r2=360
+VIN INP 0 12
+BREG INP INT V=V(INP)-limit(min(V(INP)-vdo, V(ADJ)+1.25),0,15)
+R0 INT OUT 0.025
+R1 OUT ADJ 120
+R2 ADJ 0 {r2}
+IADJ 0 ADJ 50u
+RL OUT 0 200
+.step param r2 list 120 240 360 480 680 820
+.dc VIN 11.9 12.1 0.1
+.meas DC vout FIND V(OUT) AT=12
+.meas DC vref FIND V(OUT,ADJ) AT=12
+.end

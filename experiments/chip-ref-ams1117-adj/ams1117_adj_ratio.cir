@@ -1,0 +1,31 @@
+* AMS1117-ADJ resistor ratio verification, two output settings at 12 V input
+* Behavioral macro: B-source spans INP to internal node so load current really
+* comes from the supply; regulated target is ADJ+1.25 V with 1.1 V dropout clamp,
+* 25 mOhm pass resistance. The 50 uA adjust pin current flows OUT of the ADJ pin
+* into the divider node (current source 0 -> ADJ), matching datasheet formula
+* Vout = 1.25*(1+R2/R1) + Iadj*R2.
+* Cell A: R1=120 R2=360 (ideal target 5.0 V), cell B: R1=120 R2=720 (8.75 V).
+.param vdo=1.1
+VIN INP 0 12
+* Cell A
+BREGA INP INTA V=V(INP)-limit(min(V(INP)-vdo, V(ADJA)+1.25),0,15)
+R0A INTA OUTA 0.025
+R1A OUTA ADJA 120
+R2A ADJA 0 360
+IADJA 0 ADJA 50u
+RLA OUTA 0 100
+* Cell B
+BREGB INP INTB V=V(INP)-limit(min(V(INP)-vdo, V(ADJB)+1.25),0,15)
+R0B INTB OUTB 0.025
+R1B OUTB ADJB 120
+R2B ADJB 0 720
+IADJB 0 ADJB 50u
+RLB OUTB 0 200
+.dc VIN 4 14 0.05
+.meas DC vrefa FIND V(OUTA,ADJA) AT=12
+.meas DC vouta FIND V(OUTA) AT=12
+.meas DC vrefb FIND V(OUTB,ADJB) AT=12
+.meas DC voutb FIND V(OUTB) AT=12
+.meas DC dropa WHEN V(OUTA,ADJA)=1.2375 CROSS=1
+.meas DC dropb WHEN V(OUTB,ADJB)=1.2375 CROSS=1
+.end

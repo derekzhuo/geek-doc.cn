@@ -1,0 +1,24 @@
+# command: LTspice.exe -b ams1117_adj_ratio.cir  (cwd C:\eda-lab\b1\chip-ref-ams1117-adj)
+# date: 2026-11-18T02:03:27+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-ams1117-adj\ams1117_adj_ratio.cir
+Start Time: Wed Nov 18 02:03:27 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Total elapsed time: 0.033 seconds.
+Total iterations: 407
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-ams1117-adj\ams1117_adj_ratio.cir
+
+vrefa: V(OUTA,ADJA)=1.2484869957 at 12
+vouta: V(OUTA)=5.01194763184 at 12
+vrefb: V(OUTB,ADJB)=1.24864292145 at 12
+voutb: V(OUTB)=8.77649974823 at 12
+dropa: V(OUTA,ADJA)=1.2375 AT 6.06950012402
+dropb: V(OUTB,ADJB)=1.2375 AT 9.79984176793

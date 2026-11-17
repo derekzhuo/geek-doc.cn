@@ -1,0 +1,42 @@
+# command: LTspice.exe -b ams1117_adj_step.cir  (cwd C:\eda-lab\b1\chip-ref-ams1117-adj)
+# date: 2026-11-18T02:03:27+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-ams1117-adj\ams1117_adj_step.cir
+Start Time: Wed Nov 18 02:03:28 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+.step r2=120
+.step r2=240
+.step r2=360
+.step r2=480
+.step r2=680
+.step r2=820
+Total elapsed time: 0.101 seconds.
+Total iterations: 9
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-ams1117-adj\ams1117_adj_step.cir
+
+
+Measurement: vout
+  step	V(OUT)	at
+     1	2.5048532486	12
+     2	3.7598092556	12
+     3	5.01445198059	12
+     4	6.26878118515	12
+     5	8.35863304138	12
+     6	9.82101249695	12
+
+Measurement: vref
+  step	V(OUT,ADJ)	at
+     1	1.24942660332	12
+     2	1.24926972389	12
+     3	1.24911308289	12
+     4	1.24895620346	12
+     5	1.24869441986	12
+     6	1.24851226807	12
