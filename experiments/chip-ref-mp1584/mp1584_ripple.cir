@@ -1,0 +1,27 @@
+* MP1584 buck module, open-loop switched behavioral macro, 12 V to 5 V at 1 A
+* Datasheet anchors: up to 1.5 MHz switching, 3 A cycle current limit,
+* 0.8 V feedback reference. Mini module values: L=22 uH, ceramic output
+* capacitance 44 uF with ~5 mOhm ESR, Schottky freewheel Vf~0.5 V.
+* Duty from volt-second balance with diode penalty:
+* D=(Vout+Vd)/(Vin+Vd)=5.5/12.5=0.44. PWM edges 1 ns so edge time cannot
+* erode effective duty at 1.5 MHz. Open loop: passive steady-state only.
+.param fsw=1500k d=0.44 ton={d/fsw} tper={1/fsw}
+VIN INP 0 12
+VPWM PG 0 PULSE(0 5 0 1n 1n {ton-2n} {tper})
+S1 INP SW PG 0 swmod
+D1 0 SW sch
+L1 SW OUT 22u
+C1 OUT 0 44u Rser=5m
+RL OUT 0 5
+.model swmod SW(Ron=10m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.5 Roff=100Meg)
+.tran 0 3m 1.5m 20n
+.meas TRAN vavg AVG V(OUT) FROM 1.8m TO 2.8m
+.meas TRAN vpp PP V(OUT) FROM 1.8m TO 2.8m
+.meas TRAN ilavg AVG I(L1) FROM 1.8m TO 2.8m
+.meas TRAN ilmin MIN I(L1) FROM 1.8m TO 2.8m
+.meas TRAN ilmax MAX I(L1) FROM 1.8m TO 2.8m
+.meas TRAN iinavg AVG I(VIN) FROM 1.8m TO 2.8m
+.meas TRAN swmin MIN V(SW) FROM 1.8m TO 2.8m
+.meas TRAN swmax MAX V(SW) FROM 1.8m TO 2.8m
+.end

@@ -1,0 +1,21 @@
+* Same 12 V to 5 V macro at two switching frequencies to explain why
+* LM2596-class 150 kHz modules need much bigger L/C than 1.5 MHz MP1584
+* modules. L=22 uH and C=44 uF are held fixed: the 150 kHz step runs
+* near the CCM boundary at 1 A, which is the point of the comparison.
+.param fsw=1500k d=0.44 ton={d/fsw} tper={1/fsw}
+VIN INP 0 12
+VPWM PG 0 PULSE(0 5 0 1n 1n {ton-2n} {tper})
+S1 INP SW PG 0 swmod
+D1 0 SW sch
+L1 SW OUT 22u
+C1 OUT 0 44u Rser=5m
+RL OUT 0 5
+.model swmod SW(Ron=10m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.5 Roff=100Meg)
+.step param fsw list 150k 1500k
+.tran 0 6m 3m 20n
+.meas TRAN vavg AVG V(OUT) FROM 3.5m TO 5.5m
+.meas TRAN vpp PP V(OUT) FROM 3.5m TO 5.5m
+.meas TRAN ilmin MIN I(L1) FROM 3.5m TO 5.5m
+.meas TRAN ilmax MAX I(L1) FROM 3.5m TO 5.5m
+.end

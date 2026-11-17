@@ -1,0 +1,44 @@
+# command: LTspice.exe -b mp1584_freq_compare.cir  (cwd C:\eda-lab\b1\chip-ref-mp1584)
+# date: 2026-11-18T02:23:00+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-mp1584\mp1584_freq_compare.cir
+Start Time: Wed Nov 18 02:23:53 2026
+
+.step fsw=150000
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step fsw=1500000
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.889 seconds.
+Total iterations: 779740
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-mp1584\mp1584_freq_compare.cir
+
+
+Measurement: vavg
+  step	AVG(V(OUT))	FROM	TO
+     1	4.98165394782	0.0035	0.0055
+     2	4.96574708977	0.0035	0.0055
+
+Measurement: vpp
+  step	PP(V(OUT))	FROM	TO
+     1	0.0184683799744	0.0035	0.0055
+     2	0.0036187171936	0.0035	0.0055
+
+Measurement: ilmin
+  step	MIN(I(L1))	FROM	TO
+     1	0.528882324696	0.0035	0.0055
+     2	0.944998860359	0.0035	0.0055
+
+Measurement: ilmax
+  step	MAX(I(L1))	FROM	TO
+     1	1.46413326263	0.0035	0.0055
+     2	1.04198503494	0.0035	0.0055
