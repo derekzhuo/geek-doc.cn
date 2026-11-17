@@ -1,0 +1,47 @@
+# command: run.bat  (xvlog tb_attiny85_rc_baud.v -> xelab -debug typical tb -s sim_attiny85 -> xsim sim_attiny85 -runall, cwd C:\eda-lab\b1\chip-ref-attiny85)
+# date: 2026-11-18T04:02:22+08:00
+# host-toolchain: Vivado Simulator 2017.4 (XSim, Windows)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/chip-ref-attiny85/tb_attiny85_rc_baud.v" into library work
+INFO: [VRFC 10-311] analyzing module tb
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb -s sim_attiny85 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.tb
+Built simulation snapshot sim_attiny85
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/chip-ref-attiny85/xsim.dir/sim_attiny85/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 18 04:02:18 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_attiny85/xsim_script.tcl
+# xsim {sim_attiny85} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+CHIP=attiny85 RC_F_NOM=8MHz TARGET_BAUD=115200 OSCCAL_STEP_PCT=0.5 MIDPOINT_LIM_PCT=5.263
+MEAS scen=bitbang_quant n69_baud=115994.6 n69_err=0.690 n70_baud=114336.8 n70_err=-0.749
+MEAS scen=uncal_worst_115200 plus10_err=10.759 minus10_err=-9.379 limit=5.263 fail=2
+MEAS scen=factory_cal_115200 plus1_err=1.697 minus1_err=-0.317 pass=2
+MEAS scen=osccal_sweep total=256 win2pct=8 win526=21
+MEAS scen=trim_back plus10_code=107 plus10_res=0.186 minus10_code=147 minus10_res=0.186 trim_ok=2
+MEAS scen=baud9600 quant_err=0.044 uncal_plus10=10.048 uncal_minus10=-9.960 cal_plus1=1.045 cal_minus1=-0.956 uncal_fail=2 cal_pass=2
+ATTINY85_BENCH_DONE
+$finish called at time : 274691630821 ps : File "C:/eda-lab/b1/chip-ref-attiny85/tb_attiny85_rc_baud.v" Line 158
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 18 04:02:22 2026...
+XSIM_ATTINY85_JOB_DONE
