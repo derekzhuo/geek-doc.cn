@@ -1,0 +1,48 @@
+# command: run.bat  (xvlog tb_ds3231_i2c.v -> xelab -debug typical tb -s sim_ds3231 -> xsim sim_ds3231 -runall, cwd C:\eda-lab\b1\chip-ref-ds3231)
+# date: 2026-11-18T03:50:21+08:00
+# host-toolchain: Vivado Simulator 2017.4 (XSim, Windows)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/chip-ref-ds3231/tb_ds3231_i2c.v" into library work
+INFO: [VRFC 10-311] analyzing module ds3231_model
+INFO: [VRFC 10-311] analyzing module tb
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb -s sim_ds3231 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ds3231_model
+Compiling module work.tb
+Built simulation snapshot sim_ds3231
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/chip-ref-ds3231/xsim.dir/sim_ds3231/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 18 03:50:17 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_ds3231/xsim_script.tcl
+# xsim {sim_ds3231} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+MEAS scen=bus_scan ack_cnt=1 nack_cnt=126
+MEAS scen=time_write_readback match=3 mismatch=0
+MEAS scen=wrong_addr nack=1 reg_unchanged=1
+MEAS scen=ptr_wrap_ro aging_ok=1 temp_ro_kept=1 wrap_to_zero=1
+MEAS scen=bcd_rollover sec=00 min=00 hour=10 pass=1
+MEAS scen=fast_mode_400k match=3 mismatch=0
+DS3231_BENCH_DONE
+$finish called at time : 2122066250 ns : File "C:/eda-lab/b1/chip-ref-ds3231/tb_ds3231_i2c.v" Line 342
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 18 03:50:21 2026...
+XSIM_DS3231_JOB_DONE
