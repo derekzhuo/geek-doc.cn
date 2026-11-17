@@ -1,0 +1,20 @@
+* LM393 open-collector comparator, single threshold at 2.5 V reference.
+* Behavioral macro: the output transistor is a voltage-controlled switch
+* between OUT and ground that closes while V(-) > V(+); Ron=20 Ohm gives a
+* Vce(sat)-like low level. Vh=1 mV is numerical chatter relief only
+* (LM393 has no built-in hysteresis). Three pull-up steps show how the
+* open-drain low level degrades as sink current grows.
+.param rpull=10k
+VCC SUP 0 5
+VIN INP 0 0
+VREF REF 0 2.5
+RPU SUP OUT {rpull}
+S1 OUT 0 REF INP ocmod
+.model ocmod SW(Ron=20 Roff=10Meg Vt=0 Vh=1m)
+.step param rpull list 10000 4700 1000
+.dc VIN 0 5 0.01
+.meas DC vth WHEN V(OUT)=2.5 CROSS=1
+.meas DC vol FIND V(OUT) AT=0.5
+.meas DC voh FIND V(OUT) AT=4.5
+.meas DC isink FIND I(RPU) AT=0.5
+.end

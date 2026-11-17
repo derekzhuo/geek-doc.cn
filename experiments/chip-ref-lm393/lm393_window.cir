@@ -1,0 +1,19 @@
+* LM393 dual comparator wired as a window detector, 1.7 V / 3.3 V bounds.
+* Both open-collector outputs share one pull-up (wire-AND): the combined
+* output is high only while the input sits inside the window.
+* Comparator A pulls low below 1.7 V, comparator B pulls low above 3.3 V.
+VCC SUP 0 5
+VIN INP 0 0
+VLO REFLO 0 1.7
+VHI REFHI 0 3.3
+RPU SUP OUT 10k
+SA OUT 0 REFLO INP ocmod
+SB OUT 0 INP REFHI ocmod
+.model ocmod SW(Ron=20 Roff=10Meg Vt=0 Vh=1m)
+.dc VIN 0 5 0.01
+.meas DC vwinlo WHEN V(OUT)=2.5 CROSS=1
+.meas DC vwinhi WHEN V(OUT)=2.5 CROSS=2
+.meas DC vinlo FIND V(OUT) AT=0.5
+.meas DC vmid FIND V(OUT) AT=2.5
+.meas DC vinhi FIND V(OUT) AT=4.5
+.end

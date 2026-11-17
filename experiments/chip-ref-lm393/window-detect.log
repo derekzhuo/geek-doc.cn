@@ -1,0 +1,23 @@
+# command: LTspice.exe -b lm393_window.cir  (cwd C:\eda-lab\b1\chip-ref-lm393)
+# date: 2026-11-18T02:32:23+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-lm393\lm393_window.cir
+Start Time: Wed Nov 18 02:32:23 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Total elapsed time: 0.033 seconds.
+Total iterations: 1006
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-lm393\lm393_window.cir
+
+vwinlo: V(OUT)=2.5 AT 1.70500000018
+vwinhi: V(OUT)=2.5 AT 3.30499999982
+vinlo: V(OUT)=0.00998002011329 at 0.5
+vmid: V(OUT)=4.99001979828 at 2.5
+vinhi: V(OUT)=0.00998002011329 at 4.5
