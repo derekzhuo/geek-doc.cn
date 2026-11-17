@@ -7,8 +7,9 @@ Quartus Prime Lite 25.1 命令行复现「例化实体未定义」的三层对�
 Quartus 的三种真实行为：自动发现（Warning 12125，编译照过）、实体未定义
 （Error 12006，综合失败）、补全文件后全编译成功。
 
-选题卡原预设报错码 10228，真机实测码为 **12006**（`Node instance "u_div"
-instantiates undefined entity "sub_divider"`），实验以真机码为准命名。
+同一现象在不同 Quartus 版本或工程形态下可能挂不同码号；本实验在 25.1std
+真机实测到的是 **12006**（`Node instance "u_div" instantiates undefined
+entity "sub_divider"`），命名与日志均以真机码为准。
 
 ## 文件
 
