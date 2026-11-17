@@ -1,0 +1,42 @@
+# command: quartus_sh.exe -t flow_bad.tcl  (cwd C:\eda-lab\b1\ts-quartus-169009-input-only-pin)
+# date: 2026-11-18T05:00:34+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# 输出脚 led 被约束到输入专用脚 PIN_25，综合照过、Fitter 拒绝放置
+
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Nov 18 05:00:34 2026
+Info: Command: quartus_sh -t flow_bad.tcl
+Info (125061): Changed top-level design entity name to "pd_top"
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Processing started: Wed Nov 18 05:00:34 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pdir_bad -c pdir_bad
+Info (12021): Found 1 design units, including 1 entities, in source file pin_dir.v
+    Info (12023): Found entity 1: pd_top File: C:/eda-lab/b1/ts-quartus-169009-input-only-pin/pin_dir.v Line: 3
+Info (12127): Elaborating entity "pd_top" for the top level hierarchy
+Info (21057): Implemented 35 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Info: Running Quartus Prime Fitter
+    Info: Processing started: Wed Nov 18 05:00:41 2026
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off pdir_bad -c pdir_bad
+Info (169124): Fitter converted 5 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
+    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Error (169009): Cannot place output or bidirectional pin led in input pin location 25 File: C:/eda-lab/b1/ts-quartus-169009-input-only-pin/pin_dir.v Line: 7
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Error (171000): Can't fit design in device
+Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
+    Info (169178): Pin clk uses I/O standard 3.3-V LVTTL at 23 File: C:/eda-lab/b1/ts-quartus-169009-input-only-pin/pin_dir.v Line: 4
+    Info (169178): Pin rst_n uses I/O standard 3.3-V LVTTL at 24 File: C:/eda-lab/b1/ts-quartus-169009-input-only-pin/pin_dir.v Line: 5
+Error: Quartus Prime Fitter was unsuccessful. 2 errors, 4 warnings
+    Error: Processing ended: Wed Nov 18 05:00:42 2026
+    Error: Elapsed time: 00:00:01
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 4 errors, 5 warnings
+Error (23031): Evaluation of Tcl script flow_bad.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 9 errors, 5 warnings
+    Error: Processing ended: Wed Nov 18 05:00:42 2026
+    Error: Elapsed time: 00:00:08
+EXPECTED_PLACE_FAIL_RC_NONZERO
