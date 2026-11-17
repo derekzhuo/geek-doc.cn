@@ -1,0 +1,18 @@
+* LM317 adjustable regulator, output voltage vs R2 at 24 V input
+* Datasheet macro: 1.25 V OUT-to-ADJ reference, 1.5 V dropout, 25 mOhm pass
+* resistance, 50 uA adjust pin current into the divider node, R1 = 240 Ohm
+* (program current 5.2 mA satisfies the 5 mA minimum load spec on its own).
+.param vdo=1.5 r2=720
+VIN INP 0 24
+BREG INP INT V=V(INP)-limit(min(V(INP)-vdo, V(ADJ)+1.25),0,20)
+R0 INT OUT 0.025
+R1 OUT ADJ 240
+R2 ADJ 0 {r2}
+IADJ 0 ADJ 50u
+* 1 Ohm stands in for the R2-shorted (1.25 V output) case; LTspice rejects R=0.
+.step param r2 list 1 390 720 1200 2000 2880
+.dc VIN 23.9 24.1 0.1
+.meas DC vout FIND V(OUT) AT=24
+.meas DC vref FIND V(OUT,ADJ) AT=24
+.meas DC iprog FIND I(R1) AT=24
+.end

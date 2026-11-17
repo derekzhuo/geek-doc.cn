@@ -1,0 +1,25 @@
+# command: LTspice.exe -b lm317_minload.cir  (cwd C:\eda-lab\b1\chip-ref-lm317)
+# date: 2026-11-18T02:10:51+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-lm317\lm317_minload.cir
+Start Time: Wed Nov 18 02:10:51 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Total elapsed time: 0.022 seconds.
+Total iterations: 407
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-lm317\lm317_minload.cir
+
+vouta: V(OUTA)=5.03547906876 at 24
+voutb: V(OUTB)=5.14987516403 at 24
+iproga: I(R1A)=0.00520779099315 at 24
+iprogb: I(R1B)=0.00124996877275 at 24
+margina: I(R1A)-0.005=0.000207790993154 at 24
+marginb: I(R1B)-0.005=-0.00375003122725 at 24
+dropa: V(OUTA,ADJA)=1.2375 AT 6.48612865386

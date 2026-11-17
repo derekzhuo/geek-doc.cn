@@ -1,0 +1,51 @@
+# command: LTspice.exe -b lm317_output_step.cir  (cwd C:\eda-lab\b1\chip-ref-lm317)
+# date: 2026-11-18T02:10:50+08:00
+# host-toolchain: LTspice 26.1.1 (Windows)
+
+LTspice 26.1.1 for Windows
+Circuit: C:\eda-lab\b1\chip-ref-lm317\lm317_output_step.cir
+Start Time: Wed Nov 18 02:10:50 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+.step r2=1
+.step r2=390
+.step r2=720
+.step r2=1200
+.step r2=2000
+.step r2=2880
+Total elapsed time: 0.110 seconds.
+Total iterations: 11
+
+Files loaded:
+C:\eda-lab\b1\chip-ref-lm317\lm317_output_step.cir
+
+
+Measurement: vout
+  step	V(OUT)	at
+     1	1.25512754917	24
+     2	3.30040812492	24
+     3	5.03547906876	24
+     4	7.55921888351	24
+     5	11.7654514313	24
+     6	16.3923072815	24
+
+Measurement: vref
+  step	V(OUT,ADJ)	at
+     1	1.24986975826	24
+     2	1.24986958504	24
+     3	1.24986958504	24
+     4	1.24986982346	24
+     5	1.24986934662	24
+     6	1.24986934662	24
+
+Measurement: iprog
+  step	I(R1)	at
+     1	0.00520779099315	24
+     2	0.00520779099315	24
+     3	0.00520779099315	24
+     4	0.00520779099315	24
+     5	0.00520779099315	24
+     6	0.00520779099315	24

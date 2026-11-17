@@ -1,0 +1,26 @@
+* LM317 minimum load current design check, two 5 V-target dividers, no external load
+* Cell A: R1=240 R2=720, program current 1.25/240 = 5.21 mA, above 5 mA spec.
+* Cell B: R1=1000 R2=3000, same 4x ratio but program current only 1.25 mA.
+* The ideal macro keeps regulating in both cases; measured R1 current versus the
+* 5 mA spec line is the design verdict (datasheet gives no failure curve below it).
+.param vdo=1.5
+VIN INP 0 24
+BREGA INP INTA V=V(INP)-limit(min(V(INP)-vdo, V(ADJA)+1.25),0,20)
+R0A INTA OUTA 0.025
+R1A OUTA ADJA 240
+R2A ADJA 0 720
+IADJA 0 ADJA 50u
+BREGB INP INTB V=V(INP)-limit(min(V(INP)-vdo, V(ADJB)+1.25),0,20)
+R0B INTB OUTB 0.025
+R1B OUTB ADJB 1000
+R2B ADJB 0 3000
+IADJB 0 ADJB 50u
+.dc VIN 4 24 0.1
+.meas DC vouta FIND V(OUTA) AT=24
+.meas DC voutb FIND V(OUTB) AT=24
+.meas DC iproga FIND I(R1A) AT=24
+.meas DC iprogb FIND I(R1B) AT=24
+.meas DC margina FIND I(R1A)-0.005 AT=24
+.meas DC marginb FIND I(R1B)-0.005 AT=24
+.meas DC dropa WHEN V(OUTA,ADJA)=1.2375 CROSS=1
+.end
