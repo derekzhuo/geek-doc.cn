@@ -1,0 +1,4 @@
+# Intentionally broken: width() is misspelled as wdith(), which is an
+# undefined method on DRCLayer and raises NoMethodError at execute time.
+report("demo DRC", "drc_bad_method.lyrdb")
+input(1, 0).wdith(10.um).output("w10")

@@ -1,0 +1,4 @@
+# Healthy deck: width check on the real layer, report database written
+# next to the deck so the run leaves an inspectable artifact.
+report("demo DRC", "drc_good.lyrdb")
+input(1, 0).width(10.um).output("w10")

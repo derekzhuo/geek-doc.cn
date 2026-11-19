@@ -1,0 +1,5 @@
+# Silent-pitfall probe: layer 99/0 does not exist in demo.gds. KLayout
+# treats an empty input as a legal DRC run with zero results, so this
+# deck exits 0 and writes an empty report database.
+report("demo DRC empty-layer probe", "drc_empty_layer.lyrdb")
+input(99, 0).width(10.um).output("w10")

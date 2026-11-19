@@ -158,3 +158,8 @@ experiments/yosys-first-lesson/build/
 experiments/**/*.raw
 experiments/**/*.op.raw
 experiments/**/*.db
+
+# KLayout 流片实验：run.sh 生成的 GDS2/OASIS 版图与 .lyrdb 报告数据库（脚本自动重建，不入库）
+experiments/**/*.gds
+experiments/**/*.oas
+experiments/**/*.lyrdb

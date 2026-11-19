@@ -1,0 +1,4 @@
+# Intentionally broken: the report() call misses its closing parenthesis,
+# so the Ruby parser fails before any DRC operation runs.
+report("demo DRC"
+input(1, 0).width(10.um).output("w10")
