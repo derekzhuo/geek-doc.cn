@@ -1,0 +1,38 @@
+TOOL_VERSION: QEMU emulator version 11.1.2
+GNU gdb (GDB) 18.1
+
+===== 1. healthy: -s -S 冻结启动，gdb 干净连接并读 PC =====
++ riscv64-elf-gdb -q -nx -batch -ex 'set architecture riscv:rv64' -ex 'target remote :1234' ...
+The target architecture is set to "riscv:rv64".
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x0000000000001000 in ?? ()
+pc             0x1000	0x1000
+[Inferior 1 (process 1) detached]
+CASE_EXIT healthy=0
+
+===== 2. no-stub: 启动参数不带 -s，1234 无监听，gdb 连接失败 =====
++ riscv64-elf-gdb -q -nx -batch -ex 'set architecture riscv:rv64' -ex 'target remote :1234' ...
+The target architecture is set to "riscv:rv64".
+could not connect: Operation timed out.
+The program has no registers now.
+CASE_EXIT no_stub=1
+
+===== 3. port-busy: 第一台占用 1234，第二台 -s 抢端口失败 =====
+qemu-system-riscv64: -s: Failed to find an available port: Address already in use
+qemu-system-riscv64: -s: gdbstub: couldn't create chardev
+CASE_EXIT port_busy=1（第二台 QEMU 因 1234 被占自行退出，gdbstub chardev 创建失败）
+
+===== 4. arch-mismatch: gdb 误设 riscv:rv32 连 rv64 目标，触发 ambiguous 告警 =====
++ riscv64-elf-gdb -q -nx -batch -ex 'set architecture riscv:rv32' -ex 'target remote :1234' ...
+The target architecture is set to "riscv:rv32".
+warning: Selected architecture riscv:rv32 is ambiguous with reported target architecture riscv:rv64
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+warning: Selected architecture riscv:rv32 is ambiguous with reported target architecture riscv:rv64
+0x0000000000001000 in ?? ()
+pc             0x1000	0x1000
+[Inferior 1 (process 1) detached]
+CASE_EXIT arch_mismatch=0（gdb 不断连，但按错误位宽解读，修法是改回 rv64/auto）
+
+全部四组完成：健康连接退出码 0；无 stub 连接失败；端口占用第二台 QEMU 报 chardev 创建失败；架构误配仅告警不断连。

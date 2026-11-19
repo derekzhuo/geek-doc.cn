@@ -1,0 +1,31 @@
+TOOL_VERSION: QEMU emulator version 11.1.2
+
+===== 1. vc-backend：漏接串口，serial0 默认挂 vc，终端收不到任何字节 =====
+"filename": "vc"
+"label": "parallel0"
+"filename": "unix:./output/c1.sock,server=on"
+"filename": "vc"
+"label": "serial0"
+终端侧 OpenSBI 横幅计数：0（serial0->vc，输出在不存在的图形窗口里）
+
+===== 2. serial-file：串口写文件，终端静默，横幅完整落盘 =====
+"filename": "vc"
+"label": "parallel0"
+"filename": "unix:./output/c2.sock,server=on"
+"filename": "file"
+"label": "serial0"
+终端侧横幅计数：0；文件内横幅计数：1
+
+===== 3. cpu-frozen：-S 冻结 CPU，接线是 stdio 但 prelaunch 状态零输出 =====
+"status": "prelaunch"
+"filename": "stdio"
+"label": "serial0"
+终端侧横幅计数：0（接线正确，CPU 没跑，固件自然没吐字）
+
+===== 4. stdio-conflict：-nographic 已占 stdio，再挂 -monitor stdio 直接冲突退出 =====
+QEMU 11.1.2 monitor - type 'help' for more information
+qemu-system-riscv64: cannot use stdio by multiple character devices
+qemu-system-riscv64: could not connect serial device to character backend 'stdio'
+CASE_EXIT stdio_conflict=1（QEMU 启动即失败，两条报错见上）
+
+全部四组完成：无输出先 query-chardev 查接线后端，接线正确再 query-status 查 CPU 是否在跑，最后排查 stdio 复用冲突。
