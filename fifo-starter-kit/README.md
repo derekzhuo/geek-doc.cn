@@ -1,5 +1,7 @@
 # FIFO Starter Kit
 
+> **对应教程**：https://geek-doc.cn/chip-design/beginner/exp-sync-fifo-verilog-iverilog.html
+
 一个面向数字 IC 初学者的同步 FIFO 小型工程：包含可参数化 RTL、自校验 testbench、跨平台运行脚本和中文入门说明。只需要 Icarus Verilog，不需要 FPGA 开发板或商业仿真器。
 
 **第一次使用请直接打开 [START-HERE.md](START-HERE.md)。**
