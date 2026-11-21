@@ -1,0 +1,248 @@
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions
+    Info: and other software and tools, and any partner logic
+    Info: functions, and any output files from any of the foregoing
+    Info: (including device programming or simulation files), and any
+    Info: associated documentation or information are expressly subject
+    Info: to the terms and conditions of the Altera Program License
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Altera and sold by Altera or its authorized distributors.  Please
+    Info: refer to the Altera Software License Subscription Agreements
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Sun Nov 22 06:06:32 2026
+Info: Command: quartus_sta -t quartus_sta.tcl
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (332104): Reading SDC File: '<workdir>/constraints.sdc'
+Info (21077): Core supply voltage is 1.2V
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk (Rise) to clk (Rise) (setup and hold)
+Info (332111): Found 1 clocks
+    Info (332111):     Clock Name   Period Rise Time Fall Time   Clock Type       Targets
+    Info (332111): ============== ======== ========= ========= ============ =============
+    Info (332111):            clk   10.000     0.000     5.000         Base           clk
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 3.536
+    Info (332115): -setup
+    Info (332115): -npaths 1
+    Info (332115): -detail full_path
+    Info (332115): -stdout
+Info (332115): Path #1: Setup slack is 3.536
+    Info (332115): ===================================================================
+    Info (332115): From Node    : rptr[0]
+    Info (332115): To Node      : dout[1]~reg0
+    Info (332115): Launch Clock : clk
+    Info (332115): Latch Clock  : clk
+    Info (332115): Data Arrival Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):      0.000      0.000           launch edge time
+    Info (332115):      0.000      0.000           source latency
+    Info (332115):      0.000      0.000           clk
+    Info (332115):      0.000      0.000 RR    IC  clk~input|i
+    Info (332115):      0.766      0.766 RR  CELL  clk~input|o
+    Info (332115):      0.988      0.222 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):      0.988      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):      1.926      0.938 RR    IC  rptr[0]|clk
+    Info (332115):      2.593      0.667 RR  CELL  rptr[0]
+    Info (332115):      2.854      0.261     uTco  rptr[0]
+    Info (332115):      2.854      0.000 RR  CELL  rptr[0]|q
+    Info (332115):      4.374      1.520 RR    IC  mem~140|datab
+    Info (332115):      4.828      0.454 RR  CELL  mem~140|combout
+    Info (332115):      6.063      1.235 RR    IC  mem~141|datab
+    Info (332115):      6.535      0.472 RR  CELL  mem~141|combout
+    Info (332115):      7.672      1.137 RR    IC  mem~144|dataa
+    Info (332115):      8.120      0.448 RR  CELL  mem~144|combout
+    Info (332115):      8.397      0.277 RR    IC  mem~147|datab
+    Info (332115):      8.884      0.487 RF  CELL  mem~147|combout
+    Info (332115):      8.884      0.000 FF    IC  dout[1]~reg0|d
+    Info (332115):      8.999      0.115 FF  CELL  dout[1]~reg0
+    Info (332115): Data Required Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):     10.000     10.000           latch edge time
+    Info (332115):     10.000      0.000           source latency
+    Info (332115):     10.000      0.000           clk
+    Info (332115):     10.000      0.000 RR    IC  clk~input|i
+    Info (332115):     10.766      0.766 RR  CELL  clk~input|o
+    Info (332115):     10.979      0.213 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):     10.979      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):     11.881      0.902 RR    IC  dout[1]~reg0|clk
+    Info (332115):     12.499      0.618 RR  CELL  dout[1]~reg0
+    Info (332115):     12.514      0.015           clock pessimism removed
+    Info (332115):     12.535      0.021     uTsu  dout[1]~reg0
+    Info (332115): Data Arrival Time  :     8.999
+    Info (332115): Data Required Time :    12.535
+    Info (332115): Slack              :     3.536
+    Info (332115): ===================================================================
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.453
+    Info (332115): -hold
+    Info (332115): -npaths 1
+    Info (332115): -detail full_path
+    Info (332115): -stdout
+Info (332115): Path #1: Hold slack is 0.453
+    Info (332115): ===================================================================
+    Info (332115): From Node    : rptr[3]
+    Info (332115): To Node      : rptr[3]
+    Info (332115): Launch Clock : clk
+    Info (332115): Latch Clock  : clk
+    Info (332115): Data Arrival Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):      0.000      0.000           launch edge time
+    Info (332115):      0.000      0.000           source latency
+    Info (332115):      0.000      0.000           clk
+    Info (332115):      0.000      0.000 RR    IC  clk~input|i
+    Info (332115):      0.766      0.766 RR  CELL  clk~input|o
+    Info (332115):      0.979      0.213 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):      0.979      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):      1.881      0.902 RR    IC  rptr[3]|clk
+    Info (332115):      2.499      0.618 RR  CELL  rptr[3]
+    Info (332115):      2.760      0.261     uTco  rptr[3]
+    Info (332115):      2.760      0.000 FF  CELL  rptr[3]|q
+    Info (332115):      2.760      0.000 FF    IC  Add1~1|datac
+    Info (332115):      3.162      0.402 FF  CELL  Add1~1|combout
+    Info (332115):      3.162      0.000 FF    IC  rptr[3]|d
+    Info (332115):      3.245      0.083 FF  CELL  rptr[3]
+    Info (332115): Data Required Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):      0.000      0.000           latch edge time
+    Info (332115):      0.000      0.000           source latency
+    Info (332115):      0.000      0.000           clk
+    Info (332115):      0.000      0.000 RR    IC  clk~input|i
+    Info (332115):      0.766      0.766 RR  CELL  clk~input|o
+    Info (332115):      0.988      0.222 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):      0.988      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):      1.928      0.940 RR    IC  rptr[3]|clk
+    Info (332115):      2.595      0.667 RR  CELL  rptr[3]
+    Info (332115):      2.580     -0.015           clock pessimism removed
+    Info (332115):      2.792      0.212      uTh  rptr[3]
+    Info (332115): Data Arrival Time  :     3.245
+    Info (332115): Data Required Time :     2.792
+    Info (332115): Slack              :     0.453
+    Info (332115): ===================================================================
+QUARTUS_CORNER_RESULT corner=slow_85c wns=3.536 whs=0.453
+Info (21077): Core supply voltage is 1.2V
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk (Rise) to clk (Rise) (setup and hold)
+Info (332111): Found 1 clocks
+    Info (332111):     Clock Name   Period Rise Time Fall Time   Clock Type       Targets
+    Info (332111): ============== ======== ========= ========= ============ =============
+    Info (332111):            clk   10.000     0.000     5.000         Base           clk
+Info (332115): Report Timing: Found 1 setup paths (0 violated).  Worst case slack is 7.180
+    Info (332115): -setup
+    Info (332115): -npaths 1
+    Info (332115): -detail full_path
+    Info (332115): -stdout
+Info (332115): Path #1: Setup slack is 7.180
+    Info (332115): ===================================================================
+    Info (332115): From Node    : rptr[0]
+    Info (332115): To Node      : dout[1]~reg0
+    Info (332115): Launch Clock : clk
+    Info (332115): Latch Clock  : clk
+    Info (332115): Data Arrival Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):      0.000      0.000           launch edge time
+    Info (332115):      0.000      0.000           source latency
+    Info (332115):      0.000      0.000           clk
+    Info (332115):      0.000      0.000 RR    IC  clk~input|i
+    Info (332115):      0.318      0.318 RR  CELL  clk~input|o
+    Info (332115):      0.426      0.108 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):      0.426      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):      0.879      0.453 RR    IC  rptr[0]|clk
+    Info (332115):      1.174      0.295 RR  CELL  rptr[0]
+    Info (332115):      1.279      0.105     uTco  rptr[0]
+    Info (332115):      1.279      0.000 FF  CELL  rptr[0]|q
+    Info (332115):      1.960      0.681 FF    IC  mem~140|datab
+    Info (332115):      2.167      0.207 FF  CELL  mem~140|combout
+    Info (332115):      2.700      0.533 FF    IC  mem~141|datab
+    Info (332115):      2.893      0.193 FF  CELL  mem~141|combout
+    Info (332115):      3.384      0.491 FF    IC  mem~144|dataa
+    Info (332115):      3.588      0.204 FF  CELL  mem~144|combout
+    Info (332115):      3.719      0.131 FF    IC  mem~147|datab
+    Info (332115):      3.930      0.211 FR  CELL  mem~147|combout
+    Info (332115):      3.930      0.000 RR    IC  dout[1]~reg0|d
+    Info (332115):      3.967      0.037 RR  CELL  dout[1]~reg0
+    Info (332115): Data Required Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):     10.000     10.000           latch edge time
+    Info (332115):     10.000      0.000           source latency
+    Info (332115):     10.000      0.000           clk
+    Info (332115):     10.000      0.000 RR    IC  clk~input|i
+    Info (332115):     10.318      0.318 RR  CELL  clk~input|o
+    Info (332115):     10.422      0.104 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):     10.422      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):     10.859      0.437 RR    IC  dout[1]~reg0|clk
+    Info (332115):     11.132      0.273 RR  CELL  dout[1]~reg0
+    Info (332115):     11.140      0.008           clock pessimism removed
+    Info (332115):     11.147      0.007     uTsu  dout[1]~reg0
+    Info (332115): Data Arrival Time  :     3.967
+    Info (332115): Data Required Time :    11.147
+    Info (332115): Slack              :     7.180
+    Info (332115): ===================================================================
+Info (332115): Report Timing: Found 1 hold paths (0 violated).  Worst case slack is 0.186
+    Info (332115): -hold
+    Info (332115): -npaths 1
+    Info (332115): -detail full_path
+    Info (332115): -stdout
+Info (332115): Path #1: Hold slack is 0.186
+    Info (332115): ===================================================================
+    Info (332115): From Node    : rptr[3]
+    Info (332115): To Node      : rptr[3]
+    Info (332115): Launch Clock : clk
+    Info (332115): Latch Clock  : clk
+    Info (332115): Data Arrival Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):      0.000      0.000           launch edge time
+    Info (332115):      0.000      0.000           source latency
+    Info (332115):      0.000      0.000           clk
+    Info (332115):      0.000      0.000 RR    IC  clk~input|i
+    Info (332115):      0.318      0.318 RR  CELL  clk~input|o
+    Info (332115):      0.422      0.104 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):      0.422      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):      0.859      0.437 RR    IC  rptr[3]|clk
+    Info (332115):      1.132      0.273 RR  CELL  rptr[3]
+    Info (332115):      1.237      0.105     uTco  rptr[3]
+    Info (332115):      1.237      0.000 RR  CELL  rptr[3]|q
+    Info (332115):      1.237      0.000 RR    IC  Add1~1|datac
+    Info (332115):      1.408      0.171 RR  CELL  Add1~1|combout
+    Info (332115):      1.408      0.000 RR    IC  rptr[3]|d
+    Info (332115):      1.439      0.031 RR  CELL  rptr[3]
+    Info (332115): Data Required Path:
+    Info (332115): Total (ns)  Incr (ns)     Type  Element
+    Info (332115): ==========  ========= ==  ====  ===================================
+    Info (332115):      0.000      0.000           latch edge time
+    Info (332115):      0.000      0.000           source latency
+    Info (332115):      0.000      0.000           clk
+    Info (332115):      0.000      0.000 RR    IC  clk~input|i
+    Info (332115):      0.318      0.318 RR  CELL  clk~input|o
+    Info (332115):      0.426      0.108 RR    IC  clk~inputclkctrl|inclk[0]
+    Info (332115):      0.426      0.000 RR  CELL  clk~inputclkctrl|outclk
+    Info (332115):      0.882      0.456 RR    IC  rptr[3]|clk
+    Info (332115):      1.177      0.295 RR  CELL  rptr[3]
+    Info (332115):      1.169     -0.008           clock pessimism removed
+    Info (332115):      1.253      0.084      uTh  rptr[3]
+    Info (332115): Data Arrival Time  :     1.439
+    Info (332115): Data Required Time :     1.253
+    Info (332115): Slack              :     0.186
+    Info (332115): ===================================================================
+QUARTUS_CORNER_RESULT corner=fast_0c wns=7.180 whs=0.186
+QUARTUS_QOR_RESULT wns=3.536 whs=0.186
+Info (23030): Evaluation of Tcl script quartus_sta.tcl was successful
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4733 megabytes
+    Info: Processing ended: Sun Nov 22 06:06:32 2026
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00

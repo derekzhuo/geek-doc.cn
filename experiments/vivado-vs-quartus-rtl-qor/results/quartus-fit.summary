@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Nov 22 06:06:27 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : fifo_cross
+Top-level Entity Name : fifo_hand
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 201 / 6,272 ( 3 % )
+    Total combinational functions : 139 / 6,272 ( 2 % )
+    Dedicated logic registers : 149 / 6,272 ( 2 % )
+Total registers : 149
+Total pins : 24 / 92 ( 26 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
