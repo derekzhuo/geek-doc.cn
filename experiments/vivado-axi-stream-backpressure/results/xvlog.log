@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/axis_register_slice.v" into library work
+INFO: [VRFC 10-311] analyzing module axis_register_slice
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/tb_axis_register_slice.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_axis_register_slice
