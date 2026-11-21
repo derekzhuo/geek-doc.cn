@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 22 05:25:55 2026
+# Process ID: 13860
+# Current directory: <workdir>
+# Command line: xsim.exe -mode tcl -source {xsim.dir/fifo_sim/xsim_script.tcl}
+# Log file: <workdir>/xsim.log
+# Journal file: <workdir>\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/fifo_sim/xsim_script.tcl
+# xsim {fifo_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+FIFO_EQUIV_PASS cycles=378 width=8 depth=16
+$finish called at time : 3860 ns : File "<workdir>/tb_fifo.v" Line 129
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov 22 05:25:59 2026...

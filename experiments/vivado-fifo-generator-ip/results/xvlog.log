@@ -1,0 +1,34 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/Vivado/2017.4/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/hdl/fifo_generator_v13_2_rfs.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1
+INFO: [VRFC 10-2458] undeclared symbol sleep_i, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/hdl/fifo_generator_v13_2_rfs.v:519]
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_generator_vlog_beh
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_i, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:1249]
+INFO: [VRFC 10-2458] undeclared symbol wr_eop_ad, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:1331]
+INFO: [VRFC 10-2458] undeclared symbol rd_eop_ad, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:1332]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_axis, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:1574]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_wach, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:2099]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_wdch, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:2319]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_wrch, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:2486]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_rach, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:2866]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_rdch, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:3099]
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_CONV_VER
+INFO: [VRFC 10-2458] undeclared symbol safety_ckt_rd_rst, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:4153]
+INFO: [VRFC 10-2458] undeclared symbol safety_ckt_rd_rst, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:4361]
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_sync_stage
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_bhv_ver_as
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_beh_ver_ll_afifo
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_bhv_ver_ss
+INFO: [VRFC 10-2458] undeclared symbol srst_wrst_busy, assumed default net type wire [<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/simulation/fifo_generator_vlog_beh.v:7792]
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_bhv_ver_preload0
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_1_axic_reg_slice
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/work/ip/.srcs/sources_1/ip/fifo_16x8/sim/fifo_16x8.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_16x8
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/fifo_ip_top.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_ip_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/fifo_hand.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_hand
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/tb_fifo.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_fifo
