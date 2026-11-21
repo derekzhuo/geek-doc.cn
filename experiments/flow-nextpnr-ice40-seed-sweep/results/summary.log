@@ -1,0 +1,12 @@
+$ bash run.sh
+Yosys 0.33 (git sha1 2584903a060)
+"nextpnr-ice40" -- Next Generation Place and Route (Version 0.6-3build5)
+Python 3.12.3
+44e1e58a44ca34acfa4b1ebf30dcd242082c20656cc5d2c6b1d6bf3b68c5cbd0  build/top.json
+seed place_MHz route_MHz LC arcs ripup left result asc_sha256_12
+   0    190.33    194.33 28   85     1    0   PASS debe84bc5605
+   1    190.33    194.33 28   85     0    0   PASS 86d4c7118d59
+   2    190.33    194.33 28   85     0    0   PASS 0a44b2f91717
+   3    190.33    194.33 28   85     0    0   PASS 928b3b2c67a2
+   4    190.33    194.33 28   85     0    0   PASS 342bc8785b80
+json_unchanged=PASS

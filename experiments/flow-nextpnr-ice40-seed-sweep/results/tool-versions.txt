@@ -1,0 +1,3 @@
+Yosys 0.33 (git sha1 2584903a060)
+"nextpnr-ice40" -- Next Generation Place and Route (Version 0.6-3build5)
+Python 3.12.3

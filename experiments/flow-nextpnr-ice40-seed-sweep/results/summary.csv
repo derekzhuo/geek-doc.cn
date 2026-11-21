@@ -1,0 +1,6 @@
+seed,exit_code,finished_normally,target_mhz,placement_fmax_mhz,fmax_mhz,timing_result,max_delay_ns,critical_logic_ns,critical_routing_ns,routing_arcs,router_iterations,ripup_arcs,rerouted_without_ripup,remaining_arcs,router_seconds,lc_used,lc_total,lc_pct,io_used,io_total,io_pct,gb_used,gb_total,gb_pct,warnings,errors,asc_bytes,asc_sha256
+0,0,True,50.0,190.33,194.33,PASS,1.13,3.9,1.2,85,86,1,65,0,0.0,28,1280,2,6,112,5,2,8,25,0,0,189491,debe84bc5605b5c3b6847f3925076afd7c4060792ffdece30b994cb5f87fa7be
+1,0,True,50.0,190.33,194.33,PASS,1.13,3.9,1.2,85,85,0,65,0,0.0,28,1280,2,6,112,5,2,8,25,0,0,189579,86d4c7118d5944ab78dd29b85abcfeceb676a14a829a04579a56c295b02eb337
+2,0,True,50.0,190.33,194.33,PASS,1.13,3.9,1.2,85,85,0,65,0,0.0,28,1280,2,6,112,5,2,8,25,0,0,189451,0a44b2f91717fe2afb9ac2ed0a121772b55d966b898635215588935878777cf0
+3,0,True,50.0,190.33,194.33,PASS,1.13,3.9,1.2,85,85,0,65,0,0.0,28,1280,2,6,112,5,2,8,25,0,0,189451,928b3b2c67a29e79cdd622576143c990d164909b16a171e58e11d86963e4189d
+4,0,True,50.0,190.33,194.33,PASS,1.13,3.9,1.2,85,85,0,65,0,0.0,28,1280,2,6,112,5,2,8,25,0,0,189491,342bc8785b8015d0368ed9d28aed1e691119408dbf5e9474dd214beb21bf6d96
