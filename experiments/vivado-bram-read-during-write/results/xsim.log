@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 22 03:38:27 2026
+# Process ID: 12376
+# Current directory: <workdir>
+# Command line: xsim.exe -mode tcl -source {xsim.dir/bram_sim/xsim_script.tcl}
+# Log file: <workdir>/xsim.log
+# Journal file: <workdir>\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/bram_sim/xsim_script.tcl
+# xsim {bram_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+BRAM_CASE     read_addr_43 wf=1234 rf=1234 nc=1234
+BRAM_CASE  write_collision wf=5a5a rf=a5a5 nc=1234
+BRAM_CASE read_after_write wf=5a5a rf=5a5a nc=5a5a
+BRAM_MODES_PASS cases=3
+$finish called at time : 56 ns : File "<workdir>/tb_bram.v" Line 39
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov 22 03:38:32 2026...

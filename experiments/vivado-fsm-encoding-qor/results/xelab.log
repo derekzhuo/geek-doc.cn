@@ -1,0 +1,14 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_fsm -s fsm_sim
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.fsm_binary
+Compiling module work.fsm_gray
+Compiling module work.fsm_onehot
+Compiling module work.tb_fsm
+Built simulation snapshot fsm_sim

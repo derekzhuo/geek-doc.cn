@@ -1,0 +1,14 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_bram -s bram_sim
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.bram_write_first
+Compiling module work.bram_read_first
+Compiling module work.bram_no_change
+Compiling module work.tb_bram
+Built simulation snapshot bram_sim

@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/fsm_binary.v" into library work
+INFO: [VRFC 10-311] analyzing module fsm_binary
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/fsm_gray.v" into library work
+INFO: [VRFC 10-311] analyzing module fsm_gray
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/fsm_onehot.v" into library work
+INFO: [VRFC 10-311] analyzing module fsm_onehot
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/tb_fsm.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_fsm

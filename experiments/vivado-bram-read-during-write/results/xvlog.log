@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/bram_write_first.v" into library work
+INFO: [VRFC 10-311] analyzing module bram_write_first
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/bram_read_first.v" into library work
+INFO: [VRFC 10-311] analyzing module bram_read_first
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/bram_no_change.v" into library work
+INFO: [VRFC 10-311] analyzing module bram_no_change
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/tb_bram.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_bram

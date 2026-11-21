@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 22 03:34:25 2026
+# Process ID: 12420
+# Current directory: <workdir>
+# Command line: xsim.exe -mode tcl -source {xsim.dir/fsm_sim/xsim_script.tcl}
+# Log file: <workdir>/xsim.log
+# Journal file: <workdir>\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/fsm_sim/xsim_script.tcl
+# xsim {fsm_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+FSM_EQUIV_PASS cycles=512
+$finish called at time : 5156 ns : File "<workdir>/tb_fsm.v" Line 27
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov 22 03:34:29 2026...
