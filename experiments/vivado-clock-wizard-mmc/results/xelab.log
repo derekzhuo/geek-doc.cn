@@ -1,0 +1,17 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe work.tb_clock_wizard work.glbl -L unisims_ver -L unimacro_ver -L secureip -s clock_sim
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module work.clk_wiz_0_clk_wiz
+Compiling module work.clock_top
+Compiling module work.tb_clock_wizard
+Compiling module work.glbl
+Built simulation snapshot clock_sim

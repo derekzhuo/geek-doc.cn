@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/Vivado/2017.4/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/work/ip/.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library work
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/work/ip/.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library work
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/clock_top.v" into library work
+INFO: [VRFC 10-311] analyzing module clock_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/tb_clock_wizard.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_clock_wizard

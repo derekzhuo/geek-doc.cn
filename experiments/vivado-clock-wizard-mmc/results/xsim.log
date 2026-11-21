@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 22 05:11:01 2026
+# Process ID: 16332
+# Current directory: <workdir>
+# Command line: xsim.exe -mode tcl -source {xsim.dir/clock_sim/xsim_script.tcl}
+# Log file: <workdir>/xsim.log
+# Journal file: <workdir>\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/clock_sim/xsim_script.tcl
+# xsim {clock_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+CLOCK_WIZ_LOCKED time_ns=545.100000
+CLOCK_WIZ_PASS clk50_period_ns=20.000000 clk200_period_ns=5.000000
+$finish called at time : 1070 ns : File "<workdir>/tb_clock_wizard.v" Line 47
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov 22 05:11:04 2026...
