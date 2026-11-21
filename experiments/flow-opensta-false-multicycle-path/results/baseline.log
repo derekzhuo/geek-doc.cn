@@ -1,0 +1,136 @@
+# command: bash run.sh (baseline)
+# design: top.v; clock: 0.60 ns; library: teaching.lib
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+================ BASELINE: NO EXCEPTIONS ================
+================ EXCEPTIONS ================
+NOTE: report_exceptions is unavailable in OpenSTA 2.0.17; use path-specific report_checks below.
+================ DATA SETUP ================
+Startpoint: u_a (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_b (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_a/C (DFF_P)
+   0.20    0.20 ^ u_a/Q (DFF_P)
+   0.15    0.35 v u_data1/Y (NAND2)
+   0.15    0.50 ^ u_data2/Y (NAND2)
+   0.15    0.65 v u_b_mux_new/Y (NAND2)
+   0.15    0.80 ^ u_b_mux_out/Y (NAND2)
+   0.00    0.80 ^ u_b/D (DFF_P)
+           0.80   data arrival time
+
+   0.60    0.60   clock clk (rise edge)
+   0.00    0.60   clock network delay (ideal)
+   0.00    0.60   clock reconvergence pessimism
+           0.60 ^ u_b/C (DFF_P)
+  -0.10    0.50   library setup time
+           0.50   data required time
+---------------------------------------------------------
+           0.50   data required time
+          -0.80   data arrival time
+---------------------------------------------------------
+          -0.30   slack (VIOLATED)
+
+
+================ DATA HOLD ================
+Startpoint: u_a (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_b (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_a/C (DFF_P)
+   0.20    0.20 ^ u_a/Q (DFF_P)
+   0.15    0.35 v u_data1/Y (NAND2)
+   0.15    0.50 ^ u_data2/Y (NAND2)
+   0.15    0.65 v u_b_mux_new/Y (NAND2)
+   0.15    0.80 ^ u_b_mux_out/Y (NAND2)
+   0.00    0.80 ^ u_b/D (DFF_P)
+           0.80   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ u_b/C (DFF_P)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.80   data arrival time
+---------------------------------------------------------
+           0.80   slack (MET)
+
+
+================ CONFIG SETUP ================
+Startpoint: u_cfg (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_shadow (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_cfg/C (DFF_P)
+   0.20    0.20 v u_cfg/Q (DFF_P)
+   0.15    0.35 ^ u_cfg1/Y (NAND2)
+   0.15    0.50 v u_cfg2/Y (NAND2)
+   0.15    0.65 ^ u_cfg3/Y (NAND2)
+   0.00    0.65 ^ u_shadow/D (DFF_P)
+           0.65   data arrival time
+
+   0.60    0.60   clock clk (rise edge)
+   0.00    0.60   clock network delay (ideal)
+   0.00    0.60   clock reconvergence pessimism
+           0.60 ^ u_shadow/C (DFF_P)
+  -0.10    0.50   library setup time
+           0.50   data required time
+---------------------------------------------------------
+           0.50   data required time
+          -0.65   data arrival time
+---------------------------------------------------------
+          -0.15   slack (VIOLATED)
+
+
+================ CONFIG HOLD ================
+Startpoint: u_cfg (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_shadow (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_cfg/C (DFF_P)
+   0.20    0.20 v u_cfg/Q (DFF_P)
+   0.15    0.35 ^ u_cfg3/Y (NAND2)
+   0.00    0.35 ^ u_shadow/D (DFF_P)
+           0.35   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ u_shadow/C (DFF_P)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.35   data arrival time
+---------------------------------------------------------
+           0.35   slack (MET)
+
+
+STAGE_EXIT baseline=0

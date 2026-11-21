@@ -1,0 +1,5 @@
+OpenSTA exception-path comparison (ns)
+stage,data_setup,data_hold,config_setup,config_hold
+baseline,-0.30 VIOLATED,0.80 MET,-0.15 VIOLATED,0.35 MET
+false_path,-0.30 VIOLATED,0.80 MET,removed,removed
+multicycle,0.30 MET,0.80 MET,-0.15 VIOLATED,0.35 MET
