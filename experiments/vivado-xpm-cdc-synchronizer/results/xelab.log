@@ -1,0 +1,14 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe work.tb_cdc work.glbl -s cdc_sim
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.xpm_cdc_single(DEST_SYNC_FF=2,SI...
+Compiling module work.cdc_hand
+Compiling module work.tb_cdc
+Compiling module work.glbl
+Built simulation snapshot cdc_sim

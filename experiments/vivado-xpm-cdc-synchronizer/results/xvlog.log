@@ -1,0 +1,16 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" into library work
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module xpm_cdc_handshake
+INFO: [VRFC 10-311] analyzing module xpm_cdc_pulse
+INFO: [VRFC 10-311] analyzing module xpm_cdc_array_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_async_rst
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Xilinx/Vivado/2017.4/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "<workdir>/cdc_xpm.v" into library work
+INFO: [VRFC 10-311] analyzing module cdc_xpm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "<workdir>/cdc_hand.v" into library work
+INFO: [VRFC 10-311] analyzing module cdc_hand
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "<workdir>/tb_cdc.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_cdc

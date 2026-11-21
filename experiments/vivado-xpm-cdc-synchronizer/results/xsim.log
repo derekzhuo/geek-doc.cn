@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 22 04:46:16 2026
+# Process ID: 16916
+# Current directory: <workdir>
+# Command line: xsim.exe -mode tcl -source {xsim.dir/cdc_sim/xsim_script.tcl}
+# Log file: <workdir>/xsim.log
+# Journal file: <workdir>\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/cdc_sim/xsim_script.tcl
+# xsim {cdc_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+Warning: Vivado Simulator does not currently support the SystemVerilog Assertion syntax used within XPM_CDC.  Messages related to potential misuse will not be reported.
+Time: 1 ps  Iteration: 0  Process: /tb_cdc/x/Initial269_2  File: D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv
+CDC_EQUIV_PASS cycles=512
+$finish called at time : 5146 ns : File "<workdir>/tb_cdc.v" Line 28
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov 22 04:46:20 2026...
