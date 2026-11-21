@@ -1,0 +1,18 @@
+# command: run-questa.ps1 -Flow bad
+# date: 2026-11-22
+# toolchain: Questa Altera Starter FPGA Edition 2025.2
+Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+vmap work work
+** Note: (vmap-220) 'D:/questa/win64/../modelsim.ini' is used as the ini file.
+Copying D:/questa/win64/../modelsim.ini to modelsim.ini
+Modifying modelsim.ini
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 01:50:40 on Nov 22,2026
+vlog syntax_bad.v
+** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+-- Compiling module syntax_bad
+** Error: (vlog-13069) syntax_bad.v(7): near "end": syntax error, unexpected end, expecting ';'.
+End time: 01:50:41 on Nov 22,2026, Elapsed time: 0:00:01
+Errors: 1, Warnings: 0
+Q10_BAD_COMPILE_RC=2
+Q10_BAD_COMPILE_FAILED

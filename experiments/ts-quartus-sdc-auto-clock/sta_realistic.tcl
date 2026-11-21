@@ -1,0 +1,7 @@
+project_open timing_realistic
+create_timing_netlist
+read_sdc
+update_timing_netlist
+report_clocks
+report_timing -setup -npaths 1 -detail full_path
+project_close
