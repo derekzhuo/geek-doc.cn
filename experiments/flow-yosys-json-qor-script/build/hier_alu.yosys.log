@@ -271,6 +271,6 @@ Optimizing module hier_alu.
 
 8. Executing JSON backend.
 
-End of script. Logfile hash: 3f2ebd4008, CPU: user 0.03s system 0.01s, MEM: 9.75 MB peak
+End of script. Logfile hash: 3f2ebd4008, CPU: user 0.03s system 0.01s, MEM: 9.88 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 28% 4x opt_expr (0 sec), 13% 3x opt_merge (0 sec), ...
+Time spent: 24% 4x opt_expr (0 sec), 15% 3x opt_merge (0 sec), ...

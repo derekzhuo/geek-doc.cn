@@ -217,6 +217,6 @@ Optimizing module counter8.
 
 8. Executing JSON backend.
 
-End of script. Logfile hash: 866582d659, CPU: user 0.02s system 0.01s, MEM: 9.75 MB peak
+End of script. Logfile hash: 866582d659, CPU: user 0.02s system 0.02s, MEM: 10.00 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 26% 4x opt_expr (0 sec), 17% 4x read_verilog (0 sec), ...
+Time spent: 24% 4x opt_expr (0 sec), 15% 4x read_verilog (0 sec), ...
