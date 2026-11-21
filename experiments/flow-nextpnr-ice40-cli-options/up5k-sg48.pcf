@@ -1,0 +1,3 @@
+# iCEBreaker UP5K-SG48: 12 MHz clock and green LED (active low)
+set_io clk 35
+set_io led 37

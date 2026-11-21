@@ -1,0 +1,3 @@
+# Lattice iCE40-HX8K Breakout Board: 12 MHz clock and LED0
+set_io clk J3
+set_io led B5

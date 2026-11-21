@@ -1,0 +1,3 @@
+# Deliberately invalid: pin 99 does not exist on SG48
+set_io clk 35
+set_io led 99
