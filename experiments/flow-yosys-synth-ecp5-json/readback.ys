@@ -1,0 +1,4 @@
+read_json build/ecp5.json
+hierarchy -top accumulator
+stat
+check

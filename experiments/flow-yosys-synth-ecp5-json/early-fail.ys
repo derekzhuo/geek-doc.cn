@@ -1,0 +1,3 @@
+read_verilog accumulator.v
+hierarchy -top accumulator
+write_json build/early-fail.json

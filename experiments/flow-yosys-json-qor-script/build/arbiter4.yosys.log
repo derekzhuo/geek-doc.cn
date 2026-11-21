@@ -1,0 +1,205 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog -sv rtl/arbiter4.v rtl/counter8.v rtl/hier_alu.v; hierarchy -check -top arbiter4; proc; opt; stat; tee -o build/arbiter4.stat.json stat -json; write_json build/arbiter4.json' --
+
+1. Executing Verilog-2005 frontend: rtl/arbiter4.v
+Parsing SystemVerilog input from `rtl/arbiter4.v' to AST representation.
+Generating RTLIL representation for module `\arbiter4'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/counter8.v
+Parsing SystemVerilog input from `rtl/counter8.v' to AST representation.
+Generating RTLIL representation for module `\counter8'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/hier_alu.v
+Parsing SystemVerilog input from `rtl/hier_alu.v' to AST representation.
+Generating RTLIL representation for module `\addsub8'.
+Generating RTLIL representation for module `\hier_alu'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \arbiter4
+
+4.2. Analyzing design hierarchy..
+Top module:  \arbiter4
+Removing unused module `\hier_alu'.
+Removing unused module `\addsub8'.
+Removing unused module `\counter8'.
+Removed 3 unused modules.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.4. Executing PROC_INIT pass (extract init attributes).
+
+5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module arbiter4.
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module arbiter4.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\arbiter4'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \arbiter4..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \arbiter4.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\arbiter4'.
+Removed a total of 0 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \arbiter4..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module arbiter4.
+
+6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \arbiter4..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \arbiter4.
+Performed a total of 0 changes.
+
+6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\arbiter4'.
+Removed a total of 0 cells.
+
+6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \arbiter4..
+
+6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module arbiter4.
+
+6.16. Finished OPT passes. (There is nothing left to do.)
+
+7. Printing statistics.
+
+=== arbiter4 ===
+
+   Number of wires:                  9
+   Number of wire bits:             15
+   Number of public wires:           3
+   Number of public wire bits:       9
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 10
+     $and                            6
+     $not                            3
+     $reduce_or                      1
+
+{
+   "creator": "Yosys 0.33 (git sha1 2584903a060)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\arbiter4": {
+         "num_wires":         9,
+         "num_wire_bits":     15,
+         "num_pub_wires":     3,
+         "num_pub_wire_bits": 9,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         10,
+         "num_cells_by_type": {
+            "$and": 6,
+            "$not": 3,
+            "$reduce_or": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         9,
+         "num_wire_bits":     15,
+         "num_pub_wires":     3,
+         "num_pub_wire_bits": 9,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         10,
+         "num_cells_by_type": {
+            "$and": 6,
+            "$not": 3,
+            "$reduce_or": 1
+         }
+      }
+}
+
+8. Executing JSON backend.
+
+End of script. Logfile hash: d27e0ce188, CPU: user 0.02s system 0.01s, MEM: 9.50 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 26% 4x opt_expr (0 sec), 15% 2x opt_clean (0 sec), ...

@@ -1,0 +1,181 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "module": "accumulator",
+  "ports": {
+    "clk": {
+      "direction": "input",
+      "bits": [
+        2
+      ]
+    },
+    "load": {
+      "direction": "input",
+      "bits": [
+        3
+      ]
+    },
+    "en": {
+      "direction": "input",
+      "bits": [
+        4
+      ]
+    },
+    "step": {
+      "direction": "input",
+      "bits": [
+        5,
+        6
+      ]
+    },
+    "initial_value": {
+      "direction": "input",
+      "bits": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "count": {
+      "direction": "output",
+      "bits": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "at_max": {
+      "direction": "output",
+      "bits": [
+        31
+      ]
+    }
+  },
+  "cell_type_counts": {
+    "$add": 1,
+    "$dff": 1,
+    "$mux": 2,
+    "$reduce_and": 1
+  },
+  "first_cells": {
+    "$add$accumulator.v:14$2": {
+      "hide_name": 1,
+      "type": "$add",
+      "parameters": {
+        "A_SIGNED": "00000000000000000000000000000000",
+        "A_WIDTH": "00000000000000000000000000001100",
+        "B_SIGNED": "00000000000000000000000000000000",
+        "B_WIDTH": "00000000000000000000000000000010",
+        "Y_WIDTH": "00000000000000000000000000001100"
+      },
+      "attributes": {
+        "src": "accumulator.v:14.22-14.34"
+      },
+      "port_directions": {
+        "A": "input",
+        "B": "input",
+        "Y": "output"
+      },
+      "connections": {
+        "A": [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "B": [
+          5,
+          6
+        ],
+        "Y": [
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ]
+      }
+    },
+    "$procdff$9": {
+      "hide_name": 1,
+      "type": "$dff",
+      "parameters": {
+        "CLK_POLARITY": "1",
+        "WIDTH": "00000000000000000000000000001100"
+      },
+      "attributes": {
+        "src": "accumulator.v:10.5-15.8"
+      },
+      "port_directions": {
+        "CLK": "input",
+        "D": "input",
+        "Q": "output"
+      },
+      "connections": {
+        "CLK": [
+          2
+        ],
+        "D": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ],
+        "Q": [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+TOP counter8
+ports=6 netnames=10
+modules_reached=1 hierarchical_instances=0
+direct_cells=5 leaf_cells=5 sequential_cells=1
+direct_stat_match=PASS
+leaf $add 1
+leaf $adffe 1
+leaf $mux 2
+leaf $reduce_bool 1

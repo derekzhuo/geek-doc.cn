@@ -1,0 +1,4 @@
+read_verilog accumulator.v
+hierarchy -top accumulator
+proc
+write_json build/early.json

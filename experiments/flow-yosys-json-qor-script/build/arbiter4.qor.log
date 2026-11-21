@@ -1,0 +1,8 @@
+TOP arbiter4
+ports=3 netnames=9
+modules_reached=1 hierarchical_instances=0
+direct_cells=10 leaf_cells=10 sequential_cells=0
+direct_stat_match=PASS
+leaf $and 6
+leaf $not 3
+leaf $reduce_or 1

@@ -1,0 +1,10 @@
+TOP hier_alu
+ports=5 netnames=6
+modules_reached=2 hierarchical_instances=1
+direct_cells=2 leaf_cells=4 sequential_cells=1
+direct_stat_match=PASS
+leaf $add 1
+leaf $dff 1
+leaf $mux 1
+leaf $sub 1
+instance addsub8 1

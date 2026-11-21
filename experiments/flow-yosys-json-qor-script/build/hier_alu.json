@@ -1,0 +1,261 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "addsub8": {
+      "attributes": {
+        "src": "rtl/hier_alu.v:1.1-8.10"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+        },
+        "sub": {
+          "direction": "input",
+          "bits": [ 18 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 19, 20, 21, 22, 23, 24, 25, 26 ]
+        }
+      },
+      "cells": {
+        "$add$rtl/hier_alu.v:7$18": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "rtl/hier_alu.v:7.30-7.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+            "B": [ 10, 11, 12, 13, 14, 15, 16, 17 ],
+            "Y": [ 27, 28, 29, 30, 31, 32, 33, 34 ]
+          }
+        },
+        "$sub$rtl/hier_alu.v:7$17": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "rtl/hier_alu.v:7.22-7.27"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+            "B": [ 10, 11, 12, 13, 14, 15, 16, 17 ],
+            "Y": [ 35, 36, 37, 38, 39, 40, 41, 42 ]
+          }
+        },
+        "$ternary$rtl/hier_alu.v:7$19": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "rtl/hier_alu.v:7.16-7.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 27, 28, 29, 30, 31, 32, 33, 34 ],
+            "B": [ 35, 36, 37, 38, 39, 40, 41, 42 ],
+            "S": [ 18 ],
+            "Y": [ 19, 20, 21, 22, 23, 24, 25, 26 ]
+          }
+        }
+      },
+      "netnames": {
+        "$add$rtl/hier_alu.v:7$18_Y": {
+          "hide_name": 1,
+          "bits": [ 27, 28, 29, 30, 31, 32, 33, 34 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:7.30-7.35"
+          }
+        },
+        "$sub$rtl/hier_alu.v:7$17_Y": {
+          "hide_name": 1,
+          "bits": [ 35, 36, 37, 38, 39, 40, 41, 42 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:7.22-7.27"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:2.23-2.24"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:3.23-3.24"
+          }
+        },
+        "sub": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:4.23-4.26"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 19, 20, 21, 22, 23, 24, 25, 26 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:5.23-5.24"
+          }
+        }
+      }
+    },
+    "hier_alu": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "rtl/hier_alu.v:10.1-21.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "a": {
+          "direction": "input",
+          "bits": [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 11, 12, 13, 14, 15, 16, 17, 18 ]
+        },
+        "sub": {
+          "direction": "input",
+          "bits": [ 19 ]
+        },
+        "q": {
+          "direction": "output",
+          "bits": [ 20, 21, 22, 23, 24, 25, 26, 27 ]
+        }
+      },
+      "cells": {
+        "$procdff$21": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "rtl/hier_alu.v:19.5-20.21"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 28, 29, 30, 31, 32, 33, 34, 35 ],
+            "Q": [ 20, 21, 22, 23, 24, 25, 26, 27 ]
+          }
+        },
+        "u_addsub": {
+          "hide_name": 0,
+          "type": "addsub8",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "rtl/hier_alu.v:18.13-18.59"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "sub": "input",
+            "y": "output"
+          },
+          "connections": {
+            "a": [ 3, 4, 5, 6, 7, 8, 9, 10 ],
+            "b": [ 11, 12, 13, 14, 15, 16, 17, 18 ],
+            "sub": [ 19 ],
+            "y": [ 28, 29, 30, 31, 32, 33, 34, 35 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 3, 4, 5, 6, 7, 8, 9, 10 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:12.23-12.24"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 11, 12, 13, 14, 15, 16, 17, 18 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:13.23-13.24"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:11.23-11.26"
+          }
+        },
+        "q": {
+          "hide_name": 0,
+          "bits": [ 20, 21, 22, 23, 24, 25, 26, 27 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:15.23-15.24"
+          }
+        },
+        "result": {
+          "hide_name": 0,
+          "bits": [ 28, 29, 30, 31, 32, 33, 34, 35 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:17.16-17.22"
+          }
+        },
+        "sub": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "rtl/hier_alu.v:14.23-14.26"
+          }
+        }
+      }
+    }
+  }
+}

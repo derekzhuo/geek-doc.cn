@@ -1,0 +1,316 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "arbiter4": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "rtl/arbiter4.v:1.1-11.10"
+      },
+      "ports": {
+        "req": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "grant": {
+          "direction": "output",
+          "bits": [ 2, 6, 7, 8 ]
+        },
+        "valid": {
+          "direction": "output",
+          "bits": [ 9 ]
+        }
+      },
+      "cells": {
+        "$and$rtl/arbiter4.v:10$11": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.23-10.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10 ],
+            "B": [ 11 ],
+            "Y": [ 12 ]
+          }
+        },
+        "$and$rtl/arbiter4.v:10$13": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.23-10.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12 ],
+            "B": [ 13 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$and$rtl/arbiter4.v:10$9": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.23-10.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5 ],
+            "B": [ 14 ],
+            "Y": [ 10 ]
+          }
+        },
+        "$and$rtl/arbiter4.v:8$3": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:8.23-8.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 13 ],
+            "Y": [ 6 ]
+          }
+        },
+        "$and$rtl/arbiter4.v:9$5": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:9.23-9.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "B": [ 11 ],
+            "Y": [ 15 ]
+          }
+        },
+        "$and$rtl/arbiter4.v:9$7": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:9.23-9.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15 ],
+            "B": [ 13 ],
+            "Y": [ 7 ]
+          }
+        },
+        "$not$rtl/arbiter4.v:10$10": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.42-10.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 11 ]
+          }
+        },
+        "$not$rtl/arbiter4.v:10$12": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.52-10.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$not$rtl/arbiter4.v:10$8": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.32-10.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "Y": [ 14 ]
+          }
+        },
+        "$reduce_or$rtl/arbiter4.v:6$1": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "rtl/arbiter4.v:6.21-6.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5 ],
+            "Y": [ 9 ]
+          }
+        }
+      },
+      "netnames": {
+        "$and$rtl/arbiter4.v:10$11_Y": {
+          "hide_name": 1,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.23-10.49"
+          }
+        },
+        "$and$rtl/arbiter4.v:10$9_Y": {
+          "hide_name": 1,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.23-10.39"
+          }
+        },
+        "$and$rtl/arbiter4.v:9$5_Y": {
+          "hide_name": 1,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:9.23-9.39"
+          }
+        },
+        "$not$rtl/arbiter4.v:10$10_Y": {
+          "hide_name": 1,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.42-10.49"
+          }
+        },
+        "$not$rtl/arbiter4.v:10$12_Y": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.52-10.59"
+          }
+        },
+        "$not$rtl/arbiter4.v:10$8_Y": {
+          "hide_name": 1,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:10.32-10.39"
+          }
+        },
+        "grant": {
+          "hide_name": 0,
+          "bits": [ 2, 6, 7, 8 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:3.23-3.28"
+          }
+        },
+        "req": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:2.23-2.26"
+          }
+        },
+        "valid": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "rtl/arbiter4.v:4.23-4.28"
+          }
+        }
+      }
+    }
+  }
+}

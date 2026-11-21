@@ -1,0 +1,148 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "module": "accumulator",
+  "ports": {
+    "clk": {
+      "direction": "input",
+      "bits": [
+        2
+      ]
+    },
+    "load": {
+      "direction": "input",
+      "bits": [
+        3
+      ]
+    },
+    "en": {
+      "direction": "input",
+      "bits": [
+        4
+      ]
+    },
+    "step": {
+      "direction": "input",
+      "bits": [
+        5,
+        6
+      ]
+    },
+    "initial_value": {
+      "direction": "input",
+      "bits": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "count": {
+      "direction": "output",
+      "bits": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "at_max": {
+      "direction": "output",
+      "bits": [
+        31
+      ]
+    }
+  },
+  "cell_type_counts": {
+    "SB_CARRY": 11,
+    "SB_DFFE": 12,
+    "SB_LUT4": 28
+  },
+  "first_cells": {
+    "at_max_SB_LUT4_O": {
+      "hide_name": 0,
+      "type": "SB_LUT4",
+      "parameters": {
+        "LUT_INIT": "1100000000000000"
+      },
+      "attributes": {
+        "module_not_derived": "00000000000000000000000000000001",
+        "src": "/usr/bin/../share/yosys/ice40/cells_map.v:22.34-23.52"
+      },
+      "port_directions": {
+        "I0": "input",
+        "I1": "input",
+        "I2": "input",
+        "I3": "input",
+        "O": "output"
+      },
+      "connections": {
+        "I0": [
+          "0"
+        ],
+        "I1": [
+          32
+        ],
+        "I2": [
+          33
+        ],
+        "I3": [
+          34
+        ],
+        "O": [
+          31
+        ]
+      }
+    },
+    "at_max_SB_LUT4_O_I1_SB_LUT4_O": {
+      "hide_name": 0,
+      "type": "SB_LUT4",
+      "parameters": {
+        "LUT_INIT": "1000000000000000"
+      },
+      "attributes": {
+        "module_not_derived": "00000000000000000000000000000001",
+        "src": "/usr/bin/../share/yosys/ice40/cells_map.v:26.33-27.52"
+      },
+      "port_directions": {
+        "I0": "input",
+        "I1": "input",
+        "I2": "input",
+        "I3": "input",
+        "O": "output"
+      },
+      "connections": {
+        "I0": [
+          19
+        ],
+        "I1": [
+          20
+        ],
+        "I2": [
+          21
+        ],
+        "I3": [
+          22
+        ],
+        "O": [
+          34
+        ]
+      }
+    }
+  }
+}

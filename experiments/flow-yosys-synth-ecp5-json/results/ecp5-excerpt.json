@@ -1,0 +1,148 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "module": "accumulator",
+  "ports": {
+    "clk": {
+      "direction": "input",
+      "bits": [
+        2
+      ]
+    },
+    "load": {
+      "direction": "input",
+      "bits": [
+        3
+      ]
+    },
+    "en": {
+      "direction": "input",
+      "bits": [
+        4
+      ]
+    },
+    "step": {
+      "direction": "input",
+      "bits": [
+        5,
+        6
+      ]
+    },
+    "initial_value": {
+      "direction": "input",
+      "bits": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "count": {
+      "direction": "output",
+      "bits": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "at_max": {
+      "direction": "output",
+      "bits": [
+        31
+      ]
+    }
+  },
+  "cell_type_counts": {
+    "CCU2C": 6,
+    "LUT4": 17,
+    "TRELLIS_FF": 12
+  },
+  "first_cells": {
+    "at_max_LUT4_Z": {
+      "hide_name": 0,
+      "type": "LUT4",
+      "parameters": {
+        "INIT": "1100000000000000"
+      },
+      "attributes": {
+        "module_not_derived": "00000000000000000000000000000001",
+        "src": "/usr/bin/../share/yosys/ecp5/cells_map.v:124.33-125.56"
+      },
+      "port_directions": {
+        "A": "input",
+        "B": "input",
+        "C": "input",
+        "D": "input",
+        "Z": "output"
+      },
+      "connections": {
+        "A": [
+          "0"
+        ],
+        "B": [
+          32
+        ],
+        "C": [
+          33
+        ],
+        "D": [
+          34
+        ],
+        "Z": [
+          31
+        ]
+      }
+    },
+    "at_max_LUT4_Z_B_LUT4_Z": {
+      "hide_name": 0,
+      "type": "LUT4",
+      "parameters": {
+        "INIT": "1000000000000000"
+      },
+      "attributes": {
+        "module_not_derived": "00000000000000000000000000000001",
+        "src": "/usr/bin/../share/yosys/ecp5/cells_map.v:128.32-129.56"
+      },
+      "port_directions": {
+        "A": "input",
+        "B": "input",
+        "C": "input",
+        "D": "input",
+        "Z": "output"
+      },
+      "connections": {
+        "A": [
+          19
+        ],
+        "B": [
+          20
+        ],
+        "C": [
+          21
+        ],
+        "D": [
+          22
+        ],
+        "Z": [
+          34
+        ]
+      }
+    }
+  }
+}

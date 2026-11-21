@@ -1,0 +1,4 @@
+read_verilog accumulator.v
+synth_ecp5 -top accumulator
+stat
+write_json build/ecp5.json

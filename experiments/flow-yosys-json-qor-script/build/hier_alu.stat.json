@@ -1,0 +1,52 @@
+{
+   "creator": "Yosys 0.33 (git sha1 2584903a060)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\addsub8": {
+         "num_wires":         6,
+         "num_wire_bits":     41,
+         "num_pub_wires":     4,
+         "num_pub_wire_bits": 25,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         3,
+         "num_cells_by_type": {
+            "$add": 1,
+            "$mux": 1,
+            "$sub": 1
+         }
+      },
+      "\\hier_alu": {
+         "num_wires":         6,
+         "num_wire_bits":     34,
+         "num_pub_wires":     6,
+         "num_pub_wire_bits": 34,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2,
+         "num_cells_by_type": {
+            "$dff": 1,
+            "addsub8": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         12,
+         "num_wire_bits":     75,
+         "num_pub_wires":     10,
+         "num_pub_wire_bits": 59,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4,
+         "num_cells_by_type": {
+            "$add": 1,
+            "$dff": 1,
+            "$mux": 1,
+            "$sub": 1
+         }
+      }
+}
+

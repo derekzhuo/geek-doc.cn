@@ -1,0 +1,4 @@
+read_verilog accumulator.v
+synth_ice40 -top accumulator
+stat
+write_json build/ice40.json
