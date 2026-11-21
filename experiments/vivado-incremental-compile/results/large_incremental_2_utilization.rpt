@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sun Nov 22 03:10:32 2026
-| Host         : derekzhuo running 64-bit major release  (build 9200)
+| Date         : Sun Nov 22 04:34:48 2026
+| Host         : <host> running 64-bit major release  (build 9200)
 | Command      : report_utilization -file utilization.rpt
 | Design       : top
 | Device       : 7a35ticsg324-1L

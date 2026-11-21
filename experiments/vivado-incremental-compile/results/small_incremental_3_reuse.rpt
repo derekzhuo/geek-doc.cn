@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sun Nov 22 03:00:15 2026
-| Host         : derekzhuo running 64-bit major release  (build 9200)
+| Date         : Sun Nov 22 04:27:23 2026
+| Host         : <host> running 64-bit major release  (build 9200)
 | Command      : report_incremental_reuse -file reuse.rpt
 | Design       : top
 | Device       : xc7a35ti
@@ -16,8 +16,7 @@ Table of Contents
 1. Reuse Summary
 2. Reference Checkpoint Information
 3. Comparison with Reference Run
-4. Options Comparison with Reference Run
-5. Non Reuse Information
+4. Non Reuse Information
 
 1. Reuse Summary
 ----------------
@@ -26,7 +25,7 @@ Table of Contents
 |  Type | Matched % (of Total) | Reuse % (of Total) | Fixed % (of Total) | Total |
 +-------+----------------------+--------------------+--------------------+-------+
 | Cells |                83.47 |              23.96 |               0.00 |   363 |
-| Nets  |                64.66 |               5.29 |               0.00 |   321 |
+| Nets  |                80.83 |               5.29 |               0.00 |   321 |
 | Pins  |                    - |              14.99 |                  - |   907 |
 | Ports |               100.00 |             100.00 |               0.00 |    66 |
 +-------+----------------------+--------------------+--------------------+-------+
@@ -36,7 +35,7 @@ Table of Contents
 -----------------------------------
 
 +----------------+---------------------------------------------------------------------------------------+
-| DCP Location:  | C:/eda-lab/b1/vivado-incremental-compile/baseline/postroute.dcp |
+| DCP Location:  | <workdir> |
 +----------------+---------------------------------------------------------------------------------------+
 
 
@@ -61,30 +60,14 @@ Table of Contents
 |      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 | synth_design    |             |             |     < 1 min |     < 1 min |             |             |
-| opt_design      |             |             |     < 1 min |             |     < 1 min |             |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | read_checkpoint |             |             |             |     < 1 min |             |     < 1 min |
 | place_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | route_design    |         inf |         inf |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
-4. Options Comparison with Reference Run
-----------------------------------------
-
-+-----------------+-------------------------+
-|                 |         Options         |
-+-----------------+-----------+-------------+
-|      Stage      | Reference | Incremental |
-+-----------------+-----------+-------------+
-| synth_design    |           |             |
-| opt_design      |           |             |
-| read_checkpoint |           |             |
-| place_design    |           |             |
-| route_design    |           |             |
-+-----------------+-----------+-------------+
-
-
-5. Non Reuse Information
+4. Non Reuse Information
 ------------------------
 
 +------------------------------------------------------+-------+

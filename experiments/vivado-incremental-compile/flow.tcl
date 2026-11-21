@@ -26,9 +26,11 @@ write_checkpoint -force postsynth.dcp
 if {$mode eq "incremental"} {
     close_design
     open_checkpoint "$work/postsynth.dcp"
-    read_checkpoint -incremental "$root/baseline/postroute.dcp"
 }
 opt_design
+if {$mode eq "incremental"} {
+    read_checkpoint -incremental "$root/baseline/postroute.dcp"
+}
 place_design
 route_design
 report_utilization -file utilization.rpt
