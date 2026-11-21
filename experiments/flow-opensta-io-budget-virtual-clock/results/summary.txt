@@ -1,0 +1,9 @@
+scenario,check,arrival_ns,required_ns,slack_ns,status
+baseline,RX SETUP,2.60,9.90,7.30,MET
+baseline,RX HOLD,0.80,0.00,0.80,MET
+baseline,TX SETUP,0.30,8.35,8.05,MET
+baseline,TX HOLD,0.30,0.15,0.15,MET
+dual_edge,RX SETUP,8.15,9.90,1.75,MET
+dual_edge,RX HOLD,0.80,0.00,0.80,MET
+dual_edge,TX SETUP,0.30,8.35,8.05,MET
+dual_edge,TX HOLD,0.30,0.15,0.15,MET

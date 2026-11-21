@@ -1,0 +1,124 @@
+# command: sta -no_init -exit dual_edge.tcl
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+================ CLOCK ROLES ================
+core_clk: source port clk; board_clk: virtual, no design source
+================ RX SETUP ================
+Startpoint: uart_rx (input port clocked by board_clk)
+Endpoint: u_rx (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   5.00    5.00   clock board_clk (fall edge)
+   0.00    5.00   clock network delay (ideal)
+   3.00    8.00 v input external delay
+   0.00    8.00 v uart_rx (in)
+   0.15    8.15 ^ u_rx_buf/Y (NAND2)
+   0.00    8.15 ^ u_rx/D (DFF_P)
+           8.15   data arrival time
+
+  10.00   10.00   clock core_clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ u_rx/C (DFF_P)
+  -0.10    9.90   library setup time
+           9.90   data required time
+---------------------------------------------------------
+           9.90   data required time
+          -8.15   data arrival time
+---------------------------------------------------------
+           1.75   slack (MET)
+
+
+================ RX HOLD ================
+Startpoint: uart_rx (input port clocked by board_clk)
+Endpoint: u_rx (rising edge-triggered flip-flop clocked by core_clk)
+Path Group: core_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock board_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.65    0.65 v input external delay
+   0.00    0.65 v uart_rx (in)
+   0.15    0.80 ^ u_rx_buf/Y (NAND2)
+   0.00    0.80 ^ u_rx/D (DFF_P)
+           0.80   data arrival time
+
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ u_rx/C (DFF_P)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.80   data arrival time
+---------------------------------------------------------
+           0.80   slack (MET)
+
+
+================ TX SETUP ================
+Startpoint: u_tx (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: uart_tx (output port clocked by board_clk)
+Path Group: board_clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_tx/C (DFF_P)
+   0.20    0.20 ^ u_tx/Q (DFF_P)
+   0.10    0.30 ^ u_tx_buf/Y (BUF_X)
+   0.00    0.30 ^ uart_tx (out)
+           0.30   data arrival time
+
+  10.00   10.00   clock board_clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+  -1.65    8.35   output external delay
+           8.35   data required time
+---------------------------------------------------------
+           8.35   data required time
+          -0.30   data arrival time
+---------------------------------------------------------
+           8.05   slack (MET)
+
+
+================ TX HOLD ================
+Startpoint: u_tx (rising edge-triggered flip-flop clocked by core_clk)
+Endpoint: uart_tx (output port clocked by board_clk)
+Path Group: board_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u_tx/C (DFF_P)
+   0.20    0.20 ^ u_tx/Q (DFF_P)
+   0.10    0.30 ^ u_tx_buf/Y (BUF_X)
+   0.00    0.30 ^ uart_tx (out)
+           0.30   data arrival time
+
+   0.00    0.00   clock board_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.15    0.15   output external delay
+           0.15   data required time
+---------------------------------------------------------
+           0.15   data required time
+          -0.30   data arrival time
+---------------------------------------------------------
+           0.15   slack (MET)
+
+
+STAGE_EXIT dual_edge=0
