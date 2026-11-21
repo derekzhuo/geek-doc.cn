@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 22 04:08:40 2026
+# Process ID: 16308
+# Current directory: <workdir>
+# Command line: xsim.exe -mode tcl -source {xsim.dir/dsp_sim/xsim_script.tcl}
+# Log file: <workdir>/xsim.log
+# Journal file: <workdir>
+#-----------------------------------------------------------
+source xsim.dir/dsp_sim/xsim_script.tcl
+# xsim {dsp_sim} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+DSP_PIPE_EQUIV_PASS cycles=256
+$finish called at time : 1043 ns : File "<workdir>/tb_dsp_pipeline.v" Line 43
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov 22 04:08:44 2026...

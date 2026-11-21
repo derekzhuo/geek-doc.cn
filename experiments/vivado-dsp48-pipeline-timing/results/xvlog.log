@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/dsp_pipeline.v" into library work
+INFO: [VRFC 10-311] analyzing module dsp_pipe0
+INFO: [VRFC 10-311] analyzing module dsp_pipe1
+INFO: [VRFC 10-311] analyzing module dsp_pipe2
+INFO: [VRFC 10-311] analyzing module dsp_pipe3
+INFO: [VRFC 10-2263] Analyzing Verilog file "<workdir>/tb_dsp_pipeline.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_dsp_pipeline

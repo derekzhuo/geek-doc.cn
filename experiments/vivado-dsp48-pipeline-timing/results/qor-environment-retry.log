@@ -1,0 +1,38 @@
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source dsp_qor.tcl
+# set root [pwd]
+# set part xc7a35ticsg324-1L
+# foreach depth {0 1 2 3} {
+#     set work "$root/work/pipe$depth"
+#     file mkdir $work
+#     cd $work
+#     set t0 [clock milliseconds]
+#     read_verilog "$root/dsp_pipeline.v"
+#     read_xdc "$root/constraints.xdc"
+#     synth_design -top "dsp_pipe$depth" -part $part
+#     opt_design
+#     place_design
+#     route_design
+#     report_utilization -file utilization.rpt
+#     report_timing_summary -file timing.rpt
+#     set elapsed [expr {([clock milliseconds] - $t0) / 1000.0}]
+#     puts "DSP_QOR_RESULT pipeline=$depth elapsed_sec=$elapsed"
+#     close_design
+# }
+Command: synth_design -top dsp_pipe0 -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11188
+couldn't read file "D:/Xilinx/Vivado/2017.4/scripts/rt/data/unimacro/unimacro_vhdl.tcl": No error
+INFO: [Common 17-83] Releasing license: Synthesis
+2 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 22 04:08:57 2026...
