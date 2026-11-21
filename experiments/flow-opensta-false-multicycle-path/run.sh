@@ -11,6 +11,7 @@ echo "# date: 2026-11-22"
 
 {
   echo "# command: bash run.sh (protocol)"
+  echo "# date: 2026-11-22"
   "$IVERILOG_BIN" -g2012 -o results/.protocol_sim sim_cells.v top.v protocol_tb.v
   "$VVP_BIN" results/.protocol_sim
   rm -f results/.protocol_sim

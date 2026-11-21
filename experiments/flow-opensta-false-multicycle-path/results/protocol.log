@@ -1,4 +1,5 @@
 # command: bash run.sh (protocol)
+# date: 2026-11-22
 PROTOCOL PASS: maintenance updates config, functional registers hold
 PROTOCOL PASS: launch at active phase
 PROTOCOL PASS: intermediate edge holds launch and capture registers
