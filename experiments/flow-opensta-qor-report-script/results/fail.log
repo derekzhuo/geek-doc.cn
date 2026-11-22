@@ -1,0 +1,43 @@
+# command: sta -no_init -exit fail.tcl
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+================ BUILT-IN report_clock_skew ================
+Clock clk
+Latency      CRPR       Skew
+u_ctrl0/C ^
+ 0.1000
+u_ctrl1/C ^
+ 0.1000    0.0000     0.0000
+
+Clock clk
+Latency      CRPR       Skew
+u_ctrl0/C ^
+ 0.1000
+u_ctrl1/C ^
+ 0.1000    0.0000     0.0000
+
+================ CLOCK SKEW TABLE ================
+QOR_SKEW,pin,arrival_ns,skew_to_lead_ns
+QOR_SKEW,u_ctrl0/C,0.1000,0.0000
+QOR_SKEW,u_ctrl1/C,0.1000,0.0000
+QOR_SKEW,u_data0/C,0.1000,0.0000
+QOR_SKEW,u_data1/C,0.2000,0.1000
+QOR_SKEW,u_data2/C,0.4000,0.3000
+QOR_SKEW_SUMMARY,lead_ns=0.1000,trail_ns=0.4000,global_skew_ns=0.3000
+================ PER-GROUP QOR TABLE ================
+QOR_GROUP,group,check,endpoints,wns_ns,tns_ns,violating,worst_start,worst_end
+QOR_GROUP,CTRL,max,1,0.0500,0.0000,0,u_ctrl0/Q,u_ctrl1/D
+QOR_GROUP,CTRL,min,1,0.3500,0.0000,0,u_ctrl0/Q,u_ctrl1/D
+QOR_GROUP,DATA,max,2,-0.1000,-0.2000,2,u_data1/Q,u_data2/D
+QOR_GROUP,DATA,min,2,0.5000,0.0000,0,u_data0/Q,u_data1/D
+QOR_GROUP,clk,max,2,0.2000,0.0000,0,d_in,u_ctrl0/D
+QOR_GROUP,clk,min,2,0.0500,0.0000,0,d_in,u_ctrl0/D
+================ ENDPOINT COVERAGE AUDIT ================
+QOR_COVERAGE,registers=5,missing=0
+================ QOR GATE ================
+QOR_GATE,setup=FAIL,hold=PASS,skew=PASS,overall=FAIL,setup_wns=-0.1000,hold_wns=0.0500,global_skew=0.3000
+STAGE_EXIT fail=0
