@@ -9,6 +9,7 @@
 > - D005 [为什么现代芯片几乎只用补码](https://geek-doc.cn/chip-design/beginner/seed-why-twos-complement.html)
 > - D006 [补码的符号扩展为什么直接复制符号位](https://geek-doc.cn/chip-design/beginner/seed-sign-extension.html)
 > - D007 [溢出和进位是一回事吗](https://geek-doc.cn/chip-design/beginner/seed-overflow-vs-carry.html)
+> - D008 [BCD 码为什么在钟表和财务芯片里还活着](https://geek-doc.cn/chip-design/beginner/seed-bcd-code-decimal.html)
 
 数字 IC 入门第一阶段（数制、编码与逻辑代数）的配套实验包。每个脚本把文章里的一个关键机制做成可运行的演算过程：无参运行即输出内置算例的完整推导，也可以传入自己的参数反复试验。只依赖 Python 3 标准库，不需要任何开发板或 EDA 工具。
 
@@ -27,6 +28,7 @@
 | `signed_codes.py` | D004、D005 | 原码/反码/补码三码对照，补码把减法统一成加法 |
 | `sign_extend.py` | D006 | 8→16→32 位符号扩展，并对照负数错误补 0 的后果 |
 | `overflow_carry.py` | D007 | 同一次加法的无符号进位 C 与有符号溢出 V，四种标志组合 |
+| `bcd_decimal.py` | D008 | 8421-BCD 编码、非法码组拒绝，BCD 加法 +6 校正与逐位进位传播 |
 
 ## 运行方式
 
@@ -44,10 +46,11 @@ python3 binary_add.py 255 1                 # 观察进位一路传递
 python3 signed_codes.py --width 4 1 -1      # 用 4 位位宽做三码对照
 python3 sign_extend.py -5                   # 看负数的符号扩展
 python3 overflow_carry.py --width 8 200 100 # 8 位下的进位与溢出
+python3 bcd_decimal.py 75 86                # 多位数 BCD 加法的连续 +6 修正
 python3 quantize.py 0.2 1.5 3.3             # 判决自定义电压序列
 ```
 
-一键跑完六个演示和全部自校验：
+一键跑完七个演示和全部自校验：
 
 ```bash
 bash run.sh          # macOS / Linux
@@ -60,7 +63,7 @@ bash run.sh          # macOS / Linux
 python3 tests/test_check.py
 ```
 
-看到 `RESULT: PASS 6/6` 即环境与脚本均正常。
+看到 `RESULT: PASS 7/7` 即环境与脚本均正常。
 
 ## 目录结构
 
@@ -74,6 +77,7 @@ digital-ic-p01-logic-lab/
 ├── signed_codes.py        # D004/D005 三码对照与补码减法
 ├── sign_extend.py         # D006 符号扩展
 ├── overflow_carry.py      # D007 进位与溢出
+├── bcd_decimal.py         # D008 BCD 编码与十进制校正加法
 ├── tests/test_check.py    # 纯标准库自校验
 ├── run.sh                 # 一键演示 + 自校验（macOS/Linux）
 ├── run.ps1                # 一键演示 + 自校验（Windows）

@@ -9,7 +9,7 @@ if ! command -v python3 >/dev/null 2>&1; then
     exit 1
 fi
 
-for script in quantize.py base_convert.py binary_add.py signed_codes.py sign_extend.py overflow_carry.py; do
+for script in quantize.py base_convert.py binary_add.py signed_codes.py sign_extend.py overflow_carry.py bcd_decimal.py; do
     printf '\n########## %s ##########\n' "$script"
     python3 "$script"
 done

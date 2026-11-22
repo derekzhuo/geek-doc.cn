@@ -18,7 +18,7 @@ else {
     $Python = 'python3'
 }
 
-foreach ($Script in @('quantize.py', 'base_convert.py', 'binary_add.py', 'signed_codes.py', 'sign_extend.py', 'overflow_carry.py')) {
+foreach ($Script in @('quantize.py', 'base_convert.py', 'binary_add.py', 'signed_codes.py', 'sign_extend.py', 'overflow_carry.py', 'bcd_decimal.py')) {
     Write-Host "`n########## $Script ##########"
     & $Python $Script
     if ($LASTEXITCODE -ne 0) {

@@ -7,6 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import base_convert
+import bcd_decimal
 import binary_add
 import overflow_carry
 import quantize
@@ -68,6 +69,44 @@ def test_overflow_carry():
     # 2+3：正常，两个标志都没有
     _, carry, overflow, *_ = overflow_carry.add_with_flags(2, 3, 4)
     assert (carry, overflow) == (0, 0)
+
+
+def test_bcd_decimal():
+    # 编码：每位十进制数字独占 4 位
+    assert bcd_decimal.to_bcd(0) == "0000"
+    assert bcd_decimal.to_bcd(9) == "1001"
+    assert bcd_decimal.to_bcd(42) == "01000010"
+    assert bcd_decimal.from_bcd("01000010") == 42
+    # 1010~1111 是非法 BCD 码组，解码必须拒绝
+    for bad in ("1010", "1100", "1111"):
+        try:
+            bcd_decimal.from_bcd(bad)
+            raise AssertionError(f"{bad} 不应被当作合法 BCD 码")
+        except ValueError:
+            pass
+
+    # 单位加法：5+3 在 0~9 内，不修正
+    ok = bcd_decimal.add_nibble(5, 3)
+    assert (ok["digit"], ok["carry"], ok["corrected"]) == (8, 0, False)
+    # 分支一：8+5=13 落在 10~15，无二进制进位但码组非法，加 6 修正
+    branch_a = bcd_decimal.add_nibble(8, 5)
+    assert branch_a["corrected"] and branch_a["raw"] == 13
+    assert (branch_a["digit"], branch_a["carry"]) == (3, 1)
+    # 分支二：9+9=18 本身产生二进制进位，同样加 6
+    branch_b = bcd_decimal.add_nibble(9, 9)
+    assert branch_b["corrected"] and branch_b["raw"] == 18
+    assert (branch_b["digit"], branch_b["carry"]) == (8, 1)
+
+    # 多位数进位传播：个位、十位连续修正，最高位再进 1
+    result, steps = bcd_decimal.bcd_add(75, 86)
+    assert result == 161
+    assert [s["corrected"] for s in steps] == [True, True]
+    assert steps[-1]["carry"] == 1
+
+    # 与普通整数加法对拍一组随机形态的取值
+    for a, b in [(0, 0), (9, 1), (99, 1), (123, 456), (999, 999)]:
+        got, _ = bcd_decimal.bcd_add(a, b)
+        assert got == a + b
 
 
 def main():
