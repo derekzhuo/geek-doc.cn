@@ -1,0 +1,95 @@
+# command: run.bat  (xvlog tb_esp8266_baud.v -> xelab -debug typical tb -s sim_esp8266 -> xsim sim_esp8266 -runall, cwd C:\eda-lab\b1\chip-ref-esp8266-01s)
+# date: 2026-11-23T01:48:32+08:00
+# host-toolchain: Vivado Simulator 2017.4 (XSim, Windows)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/chip-ref-esp8266-01s/tb_esp8266_baud.v" into library work
+INFO: [VRFC 10-311] analyzing module tb
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb -s sim_esp8266 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.tb
+Built simulation snapshot sim_esp8266
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/chip-ref-esp8266-01s/xsim.dir/sim_esp8266/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov 23 01:48:34 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_esp8266/xsim_script.tcl
+# xsim {sim_esp8266} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+CHIP=esp8266-esp-01s APB=80MHz divider=integer20 (RTOS SDK)
+MEAS RATE target=9600 div=8333 bit_ns=104162.500 actual=9600.38 quant_pct=0.0040
+MEAS XTAL target=9600 xtal_ppm=-10 total_pct=0.0030 soft= OK hard= OK
+MEAS XTAL target=9600 xtal_ppm=10 total_pct=0.0050 soft= OK hard= OK
+MEAS XTAL target=9600 xtal_ppm=-50 total_pct=-0.0010 soft= OK hard= OK
+MEAS XTAL target=9600 xtal_ppm=50 total_pct=0.0090 soft= OK hard= OK
+MEAS FRAC target=9600 fdiv=8333.3125 frac_actual=9600.02 frac_pct=0.0003
+MEAS RATE target=19200 div=4166 bit_ns=52075.000 actual=19203.07 quant_pct=0.0160
+MEAS XTAL target=19200 xtal_ppm=-10 total_pct=0.0150 soft= OK hard= OK
+MEAS XTAL target=19200 xtal_ppm=10 total_pct=0.0170 soft= OK hard= OK
+MEAS XTAL target=19200 xtal_ppm=-50 total_pct=0.0110 soft= OK hard= OK
+MEAS XTAL target=19200 xtal_ppm=50 total_pct=0.0210 soft= OK hard= OK
+MEAS FRAC target=19200 fdiv=4166.6875 frac_actual=19199.90 frac_pct=-0.0005
+MEAS RATE target=38400 div=2083 bit_ns=26037.500 actual=38406.14 quant_pct=0.0160
+MEAS XTAL target=38400 xtal_ppm=-10 total_pct=0.0150 soft= OK hard= OK
+MEAS XTAL target=38400 xtal_ppm=10 total_pct=0.0170 soft= OK hard= OK
+MEAS XTAL target=38400 xtal_ppm=-50 total_pct=0.0110 soft= OK hard= OK
+MEAS XTAL target=38400 xtal_ppm=50 total_pct=0.0210 soft= OK hard= OK
+MEAS FRAC target=38400 fdiv=2083.3125 frac_actual=38400.38 frac_pct=0.0010
+MEAS RATE target=57600 div=1388 bit_ns=17350.000 actual=57636.89 quant_pct=0.0640
+MEAS XTAL target=57600 xtal_ppm=-10 total_pct=0.0630 soft= OK hard= OK
+MEAS XTAL target=57600 xtal_ppm=10 total_pct=0.0650 soft= OK hard= OK
+MEAS XTAL target=57600 xtal_ppm=-50 total_pct=0.0590 soft= OK hard= OK
+MEAS XTAL target=57600 xtal_ppm=50 total_pct=0.0690 soft= OK hard= OK
+MEAS FRAC target=57600 fdiv=1388.8750 frac_actual=57600.58 frac_pct=0.0010
+MEAS RATE target=74880 div=1068 bit_ns=13350.000 actual=74906.37 quant_pct=0.0352
+MEAS XTAL target=74880 xtal_ppm=-10 total_pct=0.0342 soft= OK hard= OK
+MEAS XTAL target=74880 xtal_ppm=10 total_pct=0.0362 soft= OK hard= OK
+MEAS XTAL target=74880 xtal_ppm=-50 total_pct=0.0302 soft= OK hard= OK
+MEAS XTAL target=74880 xtal_ppm=50 total_pct=0.0402 soft= OK hard= OK
+MEAS FRAC target=74880 fdiv=1068.3750 frac_actual=74880.07 frac_pct=0.0001
+MEAS RATE target=115200 div=694 bit_ns=8675.000 actual=115273.78 quant_pct=0.0640
+MEAS XTAL target=115200 xtal_ppm=-10 total_pct=0.0630 soft= OK hard= OK
+MEAS XTAL target=115200 xtal_ppm=10 total_pct=0.0650 soft= OK hard= OK
+MEAS XTAL target=115200 xtal_ppm=-50 total_pct=0.0590 soft= OK hard= OK
+MEAS XTAL target=115200 xtal_ppm=50 total_pct=0.0690 soft= OK hard= OK
+MEAS FRAC target=115200 fdiv=694.4375 frac_actual=115201.15 frac_pct=0.0010
+MEAS RATE target=230400 div=347 bit_ns=4337.500 actual=230547.55 quant_pct=0.0640
+MEAS XTAL target=230400 xtal_ppm=-10 total_pct=0.0630 soft= OK hard= OK
+MEAS XTAL target=230400 xtal_ppm=10 total_pct=0.0650 soft= OK hard= OK
+MEAS XTAL target=230400 xtal_ppm=-50 total_pct=0.0590 soft= OK hard= OK
+MEAS XTAL target=230400 xtal_ppm=50 total_pct=0.0690 soft= OK hard= OK
+MEAS FRAC target=230400 fdiv=347.2500 frac_actual=230381.57 frac_pct=-0.0080
+MEAS RATE target=460800 div=173 bit_ns=2162.500 actual=462427.75 quant_pct=0.3532
+MEAS XTAL target=460800 xtal_ppm=-10 total_pct=0.3522 soft= OK hard= OK
+MEAS XTAL target=460800 xtal_ppm=10 total_pct=0.3542 soft= OK hard= OK
+MEAS XTAL target=460800 xtal_ppm=-50 total_pct=0.3482 soft= OK hard= OK
+MEAS XTAL target=460800 xtal_ppm=50 total_pct=0.3582 soft= OK hard= OK
+MEAS FRAC target=460800 fdiv=173.6250 frac_actual=460763.14 frac_pct=-0.0080
+MEAS RATE target=921600 div=86 bit_ns=1075.000 actual=930232.56 quant_pct=0.9367
+MEAS XTAL target=921600 xtal_ppm=-10 total_pct=0.9357 soft= OK hard= OK
+MEAS XTAL target=921600 xtal_ppm=10 total_pct=0.9377 soft= OK hard= OK
+MEAS XTAL target=921600 xtal_ppm=-50 total_pct=0.9317 soft= OK hard= OK
+MEAS XTAL target=921600 xtal_ppm=50 total_pct=0.9417 soft= OK hard= OK
+MEAS FRAC target=921600 fdiv=86.8125 frac_actual=921526.28 frac_pct=-0.0080
+ESP8266_BENCH_DONE
+$finish called at time : 14899743750 ps : File "C:/eda-lab/b1/chip-ref-esp8266-01s/tb_esp8266_baud.v" Line 129
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 23 01:48:39 2026...
+XSIM_ESP8266_JOB_DONE
