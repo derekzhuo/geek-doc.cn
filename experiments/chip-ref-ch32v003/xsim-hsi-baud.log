@@ -1,0 +1,105 @@
+# command: run.bat  (xvlog tb_ch32v003_baud.v -> xelab -debug typical tb -s sim_ch32v003 -> xsim sim_ch32v003 -runall, cwd C:\eda-lab\b1\chip-ref-ch32v003)
+# date: 2026-11-23T01:55:37+08:00
+# host-toolchain: Vivado Simulator 2017.4 (XSim, Windows)
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/chip-ref-ch32v003/tb_ch32v003_baud.v" into library work
+INFO: [VRFC 10-311] analyzing module tb
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -debug typical tb -s sim_ch32v003 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.tb
+Built simulation snapshot sim_ch32v003
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/chip-ref-ch32v003/xsim.dir/sim_ch32v003/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov 23 01:55:39 2026...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sim_ch32v003/xsim_script.tcl
+# xsim {sim_ch32v003} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+CHIP=ch32v003 PCLK=48MHz HSI=24MHz-x2 BRR=mant12+frac4
+MEAS RATE target=9600 mant=312 frac=8 bit_cycles=5000 actual=9600.00 quant_pct=0.0000
+MEAS HSI target=9600 hsi_pct=-2.2 total_pct=-2.2000 soft=OUT hard= OK
+MEAS HSI target=9600 hsi_pct=-1.2 total_pct=-1.2000 soft= OK hard= OK
+MEAS HSI target=9600 hsi_pct=-1.0 total_pct=-1.0000 soft= OK hard= OK
+MEAS HSI target=9600 hsi_pct=1.0 total_pct=1.0000 soft= OK hard= OK
+MEAS HSI target=9600 hsi_pct=1.6 total_pct=1.6000 soft= OK hard= OK
+MEAS HSI target=9600 hsi_pct=2.2 total_pct=2.2000 soft=OUT hard= OK
+MEAS TRIM target=9600 worst_pct=-2.2000 trim_steps=9 residual_pct=0.0500 soft= OK
+MEAS RATE target=19200 mant=156 frac=4 bit_cycles=2500 actual=19200.00 quant_pct=0.0000
+MEAS HSI target=19200 hsi_pct=-2.2 total_pct=-2.2000 soft=OUT hard= OK
+MEAS HSI target=19200 hsi_pct=-1.2 total_pct=-1.2000 soft= OK hard= OK
+MEAS HSI target=19200 hsi_pct=-1.0 total_pct=-1.0000 soft= OK hard= OK
+MEAS HSI target=19200 hsi_pct=1.0 total_pct=1.0000 soft= OK hard= OK
+MEAS HSI target=19200 hsi_pct=1.6 total_pct=1.6000 soft= OK hard= OK
+MEAS HSI target=19200 hsi_pct=2.2 total_pct=2.2000 soft=OUT hard= OK
+MEAS TRIM target=19200 worst_pct=-2.2000 trim_steps=9 residual_pct=0.0500 soft= OK
+MEAS RATE target=38400 mant=78 frac=2 bit_cycles=1250 actual=38400.00 quant_pct=0.0000
+MEAS HSI target=38400 hsi_pct=-2.2 total_pct=-2.2000 soft=OUT hard= OK
+MEAS HSI target=38400 hsi_pct=-1.2 total_pct=-1.2000 soft= OK hard= OK
+MEAS HSI target=38400 hsi_pct=-1.0 total_pct=-1.0000 soft= OK hard= OK
+MEAS HSI target=38400 hsi_pct=1.0 total_pct=1.0000 soft= OK hard= OK
+MEAS HSI target=38400 hsi_pct=1.6 total_pct=1.6000 soft= OK hard= OK
+MEAS HSI target=38400 hsi_pct=2.2 total_pct=2.2000 soft=OUT hard= OK
+MEAS TRIM target=38400 worst_pct=-2.2000 trim_steps=9 residual_pct=0.0500 soft= OK
+MEAS RATE target=57600 mant=52 frac=1 bit_cycles=833 actual=57623.05 quant_pct=0.0400
+MEAS HSI target=57600 hsi_pct=-2.2 total_pct=-2.1600 soft=OUT hard= OK
+MEAS HSI target=57600 hsi_pct=-1.2 total_pct=-1.1600 soft= OK hard= OK
+MEAS HSI target=57600 hsi_pct=-1.0 total_pct=-0.9600 soft= OK hard= OK
+MEAS HSI target=57600 hsi_pct=1.0 total_pct=1.0400 soft= OK hard= OK
+MEAS HSI target=57600 hsi_pct=1.6 total_pct=1.6400 soft= OK hard= OK
+MEAS HSI target=57600 hsi_pct=2.2 total_pct=2.2400 soft=OUT hard= OK
+MEAS TRIM target=57600 worst_pct=-2.1600 trim_steps=9 residual_pct=0.0900 soft= OK
+MEAS RATE target=115200 mant=26 frac=1 bit_cycles=417 actual=115107.91 quant_pct=-0.0799
+MEAS HSI target=115200 hsi_pct=-2.2 total_pct=-2.2799 soft=OUT hard= OK
+MEAS HSI target=115200 hsi_pct=-1.2 total_pct=-1.2799 soft= OK hard= OK
+MEAS HSI target=115200 hsi_pct=-1.0 total_pct=-1.0799 soft= OK hard= OK
+MEAS HSI target=115200 hsi_pct=1.0 total_pct=0.9201 soft= OK hard= OK
+MEAS HSI target=115200 hsi_pct=1.6 total_pct=1.5201 soft= OK hard= OK
+MEAS HSI target=115200 hsi_pct=2.2 total_pct=2.1201 soft=OUT hard= OK
+MEAS TRIM target=115200 worst_pct=-2.2799 trim_steps=9 residual_pct=-0.0299 soft= OK
+MEAS RATE target=230400 mant=13 frac=0 bit_cycles=208 actual=230769.23 quant_pct=0.1603
+MEAS HSI target=230400 hsi_pct=-2.2 total_pct=-2.0397 soft=OUT hard= OK
+MEAS HSI target=230400 hsi_pct=-1.2 total_pct=-1.0397 soft= OK hard= OK
+MEAS HSI target=230400 hsi_pct=-1.0 total_pct=-0.8397 soft= OK hard= OK
+MEAS HSI target=230400 hsi_pct=1.0 total_pct=1.1603 soft= OK hard= OK
+MEAS HSI target=230400 hsi_pct=1.6 total_pct=1.7603 soft= OK hard= OK
+MEAS HSI target=230400 hsi_pct=2.2 total_pct=2.3603 soft=OUT hard= OK
+MEAS TRIM target=230400 worst_pct=-2.0397 trim_steps=8 residual_pct=-0.0397 soft= OK
+MEAS RATE target=460800 mant=6 frac=8 bit_cycles=104 actual=461538.46 quant_pct=0.1603
+MEAS HSI target=460800 hsi_pct=-2.2 total_pct=-2.0397 soft=OUT hard= OK
+MEAS HSI target=460800 hsi_pct=-1.2 total_pct=-1.0397 soft= OK hard= OK
+MEAS HSI target=460800 hsi_pct=-1.0 total_pct=-0.8397 soft= OK hard= OK
+MEAS HSI target=460800 hsi_pct=1.0 total_pct=1.1603 soft= OK hard= OK
+MEAS HSI target=460800 hsi_pct=1.6 total_pct=1.7603 soft= OK hard= OK
+MEAS HSI target=460800 hsi_pct=2.2 total_pct=2.3603 soft=OUT hard= OK
+MEAS TRIM target=460800 worst_pct=-2.0397 trim_steps=8 residual_pct=-0.0397 soft= OK
+MEAS RATE target=921600 mant=3 frac=4 bit_cycles=52 actual=923076.92 quant_pct=0.1603
+MEAS HSI target=921600 hsi_pct=-2.2 total_pct=-2.0397 soft=OUT hard= OK
+MEAS HSI target=921600 hsi_pct=-1.2 total_pct=-1.0397 soft= OK hard= OK
+MEAS HSI target=921600 hsi_pct=-1.0 total_pct=-0.8397 soft= OK hard= OK
+MEAS HSI target=921600 hsi_pct=1.0 total_pct=1.1603 soft= OK hard= OK
+MEAS HSI target=921600 hsi_pct=1.6 total_pct=1.7603 soft= OK hard= OK
+MEAS HSI target=921600 hsi_pct=2.2 total_pct=2.3603 soft=OUT hard= OK
+MEAS TRIM target=921600 worst_pct=-2.0397 trim_steps=8 residual_pct=-0.0397 soft= OK
+CH32V003_BENCH_DONE
+$finish called at time : 0 fs : File "C:/eda-lab/b1/chip-ref-ch32v003/tb_ch32v003_baud.v" Line 90
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 23 01:55:43 2026...
+XSIM_CH32V003_JOB_DONE
