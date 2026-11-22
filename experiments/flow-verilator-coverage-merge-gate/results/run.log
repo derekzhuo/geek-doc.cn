@@ -1,0 +1,110 @@
+# command: docker run --rm -v "$PWD":/work -w /work geek-eda:0.4-flow bash run.sh
+# date: 2026-11-23
+# host-toolchain: Verilator 5.020 (geek-eda:0.4-flow docker)
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+
+Copyright 2003-2024 by Wilson Snyder.  Verilator is free software; you can
+---- 报告工具可用性 ----
+genhtml: NOT FOUND in this image
+lcov: NOT FOUND in this image
+==================== [1/6] 编译带覆盖率插桩的仿真（一次编译，三个种子复用） ====================
+make: Entering directory '/work/obj_dir'
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -Os -c -o tb.o ../sim/tb.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_cov.o /usr/share/verilator/include/verilated_cov.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vcounter.cpp Vcounter___024root__DepSet_ha8ec69a6__0.cpp Vcounter___024root__DepSet_he26a92aa__0.cpp Vcounter___024root__Slow.cpp Vcounter___024root__DepSet_ha8ec69a6__0__Slow.cpp Vcounter___024root__DepSet_he26a92aa__0__Slow.cpp Vcounter__Syms.cpp > Vcounter__ALL.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o Vcounter__ALL.o Vcounter__ALL.cpp
+echo "" > Vcounter__ALL.verilator_deplist.tmp
+Archive ar -rcs Vcounter__ALL.a Vcounter__ALL.o
+g++     tb.o verilated.o verilated_cov.o verilated_threads.o Vcounter__ALL.a    -pthread -lpthread -latomic   -o Vcounter
+rm Vcounter__ALL.verilator_deplist.tmp
+make: Leaving directory '/work/obj_dir'
+==================== [2/6] 三个种子分别运行，各写一份 coverage_seedN.dat ====================
+seed 1 stimulus done, wrote coverage_seed1.dat
+seed 2 stimulus done, wrote coverage_seed2.dat
+seed 3 stimulus done, wrote coverage_seed3.dat
+-rw-r--r-- 1 root root 2103 Nov 22 17:41 coverage_seed1.dat
+-rw-r--r-- 1 root root 2103 Nov 22 17:41 coverage_seed2.dat
+-rw-r--r-- 1 root root 2104 Nov 22 17:41 coverage_seed3.dat
+==================== [3/6] 单种子覆盖率：--rank 排名 + 分指标计数 ====================
+---- seed 1: verilator_coverage --rank ----
+Tests:
+  Covered,     Rank,  RankPts,  Filename
+       11,        1,       11,  "coverage_seed1.dat"
+---- seed 1: 分指标（行/分支/翻转） ----
+  v_line    covered 2/4  (50.0%, zero=2)
+  v_toggle  covered 7/21  (33.3%, zero=14)
+  v_branch  covered 2/2  (100.0%, zero=0)
+---- seed 2: verilator_coverage --rank ----
+Tests:
+  Covered,     Rank,  RankPts,  Filename
+       19,        1,       19,  "coverage_seed2.dat"
+---- seed 2: 分指标（行/分支/翻转） ----
+  v_line    covered 3/4  (75.0%, zero=1)
+  v_toggle  covered 14/21  (66.7%, zero=7)
+  v_branch  covered 2/2  (100.0%, zero=0)
+---- seed 3: verilator_coverage --rank ----
+Tests:
+  Covered,     Rank,  RankPts,  Filename
+       25,        1,       25,  "coverage_seed3.dat"
+---- seed 3: 分指标（行/分支/翻转） ----
+  v_line    covered 3/4  (75.0%, zero=1)
+  v_toggle  covered 20/21  (95.2%, zero=1)
+  v_branch  covered 2/2  (100.0%, zero=0)
+==================== [4/6] 合并三份数据：--write merged.dat 后再出汇总 ====================
+---- merged: verilator_coverage --rank ----
+Tests:
+  Covered,     Rank,  RankPts,  Filename
+       25,        1,       25,  "merged.dat"
+---- merged: 分指标（行/分支/翻转） ----
+  v_line    covered 3/4  (75.0%, zero=1)
+  v_toggle  covered 20/21  (95.2%, zero=1)
+  v_branch  covered 2/2  (100.0%, zero=0)
+---- merged: --annotate 逐行注释（%000000 表示零命中） ----
+Total coverage (3/16) 18.00%
+See lines with '%00' in logs_merged
+//      // verilator_coverage annotation
+        // 8 位可加载计数器：rst_n 异步复位，load 优先于 clear，clear 优先于 en，
+        // 计满 255 后自然回绕到 0。三个种子的激励都不驱动 clear，
+        // 用来制造一个合并后仍存在的真实覆盖缺口。
+        module counter #(
+            parameter int WIDTH = 8
+        ) (
+ 000103     input  logic             clk,
+%000003     input  logic             rst_n,
+%000008     input  logic             en,
+%000006     input  logic             load,
+%000000     input  logic             clear,
+%000001     input  logic [WIDTH-1:0] d,
+%000002     output logic [WIDTH-1:0] q
+        );
+ 000053     always_ff @(posedge clk or negedge rst_n) begin
+%000006         if (!rst_n) begin
+%000006             q <= '0;
+%000003         end else if (load) begin
+%000003             q <= d;
+%000000         end else if (clear) begin
+%000000             q <= '0;
+%000004         end else if (en) begin
+ 000040             q <= q + 1'b1;
+                end
+            end
+        endmodule
+        
+==================== [5/6] lcov 信息文件导出（genhtml 不在镜像内，只演示到 .info） ====================
+-rw-r--r-- 1 root root 182 Nov 22 17:41 report.info
+TN:verilator_coverage
+SF:rtl/counter.v
+DA:7,103
+DA:8,3
+DA:9,8
+DA:10,6
+DA:11,0
+DA:12,1
+==================== [6/6] 阈值门禁：同一 merged 结果，宽松阈值通过、收紧阈值失败 ====================
+coverage_gate: v_line 3/4 = 75.0% vs threshold 70.0% -> PASS
+gate rc=0 (threshold 70%)
+coverage_gate: v_line 3/4 = 75.0% vs threshold 90.0% -> FAIL
+gate rc=1 (threshold 90%)
+==================== run.sh finished: rc_loose=0 rc_tight=1 ====================

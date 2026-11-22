@@ -1,0 +1,7 @@
+obj_dir/
+logs_merged/
+coverage.dat
+coverage_seed*.dat
+merged.dat
+report.info
+__pycache__/
