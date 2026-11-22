@@ -1,0 +1,101 @@
+/* 教学用最小 liberty：仅含 1 个上升沿 D 触发器、1 个二输入与非门、1 个缓冲器。
+   延迟全部为标量常数，只为演示 SDC 约束如何进入时序计算，
+   不代表任何真实工艺；产线请替换为 PDK 提供的单元库。 */
+library(teaching_min) {
+  time_unit : "1ns";
+  delay_model : table_lookup;
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  capacitive_load_unit(1, pf);
+  input_threshold_pct_rise : 50.0;
+  output_threshold_pct_rise : 50.0;
+  slew_lower_threshold_pct_rise : 20.0;
+  slew_upper_threshold_pct_rise : 80.0;
+  input_threshold_pct_fall : 50.0;
+  output_threshold_pct_fall : 50.0;
+  slew_lower_threshold_pct_fall : 20.0;
+  slew_upper_threshold_pct_fall : 80.0;
+
+  cell(DFF_P) {
+    ff(IQ, IQN) {
+      clocked_on : "C";
+      next_state : "D";
+    }
+    pin(D) {
+      direction : input;
+      capacitance : 0.01;
+      timing() {
+        related_pin : "C";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.10"); }
+        fall_constraint(scalar) { values("0.10"); }
+      }
+      timing() {
+        related_pin : "C";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("0.00"); }
+        fall_constraint(scalar) { values("0.00"); }
+      }
+    }
+    pin(C) {
+      direction : input;
+      capacitance : 0.01;
+      clock : true;
+    }
+    pin(Q) {
+      direction : output;
+      function : "IQ";
+      timing() {
+        related_pin : "C";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("0.20"); }
+        cell_fall(scalar) { values("0.20"); }
+        rise_transition(scalar) { values("0.05"); }
+        fall_transition(scalar) { values("0.05"); }
+      }
+    }
+  }
+
+  cell(NAND2) {
+    area : 1;
+    pin(A) { direction : input; capacitance : 0.01; }
+    pin(B) { direction : input; capacitance : 0.01; }
+    pin(Y) {
+      direction : output;
+      function : "((A B)')";
+      timing() {
+        related_pin : "A";
+        timing_type : combinational;
+        cell_rise(scalar) { values("0.15"); }
+        cell_fall(scalar) { values("0.15"); }
+        rise_transition(scalar) { values("0.05"); }
+        fall_transition(scalar) { values("0.05"); }
+      }
+      timing() {
+        related_pin : "B";
+        timing_type : combinational;
+        cell_rise(scalar) { values("0.15"); }
+        cell_fall(scalar) { values("0.15"); }
+        rise_transition(scalar) { values("0.05"); }
+        fall_transition(scalar) { values("0.05"); }
+      }
+    }
+  }
+
+  cell(BUF_X) {
+    area : 1;
+    pin(A) { direction : input; capacitance : 0.01; }
+    pin(Y) {
+      direction : output;
+      function : "A";
+      timing() {
+        related_pin : "A";
+        timing_type : combinational;
+        cell_rise(scalar) { values("0.10"); }
+        cell_fall(scalar) { values("0.10"); }
+        rise_transition(scalar) { values("0.05"); }
+        fall_transition(scalar) { values("0.05"); }
+      }
+    }
+  }
+}

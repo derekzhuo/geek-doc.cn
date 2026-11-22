@@ -1,0 +1,107 @@
+# command: sta -no_init -exit nogen.tcl
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+========== CLOCK PROPERTIES ==========
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                       4.00        0.00      2.00
+========== CHECK_SETUP -verbose ==========
+Warning: There is 1 output port missing set_output_delay.
+  q_out
+Warning: There is 1 unclocked register/latch pin.
+  u_cap/C
+Warning: There are 2 unconstrained endpoints.
+  q_out
+  u_cap/D
+========== REPORT_CHECKS SETUP (max) ==========
+Startpoint: u_div (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_div (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.1000    0.1000   clock network delay (propagated)
+   0.0000    0.1000 ^ u_div/C (DFF_P)
+   0.2000    0.3000 v u_div/Q (DFF_P)
+   0.1500    0.4500 ^ u_div_inv/Y (NAND2)
+   0.0000    0.4500 ^ u_div/D (DFF_P)
+             0.4500   data arrival time
+
+   4.0000    4.0000   clock clk (rise edge)
+   0.1000    4.1000   clock network delay (propagated)
+   0.0000    4.1000   clock reconvergence pessimism
+             4.1000 ^ u_div/C (DFF_P)
+  -0.1000    4.0000   library setup time
+             4.0000   data required time
+-------------------------------------------------------------
+             4.0000   data required time
+            -0.4500   data arrival time
+-------------------------------------------------------------
+             3.5500   slack (MET)
+
+
+========== REPORT_CHECKS HOLD (min) ==========
+Startpoint: d_in (input port clocked by clk)
+Endpoint: u_launch (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock network delay (propagated)
+   0.1500    0.1500 ^ input external delay
+   0.0000    0.1500 ^ d_in (in)
+   0.0000    0.1500 ^ u_launch/D (DFF_P)
+             0.1500   data arrival time
+
+   0.0000    0.0000   clock clk (rise edge)
+   0.1000    0.1000   clock network delay (propagated)
+   0.0000    0.1000   clock reconvergence pessimism
+             0.1000 ^ u_launch/C (DFF_P)
+   0.0000    0.1000   library hold time
+             0.1000   data required time
+-------------------------------------------------------------
+             0.1000   data required time
+            -0.1500   data arrival time
+-------------------------------------------------------------
+             0.0500   slack (MET)
+
+
+========== REPORT_CHECKS -unconstrained ==========
+Startpoint: u_div (rising edge-triggered flip-flop clocked by clk)
+Endpoint: u_div (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.1000    0.1000   clock network delay (propagated)
+   0.0000    0.1000 ^ u_div/C (DFF_P)
+   0.2000    0.3000 v u_div/Q (DFF_P)
+   0.1500    0.4500 ^ u_div_inv/Y (NAND2)
+   0.0000    0.4500 ^ u_div/D (DFF_P)
+             0.4500   data arrival time
+
+   4.0000    4.0000   clock clk (rise edge)
+   0.1000    4.1000   clock network delay (propagated)
+   0.0000    4.1000   clock reconvergence pessimism
+             4.1000 ^ u_div/C (DFF_P)
+  -0.1000    4.0000   library setup time
+             4.0000   data required time
+-------------------------------------------------------------
+             4.0000   data required time
+            -0.4500   data arrival time
+-------------------------------------------------------------
+             3.5500   slack (MET)
+
+
+========== NOGEN STAGE DONE ==========
+STAGE_EXIT nogen=0
