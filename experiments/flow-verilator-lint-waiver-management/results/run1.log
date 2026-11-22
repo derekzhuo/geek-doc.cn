@@ -1,0 +1,88 @@
+# command: bash run.sh (project-level verilator waiver flow)
+# date: 2026-11-23
+# host-toolchain: docker geek-eda:0.4-flow / Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+===== step 0: verilator --version =====
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+===== step 1: baseline lint on legacy RTL (expect 3 warnings, exit 1) =====
+%Warning-WIDTHTRUNC: rtl/sensor_top.v:29:19: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'hold' generates 16 bits.
+                                           : ... note: In instance 'sensor_top'
+   29 |     assign status = hold;
+      |                   ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: rtl/sensor_top.v:32:16: Signal is not used: 'spare_high'
+                                             : ... note: In instance 'sensor_top'
+   32 |     wire [7:0] spare_high;
+      |                ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: rtl/baud_tick.v:14:10: Signal is not used: 'dbg_toggle'
+                                            : ... note: In instance 'sensor_top.u_baud_tick'
+   14 |     wire dbg_toggle;
+      |          ^~~~~~~~~~
+%Error: Exiting due to 3 warning(s)
+exit_code=1
+===== step 2: generate waiver draft with --waiver-output =====
+%Warning-WIDTHTRUNC: rtl/sensor_top.v:29:19: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'hold' generates 16 bits.
+                                           : ... note: In instance 'sensor_top'
+   29 |     assign status = hold;
+      |                   ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: rtl/sensor_top.v:32:16: Signal is not used: 'spare_high'
+                                             : ... note: In instance 'sensor_top'
+   32 |     wire [7:0] spare_high;
+      |                ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: rtl/baud_tick.v:14:10: Signal is not used: 'dbg_toggle'
+                                            : ... note: In instance 'sensor_top.u_baud_tick'
+   14 |     wire dbg_toggle;
+      |          ^~~~~~~~~~
+%Error: Exiting due to 3 warning(s)
+exit_code=1 (draft generated, warnings still fatal)
+---- build/waiver_draft.vlt ----
+// DESCRIPTION: Verilator output: Waivers generated with --waiver-output
+
+`verilator_config
+
+// Below you find suggested waivers. You have three options:
+//   1. Fix the reason for the linter warning
+//   2. Keep the waiver permanently if you are sure this is okay
+//   3. Keep the waiver temporarily to suppress the output
+
+// lint_off -rule WIDTHTRUNC -file "*rtl/sensor_top.v" -match "Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'hold' generates 16 bits."
+
+// lint_off -rule UNUSEDSIGNAL -file "*rtl/sensor_top.v" -match "Signal is not used: 'spare_high'"
+
+// lint_off -rule UNUSEDSIGNAL -file "*rtl/baud_tick.v" -match "Signal is not used: 'dbg_toggle'"
+
+===== step 3: lint with reviewed project waiver file (expect clean, exit 0) =====
+exit_code=0
+===== step 4: inject an UNREGISTERED warning, layered gate must block it =====
+%Warning-UNUSEDSIGNAL: rtl/sensor_top.v:36:16: Signal is not driven, nor used: 'stray_dbg'
+                                             : ... note: In instance 'sensor_top'
+   36 |     wire [7:0] stray_dbg;  
+      |                ^~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.020
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+exit_code=1 (registered items stay waived, the new one is reported)
+===== step 5: over-broad rule-only waiver silences even the new warning =====
+exit_code=0 (looks green, but the injected warning is now hidden -- do NOT do this)
+===== step 6: remove injection, restore the clean state (expect exit 0) =====
+exit_code=0
+===== appendix: -file/-lines without -match parses but does NOT suppress on 5.020 =====
+%Warning-WIDTHTRUNC: rtl/sensor_top.v:29:19: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'hold' generates 16 bits.
+                                           : ... note: In instance 'sensor_top'
+   29 |     assign status = hold;
+      |                   ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: rtl/sensor_top.v:32:16: Signal is not used: 'spare_high'
+                                             : ... note: In instance 'sensor_top'
+   32 |     wire [7:0] spare_high;
+      |                ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: rtl/baud_tick.v:14:10: Signal is not used: 'dbg_toggle'
+                                            : ... note: In instance 'sensor_top.u_baud_tick'
+   14 |     wire dbg_toggle;
+      |          ^~~~~~~~~~
+%Error: Exiting due to 3 warning(s)
+exit_code=1 (warning still reported: a waiver without -match has no effect here)
+ALL STAGES DONE

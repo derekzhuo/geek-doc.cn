@@ -1,0 +1,23 @@
+// lint/waivers.vlt -- sensor_top 工程项目级 lint waiver 清单
+// 纪律：每条只压住一个已评审确认的告警点，注释写清理由、责任人与评审日期。
+// 条目随 RTL 同库做代码评审，禁止写不带 -file/-match 的整规则豁免。
+// 5.020 版本实测：lint_off 必须带 -match 才会真正生效，-file 与
+// -match 共同把豁免锚定到「文件 + 告警原文」，代码挪行不会让豁免失效。
+// 注意：本文件注释里不要出现工具英文名，否则会被当成魔法指令解析报错。
+`verilator_config
+
+// [W001] 评审 2026-11-23，责任人：rtl-owner A
+// 理由：status 是协议定死的 8 位上报寄存器，16 位 hold 整体接入后按
+//       Verilog 语义截取低字节，截断是接口规格的有意设计，不是位宽笔误。
+//       锚定 sensor_top.v 与该条告警原文，文件内新出现的 WIDTHTRUNC 仍会报告。
+lint_off -rule WIDTHTRUNC -file "*rtl/sensor_top.v" -match "Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's VARREF 'hold' generates 16 bits."
+
+// [W002] 评审 2026-11-23，责任人：rtl-owner A
+// 理由：spare_high 承接采样值高字节，预留给排期在下一版的调试接口，
+//       当前版本无消费者；调试接口落地后此条随代码一起删除，不做长期豁免。
+lint_off -rule UNUSEDSIGNAL -file "*rtl/sensor_top.v" -match "Signal is not used: 'spare_high'"
+
+// [W003] 评审 2026-11-23，责任人：rtl-owner B
+// 理由：dbg_toggle 是历史模块留给板级逻辑分析仪的观测点，模块内部按
+//       设计就没有消费者，跨模块端口外引的方案在 W003 评审单中被否决。
+lint_off -rule UNUSEDSIGNAL -file "*rtl/baud_tick.v" -match "Signal is not used: 'dbg_toggle'"
