@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // "1101" sequence detector with overlapping matches.
 // State encodes the longest suffix of the received stream that is also a
 // prefix of the target pattern 1101:

@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // Single-clock synchronous FIFO.
 // Depth should be a power of two so pointer wrap comes for free.
 // Full/empty are derived from a running occupancy counter, which makes

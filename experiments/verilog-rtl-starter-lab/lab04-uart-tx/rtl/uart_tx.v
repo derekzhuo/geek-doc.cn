@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // 8N1 UART transmitter: 1 start bit (0), 8 data bits LSB first,
 // 1 stop bit (1). One bit time lasts CLKS_PER_BIT input clocks, so
 // baud = f_clk / CLKS_PER_BIT. A one-cycle pulse on `start` launches

@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // Switch/button debouncer for a synchronous design.
 // Two-stage synchronizer first, then a stability counter: the input must
 // stay different from the latched level for N consecutive clocks before

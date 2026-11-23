@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 // Parameterized clock divider: `out` toggles once every DIV input clocks,
 // so f_out = f_clk / (2 * DIV). Active-low asynchronous reset.
 module clock_divider #(
