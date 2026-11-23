@@ -9,7 +9,7 @@ test: $(LABS)
 $(LABS):
 	@echo "=== $@ ==="
 	@mkdir -p $@/sim_build
-	$(IVERILOG) -g2005 -I common -o $@/sim_build/sim.vvp $@/tb/*.v $@/rtl/*.v
+	$(IVERILOG) -g2005 -I common -o $@/sim_build/sim.vvp $(wildcard $@/tb/*.v $@/rtl/*.v)
 	$(VVP) $@/sim_build/sim.vvp
 
 clean:

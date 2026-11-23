@@ -17,15 +17,18 @@ task check_input;
   end
 endtask
 
-// Print the lab-level verdict and stop the simulation.
+// Print the lab-level verdict; stop with a non-zero code on failure so
+// Makefile and CI can detect failed checks without parsing output.
 task finish_summary;
   input integer err_count;
   begin
-    if (err_count == 0)
+    if (err_count == 0) begin
       $display("RESULT: PASS");
-    else
+      $finish;
+    end else begin
       $display("RESULT: FAIL (%0d check(s) failed)", err_count);
-    $finish;
+      $fatal(1);
+    end
   end
 endtask
 
