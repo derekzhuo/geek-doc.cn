@@ -1,0 +1,92 @@
+# command: quartus_sh.exe -t flow_bad.tcl  (cwd C:\eda-lab\b1\ts-quartus-169026-vccio-bank-conflict)
+# date: 2026-11-24T01:41:40+08:00
+# host-toolchain: Quartus Prime Lite 25.1std (Windows, EP4CE6E22C8)
+# 坏流程：led_b（PIN_86）指派 3.0-V LVTTL，与同 bank 5 的 3.3V 脚位 VCCIO 不兼容，Fitter 报 169026 并由 169073 指明冲突脚
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Altera and sold by Altera or its authorized distributors.  Please
+    Info: refer to the Altera Software License Subscription Agreements 
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Tue Nov 24 01:41:49 2026
+Info: Command: quartus_sh -t flow_bad.tcl
+Info (125061): Changed top-level design entity name to "ic_top"
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Tue Nov 24 01:41:57 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vccio_bad -c vccio_bad
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file io_conflict.v
+    Info (12023): Found entity 1: ic_top File: C:/eda-lab/b1/ts-quartus-169026-vccio-bank-conflict/io_conflict.v Line: 3
+Info (12127): Elaborating entity "ic_top" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 34 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Tue Nov 24 01:42:28 2026
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:27
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Tue Nov 24 01:42:29 2026
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off vccio_bad -c vccio_bad
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = vccio_bad
+Info: Revision = vccio_bad
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (119006): Selected device EP4CE6E22C8 for design "vccio_bad"
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EP4CE10E22C8 is compatible
+    Info (176445): Device EP4CE15E22C8 is compatible
+    Info (176445): Device EP4CE22E22C8 is compatible
+Info (169124): Fitter converted 5 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_ASDO_DATA1~ is reserved at location 6
+    Info (169125): Pin ~ALTERA_FLASH_nCE_nCSO~ is reserved at location 8
+    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
+    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
+    Info (169125): Pin ~ALTERA_nCEO~ is reserved at location 101
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Error (169026): Pin led_b with I/O standard assignment 3.0-V LVTTL is incompatible with I/O bank 5. I/O standard 3.0-V LVTTL, has a VCCIO requirement of 3.0V, which incompatible with the I/O bank's VCCIO setting or with other output or bidirectional pins in the I/O bank using a VCCIO requirement of 3.3V. Assign output and bidirectional pins with different VCCIO requirements to different I/O banks, or change the I/O standard assignment for the specified pin to a compatible I/O standard. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/eda-lab/b1/ts-quartus-169026-vccio-bank-conflict/io_conflict.v Line: 8
+    Info (169073): Pin led_a in I/O bank 5 uses VCCIO 3.3V File: C:/eda-lab/b1/ts-quartus-169026-vccio-bank-conflict/io_conflict.v Line: 6
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Error (171000): Can't fit design in device
+Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
+    Info (169178): Pin clk uses I/O standard 3.3-V LVTTL at 23 File: C:/eda-lab/b1/ts-quartus-169026-vccio-bank-conflict/io_conflict.v Line: 4
+    Info (169178): Pin rst_n uses I/O standard 3.3-V LVTTL at 24 File: C:/eda-lab/b1/ts-quartus-169026-vccio-bank-conflict/io_conflict.v Line: 5
+Error: Quartus Prime Fitter was unsuccessful. 2 errors, 4 warnings
+    Error: Peak virtual memory: 4945 megabytes
+    Error: Processing ended: Tue Nov 24 01:42:36 2026
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:01
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 4 errors, 5 warnings
+Error (23031): Evaluation of Tcl script flow_bad.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 9 errors, 5 warnings
+    Error: Peak virtual memory: 4795 megabytes
+    Error: Processing ended: Tue Nov 24 01:42:37 2026
+    Error: Elapsed time: 00:00:48
+    Error: Total CPU time (on all processors): 00:00:30
+EXPECTED_VCCIO_RC_NONZERO

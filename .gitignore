@@ -163,3 +163,17 @@ experiments/**/*.db
 experiments/**/*.gds
 experiments/**/*.oas
 experiments/**/*.lyrdb
+
+# Quartus 命令行流程产物（flow_*.tcl 的 project_new/execute_flow 自动重建，不入库）
+experiments/**/db/
+experiments/**/incremental_db/
+experiments/**/greybox_tmp/
+experiments/**/.qsys_edit/
+experiments/**/*.qpf
+experiments/**/*.qsf
+experiments/**/*.qws
+experiments/**/*.smsg
+experiments/**/*.sof
+experiments/**/*.pof
+experiments/**/*.jou
+experiments/**/*.pb
