@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import base_convert
 import bcd_decimal
 import binary_add
+import gray_reflection
 import overflow_carry
 import quantize
 import sign_extend
@@ -107,6 +108,32 @@ def test_bcd_decimal():
     for a, b in [(0, 0), (9, 1), (99, 1), (123, 456), (999, 999)]:
         got, _ = bcd_decimal.bcd_add(a, b)
         assert got == a + b
+
+
+def test_gray_reflection():
+    # 反射构造的前三层手算结果
+    assert gray_reflection.reflected_gray(1) == ["0", "1"]
+    assert gray_reflection.reflected_gray(2) == ["00", "01", "11", "10"]
+    assert gray_reflection.reflected_gray(3) == [
+        "000", "001", "011", "010", "110", "111", "101", "100"]
+
+    # n=1..8：反射构造与异或公式 g = b ^ (b>>1) 给出同一序列，
+    # 且任意循环相邻对（含首尾）汉明距离恰为 1
+    for width in range(1, 9):
+        reflected = gray_reflection.reflected_gray(width)
+        assert reflected == gray_reflection.xor_gray(width)
+        assert len(set(reflected)) == 1 << width
+        assert gray_reflection.adjacent_distances(reflected) == [1] * (1 << width)
+
+    # 翻转统计：格雷码每步恒为 1 位；二进制含首尾循环的总量可手算
+    gray3 = gray_reflection.gray_flip_stats(3)
+    assert (gray3["total"], gray3["average"], gray3["worst"]) == (8, 1.0, 1)
+    bin3 = gray_reflection.binary_flip_stats(3)
+    assert (bin3["total"], bin3["worst"]) == (14, 3)
+    bin4 = gray_reflection.binary_flip_stats(4)
+    assert (bin4["total"], bin4["average"], bin4["worst"]) == (30, 30 / 16, 4)
+    gray4 = gray_reflection.gray_flip_stats(4)
+    assert (gray4["total"], gray4["average"]) == (16, 1.0)
 
 
 def main():
