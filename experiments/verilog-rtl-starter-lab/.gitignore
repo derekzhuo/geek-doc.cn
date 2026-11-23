@@ -1,0 +1,8 @@
+# Simulation build products
+*.vcd
+*.vvp
+sim_build/
+
+# OS/editor noise
+.DS_Store
+*.swp
