@@ -7,7 +7,6 @@ fail=0
 passed=0
 for d in lab*/; do
   lab="${d%/}"
-  echo "=== $lab ==="
   out=$(make "$lab" 2>&1)
   rc=$?
   echo "$out"
