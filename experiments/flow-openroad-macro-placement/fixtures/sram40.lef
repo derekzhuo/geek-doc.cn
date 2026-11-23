@@ -1,0 +1,49 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+UNITS
+  DATABASE MICRONS 2000 ;
+END UNITS
+MACRO SRAM40
+  CLASS BLOCK ;
+  ORIGIN 0.0 0.0 ;
+  SIZE 40.0 BY 60.0 ;
+  SYMMETRY X Y ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.0 0.0 40.0 2.0 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.0 58.0 40.0 60.0 ;
+    END
+  END VSS
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal2 ;
+        RECT 4.0 10.0 6.0 14.0 ;
+    END
+  END clk
+  PIN din
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal2 ;
+        RECT 4.0 20.0 6.0 24.0 ;
+    END
+  END din
+  OBS
+    LAYER metal1 ;
+      RECT 8.0 8.0 32.0 52.0 ;
+  END
+END SRAM40
+END LIBRARY

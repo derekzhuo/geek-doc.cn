@@ -1,0 +1,60 @@
+library(teaching) {
+  delay_model : table_lookup ;
+  time_unit : "1ns" ;
+  voltage_unit : "1V" ;
+  current_unit : "1mA" ;
+  leakage_power_unit : "1pW" ;
+  capacitive_load_unit(1, pf) ;
+  pulling_resistance_unit : "1kohm" ;
+
+  lu_table_template(delay_template_1x1) {
+    variable_1 : input_net_transition ;
+    index_1 ("0.01") ;
+    variable_2 : total_output_net_capacitance ;
+    index_2 ("0.01") ;
+    delay_values ("0.0") ;
+  }
+
+  cell(SRAM64) {
+    area : 3600 ;
+    pin(VDD) { direction : inout ; power_down_function : "!VDD VSS" ; }
+    pin(VSS) { direction : inout ; ground : true ; }
+    pin(clk) {
+      direction : input ;
+      capacitance : 0.005 ;
+      timing() { related_pin : "dout" ; timing_sense : non_unate ;
+        cell_rise(delay_template_1x1) { index_1 ("0.01"); index_2 ("0.01"); values("0.1"); }
+        cell_fall(delay_template_1x1) { index_1 ("0.01"); index_2 ("0.01"); values("0.1"); }
+      }
+    }
+    pin(addr) { direction : input ; capacitance : 0.005 ; }
+    pin(dout) { direction : output ; function : "addr" ; }
+  }
+
+  cell(BUF_X1) {
+    area : 1 ;
+    pin(A) { direction : input ; capacitance : 0.002 ; }
+    pin(Y) {
+      direction : output ; function : "A" ;
+      timing() { related_pin : "A" ; timing_sense : positive_unate ;
+        cell_rise(delay_template_1x1) { index_1 ("0.01"); index_2 ("0.01"); values("0.05"); }
+        cell_fall(delay_template_1x1) { index_1 ("0.01"); index_2 ("0.01"); values("0.05"); }
+      }
+    }
+  }
+
+  cell(SRAM40) {
+    area : 2400 ;
+    pin(VDD) { direction : inout ; power_down_function : "!VDD VSS" ; }
+    pin(VSS) { direction : inout ; ground : true ; }
+    pin(clk) {
+      direction : input ;
+      capacitance : 0.005 ;
+      timing() { related_pin : "din" ; timing_sense : non_unate ;
+        cell_rise(delay_template_1x1) { index_1 ("0.01"); index_2 ("0.01"); values("0.1"); }
+        cell_fall(delay_template_1x1) { index_1 ("0.01"); index_2 ("0.01"); values("0.1"); }
+      }
+    }
+    pin(din) { direction : input ; capacitance : 0.005 ; }
+  }
+}

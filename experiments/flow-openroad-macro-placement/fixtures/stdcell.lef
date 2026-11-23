@@ -1,0 +1,46 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+UNITS
+  DATABASE MICRONS 2000 ;
+END UNITS
+MACRO BUF_X1
+  CLASS CORE ;
+  SITE unit ;
+  ORIGIN 0.0 0.0 ;
+  SIZE 1.0 BY 1.0 ;
+  SYMMETRY X Y ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal2 ;
+        RECT 0.1 0.3 0.3 0.7 ;
+    END
+  END A
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal2 ;
+        RECT 0.7 0.3 0.9 0.7 ;
+    END
+  END Y
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.0 0.9 1.0 1.0 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.0 0.0 1.0 0.1 ;
+    END
+  END VSS
+END BUF_X1
+END LIBRARY
