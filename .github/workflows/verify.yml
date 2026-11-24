@@ -9,7 +9,7 @@ on:
 jobs:
   docs-and-cpp:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -20,7 +20,14 @@ jobs:
       - name: Install EDA tools
         run: |
           sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 update
-          timeout 180s sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 install -y --no-install-recommends iverilog yosys verilator
+          for attempt in 1 2 3; do
+            if timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 install -y --no-install-recommends iverilog yosys verilator; then
+              exit 0
+            fi
+            echo "EDA package installation attempt ${attempt} failed; retrying after 15 seconds"
+            sleep 15
+          done
+          exit 1
 
       - name: Check experiment documentation
         run: node scripts/check-experiment-docs.mjs
