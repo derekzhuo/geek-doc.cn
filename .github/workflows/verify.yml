@@ -43,6 +43,9 @@ jobs:
       - name: Test FIFO starter kit
         run: make -C fifo-starter-kit test
 
+      - name: Test Verilog RTL starter lab
+        run: make -C experiments/verilog-rtl-starter-lab test
+
       - name: Run Icarus Verilog simulation
         run: make -C experiments/flow-iverilog-first-simulation run
 
