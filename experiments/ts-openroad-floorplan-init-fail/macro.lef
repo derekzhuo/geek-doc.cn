@@ -1,0 +1,28 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+UNITS
+  DATABASE MICRONS 2000 ;
+END UNITS
+
+MACRO invx1
+  SIZE 0.68 BY 1.0 ;
+  SITE unit ;
+  PIN a
+    DIRECTION INPUT ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.00 0.00 0.17 0.17 ;
+    END
+  END a
+  PIN z
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.20 0.00 0.37 0.17 ;
+    END
+  END z
+END invx1
+
+END LIBRARY
