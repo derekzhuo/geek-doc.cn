@@ -1,0 +1,59 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+UNITS
+  DATABASE MICRONS 2000 ;
+END UNITS
+MACRO BUF_X1
+  CLASS CORE ;
+  SIZE 1.0 BY 1.0 ;
+  SYMMETRY X Y ;
+  SITE unit ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.1 0.3 0.3 0.7 ;
+    END
+  END A
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.7 0.3 0.9 0.7 ;
+    END
+  END Y
+END BUF_X1
+MACRO DFF_P
+  CLASS CORE ;
+  SIZE 4.0 BY 1.0 ;
+  SYMMETRY X Y ;
+  SITE unit ;
+  PIN C
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.2 0.3 0.4 0.7 ;
+    END
+  END C
+  PIN D
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+        RECT 0.5 0.3 0.7 0.7 ;
+    END
+  END D
+  PIN Q
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+        RECT 3.6 0.3 3.8 0.7 ;
+    END
+  END Q
+END DFF_P
+END LIBRARY
