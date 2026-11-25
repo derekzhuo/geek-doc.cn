@@ -82,7 +82,7 @@ def main():
     corrected_result = check(corrected)
     report("C OR ((NOT A) AND B)", corrected_result)
 
-    care_result = check(wrong, care={1, 2, 3, 5, 7})
+    care_result = check(wrong, care={1, 2, 3, 4, 5, 6, 7})
     report("wrong expression with m0 independently excluded", care_result)
 
     with warnings.catch_warnings():
