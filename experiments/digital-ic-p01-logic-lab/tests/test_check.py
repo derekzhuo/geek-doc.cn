@@ -10,6 +10,7 @@ import base_convert
 import bcd_decimal
 import binary_add
 import gray_reflection
+import gray_sampling
 import overflow_carry
 import quantize
 import sign_extend
@@ -134,6 +135,38 @@ def test_gray_reflection():
     assert (bin4["total"], bin4["average"], bin4["worst"]) == (30, 30 / 16, 4)
     gray4 = gray_reflection.gray_flip_stats(4)
     assert (gray4["total"], gray4["average"]) == (16, 1.0)
+
+
+def test_gray_sampling():
+    # 0011 -> 0100 同时翻三位，逐位到达时会拼出第三种合法码字。
+    assert gray_sampling.changed_bits(0b0011, 0b0100) == [0, 1, 2]
+    delays = [1.0, 2.0, 3.0, 4.0]
+    observed = [gray_sampling.sample_with_skew(0b0011, 0b0100, delays, t)
+                for t in (0.5, 1.5, 2.5, 3.5)]
+    assert observed == [3, 2, 0, 4]
+    assert 0 not in (3, 4)
+
+    # 同一计数步的格雷码只翻 bit2，任意采样点只可能是旧码或新码。
+    gray_old, gray_new = gray_sampling.gray_encode(3), gray_sampling.gray_encode(4)
+    assert (gray_old, gray_new) == (0b0010, 0b0110)
+    assert gray_sampling.changed_bits(gray_old, gray_new) == [2]
+    for sample_time in (0.0, 1.5, 2.5, 3.0, 4.0):
+        assert gray_sampling.sample_with_skew(
+            gray_old, gray_new, delays, sample_time) in (gray_old, gray_new)
+
+    # 单比特性质只覆盖连续计数，不是任意多位数据的安全传输机制。
+    assert gray_sampling.changed_bits(
+        gray_sampling.gray_encode(0), gray_sampling.gray_encode(2)) == [0, 1]
+    for width in range(1, 9):
+        modulus = 1 << width
+        for value in range(modulus):
+            changes = gray_sampling.changed_bits(
+                gray_sampling.gray_encode(value),
+                gray_sampling.gray_encode((value + 1) % modulus))
+            assert len(changes) == 1
+
+    assert gray_sampling.changed_bits(
+        gray_sampling.gray_encode(9), gray_sampling.gray_encode(0)) == [0, 2, 3]
 
 
 def main():
