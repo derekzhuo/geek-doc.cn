@@ -1,0 +1,26 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN top ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 10000 10000 ) ;
+
+COMPONENTS 3 ;
+- u_buf0 BUF_X1 + PLACED ( 1000 1000 ) N ;
+- u_buf1 BUF_X1 + PLACED ( 3000 1000 ) N ;
+- u_buf2 BUF_X1 + PLACED ( 5000 1000 ) N ;
+END COMPONENTS
+
+PINS 2 ;
+- a + NET n0 + DIRECTION INPUT + USE SIGNAL ;
+- y + NET n3 + DIRECTION OUTPUT + USE SIGNAL ;
+END PINS
+
+NETS 4 ;
+- n0 ( PIN a ) ( u_buf0 A ) ;
+- n1 ( u_buf0 Y ) ( u_buf1 A ) ;
+- n2 ( u_buf1 Y ) ( u_buf2 A ) ;
+- n3 ( u_buf2 Y ) ( PIN y ) ;
+END NETS
+
+END DESIGN

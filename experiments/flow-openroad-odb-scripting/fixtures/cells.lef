@@ -1,0 +1,28 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO BUF_X1
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 1 BY 1 ;
+  SITE unit ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+      RECT 0 0.4 0.1 0.6 ;
+    END
+  END A
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER metal1 ;
+      RECT 0.9 0.4 1 0.6 ;
+    END
+  END Y
+END BUF_X1
+
+END LIBRARY
