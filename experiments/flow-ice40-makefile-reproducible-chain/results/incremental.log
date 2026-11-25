@@ -1,0 +1,27 @@
+command=bash run.sh (incremental)
+date=2026-11-25T19:15:19Z
+host-toolchain=geek-eda:0.4-flow / image-id sha256:75f1c71377eb080f820431c0a207ebf284b02d6d258f4d51a6c1bd8e01056348 / linux/amd64 / Ubuntu 24.04.5 LTS
+Yosys 0.33 (git sha1 2584903a060)
+"nextpnr-ice40" -- Next Generation Place and Route (Version 0.6-3build5)
+icepack-package=fpga-icestorm 0~20230218gitd20a5e9-1
+GNU Make 4.3
+---
+make: Nothing to be done for 'all'.
+--- hashes before ---
+06d4c980444c4b67333da411eaf965388f0f0acffdb096a1620e90a5687b424d  build/blink.json
+97e4b54b4db1aaa936732e30715f748dd8d7b93ff79f917bf89d096a878d82ab  build/blink.asc
+ff7b08d93e26e9e683c75abba2ce4b91692242b386c7060afa3e383971fd4c89  build/blink.bin
+--- hashes after ---
+06d4c980444c4b67333da411eaf965388f0f0acffdb096a1620e90a5687b424d  build/blink.json
+97e4b54b4db1aaa936732e30715f748dd8d7b93ff79f917bf89d096a878d82ab  build/blink.asc
+ff7b08d93e26e9e683c75abba2ce4b91692242b386c7060afa3e383971fd4c89  build/blink.bin
+--- mtimes before ---
+build/blink.json 2026-11-25 19:15:17.823379126 +0000
+build/blink.asc 2026-11-25 19:15:19.005032224 +0000
+build/blink.bin 2026-11-25 19:15:19.020037362 +0000
+--- mtimes after ---
+build/blink.json 2026-11-25 19:15:17.823379126 +0000
+build/blink.asc 2026-11-25 19:15:19.005032224 +0000
+build/blink.bin 2026-11-25 19:15:19.020037362 +0000
+PASS: second make ran no tool; hashes and mtimes stayed unchanged.
+exit_status=0

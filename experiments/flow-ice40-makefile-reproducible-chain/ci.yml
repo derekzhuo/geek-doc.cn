@@ -1,0 +1,16 @@
+name: ice40-reproducible-chain
+on:
+  push:
+    paths:
+      - experiments/flow-ice40-makefile-reproducible-chain/**
+  pull_request:
+    paths:
+      - experiments/flow-ice40-makefile-reproducible-chain/**
+  workflow_dispatch:
+jobs:
+  rebuild:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build, no-op check, clean rebuild
+        run: bash experiments/flow-ice40-makefile-reproducible-chain/run.sh

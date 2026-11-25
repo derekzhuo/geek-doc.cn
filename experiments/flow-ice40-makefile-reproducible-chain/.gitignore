@@ -1,0 +1,5 @@
+# FPGA 构建产物：make 可重建，不入库
+build/
+*.bin
+*.asc
+*.blif
