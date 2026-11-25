@@ -1,0 +1,3 @@
+# filename<TAB>sha256<TAB>url
+noble-server-cloudimg-riscv64.img	2d48190b4de1a809879c7b2137381a24b52a3a23a65b4d4a7b3f6d7ae774b7e9	https://cloud-images.ubuntu.com/noble/20261017/noble-server-cloudimg-riscv64.img
+u-boot-qemu_2024.01+dfsg-1ubuntu5_all.deb	2bf5e506844d34dc574dbce23f5a4768c72f8e085d2da1b89a94445d257a51a0	https://ports.ubuntu.com/ubuntu-ports/pool/main/u/u-boot/u-boot-qemu_2024.01+dfsg-1ubuntu5_all.deb
