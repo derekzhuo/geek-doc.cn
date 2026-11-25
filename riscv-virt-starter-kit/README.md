@@ -81,7 +81,7 @@ riscv-virt-starter-kit/
 └── output/       # overlay、临时密钥、ISO 和日志，不入库
 ```
 
-`make clean` 只删除运行产物；`make distclean` 同时删除下载资产。重复执行 `make run` 或 `make net` 会重建 overlay，上一次客户机内的修改不会保留；临时密钥在 `make clean` 前复用。各目标共用运行目录，不要并行启动多个目标。
+`make clean` 只删除运行产物；`make distclean` 同时删除下载资产。重复执行 `make run`、`make net` 或 `make test` 都会重建 overlay，上一次客户机内的修改不会保留；需要先备份 `output/vm.qcow2` 再运行这些目标。临时密钥在 `make clean` 前复用。各目标共用运行目录，不要并行启动多个目标。
 
 ## 配套教程
 
