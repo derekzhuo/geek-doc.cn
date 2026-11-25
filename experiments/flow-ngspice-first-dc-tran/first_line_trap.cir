@@ -1,0 +1,10 @@
+V1 in 0 DC 1 PULSE(0 1 0 1u 1u 2m 4m)
+R1 in out 1k
+C1 out 0 1u
+.tran 20u 4m 0 20u
+.control
+op
+print v(in) v(out)
+quit
+.endc
+.end

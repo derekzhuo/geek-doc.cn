@@ -1,0 +1,136 @@
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with KLU Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 31 20:15:14 UTC 2024
+******
+
+$ ngspice rc_first.cir
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with KLU Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 31 20:15:14 UTC 2024
+******
+ERROR: (external)  no graphics interface;
+ please check if X-server is running,
+ or ngspice is compiled properly (see INSTALL)
+
+Note: No compatibility mode selected!
+
+
+Circuit: first rc dc and transient flow
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Note: v1: dc value used for op instead of transient time=0 value.
+
+No. of Data Rows : 1
+v(in) = 1.000000e+00
+v(out) = 1.000000e+00
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Note: v1: dc value used for op instead of transient time=0 value.
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+in                                           0
+out                                          0
+v1#branch                                    0
+
+
+No. of Data Rows : 231
+Can't open viewport for graphics.
+ngspice-42 done
+MAIN_EXIT=0
+
+$ ngspice -b rc_first.cir
+
+Note: No compatibility mode selected!
+
+
+Circuit: first rc dc and transient flow
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Note: v1: dc value used for op instead of transient time=0 value.
+
+No. of Data Rows : 1
+v(in) = 1.000000e+00
+v(out) = 1.000000e+00
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Note: v1: dc value used for op instead of transient time=0 value.
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+in                                           0
+out                                          0
+v1#branch                                    0
+
+
+No. of Data Rows : 231
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+ngspice-42 done
+BATCH_EXIT=0
+
+$ ngspice -b first_line_trap.cir
+
+Note: No compatibility mode selected!
+
+
+Circuit: v1 in 0 dc 1 pulse(0 1 0 1u 1u 2m 4m)
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Warning: singular matrix:  check node in
+
+Note: Starting dynamic gmin stepping
+Warning: singular matrix:  check node in
+
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Warning: singular matrix:  check node in
+
+Warning: singular matrix:  check node in
+
+Warning: singular matrix:  check node in
+
+Warning: singular matrix:  check node in
+
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Warning: source stepping failed
+Note: Transient op started
+Note: Transient op finished successfully
+
+No. of Data Rows : 1
+v(in) = 0.000000e+00
+v(out) = 0.000000e+00
+ngspice-42 done
+BOUNDARY_EXIT=0
+
+$ awk "validate export and print checkpoints" results/tran.data
+INSPECT_EXIT=1
