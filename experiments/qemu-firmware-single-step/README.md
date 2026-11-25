@@ -8,7 +8,7 @@
 
 - QEMU 系统模拟器 `qemu-system-riscv64`
 - `riscv64-elf-gdb`，或 Linux 上的 `gdb-multiarch`
-- `curl`、`ar`、`tar` 和 SHA-256 工具
+- `curl`、`ar`、`tar`、`zstd` 和 SHA-256 工具（DEB 内的 `data.tar.zst` 由 `tar` 调用 `zstd` 解压）
 - macOS 与 Linux；脚本使用 bash
 
 ## 复现

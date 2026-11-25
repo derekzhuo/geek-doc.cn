@@ -21,7 +21,7 @@ if [ -z "${GDB:-}" ]; then
   fi
 fi
 
-for tool in "$QEMU" "$GDB" curl ar tar; do
+for tool in "$QEMU" "$GDB" curl ar tar zstd; do
   command -v "$tool" >/dev/null 2>&1 || { echo "FATAL: missing $tool" >&2; exit 1; }
 done
 
