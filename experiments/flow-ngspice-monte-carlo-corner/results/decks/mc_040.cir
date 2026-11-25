@@ -1,0 +1,9 @@
+Resistor divider Monte Carlo and deterministic corners
+V1 in 0 DC 1.8
+R1 in out 10052.498866823245
+R2 out 0 9930.714882762881
+.control
+op
+print v(out)
+.endc
+.end

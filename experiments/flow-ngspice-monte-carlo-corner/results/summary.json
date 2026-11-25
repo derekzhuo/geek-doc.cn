@@ -1,0 +1,20 @@
+{
+  "ngspice": "42",
+  "input_voltage_v": 1.8,
+  "resistor_nominal_ohm": 10000.0,
+  "resistor_tolerance_fraction": 0.05,
+  "random_distribution": "independent uniform per resistor",
+  "random_seed": 20261126,
+  "monte_carlo": {
+    "count": 50,
+    "min_v": 0.8681262,
+    "max_v": 0.9368604,
+    "mean_v": 0.900699968,
+    "sample_stddev_v": 0.018121183718188577
+  },
+  "deterministic_v": {
+    "nominal": 0.9,
+    "r1_high_r2_low": 0.855,
+    "r1_low_r2_high": 0.945
+  }
+}
