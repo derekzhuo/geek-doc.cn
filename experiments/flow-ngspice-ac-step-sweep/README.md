@@ -1,6 +1,6 @@
 # ngspice AC 小信号与三档电阻扫描
 
-**对应教程**：https://geek-doc.cn/eda/flow-ngspice-ac-step-sweep.html（上线后生效）
+**对应教程**：https://geek-doc.cn/eda/flow-ngspice-ac-step-sweep.html
 
 这个实验用 ngspice-42 驱动一个一阶 RC 低通：固定 C=100nF，依次令 R=1kΩ、2.2kΩ、4.7kΩ，每档从 10Hz 扫到 100kHz，每十倍频程 50 点。`.meas ac` 提取 -3dB 截止频率、1kHz 增益和截止点相位，`wrdata` 导出三组各 201 点的数据。
 

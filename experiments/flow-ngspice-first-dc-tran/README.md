@@ -1,6 +1,6 @@
 # ngspice 第一次 DC 与瞬态仿真
 
-**对应教程**：https://geek-doc.cn/eda/flow-ngspice-first-dc-tran.html （文档上线后生效）
+**对应教程**：https://geek-doc.cn/eda/flow-ngspice-first-dc-tran.html
 
 这个小实验用同一份 RC 网表完成直流工作点和瞬态分析，演示 `.cir` 文件的基本顺序、`.control` 控制块，以及 `run`、`plot`、`quit` 的最小闭环。`first_line_trap.cir` 则展示首行被当作标题后激励源未进入网表的边界情况。
 
