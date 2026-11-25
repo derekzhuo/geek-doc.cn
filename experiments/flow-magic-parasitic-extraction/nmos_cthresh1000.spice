@@ -1,0 +1,6 @@
+* SPICE3 file created from nmos.ext - technology: scmos
+
+.option scale=1u
+
+M1000 y g a Gnd nfet w=6 l=4
++  ad=36 pd=24 as=36 ps=24

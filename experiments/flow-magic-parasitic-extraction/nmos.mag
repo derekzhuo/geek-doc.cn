@@ -1,0 +1,20 @@
+magic
+tech scmos
+timestamp 1795629649
+<< checkpaint >>
+rect -6 24 26 28
+rect -12 -10 32 24
+rect -6 -12 26 -10
+<< polysilicon >>
+rect 8 10 12 14
+rect 8 2 12 4
+<< ndiffusion >>
+rect 2 4 8 10
+rect 12 4 18 10
+<< ntransistor >>
+rect 8 4 12 10
+<< labels >>
+rlabel ndiffusion 2 4 8 10 0 a
+rlabel ndiffusion 12 4 18 10 0 y
+rlabel polysilicon 8 12 12 14 0 g
+<< end >>

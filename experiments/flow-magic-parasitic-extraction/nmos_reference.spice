@@ -1,0 +1,4 @@
+* Independent schematic-side reference for the minimum nMOS cell
+.option scale=1u
+MREF y g a Gnd nfet w=6 l=4
++  ad=36 pd=24 as=36 ps=24
