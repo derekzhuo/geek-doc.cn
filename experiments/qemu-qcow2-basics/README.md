@@ -1,4 +1,4 @@
-# qemu-qcow2-basics：qcow2 镜像管理四组真机实验
+# qemu-qcow2-basics：qcow2 镜像管理五组真机实验
 
 **对应教程**：
 
@@ -6,13 +6,15 @@
 - <https://geek-doc.cn/soc-qemu/qcow2-resize-compress-snapshot.html>
 - <https://geek-doc.cn/soc-qemu/qcow2-backing-file-clone.html>
 - <https://geek-doc.cn/soc-qemu/qcow2-raw-vmdk-formats.html>
+- <https://geek-doc.cn/soc-qemu/qcow2-snapshot-branch-workflow.html>
 
-只用 QEMU 自带的 `qemu-img` 与 `qemu-io`，不装客户机系统，把 qcow2 的四件核心事在本机跑透：
+只用 QEMU 自带的 `qemu-img` 与 `qemu-io`，不装客户机系统，把 qcow2 的五件核心事在本机跑透：
 
 1. `01-create-info-convert.sh`：创建 raw / qcow2 两种镜像，对比虚拟大小与真实磁盘占用，双向格式转换；
 2. `02-resize-snapshot-compress.sh`：扩容与安全缩容、内部快照增删查、`convert -c` 压缩前后体积对比；
 3. `03-backing-file-clone.sh`：backing file 增量链、两个 overlay 秒级克隆、写隔离验证、断链报错复现与 `rebase -u` 修复；
-4. `04-formats-compare.sh`：同一份 qcow2 转成 vmdk / vdi / raw，对照四种格式的真实占用与 `info` 字段差异。
+4. `04-formats-compare.sh`：同一份 qcow2 转成 vmdk / vdi / raw，对照四种格式的真实占用与 `info` 字段差异；
+5. `05-snapshot-branch-workflow.sh`：同一基线派生两条内部快照分支，逐块验证切换隔离，并复现删除后无法恢复的真实边界。
 
 ## 依赖
 
