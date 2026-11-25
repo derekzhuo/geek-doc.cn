@@ -1,0 +1,15 @@
+* CMOS inverter DC sweep, Wn=1um and Wp=1um
+.include cir/mos-models.inc
+VDD vdd 0 1.8
+VIN in 0 0
+MN out in 0 0 NMOS_TEACH W=1u L=0.18u
+MP out in vdd vdd PMOS_TEACH W=1u L=0.18u
+CL out 0 1f
+.control
+set filetype=ascii
+option TEMP=27
+option TNOM=27
+dc VIN 0 1.8 0.001
+wrdata data/vtc_wp_1.raw v(in) v(out)
+.endc
+.end
