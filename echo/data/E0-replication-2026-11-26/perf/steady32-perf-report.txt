@@ -1,0 +1,1533 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 191K of event 'cpu-clock:pppH'
+# Event count (approx.): 959999880000
+#
+# Children      Self  Command          Shared Object         Symbol                                             
+# ........  ........  ...............  ....................  ...................................................
+#
+    97.31%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff94800107
+            |
+            ---0xffffffff94800107
+               |          
+               |--94.20%--0xffffffff94884d0a
+               |          |          
+               |           --94.19%--0xffffffff949115f0
+               |                     |          
+               |                      --93.64%--0xffffffff949113c3
+               |                                |          
+               |                                 --93.62%--0xffffffff94911271
+               |                                           |          
+               |                                            --93.60%--0xffffffff955e9ace
+               |                                                      0xffffffff94850962
+               |                                                      |          
+               |                                                       --93.53%--0xffffffff955e9908
+               |                                                                 |          
+               |                                                                  --1.76%--0xffffffff95600e67
+               |                                                                            0xffffffff955d884e
+               |                                                                            0xffffffff948cd546
+               |                                                                            |          
+               |                                                                            |--1.16%--0xffffffff948cd0ba
+               |                                                                            |          |          
+               |                                                                            |           --1.15%--0xffffffff9531ded6
+               |                                                                            |                     |          
+               |                                                                            |                      --1.15%--0xffffffff9531dab0
+               |                                                                            |                                |          
+               |                                                                            |                                 --1.03%--virtnet_poll
+               |                                                                            |                                           |          
+               |                                                                            |                                            --0.77%--0xffffffff9531d93a
+               |                                                                            |                                                      |          
+               |                                                                            |                                                       --0.76%--0xffffffff9531d44e
+               |                                                                            |                                                                 |          
+               |                                                                            |                                                                  --0.72%--0xffffffff9531d298
+               |                                                                            |                                                                            |          
+               |                                                                            |                                                                             --0.71%--0xffffffff953c90d9
+               |                                                                            |                                                                                       |          
+               |                                                                            |                                                                                        --0.66%--0xffffffff953c8cf5
+               |                                                                            |                                                                                                  |          
+               |                                                                            |                                                                                                   --0.66%--0xffffffff953c8b5b
+               |                                                                            |                                                                                                             |          
+               |                                                                            |                                                                                                              --0.66%--0xffffffff953c8a4d
+               |                                                                            |                                                                                                                        |          
+               |                                                                            |                                                                                                                         --0.66%--0xffffffff953c89c8
+               |                                                                            |                                                                                                                                   |          
+               |                                                                            |                                                                                                                                    --0.66%--0xffffffff953c876c
+               |                                                                            |                                                                                                                                              |          
+               |                                                                            |                                                                                                                                               --0.59%--0xffffffff953ffe1e
+               |                                                                            |                                                                                                                                                         0xffffffff953fccaf
+               |                                                                            |          
+               |                                                                             --0.60%--0xffffffff948cd053
+               |          
+                --3.12%--0xffffffff96a9e72f
+                          0xffffffff96a9e62e
+                          0xffffffff96a9fd38
+                          0xffffffff96a9f84d
+                          0xffffffff955dbc33
+                          0xffffffff949115f0
+                          |          
+                           --3.12%--0xffffffff949113c3
+                                     0xffffffff94911271
+                                     |          
+                                      --3.11%--0xffffffff955e9ace
+                                                |          
+                                                 --3.11%--0xffffffff94850962
+                                                           0xffffffff955e9908
+
+    97.31%     0.01%  swapper          [kernel.kallsyms]     [k] 0xffffffff949115f0
+            |          
+             --97.31%--0xffffffff949115f0
+                       |          
+                        --96.75%--0xffffffff949113c3
+                                  |          
+                                   --96.73%--0xffffffff94911271
+                                             |          
+                                              --96.71%--0xffffffff955e9ace
+                                                        |          
+                                                         --96.71%--0xffffffff94850962
+                                                                   |          
+                                                                    --96.64%--0xffffffff955e9908
+                                                                              |          
+                                                                               --1.82%--0xffffffff95600e67
+                                                                                         0xffffffff955d884e
+                                                                                         0xffffffff948cd546
+                                                                                         |          
+                                                                                         |--1.19%--0xffffffff948cd0ba
+                                                                                         |          |          
+                                                                                         |           --1.18%--0xffffffff9531ded6
+                                                                                         |                     |          
+                                                                                         |                      --1.18%--0xffffffff9531dab0
+                                                                                         |                                |          
+                                                                                         |                                 --1.06%--virtnet_poll
+                                                                                         |                                           |          
+                                                                                         |                                            --0.79%--0xffffffff9531d93a
+                                                                                         |                                                      |          
+                                                                                         |                                                       --0.78%--0xffffffff9531d44e
+                                                                                         |                                                                 |          
+                                                                                         |                                                                  --0.73%--0xffffffff9531d298
+                                                                                         |                                                                            |          
+                                                                                         |                                                                             --0.73%--0xffffffff953c90d9
+                                                                                         |                                                                                       |          
+                                                                                         |                                                                                        --0.68%--0xffffffff953c8cf5
+                                                                                         |                                                                                                  |          
+                                                                                         |                                                                                                   --0.68%--0xffffffff953c8b5b
+                                                                                         |                                                                                                             |          
+                                                                                         |                                                                                                              --0.68%--0xffffffff953c8a4d
+                                                                                         |                                                                                                                        |          
+                                                                                         |                                                                                                                         --0.68%--0xffffffff953c89c8
+                                                                                         |                                                                                                                                   |          
+                                                                                         |                                                                                                                                    --0.68%--0xffffffff953c876c
+                                                                                         |                                                                                                                                              |          
+                                                                                         |                                                                                                                                               --0.61%--0xffffffff953ffe1e
+                                                                                         |                                                                                                                                                         |          
+                                                                                         |                                                                                                                                                          --0.61%--0xffffffff953fccaf
+                                                                                         |          
+                                                                                          --0.63%--0xffffffff948cd053
+
+    96.75%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff949113c3
+            |          
+             --96.75%--0xffffffff949113c3
+                       |          
+                        --96.73%--0xffffffff94911271
+                                  |          
+                                   --96.71%--0xffffffff955e9ace
+                                             |          
+                                              --96.71%--0xffffffff94850962
+                                                        |          
+                                                         --96.64%--0xffffffff955e9908
+                                                                   |          
+                                                                    --1.82%--0xffffffff95600e67
+                                                                              0xffffffff955d884e
+                                                                              0xffffffff948cd546
+                                                                              |          
+                                                                              |--1.19%--0xffffffff948cd0ba
+                                                                              |          |          
+                                                                              |           --1.18%--0xffffffff9531ded6
+                                                                              |                     |          
+                                                                              |                      --1.18%--0xffffffff9531dab0
+                                                                              |                                |          
+                                                                              |                                 --1.06%--virtnet_poll
+                                                                              |                                           |          
+                                                                              |                                            --0.79%--0xffffffff9531d93a
+                                                                              |                                                      |          
+                                                                              |                                                       --0.78%--0xffffffff9531d44e
+                                                                              |                                                                 |          
+                                                                              |                                                                  --0.73%--0xffffffff9531d298
+                                                                              |                                                                            |          
+                                                                              |                                                                             --0.73%--0xffffffff953c90d9
+                                                                              |                                                                                       |          
+                                                                              |                                                                                        --0.68%--0xffffffff953c8cf5
+                                                                              |                                                                                                  |          
+                                                                              |                                                                                                   --0.68%--0xffffffff953c8b5b
+                                                                              |                                                                                                             |          
+                                                                              |                                                                                                              --0.68%--0xffffffff953c8a4d
+                                                                              |                                                                                                                        |          
+                                                                              |                                                                                                                         --0.68%--0xffffffff953c89c8
+                                                                              |                                                                                                                                   |          
+                                                                              |                                                                                                                                    --0.68%--0xffffffff953c876c
+                                                                              |                                                                                                                                              |          
+                                                                              |                                                                                                                                               --0.61%--0xffffffff953ffe1e
+                                                                              |                                                                                                                                                         |          
+                                                                              |                                                                                                                                                          --0.61%--0xffffffff953fccaf
+                                                                              |          
+                                                                               --0.63%--0xffffffff948cd053
+
+    96.73%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff94911271
+            |
+            ---0xffffffff94911271
+               |          
+                --96.71%--0xffffffff955e9ace
+                          |          
+                           --96.71%--0xffffffff94850962
+                                     |          
+                                      --96.64%--0xffffffff955e9908
+                                                |          
+                                                 --1.82%--0xffffffff95600e67
+                                                           0xffffffff955d884e
+                                                           0xffffffff948cd546
+                                                           |          
+                                                           |--1.19%--0xffffffff948cd0ba
+                                                           |          |          
+                                                           |           --1.18%--0xffffffff9531ded6
+                                                           |                     |          
+                                                           |                      --1.18%--0xffffffff9531dab0
+                                                           |                                |          
+                                                           |                                 --1.06%--virtnet_poll
+                                                           |                                           |          
+                                                           |                                            --0.79%--0xffffffff9531d93a
+                                                           |                                                      |          
+                                                           |                                                       --0.78%--0xffffffff9531d44e
+                                                           |                                                                 |          
+                                                           |                                                                  --0.73%--0xffffffff9531d298
+                                                           |                                                                            |          
+                                                           |                                                                             --0.73%--0xffffffff953c90d9
+                                                           |                                                                                       |          
+                                                           |                                                                                        --0.68%--0xffffffff953c8cf5
+                                                           |                                                                                                  |          
+                                                           |                                                                                                   --0.68%--0xffffffff953c8b5b
+                                                           |                                                                                                             |          
+                                                           |                                                                                                              --0.68%--0xffffffff953c8a4d
+                                                           |                                                                                                                        |          
+                                                           |                                                                                                                         --0.68%--0xffffffff953c89c8
+                                                           |                                                                                                                                   |          
+                                                           |                                                                                                                                    --0.68%--0xffffffff953c876c
+                                                           |                                                                                                                                              |          
+                                                           |                                                                                                                                               --0.61%--0xffffffff953ffe1e
+                                                           |                                                                                                                                                         |          
+                                                           |                                                                                                                                                          --0.61%--0xffffffff953fccaf
+                                                           |          
+                                                            --0.63%--0xffffffff948cd053
+
+    96.71%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff955e9ace
+            |          
+             --96.71%--0xffffffff955e9ace
+                       0xffffffff94850962
+                       |          
+                        --96.64%--0xffffffff955e9908
+                                  |          
+                                   --1.82%--0xffffffff95600e67
+                                             0xffffffff955d884e
+                                             0xffffffff948cd546
+                                             |          
+                                             |--1.19%--0xffffffff948cd0ba
+                                             |          |          
+                                             |           --1.18%--0xffffffff9531ded6
+                                             |                     |          
+                                             |                      --1.18%--0xffffffff9531dab0
+                                             |                                |          
+                                             |                                 --1.06%--virtnet_poll
+                                             |                                           |          
+                                             |                                            --0.79%--0xffffffff9531d93a
+                                             |                                                      |          
+                                             |                                                       --0.78%--0xffffffff9531d44e
+                                             |                                                                 |          
+                                             |                                                                  --0.73%--0xffffffff9531d298
+                                             |                                                                            |          
+                                             |                                                                             --0.73%--0xffffffff953c90d9
+                                             |                                                                                       |          
+                                             |                                                                                        --0.68%--0xffffffff953c8cf5
+                                             |                                                                                                  |          
+                                             |                                                                                                   --0.68%--0xffffffff953c8b5b
+                                             |                                                                                                             |          
+                                             |                                                                                                              --0.68%--0xffffffff953c8a4d
+                                             |                                                                                                                        |          
+                                             |                                                                                                                         --0.68%--0xffffffff953c89c8
+                                             |                                                                                                                                   |          
+                                             |                                                                                                                                    --0.68%--0xffffffff953c876c
+                                             |                                                                                                                                              |          
+                                             |                                                                                                                                               --0.61%--0xffffffff953ffe1e
+                                             |                                                                                                                                                         |          
+                                             |                                                                                                                                                          --0.61%--0xffffffff953fccaf
+                                             |          
+                                              --0.63%--0xffffffff948cd053
+
+    96.71%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff94850962
+            |
+            ---0xffffffff94850962
+               |          
+                --96.64%--0xffffffff955e9908
+                          |          
+                           --1.82%--0xffffffff95600e67
+                                     0xffffffff955d884e
+                                     0xffffffff948cd546
+                                     |          
+                                     |--1.19%--0xffffffff948cd0ba
+                                     |          |          
+                                     |           --1.18%--0xffffffff9531ded6
+                                     |                     |          
+                                     |                      --1.18%--0xffffffff9531dab0
+                                     |                                |          
+                                     |                                 --1.06%--virtnet_poll
+                                     |                                           |          
+                                     |                                            --0.79%--0xffffffff9531d93a
+                                     |                                                      |          
+                                     |                                                       --0.78%--0xffffffff9531d44e
+                                     |                                                                 |          
+                                     |                                                                  --0.73%--0xffffffff9531d298
+                                     |                                                                            |          
+                                     |                                                                             --0.73%--0xffffffff953c90d9
+                                     |                                                                                       |          
+                                     |                                                                                        --0.68%--0xffffffff953c8cf5
+                                     |                                                                                                  |          
+                                     |                                                                                                   --0.68%--0xffffffff953c8b5b
+                                     |                                                                                                             |          
+                                     |                                                                                                              --0.68%--0xffffffff953c8a4d
+                                     |                                                                                                                        |          
+                                     |                                                                                                                         --0.68%--0xffffffff953c89c8
+                                     |                                                                                                                                   |          
+                                     |                                                                                                                                    --0.68%--0xffffffff953c876c
+                                     |                                                                                                                                              |          
+                                     |                                                                                                                                               --0.61%--0xffffffff953ffe1e
+                                     |                                                                                                                                                         |          
+                                     |                                                                                                                                                          --0.61%--0xffffffff953fccaf
+                                     |          
+                                      --0.63%--0xffffffff948cd053
+
+    96.64%    94.81%  swapper          [kernel.kallsyms]     [k] 0xffffffff955e9908
+            |          
+            |--94.81%--0xffffffff94800107
+            |          |          
+            |          |--91.76%--0xffffffff94884d0a
+            |          |          0xffffffff949115f0
+            |          |          0xffffffff949113c3
+            |          |          0xffffffff94911271
+            |          |          0xffffffff955e9ace
+            |          |          0xffffffff94850962
+            |          |          0xffffffff955e9908
+            |          |          
+            |           --3.05%--0xffffffff96a9e72f
+            |                     0xffffffff96a9e62e
+            |                     0xffffffff96a9fd38
+            |                     0xffffffff96a9f84d
+            |                     0xffffffff955dbc33
+            |                     0xffffffff949115f0
+            |                     0xffffffff949113c3
+            |                     0xffffffff94911271
+            |                     0xffffffff955e9ace
+            |                     0xffffffff94850962
+            |                     0xffffffff955e9908
+            |          
+             --1.84%--0xffffffff955e9908
+                       |          
+                        --1.82%--0xffffffff95600e67
+                                  0xffffffff955d884e
+                                  0xffffffff948cd546
+                                  |          
+                                  |--1.19%--0xffffffff948cd0ba
+                                  |          |          
+                                  |           --1.18%--0xffffffff9531ded6
+                                  |                     |          
+                                  |                      --1.18%--0xffffffff9531dab0
+                                  |                                |          
+                                  |                                 --1.06%--virtnet_poll
+                                  |                                           |          
+                                  |                                            --0.79%--0xffffffff9531d93a
+                                  |                                                      |          
+                                  |                                                       --0.78%--0xffffffff9531d44e
+                                  |                                                                 |          
+                                  |                                                                  --0.73%--0xffffffff9531d298
+                                  |                                                                            |          
+                                  |                                                                             --0.73%--0xffffffff953c90d9
+                                  |                                                                                       |          
+                                  |                                                                                        --0.68%--0xffffffff953c8cf5
+                                  |                                                                                                  |          
+                                  |                                                                                                   --0.68%--0xffffffff953c8b5b
+                                  |                                                                                                             |          
+                                  |                                                                                                              --0.68%--0xffffffff953c8a4d
+                                  |                                                                                                                        |          
+                                  |                                                                                                                         --0.68%--0xffffffff953c89c8
+                                  |                                                                                                                                   |          
+                                  |                                                                                                                                    --0.68%--0xffffffff953c876c
+                                  |                                                                                                                                              |          
+                                  |                                                                                                                                               --0.61%--0xffffffff953ffe1e
+                                  |                                                                                                                                                         |          
+                                  |                                                                                                                                                          --0.61%--0xffffffff953fccaf
+                                  |          
+                                   --0.63%--0xffffffff948cd053
+
+    94.20%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff94884d0a
+            |
+            ---0xffffffff94884d0a
+               |          
+                --94.19%--0xffffffff949115f0
+                          |          
+                           --93.64%--0xffffffff949113c3
+                                     |          
+                                      --93.62%--0xffffffff94911271
+                                                |          
+                                                 --93.60%--0xffffffff955e9ace
+                                                           0xffffffff94850962
+                                                           |          
+                                                            --93.53%--0xffffffff955e9908
+                                                                      |          
+                                                                       --1.76%--0xffffffff95600e67
+                                                                                 0xffffffff955d884e
+                                                                                 0xffffffff948cd546
+                                                                                 |          
+                                                                                 |--1.16%--0xffffffff948cd0ba
+                                                                                 |          |          
+                                                                                 |           --1.15%--0xffffffff9531ded6
+                                                                                 |                     |          
+                                                                                 |                      --1.15%--0xffffffff9531dab0
+                                                                                 |                                |          
+                                                                                 |                                 --1.03%--virtnet_poll
+                                                                                 |                                           |          
+                                                                                 |                                            --0.77%--0xffffffff9531d93a
+                                                                                 |                                                      |          
+                                                                                 |                                                       --0.76%--0xffffffff9531d44e
+                                                                                 |                                                                 |          
+                                                                                 |                                                                  --0.72%--0xffffffff9531d298
+                                                                                 |                                                                            |          
+                                                                                 |                                                                             --0.71%--0xffffffff953c90d9
+                                                                                 |                                                                                       |          
+                                                                                 |                                                                                        --0.66%--0xffffffff953c8cf5
+                                                                                 |                                                                                                  |          
+                                                                                 |                                                                                                   --0.66%--0xffffffff953c8b5b
+                                                                                 |                                                                                                             |          
+                                                                                 |                                                                                                              --0.66%--0xffffffff953c8a4d
+                                                                                 |                                                                                                                        |          
+                                                                                 |                                                                                                                         --0.66%--0xffffffff953c89c8
+                                                                                 |                                                                                                                                   |          
+                                                                                 |                                                                                                                                    --0.66%--0xffffffff953c876c
+                                                                                 |                                                                                                                                              |          
+                                                                                 |                                                                                                                                               --0.59%--0xffffffff953ffe1e
+                                                                                 |                                                                                                                                                         0xffffffff953fccaf
+                                                                                 |          
+                                                                                  --0.60%--0xffffffff948cd053
+
+     3.12%     0.00%  swapper          [unknown]             [k] 0xffffffff96a9e72f
+            |
+            ---0xffffffff96a9e72f
+               0xffffffff96a9e62e
+               0xffffffff96a9fd38
+               0xffffffff96a9f84d
+               0xffffffff955dbc33
+               0xffffffff949115f0
+               |          
+                --3.12%--0xffffffff949113c3
+                          0xffffffff94911271
+                          |          
+                           --3.11%--0xffffffff955e9ace
+                                     |          
+                                      --3.11%--0xffffffff94850962
+                                                0xffffffff955e9908
+
+     3.12%     0.00%  swapper          [unknown]             [k] 0xffffffff96a9e62e
+            |
+            ---0xffffffff96a9e62e
+               0xffffffff96a9fd38
+               0xffffffff96a9f84d
+               0xffffffff955dbc33
+               0xffffffff949115f0
+               |          
+                --3.12%--0xffffffff949113c3
+                          0xffffffff94911271
+                          |          
+                           --3.11%--0xffffffff955e9ace
+                                     |          
+                                      --3.11%--0xffffffff94850962
+                                                0xffffffff955e9908
+
+     3.12%     0.00%  swapper          [unknown]             [k] 0xffffffff96a9fd38
+            |
+            ---0xffffffff96a9fd38
+               0xffffffff96a9f84d
+               0xffffffff955dbc33
+               0xffffffff949115f0
+               |          
+                --3.12%--0xffffffff949113c3
+                          0xffffffff94911271
+                          |          
+                           --3.11%--0xffffffff955e9ace
+                                     |          
+                                      --3.11%--0xffffffff94850962
+                                                0xffffffff955e9908
+
+     3.12%     0.00%  swapper          [unknown]             [k] 0xffffffff96a9f84d
+            |
+            ---0xffffffff96a9f84d
+               0xffffffff955dbc33
+               0xffffffff949115f0
+               |          
+                --3.12%--0xffffffff949113c3
+                          0xffffffff94911271
+                          |          
+                           --3.11%--0xffffffff955e9ace
+                                     |          
+                                      --3.11%--0xffffffff94850962
+                                                0xffffffff955e9908
+
+     3.12%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff955dbc33
+            |
+            ---0xffffffff955dbc33
+               0xffffffff949115f0
+               |          
+                --3.12%--0xffffffff949113c3
+                          0xffffffff94911271
+                          |          
+                           --3.11%--0xffffffff955e9ace
+                                     |          
+                                      --3.11%--0xffffffff94850962
+                                                0xffffffff955e9908
+
+     2.38%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff95600124
+            |
+            ---0xffffffff95600124
+               |          
+                --2.12%--0xffffffff955d70e6
+                          |          
+                          |--0.99%--0xffffffff94802afc
+                          |          |          
+                          |           --0.99%--0xffffffff94ba2929
+                          |                     |          
+                          |                      --0.98%--0xffffffff94ba28d5
+                          |                                |          
+                          |                                 --0.96%--0xffffffff94ba0068
+                          |                                           |          
+                          |                                            --0.96%--0xffffffff94b9f4ed
+                          |                                                      |          
+                          |                                                       --0.95%--0xffffffff952ec773
+                          |                                                                 |          
+                          |                                                                  --0.95%--0xffffffff952ec6d2
+                          |                                                                            |          
+                          |                                                                             --0.95%--0xffffffff9541e743
+                          |                                                                                       |          
+                          |                                                                                        --0.93%--0xffffffff953dd29d
+                          |                                                                                                  |          
+                          |                                                                                                   --0.68%--0xffffffff953dc955
+                          |                                                                                                             0xffffffff953dc109
+                          |                                                                                                             |          
+                          |                                                                                                              --0.68%--0xffffffff953f5967
+                          |                                                                                                                        |          
+                          |                                                                                                                         --0.62%--0xffffffff953f535e
+                          |                                                                                                                                   |          
+                          |                                                                                                                                    --0.57%--0xffffffff953f3c3f
+                          |                                                                                                                                              |          
+                          |                                                                                                                                               --0.57%--0xffffffff953cee85
+                          |                                                                                                                                                         |          
+                          |                                                                                                                                                          --0.53%--0xffffffff953ceba5
+                          |                                                                                                                                                                    |          
+                          |                                                                                                                                                                     --0.52%--0xffffffff953cea0e
+                          |                                                                                                                                                                               |          
+                          |                                                                                                                                                                                --0.52%--0xffffffff953cd86b
+                          |                                                                                                                                                                                          |          
+                          |                                                                                                                                                                                           --0.50%--0xffffffff953cd75e
+                          |                                                                                                                                                                                                     |          
+                          |                                                                                                                                                                                                      --0.50%--0xffffffff953cd667
+                          |          
+                           --0.56%--0xffffffff9480362b
+                                     |          
+                                      --0.53%--0xffffffff94c03e50
+                                                |          
+                                                 --0.51%--0xffffffff94c0344a
+
+     2.12%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff955d70e6
+            |          
+             --2.12%--0xffffffff955d70e6
+                       |          
+                       |--0.99%--0xffffffff94802afc
+                       |          |          
+                       |           --0.99%--0xffffffff94ba2929
+                       |                     |          
+                       |                      --0.98%--0xffffffff94ba28d5
+                       |                                |          
+                       |                                 --0.96%--0xffffffff94ba0068
+                       |                                           |          
+                       |                                            --0.96%--0xffffffff94b9f4ed
+                       |                                                      |          
+                       |                                                       --0.95%--0xffffffff952ec773
+                       |                                                                 |          
+                       |                                                                  --0.95%--0xffffffff952ec6d2
+                       |                                                                            |          
+                       |                                                                             --0.95%--0xffffffff9541e743
+                       |                                                                                       |          
+                       |                                                                                        --0.93%--0xffffffff953dd29d
+                       |                                                                                                  |          
+                       |                                                                                                   --0.68%--0xffffffff953dc955
+                       |                                                                                                             0xffffffff953dc109
+                       |                                                                                                             |          
+                       |                                                                                                              --0.68%--0xffffffff953f5967
+                       |                                                                                                                        |          
+                       |                                                                                                                         --0.62%--0xffffffff953f535e
+                       |                                                                                                                                   |          
+                       |                                                                                                                                    --0.57%--0xffffffff953f3c3f
+                       |                                                                                                                                              |          
+                       |                                                                                                                                               --0.57%--0xffffffff953cee85
+                       |                                                                                                                                                         |          
+                       |                                                                                                                                                          --0.53%--0xffffffff953ceba5
+                       |                                                                                                                                                                    |          
+                       |                                                                                                                                                                     --0.52%--0xffffffff953cea0e
+                       |                                                                                                                                                                               |          
+                       |                                                                                                                                                                                --0.52%--0xffffffff953cd86b
+                       |                                                                                                                                                                                          |          
+                       |                                                                                                                                                                                           --0.50%--0xffffffff953cd75e
+                       |                                                                                                                                                                                                     |          
+                       |                                                                                                                                                                                                      --0.50%--0xffffffff953cd667
+                       |          
+                        --0.56%--0xffffffff9480362b
+                                  |          
+                                   --0.53%--0xffffffff94c03e50
+                                             |          
+                                              --0.51%--0xffffffff94c0344a
+
+     1.87%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff948cd546
+            |
+            ---0xffffffff948cd546
+               |          
+               |--1.22%--0xffffffff948cd0ba
+               |          |          
+               |           --1.21%--0xffffffff9531ded6
+               |                     |          
+               |                      --1.20%--0xffffffff9531dab0
+               |                                |          
+               |                                 --1.08%--virtnet_poll
+               |                                           |          
+               |                                            --0.80%--0xffffffff9531d93a
+               |                                                      |          
+               |                                                       --0.79%--0xffffffff9531d44e
+               |                                                                 |          
+               |                                                                  --0.74%--0xffffffff9531d298
+               |                                                                            |          
+               |                                                                             --0.74%--0xffffffff953c90d9
+               |                                                                                       |          
+               |                                                                                        --0.69%--0xffffffff953c8cf5
+               |                                                                                                  |          
+               |                                                                                                   --0.69%--0xffffffff953c8b5b
+               |                                                                                                             |          
+               |                                                                                                              --0.69%--0xffffffff953c8a4d
+               |                                                                                                                        |          
+               |                                                                                                                         --0.69%--0xffffffff953c89c8
+               |                                                                                                                                   |          
+               |                                                                                                                                    --0.69%--0xffffffff953c876c
+               |                                                                                                                                              |          
+               |                                                                                                                                               --0.62%--0xffffffff953ffe1e
+               |                                                                                                                                                         |          
+               |                                                                                                                                                          --0.62%--0xffffffff953fccaf
+               |          
+                --0.65%--0xffffffff948cd053
+
+     1.85%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff95600e67
+            |
+            ---0xffffffff95600e67
+               0xffffffff955d884e
+               0xffffffff948cd546
+               |          
+               |--1.21%--0xffffffff948cd0ba
+               |          |          
+               |           --1.21%--0xffffffff9531ded6
+               |                     |          
+               |                      --1.20%--0xffffffff9531dab0
+               |                                |          
+               |                                 --1.08%--virtnet_poll
+               |                                           |          
+               |                                            --0.80%--0xffffffff9531d93a
+               |                                                      |          
+               |                                                       --0.79%--0xffffffff9531d44e
+               |                                                                 |          
+               |                                                                  --0.74%--0xffffffff9531d298
+               |                                                                            |          
+               |                                                                             --0.74%--0xffffffff953c90d9
+               |                                                                                       |          
+               |                                                                                        --0.69%--0xffffffff953c8cf5
+               |                                                                                                  |          
+               |                                                                                                   --0.69%--0xffffffff953c8b5b
+               |                                                                                                             |          
+               |                                                                                                              --0.69%--0xffffffff953c8a4d
+               |                                                                                                                        |          
+               |                                                                                                                         --0.69%--0xffffffff953c89c8
+               |                                                                                                                                   |          
+               |                                                                                                                                    --0.69%--0xffffffff953c876c
+               |                                                                                                                                              |          
+               |                                                                                                                                               --0.62%--0xffffffff953ffe1e
+               |                                                                                                                                                         |          
+               |                                                                                                                                                          --0.62%--0xffffffff953fccaf
+               |          
+                --0.64%--0xffffffff948cd053
+
+     1.85%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff955d884e
+            |
+            ---0xffffffff955d884e
+               0xffffffff948cd546
+               |          
+               |--1.21%--0xffffffff948cd0ba
+               |          |          
+               |           --1.21%--0xffffffff9531ded6
+               |                     |          
+               |                      --1.20%--0xffffffff9531dab0
+               |                                |          
+               |                                 --1.08%--virtnet_poll
+               |                                           |          
+               |                                            --0.80%--0xffffffff9531d93a
+               |                                                      |          
+               |                                                       --0.79%--0xffffffff9531d44e
+               |                                                                 |          
+               |                                                                  --0.74%--0xffffffff9531d298
+               |                                                                            |          
+               |                                                                             --0.74%--0xffffffff953c90d9
+               |                                                                                       |          
+               |                                                                                        --0.69%--0xffffffff953c8cf5
+               |                                                                                                  |          
+               |                                                                                                   --0.69%--0xffffffff953c8b5b
+               |                                                                                                             |          
+               |                                                                                                              --0.69%--0xffffffff953c8a4d
+               |                                                                                                                        |          
+               |                                                                                                                         --0.69%--0xffffffff953c89c8
+               |                                                                                                                                   |          
+               |                                                                                                                                    --0.69%--0xffffffff953c876c
+               |                                                                                                                                              |          
+               |                                                                                                                                               --0.62%--0xffffffff953ffe1e
+               |                                                                                                                                                         |          
+               |                                                                                                                                                          --0.62%--0xffffffff953fccaf
+               |          
+                --0.64%--0xffffffff948cd053
+
+     1.22%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff948cd0ba
+            |
+            ---0xffffffff948cd0ba
+               |          
+                --1.21%--0xffffffff9531ded6
+                          |          
+                           --1.20%--0xffffffff9531dab0
+                                     |          
+                                      --1.08%--virtnet_poll
+                                                |          
+                                                 --0.80%--0xffffffff9531d93a
+                                                           |          
+                                                            --0.79%--0xffffffff9531d44e
+                                                                      |          
+                                                                       --0.74%--0xffffffff9531d298
+                                                                                 |          
+                                                                                  --0.74%--0xffffffff953c90d9
+                                                                                            |          
+                                                                                             --0.69%--0xffffffff953c8cf5
+                                                                                                       |          
+                                                                                                        --0.69%--0xffffffff953c8b5b
+                                                                                                                  |          
+                                                                                                                   --0.69%--0xffffffff953c8a4d
+                                                                                                                             |          
+                                                                                                                              --0.69%--0xffffffff953c89c8
+                                                                                                                                        |          
+                                                                                                                                         --0.69%--0xffffffff953c876c
+                                                                                                                                                   |          
+                                                                                                                                                    --0.62%--0xffffffff953ffe1e
+                                                                                                                                                              |          
+                                                                                                                                                               --0.62%--0xffffffff953fccaf
+
+     1.21%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff9531ded6
+            |
+            ---0xffffffff9531ded6
+               |          
+                --1.20%--0xffffffff9531dab0
+                          |          
+                           --1.08%--virtnet_poll
+                                     |          
+                                      --0.80%--0xffffffff9531d93a
+                                                |          
+                                                 --0.79%--0xffffffff9531d44e
+                                                           |          
+                                                            --0.74%--0xffffffff9531d298
+                                                                      |          
+                                                                       --0.74%--0xffffffff953c90d9
+                                                                                 |          
+                                                                                  --0.69%--0xffffffff953c8cf5
+                                                                                            |          
+                                                                                             --0.69%--0xffffffff953c8b5b
+                                                                                                       |          
+                                                                                                        --0.69%--0xffffffff953c8a4d
+                                                                                                                  |          
+                                                                                                                   --0.69%--0xffffffff953c89c8
+                                                                                                                             |          
+                                                                                                                              --0.69%--0xffffffff953c876c
+                                                                                                                                        |          
+                                                                                                                                         --0.62%--0xffffffff953ffe1e
+                                                                                                                                                   |          
+                                                                                                                                                    --0.62%--0xffffffff953fccaf
+
+     1.20%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff9531dab0
+            |
+            ---0xffffffff9531dab0
+               |          
+                --1.08%--virtnet_poll
+                          |          
+                           --0.80%--0xffffffff9531d93a
+                                     |          
+                                      --0.79%--0xffffffff9531d44e
+                                                |          
+                                                 --0.74%--0xffffffff9531d298
+                                                           |          
+                                                            --0.74%--0xffffffff953c90d9
+                                                                      |          
+                                                                       --0.69%--0xffffffff953c8cf5
+                                                                                 |          
+                                                                                  --0.69%--0xffffffff953c8b5b
+                                                                                            |          
+                                                                                             --0.69%--0xffffffff953c8a4d
+                                                                                                       |          
+                                                                                                        --0.69%--0xffffffff953c89c8
+                                                                                                                  |          
+                                                                                                                   --0.69%--0xffffffff953c876c
+                                                                                                                             |          
+                                                                                                                              --0.62%--0xffffffff953ffe1e
+                                                                                                                                        |          
+                                                                                                                                         --0.62%--0xffffffff953fccaf
+
+     1.08%     0.01%  swapper          [virtio_net]          [k] virtnet_poll
+            |          
+             --1.07%--virtnet_poll
+                       |          
+                        --0.80%--0xffffffff9531d93a
+                                  |          
+                                   --0.79%--0xffffffff9531d44e
+                                             |          
+                                              --0.74%--0xffffffff9531d298
+                                                        |          
+                                                         --0.74%--0xffffffff953c90d9
+                                                                   |          
+                                                                    --0.69%--0xffffffff953c8cf5
+                                                                              |          
+                                                                               --0.69%--0xffffffff953c8b5b
+                                                                                         |          
+                                                                                          --0.69%--0xffffffff953c8a4d
+                                                                                                    |          
+                                                                                                     --0.69%--0xffffffff953c89c8
+                                                                                                               |          
+                                                                                                                --0.69%--0xffffffff953c876c
+                                                                                                                          |          
+                                                                                                                           --0.62%--0xffffffff953ffe1e
+                                                                                                                                     |          
+                                                                                                                                      --0.62%--0xffffffff953fccaf
+
+     1.07%     0.03%  echo-mt-server   libc.so.6             [.] write
+            |
+            ---write
+               |          
+                --1.03%--0xffffffff95600124
+                          |          
+                           --0.99%--0xffffffff955d70e6
+                                     |          
+                                      --0.99%--0xffffffff94802afc
+                                                |          
+                                                 --0.99%--0xffffffff94ba2929
+                                                           |          
+                                                            --0.98%--0xffffffff94ba28d5
+                                                                      |          
+                                                                       --0.96%--0xffffffff94ba0068
+                                                                                 |          
+                                                                                  --0.96%--0xffffffff94b9f4ed
+                                                                                            |          
+                                                                                             --0.95%--0xffffffff952ec773
+                                                                                                       |          
+                                                                                                        --0.95%--0xffffffff952ec6d2
+                                                                                                                  |          
+                                                                                                                   --0.95%--0xffffffff9541e743
+                                                                                                                             |          
+                                                                                                                              --0.93%--0xffffffff953dd29d
+                                                                                                                                        |          
+                                                                                                                                         --0.68%--0xffffffff953dc955
+                                                                                                                                                   0xffffffff953dc109
+                                                                                                                                                   |          
+                                                                                                                                                    --0.68%--0xffffffff953f5967
+                                                                                                                                                              |          
+                                                                                                                                                               --0.62%--0xffffffff953f535e
+                                                                                                                                                                         |          
+                                                                                                                                                                          --0.57%--0xffffffff953f3c3f
+                                                                                                                                                                                    |          
+                                                                                                                                                                                     --0.57%--0xffffffff953cee85
+                                                                                                                                                                                               |          
+                                                                                                                                                                                                --0.53%--0xffffffff953ceba5
+                                                                                                                                                                                                          |          
+                                                                                                                                                                                                           --0.52%--0xffffffff953cea0e
+                                                                                                                                                                                                                     |          
+                                                                                                                                                                                                                      --0.52%--0xffffffff953cd86b
+                                                                                                                                                                                                                                |          
+                                                                                                                                                                                                                                 --0.50%--0xffffffff953cd75e
+                                                                                                                                                                                                                                           |          
+                                                                                                                                                                                                                                            --0.50%--0xffffffff953cd667
+
+     0.99%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94802afc
+            |
+            ---0xffffffff94802afc
+               |          
+                --0.99%--0xffffffff94ba2929
+                          |          
+                           --0.98%--0xffffffff94ba28d5
+                                     |          
+                                      --0.96%--0xffffffff94ba0068
+                                                |          
+                                                 --0.96%--0xffffffff94b9f4ed
+                                                           |          
+                                                            --0.95%--0xffffffff952ec773
+                                                                      |          
+                                                                       --0.95%--0xffffffff952ec6d2
+                                                                                 |          
+                                                                                  --0.95%--0xffffffff9541e743
+                                                                                            |          
+                                                                                             --0.93%--0xffffffff953dd29d
+                                                                                                       |          
+                                                                                                        --0.68%--0xffffffff953dc955
+                                                                                                                  0xffffffff953dc109
+                                                                                                                  |          
+                                                                                                                   --0.68%--0xffffffff953f5967
+                                                                                                                             |          
+                                                                                                                              --0.62%--0xffffffff953f535e
+                                                                                                                                        |          
+                                                                                                                                         --0.57%--0xffffffff953f3c3f
+                                                                                                                                                   |          
+                                                                                                                                                    --0.57%--0xffffffff953cee85
+                                                                                                                                                              |          
+                                                                                                                                                               --0.53%--0xffffffff953ceba5
+                                                                                                                                                                         |          
+                                                                                                                                                                          --0.52%--0xffffffff953cea0e
+                                                                                                                                                                                    |          
+                                                                                                                                                                                     --0.52%--0xffffffff953cd86b
+                                                                                                                                                                                               |          
+                                                                                                                                                                                                --0.50%--0xffffffff953cd75e
+                                                                                                                                                                                                          |          
+                                                                                                                                                                                                           --0.50%--0xffffffff953cd667
+
+     0.99%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94ba2929
+            |
+            ---0xffffffff94ba2929
+               |          
+                --0.98%--0xffffffff94ba28d5
+                          |          
+                           --0.96%--0xffffffff94ba0068
+                                     |          
+                                      --0.96%--0xffffffff94b9f4ed
+                                                |          
+                                                 --0.95%--0xffffffff952ec773
+                                                           |          
+                                                            --0.95%--0xffffffff952ec6d2
+                                                                      |          
+                                                                       --0.95%--0xffffffff9541e743
+                                                                                 |          
+                                                                                  --0.93%--0xffffffff953dd29d
+                                                                                            |          
+                                                                                             --0.68%--0xffffffff953dc955
+                                                                                                       0xffffffff953dc109
+                                                                                                       |          
+                                                                                                        --0.68%--0xffffffff953f5967
+                                                                                                                  |          
+                                                                                                                   --0.62%--0xffffffff953f535e
+                                                                                                                             |          
+                                                                                                                              --0.57%--0xffffffff953f3c3f
+                                                                                                                                        |          
+                                                                                                                                         --0.57%--0xffffffff953cee85
+                                                                                                                                                   |          
+                                                                                                                                                    --0.53%--0xffffffff953ceba5
+                                                                                                                                                              |          
+                                                                                                                                                               --0.52%--0xffffffff953cea0e
+                                                                                                                                                                         |          
+                                                                                                                                                                          --0.52%--0xffffffff953cd86b
+                                                                                                                                                                                    |          
+                                                                                                                                                                                     --0.50%--0xffffffff953cd75e
+                                                                                                                                                                                               |          
+                                                                                                                                                                                                --0.50%--0xffffffff953cd667
+
+     0.98%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94ba28d5
+            |
+            ---0xffffffff94ba28d5
+               |          
+                --0.96%--0xffffffff94ba0068
+                          |          
+                           --0.96%--0xffffffff94b9f4ed
+                                     |          
+                                      --0.95%--0xffffffff952ec773
+                                                |          
+                                                 --0.95%--0xffffffff952ec6d2
+                                                           |          
+                                                            --0.95%--0xffffffff9541e743
+                                                                      |          
+                                                                       --0.93%--0xffffffff953dd29d
+                                                                                 |          
+                                                                                  --0.68%--0xffffffff953dc955
+                                                                                            0xffffffff953dc109
+                                                                                            |          
+                                                                                             --0.68%--0xffffffff953f5967
+                                                                                                       |          
+                                                                                                        --0.62%--0xffffffff953f535e
+                                                                                                                  |          
+                                                                                                                   --0.57%--0xffffffff953f3c3f
+                                                                                                                             |          
+                                                                                                                              --0.57%--0xffffffff953cee85
+                                                                                                                                        |          
+                                                                                                                                         --0.53%--0xffffffff953ceba5
+                                                                                                                                                   |          
+                                                                                                                                                    --0.52%--0xffffffff953cea0e
+                                                                                                                                                              |          
+                                                                                                                                                               --0.52%--0xffffffff953cd86b
+                                                                                                                                                                         |          
+                                                                                                                                                                          --0.50%--0xffffffff953cd75e
+                                                                                                                                                                                    |          
+                                                                                                                                                                                     --0.50%--0xffffffff953cd667
+
+     0.96%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94ba0068
+            |
+            ---0xffffffff94ba0068
+               |          
+                --0.96%--0xffffffff94b9f4ed
+                          |          
+                           --0.95%--0xffffffff952ec773
+                                     |          
+                                      --0.95%--0xffffffff952ec6d2
+                                                |          
+                                                 --0.95%--0xffffffff9541e743
+                                                           |          
+                                                            --0.93%--0xffffffff953dd29d
+                                                                      |          
+                                                                       --0.68%--0xffffffff953dc955
+                                                                                 0xffffffff953dc109
+                                                                                 |          
+                                                                                  --0.68%--0xffffffff953f5967
+                                                                                            |          
+                                                                                             --0.62%--0xffffffff953f535e
+                                                                                                       |          
+                                                                                                        --0.57%--0xffffffff953f3c3f
+                                                                                                                  |          
+                                                                                                                   --0.57%--0xffffffff953cee85
+                                                                                                                             |          
+                                                                                                                              --0.53%--0xffffffff953ceba5
+                                                                                                                                        |          
+                                                                                                                                         --0.52%--0xffffffff953cea0e
+                                                                                                                                                   |          
+                                                                                                                                                    --0.52%--0xffffffff953cd86b
+                                                                                                                                                              |          
+                                                                                                                                                               --0.50%--0xffffffff953cd75e
+                                                                                                                                                                         |          
+                                                                                                                                                                          --0.50%--0xffffffff953cd667
+
+     0.96%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94b9f4ed
+            |
+            ---0xffffffff94b9f4ed
+               |          
+                --0.95%--0xffffffff952ec773
+                          |          
+                           --0.95%--0xffffffff952ec6d2
+                                     |          
+                                      --0.95%--0xffffffff9541e743
+                                                |          
+                                                 --0.93%--0xffffffff953dd29d
+                                                           |          
+                                                            --0.68%--0xffffffff953dc955
+                                                                      0xffffffff953dc109
+                                                                      |          
+                                                                       --0.68%--0xffffffff953f5967
+                                                                                 |          
+                                                                                  --0.62%--0xffffffff953f535e
+                                                                                            |          
+                                                                                             --0.57%--0xffffffff953f3c3f
+                                                                                                       |          
+                                                                                                        --0.57%--0xffffffff953cee85
+                                                                                                                  |          
+                                                                                                                   --0.53%--0xffffffff953ceba5
+                                                                                                                             |          
+                                                                                                                              --0.52%--0xffffffff953cea0e
+                                                                                                                                        |          
+                                                                                                                                         --0.52%--0xffffffff953cd86b
+                                                                                                                                                   |          
+                                                                                                                                                    --0.50%--0xffffffff953cd75e
+                                                                                                                                                              |          
+                                                                                                                                                               --0.50%--0xffffffff953cd667
+
+     0.95%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff952ec773
+            |
+            ---0xffffffff952ec773
+               |          
+                --0.95%--0xffffffff952ec6d2
+                          |          
+                           --0.95%--0xffffffff9541e743
+                                     |          
+                                      --0.93%--0xffffffff953dd29d
+                                                |          
+                                                 --0.68%--0xffffffff953dc955
+                                                           0xffffffff953dc109
+                                                           |          
+                                                            --0.68%--0xffffffff953f5967
+                                                                      |          
+                                                                       --0.62%--0xffffffff953f535e
+                                                                                 |          
+                                                                                  --0.57%--0xffffffff953f3c3f
+                                                                                            |          
+                                                                                             --0.57%--0xffffffff953cee85
+                                                                                                       |          
+                                                                                                        --0.53%--0xffffffff953ceba5
+                                                                                                                  |          
+                                                                                                                   --0.52%--0xffffffff953cea0e
+                                                                                                                             |          
+                                                                                                                              --0.52%--0xffffffff953cd86b
+                                                                                                                                        |          
+                                                                                                                                         --0.50%--0xffffffff953cd75e
+                                                                                                                                                   |          
+                                                                                                                                                    --0.50%--0xffffffff953cd667
+
+     0.95%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff952ec6d2
+            |
+            ---0xffffffff952ec6d2
+               |          
+                --0.95%--0xffffffff9541e743
+                          |          
+                           --0.93%--0xffffffff953dd29d
+                                     |          
+                                      --0.68%--0xffffffff953dc955
+                                                0xffffffff953dc109
+                                                |          
+                                                 --0.68%--0xffffffff953f5967
+                                                           |          
+                                                            --0.62%--0xffffffff953f535e
+                                                                      |          
+                                                                       --0.57%--0xffffffff953f3c3f
+                                                                                 |          
+                                                                                  --0.57%--0xffffffff953cee85
+                                                                                            |          
+                                                                                             --0.53%--0xffffffff953ceba5
+                                                                                                       |          
+                                                                                                        --0.52%--0xffffffff953cea0e
+                                                                                                                  |          
+                                                                                                                   --0.52%--0xffffffff953cd86b
+                                                                                                                             |          
+                                                                                                                              --0.50%--0xffffffff953cd75e
+                                                                                                                                        |          
+                                                                                                                                         --0.50%--0xffffffff953cd667
+
+     0.95%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff9541e743
+            |
+            ---0xffffffff9541e743
+               |          
+                --0.93%--0xffffffff953dd29d
+                          |          
+                           --0.68%--0xffffffff953dc955
+                                     0xffffffff953dc109
+                                     |          
+                                      --0.68%--0xffffffff953f5967
+                                                |          
+                                                 --0.62%--0xffffffff953f535e
+                                                           |          
+                                                            --0.57%--0xffffffff953f3c3f
+                                                                      |          
+                                                                       --0.57%--0xffffffff953cee85
+                                                                                 |          
+                                                                                  --0.53%--0xffffffff953ceba5
+                                                                                            |          
+                                                                                             --0.52%--0xffffffff953cea0e
+                                                                                                       |          
+                                                                                                        --0.52%--0xffffffff953cd86b
+                                                                                                                  |          
+                                                                                                                   --0.50%--0xffffffff953cd75e
+                                                                                                                             |          
+                                                                                                                              --0.50%--0xffffffff953cd667
+
+     0.93%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953dd29d
+            |
+            ---0xffffffff953dd29d
+               |          
+                --0.68%--0xffffffff953dc955
+                          0xffffffff953dc109
+                          |          
+                           --0.68%--0xffffffff953f5967
+                                     |          
+                                      --0.62%--0xffffffff953f535e
+                                                |          
+                                                 --0.57%--0xffffffff953f3c3f
+                                                           |          
+                                                            --0.57%--0xffffffff953cee85
+                                                                      |          
+                                                                       --0.53%--0xffffffff953ceba5
+                                                                                 |          
+                                                                                  --0.52%--0xffffffff953cea0e
+                                                                                            |          
+                                                                                             --0.52%--0xffffffff953cd86b
+                                                                                                       |          
+                                                                                                        --0.50%--0xffffffff953cd75e
+                                                                                                                  |          
+                                                                                                                   --0.50%--0xffffffff953cd667
+
+     0.80%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff9531d93a
+            |          
+             --0.80%--0xffffffff9531d93a
+                       |          
+                        --0.79%--0xffffffff9531d44e
+                                  |          
+                                   --0.74%--0xffffffff9531d298
+                                             |          
+                                              --0.74%--0xffffffff953c90d9
+                                                        |          
+                                                         --0.69%--0xffffffff953c8cf5
+                                                                   |          
+                                                                    --0.69%--0xffffffff953c8b5b
+                                                                              |          
+                                                                               --0.69%--0xffffffff953c8a4d
+                                                                                         |          
+                                                                                          --0.69%--0xffffffff953c89c8
+                                                                                                    |          
+                                                                                                     --0.69%--0xffffffff953c876c
+                                                                                                               |          
+                                                                                                                --0.62%--0xffffffff953ffe1e
+                                                                                                                          |          
+                                                                                                                           --0.62%--0xffffffff953fccaf
+
+     0.79%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff9531d44e
+            |
+            ---0xffffffff9531d44e
+               |          
+                --0.74%--0xffffffff9531d298
+                          |          
+                           --0.74%--0xffffffff953c90d9
+                                     |          
+                                      --0.69%--0xffffffff953c8cf5
+                                                |          
+                                                 --0.69%--0xffffffff953c8b5b
+                                                           |          
+                                                            --0.69%--0xffffffff953c8a4d
+                                                                      |          
+                                                                       --0.69%--0xffffffff953c89c8
+                                                                                 |          
+                                                                                  --0.69%--0xffffffff953c876c
+                                                                                            |          
+                                                                                             --0.62%--0xffffffff953ffe1e
+                                                                                                       |          
+                                                                                                        --0.62%--0xffffffff953fccaf
+
+     0.74%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff9531d298
+            |
+            ---0xffffffff9531d298
+               |          
+                --0.74%--0xffffffff953c90d9
+                          |          
+                           --0.69%--0xffffffff953c8cf5
+                                     |          
+                                      --0.69%--0xffffffff953c8b5b
+                                                |          
+                                                 --0.69%--0xffffffff953c8a4d
+                                                           |          
+                                                            --0.69%--0xffffffff953c89c8
+                                                                      |          
+                                                                       --0.69%--0xffffffff953c876c
+                                                                                 |          
+                                                                                  --0.62%--0xffffffff953ffe1e
+                                                                                            |          
+                                                                                             --0.62%--0xffffffff953fccaf
+
+     0.74%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953c90d9
+            |
+            ---0xffffffff953c90d9
+               |          
+                --0.69%--0xffffffff953c8cf5
+                          |          
+                           --0.69%--0xffffffff953c8b5b
+                                     |          
+                                      --0.69%--0xffffffff953c8a4d
+                                                |          
+                                                 --0.69%--0xffffffff953c89c8
+                                                           |          
+                                                            --0.69%--0xffffffff953c876c
+                                                                      |          
+                                                                       --0.62%--0xffffffff953ffe1e
+                                                                                 |          
+                                                                                  --0.62%--0xffffffff953fccaf
+
+     0.70%     0.05%  echo-mt-server   libc.so.6             [.] epoll_wait
+            |
+            ---epoll_wait
+               |          
+                --0.65%--0xffffffff95600124
+                          |          
+                           --0.57%--0xffffffff955d70e6
+                                     |          
+                                      --0.56%--0xffffffff9480362b
+                                                |          
+                                                 --0.53%--0xffffffff94c03e50
+                                                           |          
+                                                            --0.51%--0xffffffff94c0344a
+
+     0.69%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953c8cf5
+            |
+            ---0xffffffff953c8cf5
+               |          
+                --0.69%--0xffffffff953c8b5b
+                          |          
+                           --0.69%--0xffffffff953c8a4d
+                                     |          
+                                      --0.69%--0xffffffff953c89c8
+                                                |          
+                                                 --0.69%--0xffffffff953c876c
+                                                           |          
+                                                            --0.62%--0xffffffff953ffe1e
+                                                                      |          
+                                                                       --0.62%--0xffffffff953fccaf
+
+     0.69%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953c8b5b
+            |
+            ---0xffffffff953c8b5b
+               |          
+                --0.69%--0xffffffff953c8a4d
+                          |          
+                           --0.69%--0xffffffff953c89c8
+                                     |          
+                                      --0.69%--0xffffffff953c876c
+                                                |          
+                                                 --0.62%--0xffffffff953ffe1e
+                                                           |          
+                                                            --0.62%--0xffffffff953fccaf
+
+     0.69%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953c8a4d
+            |
+            ---0xffffffff953c8a4d
+               |          
+                --0.69%--0xffffffff953c89c8
+                          |          
+                           --0.69%--0xffffffff953c876c
+                                     |          
+                                      --0.62%--0xffffffff953ffe1e
+                                                |          
+                                                 --0.62%--0xffffffff953fccaf
+
+     0.69%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953c89c8
+            |
+            ---0xffffffff953c89c8
+               |          
+                --0.69%--0xffffffff953c876c
+                          |          
+                           --0.62%--0xffffffff953ffe1e
+                                     |          
+                                      --0.62%--0xffffffff953fccaf
+
+     0.69%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953c876c
+            |
+            ---0xffffffff953c876c
+               |          
+                --0.62%--0xffffffff953ffe1e
+                          |          
+                           --0.62%--0xffffffff953fccaf
+
+     0.68%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953dc955
+            |
+            ---0xffffffff953dc955
+               0xffffffff953dc109
+               |          
+                --0.68%--0xffffffff953f5967
+                          |          
+                           --0.62%--0xffffffff953f535e
+                                     |          
+                                      --0.57%--0xffffffff953f3c3f
+                                                |          
+                                                 --0.57%--0xffffffff953cee85
+                                                           |          
+                                                            --0.53%--0xffffffff953ceba5
+                                                                      |          
+                                                                       --0.52%--0xffffffff953cea0e
+                                                                                 |          
+                                                                                  --0.52%--0xffffffff953cd86b
+                                                                                            |          
+                                                                                             --0.50%--0xffffffff953cd75e
+                                                                                                       |          
+                                                                                                        --0.50%--0xffffffff953cd667
+
+     0.68%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953dc109
+            |
+            ---0xffffffff953dc109
+               |          
+                --0.68%--0xffffffff953f5967
+                          |          
+                           --0.62%--0xffffffff953f535e
+                                     |          
+                                      --0.57%--0xffffffff953f3c3f
+                                                |          
+                                                 --0.57%--0xffffffff953cee85
+                                                           |          
+                                                            --0.53%--0xffffffff953ceba5
+                                                                      |          
+                                                                       --0.52%--0xffffffff953cea0e
+                                                                                 |          
+                                                                                  --0.52%--0xffffffff953cd86b
+                                                                                            |          
+                                                                                             --0.50%--0xffffffff953cd75e
+                                                                                                       |          
+                                                                                                        --0.50%--0xffffffff953cd667
+
+     0.68%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953f5967
+            |
+            ---0xffffffff953f5967
+               |          
+                --0.62%--0xffffffff953f535e
+                          |          
+                           --0.57%--0xffffffff953f3c3f
+                                     |          
+                                      --0.57%--0xffffffff953cee85
+                                                |          
+                                                 --0.53%--0xffffffff953ceba5
+                                                           |          
+                                                            --0.52%--0xffffffff953cea0e
+                                                                      |          
+                                                                       --0.52%--0xffffffff953cd86b
+                                                                                 |          
+                                                                                  --0.50%--0xffffffff953cd75e
+                                                                                            |          
+                                                                                             --0.50%--0xffffffff953cd667
+
+     0.65%     0.65%  swapper          [kernel.kallsyms]     [k] 0xffffffff948cd053
+            |
+            ---0xffffffff94800107
+               |          
+                --0.62%--0xffffffff94884d0a
+                          0xffffffff949115f0
+                          |          
+                           --0.61%--0xffffffff949113c3
+                                     |          
+                                      --0.61%--0xffffffff94911271
+                                                0xffffffff955e9ace
+                                                0xffffffff94850962
+                                                |          
+                                                 --0.61%--0xffffffff955e9908
+                                                           |          
+                                                            --0.60%--0xffffffff95600e67
+                                                                      0xffffffff955d884e
+                                                                      0xffffffff948cd546
+                                                                      0xffffffff948cd053
+
+     0.62%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953ffe1e
+            |
+            ---0xffffffff953ffe1e
+               |          
+                --0.62%--0xffffffff953fccaf
+
+     0.62%     0.00%  swapper          [kernel.kallsyms]     [k] 0xffffffff953fccaf
+            |
+            ---0xffffffff953fccaf
+
+     0.62%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953f535e
+            |
+            ---0xffffffff953f535e
+               |          
+                --0.57%--0xffffffff953f3c3f
+                          |          
+                           --0.57%--0xffffffff953cee85
+                                     |          
+                                      --0.53%--0xffffffff953ceba5
+                                                |          
+                                                 --0.52%--0xffffffff953cea0e
+                                                           |          
+                                                            --0.52%--0xffffffff953cd86b
+                                                                      |          
+                                                                       --0.50%--0xffffffff953cd75e
+                                                                                 |          
+                                                                                  --0.50%--0xffffffff953cd667
+
+     0.57%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953f3c3f
+            |
+            ---0xffffffff953f3c3f
+               |          
+                --0.57%--0xffffffff953cee85
+                          |          
+                           --0.53%--0xffffffff953ceba5
+                                     |          
+                                      --0.52%--0xffffffff953cea0e
+                                                |          
+                                                 --0.52%--0xffffffff953cd86b
+                                                           |          
+                                                            --0.50%--0xffffffff953cd75e
+                                                                      |          
+                                                                       --0.50%--0xffffffff953cd667
+
+     0.57%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953cee85
+            |
+            ---0xffffffff953cee85
+               |          
+                --0.53%--0xffffffff953ceba5
+                          |          
+                           --0.52%--0xffffffff953cea0e
+                                     |          
+                                      --0.52%--0xffffffff953cd86b
+                                                |          
+                                                 --0.50%--0xffffffff953cd75e
+                                                           |          
+                                                            --0.50%--0xffffffff953cd667
+
+     0.56%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff9480362b
+            |
+            ---0xffffffff9480362b
+               |          
+                --0.53%--0xffffffff94c03e50
+                          |          
+                           --0.51%--0xffffffff94c0344a
+
+     0.54%     0.05%  echo-mt-server   libc.so.6             [.] read
+            |
+            ---read
+
+     0.53%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94c03e50
+            |
+            ---0xffffffff94c03e50
+               |          
+                --0.51%--0xffffffff94c0344a
+
+     0.53%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953ceba5
+            |
+            ---0xffffffff953ceba5
+               |          
+                --0.52%--0xffffffff953cea0e
+                          |          
+                           --0.52%--0xffffffff953cd86b
+                                     |          
+                                      --0.50%--0xffffffff953cd75e
+                                                |          
+                                                 --0.50%--0xffffffff953cd667
+
+     0.52%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953cea0e
+            |
+            ---0xffffffff953cea0e
+               |          
+                --0.52%--0xffffffff953cd86b
+                          |          
+                           --0.50%--0xffffffff953cd75e
+                                     |          
+                                      --0.50%--0xffffffff953cd667
+
+     0.52%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953cd86b
+            |
+            ---0xffffffff953cd86b
+               |          
+                --0.50%--0xffffffff953cd75e
+                          |          
+                           --0.50%--0xffffffff953cd667
+
+     0.51%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff94c0344a
+            |          
+             --0.51%--0xffffffff94c0344a
+
+     0.50%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953cd75e
+            |
+            ---0xffffffff953cd75e
+               |          
+                --0.50%--0xffffffff953cd667
+
+     0.50%     0.00%  echo-mt-server   [kernel.kallsyms]     [k] 0xffffffff953cd667
+            |
+            ---0xffffffff953cd667
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

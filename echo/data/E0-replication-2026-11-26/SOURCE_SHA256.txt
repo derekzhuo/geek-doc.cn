@@ -1,0 +1,2 @@
+702429f780e982d173f3c45da8d41e5b66e4c8ca89fcaf43332869c6726be975  echo/day-04/echo-mt-server.c
+5a57b53b58487f10935ddc5890369abbca4d8da1e22eeea129b815c17608a511  echo/day-03/echo-kp-bench.c

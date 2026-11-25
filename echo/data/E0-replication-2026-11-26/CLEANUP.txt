@@ -1,0 +1,9 @@
+Cleanup verification (fresh Tencent Cloud queries after evidence retrieval)
+Created instances remaining: 0
+All ap-shanghai instances remaining: 0
+Created EIPs remaining: 0
+Temporary security-group rules remaining: 0
+Residual local benchmark/SSH processes: 0
+Destroyed instance references: ins-<已销毁实例ID>, ins-<已销毁实例ID>
+Public addresses: <server>, <client>
+Private addresses: <vpc-server-ip>, <vpc-client-ip>

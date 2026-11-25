@@ -1,0 +1,2 @@
+[ perf record: Woken up 97 times to write data ]
+[ perf record: Captured and wrote 25.949 MB /home/ubuntu/e0data/steady32/perf.data (191040 samples) ]

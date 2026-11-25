@@ -1,0 +1,1 @@
+./echo-kp-bench <vpc-server-ip> 9988 32 1000 --mode long
