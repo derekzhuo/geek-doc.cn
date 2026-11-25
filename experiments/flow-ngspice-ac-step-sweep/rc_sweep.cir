@@ -1,0 +1,21 @@
+RC low-pass AC sweep with three resistance settings
+V1 in 0 AC 1
+R1 in out 1k
+C1 out 0 100n
+.control
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+foreach rvalue 1k 2.2k 4.7k
+  echo "SWEEP_BEGIN R=$rvalue C=100n"
+  alter r1 = $rvalue
+  ac dec 50 10 100k
+  meas ac f3db when vdb(out)=-3 cross=1
+  meas ac gain1k find vdb(out) at=1000
+  meas ac phase3db find vp(out) when vdb(out)=-3 cross=1
+  wrdata results/ac_$rvalue vdb(out) vp(out)
+  echo "SWEEP_END R=$rvalue"
+end
+quit
+.endc
+.end

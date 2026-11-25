@@ -1,0 +1,8 @@
+Probe LTspice-style step directive in ngspice-42
+V1 in 0 AC 1
+R1 in out {rval}
+C1 out 0 100n
+.param rval=1k
+.step param rval 1k 4.7k 1k
+.ac dec 10 10 100k
+.end
