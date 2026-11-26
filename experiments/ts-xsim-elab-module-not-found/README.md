@@ -46,4 +46,4 @@ D:\Xilinx\Vivado\2017.4\bin\xsim.bat top_elab -t run_sim.tcl
 ELAB_SIM_RESULT a=1 b=1 y=1
 ```
 
-这条结果对应 testbench 在 20ns 时把两个输入都置为 1，与与门真值表一致。排查同类问题时，先核对 `xvlog` 的文件列表和工程 sources 中的层次更新，再检查模块名与库名是否匹配。
+这条结果对应 testbench 在 10ns 将两个输入置为 1，再等待 10ns，于 20ns 输出与门运算结果。排查同类问题时，先核对 `xvlog` 的文件列表和工程 sources 中的层次更新，再检查模块名与库名是否匹配。
