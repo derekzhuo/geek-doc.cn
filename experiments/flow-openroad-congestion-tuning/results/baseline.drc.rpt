@@ -1,0 +1,108 @@
+violation type: Metal Spacing
+	srcs: net:in[23]
+	bbox = (13.3900, 7.7500) - (13.4750, 7.8050) on Layer metal1
+violation type: Metal Spacing
+	srcs: net:out[15]
+	bbox = (5.8300, 7.3300) - (5.9300, 7.3700) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[2]
+	bbox = (8.7150, 7.5100) - (8.7700, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[2] net:out[30]
+	bbox = (8.7150, 8.6300) - (8.7700, 8.7300) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[2]
+	bbox = (8.7300, 7.5100) - (8.7700, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[30]
+	bbox = (8.8700, 8.6300) - (8.9100, 8.7300) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[30]
+	bbox = (8.8700, 8.6300) - (8.9250, 8.7300) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[8]
+	bbox = (10.2700, 7.5100) - (10.3100, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[8]
+	bbox = (10.2700, 7.5100) - (10.3250, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[27] net:out[21]
+	bbox = (10.6750, 7.5100) - (10.7300, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[9]
+	bbox = (10.6750, 8.6300) - (10.7300, 8.7300) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[9]
+	bbox = (10.6900, 8.6300) - (10.7300, 8.7300) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[4] net:out[9]
+	bbox = (10.8300, 8.6300) - (10.8850, 8.7300) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[25]
+	bbox = (11.7100, 7.3300) - (11.8100, 7.3700) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[21] net:out[25]
+	bbox = (11.7100, 7.4700) - (11.8100, 7.5100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[25]
+	bbox = (11.7250, 7.3300) - (11.7950, 7.3700) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[21] net:out[25]
+	bbox = (11.7250, 7.4700) - (11.7950, 7.5100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[26]
+	bbox = (12.0750, 7.5100) - (12.1300, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[24] net:in[30]
+	bbox = (12.0750, 9.4700) - (12.1300, 9.5700) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[24]
+	bbox = (12.0750, 10.3100) - (12.1300, 10.4100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[26]
+	bbox = (12.0900, 7.5100) - (12.1300, 7.6100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[24]
+	bbox = (12.0900, 10.3100) - (12.1300, 10.4100) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[23] net:out[6]
+	bbox = (13.3900, 7.7500) - (13.4900, 7.7900) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:in[23] net:out[6]
+	bbox = (13.4050, 7.7500) - (13.4750, 7.7900) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[6]
+	bbox = (13.6700, 7.7500) - (13.7700, 7.7900) on Layer metal2
+violation type: Metal Spacing
+	srcs: net:out[2]
+	bbox = (8.7300, 7.5100) - (8.7700, 7.6100) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[30]
+	bbox = (8.8700, 8.6300) - (8.9100, 8.7300) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:in[8]
+	bbox = (10.2700, 7.5100) - (10.3100, 7.6100) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[9]
+	bbox = (10.6900, 8.6300) - (10.7300, 8.7300) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[25]
+	bbox = (11.7100, 7.3300) - (11.8100, 7.3700) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[21] net:out[25]
+	bbox = (11.7100, 7.4700) - (11.8100, 7.5100) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[21] net:out[25]
+	bbox = (11.7100, 7.4700) - (11.8100, 7.5250) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[21] net:out[25]
+	bbox = (11.7250, 7.4700) - (11.7950, 7.5100) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:out[21] net:out[25]
+	bbox = (11.7250, 7.4700) - (11.7950, 7.5250) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:in[26]
+	bbox = (12.0900, 7.5100) - (12.1300, 7.6100) on Layer metal3
+violation type: Metal Spacing
+	srcs: net:in[24]
+	bbox = (12.0900, 10.3100) - (12.1300, 10.4100) on Layer metal3

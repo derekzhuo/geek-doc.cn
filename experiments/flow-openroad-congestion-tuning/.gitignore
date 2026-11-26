@@ -1,0 +1,4 @@
+results/*.guide
+results/*.placed.def
+results/*congestion-[0-9]*.rpt
+results/run-console.log

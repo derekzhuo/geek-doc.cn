@@ -1,0 +1,8 @@
+violation type: Vertical congestion
+	srcs: net:in[16] net:in[17] net:in[18] net:in[19] net:in[1] net:in[22] net:in[23] net:in[24] net:in[26] net:in[27] net:in[30]
+	comment: capacity:9 usage:11 congestion:2
+	bbox = (4.2000, 0.0000) - (8.4000, 4.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:in[11] net:in[12] net:in[13] net:in[14] net:in[20] net:in[21] net:in[29] net:in[2] net:in[6]
+	comment: capacity:8 usage:9 congestion:1
+	bbox = (0.0000, 0.0000) - (4.2000, 4.2000) on Layer -
