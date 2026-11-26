@@ -1,0 +1,23 @@
+OpenROAD 26Q4-1108-g6f3f28cc85 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: fixtures/tech.lef, created 1 layers
+[INFO ODB-0227] LEF file: fixtures/cells.lef, created 2 library cells
+POWER_CASE vectorless_default input_activity=0.1 duty=0.5 clock_ns=10
+Group                       Internal       Switching         Leakage           Total
+                               Power           Power           Power           Power (Watts)
+------------------------------------------------------------------------------------
+Sequential           0.000000000e+00 0.000000000e+00 0.000000000e+00 0.000000000e+00   0.0%
+Combinational        4.185660032e-07 1.425000029e-08 4.999999720e-11 4.328659884e-07 100.0%
+Clock                0.000000000e+00 0.000000000e+00 0.000000000e+00 0.000000000e+00   0.0%
+Macro                0.000000000e+00 0.000000000e+00 0.000000000e+00 0.000000000e+00   0.0%
+Pad                  0.000000000e+00 0.000000000e+00 0.000000000e+00 0.000000000e+00   0.0%
+------------------------------------------------------------------------------------
+Total                4.185660032e-07 1.425000029e-08 4.999999720e-11 4.328659884e-07 100.0%
+                               96.7%            3.3%            0.0%
+        Internal       Switching         Leakage           Total
+           Power           Power           Power           Power (Watts)
+----------------------------------------------------------------
+ 3.283160197e-07 0.000000000e+00 2.999999901e-11 3.283460330e-07 u_xor
+ 9.024999770e-08 1.425000029e-08 1.999999819e-11 1.045199980e-07 u_and

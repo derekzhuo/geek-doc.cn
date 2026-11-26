@@ -1,0 +1,52 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+MACRO AND2_X1
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 1 BY 1 ;
+  SITE unit ;
+  PIN A
+    DIRECTION INPUT ; USE SIGNAL ;
+    PORT
+      LAYER metal1 ; RECT 0 0.4 0.1 0.6 ;
+    END
+  END A
+  PIN B
+    DIRECTION INPUT ; USE SIGNAL ;
+    PORT
+      LAYER metal1 ; RECT 0 0.1 0.1 0.3 ;
+    END
+  END B
+  PIN Y
+    DIRECTION OUTPUT ; USE SIGNAL ;
+    PORT
+      LAYER metal1 ; RECT 0.9 0.4 1 0.6 ;
+    END
+  END Y
+END AND2_X1
+MACRO XOR2_X1
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 1.5 BY 1 ;
+  SITE unit ;
+  PIN A
+    DIRECTION INPUT ; USE SIGNAL ;
+    PORT
+      LAYER metal1 ; RECT 0 0.4 0.1 0.6 ;
+    END
+  END A
+  PIN B
+    DIRECTION INPUT ; USE SIGNAL ;
+    PORT
+      LAYER metal1 ; RECT 0 0.1 0.1 0.3 ;
+    END
+  END B
+  PIN Y
+    DIRECTION OUTPUT ; USE SIGNAL ;
+    PORT
+      LAYER metal1 ; RECT 1.4 0.4 1.5 0.6 ;
+    END
+  END Y
+END XOR2_X1
+END LIBRARY

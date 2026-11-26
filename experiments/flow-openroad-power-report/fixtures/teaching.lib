@@ -1,0 +1,83 @@
+library (teaching) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  pulling_resistance_unit : "1kohm";
+  capacitive_load_unit (1,pf);
+  leakage_power_unit : "1nW";
+  nom_process : 1.0;
+  nom_temperature : 25.0;
+  nom_voltage : 1.0;
+  operating_conditions (typical) {
+    process : 1.0;
+    temperature : 25.0;
+    voltage : 1.0;
+    tree_type : balanced_tree;
+  }
+  default_operating_conditions : typical;
+  lu_table_template (timing_table) {
+    variable_1 : input_transition_time;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0.01, 0.10");
+    index_2 ("0.001, 0.010");
+  }
+  power_lut_template (power_table) {
+    variable_1 : input_transition_time;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0.01, 0.10");
+    index_2 ("0.001, 0.010");
+  }
+  cell (AND2_X1) {
+    area : 1.0;
+    pg_pin (VDD) { voltage_name : VDD; pg_type : primary_power; }
+    pg_pin (VSS) { voltage_name : VSS; pg_type : primary_ground; }
+    leakage_power () { value : 0.020; }
+    pin (A) { direction : input; capacitance : 0.002; }
+    pin (B) { direction : input; capacitance : 0.002; }
+    pin (Y) {
+      direction : output;
+      function : "A*B";
+      max_capacitance : 0.020;
+      timing () {
+        related_pin : "A";
+        timing_sense : positive_unate;
+        cell_rise (timing_table) { values ("0.020,0.030", "0.040,0.050"); }
+        cell_fall (timing_table) { values ("0.020,0.030", "0.040,0.050"); }
+        rise_transition (timing_table) { values ("0.010,0.020", "0.020,0.030"); }
+        fall_transition (timing_table) { values ("0.010,0.020", "0.020,0.030"); }
+      }
+      internal_power () {
+        related_pin : "A";
+        rise_power (power_table) { values ("0.010,0.012", "0.014,0.016"); }
+        fall_power (power_table) { values ("0.009,0.011", "0.013,0.015"); }
+      }
+    }
+  }
+  cell (XOR2_X1) {
+    area : 1.5;
+    pg_pin (VDD) { voltage_name : VDD; pg_type : primary_power; }
+    pg_pin (VSS) { voltage_name : VSS; pg_type : primary_ground; }
+    leakage_power () { value : 0.030; }
+    pin (A) { direction : input; capacitance : 0.003; }
+    pin (B) { direction : input; capacitance : 0.003; }
+    pin (Y) {
+      direction : output;
+      function : "A^B";
+      max_capacitance : 0.020;
+      timing () {
+        related_pin : "A";
+        timing_sense : non_unate;
+        cell_rise (timing_table) { values ("0.030,0.040", "0.050,0.060"); }
+        cell_fall (timing_table) { values ("0.030,0.040", "0.050,0.060"); }
+        rise_transition (timing_table) { values ("0.015,0.025", "0.025,0.035"); }
+        fall_transition (timing_table) { values ("0.015,0.025", "0.025,0.035"); }
+      }
+      internal_power () {
+        related_pin : "A";
+        rise_power (power_table) { values ("0.020,0.024", "0.028,0.032"); }
+        fall_power (power_table) { values ("0.018,0.022", "0.026,0.030"); }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+(SAIFILE
+  (SAIFVERSION "2.0")
+  (DIRECTION "backward")
+  (DESIGN )
+  (DATE "2026-11-26T18:24:56.159680+00:00")
+  (VENDOR "Icarus Verilog VCD")
+  (PROGRAM_NAME "vcd_to_saif.py")
+  (VERSION "1")
+  (DIVIDER / )
+  (TIMESCALE 1 ns)
+  (DURATION 90)
+  (INSTANCE tb
+    (INSTANCE dut
+      (NET
+        (a
+          (T0 42) (T1 48)
+          (TC 3)
+        )
+        (b
+          (T0 52) (T1 38)
+          (TC 3)
+        )
+        (c
+          (T0 62) (T1 28)
+          (TC 2)
+        )
+        (clk
+          (T0 45) (T1 45)
+          (TC 18)
+        )
+        (n1
+          (T0 62) (T1 28)
+          (TC 3)
+        )
+        (y
+          (T0 54) (T1 36)
+          (TC 5)
+        )
+        (ghost
+          (T0 0) (T1 90)
+          (TC 1)
+        )
+      )
+    )
+  )
+)
