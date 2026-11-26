@@ -1,0 +1,11 @@
+MISMATCH index=256 op=1 A=0 B=0 expected R=0 NZCV=0110 actual R=0 NZCV=0100
+MISMATCH index=257 op=1 A=0 B=1 expected R=f NZCV=1000 actual R=f NZCV=1010
+MISMATCH index=258 op=1 A=0 B=2 expected R=e NZCV=1000 actual R=e NZCV=1010
+MISMATCH index=259 op=1 A=0 B=3 expected R=d NZCV=1000 actual R=d NZCV=1010
+MISMATCH index=260 op=1 A=0 B=4 expected R=c NZCV=1000 actual R=c NZCV=1010
+MISMATCH index=261 op=1 A=0 B=5 expected R=b NZCV=1000 actual R=b NZCV=1010
+MISMATCH index=262 op=1 A=0 B=6 expected R=a NZCV=1000 actual R=a NZCV=1010
+MISMATCH index=263 op=1 A=0 B=7 expected R=9 NZCV=1000 actual R=9 NZCV=1010
+SUMMARY vectors=1280 failures=256
+FATAL: alu4_tb.v:54: FAIL exhaustive ALU comparison
+       Time: 1280000  Scope: alu4_tb

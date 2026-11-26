@@ -1,0 +1,168 @@
++ date -u +DATE_UTC=%Y-%m-%dT%H:%M:%SZ
+DATE_UTC=2026-11-26T17:23:25Z
++ uname -srm
+Darwin 25.5.0 x86_64
++ sw_vers
+ProductName:		macOS
+ProductVersion:		26.5.2
+BuildVersion:		25F84
++ iverilog -V
+Icarus Verilog version 13.0 (stable) (v13_0)
+
+Copyright (c) 2000-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Preprocessor version 13.0 (stable) (v13_0)
+
+Copyright (c) 1999-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0)
+
+Copyright (c) 1998-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+ FLAGS DLL vvp.tgt
+vvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0)
+
+Copyright (c) 2001-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
++ vvp -V
+Icarus Verilog runtime version 13.0 (stable) (v13_0)
+
+Copyright (c) 2001-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
++ python3 --version
+Python 3.15.2
++ python3 gen_vectors.py
+REFERENCE=integer arithmetic and bitwise operations; no RTL case reuse
+OPERATIONS=0:ADD,1:SUB,2:AND,3:OR,4:XOR
+VECTORS=1280 (5 operations x 16 A values x 16 B values)
+SUB_C=1 means no unsigned borrow; this is the experiment's local convention
+SPOT 0 7 1 8 1 0 0 1 ADD
+SPOT 0 f 1 0 0 1 1 0 ADD
+SPOT 1 0 0 0 0 1 1 0 SUB
+SPOT 1 0 1 f 1 0 0 0 SUB
+SPOT 1 7 f 8 1 0 0 1 SUB
+SPOT 2 f a a 1 0 0 0 AND
+BOUNDARY 0 8 8 0 0 1 1 1 ADD
+BOUNDARY 1 8 1 7 0 0 1 1 SUB
+BOUNDARY 1 7 8 f 1 0 0 1 SUB
+BOUNDARY 2 0 f 0 0 1 0 0 AND
+BOUNDARY 4 f f 0 0 1 0 0 XOR
+GENERATOR SELF-CHECK PASS: count=1280, selected=6, boundary_spots=5
++ iverilog -g2012 -DINJECT_SUB_CARRY -s alu4_tb -o .build/alu4_broken.vvp alu4.v alu4_tb.v
++ set +e
++ vvp .build/alu4_broken.vvp
++ tee results/broken.log
+MISMATCH index=256 op=1 A=0 B=0 expected R=0 NZCV=0110 actual R=0 NZCV=0100
+MISMATCH index=257 op=1 A=0 B=1 expected R=f NZCV=1000 actual R=f NZCV=1010
+MISMATCH index=258 op=1 A=0 B=2 expected R=e NZCV=1000 actual R=e NZCV=1010
+MISMATCH index=259 op=1 A=0 B=3 expected R=d NZCV=1000 actual R=d NZCV=1010
+MISMATCH index=260 op=1 A=0 B=4 expected R=c NZCV=1000 actual R=c NZCV=1010
+MISMATCH index=261 op=1 A=0 B=5 expected R=b NZCV=1000 actual R=b NZCV=1010
+MISMATCH index=262 op=1 A=0 B=6 expected R=a NZCV=1000 actual R=a NZCV=1010
+MISMATCH index=263 op=1 A=0 B=7 expected R=9 NZCV=1000 actual R=9 NZCV=1010
+SUMMARY vectors=1280 failures=256
+FATAL: alu4_tb.v:54: FAIL exhaustive ALU comparison
+       Time: 1280000  Scope: alu4_tb
++ broken_rc=1
++ set -e
++ printf 'BROKEN_EXIT=%d (nonzero required)\n' 1
+BROKEN_EXIT=1 (nonzero required)
++ [[ 1 -eq 0 ]]
++ grep -F 'MISMATCH index=256 op=1 A=0 B=0 expected R=0 NZCV=0110 actual R=0 NZCV=0100' results/broken.log
+MISMATCH index=256 op=1 A=0 B=0 expected R=0 NZCV=0110 actual R=0 NZCV=0100
++ grep -F 'SUMMARY vectors=1280 failures=256' results/broken.log
+SUMMARY vectors=1280 failures=256
++ iverilog -g2012 -s alu4_tb -o .build/alu4_good.vvp alu4.v alu4_tb.v
++ vvp .build/alu4_good.vvp
++ tee results/correct.log
+SUMMARY vectors=1280 failures=0
+PASS vectors=1280 failures=0
+alu4_tb.v:56: $finish called at 1280000 (1ps)
++ grep -F 'PASS vectors=1280 failures=0' results/correct.log
+PASS vectors=1280 failures=0
++ iverilog -g2012 -s wave_tb -o .build/wave.vvp alu4.v wave_tb.v
++ vvp .build/wave.vvp
++ tee results/wave.log
+VCD info: dumpfile results/selected.vcd opened for output.
+WAVE index=0 op=0 A=7 B=1 R=8 NZCV=1001
+WAVE index=1 op=0 A=f B=1 R=0 NZCV=0110
+WAVE index=2 op=1 A=0 B=0 R=0 NZCV=0110
+WAVE index=3 op=1 A=0 B=1 R=f NZCV=1000
+WAVE index=4 op=1 A=7 B=f R=8 NZCV=1001
+WAVE index=5 op=2 A=f B=a R=a NZCV=1000
+WAVE PASS vectors=6 failures=0
+wave_tb.v:46: $finish called at 7000 (1ps)
++ grep -F 'WAVE PASS vectors=6 failures=0' results/wave.log
+WAVE PASS vectors=6 failures=0
++ printf 'RUN PASS: injected fault detected (256 failures), corrected RTL passed 1280/1280, selected waveform passed 6/6\n'
+RUN PASS: injected fault detected (256 failures), corrected RTL passed 1280/1280, selected waveform passed 6/6

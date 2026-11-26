@@ -1,0 +1,3 @@
+SUMMARY vectors=1280 failures=0
+PASS vectors=1280 failures=0
+alu4_tb.v:56: $finish called at 1280000 (1ps)
