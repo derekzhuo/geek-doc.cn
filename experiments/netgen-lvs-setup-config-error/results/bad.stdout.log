@@ -1,0 +1,47 @@
+Netgen 1.5.133 compiled on Thu Dec  1 22:32:11 UTC 2022
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file netlists/layout.spice
+Reading netlist file netlists/schematic.spice
+Reading setup file setup/bad.tcl
+Error setup/bad.tcl:3 (ignoring), No such cell!
+Warning:  There were errors reading the setup file
+Comparison output logged to file results/bad.out
+Logging to file "results/bad.out" enabled
+Contents of circuit 1:  Circuit: 'inverter'
+Circuit inverter contains 2 device instances.
+  Class: pmos                  instances:   1
+  Class: nmos                  instances:   1
+Circuit contains 4 nets.
+Contents of circuit 2:  Circuit: 'inverter'
+Circuit inverter contains 2 device instances.
+  Class: pmos                  instances:   1
+  Class: nmos                  instances:   1
+Circuit contains 4 nets.
+
+Circuit 1 contains 2 devices, Circuit 2 contains 2 devices.
+Circuit 1 contains 4 nets,    Circuit 2 contains 4 nets.
+
+Netlists match uniquely.
+There were property errors.
+pmosP vs. pmosP:
+ W circuit1: 2.2e-06   circuit2: 2e-06   (delta=9.52%, cutoff=1%)
+Contents of circuit 1:  Circuit: 'chip'
+Circuit chip contains 3 device instances.
+  Class: c                     instances:   1
+  Class: inverter              instances:   2
+Circuit contains 5 nets.
+Contents of circuit 2:  Circuit: 'chip'
+Circuit chip contains 3 device instances.
+  Class: c                     instances:   1
+  Class: inverter              instances:   2
+Circuit contains 5 nets.
+
+Circuit 1 contains 3 devices, Circuit 2 contains 3 devices.
+Circuit 1 contains 5 nets,    Circuit 2 contains 5 nets.
+
+Netlists match uniquely.
+Result: Circuits match uniquely.
+The following cells had property errors: inverter
+
+Logging to file "results/bad.out" disabled
+LVS Done.

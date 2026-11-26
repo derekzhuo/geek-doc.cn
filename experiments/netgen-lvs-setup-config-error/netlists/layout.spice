@@ -1,0 +1,11 @@
+* Layout-side teaching netlist; widths differ deliberately to test the ignore list.
+.subckt inverter in out vdd vss
+MP out in vdd vdd pmos W=2.2u L=1u
+MN out in vss vss nmos W=1.1u L=1u
+.ends inverter
+
+.subckt chip in out vdd vss
+XU1 in n1 vdd vss inverter
+XU2 n1 out vdd vss inverter
+CLOAD out vss 5p
+.ends chip

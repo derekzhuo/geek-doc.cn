@@ -1,0 +1,3 @@
+BAD: No such cell and Property errors were found (expected)
+GOOD: Netlists match uniquely; no setup or property errors
+PASS: correcting pmos_typo to pmos removes the original failure
