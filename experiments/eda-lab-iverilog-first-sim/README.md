@@ -22,4 +22,4 @@ docker run --rm --user $(id -u):$(id -g) -e HOME=/tmp \
 
 本机已装 iverilog 时也可直接 `make run`。
 
-配套文档：极客教程 geek-doc.cn「iverilog 仿真入门」篇（eda-lab/sim/）。
+配套文档：数字IC工场 geek-doc.cn「iverilog 仿真入门」篇（eda-lab/sim/）。

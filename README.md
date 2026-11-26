@@ -1,4 +1,4 @@
-# 极客工场实验仓
+# 数字IC工场实验仓
 
 面向**数字 IC、开源 EDA、FPGA、Linux 性能剖析与 AI 编程**的可复现实验集合。这里不只提供示例代码，也尽量保留运行方法、原始结果和对应中文教程，方便你从“看懂”走到“亲手验证”。
 
@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/badge/License-MIT-475569)](LICENSE)
 [![verify](https://github.com/derekzhuo/geek-doc.cn/actions/workflows/verify.yml/badge.svg)](https://github.com/derekzhuo/geek-doc.cn/actions/workflows/verify.yml)
 
-![极客工场实验仓：读文章的时候，也可以动手试一试](assets/social-preview.svg)
+![数字IC工场实验仓：读文章的时候，也可以动手试一试](assets/social-preview.svg)
 
 [快速开始](#快速开始) · [实验方向](#实验方向) · [仓库结构](#仓库结构) · [贡献指南](CONTRIBUTING.md) · [问题反馈](https://github.com/derekzhuo/geek-doc.cn/issues)
 
@@ -116,7 +116,7 @@ node scripts/check-experiment-docs.mjs
 
 ## 文档、提问与贡献
 
-- 完整原理和系列教程：[极客工场文档站](https://geek-doc.cn)
+- 完整原理和系列教程：[数字IC工场文档站](https://geek-doc.cn)
 - 按主题查找实验：[实验索引](experiments/README.md)
 - 新增或改进实验：[贡献指南](CONTRIBUTING.md)
 - 安全问题：[安全说明](SECURITY.md)

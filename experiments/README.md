@@ -1,6 +1,6 @@
 # 实验索引
 
-> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **446 个实验目录**。
+> 本文件由 `node scripts/gen-experiment-index.mjs` 生成，请勿手工编辑。当前共 **463 个实验目录**。
 
 每个实验都有独立目录和 README。教程链接指向中文讲解；“实验材料”列出目录内可见的日志、数据、图或波形，具体复现方式以各实验 README 为准。
 
@@ -10,13 +10,13 @@
 |---|---:|
 | 开源 EDA 入门 | 12 |
 | 可运行模板 | 21 |
-| 排错案例 | 145 |
+| 排错案例 | 152 |
 | 数字设计实验 | 18 |
 | 芯片参考与器件实验 | 30 |
 | 性能剖析 | 3 |
 | 验证方法学 | 4 |
-| 综合实验 | 126 |
-| EDA 流程实操 | 57 |
+| 综合实验 | 130 |
+| EDA 流程实操 | 63 |
 | OpenSTA / 时序分析 | 5 |
 | Vivado / XSim / XDC | 25 |
 
@@ -87,11 +87,17 @@
 | 排错案例 | [ts-iverilog-unknown-module-type：iverilog "Unknown module type" 复现实验](./ts-iverilog-unknown-module-type/) | [教程](https://geek-doc.cn/eda/ts-iverilog-unknown-module-type.html) | 见 README |
 | 排错案例 | [Icarus Verilog unknown system function 最小复现](./ts-iverilog-unknown-system-function/) | [教程](https://geek-doc.cn/eda/ts-iverilog-unknown-system-function.html) | 日志/数据 |
 | 排错案例 | [Icarus Verilog vvp 日志与波形选项实验](./ts-iverilog-vvp-log-and-trace/) | [教程](https://geek-doc.cn/eda/ts-iverilog-vvp-log-and-trace.html) | 见 README |
+| 排错案例 | [Magic 找不到 tech 文件：minimum 静默回退与零 DRC 规则](./ts-magic-drc-tech-file-missing/) | [教程](https://geek-doc.cn/eda/ts-magic-drc-tech-file-missing.html) | 见 README |
 | 排错案例 | [nextpnr-ice40 顶层端口未在 PCF 约束](./ts-nextpnr-unconstrained-top-port/) | [教程](https://geek-doc.cn/eda/ts-nextpnr-unconstrained-top-port.html) | 见 README |
 | 排错案例 | [ngspice 瞬态仿真不收敛（Transient op failed, timestep too small）](./ts-ngspice-convergence-timestep-fail/) | [教程](https://geek-doc.cn/eda/ts-ngspice-convergence-timestep-fail.html) | 见 README |
 | 排错案例 | [ngspice model 卡缺失（could not find a valid modelname）](./ts-ngspice-model-card-missing/) | [教程](https://geek-doc.cn/eda/ts-ngspice-model-card-missing.html) | 见 README |
 | 排错案例 | [ngspice 找不到 subcircuit 定义（unknown subckt）](./ts-ngspice-subckt-not-found/) | [教程](https://geek-doc.cn/eda/ts-ngspice-subckt-not-found.html) | 见 README |
 | 排错案例 | [ngspice measure 引用不存在的向量（no such vector）](./ts-ngspice-vector-undefined-plot/) | [教程](https://geek-doc.cn/eda/ts-ngspice-vector-undefined-plot.html) | 见 README |
+| 排错案例 | [OpenROAD clock_tree_synthesis 找不到 clock buffer：RSZ-0110 / CTS-0126 / CTS-0107](./ts-openroad-cts-buffer-cell-missing/) | [教程](https://geek-doc.cn/eda/ts-openroad-cts-buffer-cell-missing.html) | 见 README |
+| 排错案例 | [OpenROAD detailed_route：残留 DRC、迭代预算与布线层排查](./ts-openroad-detailed-route-overflow/) | [教程](https://geek-doc.cn/eda/ts-openroad-detailed-route-overflow.html) | 见 README |
+| 排错案例 | [OpenROAD initialize_floorplan 报 IFP-0002（core 面积放不下实例）](./ts-openroad-floorplan-init-fail/) | [教程](https://geek-doc.cn/eda/ts-openroad-floorplan-init-fail.html) | 见 README |
+| 排错案例 | [OpenROAD read_lef 报 undefined layer（LEF 加载顺序颠倒）](./ts-openroad-lef-layer-not-found/) | [教程](https://geek-doc.cn/eda/ts-openroad-lef-layer-not-found.html) | 见 README |
+| 排错案例 | [OpenROAD read_liberty 多 corner 加载：未定义场景、重复库与映射接反](./ts-openroad-liberty-corner-load-fail/) | [教程](https://geek-doc.cn/eda/ts-openroad-liberty-corner-load-fail.html) | 见 README |
 | 排错案例 | [ts-opensta-clock-uncertainty](./ts-opensta-clock-uncertainty/) | [教程](https://geek-doc.cn/eda/ts-opensta-clock-uncertainty.html) | 见 README |
 | 排错案例 | [ts-opensta-false-path-no-match](./ts-opensta-false-path-no-match/) | [教程](https://geek-doc.cn/eda/ts-opensta-false-path-no-match.html) | 日志/数据 |
 | 排错案例 | [OpenSTA create_generated_clock 源引脚找不到（object does not exist）](./ts-opensta-generated-clock-source-missing/) | [教程](https://geek-doc.cn/eda/ts-opensta-generated-clock-source-missing.html) | 见 README |
@@ -100,6 +106,7 @@
 | 排错案例 | [OpenSTA link 找不到 cell 最小复现](./ts-opensta-link-missing-cell/) | [教程](https://geek-doc.cn/eda/ts-opensta-link-missing-cell.html) | 见 README |
 | 排错案例 | [OpenSTA 最大扇出违规：最小复现与诊断对照](./ts-opensta-max-fanout-violation/) | [教程](https://geek-doc.cn/eda/ts-opensta-max-fanout-violation.html) | 日志/数据 |
 | 排错案例 | [OpenSTA 最小脉宽违规：波形对照实验](./ts-opensta-min-pulse-width/) | [教程](https://geek-doc.cn/eda/ts-opensta-min-pulse-width.html) | 日志/数据 |
+| 排错案例 | [OpenSTA 多 corner 漏读 Liberty：STA-1112 在 link_design 阶段失败](./ts-opensta-multicorner-lib-missing/) | [教程](https://geek-doc.cn/eda/ts-opensta-multicorner-lib-missing.html) | 见 README |
 | 排错案例 | [ts-opensta-no-clock-startpoint](./ts-opensta-no-clock-startpoint/) | [教程](https://geek-doc.cn/eda/ts-opensta-no-clock-startpoint.html) | 见 README |
 | 排错案例 | [OpenSTA no clocks found：缺失与错名对照实验](./ts-opensta-no-clocks-found/) | [教程](https://geek-doc.cn/eda/ts-opensta-no-clocks-found.html) | 日志/数据 |
 | 排错案例 | [ts-opensta-report-unconstrained](./ts-opensta-report-unconstrained/) | [教程](https://geek-doc.cn/eda/ts-opensta-report-unconstrained.html) | 见 README |
@@ -331,7 +338,9 @@
 | 综合实验 | [qcow2 镜像打不开的三类故障复现](./qcow2-image-open-errors/) | [教程](https://geek-doc.cn/soc-qemu/qcow2-image-open-errors.html) | 见 README |
 | 综合实验 | [qemu-command-line-annotated：一条完整 QEMU 启动命令的逐参数实验](./qemu-command-line-annotated/) | [教程](https://geek-doc.cn/soc-qemu/qemu-command-line-annotated.html) | 见 README |
 | 综合实验 | [qemu-direct-kernel-initramfs：跳过引导加载器直接引导 RISC-V 内核](./qemu-direct-kernel-initramfs/) | [教程](https://geek-doc.cn/soc-qemu/qemu-direct-kernel-initramfs.html) | 日志/数据 |
+| 综合实验 | [qemu-firmware-single-step：从复位到 U-Boot 的地址级调试](./qemu-firmware-single-step/) | [教程](https://geek-doc.cn/soc-qemu/qemu-firmware-single-step.html) | 见 README |
 | 综合实验 | [qemu-gdb-multiarch-setup：跨架构 gdb 环境与 QEMU gdbstub 连接实验](./qemu-gdb-multiarch-setup/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdb-multiarch-setup.html) | 见 README |
+| 综合实验 | [qemu-gdb-trap-entry：受控观察 RISC-V ecall 与 mret](./qemu-gdb-trap-entry/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdb-trap-entry.html) | 见 README |
 | 综合实验 | [qemu-gdbstub-basics：QEMU gdbstub 握手与第一个断点实验](./qemu-gdbstub-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-how-it-works.html) | 见 README |
 | 综合实验 | [qemu-gdbstub-connect-errors](./qemu-gdbstub-connect-errors/) | [教程](https://geek-doc.cn/soc-qemu/qemu-gdbstub-connect-errors.html) | 日志/数据 |
 | 综合实验 | [qemu-install-linux-distro：两大包管理体系下装齐 QEMU](./qemu-install-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-linux-distro.html) | 日志/数据 |
@@ -339,7 +348,7 @@
 | 综合实验 | [qemu-monitor-basics：QEMU monitor 运行时观测与快照实验](./qemu-monitor-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-monitor-basics.html) | 见 README |
 | 综合实验 | [qemu-no-serial-output](./qemu-no-serial-output/) | [教程](https://geek-doc.cn/soc-qemu/qemu-no-serial-output.html) | 日志/数据 |
 | 综合实验 | [qemu-port-forwarding-hostfwd：SLIRP hostfwd 端口转发实验](./qemu-port-forwarding-hostfwd/) | [教程](https://geek-doc.cn/soc-qemu/qemu-port-forwarding-hostfwd.html) | 见 README |
-| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理四组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | 见 README |
+| 综合实验 | [qemu-qcow2-basics：qcow2 镜像管理五组真机实验](./qemu-qcow2-basics/) | [教程](https://geek-doc.cn/soc-qemu/qemu-img-create-info-convert.html) | 见 README |
 | 综合实验 | [qemu-riscv-linux-distro：QEMU 启动完整 RISC-V Linux 发行版](./qemu-riscv-linux-distro/) | [教程](https://geek-doc.cn/soc-qemu/qemu-riscv-linux-distro.html) | 日志/数据 |
 | 综合实验 | [qemu-riscv-virt-first-boot：零工具链跑通第一个 RISC-V 虚拟平台](./qemu-riscv-virt-first-boot/) | [教程](https://geek-doc.cn/soc-qemu/qemu-install-first-riscv-virt.html) | 见 README |
 | 综合实验 | [qemu-serial-console-wiring：三种串口控制台接线对照实验](./qemu-serial-console-wiring/) | [教程](https://geek-doc.cn/soc-qemu/qemu-serial-console-wiring.html) | 见 README |
@@ -350,6 +359,8 @@
 | 综合实验 | [Quartus Lite 25.1 首个工程实战（led_blink）](./quartus-lite-first-project/) | [教程](https://geek-doc.cn/fpga/beginner/quartus-lite-first-project.html) | 日志/数据 + 图/波形 |
 | 综合实验 | [quartus-multicycle-path](./quartus-multicycle-path/) | [教程](https://geek-doc.cn/fpga/intermediate/quartus-multicycle-path.html) | 日志/数据 |
 | 综合实验 | [quartus-timequest-first-timing](./quartus-timequest-first-timing/) | [教程](https://geek-doc.cn/fpga/beginner/quartus-timequest-first-timing.html) | 日志/数据 |
+| 综合实验 | [CMOS 反相器 VTC 与 Wp/Wn 扫描](./seed-inverter-vtc-sizing/) | [教程](https://geek-doc.cn/chip-design/beginner/seed-inverter-vtc-sizing.html) | 日志/数据 |
+| 综合实验 | [Python 真值表表达式验证](./seed-python-truth-table-check/) | [教程](https://geek-doc.cn/chip-design/beginner/seed-python-truth-table-check.html) | 见 README |
 | 综合实验 | [sv-constraint-random-vs-cocotb](./sv-constraint-random-vs-cocotb/) | [教程](https://geek-doc.cn/chip-design/verification/sv-constraint-random-vs-cocotb.html) | output/ |
 | 综合实验 | [verilator-lintoff-pragma：lint_off pragma 最小豁免实验](./verilator-lintoff-pragma/) | [教程](https://geek-doc.cn/eda/ts-verilator-lintoff-pragma.html) | 日志/数据 |
 | 综合实验 | [verilator-warn-assigndly](./verilator-warn-assigndly/) | [教程](https://geek-doc.cn/eda/ts-verilator-warn-assigndly.html) | 见 README |
@@ -391,6 +402,7 @@
 | EDA 流程实操 | [flow-git-rtl-versioning](./flow-git-rtl-versioning/) | [教程](https://geek-doc.cn/eda/flow-git-rtl-versioning.html) | 见 README |
 | EDA 流程实操 | [flow-gtkwave-scripting](./flow-gtkwave-scripting/) | [教程](https://geek-doc.cn/eda/flow-gtkwave-scripting.html) | 见 README |
 | EDA 流程实操 | [flow-gtkwave-vcd-analysis](./flow-gtkwave-vcd-analysis/) | [教程](https://geek-doc.cn/eda/flow-gtkwave-vcd-analysis.html) | 日志/数据 |
+| EDA 流程实操 | [iCE40 Makefile 可复现流程实验](./flow-ice40-makefile-reproducible-chain/) | [教程](https://geek-doc.cn/chip-design/beginner/flow-ice40-makefile-reproducible-chain.html) | 日志/数据 |
 | EDA 流程实操 | [iverilog 编译选项实战实验](./flow-iverilog-compile-flags/) | [教程](https://geek-doc.cn/eda/flow-iverilog-compile-flags.html) | 见 README |
 | EDA 流程实操 | [flow-iverilog-first-simulation：iverilog 第一次仿真最小完整流程](./flow-iverilog-first-simulation/) | [教程](https://geek-doc.cn/chip-design/beginner/flow-iverilog-first-simulation.html) | 见 README |
 | EDA 流程实操 | [iverilog -g2012 SystemVerilog 子集支持矩阵探针](./flow-iverilog-g2012-sv/) | [教程](https://geek-doc.cn/eda/flow-iverilog-g2012-sv.html) | 见 README |
@@ -398,10 +410,15 @@
 | EDA 流程实操 | [flow-iverilog-regression-script](./flow-iverilog-regression-script/) | [教程](https://geek-doc.cn/eda/flow-iverilog-regression-script.html) | 见 README |
 | EDA 流程实操 | [flow-iverilog-sdf-post-sim](./flow-iverilog-sdf-post-sim/) | [教程](https://geek-doc.cn/eda/flow-iverilog-sdf-post-sim.html) | 见 README |
 | EDA 流程实操 | [flow-iverilog-vcd-to-gtkwave](./flow-iverilog-vcd-to-gtkwave/) | [教程](https://geek-doc.cn/eda/flow-iverilog-vcd-to-gtkwave.html) | 见 README |
+| EDA 流程实操 | [Magic 版图参数提取到 SPICE：nMOS 最小单元](./flow-magic-parasitic-extraction/) | [教程](https://geek-doc.cn/eda/flow-magic-parasitic-extraction.html) | 见 README |
 | EDA 流程实操 | [flow-make-hardware-project](./flow-make-hardware-project/) | [教程](https://geek-doc.cn/eda/flow-make-hardware-project.html) | 见 README |
 | EDA 流程实操 | [nextpnr-ice40 命令行参数与双器件族实验](./flow-nextpnr-ice40-cli-options/) | [教程](https://geek-doc.cn/eda/flow-nextpnr-ice40-cli-options.html) | 日志/数据 |
 | EDA 流程实操 | [nextpnr-iCE40 布局种子扫描实验](./flow-nextpnr-ice40-seed-sweep/) | [教程](https://geek-doc.cn/eda/flow-nextpnr-ice40-seed-sweep.html) | 日志/数据 |
+| EDA 流程实操 | [ngspice AC 小信号与三档电阻扫描](./flow-ngspice-ac-step-sweep/) | [教程](https://geek-doc.cn/eda/flow-ngspice-ac-step-sweep.html) | 日志/数据 |
+| EDA 流程实操 | [ngspice 第一次 DC 与瞬态仿真](./flow-ngspice-first-dc-tran/) | [教程](https://geek-doc.cn/eda/flow-ngspice-first-dc-tran.html) | 日志/数据 |
+| EDA 流程实操 | [flow-ngspice-monte-carlo-corner](./flow-ngspice-monte-carlo-corner/) | [教程](https://geek-doc.cn/eda/flow-ngspice-monte-carlo-corner.html) | 日志/数据 |
 | EDA 流程实操 | [flow-openroad-macro-placement](./flow-openroad-macro-placement/) | [教程](https://geek-doc.cn/eda/flow-openroad-macro-placement.html) | 见 README |
+| EDA 流程实操 | [OpenROAD ODB 数据库脚本化实验](./flow-openroad-odb-scripting/) | [教程](https://geek-doc.cn/eda/flow-openroad-odb-scripting.html) | 见 README |
 | EDA 流程实操 | [flow-opensta-clock-gating-check](./flow-opensta-clock-gating-check/) | [教程](https://geek-doc.cn/eda/flow-opensta-clock-gating-check.html) | 见 README |
 | EDA 流程实操 | [flow-opensta-false-multicycle-path](./flow-opensta-false-multicycle-path/) | [教程](https://geek-doc.cn/eda/flow-opensta-false-multicycle-path.html) | 日志/数据 |
 | EDA 流程实操 | [flow-opensta-first-sta](./flow-opensta-first-sta/) | [教程](https://geek-doc.cn/eda/flow-opensta-first-sta.html) | 见 README |
