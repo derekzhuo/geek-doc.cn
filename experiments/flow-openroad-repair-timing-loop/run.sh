@@ -5,7 +5,7 @@ OR_BIN="${OR_BIN:-openroad}"
 mkdir -p results
 
 echo "# command: bash run.sh"
-echo "# date: 2026-11-24"
+echo "# date: $(TZ=Asia/Shanghai date +%F)"
 "$OR_BIN" -version
 
 run_stage() {

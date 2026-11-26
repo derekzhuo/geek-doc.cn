@@ -1,5 +1,10 @@
++ set -euo pipefail
+++ dirname ./run.sh
++ cd .
++ mkdir -p .build results
++ set -x
 + date -u +DATE_UTC=%Y-%m-%dT%H:%M:%SZ
-DATE_UTC=2026-11-26T17:23:25Z
+DATE_UTC=2026-11-26T17:45:06Z
 + uname -srm
 Darwin 25.5.0 x86_64
 + sw_vers

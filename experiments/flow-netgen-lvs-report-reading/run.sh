@@ -11,8 +11,9 @@ netgen-lvs -batch lvs \
   "netlists/layout_property.spice chip" "netlists/schematic.spice chip" \
   setup.tcl results/property.out > results/property.stdout.log 2>&1
 
-grep -Fq "Netlists match uniquely." results/comp.out
-grep -Fq "Cell pin lists are equivalent." results/comp.out
+[[ $(grep -Fc "Netlists match uniquely." results/comp.out) -eq 2 ]]
+[[ $(grep -Fc "Cell pin lists are equivalent." results/comp.out) -eq 2 ]]
+grep -Fq "Device classes inverter and inverter are equivalent." results/comp.out
 grep -Fq "Device classes chip and chip are equivalent." results/comp.out
 if grep -Fq "Property errors" results/comp.out; then
   printf '%s\n' "FAIL: normal comparison unexpectedly contains property errors" >&2
