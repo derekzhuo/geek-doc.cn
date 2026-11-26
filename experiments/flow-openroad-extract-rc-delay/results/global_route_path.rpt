@@ -1,0 +1,32 @@
+Startpoint: d_in (input port clocked by vclk)
+Endpoint: z_out (output port clocked by vclk)
+Path Group: vclk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock vclk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  1.000000    1.000000 ^ input external delay
+     1    0.002900    0.000000    0.000000    1.000000 ^ d_in (in)
+     1    0.002098    0.017291    0.019498    1.019498 ^ u_buf0/Y (BUF_X1)
+     1    0.002182    0.018914    0.019751    1.039249 ^ u_buf1/Y (BUF_X1)
+     1    0.002182    0.019095    0.020115    1.059363 ^ u_buf2/Y (BUF_X1)
+     1    0.002252    0.019155    0.020161    1.079524 ^ u_buf3/Y (BUF_X1)
+     1    0.002098    0.019074    0.020268    1.099792 ^ u_buf4/Y (BUF_X1)
+     1    0.000880    0.018257    0.019379    1.119171 ^ u_buf5/Y (BUF_X1)
+                      0.018257    0.000395    1.119566 ^ z_out (out)
+                                              1.119566   data arrival time
+
+                      0.000000   20.000000   20.000000   clock vclk (rise edge)
+                                  0.000000   20.000000   clock network delay (ideal)
+                                  0.000000   20.000000   clock reconvergence pessimism
+                                 -1.000000   19.000000   output external delay
+                                             19.000000   data required time
+---------------------------------------------------------------------------------------------
+                                             19.000000   data required time
+                                             -1.119566   data arrival time
+---------------------------------------------------------------------------------------------
+                                             17.880434   slack (MET)
+
+

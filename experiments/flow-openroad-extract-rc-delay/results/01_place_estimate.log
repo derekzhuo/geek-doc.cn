@@ -1,0 +1,125 @@
+OpenROAD 26Q4-1108-g6f3f28cc85 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: fixtures/tech.lef, created 5 layers, 2 vias
+[WARNING ODB-0220] WARNING (LEFPARS-2039): A SITE statement is defined before ORIGIN statement.
+To avoid this warning in the future, define SITE after ORIGIN See file fixtures/stdcell.lef at line 10.
+
+[WARNING ODB-0220] WARNING (LEFPARS-2032): A SITE statement is defined before SYMMETRY statement.
+To avoid this warning in the future, define SITE after SYMMETRY See file fixtures/stdcell.lef at line 12.
+
+[WARNING ODB-0220] WARNING (LEFPARS-2039): A SITE statement is defined before ORIGIN statement.
+To avoid this warning in the future, define SITE after ORIGIN See file fixtures/stdcell.lef at line 49.
+
+[WARNING ODB-0220] WARNING (LEFPARS-2032): A SITE statement is defined before SYMMETRY statement.
+To avoid this warning in the future, define SITE after SYMMETRY See file fixtures/stdcell.lef at line 51.
+
+[INFO ODB-0227] LEF file: fixtures/stdcell.lef, created 2 library cells
+[INFO IFP-0001] Added 280 rows of 280 site unit.
+[INFO IFP-0100] Die BBox:  (  0.000  0.000 ) ( 300.000 300.000 ) um
+[INFO IFP-0101] Core BBox: ( 10.000 10.000 ) ( 290.000 290.000 ) um
+[INFO IFP-0102] Core area:                        78400.000 um^2
+[INFO IFP-0103] Total instances area:                 6.000 um^2
+[INFO IFP-0104] Effective utilization:                0.000
+[INFO IFP-0105] Number of instances:                      6
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 2128
+[INFO PPL-0002] Number of I/O             2
+[INFO PPL-0003] Number of I/O w/sink      2
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 300.56 um.
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  1.000  1.000 ) um
+[INFO GPL-0004] CoreBBox: ( 10.000 10.000 ) ( 290.000 290.000 ) um
+[INFO GPL-0016] Core area:                   78400.000 um^2
+[INFO GPL-0036] Movable instances area:          6.000 um^2
+[INFO GPL-0037] Total instances area:            6.000 um^2
+[INFO GPL-0035] Pin density area adjust:         0.000 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:                 6
+[INFO GPL-0007] Movable instances:                   6
+[INFO GPL-0008] Fixed instances:                     0
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                      7
+[INFO GPL-0011] Number of pins:                     14
+[INFO GPL-0012] Die BBox:       (  0.000  0.000 ) ( 300.000 300.000 ) um
+[INFO GPL-0013] Placement BBox: ( 10.000 10.000 ) ( 290.000 290.000 ) um
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                 78400.000 um^2
+[INFO GPL-0017] Fixed instances area:            0.000 um^2
+[INFO GPL-0018] Movable instances area:          6.000 um^2
+[INFO GPL-0019] Utilization:                     0.008 %
+[INFO GPL-0020] Standard cells area:             6.000 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 0	Core center = 6	Region center = 0
+[InitialPlace]  Iter: 1 conjugate gradient residual: 0.00000010 HPWL: 1820460
+[InitialPlace]  Iter: 2 conjugate gradient residual: 0.00000006 HPWL: 66057
+[InitialPlace]  Iter: 3 conjugate gradient residual: 0.00000006 HPWL: 66057
+[InitialPlace]  Iter: 4 conjugate gradient residual: 0.00000006 HPWL: 66057
+[InitialPlace]  Iter: 5 conjugate gradient residual: 0.00000006 HPWL: 66057
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[INFO GPL-0023] Placement target density:       0.4000
+[INFO GPL-0024] Movable insts average area:      1.000 um^2
+[INFO GPL-0025] Ideal bin area:                  2.500 um^2
+[INFO GPL-0026] Ideal bin count:                 31360
+[INFO GPL-0027] Total bin area:              78400.000 um^2
+[INFO GPL-0028] Bin count (X, Y):         128 ,    128
+[INFO GPL-0029] Bin size (W * H):       2.188 *  2.188 um
+[INFO GPL-0030] Number of bins:                  16384
+[INFO GPL-0084] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.0727 |  2.718300e+01 |   +0.00% |  3.99e-15 |      
+        0 |   0.0727 |  2.718300e+01 |          |  4.15e-15 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 0
+[INFO GPL-1002] Placed Cell Area                6.0000
+[INFO GPL-1003] Available Free Area         78400.0000
+[INFO GPL-1004] Minimum Feasible Density        0.0100 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.0001
+[INFO GPL-1008]     - For 80% usage of free space: 0.0001
+[INFO GPL-1009]     - For 50% usage of free space: 0.0002
+[INFO GPL-1014] Final placement area: 6.00 (+0.00%)
+[INFO GPL-1018] Final HPWL (um): 27.18
+[INFO DPL-0006] Core area: 78400.00 um^2
+[INFO DPL-0007] Movable instances area: 6.00 um^2
+[INFO DPL-0008] Fixed instances area within core: 0.00 um^2
+[INFO DPL-0009] Utilization: 0.0%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 6 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 0.
+[INFO DPL-0500] Runtime: 0.00s
+Detailed Placement Analysis
+---------------------------------
+legalizer            negotiation
+total moves                   6
+total displacement          7.1 u
+average displacement        1.2 u
+max displacement            2.4 u
+original HPWL              27.2 u
+legalized HPWL             36.7 u
+delta HPWL                   35 %
+
+SNAP stage=placement setup_wns=16.976154 setup_tns=0.000000
+ARRIVAL stage=placement                                               2.023846   data arrival time
+ARRIVAL stage=placement                                              -2.023846   data arrival time
+STAGE_01_PLACEMENT_OK

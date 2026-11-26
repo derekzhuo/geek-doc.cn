@@ -1,0 +1,30 @@
+OpenROAD 26Q4-1108-g6f3f28cc85 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: fixtures/tech.lef, created 5 layers, 2 vias
+[WARNING ODB-0220] WARNING (LEFPARS-2039): A SITE statement is defined before ORIGIN statement.
+To avoid this warning in the future, define SITE after ORIGIN See file fixtures/stdcell.lef at line 10.
+
+[WARNING ODB-0220] WARNING (LEFPARS-2032): A SITE statement is defined before SYMMETRY statement.
+To avoid this warning in the future, define SITE after SYMMETRY See file fixtures/stdcell.lef at line 12.
+
+[WARNING ODB-0220] WARNING (LEFPARS-2039): A SITE statement is defined before ORIGIN statement.
+To avoid this warning in the future, define SITE after ORIGIN See file fixtures/stdcell.lef at line 49.
+
+[WARNING ODB-0220] WARNING (LEFPARS-2032): A SITE statement is defined before SYMMETRY statement.
+To avoid this warning in the future, define SITE after SYMMETRY See file fixtures/stdcell.lef at line 51.
+
+[INFO ODB-0227] LEF file: fixtures/stdcell.lef, created 2 library cells
+[INFO ODB-0127] Reading DEF file: results/01_placed.def
+[INFO ODB-0128] Design: top
+[INFO ODB-0130]     Created 2 pins.
+[INFO ODB-0131]     Created 6 components and 24 component-terminals.
+[INFO ODB-0133]     Created 7 nets and 12 connections.
+[INFO ODB-0134] Finished DEF file: results/01_placed.def
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+SNAP stage=spef_readback setup_wns=17.885264 setup_tns=0.000000
+ARRIVAL stage=spef_readback                                               1.114736   data arrival time
+ARRIVAL stage=spef_readback                                              -1.114736   data arrival time
+STAGE_03_SPEF_READBACK_OK

@@ -1,0 +1,4 @@
+DELAY stage=placement arrival_ns=2.023846 cell_ns=0.240777 wire_ns=0.783069 wire_share_pct=76.4831 cell_arcs=6 wire_arcs=7
+DELAY stage=global_route arrival_ns=1.119566 cell_ns=0.115879 wire_ns=0.003687 wire_share_pct=3.0839 cell_arcs=6 wire_arcs=7
+DELAY stage=spef_readback arrival_ns=1.114736 cell_ns=0.114736 wire_ns=0.000000 wire_share_pct=0.0000 cell_arcs=6 wire_arcs=7
+VERIFY_RESULT PASS stages=3 spef_nets=7 cell_arcs=6 wire_arcs=7 annotation=complete
