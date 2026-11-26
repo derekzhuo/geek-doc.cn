@@ -1,0 +1,108 @@
+library(teaching) {
+  delay_model : table_lookup ;
+  time_unit : "1ns" ;
+  voltage_unit : "1V" ;
+  current_unit : "1mA" ;
+  leakage_power_unit : "1pW" ;
+  capacitive_load_unit(1, pf) ;
+  pulling_resistance_unit : "1kohm" ;
+
+  lu_table_template(delay_tmpl_3x3) {
+    variable_1 : input_net_transition ;
+    index_1 ("0.01, 0.1, 0.5") ;
+    variable_2 : total_output_net_capacitance ;
+    index_2 ("0.005, 0.05, 0.2") ;
+    delay_values ("0.020, 0.040, 0.090", \
+                  "0.030, 0.050, 0.100", \
+                  "0.080, 0.110, 0.180") ;
+    output_net_transition ("0.020, 0.050, 0.120", \
+                           "0.030, 0.060, 0.130", \
+                           "0.090, 0.130, 0.220") ;
+  }
+
+  cell(BUF_X1) {
+    area : 1 ;
+    is_buffer : true ;
+    pin(A) { direction : input ; capacitance : 0.002 ; }
+    pin(Y) {
+      direction : output ; function : "A" ;
+      max_capacitance : 0.15 ;
+      timing() {
+        related_pin : "A" ; timing_sense : positive_unate ;
+        cell_rise(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.020, 0.040, 0.090",
+                  "0.030, 0.050, 0.100",
+                  "0.080, 0.110, 0.180") ;
+        }
+        cell_fall(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.020, 0.040, 0.090",
+                  "0.030, 0.050, 0.100",
+                  "0.080, 0.110, 0.180") ;
+        }
+        rise_transition(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.020, 0.050, 0.120",
+                  "0.030, 0.060, 0.130",
+                  "0.090, 0.130, 0.220") ;
+        }
+        fall_transition(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.020, 0.050, 0.120",
+                  "0.030, 0.060, 0.130",
+                  "0.090, 0.130, 0.220") ;
+        }
+      }
+    }
+    pg_pin(VDD) { pg_type : primary_power ; }
+    pg_pin(VSS) { pg_type : primary_ground ; }
+  }
+
+  cell(BUF_X2) {
+    area : 2 ;
+    is_buffer : true ;
+    pin(A) { direction : input ; capacitance : 0.004 ; }
+    pin(Y) {
+      direction : output ; function : "A" ;
+      max_capacitance : 0.30 ;
+      timing() {
+        related_pin : "A" ; timing_sense : positive_unate ;
+        cell_rise(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.015, 0.025, 0.050",
+                  "0.020, 0.030, 0.060",
+                  "0.050, 0.070, 0.110") ;
+        }
+        cell_fall(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.015, 0.025, 0.050",
+                  "0.020, 0.030, 0.060",
+                  "0.050, 0.070, 0.110") ;
+        }
+        rise_transition(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.015, 0.035, 0.080",
+                  "0.020, 0.045, 0.090",
+                  "0.060, 0.090, 0.150") ;
+        }
+        fall_transition(delay_tmpl_3x3) {
+          index_1 ("0.01, 0.1, 0.5") ;
+          index_2 ("0.005, 0.05, 0.2") ;
+          values ("0.015, 0.035, 0.080",
+                  "0.020, 0.045, 0.090",
+                  "0.060, 0.090, 0.150") ;
+        }
+      }
+    }
+    pg_pin(VDD) { pg_type : primary_power ; }
+    pg_pin(VSS) { pg_type : primary_ground ; }
+  }
+}

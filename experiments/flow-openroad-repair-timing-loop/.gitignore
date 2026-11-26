@@ -1,0 +1,2 @@
+# OpenROAD 运行生成物（日志与各阶段 DEF），make run 可重新生成
+results/
