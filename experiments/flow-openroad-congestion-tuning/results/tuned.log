@@ -213,7 +213,7 @@ Number of nets:           64
 #macroValidViaAp       = 0
 #macroNoAp             = 0
 [INFO DRT-0166] Complete pin access.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.18 (MB), peak = 167.18 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.70 (MB), peak = 166.70 (MB)
 
 [INFO DRT-0157] Number of guides:     213
 
@@ -243,15 +243,15 @@ Number of nets:           64
 [INFO DRT-0036] via2cut guide region query size = 0.
 [INFO DRT-0036] metal3 guide region query size = 25.
 [INFO DRT-0179] Init gr pin query.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.30 (MB), peak = 167.30 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.82 (MB), peak = 166.82 (MB)
 [INFO DRT-0245] skipped writing guide updates to database.
 [INFO DRT-0181] Start track assignment.
 [INFO DRT-0184] Done with 67 vertical wires in 1 frboxes and 92 horizontal wires in 1 frboxes.
 [INFO DRT-0186] Done with 15 vertical wires in 1 frboxes and 4 horizontal wires in 1 frboxes.
 [INFO DRT-0182] Complete track assignment.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.43 (MB), peak = 167.43 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.95 (MB), peak = 166.95 (MB)
 [INFO DRT-0187] Start routing data preparation.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.43 (MB), peak = 167.43 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.95 (MB), peak = 166.95 (MB)
 [INFO DRT-0194] Start detail routing.
 [INFO DRT-0195] Start 0th optimization iteration.
 Warning: marker bloat 4x width but could not find two grids to add marker cost
@@ -425,12 +425,12 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[4] 
     bbox = ( 12.27, 4.445 ) - ( 12.3, 4.515 ) on Layer metal1
     Completing 100% with 145 violations.
-    elapsed time = 00:00:00, memory = 169.68 (MB).
+    elapsed time = 00:00:00, memory = 169.21 (MB).
 [INFO DRT-0199]   Number of violations = 145.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing       69     52      8
 Short                9      6      1
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 177.49 (MB), peak = 328.39 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 178.79 (MB), peak = 329.75 (MB)
 Total wire length = 589 um.
 Total wire length on LAYER metal1 = 87 um.
 Total wire length on LAYER metal2 = 374 um.
@@ -608,12 +608,12 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[4] 
     bbox = ( 12.27, 4.445 ) - ( 12.3, 4.515 ) on Layer metal1
     Completing 100% with 116 violations.
-    elapsed time = 00:00:00, memory = 177.49 (MB).
+    elapsed time = 00:00:00, memory = 178.79 (MB).
 [INFO DRT-0199]   Number of violations = 116.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing       49     39     11
 Short                6      9      2
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 333.96 (MB), peak = 333.96 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 327.93 (MB), peak = 329.75 (MB)
 Total wire length = 599 um.
 Total wire length on LAYER metal1 = 93 um.
 Total wire length on LAYER metal2 = 373 um.
@@ -671,18 +671,18 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[6] 
     bbox = ( 5.27, 3.605 ) - ( 5.3, 3.675 ) on Layer metal1
     Completing 20% with 116 violations.
-    elapsed time = 00:00:00, memory = 333.96 (MB).
+    elapsed time = 00:00:00, memory = 327.93 (MB).
     Completing 50% with 135 violations.
-    elapsed time = 00:00:00, memory = 333.96 (MB).
+    elapsed time = 00:00:00, memory = 327.93 (MB).
     Completing 70% with 163 violations.
-    elapsed time = 00:00:00, memory = 333.96 (MB).
+    elapsed time = 00:00:00, memory = 328.05 (MB).
     Completing 100% with 153 violations.
-    elapsed time = 00:00:00, memory = 333.96 (MB).
+    elapsed time = 00:00:00, memory = 328.18 (MB).
 [INFO DRT-0199]   Number of violations = 153.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing       45     46     29
 Short                9     24      0
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 339.96 (MB), peak = 339.96 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 338.43 (MB), peak = 338.43 (MB)
 Total wire length = 606 um.
 Total wire length on LAYER metal1 = 90 um.
 Total wire length on LAYER metal2 = 373 um.
@@ -733,11 +733,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[6] 
     bbox = ( 5.27, 3.605 ) - ( 5.3, 3.675 ) on Layer metal1
     Completing 100% with 24 violations.
-    elapsed time = 00:00:00, memory = 340.09 (MB).
+    elapsed time = 00:00:00, memory = 338.43 (MB).
 [INFO DRT-0199]   Number of violations = 24.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        5      9     10
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 340.09 (MB), peak = 340.09 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 339.43 (MB), peak = 339.43 (MB)
 Total wire length = 587 um.
 Total wire length on LAYER metal1 = 71 um.
 Total wire length on LAYER metal2 = 374 um.
@@ -755,15 +755,15 @@ Up-via summary (total 279):
 
 [INFO DRT-0195] Start 4th guides tiles iteration.
     Completing 30% with 24 violations.
-    elapsed time = 00:00:00, memory = 340.09 (MB).
+    elapsed time = 00:00:00, memory = 339.43 (MB).
     Completing 60% with 24 violations.
-    elapsed time = 00:00:00, memory = 340.09 (MB).
+    elapsed time = 00:00:00, memory = 339.43 (MB).
     Completing 100% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.09 (MB).
+    elapsed time = 00:00:00, memory = 339.43 (MB).
 [INFO DRT-0199]   Number of violations = 7.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1      5      1
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 340.09 (MB), peak = 340.09 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 339.43 (MB), peak = 339.43 (MB)
 Total wire length = 589 um.
 Total wire length on LAYER metal1 = 67 um.
 Total wire length on LAYER metal2 = 374 um.
@@ -781,13 +781,13 @@ Up-via summary (total 275):
 
 [INFO DRT-0195] Start 5th guides tiles iteration.
     Completing 50% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.21 (MB).
+    elapsed time = 00:00:00, memory = 339.43 (MB).
     Completing 100% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.21 (MB).
+    elapsed time = 00:00:00, memory = 339.43 (MB).
 [INFO DRT-0199]   Number of violations = 7.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1      5      1
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 340.21 (MB), peak = 340.21 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 339.43 (MB), peak = 339.43 (MB)
 Total wire length = 589 um.
 Total wire length on LAYER metal1 = 67 um.
 Total wire length on LAYER metal2 = 374 um.
@@ -804,43 +804,8 @@ Up-via summary (total 275):
 
 
 [INFO DRT-0195] Start 6th stubborn tiles iteration.
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
     Completing 10% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
-    Completing 20% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
+    elapsed time = 00:00:00, memory = 339.43 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[27] 
     bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
@@ -874,6 +839,31 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
 out[9] 
     bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+    Completing 20% with 7 violations.
+    elapsed time = 00:00:00, memory = 339.43 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[27] 
     bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
@@ -885,42 +875,19 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[9] 
     bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
     Completing 30% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+    elapsed time = 00:00:00, memory = 339.43 (MB).
     Completing 40% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
+    elapsed time = 00:00:00, memory = 339.55 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[27] 
     bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
@@ -945,87 +912,120 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[9] 
     bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
     Completing 50% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
+    elapsed time = 00:00:00, memory = 340.18 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
     Completing 60% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
+    elapsed time = 00:00:00, memory = 340.30 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[27] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+out[9] 
+    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
     Completing 70% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+    elapsed time = 00:00:00, memory = 340.30 (MB).
     Completing 80% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.71 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.61 ) - ( 10.73, 9.695 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[27] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
-out[9] 
-    bbox = ( 10.675, 9.625 ) - ( 10.73, 9.695 ) on Layer metal2
+    elapsed time = 00:00:00, memory = 340.30 (MB).
     Completing 90% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
+    elapsed time = 00:00:00, memory = 340.30 (MB).
     Completing 100% with 7 violations.
-    elapsed time = 00:00:00, memory = 340.34 (MB).
+    elapsed time = 00:00:00, memory = 340.18 (MB).
 [INFO DRT-0199]   Number of violations = 7.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1      5      1
-[INFO DRT-0267] cpu time = 00:00:03, elapsed time = 00:00:00, memory = 355.34 (MB), peak = 355.34 (MB)
+[INFO DRT-0267] cpu time = 00:00:03, elapsed time = 00:00:01, memory = 355.18 (MB), peak = 355.18 (MB)
 Total wire length = 587 um.
 Total wire length on LAYER metal1 = 67 um.
 Total wire length on LAYER metal2 = 374 um.
@@ -1046,7 +1046,7 @@ Up-via summary (total 275):
 [INFO DRT-0200] Skipping iteration 9
 [INFO DRT-0195] Start 10th guides tiles iteration.
     Completing 50% with 7 violations.
-    elapsed time = 00:00:00, memory = 355.34 (MB).
+    elapsed time = 00:00:00, memory = 355.18 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[24] 
     bbox = ( 10.045, 8.435 ) - ( 10.115, 8.49 ) on Layer metal2
@@ -1078,11 +1078,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[27] 
     bbox = ( 10.045, 8.435 ) - ( 10.13, 8.49 ) on Layer metal2
     Completing 100% with 7 violations.
-    elapsed time = 00:00:00, memory = 355.34 (MB).
+    elapsed time = 00:00:00, memory = 355.18 (MB).
 [INFO DRT-0199]   Number of violations = 7.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1      5      1
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 360.34 (MB), peak = 360.34 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 359.18 (MB), peak = 359.18 (MB)
 Total wire length = 587 um.
 Total wire length on LAYER metal1 = 67 um.
 Total wire length on LAYER metal2 = 374 um.
@@ -1114,8 +1114,8 @@ Up-via summary (total 275):
                275
 
 
-[INFO DRT-0267] cpu time = 00:00:06, elapsed time = 00:00:04, memory = 360.34 (MB), peak = 360.34 (MB)
+[INFO DRT-0267] cpu time = 00:00:07, elapsed time = 00:00:04, memory = 359.18 (MB), peak = 359.18 (MB)
 
 [INFO DRT-0180] Post processing.
-[INFO DRT-0501] Runtime: 4.05s
+[INFO DRT-0501] Runtime: 4.85s
 ROUTE_COMPLETE tag=tuned

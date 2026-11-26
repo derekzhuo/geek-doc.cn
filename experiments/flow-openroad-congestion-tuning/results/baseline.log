@@ -96,7 +96,7 @@ Iteration | Violations |    Cells |    Sites
 ---------------------------------------------
         0 |          0 |         0 |         0
 Negotiation phase 1 converged at iteration 0.
-[INFO DPL-0500] Runtime: 0.01s
+[INFO DPL-0500] Runtime: 0.00s
 Detailed Placement Analysis
 ---------------------------------
 legalizer            negotiation
@@ -220,7 +220,7 @@ Number of nets:           64
 #macroValidViaAp       = 0
 #macroNoAp             = 0
 [INFO DRT-0166] Complete pin access.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.25 (MB), peak = 167.25 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.22 (MB), peak = 166.22 (MB)
 
 [INFO DRT-0157] Number of guides:     291
 
@@ -250,15 +250,15 @@ Number of nets:           64
 [INFO DRT-0036] via2cut guide region query size = 0.
 [INFO DRT-0036] metal3 guide region query size = 29.
 [INFO DRT-0179] Init gr pin query.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.38 (MB), peak = 167.38 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.34 (MB), peak = 166.34 (MB)
 [INFO DRT-0245] skipped writing guide updates to database.
 [INFO DRT-0181] Start track assignment.
 [INFO DRT-0184] Done with 75 vertical wires in 1 frboxes and 100 horizontal wires in 1 frboxes.
 [INFO DRT-0186] Done with 16 vertical wires in 1 frboxes and 8 horizontal wires in 1 frboxes.
 [INFO DRT-0182] Complete track assignment.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.50 (MB), peak = 167.50 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.34 (MB), peak = 166.34 (MB)
 [INFO DRT-0187] Start routing data preparation.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 167.50 (MB), peak = 167.50 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 166.34 (MB), peak = 166.34 (MB)
 [INFO DRT-0194] Start detail routing.
 [INFO DRT-0195] Start 0th optimization iteration.
 Warning: marker bloat 4x width but could not find two grids to add marker cost
@@ -462,12 +462,12 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[21] 
     bbox = ( 12.27, 8.365 ) - ( 12.3, 8.435 ) on Layer metal1
     Completing 100% with 114 violations.
-    elapsed time = 00:00:00, memory = 169.79 (MB).
+    elapsed time = 00:00:00, memory = 168.61 (MB).
 [INFO DRT-0199]   Number of violations = 114.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing       46     48     10
 Short                6      2      2
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 178.67 (MB), peak = 327.67 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 178.47 (MB), peak = 328.44 (MB)
 Total wire length = 605 um.
 Total wire length on LAYER metal1 = 91 um.
 Total wire length on LAYER metal2 = 375 um.
@@ -575,12 +575,12 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[26] 
     bbox = ( 5.83, 7.75 ) - ( 5.93, 7.805 ) on Layer metal1
     Completing 100% with 121 violations.
-    elapsed time = 00:00:00, memory = 178.67 (MB).
+    elapsed time = 00:00:00, memory = 178.47 (MB).
 [INFO DRT-0199]   Number of violations = 121.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing       42     56     10
 Short                6      7      0
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 327.77 (MB), peak = 327.77 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 333.83 (MB), peak = 333.83 (MB)
 Total wire length = 601 um.
 Total wire length on LAYER metal1 = 91 um.
 Total wire length on LAYER metal2 = 377 um.
@@ -610,9 +610,9 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[21] 
     bbox = ( 8.35, 7.315 ) - ( 8.45, 7.37 ) on Layer metal3
     Completing 20% with 121 violations.
-    elapsed time = 00:00:00, memory = 327.77 (MB).
+    elapsed time = 00:00:00, memory = 333.83 (MB).
     Completing 50% with 202 violations.
-    elapsed time = 00:00:00, memory = 327.77 (MB).
+    elapsed time = 00:00:00, memory = 333.83 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[26] 
     bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
@@ -744,7 +744,7 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
     Completing 70% with 200 violations.
-    elapsed time = 00:00:00, memory = 327.77 (MB).
+    elapsed time = 00:00:00, memory = 333.83 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[11] 
     bbox = ( 8.7, 8.63 ) - ( 8.73, 8.7 ) on Layer metal1
@@ -806,12 +806,12 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.505 ) - ( 8.73, 8.575 ) on Layer metal1
     Completing 100% with 252 violations.
-    elapsed time = 00:00:00, memory = 327.77 (MB).
+    elapsed time = 00:00:00, memory = 333.83 (MB).
 [INFO DRT-0199]   Number of violations = 252.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing       52    108     21
 Short               27     30     14
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 338.27 (MB), peak = 338.27 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 337.83 (MB), peak = 337.83 (MB)
 Total wire length = 616 um.
 Total wire length on LAYER metal1 = 100 um.
 Total wire length on LAYER metal2 = 373 um.
@@ -1142,12 +1142,12 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[29] 
     bbox = ( 6.39, 7.315 ) - ( 6.475, 7.37 ) on Layer metal3
     Completing 100% with 50 violations.
-    elapsed time = 00:00:00, memory = 338.27 (MB).
+    elapsed time = 00:00:00, memory = 337.83 (MB).
 [INFO DRT-0199]   Number of violations = 50.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        6     31     12
 Short                0      1      0
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 339.27 (MB), peak = 339.27 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 338.95 (MB), peak = 338.95 (MB)
 Total wire length = 602 um.
 Total wire length on LAYER metal1 = 47 um.
 Total wire length on LAYER metal2 = 375 um.
@@ -1245,7 +1245,7 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[23] 
     bbox = ( 12.83, 7.75 ) - ( 12.9, 7.805 ) on Layer metal1
     Completing 50% with 50 violations.
-    elapsed time = 00:00:00, memory = 339.27 (MB).
+    elapsed time = 00:00:00, memory = 338.95 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[15] 
     bbox = ( 6.405, 7.315 ) - ( 6.475, 7.37 ) on Layer metal3
@@ -1287,11 +1287,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[25] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
     Completing 100% with 36 violations.
-    elapsed time = 00:00:00, memory = 339.27 (MB).
+    elapsed time = 00:00:00, memory = 338.95 (MB).
 [INFO DRT-0199]   Number of violations = 36.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1     24     11
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:01, memory = 339.27 (MB), peak = 339.27 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 338.95 (MB), peak = 338.95 (MB)
 Total wire length = 604 um.
 Total wire length on LAYER metal1 = 47 um.
 Total wire length on LAYER metal2 = 378 um.
@@ -1577,7 +1577,7 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[2] 
     bbox = ( 8.715, 8.085 ) - ( 8.77, 8.155 ) on Layer metal3
     Completing 50% with 36 violations.
-    elapsed time = 00:00:00, memory = 339.27 (MB).
+    elapsed time = 00:00:00, memory = 338.95 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
@@ -1749,11 +1749,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[2] 
     bbox = ( 8.7, 7.665 ) - ( 8.73, 7.7 ) on Layer metal1
     Completing 100% with 36 violations.
-    elapsed time = 00:00:01, memory = 339.27 (MB).
+    elapsed time = 00:00:01, memory = 338.95 (MB).
 [INFO DRT-0199]   Number of violations = 36.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1     24     11
-[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:01, memory = 339.27 (MB), peak = 339.27 (MB)
+[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:01, memory = 338.95 (MB), peak = 338.95 (MB)
 Total wire length = 604 um.
 Total wire length on LAYER metal1 = 47 um.
 Total wire length on LAYER metal2 = 378 um.
@@ -1776,21 +1776,46 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[30] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[21] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+  marker -- src: in[23] 
+    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
+out[25] 
+    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[30] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[21] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[23] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
 out[25] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[30] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+out[21] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[30] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+out[21] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[30] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 out[21] 
@@ -1816,36 +1841,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
     bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
 out[30] 
@@ -1866,15 +1861,15 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+  marker -- src: in[30] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+out[21] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+  marker -- src: in[30] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+out[21] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[30] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
@@ -1887,44 +1882,109 @@ out[21]
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[23] 
-    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
 out[25] 
-    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
@@ -1935,6 +1995,121 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
@@ -1955,34 +2130,152 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
 in[31] 
     bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[30] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+out[1] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.55, 12.277.315,  ) - ( 7.312.65 ) - ( , 7.37 ) on Layer 12.3, metal2
+7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[30] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+out[1] 
+    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+in[9] 
+    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
@@ -1993,53 +2286,80 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[30] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[21] 
+out[1] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+8.7, 8.35 ) - ( 8.73, Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: 8.45 ) on Layer metal1
+in[24] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+in[9] 
+    bbox = ( Warning: marker bloat 4x width but could not find two grids to add marker cost
+12.23  marker -- src: , 7.805 ) - ( out[2] 
+    bbox = ( 12.285, 7.875 ) on Layer metal1
+8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[9] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
+    bbox = ( 10.3, 7.3 ) - ( Warning: marker bloat 4x width but could not find two grids to add marker cost
+10.325, 7.33 ) on Layer metal1
   marker -- src: in[30] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[21] 
+out[1] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
@@ -2052,25 +2372,35 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+in[9] 
+    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
@@ -2102,10 +2432,65 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[12] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+out[25] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[12] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+out[25] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
 out[30] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[12] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+out[25] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+in[21] 
+    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+in[21] 
+    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.3658.45 ) on Layer metal1
+ ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
@@ -2122,45 +2507,25 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+  marker -- src: out[12] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+out[25] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+  marker -- src: out[12] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
 out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
@@ -2172,6 +2537,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[12] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+out[25] 
+    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
 out[30] 
@@ -2181,26 +2551,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
@@ -2217,36 +2567,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[2] 
     bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
 out[30] 
@@ -2257,237 +2577,32 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
     Completing 10% with 36 violations.
-    elapsed time = 00:00:00, memory = 339.65 (MB).
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[30] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[1] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[30] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[1] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+    elapsed time = 00:00:00, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[2] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-in[9] 
-    bbox = ( 12.27, 7.3 ) - ( 12.3, 7.315 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[24] 
     bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
@@ -2504,10 +2619,95 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.35 ) - ( 8.73, 8.45 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[2] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 8.365 ) - ( 8.73, 8.435 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+in[2] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+in[2] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+in[2] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+in[2] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
@@ -2529,26 +2729,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[8] 
     bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[12] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-out[25] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[30] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[1] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[12] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-out[25] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[12] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-out[25] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[4] 
     bbox = ( 11.165, 7.3 ) - ( 11.235, 7.33 ) on Layer metal1
 in[9] 
@@ -2569,40 +2749,10 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[9] 
     bbox = ( 11.15, 7.3 ) - ( 11.25, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[30] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
-out[1] 
-    bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
+  marker -- src: in[15] 
+    bbox = ( 8.9, 7.3 ) - ( 8.925, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.9, 7.3 ) - ( 8.925, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
@@ -2634,87 +2784,37 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
+  marker -- src: in[20] 
+    bbox = ( 8.7, 7.65 ) - ( 8.73, 7.7 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.65 ) - ( 8.73, 7.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.79 ) - ( 12.285, 7.89 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
-in[9] 
-    bbox = ( 12.23, 7.805 ) - ( 12.285, 7.875 ) on Layer metal1
+  marker -- src: in[20] 
+    bbox = ( 8.7, 7.665 ) - ( 8.73, 7.7 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.665 ) - ( 8.73, 7.7 ) on Layer metal1
     Completing 20% with 36 violations.
-    elapsed time = 00:00:00, memory = 339.77 (MB).
+    elapsed time = 00:00:00, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: in[15] 
+    bbox = ( 9.765, 7.3 ) - ( 9.835, 7.33 ) on Layer metal1
+out[4] 
+    bbox = ( 9.765, 7.3 ) - ( 9.835, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-in[2] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+  marker -- src: in[15] 
+    bbox = ( 9.75, 7.3 ) - ( 9.85, 7.33 ) on Layer metal1
+out[4] 
+    bbox = ( 9.75, 7.3 ) - ( 9.85, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: 6.39 ) - ( in[28]12.3 
-    bbox = ( , 12.27, 6.49 ) on Layer metal18.645
- ) - ( in[31] 
-    bbox = ( 12.3, 8.712.27,  ) on Layer 6.39 ) - ( metal112.3
-in[2] 
-    bbox = ( , 6.4912.27, 8.645 ) - (  ) on Layer metal1
-12.3, 8.7 ) on Layer metal1
+  marker -- src: in[11] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: in[11] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
@@ -2726,50 +2826,20 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[12] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-out[25] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[12] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-out[25] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[12] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-out[25] 
-    bbox = ( 13.39, 6.63 ) - ( 13.49, 6.685 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+  marker -- src: in[11] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[15] 
     bbox = ( 8.9, 7.3 ) - ( 8.925, 7.33 ) on Layer metal1
@@ -2786,95 +2856,25 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[2] 
     bbox = ( 8.7, 7.665 ) - ( 8.73, 7.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-in[21] 
-    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-in[21] 
-    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
 in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
 in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[1] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[1] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[1] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[1] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[1] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[1] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-out[29] 
-    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-out[29] 
-    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[12] 
     bbox = ( 7.23, 7.75 ) - ( 7.315, 7.805 ) on Layer metal3
@@ -2901,85 +2901,18 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[29] 
     bbox = ( 7.245, 7.75 ) - ( 7.315, 7.805 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-out[15] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-in[2] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+    bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-in[2] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-out[15] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-out[15] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-out[15] 
-    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[12] 
     bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
@@ -3001,25 +2934,15 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
@@ -3034,87 +2957,189 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[15] 
-    bbox = ( 8.9, 7.3 ) - ( 8.925, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.9, 7.3 ) - ( 8.925, 7.33 ) on Layer metal1
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[9] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
     Completing 30% with 36 violations.
-    elapsed time = 00:00:01, memory = 339.90 (MB).
+    elapsed time = 00:00:01, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
-out[27] 
-    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
-out[27] 
-    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[20] 
-    bbox = ( 8.7, 7.65 ) - ( 8.73, 7.7 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.65 ) - ( 8.73, 7.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[20] 
-    bbox = ( 8.7, 7.665 ) - ( 8.73, 7.7 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.665 ) - ( 8.73, 7.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
 out[26] 
-    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
 out[26] 
-    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+out[15] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[9] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
+out[27] 
+    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
+out[27] 
+    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+out[15]  marker -- src:  
+    bbox = ( in[1] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[1] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
+out[26] 
+    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
+out[26] 
+    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+out[15] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+out[15] 
+    bbox = ( 6.95, 7.315 ) - ( 7.05, 7.37 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[1] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[1] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[1] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[1] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
+out[26] 
+    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
+out[26] 
+    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+out[29] 
+    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+out[29] 
+    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
     Completing 40% with 36 violations.
-    elapsed time = 00:00:01, memory = 339.90 (MB).
+    elapsed time = 00:00:01, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[15] 
-    bbox = ( 9.765, 7.3 ) - ( 9.835, 7.33 ) on Layer metal1
-out[4] 
-    bbox = ( 9.765, 7.3 ) - ( 9.835, 7.33 ) on Layer metal1
+  marker -- src: in[22] 
+    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[15] 
-    bbox = ( 9.75, 7.3 ) - ( 9.85, 7.33 ) on Layer metal1
-out[4] 
-    bbox = ( 9.75, 7.3 ) - ( 9.85, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-in[8] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+  marker -- src: in[22] 
+    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[12] 
     bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
@@ -3126,128 +3151,28 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[26] 
     bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-in[8] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+  marker -- src: in[22] 
+    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.3 ) - ( 6.755, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
-out[26] 
-    bbox = ( 5.075, 8.07 ) - ( 5.13, 8.155 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
-out[26] 
-    bbox = ( 5.075, 8.085 ) - ( 5.13, 8.155 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-in[8] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[23] 
-    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
-out[25] 
-    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+  marker -- src: in[22] 
+    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.3 ) - ( 6.77, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-in[28] 
-    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+  marker -- src: in[28] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+in[8] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
@@ -3259,12 +3184,74 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 out[30] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+in[8] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[24] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+in[8] 
+    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[8] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+out[21] 
+    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[23] 
+    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
+out[25] 
+    bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
     Completing 50% with 36 violations.
-    elapsed time = 00:00:01, memory = 338.00 (MB).
+    elapsed time = 00:00:01, memory = 339.45 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+in[8] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+    Completing 60% with 36 violations.
+    elapsed time = 00:00:01, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[23] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
@@ -3276,11 +3263,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[8] 
     bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 out[30] 
@@ -3296,37 +3278,10 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[24] 
     bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
 in[8] 
     bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.51 ) - ( 10.73, 7.595 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[8] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-out[21] 
-    bbox = ( 10.675, 7.525 ) - ( 10.73, 7.595 ) on Layer metal2
-    Completing 60% with 36 violations.
-    elapsed time = 00:00:01, memory = 338.00 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
@@ -3334,9 +3289,14 @@ out[30]
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+    bbox = ( Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer 8.7metal1, 
 out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+    bbox = ( 9.275 ) - ( 8.7, 8.73, 9.33 ) - ( 9.3 ) on Layer metal1
+out[30]8.73 
+    bbox = ( , 8.7, 9.43 ) on Layer metal1
+9.275 ) - ( 8.73, 9.3 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
     bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
@@ -3353,22 +3313,42 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[24] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
-in[8] 
-    bbox = ( 10.27, 7.51 ) - ( 10.325, 7.61 ) on Layer metal2
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[23] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
 out[25] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
     Completing 70% with 36 violations.
-    elapsed time = 00:00:01, memory = 338.00 (MB).
+    elapsed time = 00:00:01, memory = 339.45 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: out[17] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
@@ -3385,43 +3365,8 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[30] 
     bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[11] 
-    bbox = ( 8.7, 9.275 ) - ( 6.78.73, , 9.3 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
 out[5] 
     bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
@@ -3440,140 +3385,65 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[5] 
     bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[11] 
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[11] 
+    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+out[5] 
+    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[26] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
 in[28] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[26] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 in[28] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[26] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
-in[28] 
-    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[23] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
 out[25] 
     bbox = ( 11.71, 7.75 ) - ( 11.81, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.61 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+  marker -- src: in[26] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
+in[28] 
+    bbox = ( 12.23, 7.525 ) - ( 12.285, 7.595 ) on Layer metal3
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[11] 
     bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
@@ -3585,6 +3455,111 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[5] 
     bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[11] 
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[11] 
+    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+out[5] 
+    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[11] 
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+out[5] 
+    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[11] 
+    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+out[5] 
+    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[17] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+out[30] 
+    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.51 ) - ( 12.3, 7.61 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[26] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+in[28] 
+    bbox = ( 12.27, 7.525 ) - ( 12.3, 7.595 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
 out[25] 
@@ -3606,24 +3581,134 @@ out[25]
     bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 6.67 ) - ( Warning: marker bloat 4x width but could not find two grids to add marker cost
-12.3  marker -- src: , in[28] 
-    bbox = ( 6.7 ) on Layer metal1
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+out[25] 
+    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
 in[31] 
-    bbox = ( 12.27, 12.27, 6.678.63 ) - (  ) - ( 12.3, 12.3, 8.76.7 ) on Layer  ) on Layer metal1
-metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( , 12.27, 6.6858.645 ) - (  ) - ( 12.3, 6.7 ) on Layer metal1
-in[31]12.3 , 
-    bbox = ( 8.7 ) on Layer metal1
-12.27out[25] 
-    bbox = ( , 6.685 ) - ( 12.27, 12.3, 8.645 ) - ( 6.7 ) on Layer metal1
-12.3, 8.7 ) on Layer metal1
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
@@ -3645,26 +3730,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[25] 
     bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-out[5] 
-    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-out[5] 
-    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
 out[25] 
@@ -3674,61 +3739,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
 out[25] 
     bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-out[25] 
-    bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-out[5] 
-    bbox = ( 6.7, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[11] 
-    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
-out[5] 
-    bbox = ( 6.67, 7.75 ) - ( 6.77, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 8.63 ) - ( 12.3, 8.7 ) on Layer metal1
@@ -3759,6 +3769,46 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
 in[31] 
     bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.67 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.685 ) - ( 12.3, 6.7 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+in[21] 
+    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+in[21] 
+    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.55, 7.315 ) - ( 12.65, 7.37 ) on Layer metal2
@@ -3773,61 +3823,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.33 ) - ( 8.73, 9.43 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[17] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-out[30] 
-    bbox = ( 8.7, 9.345 ) - ( 8.73, 9.415 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-in[21] 
-    bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-in[21] 
-    bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[8] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 in[9] 
     bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[4] 
     bbox = ( 11.165, 7.3 ) - ( 11.235, 7.33 ) on Layer metal1
 in[9] 
@@ -3847,91 +3847,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 11.15, 7.3 ) - ( 11.25, 7.33 ) on Layer metal1
 in[9] 
     bbox = ( 11.15, 7.3 ) - ( 11.25, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-in[8] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-in[8] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-in[8] 
-    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
@@ -3943,7 +3858,82 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
     Completing 80% with 36 violations.
-    elapsed time = 00:00:01, memory = 338.00 (MB).
+    elapsed time = 00:00:02, memory = 339.45 (MB).
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+in[8] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+in[8] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+in[8] 
+    bbox = ( 10.3, 7.3 ) - ( 10.325, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[12] 
     bbox = ( 6.405, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
@@ -3956,24 +3946,14 @@ in[21]
     bbox = ( 6.39, 7.75 ) - ( 6.475, 7.805 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
 in[31] 
-    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+    bbox = ( 12.27, 6.39 ) - ( 12.3, 6.49 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
 in[31] 
-    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[21] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[21] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+    bbox = ( 12.27, 6.405 ) - ( 12.3, 6.475 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[28] 
     bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
@@ -3995,45 +3975,15 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[31] 
     bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[21] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.53 ) - ( 12.3, 6.63 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[21] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-out[2] 
-    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+  marker -- src: in[28] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
+in[31] 
+    bbox = ( 12.27, 6.545 ) - ( 12.3, 6.615 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
@@ -4065,55 +4015,20 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[2] 
     bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+  marker -- src: in[21] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+  marker -- src: in[21] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
 out[26] 
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
@@ -4134,6 +4049,21 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
 out[26] 
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[21] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.715, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[21] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
+out[2] 
+    bbox = ( 8.7, 7.3 ) - ( 8.73, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
@@ -4184,96 +4114,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
 out[26] 
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[22] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[27] 
-    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
-out[31] 
-    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: out[27] 
-    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
-out[31] 
-    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
@@ -4315,7 +4155,7 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[26] 
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
     Completing 90% with 36 violations.
-    elapsed time = 00:00:02, memory = 338.00 (MB).
+    elapsed time = 00:00:02, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
@@ -4327,15 +4167,155 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[26] 
     bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
-out[3] 
-    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[12] 
-    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
-out[3] 
-    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[27] 
+    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
+out[31] 
+    bbox = ( 5.565, 8.59 ) - ( 5.635, 8.645 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: out[27] 
+    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
+out[31] 
+    bbox = ( 5.565, 8.59 ) - ( 5.65, 8.645 ) on Layer metal2
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[22] 
     bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
@@ -4396,6 +4376,86 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
 out[26] 
     bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
+out[3] 
+    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[19] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[12] 
+    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
+out[3] 
+    bbox = ( 7.79, 9.71 ) - ( 7.89, 9.765 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.805, 7.3 ) - ( 7.875, 7.33 ) on Layer metal1
+Warning: marker bloat 4x width but could not find two grids to add marker cost
+  marker -- src: in[22] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
+out[26] 
+    bbox = ( 7.79, 7.3 ) - ( 7.89, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[12] 
     bbox = ( 4.15, 7.75 ) - ( 4.235, 7.805 ) on Layer metal1
@@ -4406,66 +4466,6 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
     bbox = ( 4.165, 7.75 ) - ( 4.235, 7.805 ) on Layer metal1
 in[13] 
     bbox = ( 4.165, 7.75 ) - ( 4.235, 7.805 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
-Warning: marker bloat 4x width but could not find two grids to add marker cost
-  marker -- src: in[19] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
-out[26] 
-    bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[19] 
     bbox = ( 8.1, 7.3 ) - ( 8.155, 7.33 ) on Layer metal1
@@ -4797,11 +4797,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[26] 
     bbox = ( 8.1, 7.3 ) - ( 8.17, 7.33 ) on Layer metal1
     Completing 100% with 36 violations.
-    elapsed time = 00:00:02, memory = 338.00 (MB).
+    elapsed time = 00:00:02, memory = 339.45 (MB).
 [INFO DRT-0199]   Number of violations = 36.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1     24     11
-[INFO DRT-0267] cpu time = 00:00:12, elapsed time = 00:00:02, memory = 338.00 (MB), peak = 339.90 (MB)
+[INFO DRT-0267] cpu time = 00:00:13, elapsed time = 00:00:02, memory = 339.45 (MB), peak = 339.45 (MB)
 Total wire length = 604 um.
 Total wire length on LAYER metal1 = 47 um.
 Total wire length on LAYER metal2 = 378 um.
@@ -4948,7 +4948,7 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 out[2] 
     bbox = ( 8.7, 9.275 ) - ( 8.73, 9.3 ) on Layer metal1
     Completing 50% with 36 violations.
-    elapsed time = 00:00:00, memory = 338.00 (MB).
+    elapsed time = 00:00:00, memory = 339.45 (MB).
 Warning: marker bloat 4x width but could not find two grids to add marker cost
   marker -- src: in[30] 
     bbox = ( 12.27, 9.275 ) - ( 12.3, 9.3 ) on Layer metal1
@@ -5320,11 +5320,11 @@ Warning: marker bloat 4x width but could not find two grids to add marker cost
 in[28] 
     bbox = ( 12.27, 8.645 ) - ( 12.3, 8.7 ) on Layer metal1
     Completing 100% with 36 violations.
-    elapsed time = 00:00:00, memory = 338.00 (MB).
+    elapsed time = 00:00:00, memory = 339.45 (MB).
 [INFO DRT-0199]   Number of violations = 36.
 Viol/Layer      metal1 metal2 metal3
 Metal Spacing        1     24     11
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 338.00 (MB), peak = 339.90 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 339.45 (MB), peak = 339.45 (MB)
 Total wire length = 604 um.
 Total wire length on LAYER metal1 = 47 um.
 Total wire length on LAYER metal2 = 378 um.
@@ -5356,8 +5356,8 @@ Up-via summary (total 293):
                293
 
 
-[INFO DRT-0267] cpu time = 00:00:18, elapsed time = 00:00:08, memory = 338.00 (MB), peak = 339.90 (MB)
+[INFO DRT-0267] cpu time = 00:00:18, elapsed time = 00:00:08, memory = 339.45 (MB), peak = 339.45 (MB)
 
 [INFO DRT-0180] Post processing.
-[INFO DRT-0501] Runtime: 8.26s
+[INFO DRT-0501] Runtime: 8.33s
 ROUTE_COMPLETE tag=baseline

@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 OR_BIN="${OR_BIN:-openroad}"
 mkdir -p results
-rm -f results/baseline.* results/tuned.*
+rm -f results/baseline.* results/tuned.* results/summary.rpt
 
 run_round() {
   local tag="$1" density="$2"
@@ -30,9 +30,9 @@ run_round tuned 0.45
 
 for tag in baseline tuned; do
   test -s "results/$tag.log"
-  test -f "results/$tag.guide"
+  test -s "results/$tag.guide"
   test -s "results/$tag.congestion-summary.rpt"
-  test -f "results/$tag.drc.rpt"
+  test -s "results/$tag.drc.rpt"
   grep -q "RUN_CONFIG tag=$tag" "results/$tag.log"
   grep -q "ROUTE_COMPLETE tag=$tag" "results/$tag.log"
 done
