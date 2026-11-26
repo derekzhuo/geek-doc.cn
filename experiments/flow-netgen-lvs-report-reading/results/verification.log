@@ -1,0 +1,4 @@
+Netlists match uniquely.
+Cell pin lists are equivalent; chip and inverter device classes are equivalent.
+Control: value circuit1=6e-12 circuit2=5e-12 (delta=18.2%, cutoff=1%)
+PASS: normal comparison is unique; control isolates the capacitor property difference
