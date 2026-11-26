@@ -33,10 +33,18 @@ log "# NTU=$NTU FULL_TRIALS=$FULL_TRIALS INC_TRIALS=$INC_TRIALS CXXFLAGS=-O2 -st
 log ""
 
 make clean >/dev/null
+bash gen_tus.sh "$NTU" src >/dev/null
+expected_objects=$((NTU + 2))
 t0=$(now_ms)
 make objects NTU="$NTU" >/dev/null
 t1=$(now_ms)
-log "compile_all_ms=$((t1 - t0))  # 生成 $NTU TU + main + sumparts 并全部编译为 .o"
+actual_objects=$(find build/obj -maxdepth 1 -type f -name '*.o' | wc -l)
+if [ "$actual_objects" -ne "$expected_objects" ]; then
+    log "FATAL: 实际对象数 $actual_objects，预期 $expected_objects"
+    exit 1
+fi
+log "object_files=$actual_objects expected=$expected_objects assertion=PASS"
+log "compile_all_ms=$((t1 - t0))  # 清理旧源码与产物后生成 $NTU TU + main + sumparts，再全部编译为 .o"
 log ""
 
 log "== 全量链接（每次先删二进制，链接全部 $((NTU + 2)) 个 .o）=="
@@ -68,13 +76,15 @@ log "checksum 一致：$uniq_checksums 组输出完全相同"
 log ""
 
 log "== 增量链接（每轮只改 tu0000.cpp 一个常量，重编该 TU 后重链）=="
-cp src/tu0000.cpp /tmp/tu0000.cpp.bak
-trap 'mv /tmp/tu0000.cpp.bak src/tu0000.cpp 2>/dev/null || true' EXIT
+backup=$(mktemp)
+cp src/tu0000.cpp "$backup"
+trap 'cp "$backup" src/tu0000.cpp 2>/dev/null || true; rm -f "$backup"' EXIT
+declare -A incremental_outputs
 for ld in "${LINKERS[@]}"; do
     samples_link=()
     samples_compile=()
     for k in $(seq 1 "$INC_TRIALS"); do
-        sed "s/acc = x + 0\.0;/acc = x + ${k}.25;/" /tmp/tu0000.cpp.bak > src/tu0000.cpp
+        sed "s/acc = x + 0\.0;/acc = x + ${k}.25;/" "$backup" > src/tu0000.cpp
         a=$(now_ms)
         g++ -O2 -std=c++17 -Wall -I. -c src/tu0000.cpp -o build/obj/tu0000.o
         b=$(now_ms)
@@ -82,13 +92,23 @@ for ld in "${LINKERS[@]}"; do
         c=$(now_ms)
         samples_compile+=("$((b - a))")
         samples_link+=("$((c - b))")
+        incremental_outputs["$ld,$k"]=$("build/bin/bench-$ld")
+        log "incremental_run linker=$ld round=$k run=\"${incremental_outputs["$ld,$k"]}\""
     done
-    mv /tmp/tu0000.cpp.bak src/tu0000.cpp
-    g++ -O2 -std=c++17 -Wall -I. -c src/tu0000.cpp -o build/obj/tu0000.o
-    cp src/tu0000.cpp /tmp/tu0000.cpp.bak
     med_link=$(median_ms "${samples_link[@]}")
     med_compile=$(median_ms "${samples_compile[@]}")
-    log "incremental $ld relink_samples_ms=\"${samples_link[*]}\" relink_median_ms=$med_link recompile_median_ms=$med_compile"
+    log "incremental $ld relink_samples_ms=\"${samples_link[*]}\" relink_median_ms=$med_link recompile_samples_ms=\"${samples_compile[*]}\" recompile_median_ms=$med_compile"
 done
+for k in $(seq 1 "$INC_TRIALS"); do
+    groups=$(for ld in "${LINKERS[@]}"; do printf '%s\n' "${incremental_outputs["$ld,$k"]}"; done | sort -u | wc -l)
+    if [ "$groups" -ne 1 ]; then
+        log "FATAL: 增量第 $k 轮四个二进制运行结果不一致"
+        exit 1
+    fi
+    log "incremental_round=$k checksum_groups=$groups assertion=PASS"
+done
+cp "$backup" src/tu0000.cpp
+rm -f "$backup"
+trap - EXIT
 log ""
 log "done"

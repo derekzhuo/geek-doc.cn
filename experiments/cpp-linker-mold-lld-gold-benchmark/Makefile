@@ -21,7 +21,8 @@ gen:
 dirs:
 	mkdir -p $(OBJDIR) $(BINDIR)
 
-objects: gen dirs $(OBJS)
+# 调用 make 前必须先单独执行 gen 或 run.sh，确保 wildcard 在源码生成后展开。
+objects: dirs $(OBJS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | dirs
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -33,4 +34,4 @@ $(BINDIR)/bench-%: $(OBJS) | dirs
 	$(CXX) $(CXXFLAGS) -fuse-ld=$* $(OBJS) -o $@
 
 clean:
-	rm -rf build
+	rm -rf build src
