@@ -1,0 +1,11 @@
+# command: xvlog.bat tb_unnamed_bad.v  (cwd C:\eda-lab\b1\ts-xsim-vrfc-10-552-unnamed-block-declaration)
+# date: 2026-11-28T02:00:10+08:00
+# host-toolchain: Vivado 2017.4 (Windows, XSim batch)
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-552-unnamed-block-declaration/tb_unnamed_bad.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_unnamed_bad
+ERROR: [VRFC 10-552] declarations not allowed in unnamed block [C:/eda-lab/b1/ts-xsim-vrfc-10-552-unnamed-block-declaration/tb_unnamed_bad.v:4]
+ERROR: [VRFC 10-1040] module tb_unnamed_bad ignored due to previous errors [C:/eda-lab/b1/ts-xsim-vrfc-10-552-unnamed-block-declaration/tb_unnamed_bad.v:3]
+BAD_XVLOG_EXIT=1
+XELAB_NOT_RUN_AFTER_BAD_XVLOG=True
+EXPECTED_UNNAMED_BLOCK_DECLARATION_ERROR

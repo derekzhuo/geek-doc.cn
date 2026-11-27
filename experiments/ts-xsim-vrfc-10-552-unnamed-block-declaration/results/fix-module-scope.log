@@ -1,0 +1,44 @@
+# command: xvlog.bat tb_module_scope.v; xelab.bat tb_module_scope -s module_scope_snapshot; xsim.bat module_scope_snapshot -R  (cwd C:\eda-lab\b1\ts-xsim-vrfc-10-552-unnamed-block-declaration)
+# date: 2026-11-28T02:00:31+08:00
+# host-toolchain: Vivado 2017.4 (Windows, XSim batch)
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/eda-lab/b1/ts-xsim-vrfc-10-552-unnamed-block-declaration/tb_module_scope.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_module_scope
+MODULE_XVLOG_EXIT=0
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe tb_module_scope -s module_scope_snapshot
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.tb_module_scope
+Built simulation snapshot module_scope_snapshot
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/eda-lab/b1/ts-xsim-vrfc-10-552-unnamed-block-declaration/xsim.dir/module_scope_snapshot/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Nov 28 02:00:36 2026...
+MODULE_XELAB_EXIT=0
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/module_scope_snapshot/xsim_script.tcl
+# xsim {module_scope_snapshot} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+DECLARATION_SCOPE_SIM_PASS count=3
+$finish called at time : 20 ns : File "C:/eda-lab/b1/ts-xsim-vrfc-10-552-unnamed-block-declaration/tb_module_scope.v" Line 15
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Nov 28 02:00:42 2026...
+MODULE_XSIM_EXIT=0
+MODULE_SCOPE_FLOW_COMPLETE
