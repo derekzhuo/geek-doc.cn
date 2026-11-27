@@ -7,8 +7,8 @@
 | 源文件 | 声明位置 | 2017.4 实测结果 |
 |---|---|---|
 | `tb_unnamed_bad.v` | 匿名 `initial begin` 内 | `xvlog` 报 VRFC 10-552 与 10-1040，退出码 1，不运行 elaboration |
-| `tb_named_block.v` | `initial begin : stimulus` 命名块内 | 编译、展开、运行均成功，20 ns 输出 `DECLARATION_SCOPE_SIM_PASS count=3` |
-| `tb_module_scope.v` | module 作用域 | 编译、展开、运行均成功，20 ns 输出同一 PASS 结果 |
+| `tb_named_block.v` | `initial begin : stimulus` 命名块内 | 编译、展开、运行均成功，10 ns 输出 `DECLARATION_SCOPE_SIM_PASS count=3`，20 ns 结束 |
+| `tb_module_scope.v` | module 作用域 | 编译、展开、运行均成功，10 ns 输出同一 PASS 结果，20 ns 结束 |
 
 ## 环境
 
@@ -72,7 +72,7 @@ xelab.bat tb_module_scope -s module_scope_snapshot
 xsim.bat module_scope_snapshot -R
 ```
 
-结果日志确认 `Built simulation snapshot module_scope_snapshot`，20 ns 输出 `DECLARATION_SCOPE_SIM_PASS count=3`，三个步骤退出码均为 0。
+结果日志确认 `Built simulation snapshot module_scope_snapshot`，10 ns 输出 `DECLARATION_SCOPE_SIM_PASS count=3`，20 ns 执行 `$finish`，三个步骤退出码均为 0。
 
 ## 结果记录
 

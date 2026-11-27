@@ -17,7 +17,7 @@
 | `results/bad-option.log` | 43-3985、真实 xelab 退出状态与快照时间戳核对结果 |
 | `results/continuation-old-snapshot.log` | 旧快照加载路径、仿真结束位置与 xsim 退出状态 |
 | `results/fix-pass.log` | 修复后的编译、快照重建、仿真和 VCD 检查记录 |
-| `results/continuation.vcd` / `results/trace.vcd` | 两次运行生成的非空 VCD，本次均为 537 字节 |
+| `results/continuation.vcd` / `results/trace.vcd` | 两次运行生成的非空 VCD；Windows 原始 CRLF 文件均为 537 字节，本仓统一为 LF 后均为 477 字节 |
 
 ## 复现步骤（Windows + Vivado 2017.4）
 
