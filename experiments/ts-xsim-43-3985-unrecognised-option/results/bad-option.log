@@ -1,0 +1,231 @@
+# command: xelab.bat -debug typical -force tb_toggle  (cwd C:\eda-lab\b1\ts-xsim-43-3985-unrecognised-option)
+# date: 2026-11-28T01:55:28+08:00
+# host-toolchain: Vivado 2017.4 (Windows, XSim CLI)
+
+ERROR: [XSIM 43-3985] Problem with usage of options: unrecognised option '--force'. Please see the usage below.
+Usage: xelab [options] [libname.]unitname...
+(Switches with double dash '--' can also be used with a single dash '-')
+Vivado Simulator xelab options:
+  -f [ --file ] arg                    Read additional options from the
+                                       specified file
+  -h [ --help ]                        Print this help message
+  --version                            Print the compiler version
+  --initfile arg                       Use user defined simulator init file to
+                                       add to or override the settings provided
+                                       by the default xsim.ini file
+  -L [ --lib ] arg                     Specify search libraries for the
+                                       instantiated design units in a Verilog
+                                       or Mixed language design. Use -L|--lib
+                                       for each search library. The format of
+                                       the argument is <name>[=<dir>] where
+                                       <name> is the logical name of the
+                                       library and <dir> is an optional
+                                       physical directory of the library
+  --nolog                              Suppress log file generation
+  --log arg                            Specify the log file name. Default is
+                                       <application name>.log
+  --prj arg                            Specify Vivado Simulator  project file
+                                       containing one or more entries of
+                                       'vhdl|verilog <work lib> <HDL file
+                                       name>'
+  --relax                              Relax strict HDL language checking rules
+  -v [ --verbose ] arg                 Specify verbosity level for printing
+                                       messages. Allowed values are: 0, 1, 2
+                                       (Default:0)
+  --incr                               Enable incremental parsing and
+                                       compilation check point
+  --nosignalhandlers                   Run with no XSim specific signal
+                                       handlers. Necessary when 3rd party
+                                       software such as antivirus, firewall is
+                                       generating signals as part of its normal
+                                       usage, causing XSim Compiler and Kernel
+                                       executables to trap these signals and
+                                       report a crash.
+  --93_mode                            Force usage of VHDL-93 mode for STD and
+                                       IEEE libraries. Default is mixed 93 and
+                                       2008. If used, should be used for all
+                                       VHDL files for the specific project
+  -i [ --include ] arg                 Specify directories to be searched for
+                                       files included using Verilog `include.
+                                       Use -i|--include for each specified
+                                       search directory
+  -d [ --define ] arg                  Define Verilog macros. Use -d|--define
+                                       for each Verilog macro. The format of
+                                       the macro is <name>[=<val>] where <name>
+                                       is name of the macro and <value> is an
+                                       optional value of the macro
+  --sourcelibdir arg                   Directory for Verilog source files of
+                                       uncompiled modules. Use
+                                       -sourcelibdir|--sourcelibdir <dirname>
+                                       for each source directory.
+  --sourcelibext arg                   File extension for Verilog source files
+                                       of uncompiled modules. Use
+                                       -sourcelibext|--sourcelibext <file
+                                       extension> for source file extension.
+  --sourcelibfile arg                  Filename of a Verilog source file which
+                                       has uncompiled modules. Use
+                                       -sourcelibfile|--sourcelibfile
+                                       <filename>.
+  --noname_unnamed_generate            Generate name for an unnamed generate
+                                       block
+  -r [ --run ]                         Run the generated executable
+  -R [ --runall ]                      Run the generated executable till end of
+                                       simulation (xsim -runall)
+  --timescale arg                      Specify default timescale for Verilog
+                                       modules( Default: 1ns/1ps )
+  --override_timeunit                  Override timeunit for all Verilog
+                                       modules, with the specified time unit in
+                                       -timescale option
+  --override_timeprecision             Override time precision for all Verilog
+                                       modules, with the specified time
+                                       precision in -timescale option
+  --timeprecision_vhdl arg (=1ps)      Specify time precision for vhdl designs(
+                                       Default: 1ps)
+  --generic_top arg                    Override generic or parameter of a top
+                                       level design unit with specified value(
+                                       Example: -generic_top "P1=10"
+  --maxdesigndepth arg                 Override maximum design hierarchy depth
+                                       allowed by the elaborator (Default:
+                                       5000)
+  --mt arg (=auto)                     Specifies the number of sub-compilation
+                                       jobs which can be run in parallel.
+                                       Choices are:
+                                         auto: automatic
+                                         n: where n is an integer greater than
+                                            1
+                                         off: turn off multi-threading
+                                       (Default:auto)
+  --debug arg                          Compile with specified HDL debugging
+                                       ability turned on. Choices are:
+                                         line: HDL breakpoint
+                                         wave: waveform generation, conditional
+                                               execution, force value
+                                         drivers: signal driver value probing
+                                         readers: signal reader (load) probing
+                                         xlibs: visibility into libraries
+                                                precompiled by xilinx
+                                         all: all the above
+                                         typical: line, wave and drivers
+                                         subprogram: subprogram variable value
+                                                     probing
+                                         off: turn off all debugging abilities
+                                       (Default: off)
+  -s [ --snapshot ] arg                Specify the name of design snapshot
+  --notimingchecks                     Ignore timing check constructs in
+                                       Verilog specify block(s)
+  --nosdfinterconnectdelays            Ignore SDF port and interconnect delay
+                                       constructs in SDF
+  --nospecify                          Ignore Verilog path delays and timing
+                                       checks
+  --mindelay                           Compile Verilog design units with
+                                       minimum delays
+  --typdelay                           Compile Verilog design units with
+                                       typical delays (Default)
+  --maxdelay                           Compile Verilog design units with
+                                       maximum delays
+  --O0                                 Disable all optimizations
+  --O1                                 Enable basic optimizations
+  --O2                                 Enable most commonly desired
+                                       optimizations (Default)
+  --O3                                 Enable advance optimizations
+  --Oenable_unused_removal             Turn on the optimization to remove
+                                       unused signals and statements (default
+                                       on)
+  --Odisable_unused_removal            Turn off the optimization to remove
+                                       unused signals and statements (default
+                                       on)
+  --Oenable_pass_through_elimination   Turn on the optimization to remove
+                                       wrappers (default on)
+  --Odisable_pass_through_elimination  Turn off the optimization to remove
+                                       unused signals and statements (default
+                                       on)
+  --Oenable_cdfg                       Turn on the building of the control+data
+                                       flow graph (default on)
+  --Odisable_cdfg                      Turn off the building of the
+                                       control+data flow graph (default on)
+  --Odisable_process_opt               Turn off the process level optimization
+                                       (default on)
+  --Odisable_acceleration arg          Turn off acceleration for the specified
+                                       HDL package. Choices are:
+                                         all, math_real, math_complex,
+                                       numeric_std, std_logic_arith,
+                                       std_logic_signed, std_logic_unsigned
+                                         (default: acceleration is on)
+  --Oenable_always_combine             Turn on the combination of always
+                                       processes sensitive to same nets
+                                       (default off)
+  --Odisable_always_combine            Turn off the combination of always
+                                       processes sensitive to same nets
+                                       (default off)
+  --sv_root arg                        Root directory off which DPI libraries
+                                       are to be found. Default:
+                                       <current_directory>/xsim.dir/xsc
+  --sv_lib arg                         Shared library name for DPI imported
+                                       functions; (.dll/.so) without the file
+                                       extension
+  --sv_liblist arg                     Bootstrap file pointing to DPI shared
+                                       libraries.
+  --dpiheader arg                      Header filename for the exported and
+                                       imported functions.
+  --dpi_absolute                       Use absolute paths instead of
+                                       LD_LIBRARY_PATH on Linux for DPI
+                                       libraries that are formatted as
+                                       lib<libname>.so
+  --dpi_stacksize arg                  User-defined stack size for DPI tasks
+  --sdfnowarn                          Do not emit sdf warnings
+  --sdfnoerror                         Treat errors found in sdf file as
+                                       warning
+  --sdfmin arg                         <root=file> Sdf annotate <file> at
+                                       <root> with minimum delay
+  --sdftyp arg                         <root=file> Sdf annotate <file> at
+                                       <root> with typical delay
+  --sdfmax arg                         <root=file> Sdf annotate <file> at
+                                       <root> with maximum delay
+  --sdfroot arg                        <root_path> Default design hierarchy at
+                                       which sdf annotation is applied
+  --pulse_e arg                        Path pulse error limit as percentage of
+                                       path delay. Allowed values are 0 to 100
+                                       (Default: 100)
+  --pulse_r arg                        Path pulse reject limit as percentage of
+                                       path delay. Allowed values are 0 to 100
+                                       (Default: 100)
+  --pulse_int_e arg                    Interconnect pulse error limit as
+                                       percentage of  delay. Allowed values are
+                                       0 to 100 (Default: 100)
+  --pulse_int_r arg                    Interconnect pulse reject limit as
+                                       percentage of  delay. Allowed values are
+                                       0 to 100 (Default: 100)
+  --pulse_e_style arg (=onevent)       Specify when error about pulse being
+                                       shorter than module path delay should be
+                                       handled. Choices are:
+                                         ondetect: report error right when
+                                                   violation is detected
+                                         onevent:  report error after the
+                                                   module path delay
+                                       (Default: onevent)
+  --transport_int_delays               Use transport model for interconnect
+                                       delays
+  --rangecheck                         Enable runtime value range check for
+                                       VHDL
+  --stats                              Print tool CPU and memory usages, and
+                                       design statistics
+  --maxarraysize arg                   Set the maximum VHDL array size, beyond
+                                       which an array declaration will generate
+                                       an error, to be 2**arg elements
+                                       (Default: arg = 28, which is 2**28
+                                       elements)
+  --driver_display_limit arg           Set the maximum number of elements a
+                                       signal may contain for driver
+                                       information to be recorded for the
+                                       signal (Default: arg = 65536 elements)
+  --transform_timing_checkers          Transform timing checkers to Verilog
+                                       processes
+
+Examples:
+  xelab top1 top2
+  xelab lib1.top1 lib2.top2
+  xelab top1 top2 -prj files.prj
+  xelab lib1.top1 lib2.top2 -prj files.prj
+
+BAD_XELAB_EXIT=1
+SNAPSHOT_TIMESTAMP_UNCHANGED=True
