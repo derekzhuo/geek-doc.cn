@@ -1,0 +1,27 @@
+* MP2307DN power-stage macro, 1 A to 2 A passive load-step response
+* Same fixed-duty open-loop circuit as mp2307_ripple.cir. This measures
+* inductor/capacitor/switch behavior only; it is not a closed-loop MP2307
+* transient or a verification of the COMP network.
+.param fsw=340k d=0.439 ton={d/fsw} tper={1/fsw} td=100n
+VIN INP 0 12
+VPH PG 0 PULSE(0 5 {td} 1n 1n {ton-2n} {tper})
+VPL NG 0 PULSE(0 5 {ton+2*td} 1n 1n {tper-ton-2*td-2n} {tper})
+S1 INP SW PG 0 swmod
+S2 SW 0 NG 0 swmod
+D1 0 SW sch
+L1 SW OUT 10u Rser=20m
+C1 OUT 0 22u Rser=5m
+C2 OUT 0 22u Rser=5m
+ILOAD OUT 0 PULSE(1 2 8m 1u 1u 6m 20m)
+.model swmod SW(Ron=100m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.4 Roff=100Meg)
+.tran 0 15m 6m 0.05u
+.meas TRAN vpre AVG V(OUT) FROM 6m TO 7.9m
+.meas TRAN vpost AVG V(OUT) FROM 10m TO 14m
+.meas TRAN vmin MIN V(OUT) FROM 8m TO 10m
+.meas TRAN vpp_pre PP V(OUT) FROM 6m TO 7.9m
+.meas TRAN vpp_post PP V(OUT) FROM 10m TO 14m
+.meas TRAN ilpre AVG I(L1) FROM 6m TO 7.9m
+.meas TRAN ilpost AVG I(L1) FROM 10m TO 14m
+.meas TRAN ilmax MAX I(L1) FROM 8m TO 14m
+.end

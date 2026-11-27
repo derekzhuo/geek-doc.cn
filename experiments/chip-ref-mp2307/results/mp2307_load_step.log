@@ -1,0 +1,23 @@
+LTspice 26.1.1 for Windows
+Circuit: C:\win-jobs\runs\chipref-mp2307-ltspice-v3-20261128-mac\mp2307_load_step.cir
+Start Time: Sat Nov 28 01:59:59 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 2.262 seconds.
+Total iterations: 872590
+
+Files loaded:
+C:\win-jobs\runs\chipref-mp2307-ltspice-v3-20261128-mac\mp2307_load_step.cir
+
+vpre: AVG(V(OUT))=5.12204953829 FROM 0.006 TO 0.0079
+vpost: AVG(V(OUT))=5.00735746033 FROM 0.01 TO 0.014
+vmin: MIN(V(OUT))=4.6169629097 FROM 0.008 TO 0.01
+vpp_pre: PP(V(OUT))=0.00759649276733 FROM 0.006 TO 0.0079
+vpp_post: PP(V(OUT))=0.00774669647217 FROM 0.01 TO 0.014
+ilpre: AVG(I(L1))=0.999997274319 FROM 0.006 TO 0.0079
+ilpost: AVG(I(L1))=1.99999791897 FROM 0.01 TO 0.014
+ilmax: MAX(I(L1))=3.11307024956 FROM 0.008 TO 0.014

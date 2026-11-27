@@ -1,0 +1,29 @@
+* MP2307DN 12 V to 5 V synchronous buck power-stage macro
+* Datasheet anchors: 340 kHz, 100 mOhm high/low-side switches, 10 uH,
+* 2 x 22 uF output capacitors, 3 A continuous load, optional Schottky.
+* Open-loop switched model: no feedback compensation, soft-start, UVLO,
+* current limit or thermal protection. Duty is fixed near the 2 A operating
+* point, including approximate switch loss and 100 ns deadtime per edge.
+.param fsw=340k d=0.439 ton={d/fsw} tper={1/fsw} td=100n
+VIN INP 0 12
+VPH PG 0 PULSE(0 5 {td} 1n 1n {ton-2n} {tper})
+VPL NG 0 PULSE(0 5 {ton+2*td} 1n 1n {tper-ton-2*td-2n} {tper})
+S1 INP SW PG 0 swmod
+S2 SW 0 NG 0 swmod
+D1 0 SW sch
+L1 SW OUT 10u Rser=20m
+C1 OUT 0 22u Rser=5m
+C2 OUT 0 22u Rser=5m
+RL OUT 0 2.5
+.model swmod SW(Ron=100m Roff=10Meg Vt=2.5 Vh=0)
+.model sch D(Ron=20m Vfwd=0.4 Roff=100Meg)
+.tran 0 15m 6m 0.05u
+.meas TRAN vavg AVG V(OUT) FROM 9m TO 14m
+.meas TRAN vpp PP V(OUT) FROM 9m TO 14m
+.meas TRAN ilavg AVG I(L1) FROM 9m TO 14m
+.meas TRAN ilmin MIN I(L1) FROM 9m TO 14m
+.meas TRAN ilmax MAX I(L1) FROM 9m TO 14m
+.meas TRAN ilpp PP I(L1) FROM 9m TO 14m
+.meas TRAN swmin MIN V(SW) FROM 9m TO 14m
+.meas TRAN swmax MAX V(SW) FROM 9m TO 14m
+.end
