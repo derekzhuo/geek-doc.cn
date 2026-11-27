@@ -1,0 +1,12 @@
+# command: xvlog.bat C:\eda-lab\xsim-input-file\src\counter4.v tb_counter.v  (cwd C:\eda-lab\xsim-input-file\wrong-cwd)
+# date: 2026-11-28T02:14:11+08:00
+# host-toolchain: Vivado 2017.4 (Windows, xc7a35tcpg236-1)
+
+Get-Location=C:\eda-lab\xsim-input-file\wrong-cwd
+Resolve-Path(actual tb_counter.v)=C:\eda-lab\xsim-input-file\src\tb_counter.v
+Test-Path(actual tb_counter.v)=True
+Test-Path(relative tb_counter.v)=False
+ERROR: [XSIM 43-4316] Can not find file: tb_counter.v
+WRONG_CWD_XVLOG_EXIT=1
+XELAB_NOT_RUN_AFTER_BAD_XVLOG=True
+EXPECTED_INPUT_FILE_NOT_FOUND_WRONG_CWD
