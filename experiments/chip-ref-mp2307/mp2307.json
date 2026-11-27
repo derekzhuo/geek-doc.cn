@@ -2,7 +2,7 @@
   "slug": "mp2307",
   "title": "MP2307DN 12V to 5V synchronous buck wiring",
   "components": [
-    { "ref": "U1", "value": "MP2307DN", "lib_id": "Regulator_Switching:MP2303ADN", "lib_file": "Regulator_Switching.kicad_sym", "x": 139.7, "y": 114.3, "rot": 0 },
+    { "ref": "U1", "value": "MP2307DN", "lib_id": "Regulator_Switching:MP2303ADN", "lib_file": "Regulator_Switching.kicad_sym", "footprint": "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm", "extra_pins": [{ "number": "9", "name": "EP", "type": "power_in", "x": 5.08, "y": -10.16, "angle": 90 }], "x": 139.7, "y": 114.3, "rot": 0 },
     { "ref": "C1", "value": "10uF", "lib_id": "Device:C", "lib_file": "Device.kicad_sym", "x": 63.5, "y": 63.5, "rot": 0 },
     { "ref": "C2", "value": "10uF", "lib_id": "Device:C", "lib_file": "Device.kicad_sym", "x": 88.9, "y": 63.5, "rot": 0 },
     { "ref": "C3", "value": "10nF", "lib_id": "Device:C", "lib_file": "Device.kicad_sym", "x": 114.3, "y": 55.88, "rot": 0 },
@@ -31,6 +31,7 @@
     { "ref": "U1", "pin": "6", "net": "COMP" },
     { "ref": "U1", "pin": "7", "net": "EN" },
     { "ref": "U1", "pin": "8", "net": "SS" },
+    { "ref": "U1", "pin": "9", "net": "GND" },
     { "ref": "C1", "pin": "1", "net": "+12V" },
     { "ref": "C1", "pin": "2", "net": "GND" },
     { "ref": "C2", "pin": "1", "net": "+12V" },

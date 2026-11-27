@@ -20,7 +20,7 @@
 run-kicad.bat
 ```
 
-本次验收结果为 0 Errors、0 Warnings。KiCad 10 标准库没有 MP2307 独立符号，图中借用 `Regulator_Switching:MP2303ADN` 的图形：两者 1–8 脚名称、顺序和 SOIC-8EP 封装一致，实例 Value 已改为 `MP2307DN`。借用仅限图形，不表示两颗芯片的电气参数相同。
+本次验收结果为 0 Errors、0 Warnings。KiCad 10 标准库没有 MP2307 独立符号，图中借用 `Regulator_Switching:MP2303ADN` 的图形：两者 1–8 脚名称、顺序和 SOIC-8EP 封装一致，实例 Value 已改为 `MP2307DN`。另补第 9 脚 EP 并接 GND，分配 `Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm` 封装。借用仅限图形，不表示两颗芯片的电气参数相同。
 
 ### LTspice 26.1.1
 
